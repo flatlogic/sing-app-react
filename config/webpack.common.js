@@ -16,7 +16,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Sing App 3.2.0 with Angular 2.0 RC7 support by Flatlogic',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
