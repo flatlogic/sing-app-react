@@ -18,8 +18,8 @@
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }
 
-.label-white {
-  @include label-variant($white);
+.tag-white {
+  @include tag-variant($white);
 }
 
 .display-flex {

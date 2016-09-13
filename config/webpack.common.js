@@ -145,6 +145,13 @@ module.exports = function(options) {
           loader: 'json-loader'
         },
 
+        { test: /\.scss$/, loaders: ['raw-loader', 'sass-loader'] },
+
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000&name=[name].[ext]' },
+
+        // Bootstrap 4
+        { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
+
         /*
          * to string and css loader support for *.css files
          * Returns file content as string
