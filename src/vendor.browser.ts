@@ -3,8 +3,6 @@
 // at the entry point of the async loaded file. Also see custom-typings.d.ts as you also need to
 // run `typings install x` where `x` is your module
 
-// TODO(gdi2290): switch to DLLs
-
 // Angular 2
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
