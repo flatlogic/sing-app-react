@@ -1,0 +1,111 @@
+/***********************************/
+/**             LOGIN             **/
+/***********************************/
+
+.login-page{
+  background-color: $gray-semi-lighter;
+}
+
+.login-page .page-footer {
+  margin-bottom: 25px;
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
+  @media (min-height: 600px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.widget-login-container{
+  padding-top: 10%;
+}
+
+.widget-login-logo{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: $font-weight-normal;
+  .fa-circle{
+    font-size: 13px;
+    margin: 0 20px;
+  }
+}
+
+.widget-login{
+  padding: 30px;
+
+  > header{
+    h1,h2,h3,h4,h5,h6{
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+.widget-login-info{
+  font-size: $font-size-mini;
+  color: #888;
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+
+.login-form{
+  .form-control{
+    font-size: $font-size-mini;
+    border: none;
+    background-color: $gray-lighter;
+    &:focus{
+      background-color: $gray-semi-lighter;
+    }
+  }
+}
+
+/***********************************/
+/**          ERROR PAGE           **/
+/***********************************/
+
+.error-page{
+  background-color: $gray-semi-lighter;
+}
+
+.error-container{
+  padding-top: 5%;
+  text-align: center;
+
+  > .btn{
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+.error-code{
+  margin: 20px;
+  font-size: 80px;
+  font-weight: $font-weight-normal;
+  color: $gray-dark;
+  @include media-breakpoint-up(md){
+    font-size: 180px;
+  }
+}
+
+.error-info{
+  font-size: 20px;
+  color: $gray-dark;
+}
+
+.error-help{
+  font-size: 14px;
+}
+
+.error-page .page-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
+}

@@ -1,0 +1,133 @@
+@mixin nav-justified {
+  width: 100%;
+
+  .nav-item {
+    float: none;
+  }
+
+  .nav-link {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  > .dropdown .dropdown-menu { //todo: remove child selector
+    top: auto;
+    left: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    .nav-item {
+      display: table-cell;
+      width: 1%;
+    }
+    .nav-link {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Move borders to anchors instead of bottom of list
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+@mixin nav-tabs-justified {
+  border-bottom: 0;
+
+  .nav-link {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+  }
+}
+
+@mixin navbar-vertical-align($element-height) {
+  margin-top: (($navbar-height - $element-height) / 2);
+  margin-bottom: (($navbar-height - $element-height) / 2);
+}
+
+@mixin progress-bar-variant($color) {
+  background-color: $color;
+
+  // Deprecated parent class requirement as of v3.2.0
+  .progress-striped & {
+    @include gradient-striped;
+  }
+}
+
+// Classes to be applied for high ppi displays
+// -------------------------
+@mixin retina(){
+  @media (min--moz-device-pixel-ratio: 1.3),
+           (-o-min-device-pixel-ratio: 2.6/2),
+      (-webkit-min-device-pixel-ratio: 1.3),
+              (min-device-pixel-ratio: 1.3),
+                  (min-resolution: 1.3dppx) {
+    @content;
+  }
+}
+
+// Common thumbnail properties
+// -------------------------
+@mixin thumb($parent, $size){
+  #{$parent} {
+    width: $size;
+
+    > .glyphicon,
+    > .fa{
+      line-height: $size;
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+
+// Generates single property classes
+// -------------------------
+@mixin property-variants($base, $property, $variants: ()){
+  @each $size, $value in $variants {
+    @if $size == 'md'{
+      #{$base} {
+        #{$property}: $value;
+      }
+      #{$base}-n {
+        #{$property}: $value;
+      }
+    }
+    #{$base}-#{$size} {
+      #{$property}: $value;
+    }
+    #{$base}-n-#{$size} {
+      #{$property}: -$value;
+    }
+  }
+}
+
+@mixin keyframes($name){
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+  border-color: $border;
+
+  & > .panel-heading {
+    color: $heading-text-color;
+    background-color: $heading-bg-color;
+    border-color: $heading-border;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: $border;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: $border;
+    }
+  }
+}

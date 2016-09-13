@@ -19,6 +19,7 @@ import { XLarge } from './x-large';
   templateUrl: './home.template.html'
 })
 export class Home {
+  date: Date = new Date();
   // Set our default values
   localState = { value: '' };
   // TypeScript public modifiers

@@ -1,0 +1,502 @@
+/***********************************/
+/**            UTILS              **/
+/***********************************/
+
+// Util Components
+// ----------------------------
+
+.nav-justified {
+  @include nav-justified;
+  @include nav-tabs-justified;
+}
+
+.transition-height{
+  @include transition(height .15s ease-in-out);
+}
+
+.btn-default {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.label-white {
+  @include label-variant($white);
+}
+
+.display-flex {
+  display: flex;
+}
+
+/**
+ * .circle & .rounded are pretty cool way to add a bit of beauty to raw data.
+ * should be used with bg-* and text-* classes for colors.
+ */
+.circle, .rounded, .circle-o{
+  display: inline-block;
+  width: #{$line-height-base}em;
+  height: #{$line-height-base}em;
+  line-height: #{$line-height-base}em;
+  text-align: center;
+}
+
+.circle, .circle-o{
+  @include border-radius(50%);
+}
+
+.rounded{
+  @include border-radius(5px);
+}
+
+.circle-lg, .rounded-lg{
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+}
+
+.circle-o{
+  border: #{$line-height-base/5}em solid transparent;
+
+  &.circle-o-danger{ border-color: $brand-danger };
+  &.circle-o-warning{ border-color: $brand-warning };
+  &.circle-o-success{ border-color: $brand-success };
+  &.circle-o-info{ border-color: $brand-info };
+  &.circle-o-primary{ border-color: $brand-primary };
+  &.circle-o-black{ border-color: $black };
+  &.circle-o-gray-darker{ border-color: $gray-darker };
+  &.circle-o-gray-dark{ border-color: $gray-dark };
+  &.circle-o-gray{ border-color: $gray };
+  &.circle-o-gray-light{ border-color: $gray-light };
+  &.circle-o-gray-lighter{ border-color: $gray-lighter };
+  &.circle-o-white{ border-color: $white };
+}
+
+@include thumb('.thumb-xlg', 100px);
+@include thumb('.thumb-lg', 60px);
+@include thumb('.thumb', 48px);
+@include thumb('.thumb-sm', 34px);
+@include thumb('.thumb-xs', 28px);
+
+.thumb-xs,
+.thumb-sm,
+.thumb-lg,
+.thumb-xlg,
+.thumb{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  img{
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .status{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border: 0.15em solid $white;
+    @include border-radius(50%);
+
+    &.status-bottom{
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.text-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input-dark{
+  background-color: rgba(0,0,0,.4);
+  border: 0;
+  color: $gray;
+  &:focus{
+    background-color: $gray-lighter
+  }
+}
+
+.input-group-dark{
+  .input-group-addon,
+  .form-control{
+    background-color: rgba(0,0,0,.4);
+    border: 0;
+    color: $gray;
+    @include transition(background-color .15s ease-in-out);
+  }
+
+  .form-control:focus,
+  .form-control:focus + .input-group-addon,
+  &.focus .input-group-addon{
+    background-color: $gray-lighter
+  }
+}
+
+.input-group-transparent{
+  .form-control:first-child,
+  .input-group-addon:first-child,
+  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn-group > .btn,
+  .input-group-btn:first-child > .dropdown-toggle,
+  .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-btn:last-child > .btn-group:not(:last-child) > .btn{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+
+  .form-control:last-child,
+  .input-group-addon:last-child,
+  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn-group > .btn,
+  .input-group-btn:last-child > .dropdown-toggle,
+  .input-group-btn:first-child > .btn:not(:first-child),
+  .input-group-btn:first-child > .btn-group:not(:first-child) > .btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .input-group-addon{
+    background-color: $input-bg;
+    @include transition(border-color ease-in-out .15s);
+  }
+
+  .form-control:focus + .input-group-addon,
+  &.focus .input-group-addon{
+    border-color: $input-border-focus;
+  }
+}
+
+.input-no-border{
+  border: none;
+  @include transition(background-color ease-in-out .15s);
+
+  &:focus{
+    background-color: #f1f1f1;
+  }
+}
+
+.input-group-no-border{
+  @extend .input-group-transparent;
+
+  .form-control,
+  .input-group-addon{
+    @extend .input-no-border;
+  }
+
+  .form-control:focus,
+  .form-control:focus + .input-group-addon,
+  &.focus .input-group-addon{
+    @extend .input-no-border:focus;
+  }
+}
+
+.input-group-rounded{
+  .form-control:first-child,
+  .input-group-addon:first-child,
+  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn-group > .btn,
+  .input-group-btn:first-child > .dropdown-toggle,
+  .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-btn:last-child > .btn-group:not(:last-child) > .btn{
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .form-control:last-child,
+  .input-group-addon:last-child,
+  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn-group > .btn,
+  .input-group-btn:last-child > .dropdown-toggle,
+  .input-group-btn:first-child > .btn:not(:first-child),
+  .input-group-btn:first-child > .btn-group:not(:first-child) > .btn{
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.chart-overflow-bottom{
+  margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+}
+
+.globe{
+  font-size: 64px;
+  > i {
+    position: relative;
+    > i {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.thin-scroll{
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  &::-webkit-scrollbar:hover {
+    background-color: #e9e9e9;
+    border: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: rgba(0, 0, 0, .2);
+    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, .1));
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $gray-light;
+  }
+}
+
+@include keyframes('bg-attention'){
+  0%{
+    background-color: lighten($brand-warning, 43%);
+  }
+  5%{
+    background-color: lighten($brand-warning, 33%);
+  }
+  0%{
+    background-color: rgba(0,0,0,0);
+  }
+};
+
+.bg-attention{
+  animation: bg-attention 10s;
+}
+
+/* .h* + .fw-bold */
+$font-sizes: 54px, $font-size-h1, $font-size-h2, $font-size-h3, $font-size-h4, $font-size-h5, $font-size-h6;
+$i: 0;
+@each $font-size in $font-sizes{
+
+  .value#{$i}{
+    margin: 0;
+    font-size: $font-size;
+    font-weight: $font-weight-semi-bold;
+  }
+  $i: $i + 1 !global;
+}
+
+.help{
+  font-size: $font-size-smaller;
+  color: $text-muted;
+}
+
+// Style Classes
+// ----------------------------
+
+
+
+.no-margin {
+  margin: 0;
+}
+
+$margin-vertical-variants: (xlg: 40px, lg: $line-height-computed*3/2, md: $line-height-computed, sm: $line-height-computed/2, xs: $line-height-computed/4, 0: 0);
+$margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
+
+@include property-variants('.mt', 'margin-top', $margin-vertical-variants);
+@include property-variants('.mb', 'margin-bottom', $margin-vertical-variants);
+@include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
+@include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
+
+.no-padding{
+  padding: 0;
+}
+
+$display-variants: (inline: inline, inline-block: inline-block, block: block);
+
+@include property-variants('.display', 'display', $display-variants);
+
+$width-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px);
+
+@include property-variants('.width', 'width', $width-variants);
+
+$height-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px, 250: 250px);
+
+@include property-variants('.height', 'height', $height-variants);
+@include property-variants('.max-height', 'max-height', $height-variants);
+
+$opacity-variants: (10: .1, 20: .2, 30: .3, 40: .4, 50: .5, 60: .6, 70: .7, 80: .8, 90: .9);
+
+@include property-variants('.opacity', 'opacity', $opacity-variants);
+
+$z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
+
+@include property-variants('.z-index', 'z-index', $z-index-variants);
+
+
+.no-border{
+  border: none;
+}
+
+.bt{ border-top: 1px solid $gray-semi-lighter }
+.br{ border-right: 1px solid $gray-semi-lighter }
+.bb{ border-bottom: 1px solid $gray-semi-lighter }
+.bl{ border-left: 1px solid $gray-semi-lighter }
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.fw-semi-bold{
+  font-weight: $font-weight-semi-bold;
+}
+
+.fw-normal{
+  font-weight: $font-weight-normal;
+}
+
+.fw-bold{
+  font-weight: $font-weight-bold;
+}
+
+.fw-thin{
+  font-weight: $font-weight-thin;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-135 {
+  transform: rotate(135deg);
+}
+
+.rotate-225 {
+  transform: rotate(225deg);
+}
+
+.rotate-315 {
+  transform: rotate(315deg);
+}
+
+/* small + .text-muted*/
+.deemphasize{
+  font-size: $font-size-smaller;
+  color: $text-muted;
+}
+
+// Text & Background Variations
+// ----------------------------
+
+//copy bg classes after bootstrap so it's possible to overload other bootstrap classes
+
+@include bg-variant('.bg-primary', $brand-primary);
+@include bg-variant('.bg-success', $brand-success);
+@include bg-variant('.bg-info', $brand-info);
+@include bg-variant('.bg-warning', $brand-warning);
+@include bg-variant('.bg-danger', $brand-danger);
+
+@include bg-variant('.bg-primary-light', $brand-primary-light);
+@include bg-variant('.bg-success-light', $brand-success-light);
+@include bg-variant('.bg-info-light', $brand-info-light);
+@include bg-variant('.bg-warning-light', $brand-warning-light);
+@include bg-variant('.bg-danger-light', $brand-danger-light);
+
+@include bg-variant('.bg-body', $body-bg);
+@include bg-variant('.bg-body-light', $body-bg-light);
+@include bg-variant('.bg-gray', $gray);
+@include bg-variant('.bg-gray-transparent', rgba($gray, .6));
+@include bg-variant('.bg-gray-dark', $gray-dark);
+@include bg-variant('.bg-black', $black);
+@include bg-variant('.bg-gray-light', $gray-light);
+@include bg-variant('.bg-gray-lighter', $gray-lighter);
+@include bg-variant('.bg-transparent', rgba(0,0,0,0));
+@include bg-variant('.bg-white', $white);
+
+@include bg-variant('.bg-sidebar', $sidebar-bg-color);
+
+.bg-body, .bg-body-light, .bg-gray, .bg-gray-transparent, .bg-transparent,
+.bg-primary, .bg-success, .bg-warning, .bg-danger, .bg-info{
+  @include transition(background-color .15s ease-in-out);
+}
+
+//override bs .text-* classes so they use $brand-* variables
+
+@include text-emphasis-variant('.text-primary', $brand-primary);
+
+@include text-emphasis-variant('.text-success', $brand-success);
+
+@include text-emphasis-variant('.text-info', $brand-info);
+
+@include text-emphasis-variant('.text-warning', $brand-warning);
+
+@include text-emphasis-variant('.text-danger', $brand-danger);
+
+@include text-emphasis-variant('.text-link', $link-color);
+
+@include text-emphasis-variant('.text-white', $white);
+@include text-emphasis-variant('.text-gray', $gray);
+@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+@include text-emphasis-variant('.text-gray-light', $gray-light);
+@include text-emphasis-variant('.text-semi-muted', $gray-semi-light);
+@include text-emphasis-variant('.text-gray-darker', $gray-darker);
+@include text-emphasis-variant('.text-gray-lighter', $gray-lighter);
+@include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
+
+
+.text-light{
+  opacity: .8;
+}
+
+.fs-mini{
+  font-size: $font-size-mini;
+}
+
+.fs-smaller{
+  font-size: $font-size-smaller;
+}
+
+.fs-sm{
+  font-size: $font-size-sm;
+}
+
+.fs-larger{
+  font-size: $font-size-larger;
+}
+
+.btlr{
+  border-top-left-radius: $border-radius;
+}
+
+.btrr{
+  border-top-right-radius: $border-radius;
+}
+
+.bblr{
+  border-bottom-left-radius: $border-radius;
+}
+
+.bbrr{
+  border-bottom-right-radius: $border-radius;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+// Animations for angular views
+// ----------------------------
+
+.fade-up.ng-enter {
+  animation: fadeInUp 0.5s;
+}
+
+.fade-up.ng-leave {
+  animation: fadeOutUp 0.5s;
+}

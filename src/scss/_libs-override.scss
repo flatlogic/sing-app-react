@@ -1,0 +1,59 @@
+/*
+ * Font Awesome 2x spin
+ */
+
+.#{$fa-css-prefix}-spin-fast {
+  -webkit-animation: fa-spin 1s infinite linear;
+  -moz-animation: fa-spin 1s infinite linear;
+  -o-animation: fa-spin 1s infinite linear;
+  animation: fa-spin 1s infinite linear;
+}
+
+
+.fa-lg {
+  vertical-align: -15%;
+}
+
+/**
+ * Animate.css
+ */
+
+.animated{
+  animation-duration: .5s;
+}
+
+/**
+ * Pace
+ */
+.pace .pace-progress{
+  background: $brand-primary;
+  position: absolute;
+  top: $navbar-height;
+}
+
+.pace .pace-activity{
+  position: absolute;
+  top: 65px;
+  border-width: 1px;
+  left: 15px;
+  right: auto;
+  width: 18px;
+  height: 18px;
+  border-top-color: $brand-primary;
+  border-left-color: $brand-primary;
+}
+
+
+
+.pace .pace-progress-inner{
+  right: -10px;
+  width: 10px;
+}
+
+/***********************/
+/*glyphicons-halflings */
+/***********************/
+
+.glyphicon-comment:before {
+  content:"\E111";
+}
