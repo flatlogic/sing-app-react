@@ -57,6 +57,7 @@
     "bootstrap": "4.0.0-alpha.4",
     "core-js": "2.4.1",
     "font-awesome": "4.6.3",
+    "glyphicons-halflings": "^1.9.0",
     "http-server": "0.9.0",
     "ie-shim": "0.1.0",
     "ng2-bootstrap": "1.1.2",

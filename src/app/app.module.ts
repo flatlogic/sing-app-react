@@ -16,8 +16,8 @@ import { App } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
 import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
+import { Layout } from './layout/layout.component';
+import { ErrorComponent } from './error/error.component';
 import { XLarge } from './home/x-large';
 
 // Application wide providers
@@ -39,9 +39,9 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    About,
+    Layout,
     Home,
-    NoContent,
+    ErrorComponent,
     XLarge
   ],
   imports: [ // import Angular's modules

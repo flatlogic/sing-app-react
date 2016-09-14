@@ -1,0 +1,51 @@
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../scss/variables";
+
+/***********************************/
+/**          ERROR PAGE           **/
+/***********************************/
+
+.error-page{
+  background-color: $gray-semi-lighter;
+}
+
+.error-container{
+  padding-top: 5%;
+  text-align: center;
+
+  > .btn{
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+.error-code{
+  margin: 20px;
+  font-size: 80px;
+  font-weight: $font-weight-normal;
+  color: $gray-dark;
+  @include media-breakpoint-up(md){
+    font-size: 180px;
+  }
+}
+
+.error-info{
+  font-size: 20px;
+  color: $gray-dark;
+}
+
+.error-help{
+  font-size: 14px;
+}
+
+.error-page .page-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
+}

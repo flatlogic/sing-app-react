@@ -24,14 +24,8 @@ import { AppState } from './app.service';
       </span>
       |
       <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./detail'] ">
-          Detail
+        <a [routerLink]=" ['./login'] ">
+          Login
         </a>
       </span>
       |
@@ -49,7 +43,7 @@ import { AppState } from './app.service';
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
+      <span>{{name}} <a [href]="url">@Flatlogic</a></span>
       <div>
         <a [href]="url">
           <img [src]="angularclassLogo" width="25%">
@@ -60,8 +54,8 @@ import { AppState } from './app.service';
 })
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  name = 'Sing App 3.2.0 with Angular 2.0 RC7 support by';
+  url = 'https://twitter.com/flatlogic';
 
   constructor(
     public appState: AppState) {
