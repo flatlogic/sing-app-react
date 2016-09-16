@@ -15,42 +15,7 @@ import { AppState } from './app.service';
   styleUrls: [
     './scss/application.scss'
   ],
-  template: `
-    <nav>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./login'] ">
-          Login
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-    </nav>
-
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-    <footer>
-      <span>{{name}} <a [href]="url">@Flatlogic</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
-    </footer>
-  `
+  template: `<router-outlet></router-outlet>`
 })
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';

@@ -1,2 +1,11 @@
-<h2>from within layout</h2>
-<router-outlet></router-outlet>
+<nav sidebar id="sidebar" role="navigation" class="sidebar"></nav>
+<nav navbar (toggleSidebarEvent)="toggleSidebarListener($event)"
+     (toggleChatEvent)="toggleChatListener()" class="page-controls navbar navbar-dashboard"></nav>
+<aside chat-sidebar class="chat-sidebar"></aside>
+
+<div class="content-wrap">
+  <main id="content" class="content view-animate fade-up" role="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
