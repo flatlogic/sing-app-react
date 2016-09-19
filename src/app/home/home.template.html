@@ -1,46 +1,24 @@
-<div class="card-container">
-  <h1 x-large class="sample-content">Your Content Here</h1>
+<h1 class="page-title">Dashboard <small><small>The Lucky One</small></small></h1>
 
-  <div>
-    For material design components use the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2"><b>material2</b></a> branch
+<div class="row">
+  <div class="col-md-6">
+    <section widget class="widget">
+      <header>
+        <h4>
+          Example <span class="fw-semi-bold">Widget</span>
+        </h4>
+        <div class="widget-controls">
+          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <img class="pull-left mr-sm" src="assets/img/a2.png" alt="Angular 2.0" width="100">
+        <p class="lead">You are looking at a completely new version of Sing App built
+          with brand new <strong>Angular <em>2.0</em></strong></p>
+        <p class="fs-mini">Made by <a href="http://flatlogic.com" target="_blank">Flatlogic</a>.</p>
+      </div>
+    </section>
   </div>
-
-  <hr>
-
-  <div class="some-class">
-    For hot module reloading run
-    <pre>npm run start:hmr</pre>
-  </div>
-
-  <hr>
-
-  <alert type="info">Hello from ng2-bootstrap  {{ date.toDateString() }}</alert>
-  <div style="display:inline-block; min-height:290px;">
-    <datepicker [(ngModel)]="date" showWeeks="true"></datepicker>
-  </div>
-
-  <div>
-    <h4>Local State</h4>
-
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
-        autofocus>
-
-      <button md-raised-button color="primary">Submit Value</button>
-    </form>
-    <!--
-        <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
-        Rather than wiring up two-way data-binding ourselves with [value] and (input)
-        we can use Angular's [(ngModel)] syntax
-        <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
-      -->
-
-    <pre>this.localState = {{ localState | json }}</pre>
-
-  </div>
-
 </div>

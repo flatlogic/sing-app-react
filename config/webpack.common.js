@@ -266,6 +266,19 @@ module.exports = function(options) {
       }),
 
       /*
+       * Plugin: ProvidePlugin
+       * Description: Automatically loaded modules. Module (value) is loaded when the identifier (key)
+       * is used as free variable in a module. The identifier is filled with the exports of the loaded module.
+       *
+       * See: https://webpack.github.io/docs/list-of-plugins.html#provideplugin
+       */
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        'Tether': 'tether',
+        'window.Tether': 'tether'
+      }),
+
+      /*
        * Plugin: HtmlHeadConfigPlugin
        * Description: Generate html tags based on javascript maps.
        *

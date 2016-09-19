@@ -1,0 +1,86 @@
+<div class="js-sidebar-content">
+  <header class="logo hidden-sm-down">
+    <a href="index.html">{{config.name}}</a>
+  </header>
+  <div class="sidebar-status hidden-md-up">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-xs-right">
+        <img class="img-circle" src="assets/img/people/a5.jpg" alt="...">
+              </span>
+      <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
+           should be used with bg-* and text-* classes for colors -->
+              <span class="circle bg-warning fw-bold text-gray-dark">
+                  13
+              </span>
+      &nbsp;
+      Philip <strong>Smith</strong>
+      <b class="caret"></b>
+    </a>
+    <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
+  </div>
+  <!-- main notification links are placed inside of .sidebar-nav -->
+  <ul class="sidebar-nav">
+    <li>
+      <a [routerLink]=" ['dashboard'] ">
+      <span class="icon">
+          <i class="fa fa-child"></i>
+      </span>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a [routerLink]=" ['another-page'] ">
+      <span class="icon">
+          <i class="fa fa-tree"></i>
+      </span>
+        Another Page
+      <span class="tag tag-danger">
+          9
+      </span>
+      </a>
+    </li>
+  </ul>
+  <h5 class="sidebar-nav-title">Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a></h5>
+  <!-- some styled links in sidebar. ready to use as links to email folders, projects, groups, etc -->
+  <ul class="sidebar-labels">
+    <li>
+      <a href="#">
+        <!-- yep, .circle again -->
+        <i class="fa fa-circle text-warning mr-xs"></i>
+        <span class="label-name">My Recent</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-circle text-gray mr-xs"></i>
+        <span class="label-name">Starred</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-circle text-danger mr-xs"></i>
+        <span class="label-name">Background</span>
+      </a>
+    </li>
+  </ul>
+  <h5 class="sidebar-nav-title">Projects</h5>
+  <!-- A place for sidebar notifications & alerts -->
+  <div class="sidebar-alerts">
+    <div class="alert fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+      <span class="text-white fw-semi-bold">Sales Report</span> <br>
+      <div class="bg-gray-transparent progress-bar">
+        <progress class="progress progress-xs progress-bar-gray-light mt-xs mb-0" value="100" max="100" style="width: 16%"></progress>
+      </div>
+      <small>Calculating x-axis bias... 65%</small>
+    </div>
+    <div class="alert fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+      <span class="text-white fw-semi-bold">Personal Responsibility</span> <br>
+      <div class="bg-gray-transparent progress-bar">
+        <progress class="progress progress-xs progress-danger mt-xs mb-0" value="100" max="100" style="width: 23%"></progress>
+      </div>
+      <small>Provide required notes</small>
+    </div>
+  </div>
+</div>
