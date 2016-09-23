@@ -108,13 +108,6 @@
     "webpack-md5-hash": "0.0.5",
     "webpack-merge": "0.14.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
-  },
   "engines": {
     "node": ">= 4.2.1",
     "npm": ">= 3"

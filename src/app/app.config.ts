@@ -98,10 +98,10 @@ export class AppConfig {
 
   changeColor(color, ratio, darker): string {
     let pad = function (num, totalChars): number {
-      let pad = '0';
+      let padVal = '0';
       num = num + '';
       while (num.length < totalChars) {
-        num = pad + num;
+        num = padVal + num;
       }
       return num;
     };

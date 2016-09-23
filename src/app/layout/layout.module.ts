@@ -9,7 +9,7 @@ import { HomeModule } from '../home/home.module';
 
 import { Layout } from './layout.component';
 import { Sidebar } from './sidebar/sidebar.component';
-import { Navbar } from "./navbar/navbar.component";
+import { Navbar } from './navbar/navbar.component';
 
 @NgModule({
   imports: [CommonModule, HomeModule, TooltipModule, ROUTES],
