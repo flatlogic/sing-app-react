@@ -36,7 +36,7 @@ export class Notifications implements OnInit {
       jQuery('#sidebar').css('z-index', '');
     });
 
-    jQuery(document).on('change', '[data-toggle="buttons"] > tag', ($event) => {
+    jQuery(document).on('change', '[data-toggle="buttons"] > label', ($event) => {
       let $input = jQuery($event.target).find('input');
       $input.trigger('change');
     });
