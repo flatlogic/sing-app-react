@@ -1,0 +1,21 @@
+<div class="chat-sidebar-chat chat-sidebar-panel" [ngClass]="{'open': open}">
+  <h6 class="title">
+    <a (click)="closeChatArea()">
+      <i class="fa fa-angle-left mr-xs"></i>
+      {{conversation.name}}
+    </a>
+  </h6>
+  <ul class="message-list" >
+    <li *ngFor="let message of conversation.messages | SearchPipe : searchMessage" class="message" [ngClass]="{'from-me': message.fromMe}">
+      <span class="thumb-sm">
+          <img class="img-circle" src="{{message.fromMe ? 'assets/img/avatar.png' : conversation.image}}" alt="...">
+      </span>
+      <div class="message-body">{{message.text}}</div>
+    </li>
+  </ul>
+</div>
+<footer class="chat-sidebar-footer form-group" [ngClass]="{'open': open}">
+  <input class="form-control input-dark fs-mini"
+         [(ngModel)]="newMessage" (keyup.enter)="addMessage()"
+         type="text" placeholder="Type your message">
+</footer>
