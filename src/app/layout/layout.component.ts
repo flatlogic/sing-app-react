@@ -59,6 +59,9 @@ export class Layout {
 
   toggleNavigationState(): void {
     this.config.state['nav-static'] = !this.config.state['nav-static'];
+    if (!this.config.state['nav-static']) {
+      this.collapseNavigation();
+    }
   }
 
   expandNavigation(): void {

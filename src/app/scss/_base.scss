@@ -541,7 +541,7 @@
         @include transition(opacity $sidebar-transition-time ease-in-out);
       }
 
-      .nav-collapsed &{
+      .nav-collapsed & {
         .circle,
         .circle-o,
         .fa-circle{
@@ -553,17 +553,17 @@
         }
       }
 
-      .nav-static &{
+      .nav-static & {
         @include media-breakpoint-up(lg){
           .circle,
           .circle-o,
           .fa-circle{
-            margin-left: 0;
             @include transition(none);
+            margin-left: 0;
           }
           .label-name {
-            opacity: 1;
             @include transition(none);
+            opacity: 1;
           }
         }
       }
