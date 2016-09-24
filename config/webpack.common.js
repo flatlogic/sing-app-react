@@ -276,7 +276,6 @@ module.exports = function(options) {
         'window.jQuery': 'jquery',
         "Tether": 'tether',
         "window.Tether": "tether",
-        Util: 'bootstrap/js/dist/util.js',
         Hammer: 'hammerjs/hammer'
       }),
 

@@ -129,20 +129,19 @@ export class Layout {
     let d = this;
 
     swipe.on('swipeleft', () => {
-      // this method only makes sense for small screens + ipad
-      if (d.configFn.isScreen('lg')) { return; }
+      setTimeout(() => {
+        if (d.configFn.isScreen('md')) { return; }
 
-      if (!jQuery('layout').is('.nav-collapsed')) {
-        d.collapseNavigation();
-      }
+        if (!jQuery('layout').is('.nav-collapsed')) {
+          d.collapseNavigation();
+        }
+      });
     });
 
     swipe.on('swiperight', () => {
-      // this method only makes sense for small screens + ipad
-      if (d.configFn.isScreen('lg')) { return; }
+      if (d.configFn.isScreen('md')) { return; }
 
-      // check if navigation is collapsing. exiting if true
-      if (jQuery('layout').is('.nav-busy')) { return; }
+      if (jQuery('layout').is('.chat-sidebar-opened')) { return; }
 
       if (jQuery('layout').is('.nav-collapsed')) {
         d.expandNavigation();

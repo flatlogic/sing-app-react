@@ -1,7 +1,6 @@
 import {Component, OnInit, ElementRef} from '@angular/core';
 import {ChatService} from './chat.service';
 declare var jQuery: any;
-declare var Util: any;
 declare var Hammer: any;
 
 @Component({
@@ -46,7 +45,6 @@ export class ChatSidebar implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(Util);
     let $chatContainer = jQuery('layout').addClass('chat-sidebar-container');
     let chatSidebarSwipe = new Hammer(document.getElementById('content-wrap'));
 
@@ -57,16 +55,11 @@ export class ChatSidebar implements OnInit {
     });
 
     chatSidebarSwipe.on('swiperight', () => {
-      if ($chatContainer.is('.nav-collapsed.chat-sidebar-opened')) {
-        $chatContainer.removeClass('chat-sidebar-opened')
-        // as there is no way to cancel swipeLeft handlers attached to
-        // .content making this hack with temporary class which will be
-        // used by snNavigation directive to check whether it is permitted to open navigation
-        // on swipeRight
-          .addClass('nav-busy').one(Util.TRANSITION_END, () => {
-          jQuery('layout').removeClass('nav-busy');
-        }).emulateTransitionEnd(300);
-      }
+      setTimeout(() => {
+        if ($chatContainer.is('.chat-sidebar-opened')) {
+          $chatContainer.removeClass('chat-sidebar-opened');
+        }
+      });
     });
 
     jQuery(window).on('sn:resize', this.initChatSidebarScroll.bind(this));
