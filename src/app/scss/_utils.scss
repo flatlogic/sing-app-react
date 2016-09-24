@@ -26,6 +26,10 @@
   display: flex;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 /**
  * .circle & .rounded are pretty cool way to add a bit of beauty to raw data.
  * should be used with bg-* and text-* classes for colors.

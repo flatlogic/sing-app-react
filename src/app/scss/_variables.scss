@@ -77,7 +77,7 @@ $font-weight-base: $font-weight-thin !default;
 $font-size-smaller: 85% !default;
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.428571429 !default; // 20/14
+$line-height-base:        1.5 !default;
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
@@ -149,6 +149,9 @@ $headings-font-weight: 300 !default;
 
 //== Forms
 //
+
+$input-line-height:              1.5;
+
 $input-border-focus:             #4D90FE !default; //webkit focus color
 $legend-color:                   lighten($text-color, 15%) !default;
 
@@ -162,6 +165,10 @@ $table-border-color:            $gray-semi-lighter !default;
 //== Buttons
 //
 
+
+$btn-padding-y: .375rem;
+$btn-padding-x-sm:  .75rem;
+$btn-line-height:                1.5;
 $btn-default-bg: $addition-bg !default;
 $btn-secondary-bg: $addition-bg !default;
 
@@ -274,6 +281,10 @@ $panel-default-heading-bg:    $gray-semi-lighter !default;
 $popover-bg:                          #ebeff1 !default;
 $popover-arrow-outer-color:           $popover-bg !default;
 $popover-arrow-color:                 $popover-bg !default;
+
+// Tags
+
+$tag-font-weight:           600 ;
 
 //== Thumbnails
 //

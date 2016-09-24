@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'error',
   styleUrls: [ './error.style.scss' ],
-  templateUrl: './error.template.html'
+  templateUrl: './error.template.html',
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'error-page app'
+  },
 })
 export class ErrorComponent {
-  constructor() {
+  router: Router;
 
+  constructor(router: Router) {
+    this.router = router;
+  }
+
+  searchResult(): void {
+    this.router.navigate(['/app', 'dashboard']);
   }
 }

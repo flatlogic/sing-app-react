@@ -80,7 +80,7 @@
   }
 }
 
-.page-controls{
+.page-controls {
   position: absolute;
   z-index: 1;
 
@@ -139,6 +139,21 @@
   .navbar-nav .fa-times{
     font-size: 20px;
     vertical-align: -2px;
+  }
+
+  .navbar-form {
+
+    .input-group-addon {
+      line-height: 1.5;
+
+      .fa {
+        vertical-align: -1px;
+      }
+    }
+
+    .form-control {
+      line-height: 1.7;
+    }
   }
 }
 
@@ -218,7 +233,7 @@
       transform: rotate(90deg);
     }
 
-    .label{
+    .tag{
       float: right;
       line-height: 8px;
       margin-top: 7px;
@@ -265,9 +280,14 @@
         color: rgba($sidebar-color, .7);
       }
 
+      .fa {
+        position: relative;
+        top: 1px;
+      }
+
       .glyphicon{
         left: -1px;
-        top: 5px;
+        top: 6px;
       }
 
       .glyphicon-th{
@@ -283,8 +303,7 @@
       }
 
       .fa-envelope{
-        position: relative;
-        top: -1px;
+        top: 0;
       }
 
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -294,6 +313,10 @@
 
         .glyphicon-map-marker {
           top: 7px;
+        }
+
+        .fa {
+          top: 0;
         }
       }
 
@@ -1044,6 +1067,16 @@
 
   .widget-table-overflow{
     margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+
+    th:first-child,
+    td:first-child {
+      padding-left: $widget-padding-horizontal;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: $widget-padding-horizontal;
+    }
   }
 }
 

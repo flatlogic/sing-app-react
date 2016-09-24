@@ -2,6 +2,21 @@
 // Typography
 // --------------------------------------------------
 
+.blockquote-sm{
+  padding: 3px 15px;
+  font-size: $font-size-base;
+}
+
+blockquote{
+  font-size: $font-size-lg;
+
+  footer {
+    font-size: 80%;
+    &:after {
+      content: '\00A0 \2014';
+    }
+  }
+}
 // Headings
 // -------------------------
 
@@ -14,6 +29,126 @@ h1, h2, h3, h4, h5, h6,
     color: $text-muted;
   }
 }
+
+//
+// Panels
+// --------------------------------------------------
+
+// Base class
+.panel {
+  margin-bottom: $line-height-computed;
+  background-color: $panel-bg;
+  border: none;
+}
+
+// Panel contents
+.panel-body {
+  padding: $panel-body-padding;
+  @include clearfix;
+}
+
+// Optional heading
+.panel-heading {
+  padding: 13px 15px;
+  border-bottom: 1px solid transparent;
+  @include border-top-radius(($border-radius));
+
+  > .dropdown .dropdown-toggle {
+    color: inherit;
+  }
+}
+
+
+accordion-group .panel-title a.accordion-toggle i {
+  transform: rotate(180deg);
+  transition: transform 0.35s ease;
+}
+
+accordion-group.panel-open .panel-title a.accordion-toggle i {
+  transform: rotate(0deg);
+  transition: transform 0.35s ease;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: $font-size-base;
+  color: inherit;
+
+  > a,
+  > small,
+  > .small,
+  > small > a,
+  > .small > a {
+    color: inherit;
+    display: block;
+  }
+
+  > a:focus {
+    outline: none;
+  }
+}
+
+small, .small {
+  font-size: 85%;
+}
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-group {
+  margin-bottom: $line-height-computed;
+
+  // Tighten up margin so it's only between panels
+  .panel {
+    margin-bottom: 0;
+    border-radius: $border-radius;
+  }
+
+  accordion-group.panel-open .panel-title a {
+    &,
+    & i {
+      opacity: 1;
+    }
+  }
+
+  accordion-group .panel-title a {
+    &,
+    & i {
+      opacity: 0.6;
+    }
+
+    &:hover,
+    &:hover i {
+      opacity: 1;
+    }
+  }
+
+  accordion-group + accordion-group {
+    .panel {
+      margin-top: 5px;
+    }
+  }
+
+  .panel-heading {
+    border-bottom: 0;
+
+    + .panel-collapse > .panel-body,
+    + .panel-collapse > .list-group {
+      border-top: 1px solid $list-group-border-color;
+    }
+
+  }
+}
+
+
+// Contextual variations
+.panel-default {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+
 //
 // Forms
 // --------------------------------------------------
@@ -28,8 +163,76 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+.form-control-lg {
+  padding: $padding-large-vertical $padding-large-horizontal;
+}
+
+.form-control-sm {
+  padding: $padding-small-vertical $padding-small-horizontal;
+}
+
+.input-group-btn>.btn {
+  padding-top: $padding-base-vertical;
+  padding-bottom: $padding-base-vertical;
+}
+
+.btn-group.bootstrap-select > .btn {
+  padding-top: $padding-base-vertical;
+  padding-bottom: $padding-base-vertical;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+ padding: $btn-padding-y-lg $btn-padding-x-lg !important;
+}
+
+label {
+  font-weight: $font-weight-normal;
+}
+
+.help-block{
+  margin-top: 5px;
+  font-size: $font-size-smaller;
+  color: $text-muted;
+  display: block;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $line-height-computed;
+  line-height: inherit;
+  color: $legend-color;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+  font-weight: $font-weight-normal;
+}
+
 .form-group {
   margin-bottom: $line-height-computed;
+
+  .input-group-addon{
+    line-height: inherit;
+  }
+}
+
+.input-group-addon{
+  &.bg-primary{
+    border-color: darken($brand-primary, 10%);
+  }
+  &.bg-success{
+    border-color: darken($state-success-bg, 10%);
+  }
+  &.bg-info{
+    border-color: darken($state-info-bg, 10%);
+  }
+  &.bg-warning{
+    border-color: darken($state-warning-bg, 10%);
+  }
+  &.bg-danger{
+    border-color: darken($state-danger-bg, 10%);
+  }
 }
 
 .form-horizontal.form-label-left {
@@ -38,6 +241,111 @@ h1, h2, h3, h4, h5, h6,
       text-align: left;
     }
   }
+}
+
+.form-inline .input-group-addon {
+  display: table-cell;
+}
+
+// Feedback states
+.has-success {
+  @include form-control-validation($brand-success);
+}
+.has-warning {
+  @include form-control-validation($brand-warning);
+}
+.has-error {
+  @include form-control-validation($brand-danger);
+}
+
+//turn off shadow
+.has-success,
+.has-warning,
+.has-error {
+  .form-control {
+    &:focus {
+      @include box-shadow(none);
+    }
+  }
+}
+
+.input-rounded{
+  border-radius: $border-radius;
+}
+
+
+// Checkboxes and radios
+//
+
+.radio,
+.checkbox {
+  padding-left: 20px;
+
+  label {
+    margin-bottom: 5px;
+    min-height: 0;
+  }
+}
+
+//
+// Tables
+// --------------------------------------------------
+
+.table td > .abc-checkbox,
+.table th > .abc-checkbox{
+  position: relative;
+  top: -8px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: -16px;
+}
+
+.table > thead > tr > th {
+  border-top: none;
+}
+
+.table > thead > tr > th{
+  font-weight: $font-weight-semi-bold;
+  text-transform: uppercase;
+  border-bottom-width: 1px;
+}
+
+.table-bordered th{
+  background-color: $gray-lighter;
+}
+
+.table-lg {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.table-sm {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 6px;
+      }
+    }
+  }
+}
+
+.table-hover > tbody > tr:hover .progress{
+  background-color: $white;
+}
+
+.table th, .table td {
+  padding: 0.55rem;
 }
 
 //
@@ -113,13 +421,6 @@ h1, h2, h3, h4, h5, h6,
 
   .input-group-addon{
     color: $navbar-dashboard-link-color;
-  }
-}
-
-.input-group-addon{
-
-  i {
-    vertical-align: -40%;
   }
 }
 
@@ -265,14 +566,85 @@ h1, h2, h3, h4, h5, h6,
 }
 
 //
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  color: $gray-light;
+  margin-bottom: $spacer-y*1.5;
+
+  > .active {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  .content &{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.breadcrumb>li+li::before {
+  content: ">";
+}
+//
 // Buttons
 // --------------------------------------------------
+
+.btn {
+  .glyphicon {
+    top: 3px;
+  }
+}
 
 .btn, .btn-inverse, .btn-gray {
   &:not(.active) {
     box-shadow: none !important;
   }
 }
+
+.btn-sm {
+  padding-top: .35rem;
+  padding-bottom: .35rem;
+}
+
+.btn-rounded{
+  @include border-radius(6px);
+}
+
+.btn-gray{
+  @include button-variant($text-color, $gray-semi-lighter, darken($gray-semi-lighter, 5%));
+}
+
+.btn-outline{
+  @include button-variant($white, transparent, $white);
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, .1);
+  }
+}
+
+.btn-link:focus,
+.btn-link:active:focus,
+.btn-link.active:focus{
+  outline: 0;
+}
+
+.input-group > .input-group-btn:last-child > .btn[data-toggle="dropdown"] {
+  @include border-right-radius($btn-border-radius);
+}
+
+
+.btn-group > .btn[data-toggle="dropdown"][data-original-title][title] {
+  @include border-right-radius($btn-border-radius);
+
+  &:focus,
+  &:active{
+    outline: none !important;
+  }
+}
+
 
 //
 // Labels
@@ -298,8 +670,21 @@ h1, h2, h3, h4, h5, h6,
 }
 
 //
+// Button groups
+// --------------------------------------------------
+
+.btn-toolbar{
+  margin-top: $line-height-computed/2;
+  margin-bottom: $line-height-computed/2;
+}
+
+//
 // Progress bars
 // --------------------------------------------------
+
+.js-progress-animate {
+  transition: width 0.6s ease;
+}
 
 .progress{
   @include box-shadow(none);
@@ -386,6 +771,111 @@ h1, h2, h3, h4, h5, h6,
 .tooltip-inner{
   @include border-radius(3px);
 }
+
+//
+// Alerts
+// --------------------------------------------------
+
+
+.alert-sm{
+  padding: 10px 12px;
+  font-size: $font-size-mini;
+
+  .close{
+    font-size: 18px;
+  }
+}
+
+.alert-dismissible .close{
+  position: static;
+  color: $close-color;
+
+}
+
+
+//
+// Popovers
+
+.popover{
+  border: none;
+  @include box-shadow(none);
+}
+
+.popover-content {
+  padding: 20px;
+}
+
+//
+// Modals
+// --------------------------------------------------
+
+// z-index fix. modal doesn't show up properly when .content-wrap is relative
+.modal-open{
+  &, &.nav-collapsed, &.nav-static{
+    .content-wrap{
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
+      position: static;
+    }
+
+    .sidebar{
+      z-index: -1;
+    }
+  }
+}
+
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination{
+  font-weight: $font-weight-normal;
+
+  > .page-item {
+    display: inline; // Remove list-style and block-level defaults
+    > .page-link,
+    > span{
+      border-radius: $border-radius;
+      margin: 0 2px;
+    }
+
+    >.page-link {
+      text-decoration: none;
+      border: none;
+    }
+  }
+}
+
+.pagination{
+  font-weight: $font-weight-normal;
+
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span{
+      border-radius: $border-radius;
+      margin: 0 2px;
+    }
+
+    > a {
+      text-decoration: none;
+      border: none;
+    }
+  }
+}
+
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+  @include media-breakpoint-up(md){
+    padding-left: $jumbotron-padding;
+    padding-right: $jumbotron-padding;
+  }
+}
+
 
 // Navbar form
 //
@@ -534,5 +1024,44 @@ h1, h2, h3, h4, h5, h6,
     @include hover-focus {
       background-color: darken($color, 10%);
     }
+  }
+}
+
+//
+// Labels
+// -----------------
+
+.label-pill {
+  color: $white;
+  font-weight: bold;
+  padding: .25em .6em;
+  font-size: 12px;
+}
+
+//
+// Code
+// -----------------
+
+pre {
+  display: block;
+  padding: 6.5px;
+  margin: 0 0 ($line-height-computed / 2);
+  font-size: 13px;
+  line-height: $line-height-computed;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: $pre-color;
+  background-color: $pre-bg;
+  border: 1px solid $pre-border-color;
+  border-radius: $border-radius;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
   }
 }

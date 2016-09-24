@@ -43,6 +43,7 @@
   > header{
     h1,h2,h3,h4,h5,h6{
       font-weight: $font-weight-normal;
+      text-align: center;
     }
   }
 }
@@ -52,6 +53,7 @@
   color: #888;
   margin-top: 1px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .login-form{
