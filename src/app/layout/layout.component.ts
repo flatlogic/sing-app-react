@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppConfig} from '../app.config'
+import { AppConfig } from '../app.config'
 
 declare var jQuery: any;
 declare var Hammer: any;
@@ -8,7 +8,13 @@ declare var Hammer: any;
 @Component({
   selector: 'layout',
   encapsulation: ViewEncapsulation.None,
-  templateUrl: './layout.template.html'
+  templateUrl: './layout.template.html',
+  host: {
+    '[class.nav-static]' : 'config.state["nav-static"]',
+    '[class.chat-sidebar-opened]' : 'chatOpened',
+    '[class.app]' : 'true',
+    id: 'app'
+  }
 })
 export class Layout {
   config: any;
@@ -16,6 +22,7 @@ export class Layout {
   $sidebar: any;
   el: ElementRef;
   router: Router;
+  chatOpened: boolean = false;
 
   constructor(config: AppConfig,
               el: ElementRef,
@@ -34,6 +41,22 @@ export class Layout {
     localStorage.setItem('nav-static', this.config.state['nav-static']);
   }
 
+  toggleChatListener(): void {
+    jQuery(this.el.nativeElement).find('.chat-notification-sing').remove();
+    this.chatOpened = !this.chatOpened;
+
+    setTimeout(() => {
+      // demo: add class & badge to indicate incoming messages from contact
+      // .js-notification-added ensures notification added only once
+      jQuery('.chat-sidebar-user-group:first-of-type ' +
+        '.list-group-item:first-child:not(.js-notification-added)')
+        .addClass('active js-notification-added')
+        .find('.fa-circle')
+        .after('<span class="label label-pill label-danger ' +
+          'pull-right animated bounceInDown">3</span>');
+    }, 1000);
+  }
+
   toggleNavigationState(): void {
     this.config.state['nav-static'] = !this.config.state['nav-static'];
   }
@@ -43,7 +66,7 @@ export class Layout {
     if (this.isNavigationStatic()
       && (this.configFn.isScreen('lg') || this.configFn.isScreen('xl'))) { return; }
 
-    jQuery('app').removeClass('nav-collapsed');
+    jQuery('layout').removeClass('nav-collapsed');
     this.$sidebar.find('.active .active').closest('.collapse').collapse('show')
       .siblings('[data-toggle=collapse]').removeClass('collapsed');
   }
@@ -53,7 +76,7 @@ export class Layout {
     if (this.isNavigationStatic()
       && (this.configFn.isScreen('lg') || this.configFn.isScreen('xl'))) { return; }
 
-    jQuery('app').addClass('nav-collapsed');
+    jQuery('layout').addClass('nav-collapsed');
     this.$sidebar.find('.collapse.in').collapse('hide')
       .siblings('[data-toggle=collapse]').addClass('collapsed');
   }
@@ -83,7 +106,7 @@ export class Layout {
   }
 
   toggleNavigationCollapseState(): void {
-    if (jQuery('app').is('.nav-collapsed')) {
+    if (jQuery('layout').is('.nav-collapsed')) {
       this.expandNavigation();
     } else {
       this.collapseNavigation();
@@ -109,7 +132,7 @@ export class Layout {
       // this method only makes sense for small screens + ipad
       if (d.configFn.isScreen('lg')) { return; }
 
-      if (!jQuery('app').is('.nav-collapsed')) {
+      if (!jQuery('layout').is('.nav-collapsed')) {
         d.collapseNavigation();
       }
     });
@@ -119,9 +142,9 @@ export class Layout {
       if (d.configFn.isScreen('lg')) { return; }
 
       // check if navigation is collapsing. exiting if true
-      if (jQuery('app').is('.nav-busy')) { return; }
+      if (jQuery('layout').is('.nav-busy')) { return; }
 
-      if (jQuery('app').is('.nav-collapsed')) {
+      if (jQuery('layout').is('.nav-collapsed')) {
         d.expandNavigation();
       }
     });
@@ -135,7 +158,7 @@ export class Layout {
   }
 
   ngOnInit(): void {
-    
+
     if (localStorage.getItem('nav-static') === 'true') {
       this.config.state['nav-static'] = true;
     }
@@ -153,7 +176,7 @@ export class Layout {
     this.checkNavigationState();
 
     this.$sidebar.on('click', () => {
-      if (jQuery('app').is('.nav-collapsed')) {
+      if (jQuery('layout').is('.nav-collapsed')) {
         this.expandNavigation();
       }
     });
