@@ -794,7 +794,7 @@
         color: $brand-warning;
       }
 
-      .label{
+      .badge{
         background-color: $brand-danger;
         color: $white;
       }
@@ -814,7 +814,7 @@
       line-height: 37px;
     }
 
-    .label{
+    .badge{
       margin-top: 9px;
       margin-right: 6px;
       padding: 3px 5px;
@@ -932,6 +932,8 @@
   }
 
   .card-header {
+    background-color: #fff;
+
     .btn-group-justified {
       display: flex;
 
@@ -961,6 +963,11 @@
     .progress{
       @include transition(background-color .15s ease-in-out);
     }
+  }
+
+  a.list-group-item {
+    text-decoration: none;
+    color: $gray;
   }
 
   .btn-notifications-reload{

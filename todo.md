@@ -1,1 +1,2 @@
-1. rename .label-* to .tag-*
+1. ~~rename .label-* to .tag-*~~
+2. icon
