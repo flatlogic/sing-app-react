@@ -27,7 +27,7 @@ export class ChatSidebar implements OnInit {
   }
 
   deactivateLink(e): void {
-    jQuery(e.currentTarget).removeClass('active').find('.tag').remove();
+    jQuery(e.currentTarget).removeClass('active').find('.badge').remove();
   }
 
   initChatSidebarScroll(): void {
