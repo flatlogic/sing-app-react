@@ -83,6 +83,7 @@
 .page-controls {
   position: absolute;
   z-index: 1;
+  height: $navbar-height;
 
   @include media-breakpoint-down(sm) {
     font-size: 16px;
