@@ -44,8 +44,8 @@ export class ChatSidebar implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    let $chatContainer = jQuery('layout').addClass('chat-sidebar-container');
+  enableSwipeCollapsing(): void {
+    let $chatContainer = jQuery('layout');
     let chatSidebarSwipe = new Hammer(document.getElementById('content-wrap'));
 
     chatSidebarSwipe.on('swipeleft', () => {
@@ -61,6 +61,14 @@ export class ChatSidebar implements OnInit {
         }
       });
     });
+  }
+
+  ngOnInit(): void {
+    jQuery('layout').addClass('chat-sidebar-container');
+
+    if ('ontouchstart' in window) {
+      this.enableSwipeCollapsing();
+    }
 
     jQuery(window).on('sn:resize', this.initChatSidebarScroll.bind(this));
     this.initChatSidebarScroll();
