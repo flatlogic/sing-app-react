@@ -1,7 +1,7 @@
 /***********************/
 /*        Layout       */
 /***********************/
-.app {
+app, .app {
   height: 100%;
   display: block;
 }
@@ -1070,6 +1070,41 @@
       margin-top: -10px;
       font-size: 20px;
       text-align: center;
+    }
+  }
+
+  .widget-top-overflow,
+  .widget-middle-overflow{
+    position: relative;
+    margin: 0 (-$widget-padding-horizontal);
+
+    > img{
+      max-width: 100%;
+    }
+  }
+
+  .widget-top-overflow{
+    margin-top: (-$widget-padding-vertical);
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    overflow: hidden;
+
+    > img{
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    > .btn-toolbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      margin-right: $widget-padding-horizontal;
+
+      @include media-breakpoint-up(md){
+        top: auto;
+        bottom: 0;
+      }
     }
   }
 
