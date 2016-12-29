@@ -7,8 +7,8 @@
           Turn on/off <br> sidebar <br>collapsing
         </template>
         <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
-        <a (click)="toggleSidebar('static')"  class="nav-link hidden-md-down" [tooltipHtml]="sidebarToggleTooltip"
-           tooltipPlacement="bottom">
+        <a (click)="toggleSidebar('static')"  class="nav-link hidden-md-down" [tooltip]="sidebarToggleTooltip"
+          placement="bottom">
           <i class="fa fa-bars fa-lg"></i>
         </a>
         <!-- shown on xs & sm screen. collapses and expands navigation -->

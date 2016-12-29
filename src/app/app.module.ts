@@ -21,7 +21,7 @@ import { ErrorComponent } from './error/error.component';
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  AppConfig
+  AppConfig,
 ];
 
 type StoreType = {

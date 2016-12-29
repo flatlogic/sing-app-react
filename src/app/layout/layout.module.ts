@@ -17,7 +17,7 @@ import {NotificationLoad} from './notifications/notifications-load.directive';
 import {Notifications} from './notifications/notifications.component';
 
 @NgModule({
-  imports: [CommonModule, TooltipModule, ROUTES, FormsModule],
+  imports: [CommonModule, TooltipModule.forRoot(), ROUTES, FormsModule],
   declarations: [Layout, Sidebar, Navbar, ChatSidebar, SearchPipe, Notifications, NotificationLoad, ChatMessage]
 })
 export default class LayoutModule {
