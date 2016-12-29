@@ -2,7 +2,7 @@
 <?php sleep(2) //just some delay to simulate latency ?>
 -->
 <div class="list-group-item bg-attention">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
             <i class="fa fa-check text-success fa-lg"></i>
         </span>
     <p class="overflow-hidden no-margin">
@@ -13,8 +13,8 @@
     </p>
 </div>
 <div class="list-group-item bg-attention">
-    <span class="thumb-sm pull-xs-left mr clearfix">
-        <img class="img-circle" src="assets/img/people/a6.jpg" alt="...">
+    <span class="thumb-sm float-xs-left mr clearfix">
+        <img class="rounded-circle" src="assets/img/people/a6.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
         <a href="#">Jeniffer Willington</a> has just endorsed you with 50 points!
@@ -24,8 +24,8 @@
     </p>
 </div>
 <div class="list-group-item">
-    <span class="thumb-sm pull-xs-left mr clearfix">
-        <img class="img-circle" src="assets/img/people/a3.jpg" alt="...">
+    <span class="thumb-sm float-xs-left mr clearfix">
+        <img class="rounded-circle" src="assets/img/people/a3.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
         1 new user just signed up! Check out
@@ -36,7 +36,7 @@
     </p>
 </div>
 <a class="list-group-item" href="#">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
         <i class="glyphicon glyphicon-upload fa-lg"></i>
     </span>
     <p class="text-ellipsis no-margin">
@@ -46,7 +46,7 @@
     </time>
 </a>
 <a class="list-group-item" href="#">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
         <i class="fa fa-bolt fa-lg"></i>
     </span>
     <p class="text-ellipsis no-margin">
@@ -56,8 +56,8 @@
     </time>
 </a>
 <div class="list-group-item">
-    <span class="thumb-sm pull-xs-left mr clearfix">
-        <img class="img-circle" src="assets/img/people/a5.jpg" alt="...">
+    <span class="thumb-sm float-xs-left mr clearfix">
+        <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
         User <a href="#">Jeff</a> registered
@@ -70,7 +70,7 @@
     </p>
 </div>
 <div class="list-group-item">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
         <i class="fa fa-shield fa-lg"></i>
     </span>
     <p class="no-margin overflow-hidden">
@@ -82,7 +82,7 @@
     </p>
 </div>
 <a class="list-group-item" href="#">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
         <span class="rounded bg-primary rounded-lg">
             <i class="fa fa-facebook text-white"></i>
         </span>
@@ -94,7 +94,7 @@
     </time>
 </a>
 <a class="list-group-item" href="#">
-    <span class="thumb-sm pull-xs-left mr">
+    <span class="thumb-sm float-xs-left mr">
         <span class="circle circle-lg bg-gray-dark">
             <i class="fa fa-circle-o text-white"></i>
         </span>

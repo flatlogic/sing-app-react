@@ -50,7 +50,7 @@ app, .app {
 
 .page-controls {
   .dropdown-toggle-notifications {
-    .img-circle {
+    .rounded-circle {
       margin-top: -1px;
     }
 
@@ -109,11 +109,11 @@ app, .app {
   .avatar{
     width: 30px;
     margin-top: -5px;
-    &.pull-xs-left,
+    &.float-xs-left,
     &.pull-left{
       margin-right: 5px;
     }
-    &.pull-xs-right,
+    &.float-xs-right,
     &.pull-right{
       margin-left: 5px;
     }
@@ -776,7 +776,6 @@ app, .app {
   margin-top: 10px;
   .list-group-item{
     background-color: transparent;
-    margin-right: -20px;
     margin-bottom: 0;
     padding: 10px 20px;
     border: 0;

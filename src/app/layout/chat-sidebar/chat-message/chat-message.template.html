@@ -8,7 +8,7 @@
   <ul class="message-list" >
     <li *ngFor="let message of conversation.messages | SearchPipe : searchMessage" class="message" [ngClass]="{'from-me': message.fromMe}">
       <span class="thumb-sm">
-          <img class="img-circle" src="{{message.fromMe ? 'assets/img/avatar.png' : conversation.image}}" alt="...">
+          <img class="rounded-circle" src="{{message.fromMe ? 'assets/img/avatar.png' : conversation.image}}" alt="...">
       </span>
       <div class="message-body">{{message.text}}</div>
     </li>
