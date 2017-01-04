@@ -4,8 +4,8 @@ import { Layout } from './layout.component';
 const routes: Routes = [
   { path: '', component: Layout, children: [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'dashboard', loadChildren: () => System.import('../dashboard/dashboard.module') },
-    { path: 'another-page', loadChildren: () => System.import('../another/another.module') },
+    { path: 'dashboard', loadChildren: '../dashboard/dashboard.module#DashboardModule' },
+    { path: 'another-page', loadChildren: '../another/another.module#AnotherModule' },
   ]}
 ];
 

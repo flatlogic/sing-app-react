@@ -12,6 +12,6 @@ export const routes = [
   imports: [ CommonModule, RouterModule.forChild(routes) ],
   declarations: [ AnotherPage ]
 })
-export default class AnotherModule {
+export class AnotherModule {
   static routes = routes;
 }

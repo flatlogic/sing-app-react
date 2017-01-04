@@ -1,5 +1,5 @@
-import {Component, OnInit, ElementRef} from '@angular/core';
-import {ChatService} from './chat.service';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { ChatService } from './chat.service';
 declare var jQuery: any;
 declare var Hammer: any;
 

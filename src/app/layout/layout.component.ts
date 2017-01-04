@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppConfig } from '../app.config'
+import { AppConfig } from '../app.config';
 
 declare var jQuery: any;
 declare var Hammer: any;

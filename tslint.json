@@ -105,14 +105,6 @@
     "jsdoc-format": true,
     "no-consecutive-blank-lines": false,
     "no-constructor-vars": false,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-finally",
-      "check-whitespace"
-    ],
     "quotemark": [
       true,
       "single",
