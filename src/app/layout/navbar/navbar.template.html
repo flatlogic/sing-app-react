@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid no-gutters">
   <!-- .navbar-header contains links seen on xs & sm screens -->
   <div class="navbar-header">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav flex-row">
       <li class="nav-item">
         <template #sidebarToggleTooltip>
           Turn on/off <br> sidebar <br>collapsing
@@ -17,10 +17,10 @@
           <i class="fa fa-bars fa-lg hidden-sm-down"></i>
         </a>
       </li>
-      <li class="nav-item ml-sm hidden-sm-down"><a class="nav-link" href="#"><i class="fa fa-refresh fa-lg"></i></a></li>
+      <li class="nav-item ml-lg hidden-sm-down"><a class="nav-link" href="#"><i class="fa fa-refresh fa-lg"></i></a></li>
       <li class="nav-item ml-n-xs hidden-sm-down"><a class="nav-link" href="#"><i class="fa fa-times fa-lg"></i></a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right hidden-md-up">
+    <ul class="navbar-nav navbar-right hidden-md-up">
       <li class="nav-item">
         <!-- toggles chat -->
         <a class="nav-link" href="#" (click)="toggleChat()">
@@ -42,7 +42,7 @@
   <!-- this part is hidden for xs screens -->
   <div class="collapse navbar-collapse">
     <!-- search form! link it to your search server -->
-    <form class="navbar-form float-xs-left" role="search">
+    <form class="navbar-form float-left" role="search">
       <div class="form-group">
         <div class="input-group input-group-no-border">
                     <span class="input-group-addon">
@@ -52,11 +52,11 @@
         </div>
       </div>
     </form>
-    <ul class="nav navbar-nav float-xs-right" (click)="$event.preventDefault()">
+    <ul class="nav navbar-nav flex-row float-right" (click)="$event.preventDefault()">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle dropdown-toggle-notifications"
            id="notifications-dropdown-toggle" data-toggle="dropdown">
-                <span class="thumb-sm avatar float-xs-left">
+                <span class="thumb-sm avatar float-left">
                     <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
                 </span>
           &nbsp;
@@ -73,7 +73,7 @@
         <div notifications class="dropdown-menu dropdown-menu-right animated animated-fast fadeInUp"
           ></div>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown ml-lg">
         <a href class="nav-link dropdown-toggle" data-toggle="dropdown">
           <i class="fa fa-cog fa-lg"></i>
         </a>
@@ -86,7 +86,7 @@
           <li><a class="dropdown-item" [routerLink]=" ['/login'] "><i class="fa fa-sign-out"></i> &nbsp; Log Out</a></li>
         </ul>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg">
         <a class="nav-link" href="#" (click)="toggleChat()" id="toggle-chat">
           <i class="fa fa-globe fa-lg"></i>
         </a>
