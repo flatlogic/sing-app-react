@@ -1,6 +1,10 @@
 /***********************/
 /*        Layout       */
 /***********************/
+html {
+  font-size: $font-size-root;
+}
+
 app, .app {
   height: 100%;
   display: block;
