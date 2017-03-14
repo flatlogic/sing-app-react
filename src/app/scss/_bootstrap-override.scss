@@ -693,15 +693,15 @@ legend {
 
 
 .progress-bar-gray {
-  @include progress-variant($gray);
+  background-color: $gray;
 }
 
 .progress-bar-gray-light {
-  @include progress-variant($gray-light);
+  background-color: $gray-light;
 }
 
 .progress-primary {
-  @include progress-variant($brand-primary)
+  background-color: $brand-primary;
 }
 
 

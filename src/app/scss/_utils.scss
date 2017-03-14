@@ -18,8 +18,8 @@
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }
 
-.tag-white {
-  @include tag-variant($white);
+.badge-white {
+  @include badge-variant($white);
 }
 
 .display-flex {
