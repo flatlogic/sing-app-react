@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ChatService } from './chat.service';
-declare var jQuery: any;
-declare var Hammer: any;
+declare let jQuery: any;
+declare let Hammer: any;
 
 @Component({
   selector: '[chat-sidebar]',

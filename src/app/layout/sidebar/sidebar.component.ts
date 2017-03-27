@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 import { AppConfig } from '../../app.config';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Component({
   selector: '[sidebar]',

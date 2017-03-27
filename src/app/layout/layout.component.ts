@@ -2,8 +2,8 @@ import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfig } from '../app.config';
 
-declare var jQuery: any;
-declare var Hammer: any;
+declare let jQuery: any;
+declare let Hammer: any;
 
 @Component({
   selector: 'layout',

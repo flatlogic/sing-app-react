@@ -1,5 +1,5 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Directive ({
   selector: '[widget]'
