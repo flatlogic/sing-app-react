@@ -22,7 +22,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Sing App 3.2.0 with Angular 2.0 Final Release support by Flatlogic',
+  title: 'Sing App 3.5.0 with Angular 2.4 Final Release support by Flatlogic',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
