@@ -4,7 +4,8 @@ declare let jQuery: any;
 
 @Component({
   selector: '[notifications]',
-  templateUrl: './notifications.template.html'
+  templateUrl: './notifications.template.html',
+  styleUrls: ['./notifications.style.scss']
 })
 export class Notifications implements OnInit {
   $el: any;

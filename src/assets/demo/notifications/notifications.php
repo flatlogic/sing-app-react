@@ -1,8 +1,8 @@
 <!--
 <?php sleep(2) //just some delay to simulate latency ?>
 -->
-<div class="list-group-item bg-attention">
-    <span class="thumb-sm float-xs-left mr">
+<div class="list-group-item bg-attention" style="display: block">
+    <span class="thumb-sm float-left mr">
             <i class="fa fa-check text-success fa-lg"></i>
         </span>
     <p class="overflow-hidden no-margin">
@@ -12,8 +12,8 @@
         </time>
     </p>
 </div>
-<div class="list-group-item bg-attention">
-    <span class="thumb-sm float-xs-left mr clearfix">
+<div class="list-group-item bg-attention" style="display: block">
+    <span class="thumb-sm float-left mr clearfix">
         <img class="rounded-circle" src="assets/img/people/a6.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
@@ -23,8 +23,8 @@
         </time>
     </p>
 </div>
-<div class="list-group-item">
-    <span class="thumb-sm float-xs-left mr clearfix">
+<div class="list-group-item" style="display: block">
+    <span class="thumb-sm float-left mr clearfix">
         <img class="rounded-circle" src="assets/img/people/a3.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
@@ -35,8 +35,8 @@
         </time>
     </p>
 </div>
-<a class="list-group-item" href="#">
-    <span class="thumb-sm float-xs-left mr">
+<a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
         <i class="glyphicon glyphicon-upload fa-lg"></i>
     </span>
     <p class="text-ellipsis no-margin">
@@ -45,8 +45,8 @@
         5h ago
     </time>
 </a>
-<a class="list-group-item" href="#">
-    <span class="thumb-sm float-xs-left mr">
+<a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
         <i class="fa fa-bolt fa-lg"></i>
     </span>
     <p class="text-ellipsis no-margin">
@@ -55,8 +55,8 @@
         7h ago
     </time>
 </a>
-<div class="list-group-item">
-    <span class="thumb-sm float-xs-left mr clearfix">
+<div class="list-group-item" style="display: block">
+    <span class="thumb-sm float-left mr clearfix">
         <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
     </span>
     <p class="no-margin overflow-hidden">
@@ -69,8 +69,8 @@
         </time>
     </p>
 </div>
-<div class="list-group-item">
-    <span class="thumb-sm float-xs-left mr">
+<div class="list-group-item" style="display: block">
+    <span class="thumb-sm float-left mr">
         <i class="fa fa-shield fa-lg"></i>
     </span>
     <p class="no-margin overflow-hidden">
@@ -81,8 +81,8 @@
         </time>
     </p>
 </div>
-<a class="list-group-item" href="#">
-    <span class="thumb-sm float-xs-left mr">
+<a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
         <span class="rounded bg-primary rounded-lg">
             <i class="fa fa-facebook text-white"></i>
         </span>
@@ -93,8 +93,8 @@
         15 Apr 2014
     </time>
 </a>
-<a class="list-group-item" href="#">
-    <span class="thumb-sm float-xs-left mr">
+<a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
         <span class="circle circle-lg bg-gray-dark">
             <i class="fa fa-circle-o text-white"></i>
         </span>
