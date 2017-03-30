@@ -160,7 +160,7 @@ small, .small {
 
 
 .form-control {
-  font-weight: $font-weight-normal;
+  font-family: $font-family-sans-serif;
   padding: $padding-base-vertical $padding-base-horizontal;
   @include box-shadow(none);
   &:focus{
@@ -433,6 +433,10 @@ legend {
   }
 }
 
+.container {
+  position: static;
+}
+
 .container,
 .container-fluid {
   > .navbar-header,
@@ -583,6 +587,7 @@ legend {
 // --------------------------------------------------
 
 .btn {
+  font-family: $font-family-sans-serif;
   .glyphicon {
     top: 3px;
   }

@@ -1,5 +1,18 @@
-import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  ViewEncapsulation,
+  ElementRef, Renderer,
+  NgZone,
+  ViewChild
+} from '@angular/core';
+import {
+  Router,
+  Event as RouterEvent,
+  NavigationStart,
+  NavigationEnd,
+  NavigationCancel,
+  NavigationError
+} from '@angular/router';
 import { AppConfig } from '../app.config';
 
 declare let jQuery: any;
@@ -23,10 +36,14 @@ export class Layout {
   el: ElementRef;
   router: Router;
   chatOpened: boolean = false;
+  @ViewChild('spinnerElement') spinnerElement: ElementRef;
+  @ViewChild('routerComponent') routerComponent: ElementRef;
 
   constructor(config: AppConfig,
               el: ElementRef,
-              router: Router) {
+              router: Router,
+              private renderer: Renderer,
+              private ngZone: NgZone) {
     this.el = el;
     this.config = config.getConfig();
     this.configFn = config;
@@ -183,7 +200,8 @@ export class Layout {
       }
     });
 
-    this.router.events.subscribe(() => {
+    this.router.events.subscribe((event) => {
+      this._navigationInterceptor(event);
       this.collapseNavIfSmallScreen();
       window.scrollTo(0, 0);
     });
@@ -215,6 +233,63 @@ export class Layout {
       if (e.target !== e.currentTarget) { return; }
 
       jQuery(this).closest('li').removeClass('open');
+    });
+  }
+
+  private _navigationInterceptor(event: RouterEvent): void {
+
+    if (event instanceof NavigationStart) {
+      // We wanna run this function outside of Angular's zone to
+      // bypass change detection
+      this.ngZone.runOutsideAngular(() => {
+
+        // For simplicity we are going to turn opacity on / off
+        // you could add/remove a class for more advanced styling
+        // and enter/leave animation of the spinner
+        this.renderer.setElementStyle(
+          this.spinnerElement.nativeElement,
+          'opacity',
+          '1'
+        );
+        this.renderer.setElementStyle(
+          this.routerComponent.nativeElement,
+          'opacity',
+          '0'
+        );
+      });
+    }
+    if (event instanceof NavigationEnd) {
+      this._hideSpinner();
+    }
+
+    // Set loading state to false in both of the below events to
+    // hide the spinner in case a request fails
+    if (event instanceof NavigationCancel) {
+      this._hideSpinner();
+    }
+    if (event instanceof NavigationError) {
+      this._hideSpinner();
+    }
+  }
+
+  private _hideSpinner(): void {
+    // We wanna run this function outside of Angular's zone to
+    // bypass change detection,
+    this.ngZone.runOutsideAngular(() => {
+
+      // For simplicity we are going to turn opacity on / off
+      // you could add/remove a class for more advanced styling
+      // and enter/leave animation of the spinner
+      this.renderer.setElementStyle(
+        this.spinnerElement.nativeElement,
+        'opacity',
+        '0'
+      );
+      this.renderer.setElementStyle(
+        this.routerComponent.nativeElement,
+        'opacity',
+        '1'
+      );
     });
   }
 }
