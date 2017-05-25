@@ -16,12 +16,6 @@ const Sidebar = () => (
     <ul className={s.nav}>
       <LinksGroup header="Dashboard" headerLink="/app" iconName="glyphicon-tree-conifer" />
       <LinksGroup
-        header="Posts"
-        headerLink="/app/posts"
-        childrenLinks={[{ name: 'Show all', link: '/app/posts' }, { name: 'Create new', link: '/app/posts/new' }]}
-        iconName="glyphicon-list-alt"
-      />
-      <LinksGroup
         header={
           <span>
         Profile

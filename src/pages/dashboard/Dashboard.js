@@ -126,7 +126,6 @@ class Dashboard extends React.Component {
                 {this.props.posts && this.props.posts.map((post, index) => (
                   <tr key={post.id}>
                     <td>{new Date(post.updatedAt).toLocaleString() }</td>
-                    <td><Link to="/app/posts">{post.title}</Link></td>
                   </tr>
                 ))}
                 {this.props.posts && !this.props.posts.length &&
