@@ -10,25 +10,14 @@ import LinksGroup from './LinksGroup/LinksGroup';
 const Sidebar = () => (
   <nav className={s.root}>
     <header className={s.logo}>
-      <Link to="/app">React Dashboard</Link>
+      <Link to="/app">sing</Link>
     </header>
 
     <ul className={s.nav}>
       <LinksGroup header="Dashboard" headerLink="/app" iconName="glyphicon-tree-conifer" />
-      <LinksGroup
-        header={
-          <span>
-        Profile
-        <sup className="text-warning fw-semi-bold">&nbsp;new</sup>
-          </span>
-      } headerLink="/app/profile" iconName="glyphicon-user"
+      <LinksGroup header="Profile" headerLink="/app/profile" iconName="glyphicon-user"
       />
-      <LinksGroup className="visible-xs" header="Logout" headerLink="/login" iconName="glyphicon-off" />
     </ul>
-    <footer className={s.footer}>
-      <p className="text-gray-lighter opacity-60 ml-xs mr-xs mb-xs">58% ready</p>
-      <ProgressBar now={58} bsStyle="success" className="progress-xs mb-sm" />
-    </footer>
   </nav>
 );
 
