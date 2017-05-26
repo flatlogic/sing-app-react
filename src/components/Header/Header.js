@@ -19,10 +19,12 @@ import s from './Header.scss';
 class Header extends React.Component {
   static propTypes = {
     sidebarToggle: PropTypes.func,
+    chatToggle: PropTypes.func,
   };
 
   static defaultProps = {
     sidebarToggle: () => {},
+    chatToggle: () => {},
   };
 
   doLogout() {
@@ -34,7 +36,7 @@ class Header extends React.Component {
     return (
       <Navbar fluid>
         <Nav pullLeft>
-          <NavItem className={['visible-xs', s.menuButton].join(' ')} eventKey={1} href="#" onClick={this.props.sidebarToggle}>
+          <NavItem className={s.menuButton} eventKey={1} href="#" onClick={this.props.sidebarToggle}>
             <Glyphicon glyph="menu-hamburger" />
           </NavItem>
         </Nav>
@@ -54,6 +56,7 @@ class Header extends React.Component {
             <MenuItem divider />
             <MenuItem eventKey={3.4}>Separated link</MenuItem>
           </NavDropdown>
+          <NavItem><Glyphicon glyph="user" onClick={this.props.chatToggle}/></NavItem>
           <NavItem className="hidden-xs" eventKey={2} onClick={this.doLogout.bind(this)}>Logout</NavItem>
         </Nav>
       </Navbar>

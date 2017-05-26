@@ -23,6 +23,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
+import Chat from '../Chat'
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
@@ -38,15 +39,25 @@ class Layout extends React.Component {
 
     this.state = {
       sidebarOpen: false,
+      chatOpen: false
     };
+  }
+
+  chatToggle() {
+    this.setState({ chatOpen: !this.state.chatOpen });
+  }
+
+  sidebarToggle() {
+    this.setState({ sidebarOpen: !this.state.sidebarOpen });
   }
 
   render() {
     return (
-      <div className={s.root}>
+      <div className={[s.root, this.state.sidebarOpen ? s.sidebarOpen : '', this.state.chatOpen ? s.chatOpen : ''].join(' ')}>
         <Sidebar />
-        <div className={[s.wrap, this.state.sidebarOpen ? s.sidebarOpen : ''].join(' ')}>
-          <Header sidebarToggle={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })} />
+        <div className={s.wrap}>
+          <Header chatToggle={this.chatToggle.bind(this)} sidebarToggle={this.sidebarToggle.bind(this)} />
+          <Chat chatOpen={this.state.chatOpen}/>
           <main className={s.content}>
             <Switch>
               <Route path="/app" exact component={Dashboard} />
