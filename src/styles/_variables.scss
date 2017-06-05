@@ -81,6 +81,14 @@ $content-padding-vertical: 40px;
 
 $navbar-height:      50px;
 $navbar-border-radius: 0;
+
+$navbar-margin-bottom: -$navbar-height;
+
+$navbar-dashboard-link-color:                #666 !default;
+
+//== Sidebar
+//
+
 $sidebar-width-open: 200px;
 $sidebar-width-closed: 50px;
 $sidebar-transition-time: 0.3s !default;
@@ -92,7 +100,6 @@ $sidebar-item-border-color: #2d2d2d;
 $sidebar-item-active-color: #F2BE35;
 $sidebar-item-hover-bg-color: #111;
 
-$navbar-margin-bottom: -$navbar-height;
 $breadcrumb-separator: '>';
 $breadcrumb-padding-horizontal: 0;
 $breadcrumb-bg: transparent;

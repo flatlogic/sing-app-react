@@ -31,6 +31,34 @@
   overflow-y: auto;
 }
 
+.navTitle {
+  margin: 35px 0 5px 11px;
+  font-size: 14px;
+
+  span {
+    margin-right: 15px;
+    margin-top: -1px;
+    color: #aaa;
+  }
+}
+
+.sidebarLabels {
+  list-style-type: none;
+  font-size: 13px;
+  padding: 11px;
+  padding-right: 15px;
+
+  > li + li {
+    margin-top: 7px;
+  }
+
+  li > a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: normal;
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 0;

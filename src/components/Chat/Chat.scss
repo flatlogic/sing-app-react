@@ -17,10 +17,36 @@
   right: -254px;
   width: 254px;
   background-color: #242424;
-  color: white;
+  color: #aaa;
   transition: right 0.3s ease-in-out;
 
   &.chatOpen {
     right: 0;
+  }
+
+  .chatSidebarHeader {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    padding: 10px;
+
+    .chatSidebarTitle {
+      margin-left: 10px;
+      margin-right: 10px;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  .chatSidebarPanel {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 100px 20px 20px 20px;
+
+    .messageSender {
+      text-overflow: ellipsis;
+    }
   }
 }

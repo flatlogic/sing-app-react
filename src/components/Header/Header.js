@@ -7,12 +7,12 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Navbar, MenuItem, Nav, NavDropdown, NavItem, Glyphicon, Badge } from 'react-bootstrap';
-import { logoutUser } from '../../actions/user';
+import {Navbar, MenuItem, Nav, NavDropdown, NavItem, Glyphicon, Badge, ListGroup, ListGroupItem} from 'react-bootstrap';
+import {logoutUser} from '../../actions/user';
 
 import s from './Header.scss';
 
@@ -23,8 +23,10 @@ class Header extends React.Component {
   };
 
   static defaultProps = {
-    sidebarToggle: () => {},
-    chatToggle: () => {},
+    sidebarToggle: () => {
+    },
+    chatToggle: () => {
+    },
   };
 
   doLogout() {
@@ -37,27 +39,56 @@ class Header extends React.Component {
       <Navbar fluid>
         <Nav pullLeft>
           <NavItem className={s.menuButton} eventKey={1} href="#" onClick={this.props.sidebarToggle}>
-            <Glyphicon glyph="menu-hamburger" />
+            <Glyphicon glyph="menu-hamburger"/>
           </NavItem>
         </Nav>
         <Nav pullRight>
           <NavDropdown
             eventKey={1} title={
-              <span>
-                <Glyphicon glyph="user" className="mr-sm" />
+            <span>
+                <Glyphicon glyph="user" className="mr-sm"/>
             John <span className="fw-semi-bold">Willington</span>
                 <Badge className="ml-sm badge-warning">4</Badge>
               </span>
           } noCaret id="basic-nav-dropdown"
           >
-            <MenuItem eventKey={3.1}>Notifications</MenuItem>
-            <MenuItem eventKey={3.2}>Action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={3.4}>Separated link</MenuItem>
+            <section className="panel notifications">
+              <header className="panel-heading">
+                <div className="text-align-center mb-sm">
+                  <strong>You have 13 notifications</strong>
+                </div>
+                <div className="btn-group btn-group-sm btn-group-justified" id="notifications-toggle">
+                  <label className="btn btn-default active">
+                    Notifications
+                  </label>
+                  <label className="btn btn-default">
+                    Notifications
+                  </label>
+                  <label className="btn btn-default">
+                    Notifications
+                  </label>
+                </div>
+              </header>
+              <ListGroup>
+                <ListGroupItem>Item 1</ListGroupItem>
+                <ListGroupItem>Item 2</ListGroupItem>
+                <ListGroupItem>Item 3</ListGroupItem>
+              </ListGroup>
+            </section>
           </NavDropdown>
+          <Nav>
+            <NavDropdown
+              eventKey={1} title={<Glyphicon glyph="user"/>} noCaret
+            >
+              <MenuItem><Glyphicon glyph="user"/> &nbsp; My Account</MenuItem>
+              <MenuItem divider />
+              <MenuItem>Calendar</MenuItem>
+              <MenuItem>Inbox &nbsp;&nbsp;<span className="badge bg-danger">9</span></MenuItem>
+              <MenuItem divider />
+              <MenuItem><Glyphicon glyph="user"/> &nbsp; Log Out</MenuItem>
+            </NavDropdown>
+          </Nav>
           <NavItem><Glyphicon glyph="user" onClick={this.props.chatToggle}/></NavItem>
-          <NavItem className="hidden-xs" eventKey={2} onClick={this.doLogout.bind(this)}>Logout</NavItem>
         </Nav>
       </Navbar>
     );
