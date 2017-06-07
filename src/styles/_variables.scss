@@ -7,10 +7,18 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+$glyphicons-halflings-include-bonus: false !default;
+$glyphicons-halflings-class-prefix: glyphicon !default;
+
+$glyphicons-halflings-font-path: '../fonts/glyphicons' !default;
+$fa-font-path: '../fonts/font-awesome' !default;
+
+$enable-shadows:            false !default;
+
 /*
  * Typography
  * ======================================================================== */
-$font-size-base: 16px;
+$font-size-root: 14px;
 $font-family-base: 'Open Sans', sans-serif;
 
 $text-color:                     #555;
@@ -52,7 +60,6 @@ $alert-danger-border:         rgba($alert-danger-text, 0.09) !default;
 
 //== Iconography
 //
-$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'; // overriding bootstrap variable
 
 /*
  * Layout
@@ -64,14 +71,14 @@ $grid-float-breakpoint: 0;
 
 $body-bg: #eee;
 
-/*
- * Media queries breakpoints
- * ======================================================================== */
-
-$screen-xs-min: 480px;  /* Extra small screen / phone */
-$screen-sm-min: 768px;  /* Small screen / tablet */
-$screen-md-min: 992px;  /* Medium screen / desktop */
-$screen-lg-min: 1200px; /* Large screen / wide desktop */
+///*
+// * Media queries breakpoints
+// * ======================================================================== */
+//
+//$screen-xs-min: 480px;  /* Extra small screen / phone */
+//$screen-sm-min: 768px;  /* Small screen / tablet */
+//$screen-md-min: 992px;  /* Medium screen / desktop */
+//$screen-lg-min: 1200px; /* Large screen / wide desktop */
 
 //== Components
 //
@@ -81,6 +88,8 @@ $content-padding-vertical: 40px;
 
 $navbar-height:      50px;
 $navbar-border-radius: 0;
+
+$nav-link-padding: 13px 10px;
 
 $navbar-margin-bottom: -$navbar-height;
 
@@ -97,7 +106,7 @@ $sidebar-bg-color: #242424;
 $sidebar-color: #aaa;
 
 $sidebar-item-border-color: #2d2d2d;
-$sidebar-item-active-color: #F2BE35;
+$sidebar-item-active-color: #f2be35;
 $sidebar-item-hover-bg-color: #111;
 
 $breadcrumb-separator: '>';

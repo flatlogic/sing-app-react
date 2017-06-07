@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import {
   LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS,
 } from '../actions/user';

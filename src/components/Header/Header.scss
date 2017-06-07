@@ -9,13 +9,18 @@
 
 @import '../../styles/app';
 
-.menuButton {
-  font-size: $font-size-large;
-  margin-left: -$navbar-padding-horizontal + 5;
-  margin-top: -1px;
-  margin-bottom: -2px;
+.notifications {
+  width: 333px;
 }
 
-.dropdown-menu {
-  width: 333px;
+.navbar {
+  background: $white;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navLink {
+  color: $text-color;
 }

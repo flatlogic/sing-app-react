@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { NavLink } from 'react-router-dom';
-import { Panel } from 'react-bootstrap';
+import { Collapse } from 'reactstrap';
 import { Route } from 'react-router';
 
 import s from './LinksGroup.scss';
@@ -62,7 +62,7 @@ class LinksGroup extends Component {
                 <b className={['caret', s.caret].join(' ')} />
               </a>
               {/* eslint-enable */}
-              <Panel className={s.panel} collapsible expanded={expanded}>
+              <Collapse className={s.panel} isOpen={expanded}>
                 <ul>
                   {this.props.childrenLinks && this.props.childrenLinks.map(child => (
                     <li key={child.name}>
@@ -76,7 +76,7 @@ class LinksGroup extends Component {
                     </li>
                       ))}
                 </ul>
-              </Panel>
+              </Collapse>
             </li>
           );
         }}

@@ -20,7 +20,6 @@
 
 .title {
   margin-top: 0;
-  margin-bottom: $line-height-computed/2;
   color: $widget-title-color;
 
   @include clearfix();

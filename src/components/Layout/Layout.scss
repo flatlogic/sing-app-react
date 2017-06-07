@@ -6,7 +6,7 @@
   left: 0;
   transition: left 0.3s ease-in-out;
 
-  &.chatOpen{
+  &.chatOpen {
     left: -254px;
   }
 }
@@ -17,13 +17,13 @@
   left: 0;
   right: 0;
 
-  @media (min-width: $screen-sm-min) {
+  @include media-breakpoint-up(md) {
     left: $sidebar-width-open;
     right: 0;
   }
 }
 
-.sidebarOpen .wrap{
+.sidebarOpen .wrap {
   left: $sidebar-width-closed;
 }
 

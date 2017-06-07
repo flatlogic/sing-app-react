@@ -12,18 +12,18 @@
 }
 
 .progress-sm {
-  height: $line-height-computed/1.5;
-  margin-bottom: $line-height-computed/1.5;
+  height: 10px;
+  margin-bottom: 10px;
 }
 
 .progress-xs {
   height: 5px;
-  margin-bottom: $line-height-computed/2;
+  margin-bottom: 5px;
 }
 
 .breadcrumb {
   margin-top: -15px;
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
 
   > .active {
     font-weight: 600;
@@ -43,13 +43,12 @@
 }
 
 .form-control {
-  font-size: $font-size-base - 1;
-
-  @include box-shadow(none);
-  @include transition(border-color ease-in-out .15s, background-color ease-in-out .15s);
+  font-size: $font-size-base - 0.0625rem;
+  box-shadow: none;
+  transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.15s;
 
   &:focus {
-    @include box-shadow(none);
+    box-shadow: none;
   }
 
   &.no-border {
@@ -71,10 +70,10 @@
 }
 
 .alert {
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
 
   .close {
-    color: rgba(#000, .4)
+    color: rgba(#000, 0.4);
   }
 }
 
@@ -111,7 +110,8 @@
 }
 
 .table-sm {
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
+
   > thead > tr > th,
   > thead > tr > td,
   > tbody > tr > th,
@@ -127,6 +127,23 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-weight: 300;
+}
+
+///////// Glyphicons //////////
+
+.glyphicon {
+  vertical-align: middle;
 }

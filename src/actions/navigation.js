@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 
-import { TOGGLE_SIDEBAR, OPEN_SIDEBAR, CLOSE_SIDEBAR } from '../constants';
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
+export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
+export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
 
 export function toggleSidebar() {
   return {

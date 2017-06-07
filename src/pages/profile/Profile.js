@@ -1,6 +1,6 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Row, Col, Form, FormGroup, FormControl, Checkbox, Button, ControlLabel } from 'react-bootstrap';
+import { Row, Col, Form, FormGroup, Input, Button, Label } from 'reactstrap';
 
 import Widget from '../../components/Widget';
 
@@ -22,44 +22,49 @@ const Profile = () => (
             </span>
         }
         >
-          <Form horizontal>
-            <FormGroup controlId="formHorizontalEmail">
-              <Col componentClass={ControlLabel} sm={2}>
+          <Form>
+            <FormGroup row>
+              <Label for="username" sm={2}>
                 Username
-              </Col>
+              </Label>
               <Col sm={10}>
-                <FormControl type="text" placeholder="Username" />
+                <Input id="username" type="text" placeholder="Username" />
               </Col>
             </FormGroup>
-            <FormGroup controlId="formHorizontalEmail">
-              <Col componentClass={ControlLabel} sm={2}>
+            <FormGroup row>
+              <Label for="email" sm={2}>
                 Email
-              </Col>
+              </Label>
               <Col sm={10}>
-                <FormControl type="email" placeholder="Email" />
+                <Input id="email" type="email" placeholder="Email" />
               </Col>
             </FormGroup>
-            <FormGroup controlId="formHorizontalPassword">
-              <Col componentClass={ControlLabel} sm={2}>
+            <FormGroup row>
+              <Label for="password" sm={2}>
                 Password
-              </Col>
+              </Label>
               <Col sm={10}>
-                <FormControl type="password" placeholder="Password" />
+                <Input id="password" type="password" placeholder="Password" />
               </Col>
             </FormGroup>
-            <FormGroup>
-              <Col smOffset={2} sm={10}>
-                <Checkbox>Remember me</Checkbox>
+            <FormGroup row>
+              <Col sm={{ size: 10, offset: 2 }}>
+                <FormGroup>
+                  <Label>
+                    <Input type="checkbox" />{' '}
+                    Remember me
+                  </Label>
+                </FormGroup>
               </Col>
             </FormGroup>
 
-            <FormGroup>
-              <Col smOffset={2} sm={10}>
-                <div className="btn-toolbar pull-right">
+            <FormGroup row>
+              <Col sm={{ size: 10, offset: 2 }}>
+                <div className="btn-toolbar float-right">
                   <Button>
                     Cancel
                   </Button>
-                  <Button bsStyle="danger">
+                  <Button color="danger">
                     Save
                   </Button>
                 </div>

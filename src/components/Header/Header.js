@@ -1,18 +1,24 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
-import {connect} from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import {Navbar, MenuItem, Nav, NavDropdown, NavItem, Glyphicon, Badge, ListGroup, ListGroupItem} from 'react-bootstrap';
-import {logoutUser} from '../../actions/user';
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+  NavItem,
+  NavLink,
+  Badge,
+  ListGroup,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  ButtonGroup,
+  Button,
+} from 'reactstrap';
+import Notifications from './notifications-demo/Notifications';
+import Messages from './notifications-demo/Messages';
+import Progress from './notifications-demo/Progress';
+import { logoutUser } from '../../actions/user';
 
 import s from './Header.scss';
 
@@ -29,75 +35,117 @@ class Header extends React.Component {
     },
   };
 
+  constructor(props) {
+    super(props);
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleNotifications = this.toggleNotifications.bind(this);
+
+    this.state = {
+      menuOpen: false,
+      notificationsOpen: false,
+      notificationsTabSelected: 1,
+    };
+  }
+
+  toggleMenu() {
+    this.setState({
+      menuOpen: !this.state.menuOpen,
+    });
+  }
+
+  toggleNotifications() {
+    this.setState({
+      notificationsOpen: !this.state.notificationsOpen,
+    });
+  }
+
+  changeNotificationsTab(tab) {
+    this.setState({
+      notificationsTabSelected: tab,
+    });
+  }
+
   doLogout() {
     this.props
-      .dispatch(logoutUser());
+      .dispatch(logoutUser()); // eslint-disable-line
   }
 
   render() {
+    let notificationsTab;
+
+    switch (this.state.notificationsTabSelected) {
+      case 1:
+        notificationsTab = (<Notifications />);
+        break;
+      case 2:
+        notificationsTab = (<Messages />);
+        break;
+      case 3:
+        notificationsTab = (<Progress />);
+        break;
+      default:
+        notificationsTab = (<Notifications />);
+        break;
+    }
     return (
-      <Navbar fluid>
-        <Nav pullLeft>
-          <NavItem className={s.menuButton} eventKey={1} href="#" onClick={this.props.sidebarToggle}>
-            <Glyphicon glyph="menu-hamburger"/>
+      <Navbar className={s.navbar}>
+        <Nav>
+          <NavItem>
+            <NavLink className={s.navLink} href="#" onClick={this.props.sidebarToggle}>
+              <i className="fa fa-bars fa-lg" />
+            </NavLink>
           </NavItem>
         </Nav>
-        <Nav pullRight>
-          <NavDropdown
-            eventKey={1} title={
-            <span>
-                <Glyphicon glyph="user" className="mr-sm"/>
-            John <span className="fw-semi-bold">Willington</span>
-                <Badge className="ml-sm badge-warning">4</Badge>
+        <Nav>
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown">
+            <DropdownToggle nav caret className={s.navLink}>
+              <span>
+                <i className="mr-sm glyphicon glyphicon-user" />
+                John <span className="fw-semi-bold">Willington</span>
+                <Badge className="ml-1" color="warning" pill>4</Badge>
               </span>
-          } noCaret id="basic-nav-dropdown"
-          >
-            <section className="panel notifications">
-              <header className="panel-heading">
-                <div className="text-align-center mb-sm">
-                  <strong>You have 13 notifications</strong>
-                </div>
-                <div className="btn-group btn-group-sm btn-group-justified" id="notifications-toggle">
-                  <label className="btn btn-default active">
-                    Notifications
-                  </label>
-                  <label className="btn btn-default">
-                    Notifications
-                  </label>
-                  <label className="btn btn-default">
-                    Notifications
-                  </label>
-                </div>
-              </header>
-              <ListGroup>
-                <ListGroupItem>Item 1</ListGroupItem>
-                <ListGroupItem>Item 2</ListGroupItem>
-                <ListGroupItem>Item 3</ListGroupItem>
-              </ListGroup>
-            </section>
+            </DropdownToggle>
+            <DropdownMenu right>
+              <section className={`${s.notifications} card`}>
+                <header className="card-header">
+                  <div className="text-center mb-sm">
+                    <strong>You have 13 notifications</strong>
+                  </div>
+                  <ButtonGroup>
+                    <Button color="secondary" onClick={() => this.changeNotificationsTab(1)} active={this.state.notificationsTabSelected === 1}>Notifications</Button>
+                    <Button color="secondary" onClick={() => this.changeNotificationsTab(2)} active={this.state.notificationsTabSelected === 2}>Messages</Button>
+                    <Button color="secondary" onClick={() => this.changeNotificationsTab(3)} active={this.state.notificationsTabSelected === 3}>Progress</Button>
+                  </ButtonGroup>
+                </header>
+                <ListGroup>
+                  {notificationsTab}
+                </ListGroup>
+              </section>
+            </DropdownMenu>
           </NavDropdown>
-          <Nav>
-            <NavDropdown
-              eventKey={1} title={<Glyphicon glyph="user"/>} noCaret
-            >
-              <MenuItem><Glyphicon glyph="user"/> &nbsp; My Account</MenuItem>
-              <MenuItem divider />
-              <MenuItem>Calendar</MenuItem>
-              <MenuItem>Inbox &nbsp;&nbsp;<span className="badge bg-danger">9</span></MenuItem>
-              <MenuItem divider />
-              <MenuItem><Glyphicon glyph="user"/> &nbsp; Log Out</MenuItem>
-            </NavDropdown>
-          </Nav>
-          <NavItem><Glyphicon glyph="user" onClick={this.props.chatToggle}/></NavItem>
+          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu}>
+            <DropdownToggle nav className={s.navLink}>
+              <i className="fa fa-cog fa-lg" />
+            </DropdownToggle>
+            <DropdownMenu right className="super-colors">
+              <DropdownItem><i className="glyphicon glyphicon-user" /> My Account</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Calendar</DropdownItem>
+              <DropdownItem>Inbox &nbsp;&nbsp;<Badge color="danger" pill>9</Badge></DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem><i className="fa fa-sign-out" /> Log Out</DropdownItem>
+            </DropdownMenu>
+          </NavDropdown>
+          <NavItem>
+            <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
+              <i className="fa fa-globe fa-lg" />
+            </NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    init: state.runtime.initialNow,
-  };
-}
-export default connect(mapStateToProps)(withStyles(s)(Header));
+export default withStyles(s)(Header);
