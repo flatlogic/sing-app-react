@@ -35,8 +35,231 @@ $opacity-variants: (10: 0.1, 20: 0.2, 30: 0.3, 40: 0.4, 50: 0.5, 60: 0.6, 70: 0.
   @include badge-variant($badge-danger-bg);
 }
 
+.badge-white {
+  @include badge-variant($white);
+}
+
+/**
+ * .circle & .rounded are pretty cool way to add a bit of beauty to raw data.
+ * should be used with bg-* and text-* classes for colors.
+ */
+.circle,
+.rounded,
+.circle-o {
+  display: inline-block;
+  width: #{$line-height-base}em;
+  height: #{$line-height-base}em;
+  line-height: #{$line-height-base}em;
+  text-align: center;
+}
+
+.circle,
+.circle-o {
+  @include border-radius(50%);
+}
+
+.rounded {
+  @include border-radius(5px);
+}
+
+.circle-lg,
+.rounded-lg {
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+}
+
+.circle-o {
+  border: #{$line-height-base/5}em solid transparent;
+
+  // stylelint-disable
+  &.circle-o-danger { border-color: $brand-danger };
+  &.circle-o-warning { border-color: $brand-warning };
+  &.circle-o-success { border-color: $brand-success };
+  &.circle-o-info { border-color: $brand-info };
+  &.circle-o-primary { border-color: $brand-primary };
+  &.circle-o-black { border-color: $black };
+  &.circle-o-gray-darker { border-color: $gray-darker };
+  &.circle-o-gray-dark { border-color: $gray-dark };
+  &.circle-o-gray { border-color: $gray };
+  &.circle-o-gray-light { border-color: $gray-light };
+  &.circle-o-gray-lighter { border-color: $gray-lighter };
+  &.circle-o-white { border-color: $white };
+  // stylelint-enable
+}
+
+@include thumb('.thumb-xlg', 100px);
+@include thumb('.thumb-lg', 60px);
+@include thumb('.thumb', 48px);
+@include thumb('.thumb-sm', 34px);
+@include thumb('.thumb-xs', 28px);
+
+.thumb-xs,
+.thumb-sm,
+.thumb-lg,
+.thumb-xlg,
+.thumb {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border: 0.15em solid $white;
+
+    @include border-radius(50%);
+
+    &.status-bottom {
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
 @include bg-variant('.bg-dark', $text-color);
 
 .td-underline {
   text-decoration: underline;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.fw-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+
+.fw-normal {
+  font-weight: $font-weight-normal;
+}
+
+.fw-bold {
+  font-weight: $font-weight-bold;
+}
+
+.fw-thin {
+  font-weight: $font-weight-thin;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-135 {
+  transform: rotate(135deg);
+}
+
+.rotate-225 {
+  transform: rotate(225deg);
+}
+
+.rotate-315 {
+  transform: rotate(315deg);
+}
+
+// Text & Background Variations
+// ----------------------------
+
+//copy bg classes after bootstrap so it's possible to overload other bootstrap classes
+
+@include bg-variant('.bg-primary', $brand-primary);
+@include bg-variant('.bg-success', $brand-success);
+@include bg-variant('.bg-info', $brand-info);
+@include bg-variant('.bg-warning', $brand-warning);
+@include bg-variant('.bg-danger', $brand-danger);
+@include bg-variant('.bg-primary-light', $brand-primary-light);
+@include bg-variant('.bg-success-light', $brand-success-light);
+@include bg-variant('.bg-info-light', $brand-info-light);
+@include bg-variant('.bg-warning-light', $brand-warning-light);
+@include bg-variant('.bg-danger-light', $brand-danger-light);
+@include bg-variant('.bg-body', $body-bg);
+@include bg-variant('.bg-body-light', $body-bg-light);
+@include bg-variant('.bg-gray', $gray);
+@include bg-variant('.bg-gray-transparent', rgba($gray, 0.6));
+@include bg-variant('.bg-gray-dark', $gray-dark);
+@include bg-variant('.bg-black', $black);
+@include bg-variant('.bg-gray-light', $gray-light);
+@include bg-variant('.bg-gray-lighter', $gray-lighter);
+@include bg-variant('.bg-transparent', rgba(0,0,0,0));
+@include bg-variant('.bg-white', $white);
+@include bg-variant('.bg-sidebar', $sidebar-bg-color);
+
+.bg-body,
+.bg-body-light,
+.bg-gray,
+.bg-gray-transparent,
+.bg-transparent,
+.bg-primary,
+.bg-success,
+.bg-warning,
+.bg-danger,
+.bg-info {
+  @include transition(background-color 0.15s ease-in-out);
+}
+
+//override bs .text-* classes so they use $brand-* variables
+
+@include text-emphasis-variant('.text-primary', $brand-primary);
+@include text-emphasis-variant('.text-success', $brand-success);
+@include text-emphasis-variant('.text-info', $brand-info);
+@include text-emphasis-variant('.text-warning', $brand-warning);
+@include text-emphasis-variant('.text-danger', $brand-danger);
+@include text-emphasis-variant('.text-link', $link-color);
+@include text-emphasis-variant('.text-white', $white);
+@include text-emphasis-variant('.text-gray', $gray);
+@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+@include text-emphasis-variant('.text-gray-light', $gray-light);
+@include text-emphasis-variant('.text-semi-muted', $gray-semi-light);
+@include text-emphasis-variant('.text-gray-darker', $gray-darker);
+@include text-emphasis-variant('.text-gray-lighter', $gray-lighter);
+@include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
+
+.text-light {
+  opacity: 0.8;
+}
+
+.fs-sm {
+  font-size: $font-size-sm;
+}
+
+.btlr {
+  border-top-left-radius: $border-radius;
+}
+
+.btrr {
+  border-top-right-radius: $border-radius;
+}
+
+.bblr {
+  border-bottom-left-radius: $border-radius;
+}
+
+.bbrr {
+  border-bottom-right-radius: $border-radius;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
 }

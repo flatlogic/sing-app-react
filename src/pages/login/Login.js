@@ -38,7 +38,11 @@ class Login extends React.Component {
       <div className={s.root}>
         <Container>
           <Row>
-            <Col xs={10} xsOffset={1} sm={6} smOffset={3} lg={4} lgOffset={4}>
+            <Col
+              sm={{ size: 10, offset: 1 }}
+              md={{ size: 6, offset: 3 }}
+              xl={{ size: 4, offset: 4 }}
+            >
               <p className="text-center">React Dashboard</p>
               <Widget className={s.widget}>
                 <h4 className="mt-0">Login to your Web App</h4>

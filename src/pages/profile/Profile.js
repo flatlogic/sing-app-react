@@ -1,6 +1,16 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Row, Col, Form, FormGroup, Input, Button, Label } from 'reactstrap';
+import {
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Input,
+  Button,
+  Label,
+  Breadcrumb,
+  BreadcrumbItem,
+} from 'reactstrap';
 
 import Widget from '../../components/Widget';
 
@@ -8,11 +18,11 @@ import s from './Profile.scss';
 
 const Profile = () => (
   <div className={s.root}>
-    <ol className="breadcrumb">
-      <li><span className="text-muted">YOU ARE HERE</span></li>
-      <li className="active">Profile</li>
-    </ol>
-    <h1>Profile</h1>
+    <Breadcrumb>
+      <BreadcrumbItem><span className="text-muted">YOU ARE HERE</span></BreadcrumbItem>
+      <BreadcrumbItem active>Profile</BreadcrumbItem>
+    </Breadcrumb>
+    <h1 className="page-title">Profile</h1>
     <Row>
       <Col sm={6}>
         <Widget

@@ -30,6 +30,6 @@
 .content {
   min-height: 100%;
   // 20px for footer height
-  padding: #{$navbar-height + $content-padding-vertical} $content-padding-horizontal ($content-padding-vertical + 20px);
+  padding: $content-padding $content-padding ($content-padding + 20px);
   background-color: $body-bg;
 }

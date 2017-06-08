@@ -20,6 +20,8 @@ import Messages from './notifications-demo/Messages';
 import Progress from './notifications-demo/Progress';
 import { logoutUser } from '../../actions/user';
 
+import * as a5 from '../../images/people/a5.jpg';
+
 import s from './Header.scss';
 
 class Header extends React.Component {
@@ -96,15 +98,25 @@ class Header extends React.Component {
               <i className="fa fa-bars fa-lg" />
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink className={`${s.navLink} ml-1`} href="#">
+              <i className="fa fa-refresh fa-lg" />
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className={s.navLink} href="#">
+              <i className="fa fa-times fa-lg" />
+            </NavLink>
+          </NavItem>
         </Nav>
         <Nav>
           <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown">
             <DropdownToggle nav caret className={s.navLink}>
-              <span>
-                <i className="mr-sm glyphicon glyphicon-user" />
-                John <span className="fw-semi-bold">Willington</span>
-                <Badge className="ml-1" color="warning" pill>4</Badge>
+              <span className={`${s.avatar} thumb-sm float-left`}>
+                <img className="rounded-circle" src={a5} alt="..." />
               </span>
+              Philip <span className="fw-semi-bold">Smith</span>
+              <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right>
               <section className={`${s.notifications} card`}>

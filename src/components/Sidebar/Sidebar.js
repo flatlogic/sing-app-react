@@ -1,61 +1,84 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Progress } from 'reactstrap';
+import { Progress, Alert } from 'reactstrap';
 import { withRouter, Link } from 'react-router-dom';
-
+import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
-const Sidebar = () => (
-  <nav className={s.root}>
-    <header className={s.logo}>
-      <Link to="/app">sing</Link>
-    </header>
+class Sidebar extends React.Component {
+  dismissAlert(id) {
+    this.props
+      .dispatch(dismissAlert(id)); // eslint-disable-line
+  }
 
-    <ul className={s.nav}>
-      <LinksGroup header="Dashboard" headerLink="/app" iconName="glyphicon-tree-conifer" />
-      <LinksGroup header="Profile" headerLink="/app/profile" iconName="glyphicon-user" />
-    </ul>
-    <h5 className={s.navTitle}>
-      LABELS
-      <a className="acton-link">
-        <i className="glyphicon glyphicon-plus x05 float-right" />
-      </a>
-    </h5>
-    <ul className={s.sidebarLabels}>
-      <li>
-        <a>My Recent</a>
-      </li>
-      <li>
-        <a>Starred</a>
-      </li>
-      <li>
-        <a>Background</a>
-      </li>
-    </ul>
-    <h5 className={s.navTitle}>
-      PROJECTS
-    </h5>
-    <div className="sidebar-alerts">
-      <div className="alert fade show">
-        <span className="text-white fw-semi-bold">Sales Report</span><br />
-        <Progress className="progress-sm" color="success" value="40" />
-        <small>Calculating x-axis bias... 65%</small>
-      </div>
-      <div className="alert fade show">
-        <span className="text-white fw-semi-bold">Personal Responsibility</span><br />
-        <Progress className="progress-sm" color="success" value="40" />
-        <small>Provide required notes</small>
-      </div>
-    </div>
-  </nav>
-);
+  render() {
+    return (
+      <nav className={s.root}>
+        <header className={s.logo}>
+          <Link to="/app">sing</Link>
+        </header>
+
+        <ul className={s.nav}>
+          <LinksGroup header="Dashboard" headerLink="/app" iconName="glyphicon-tree-conifer" />
+          <LinksGroup header="Profile" headerLink="/app/profile" iconName="glyphicon-user" />
+        </ul>
+        <h5 className={s.navTitle}>
+          LABELS
+          <a className={s.actionLink}>
+            <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`} />
+          </a>
+        </h5>
+        {/* eslint-disable */}
+        <ul className={s.sidebarLabels}>
+          <li>
+            <a href="#">
+              <i className="fa fa-circle text-warning mr-2" />
+              <span className={s.labelName}>My Recent</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fa fa-circle text-gray mr-2" />
+              <span className={s.labelName}>Starred</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fa fa-circle text-danger mr-2" />
+              <span className={s.labelName}>Background</span>
+            </a>
+          </li>
+        </ul>
+        {/* eslint-enable */}
+        <h5 className={s.navTitle}>
+          PROJECTS
+        </h5>
+        <div className={s.sidebarAlerts}>
+          {this.props.alertsList.map(alert => // eslint-disable-line
+            <Alert
+              key={alert.id}
+              className={s.sidebarAlert} color="transparent"
+              isOpen={true} // eslint-disable-line
+              toggle={() => { this.dismissAlert(alert.id); }}
+            >
+              <span className="text-white fw-semi-bold">{alert.title}</span><br />
+              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value} />
+              <small>{alert.footer}</small>
+            </Alert>,
+          )}
+        </div>
+      </nav>
+    );
+  }
+}
 
 function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
+    alertsList: store.alerts.alertsList,
   };
 }
 

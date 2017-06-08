@@ -34,17 +34,32 @@
 .navTitle {
   margin: 35px 0 5px 11px;
   font-size: 14px;
+}
 
-  span {
-    margin-right: 15px;
-    margin-top: -1px;
-    color: #aaa;
+.actionLink {
+  color: #aaa;
+  float: right;
+  margin-right: 15px;
+  margin-top: -1px;
+}
+
+.labelName {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  @include media-breakpoint-up(lg) {
+    transition: none;
+    opacity: 1;
   }
+}
+
+.glyphiconSm {
+  font-size: 9px;
 }
 
 .sidebarLabels {
   list-style-type: none;
-  font-size: 13px;
+  font-size: 12px;
   padding: 11px;
   padding-right: 15px;
 
@@ -57,4 +72,26 @@
     text-decoration: none;
     font-weight: normal;
   }
+}
+
+.sidebarAlerts {
+  font-size: 12px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+
+  @include media-breakpoint-up(lg) {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.sidebarAlert {
+  background: transparent;
+  margin-bottom: 0;
+  padding: 0.5rem 11px;
+  padding-right: 15px;
+}
+
+.sidebarProgress {
+  background: lighten($sidebar-bg-color, 10%);
 }

@@ -9,6 +9,7 @@
 
 $glyphicons-halflings-include-bonus: false !default;
 $glyphicons-halflings-class-prefix: glyphicon !default;
+$glyphicons-halflings-font-base-size: 14px !default;
 
 $glyphicons-halflings-font-path: '../fonts/glyphicons' !default;
 $fa-font-path: '../fonts/font-awesome' !default;
@@ -20,6 +21,14 @@ $enable-shadows:            false !default;
  * ======================================================================== */
 $font-size-root: 14px;
 $font-family-base: 'Open Sans', sans-serif;
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              #343434 !default;
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+$gray-semi-light:        #777;
+$gray-semi-lighter:      #ddd;
 
 $text-color:                     #555;
 $link-color:                     #337ab7;
@@ -58,6 +67,28 @@ $alert-danger-bg:             #fbdcd7 !default;
 $alert-danger-text:           $state-danger-text !default;
 $alert-danger-border:         rgba($alert-danger-text, 0.09) !default;
 
+$text-color:            $gray !default;
+
+$font-weight-bold: 700 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-normal: 400 !default;
+$font-weight-thin: 300 !default;
+$font-weight-base: $font-weight-thin !default;
+
+$brand-primary-light: #dee4ee !default;
+
+$brand-success-light:         #ecfaec !default;
+$brand-info-light:            #f2fafa !default;
+$brand-warning-light:         lighten($brand-warning, 43%) !default;
+$brand-danger-light:          #fff2ef !default;
+
+$addition-bg: #f8f8f8 !default;
+
+//== Scaffolding
+//
+$body-bg: #eee !default;
+$body-bg-light: lighten($body-bg, 3%);
+
 //== Iconography
 //
 
@@ -83,13 +114,12 @@ $body-bg: #eee;
 //== Components
 //
 
-$content-padding-horizontal: 30px;
-$content-padding-vertical: 40px;
+$content-padding: 40px;
 
 $navbar-height:      50px;
 $navbar-border-radius: 0;
 
-$nav-link-padding: 13px 10px;
+$nav-link-padding: 14px;
 
 $navbar-margin-bottom: -$navbar-height;
 

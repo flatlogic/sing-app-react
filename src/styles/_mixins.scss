@@ -26,3 +26,20 @@
     }
   }
 }
+
+// Common thumbnail properties
+// -------------------------
+@mixin thumb($parent, $size) {
+  #{$parent} {
+    width: $size;
+
+    > .glyphicon,
+    > .fa {
+      line-height: $size;
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}

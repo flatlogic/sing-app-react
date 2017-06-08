@@ -142,8 +142,53 @@ h6,
   font-weight: 300;
 }
 
+.small,
+small {
+  font-size: 85%;
+}
+
+///////// Alerts //////////
+
+.alert {
+  button.close {
+    font-size: 16px;
+    text-shadow: none;
+    opacity: 1;
+    color: #aaa;
+    outline: none;
+    padding: 0;
+    position: static;
+  }
+}
+
+///////// Breadcrumbs //////////
+
+.breadcrumb {
+  color: $gray-light;
+  margin-bottom: $spacer-y*1.5;
+  margin-top: 0;
+
+  > .active {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}
+
 ///////// Glyphicons //////////
 
 .glyphicon {
   vertical-align: middle;
+}
+
+///////// Font Awesome //////////
+
+.fa {
+  &.fa-lg {
+    line-height: 1;
+  }
 }

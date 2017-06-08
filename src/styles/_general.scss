@@ -1,9 +1,11 @@
 html {
   font-weight: 100;
+  font-size: $font-size-root;
 }
 
 body {
   overflow-x: hidden;
+  color: $text-color;
 }
 
 html,
