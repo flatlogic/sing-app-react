@@ -4,6 +4,8 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { withRouter } from 'react-router-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
+import * as a2 from '../../images/people/a2.jpg';
+import * as a6 from '../../images/people/a6.jpg';
 
 import s from './Chat.scss';
 
@@ -25,14 +27,14 @@ class Chat extends React.Component {
         name: 'Chris Gray',
         status: 'success',
         lastMessage: 'Hey! What\'s up? So many times since we',
-        image: 'assets/img/people/a2.jpg',
+        image: a2,
       }],
       lastWeekConversations: [{
         id: 0,
         name: 'Freda Edison',
         status: 'gray-light',
         lastMessage: 'Hey what\'s up? Me and Monica going for a lunch somewhere. Wanna join?',
-        image: 'assets/img/people/a6.jpg',
+        image: a6,
       }],
     };
   }
@@ -52,37 +54,37 @@ class Chat extends React.Component {
           </div>
         </header>
         <div className={[s.chatSidebarPanel].join(' ')}>
-          <h5 className="sidebar-nav-title">Today</h5>
-          <ListGroup className="chat-sidebar-user-group">
+          <h5 className={s.navTitle}>TODAY</h5>
+          <ListGroup>
             {this.state.todayConversations.map(item =>
               <ListGroupItem key={item.id}>
-                <i className="fa fa-circle flex-last" />
+                <i className={['fa fa-circle flex-last', s.cirle, 'text-'+ item.status].join(' ')}/>
                 <span className="thumb-sm pull-left mr">
-                  <img className="rounded-circle" src="" alt="..." />
+                  <img className="rounded-circle" src={item.image} alt="..." />
                 </span>
                 <div>
                   <h6 className={s.messageSender}>{item.name}</h6>
-                  <p className="message-preview">{item.lastMessage}</p>
+                  <p className={s.messagePreview}>{item.lastMessage}</p>
+                </div>
+              </ListGroupItem>
+            )}
+          </ListGroup>
+
+          <h5 className={s.navTitle}>LAST WEEK</h5>
+          <ListGroup>
+            {this.state.lastWeekConversations.map(item =>
+              <ListGroupItem key={item.id}>
+                <i className={['fa fa-circle flex-last', s.cirle, 'text-'+ item.status].join(' ')}/>
+                <span className="thumb-sm pull-left mr">
+                  <img className="rounded-circle" src={item.image} alt="..." />
+                </span>
+                <div>
+                  <h6 className={s.messageSender}>{item.name}</h6>
+                  <p className={s.messagePreview}>{item.lastMessage}</p>
                 </div>
               </ListGroupItem>,
             )}
           </ListGroup>
-
-          <h5 className="sidebar-nav-title">Last Week</h5>
-          <div className="list-group chat-sidebar-user-group">
-            {this.state.lastWeekConversations.map(item =>
-              <a key={item.id} className="list-group-item">
-                <i className="fa fa-circle flex-last" />
-                <span className="thumb-sm pull-left mr">
-                  <img className="rounded-circle" src="" alt="..." />
-                </span>
-                <div>
-                  <h6 className="message-sender">{item.name}</h6>
-                  <p className="message-preview">{item.lastMessage}</p>
-                </div>
-              </a>,
-            )}
-          </div>
         </div>
       </aside>
     );

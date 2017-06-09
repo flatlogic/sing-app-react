@@ -140,6 +140,24 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
       right: 0;
     }
   }
+
+
+}
+
+.input-group-dark{
+  .input-group-addon,
+  .form-control{
+    background-color: rgba(0,0,0,.4);
+    border: 0;
+    color: $gray;
+    @include transition(background-color .15s ease-in-out);
+  }
+
+  .form-control:focus,
+  .form-control:focus + .input-group-addon,
+  &.focus .input-group-addon{
+    background-color: $gray-lighter
+  }
 }
 
 @include bg-variant('.bg-dark', $text-color);
@@ -306,6 +324,8 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   display: block !important;
 }
 
+
+
 .help-block {
   margin-top: 5px;
   font-size: $font-size-smaller;
@@ -453,3 +473,14 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     border-bottom-right-radius: $border-radius;
   }
 }
+
+// Style Classes
+// ----------------------------
+
+$margin-vertical-variants: (xlg: 40px, lg: $line-height-computed*3/2, md: $line-height-computed, sm: $line-height-computed/2, xs: $line-height-computed/4, 0: 0);
+$margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
+
+@include property-variants('.mt', 'margin-top', $margin-vertical-variants);
+@include property-variants('.mb', 'margin-bottom', $margin-vertical-variants);
+@include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
+@include property-variants('.mr', 'margin-right', $margin-horizontal-variants);

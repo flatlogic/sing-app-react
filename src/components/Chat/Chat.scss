@@ -16,13 +16,18 @@
 
   .chatSidebarHeader {
     position: absolute;
+    width: 100%;
     top: 0;
     z-index: 3;
     padding: 10px;
 
+    input {
+      padding: 0.6rem 0.85rem;
+      line-height: 1.5;
+    }
+
     .chatSidebarTitle {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin: 10px;
       text-transform: uppercase;
       font-size: 15px;
       font-weight: 400;
@@ -33,12 +38,44 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    padding: 100px 20px 20px;
+    padding-top: 100px;
+
+    ul {
+      margin-top: 10px;
+
+      li {
+        border: 0;
+        padding: 10px 20px;
+
+        .cirle {
+          font-size: 11px;
+          line-height: 37px;
+          margin-left: auto;
+        }
+      }
+    }
+
+    .navTitle {
+      margin: 35px 10px 5px 20px;
+      font-size: 14px;
+    }
+
+    .navTitle:first-child {
+      margin-top: 0;
+    }
 
     .messageSender {
       text-overflow: ellipsis;
     }
-  }
 
-  //.chatSidebarContacts {}
+    .messagePreview {
+      margin: 0;
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 85%;
+      color: #999999;
+    }
+  }
 }

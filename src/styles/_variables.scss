@@ -79,6 +79,12 @@ $font-weight-normal: 400 !default;
 $font-weight-thin: 300 !default;
 $font-weight-base: $font-weight-thin !default;
 
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.5 !default;
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-root * $line-height-base)) !default;
+
 $brand-primary-light: #dee4ee !default;
 
 $brand-success-light:         #ecfaec !default;
