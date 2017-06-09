@@ -5,6 +5,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 
 import LayoutComponent from '../components/Layout/Layout';
 import LoginComponent from '../pages/login/Login';
+import ErrorPage from '../pages/error/ErrorPage';
 
 
 // import { auth } from '../config';
@@ -56,6 +57,7 @@ class App extends React.PureComponent {
         <Route path="/" exact render={() => <Redirect to="/app" />} />
         <Route path="/app" component={LayoutComponent} />
         <Route path="/login" exact component={LoginComponent} />
+        <Route component={ErrorPage} />
       </Switch>
     );
   }

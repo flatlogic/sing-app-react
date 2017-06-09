@@ -10,7 +10,6 @@ import PrettyError from 'pretty-error';
 import App from './components/App';
 import Html from './components/Html';
 import { ErrorPageWithoutStyle } from './pages/error/ErrorPage';
-import errorPageStyle from './pages/error/ErrorPage.scss';
 import createFetch from './createFetch';
 import configureStore from './store/configureStore';
 import { receiveLogin, receiveLogout } from './actions/user';
@@ -147,7 +146,6 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
     <Html
       title="Internal Server Error"
       description={err.message}
-      styles={[{ id: 'css', cssText: errorPageStyle._getCss() }]} // eslint-disable-line no-underscore-dangle
     >
       {ReactDOM.renderToString(<ErrorPageWithoutStyle error={err} />)}
     </Html>,

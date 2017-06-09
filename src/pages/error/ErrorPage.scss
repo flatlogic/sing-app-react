@@ -1,56 +1,47 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
+@import '../../styles/app';
 
-* {
-  line-height: 1.2;
-  margin: 0;
-}
-
-html {
-  color: #888;
-  display: table;
-  font-family: sans-serif;
+.errorPage {
+  background-color: $gray-semi-lighter;
   height: 100%;
+}
+
+.errorContainer {
+  padding-top: 5%;
   text-align: center;
+}
+
+.errorBtn {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.errorCode {
+  margin: 20px;
+  font-size: 80px;
+  font-weight: $font-weight-normal;
+  color: $gray-dark;
+
+  @include media-breakpoint-up(md) {
+    font-size: 180px;
+  }
+}
+
+.errorInfo {
+  font-size: 20px;
+  color: $gray-dark;
+}
+
+.errorHelp {
+  font-size: 14px;
+}
+
+.pageFooter {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
   width: 100%;
-}
-
-body {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 2em;
-}
-
-h1 {
-  color: #555;
-  font-size: 2em;
-  font-weight: 400;
-}
-
-p {
-  margin: 0 auto;
-  width: 280px;
-}
-
-pre {
-  text-align: left;
-  margin-top: 2rem;
-}
-
-@media only screen and (max-width: 280px) {
-  body,
-  p {
-    width: 95%;
-  }
-
-  h1 {
-    font-size: 1.5em;
-    margin: 0 0 0.3em;
-  }
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
 }
