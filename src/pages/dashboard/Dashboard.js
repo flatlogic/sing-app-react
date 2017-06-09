@@ -1,6 +1,6 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 // import $ from 'jquery';
 
 import Widget from '../../components/Widget';
@@ -23,7 +23,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <h1 className="mb-lg">Dashboard</h1>
+        <Breadcrumb>
+          <BreadcrumbItem><span className="text-muted">YOU ARE HERE</span></BreadcrumbItem>
+          <BreadcrumbItem active>Profile</BreadcrumbItem>
+        </Breadcrumb>
+        <h1 className="page-title">Dashboard</h1>
         <Row>
           <Col sm={6}>
             <Widget title={<div>Example Widget</div>}>

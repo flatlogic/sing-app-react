@@ -21,19 +21,6 @@
   margin-bottom: 5px;
 }
 
-.breadcrumb {
-  margin-top: -15px;
-  font-size: $font-size-sm;
-
-  > .active {
-    font-weight: 600;
-  }
-
-  > li + li::before {
-    color: $gray-light;
-  }
-}
-
 @media (min-width: $grid-float-breakpoint) {
   .navbar-right {
     .dropdown-menu {
@@ -63,10 +50,6 @@
 
 .input-sm {
   font-size: 13px;
-}
-
-.btn-inverse {
-  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
 }
 
 .alert {
@@ -147,6 +130,40 @@ small {
   font-size: 85%;
 }
 
+///////// Buttons //////////
+
+.btn-link {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-inverse {
+  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+}
+
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+///////// Dropdowns //////////
+
+.nav-item.dropdown {
+  .nav-link {
+    height: 100%;
+  }
+
+  &.show {
+    .nav-link {
+      background-color: $gray-lighter;
+      color: $gray;
+    }
+  }
+}
+
 ///////// Alerts //////////
 
 .alert {
@@ -167,6 +184,7 @@ small {
   color: $gray-light;
   margin-bottom: $spacer-y*1.5;
   margin-top: 0;
+  font-size: $font-size-sm;
 
   > .active {
     font-weight: $font-weight-semi-bold;
@@ -177,6 +195,7 @@ small {
 
 .breadcrumb-item + .breadcrumb-item::before {
   content: ">";
+  color: $gray-light;
 }
 
 ///////// Glyphicons //////////
@@ -187,8 +206,27 @@ small {
 
 ///////// Font Awesome //////////
 
-.fa {
-  &.fa-lg {
-    line-height: 1;
+.navbar {
+  .fa {
+    &.fa-lg {
+      line-height: 19px;
+    }
   }
 }
+
+///////// Tooltips //////////
+
+.bs-tether-target.show {
+  display: inline-block !important;
+}
+
+///////// Base Elements //////////
+
+.navbar-notifications {
+  .list-group-item:hover {
+    .progress {
+      background: $white;
+    }
+  }
+}
+

@@ -14,12 +14,15 @@ $glyphicons-halflings-font-base-size: 14px !default;
 $glyphicons-halflings-font-path: '../fonts/glyphicons' !default;
 $fa-font-path: '../fonts/font-awesome' !default;
 
-$enable-shadows:            false !default;
-
 /*
  * Typography
  * ======================================================================== */
 $font-size-root: 14px;
+
+$font-size-larger:        1.071rem !default;
+$font-size-mini:          0.9286rem !default;
+$font-size-smaller:       85% !default;
+
 $font-family-base: 'Open Sans', sans-serif;
 
 $gray-darker:            lighten(#000, 13.5%) !default; // #222
@@ -32,12 +35,13 @@ $gray-semi-lighter:      #ddd;
 
 $text-color:                     #555;
 $link-color:                     #337ab7;
+$white:                          #fff;
 
-$brand-primary:         #3754a5 !default; // #337ab7
-$brand-success:         #05c1a1 !default;
-$brand-info:            #5d80f9 !default;
-$brand-warning:         #f7be1e !default;
-$brand-danger:          #f45c43 !default;
+$brand-primary:         #5d8fc2 !default; //#618fb0 !default;
+$brand-success:         #64bd63 !default;
+$brand-info:            #5dc4bf !default; //#61c4b8 !default; //#5DADE2 !default;
+$brand-warning:         #f0b518 !default;
+$brand-danger:          #dd5826 !default; // #e5603b !default;
 
 $state-success-text:             $brand-success !default;
 $state-success-bg:               lighten($brand-success, 70%) !default;
@@ -154,6 +158,25 @@ $btn-inverse-border: #414749;
 
 $input-height-small: 30px;
 
-// ===== Colors =====
+//== Navbar
+//
 
-$primary-gray: gray;
+$navbar-font-size:                 $font-size-mini !default;
+
+$navbar-margin-bottom:             0 !default;
+$navbar-border-radius:             0 !default;
+
+$navbar-dashboard-bg:                $white !default;
+$navbar-dashboard-color:             #777 !default;
+$navbar-dashboard-border:            darken($navbar-dashboard-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-dashboard-link-color:                #666 !default;
+
+// Navbar links
+$navbar-dashboard-link-hover-color:          #333 !default;
+$navbar-dashboard-link-hover-bg:             transparent !default;
+$navbar-dashboard-link-active-color:         #555 !default;
+$navbar-dashboard-link-active-bg:            darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-dashboard-link-disabled-color:       #ccc !default;
+$navbar-dashboard-link-disabled-bg:          transparent !default;

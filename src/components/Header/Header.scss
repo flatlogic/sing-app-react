@@ -1,17 +1,4 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 @import '../../styles/app';
-
-.notifications {
-  width: 333px;
-}
 
 .navbar {
   background: $white;
@@ -19,10 +6,16 @@
   justify-content: space-between;
   padding-top: 0;
   padding-bottom: 0;
+  font-size: $navbar-font-size;
+  font-weight: 500;
 }
 
 .navLink {
   color: $text-color;
+
+  &:hover {
+    color: $navbar-dashboard-link-hover-color;
+  }
 }
 
 .avatar {
@@ -30,4 +23,8 @@
   margin-top: -5px;
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.dropdownNotifications {
+  padding-bottom: 0;
 }

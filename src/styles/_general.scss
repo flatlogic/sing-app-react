@@ -15,9 +15,10 @@ body,
 }
 
 a,
-.dropdown-item {
+.dropdown-item,
+.btn {
   cursor: pointer;
-  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 }
 
 th {
@@ -26,4 +27,8 @@ th {
 
 label {
   font-weight: 600;
+}
+
+strong {
+  font-weight: 700;
 }

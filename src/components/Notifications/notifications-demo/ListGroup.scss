@@ -1,0 +1,47 @@
+@import '../../../styles/app';
+
+.listGroup {
+  display: block;
+  height: 320px;
+  overflow-y: scroll;
+}
+
+.progress {
+  transition: background-color 0.15s ease-in-out;
+}
+
+.progressBar {
+  background-color: $white !important;
+}
+
+.listGroupItem {
+  transition: background-color 0.15s ease-in-out;
+  text-decoration: none;
+  color: $gray;
+  border-left: none;
+  border-right: none;
+  display: block;
+
+  &:hover {
+    background-color: $list-group-hover-bg;
+  }
+
+  &:first-child {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.notificationIcon {
+  margin-right: 1rem;
+  float: left;
+
+  @include clearfix;
+}

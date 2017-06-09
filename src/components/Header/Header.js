@@ -8,16 +8,12 @@ import {
   NavItem,
   NavLink,
   Badge,
-  ListGroup,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  ButtonGroup,
-  Button,
+  UncontrolledTooltip,
 } from 'reactstrap';
-import Notifications from './notifications-demo/Notifications';
-import Messages from './notifications-demo/Messages';
-import Progress from './notifications-demo/Progress';
+import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
 
 import * as a5 from '../../images/people/a5.jpg';
@@ -62,41 +58,22 @@ class Header extends React.Component {
     });
   }
 
-  changeNotificationsTab(tab) {
-    this.setState({
-      notificationsTabSelected: tab,
-    });
-  }
-
   doLogout() {
     this.props
       .dispatch(logoutUser()); // eslint-disable-line
   }
 
   render() {
-    let notificationsTab;
-
-    switch (this.state.notificationsTabSelected) {
-      case 1:
-        notificationsTab = (<Notifications />);
-        break;
-      case 2:
-        notificationsTab = (<Messages />);
-        break;
-      case 3:
-        notificationsTab = (<Progress />);
-        break;
-      default:
-        notificationsTab = (<Notifications />);
-        break;
-    }
     return (
       <Navbar className={s.navbar}>
         <Nav>
           <NavItem>
-            <NavLink className={s.navLink} href="#" onClick={this.props.sidebarToggle}>
+            <NavLink className={s.navLink} href="#" id="toggleSidebar" onClick={this.props.sidebarToggle}>
               <i className="fa fa-bars fa-lg" />
             </NavLink>
+            <UncontrolledTooltip placement="bottom" target="toggleSidebar">
+              Turn on/off<br />sidebar<br />collapsing
+            </UncontrolledTooltip>
           </NavItem>
           <NavItem>
             <NavLink className={`${s.navLink} ml-1`} href="#">
@@ -118,22 +95,8 @@ class Header extends React.Component {
               Philip <span className="fw-semi-bold">Smith</span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right>
-              <section className={`${s.notifications} card`}>
-                <header className="card-header">
-                  <div className="text-center mb-sm">
-                    <strong>You have 13 notifications</strong>
-                  </div>
-                  <ButtonGroup>
-                    <Button color="secondary" onClick={() => this.changeNotificationsTab(1)} active={this.state.notificationsTabSelected === 1}>Notifications</Button>
-                    <Button color="secondary" onClick={() => this.changeNotificationsTab(2)} active={this.state.notificationsTabSelected === 2}>Messages</Button>
-                    <Button color="secondary" onClick={() => this.changeNotificationsTab(3)} active={this.state.notificationsTabSelected === 3}>Progress</Button>
-                  </ButtonGroup>
-                </header>
-                <ListGroup>
-                  {notificationsTab}
-                </ListGroup>
-              </section>
+            <DropdownMenu right className={s.dropdownNotifications}>
+              <Notifications />
             </DropdownMenu>
           </NavDropdown>
           <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu}>
