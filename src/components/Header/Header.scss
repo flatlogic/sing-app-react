@@ -10,11 +10,41 @@
   font-weight: 500;
 }
 
+.nav {
+  margin-left: 10px;
+  margin-right: 1rem;
+
+  .navLink {
+    padding: 16px 0.5rem 1rem 0.5rem;
+
+    .faTimes {
+      font-size: 20px;
+    }
+  }
+}
+
 .navLink {
   color: $text-color;
 
   &:hover {
     color: $navbar-dashboard-link-hover-color;
+  }
+}
+
+.navbarForm {
+  padding: 6px 0 6px 1rem;
+  margin-left: 10px;
+
+  .inputAddon {
+    border: none;
+    background-color: #fff;
+    transition: background-color ease-in-out 0.15s;
+  }
+
+  input {
+    font-size: 13px;
+    border: none;
+    padding: 0.6rem 0.85rem 0.6rem 0;
   }
 }
 

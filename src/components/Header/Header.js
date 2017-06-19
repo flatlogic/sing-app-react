@@ -12,9 +12,13 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledTooltip,
+  InputGroupAddon,
+  InputGroup,
+  Input
 } from 'reactstrap';
 import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
+import $ from 'jquery';
 
 import * as a5 from '../../images/people/a5.jpg';
 
@@ -63,10 +67,17 @@ class Header extends React.Component {
       .dispatch(logoutUser()); // eslint-disable-line
   }
 
+  componentDidMount() {
+    $('#search-input').on('blur focus', (e) => {
+      $('#search-input').parents('.input-group')
+        [e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
+    });
+  }
+
   render() {
     return (
       <Navbar className={s.navbar}>
-        <Nav>
+        <Nav className={s.nav}>
           <NavItem>
             <NavLink className={s.navLink} href="#" id="toggleSidebar" onClick={this.props.sidebarToggle}>
               <i className="fa fa-bars fa-lg" />
@@ -75,16 +86,20 @@ class Header extends React.Component {
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
           </NavItem>
-          <NavItem>
-            <NavLink className={`${s.navLink} ml-1`} href="#">
+          <NavItem className="ml-lg">
+            <NavLink className={`${s.navLink}`} href="#">
               <i className="fa fa-refresh fa-lg" />
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink className={s.navLink} href="#">
-              <i className="fa fa-times fa-lg" />
+              <i className={`${s.faTimes} fa fa-times fa-lg`} />
             </NavLink>
           </NavItem>
+          <InputGroup className={s.navbarForm}>
+            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search"></i></InputGroupAddon>
+            <Input id="search-input" placeholder="Search Dashboard" />
+          </InputGroup>
         </Nav>
         <Nav>
           <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown">

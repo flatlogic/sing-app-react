@@ -1,3 +1,9 @@
 .page-title {
   margin: 0 0 1rem;
 }
+
+.input-group.focus {
+  .input-group-addon, input {
+    background-color: #f1f1f1;
+  }
+}
