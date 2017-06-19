@@ -37,7 +37,9 @@ class LinksGroup extends Component {
       return (
         <li className={[s.headerLink, this.props.className].join(' ')}>
           <NavLink to={this.props.headerLink} activeClassName={s.headerLinkActive} exact>
-            <i className={`glyphicon ${this.props.iconName}`} />
+            <span className={s.icon}>
+              <i className={`fa ${this.props.iconName}`} />
+            </span>
             {this.props.header}
           </NavLink>
         </li>

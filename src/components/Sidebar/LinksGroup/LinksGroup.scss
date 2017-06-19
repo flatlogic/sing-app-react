@@ -14,7 +14,7 @@
 
   > a {
     position: relative;
-    padding-left: 15px;
+    padding-left: 50px;
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
 
@@ -24,6 +24,21 @@
 
     > i {
       margin-right: 7px;
+    }
+  }
+
+  .icon {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 11px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+
+    i {
+      color: rgba(170, 170, 170, 0.7);
     }
   }
 }
@@ -36,6 +51,16 @@
 
 a.headerLinkActive {
   color: $sidebar-item-active-color;
+  background-color: $sidebar-bg-color;
+
+  .icon {
+    border-radius: 50%;
+    background-color: $sidebar-item-active-color;
+
+    i {
+      color: #242424;
+    }
+  }
 }
 
 .panel {

@@ -29,6 +29,7 @@
 .nav {
   padding: 10px 0;
   overflow-y: auto;
+  font-size: 16px;
 }
 
 .navTitle {
@@ -59,7 +60,7 @@
 
 .sidebarLabels {
   list-style-type: none;
-  font-size: 12px;
+  font-size: 13px;
   padding: 11px;
   padding-right: 15px;
 
@@ -75,7 +76,7 @@
 }
 
 .sidebarAlerts {
-  font-size: 12px;
+  font-size: 13px;
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
 

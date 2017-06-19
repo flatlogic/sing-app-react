@@ -21,8 +21,8 @@ class Sidebar extends React.Component {
         </header>
 
         <ul className={s.nav}>
-          <LinksGroup header="Dashboard" headerLink="/app" iconName="glyphicon-tree-conifer" />
-          <LinksGroup header="Profile" headerLink="/app/profile" iconName="glyphicon-user" />
+          <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
+          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" />
         </ul>
         <h5 className={s.navTitle}>
           LABELS
