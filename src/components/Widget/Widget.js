@@ -29,9 +29,7 @@ class Widget extends React.Component {
             : <header className={s.title}>{this.props.title}</header>
           )
         }
-        <div>
-          {this.props.children}
-        </div>
+        {this.props.children}
       </section>
     );
   }
