@@ -41,6 +41,15 @@
       color: rgba(170, 170, 170, 0.7);
     }
   }
+
+  .badge {
+    float: right;
+    line-height: 8px;
+    margin-top: 7px;
+    margin-right: 15px;
+    padding: 7px;
+    border-radius: 0.2rem;
+  }
 }
 
 .caret {

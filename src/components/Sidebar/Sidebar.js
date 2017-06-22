@@ -22,7 +22,7 @@ class Sidebar extends React.Component {
 
         <ul className={s.nav}>
           <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
-          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" />
+          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9"/>
         </ul>
         <h5 className={s.navTitle}>
           LABELS

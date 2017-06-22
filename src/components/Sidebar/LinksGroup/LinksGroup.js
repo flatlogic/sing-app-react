@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { NavLink } from 'react-router-dom';
-import { Collapse } from 'reactstrap';
+import { Collapse, Badge } from 'reactstrap';
 import { Route } from 'react-router';
 
 import s from './LinksGroup.scss';
@@ -15,6 +15,7 @@ class LinksGroup extends Component {
     childrenLinks: PropTypes.array,
     iconName: PropTypes.string.isRequired,
     className: PropTypes.string,
+    badge: PropTypes.string,
   };
   /* eslint-enable */
 
@@ -41,6 +42,7 @@ class LinksGroup extends Component {
               <i className={`fa ${this.props.iconName}`} />
             </span>
             {this.props.header}
+            {this.props.badge ? <Badge className={s.badge} color="danger">9</Badge> : null}
           </NavLink>
         </li>
       );
