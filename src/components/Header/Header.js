@@ -21,6 +21,7 @@ import { logoutUser } from '../../actions/user';
 import $ from 'jquery';
 
 import * as a5 from '../../images/people/a5.jpg';
+import * as a6 from '../../images/people/a6.jpg';
 
 import s from './Header.scss';
 
@@ -68,6 +69,23 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    setTimeout(() => {
+      let $chatNotification = $('#chat-notification');
+      $chatNotification.removeClass('hide').addClass('animated fadeIn')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
+          $chatNotification.removeClass('animated fadeIn');
+          setTimeout(() => {
+            $chatNotification.addClass('animated fadeOut')
+              .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
+                ' oanimationend animationend', () => {
+                $chatNotification.addClass('hide');
+              });
+          }, 6000);
+        });
+      $chatNotification.siblings('#toggle-chat')
+        .append('<i class="chat-notification-sing animated bounceIn"></i>');
+    }, 4000);
+
     $('#search-input').on('blur focus', (e) => {
       $('#search-input').parents('.input-group')
         [e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
@@ -128,9 +146,20 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
+            <NavLink id="toggle-chat" className={s.navLink} href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
+            <div id="chat-notification" className={`${s.chatNotification} hide`} onClick={this.props.chatToggle}>
+              <div className={s.chatNotificationInner}>
+                <h6 className={s.title}>
+                  <span className="thumb-xs">
+                      <img src={a6} className="rounded-circle mr-xs float-left"/>
+                  </span>
+                  Jess Smith
+                </h6>
+                <p className={s.text}>Hi there! <br/> This is a completely new version of Sing App <br/> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
+              </div>
+            </div>
           </NavItem>
         </Nav>
       </Navbar>

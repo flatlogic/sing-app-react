@@ -58,3 +58,52 @@
 .dropdownNotifications {
   padding-bottom: 0;
 }
+
+.chatNotification {
+  position: absolute;
+  right: 12px;
+  top: 35px;
+  z-index: 20;
+  margin-top: 3px;
+  padding: 5px 0;
+  cursor: pointer;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #343434;
+  }
+
+  .chatNotificationInner {
+    min-width: 120px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: #343434;
+    color: #fff;
+  }
+
+  .text {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: $gray-light;
+  }
+
+  .title {
+    margin: 0;
+    font-weight: 600;
+    line-height: 28px;
+    font-size: 0.875rem;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+}

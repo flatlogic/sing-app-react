@@ -7,3 +7,18 @@
     background-color: #f1f1f1;
   }
 }
+
+.animated {
+  animation-duration: 0.5s;
+}
+
+.chat-notification-sing {
+  position: absolute;
+  top: 14px;
+  right: 39px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #dd5826;
+}
