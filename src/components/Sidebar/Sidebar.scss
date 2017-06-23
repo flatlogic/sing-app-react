@@ -19,10 +19,17 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  transition: width 0.3s ease-in-out;
 
   a {
     text-decoration: none;
     color: #fff;
+  }
+}
+
+.collapsed {
+  .logo {
+    width: 50px;
   }
 }
 
@@ -35,6 +42,17 @@
 .navTitle {
   margin: 35px 0 5px 11px;
   font-size: 14px;
+
+  @media (min-width: 992px) {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.collapsed {
+  .navTitle {
+    opacity: 0;
+  }
 }
 
 .actionLink {
@@ -51,6 +69,12 @@
   @include media-breakpoint-up(lg) {
     transition: none;
     opacity: 1;
+  }
+}
+
+.collapsed {
+  .labelName {
+    opacity: 0;
   }
 }
 
@@ -72,6 +96,18 @@
     color: #eee;
     text-decoration: none;
     font-weight: normal;
+
+    > i {
+      font-size: 11px;
+      vertical-align: 1px;
+      transition: margin-left 0.3s ease-in-out;
+    }
+  }
+}
+
+.collapsed {
+  .sidebarLabels > li > a > i {
+    margin-left: 8px;
   }
 }
 
@@ -83,6 +119,12 @@
   @include media-breakpoint-up(lg) {
     opacity: 1;
     transition: none;
+  }
+}
+
+.collapsed {
+  .sidebarAlerts {
+    opacity: 0;
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Progress, Alert } from 'reactstrap';
@@ -8,6 +9,11 @@ import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
 class Sidebar extends React.Component {
+
+  static propTypes = {
+    sidebarOpen: PropTypes.bool,
+  };
+
   dismissAlert(id) {
     this.props
       .dispatch(dismissAlert(id)); // eslint-disable-line
@@ -15,7 +21,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <nav className={s.root}>
+      <nav className={[s.root, this.props.sidebarOpen ? s.collapsed : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>
