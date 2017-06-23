@@ -12,6 +12,7 @@ import Header from '../Header';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
+import $ from 'jquery';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
@@ -34,6 +35,17 @@ class Layout extends React.Component {
 
   chatToggle() {
     this.setState({ chatOpen: !this.state.chatOpen });
+    $('.chat-notification-sing').remove();
+
+    setTimeout(() => {
+      // demo: add class & badge to indicate incoming messages from contact
+      // .js-notification-added ensures notification added only once
+    $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
+      .addClass('active js-notification-added')
+      .find('.fa-circle')
+      .before('<span class="badge badge-danger badge-pill ' +
+        'flex-last animated bounceInDown">3</span>');
+    }, 1000);
   }
 
   sidebarToggle() {

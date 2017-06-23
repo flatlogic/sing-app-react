@@ -22,3 +22,15 @@
   border-radius: 50%;
   background-color: #dd5826;
 }
+
+#chat-sidebar-user-group {
+  .list-group-item.active h6{
+    color: $brand-warning;
+    font-weight: $badge-font-weight;
+  }
+
+  .badge {
+    margin-left: auto;
+    padding: 3px 5px;
+  }
+}

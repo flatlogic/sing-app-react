@@ -74,6 +74,10 @@
 .badge {
   //font-size: 12px;
 
+  &.badge-pill {
+    font-size: 100%;
+  }
+
   .list-group-item > & {
     margin-top: 2px;
   }

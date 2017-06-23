@@ -150,7 +150,7 @@ class Chat extends React.Component {
         </header>
         <div className={[s.chatPanel, s.chatContacts, this.state.chatMessageOpened ? s.chatMessageOpen : ''].join(' ')}>
           <h5 className={s.navTitle}>TODAY</h5>
-          <ListGroup>
+          <ListGroup id="chat-sidebar-user-group">
             {this.state.todayConversations
               .filter(this.filterConversations.bind(this))
               .map(item =>
