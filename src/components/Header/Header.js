@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Navbar,
@@ -18,6 +20,7 @@ import {
 } from 'reactstrap';
 import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
+import { toggleSidebar } from '../../actions/navigation'
 import $ from 'jquery';
 
 import * as a5 from '../../images/people/a5.jpg';
@@ -27,13 +30,10 @@ import s from './Header.scss';
 
 class Header extends React.Component {
   static propTypes = {
-    sidebarToggle: PropTypes.func,
     chatToggle: PropTypes.func,
   };
 
   static defaultProps = {
-    sidebarToggle: () => {
-    },
     chatToggle: () => {
     },
   };
@@ -97,7 +97,7 @@ class Header extends React.Component {
       <Navbar className={s.navbar}>
         <Nav className={s.nav}>
           <NavItem>
-            <NavLink className={s.navLink} href="#" id="toggleSidebar" onClick={this.props.sidebarToggle}>
+            <NavLink className={s.navLink} href="#" id="toggleSidebar" onClick={() => this.props.dispatch(toggleSidebar())}>
               <i className="fa fa-bars fa-lg" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
@@ -166,5 +166,9 @@ class Header extends React.Component {
     );
   }
 }
+function mapStateToProps(store) {
+  return {};
+}
 
-export default withStyles(s)(Header);
+export default withRouter(connect(mapStateToProps)(withStyles(s)(Header)));
+

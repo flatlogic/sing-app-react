@@ -27,10 +27,13 @@
   }
 }
 
-.collapsed {
-  .logo {
-    width: 50px;
-  }
+.sidebarClose .logo{
+  width: 50px;
+}
+
+.staticSidebar .logo{
+  width: 100%;
+  transition: none;
 }
 
 .nav {
@@ -42,17 +45,20 @@
 .navTitle {
   margin: 35px 0 5px 11px;
   font-size: 14px;
+  transition: opacity 0.3s ease-in-out;
 
   @media (min-width: 992px) {
     opacity: 1;
-    transition: none;
   }
 }
 
-.collapsed {
-  .navTitle {
-    opacity: 0;
-  }
+.sidebarClose .navTitle{
+  opacity: 0;
+}
+
+.staticSidebar .navTitle{
+  opacity: 1;
+  transition: none;
 }
 
 .actionLink {
@@ -66,16 +72,15 @@
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 
-  @include media-breakpoint-up(lg) {
-    transition: none;
-    opacity: 1;
-  }
 }
 
-.collapsed {
-  .labelName {
-    opacity: 0;
-  }
+.sidebarClose .labelName{
+  opacity: 0;
+}
+
+.staticSidebar .labelName{
+  transition: none;
+  opacity: 1;
 }
 
 .glyphiconSm {
@@ -100,14 +105,22 @@
     > i {
       font-size: 11px;
       vertical-align: 1px;
-      transition: margin-left 0.3s ease-in-out;
+      transform: none;
     }
   }
 }
 
-.collapsed {
+.sidebarClose {
   .sidebarLabels > li > a > i {
     margin-left: 8px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+}
+
+.staticSidebar {
+  .sidebarLabels > li > a > i {
+    transition: none;
+    margin-left: 0;
   }
 }
 
@@ -115,17 +128,15 @@
   font-size: 13px;
   transition: opacity 0.3s ease-in-out;
   opacity: 1;
-
-  @include media-breakpoint-up(lg) {
-    opacity: 1;
-    transition: none;
-  }
 }
 
-.collapsed {
-  .sidebarAlerts {
-    opacity: 0;
-  }
+.sidebarClose .sidebarAlerts{
+  opacity: 0;
+}
+
+.staticSidebar .sidebarAlerts{
+  opacity: 1;
+  transition: none;
 }
 
 .sidebarAlert {

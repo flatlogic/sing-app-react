@@ -8,20 +8,31 @@ import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
-class Sidebar extends React.Component {
+import { openSidebar } from '../../actions/navigation'
+import { closeSidebar } from '../../actions/navigation'
 
-  static propTypes = {
-    sidebarOpen: PropTypes.bool,
-  };
+class Sidebar extends React.Component {
 
   dismissAlert(id) {
     this.props
       .dispatch(dismissAlert(id)); // eslint-disable-line
   }
 
+  onMouseEnter() {
+    if(!this.props.sidebarStatic) {
+      this.props.dispatch(openSidebar());
+    }
+  }
+
+  onMouseLeave() {
+    if(!this.props.sidebarStatic) {
+      this.props.dispatch(closeSidebar());
+    }
+  }
+
   render() {
     return (
-      <nav className={[s.root, this.props.sidebarOpen ? s.collapsed : ''].join(' ')}>
+      <nav onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>

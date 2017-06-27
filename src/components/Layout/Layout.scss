@@ -12,21 +12,31 @@
 }
 
 .wrap {
+  position: relative;
   min-height: 100%;
   display: flex;
+  margin-left: 50px;
   flex-direction: column;
-  position: absolute;
-  left: 0;
+  left: 204px;
   right: 0;
+  transition: left 0.3s ease-in-out;
 
-  @include media-breakpoint-up(md) {
-    left: $sidebar-width-open;
-    right: 0;
+  @media (min-width: 768px) {
+    .wrap {
+      margin-left: 0;
+      left: 154px;
+    }
   }
 }
 
-.sidebarOpen .wrap {
-  left: $sidebar-width-closed;
+.sidebarClose div.wrap {
+  left: 0;
+}
+
+.sidebarStatic .wrap {
+  transition: none;
+  left: 0;
+  margin-left: 200px;
 }
 
 .content {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Switch, Route, withRouter } from 'react-router';
 
@@ -25,10 +26,8 @@ class Layout extends React.Component {
     super(props);
 
     this.chatToggle = this.chatToggle.bind(this);
-    this.sidebarToggle = this.sidebarToggle.bind(this);
 
     this.state = {
-      sidebarOpen: false,
       chatOpen: false,
     };
   }
@@ -48,16 +47,12 @@ class Layout extends React.Component {
     }, 1000);
   }
 
-  sidebarToggle() {
-    this.setState({ sidebarOpen: !this.state.sidebarOpen });
-  }
-
   render() {
     return (
-      <div className={[s.root, this.state.sidebarOpen ? s.sidebarOpen : '', this.state.chatOpen ? s.chatOpen : ''].join(' ')}>
-        <Sidebar sidebarOpen={this.state.sidebarOpen}/>
+      <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '',  !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+        <Sidebar/>
         <div className={s.wrap}>
-          <Header chatToggle={this.chatToggle} sidebarToggle={this.sidebarToggle} />
+          <Header chatToggle={this.chatToggle}/>
           <Chat chatOpen={this.state.chatOpen} />
           <main className={s.content}>
             <Switch>
@@ -71,4 +66,11 @@ class Layout extends React.Component {
   }
 }
 
-export default withRouter(withStyles(s)(Layout));
+function mapStateToProps(store) {
+  return {
+    sidebarOpened: store.navigation.sidebarOpened,
+    sidebarStatic: store.navigation.sidebarStatic,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(withStyles(s)(Layout)));

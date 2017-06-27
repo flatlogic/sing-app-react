@@ -10,18 +10,16 @@ export default function runtime(state = initialState, action) {
     case TOGGLE_SIDEBAR:
       return {
         ...state,
-        sidebarOpened: !state.sidebarOpened,
+        sidebarStatic: !state.sidebarStatic,
       };
     case OPEN_SIDEBAR:
-      return {
-        ...state,
+      return Object.assign({}, state, {
         sidebarOpened: true,
-      };
+      });
     case CLOSE_SIDEBAR:
-      return {
-        ...state,
+      return Object.assign({}, state, {
         sidebarOpened: false,
-      };
+      });
     default:
       return state;
   }
