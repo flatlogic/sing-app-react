@@ -15,17 +15,14 @@
   position: relative;
   min-height: 100%;
   display: flex;
-  margin-left: 50px;
   flex-direction: column;
   left: 204px;
   right: 0;
   transition: left 0.3s ease-in-out;
 
   @media (min-width: 768px) {
-    .wrap {
-      margin-left: 0;
-      left: 154px;
-    }
+    margin-left: 50px;
+    left: 154px;
   }
 }
 

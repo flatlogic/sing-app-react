@@ -31,6 +31,11 @@
   }
 }
 
+.navLg {
+  z-index: 1;
+  font-size: 16px;
+}
+
 .navbarForm {
   padding: 6px 0 6px 1rem;
   margin-left: 10px;
@@ -105,5 +110,21 @@
     span {
       margin-right: 5px;
     }
+  }
+}
+
+.navbarBrand {
+  height: 60px;
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1.25rem;
+
+  i {
+    font-size: 10px;
   }
 }

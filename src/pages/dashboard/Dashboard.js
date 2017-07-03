@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
       <div className={s.root}>
         <h1 className="page-title">Dashboard <small><small>The Lucky One</small></small></h1>
         <Row>
-          <Col sm={6}>
+          <Col md={6}>
             <Widget title={<h4>Example <span className="fw-semi-bold">Widget</span></h4>}>
               <div className={s.widgetBody}>
                 <img className="pull-left mr-sm" src={a2} alt="Angular 2.0" width="100"/>

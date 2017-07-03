@@ -97,30 +97,43 @@ class Header extends React.Component {
       <Navbar className={s.navbar}>
         <Nav className={s.nav}>
           <NavItem>
-            <NavLink className={s.navLink} href="#" id="toggleSidebar" onClick={() => this.props.dispatch(toggleSidebar())}>
-              <i className="fa fa-bars fa-lg" />
+            <NavLink className={`${s.navLink} hidden-sm-down`} href="#" id="toggleSidebar" onClick={() => this.props.dispatch(toggleSidebar())}>
+              <i className="fa fa-bars fa-lg"/>
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
           </NavItem>
-          <NavItem className="ml-lg">
+          <NavLink className={`${s.navLink} ${s.navLg} hidden-md-up`} href="#" onClick={() => this.props.dispatch(toggleSidebar())}>
+            <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg"/></span>
+            <i className="fa fa-bars fa-lg hidden-sm-down"/>
+          </NavLink>
+          <NavItem className="ml-lg hidden-sm-down">
             <NavLink className={`${s.navLink}`} href="#">
               <i className="fa fa-refresh fa-lg" />
             </NavLink>
           </NavItem>
-          <NavItem>
+          <NavItem className="hidden-sm-down">
             <NavLink className={s.navLink} href="#">
               <i className={`${s.faTimes} fa fa-times fa-lg`} />
             </NavLink>
           </NavItem>
-          <InputGroup className={s.navbarForm}>
-            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search"></i></InputGroupAddon>
+          <InputGroup className={`${s.navbarForm} hidden-sm-down`}>
+            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search"/></InputGroupAddon>
             <Input id="search-input" placeholder="Search Dashboard" />
           </InputGroup>
         </Nav>
+        <a className={`${s.navbarBrand} hidden-md-up`}>
+          <i className="fa fa-circle text-gray mr-n-sm"/>
+          <i className="fa fa-circle text-warning"/>
+          &nbsp;
+          sing
+          &nbsp;
+          <i className="fa fa-circle text-warning mr-n-sm"/>
+          <i className="fa fa-circle text-gray"/>
+        </a>
         <Nav>
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown">
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="hidden-sm-down">
             <DropdownToggle nav caret className={s.navLink}>
               <span className={`${s.avatar} thumb-sm float-left`}>
                 <img className="rounded-circle" src={a5} alt="..." />
@@ -132,7 +145,7 @@ class Header extends React.Component {
               <Notifications />
             </DropdownMenu>
           </NavDropdown>
-          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu}>
+          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="hidden-sm-down">
             <DropdownToggle nav className={s.navLink}>
               <i className="fa fa-cog fa-lg" />
             </DropdownToggle>
@@ -146,7 +159,7 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink id="toggle-chat" className={s.navLink} href="#" onClick={this.props.chatToggle}>
+            <NavLink id="toggle-chat" className={`${s.navLink} hidden-sm-down`} href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
             <div id="chat-notification" className={`${s.chatNotification} hide`} onClick={this.props.chatToggle}>
@@ -160,6 +173,11 @@ class Header extends React.Component {
                 <p className={s.text}>Hi there! <br/> This is a completely new version of Sing App <br/> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
               </div>
             </div>
+          </NavItem>
+          <NavItem className={`${s.navLg} hidden-md-up`}>
+            <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
+              <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg"/></span>
+            </NavLink>
           </NavItem>
         </Nav>
       </Navbar>
