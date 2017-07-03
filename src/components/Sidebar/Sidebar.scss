@@ -27,11 +27,11 @@
   }
 }
 
-.sidebarClose .logo{
+.sidebarClose .logo {
   width: 50px;
 }
 
-.staticSidebar .logo{
+.staticSidebar .logo {
   width: 100%;
   transition: none;
 }
@@ -52,11 +52,11 @@
   }
 }
 
-.sidebarClose .navTitle{
+.sidebarClose .navTitle {
   opacity: 0;
 }
 
-.staticSidebar .navTitle{
+.staticSidebar .navTitle {
   opacity: 1;
   transition: none;
 }
@@ -71,14 +71,13 @@
 .labelName {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-
 }
 
-.sidebarClose .labelName{
+.sidebarClose .labelName {
   opacity: 0;
 }
 
-.staticSidebar .labelName{
+.staticSidebar .labelName {
   transition: none;
   opacity: 1;
 }
@@ -130,11 +129,11 @@
   opacity: 1;
 }
 
-.sidebarClose .sidebarAlerts{
+.sidebarClose .sidebarAlerts {
   opacity: 0;
 }
 
-.staticSidebar .sidebarAlerts{
+.staticSidebar .sidebarAlerts {
   opacity: 1;
   transition: none;
 }

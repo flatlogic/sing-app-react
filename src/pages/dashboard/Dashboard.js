@@ -1,6 +1,6 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 import * as a2 from '../../images/a2.png';
 
@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
           <Col md={6}>
             <Widget title={<h4>Example <span className="fw-semi-bold">Widget</span></h4>}>
               <div className={s.widgetBody}>
-                <img className="pull-left mr-sm" src={a2} alt="Angular 2.0" width="100"/>
+                <img className="pull-left mr-sm" src={a2} alt="Angular 2.0" width="100" />
                 <p className="lead">You are looking at a completely new version of Sing App built
                 with brand new <strong>Angular <em>2.0</em> Final Release</strong></p>
                 <p>Made by <a href="http://flatlogic.com" target="_blank" rel="noopener noreferrer">Flatlogic</a>.</p>

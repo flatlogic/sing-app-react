@@ -8,38 +8,54 @@ import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
-import { openSidebar } from '../../actions/navigation'
-import { closeSidebar } from '../../actions/navigation'
+import { openSidebar, closeSidebar } from '../../actions/navigation';
 
 class Sidebar extends React.Component {
+  static propTypes = {
+    sidebarStatic: PropTypes.bool,
+    sidebarOpened: PropTypes.bool,
+    dispatch: PropTypes.func,
+  };
+
+  static defaultProps = {
+    sidebarStatic: false,
+    sidebarOpened: false,
+    dispatch: () => {},
+  };
+  constructor(props) {
+    super(props);
+
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+  }
+
+  onMouseEnter() {
+    if (!this.props.sidebarStatic) {
+      this.props.dispatch(openSidebar());
+    }
+  }
+
+  onMouseLeave() {
+    if (!this.props.sidebarStatic) {
+      this.props.dispatch(closeSidebar());
+    }
+  }
 
   dismissAlert(id) {
     this.props
       .dispatch(dismissAlert(id)); // eslint-disable-line
   }
 
-  onMouseEnter() {
-    if(!this.props.sidebarStatic) {
-      this.props.dispatch(openSidebar());
-    }
-  }
-
-  onMouseLeave() {
-    if(!this.props.sidebarStatic) {
-      this.props.dispatch(closeSidebar());
-    }
-  }
-
   render() {
     return (
-      <nav onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>
 
         <ul className={s.nav}>
           <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
-          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9"/>
+          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
         </ul>
         <h5 className={s.navTitle}>
           LABELS

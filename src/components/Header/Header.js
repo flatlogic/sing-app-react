@@ -16,12 +16,13 @@ import {
   UncontrolledTooltip,
   InputGroupAddon,
   InputGroup,
-  Input
+  Input,
 } from 'reactstrap';
+import $ from 'jquery';
+
 import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
-import { toggleSidebar } from '../../actions/navigation'
-import $ from 'jquery';
+import { toggleSidebar } from '../../actions/navigation';
 
 import * as a5 from '../../images/people/a5.jpg';
 import * as a6 from '../../images/people/a6.jpg';
@@ -31,11 +32,12 @@ import s from './Header.scss';
 class Header extends React.Component {
   static propTypes = {
     chatToggle: PropTypes.func,
+    dispatch: PropTypes.func,
   };
 
   static defaultProps = {
-    chatToggle: () => {
-    },
+    chatToggle: () => {},
+    dispatch: () => {},
   };
 
   constructor(props) {
@@ -50,10 +52,26 @@ class Header extends React.Component {
       notificationsTabSelected: 1,
     };
   }
+  componentDidMount() {
+    setTimeout(() => {
+      const $chatNotification = $('#chat-notification');
+      $chatNotification.removeClass('hide').addClass('animated fadeIn')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
+          $chatNotification.removeClass('animated fadeIn');
+          setTimeout(() => {
+            $chatNotification.addClass('animated fadeOut')
+              .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
+                ' oanimationend animationend', () => {
+                  $chatNotification.addClass('hide');
+                });
+          }, 6000);
+        });
+      $chatNotification.siblings('#toggle-chat')
+        .append('<i class="chat-notification-sing animated bounceIn"></i>');
+    }, 4000);
 
-  toggleMenu() {
-    this.setState({
-      menuOpen: !this.state.menuOpen,
+    $('#search-input').on('blur focus', (e) => {
+      $('#search-input').parents('.input-group')[e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
     });
   }
 
@@ -68,45 +86,26 @@ class Header extends React.Component {
       .dispatch(logoutUser()); // eslint-disable-line
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      let $chatNotification = $('#chat-notification');
-      $chatNotification.removeClass('hide').addClass('animated fadeIn')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-          $chatNotification.removeClass('animated fadeIn');
-          setTimeout(() => {
-            $chatNotification.addClass('animated fadeOut')
-              .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
-                ' oanimationend animationend', () => {
-                $chatNotification.addClass('hide');
-              });
-          }, 6000);
-        });
-      $chatNotification.siblings('#toggle-chat')
-        .append('<i class="chat-notification-sing animated bounceIn"></i>');
-    }, 4000);
-
-    $('#search-input').on('blur focus', (e) => {
-      $('#search-input').parents('.input-group')
-        [e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
+  toggleMenu() {
+    this.setState({
+      menuOpen: !this.state.menuOpen,
     });
   }
-
   render() {
     return (
       <Navbar className={s.navbar}>
         <Nav className={s.nav}>
           <NavItem>
             <NavLink className={`${s.navLink} hidden-sm-down`} href="#" id="toggleSidebar" onClick={() => this.props.dispatch(toggleSidebar())}>
-              <i className="fa fa-bars fa-lg"/>
+              <i className="fa fa-bars fa-lg" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
           </NavItem>
           <NavLink className={`${s.navLink} ${s.navLg} hidden-md-up`} href="#" onClick={() => this.props.dispatch(toggleSidebar())}>
-            <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg"/></span>
-            <i className="fa fa-bars fa-lg hidden-sm-down"/>
+            <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg" /></span>
+            <i className="fa fa-bars fa-lg hidden-sm-down" />
           </NavLink>
           <NavItem className="ml-lg hidden-sm-down">
             <NavLink className={`${s.navLink}`} href="#">
@@ -119,18 +118,18 @@ class Header extends React.Component {
             </NavLink>
           </NavItem>
           <InputGroup className={`${s.navbarForm} hidden-sm-down`}>
-            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search"/></InputGroupAddon>
+            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search" /></InputGroupAddon>
             <Input id="search-input" placeholder="Search Dashboard" />
           </InputGroup>
         </Nav>
         <a className={`${s.navbarBrand} hidden-md-up`}>
-          <i className="fa fa-circle text-gray mr-n-sm"/>
-          <i className="fa fa-circle text-warning"/>
+          <i className="fa fa-circle text-gray mr-n-sm" />
+          <i className="fa fa-circle text-warning" />
           &nbsp;
           sing
           &nbsp;
-          <i className="fa fa-circle text-warning mr-n-sm"/>
-          <i className="fa fa-circle text-gray"/>
+          <i className="fa fa-circle text-warning mr-n-sm" />
+          <i className="fa fa-circle text-gray" />
         </a>
         <Nav>
           <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="hidden-sm-down">
@@ -162,21 +161,21 @@ class Header extends React.Component {
             <NavLink id="toggle-chat" className={`${s.navLink} hidden-sm-down`} href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
-            <div id="chat-notification" className={`${s.chatNotification} hide`} onClick={this.props.chatToggle}>
+            <NavLink id="chat-notification" className={`${s.chatNotification} hide`} onClick={this.props.chatToggle}>
               <div className={s.chatNotificationInner}>
                 <h6 className={s.title}>
                   <span className="thumb-xs">
-                      <img src={a6} className="rounded-circle mr-xs float-left"/>
+                    <img src={a6} alt="" className="rounded-circle mr-xs float-left" />
                   </span>
                   Jess Smith
                 </h6>
-                <p className={s.text}>Hi there! <br/> This is a completely new version of Sing App <br/> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
+                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
               </div>
-            </div>
+            </NavLink>
           </NavItem>
           <NavItem className={`${s.navLg} hidden-md-up`}>
             <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
-              <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg"/></span>
+              <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg" /></span>
             </NavLink>
           </NavItem>
         </Nav>
@@ -184,7 +183,7 @@ class Header extends React.Component {
     );
   }
 }
-function mapStateToProps(store) {
+function mapStateToProps() {
   return {};
 }
 

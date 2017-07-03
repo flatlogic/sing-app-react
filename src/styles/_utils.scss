@@ -140,23 +140,22 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
       right: 0;
     }
   }
-
-
 }
 
-.input-group-dark{
+.input-group-dark {
   .input-group-addon,
-  .form-control{
-    background-color: rgba(0,0,0,.4);
+  .form-control {
+    background-color: rgba(0, 0, 0, 0.4);
     border: 0;
     color: $gray;
-    @include transition(background-color .15s ease-in-out);
+
+    @include transition(background-color 0.15s ease-in-out);
   }
 
   .form-control:focus,
   .form-control:focus + .input-group-addon,
-  &.focus .input-group-addon{
-    background-color: $gray-lighter
+  &.focus .input-group-addon {
+    background-color: $gray-lighter;
   }
 }
 
@@ -323,8 +322,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 .show {
   display: block !important;
 }
-
-
 
 .help-block {
   margin-top: 5px;

@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Switch, Route, withRouter } from 'react-router';
+import $ from 'jquery';
 
 // an example of react-router code-splitting
 /* eslint-disable */
@@ -13,7 +15,6 @@ import Header from '../Header';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
-import $ from 'jquery';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
@@ -21,7 +22,15 @@ import Dashboard from '../../pages/dashboard/Dashboard';
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 
 class Layout extends React.Component {
+  static propTypes = {
+    sidebarStatic: PropTypes.bool,
+    sidebarOpened: PropTypes.bool,
+  };
 
+  static defaultProps = {
+    sidebarStatic: false,
+    sidebarOpened: false,
+  };
   constructor(props) {
     super(props);
 
@@ -39,20 +48,20 @@ class Layout extends React.Component {
     setTimeout(() => {
       // demo: add class & badge to indicate incoming messages from contact
       // .js-notification-added ensures notification added only once
-    $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
-      .addClass('active js-notification-added')
-      .find('.fa-circle')
-      .before('<span class="badge badge-danger badge-pill ' +
-        'flex-last animated bounceInDown">3</span>');
+      $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
+        .addClass('active js-notification-added')
+        .find('.fa-circle')
+        .before('<span class="badge badge-danger badge-pill ' +
+          'flex-last animated bounceInDown">3</span>');
     }, 1000);
   }
 
   render() {
     return (
-      <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '',  !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
-        <Sidebar/>
+      <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+        <Sidebar />
         <div className={s.wrap}>
-          <Header chatToggle={this.chatToggle}/>
+          <Header chatToggle={this.chatToggle} />
           <Chat chatOpen={this.state.chatOpen} />
           <main className={s.content}>
             <Switch>

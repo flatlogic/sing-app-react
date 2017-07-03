@@ -3,7 +3,8 @@
 }
 
 .input-group.focus {
-  .input-group-addon, input {
+  .input-group-addon,
+  input {
     background-color: #f1f1f1;
   }
 }
@@ -24,7 +25,7 @@
 }
 
 #chat-sidebar-user-group {
-  .list-group-item.active h6{
+  .list-group-item.active h6 {
     color: $brand-warning;
     font-weight: $badge-font-weight;
   }
