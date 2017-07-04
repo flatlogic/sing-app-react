@@ -104,7 +104,7 @@
     > i {
       font-size: 11px;
       vertical-align: 1px;
-      transform: none;
+      transition: margin-left 0.3s ease-in-out;
     }
   }
 }

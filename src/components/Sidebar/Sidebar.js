@@ -9,6 +9,7 @@ import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
 import { openSidebar, closeSidebar } from '../../actions/navigation';
+import { isScreen } from '../../core/screenHelper';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -30,13 +31,13 @@ class Sidebar extends React.Component {
   }
 
   onMouseEnter() {
-    if (!this.props.sidebarStatic) {
+    if (!this.props.sidebarStatic && (isScreen('lg') || isScreen('xl'))) {
       this.props.dispatch(openSidebar());
     }
   }
 
   onMouseLeave() {
-    if (!this.props.sidebarStatic) {
+    if (!this.props.sidebarStatic && (isScreen('lg') || isScreen('xl'))) {
       this.props.dispatch(closeSidebar());
     }
   }

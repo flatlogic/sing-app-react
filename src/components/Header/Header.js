@@ -22,7 +22,7 @@ import $ from 'jquery';
 
 import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
-import { toggleSidebar } from '../../actions/navigation';
+import { toggleSidebar, openSidebar, closeSidebar } from '../../actions/navigation';
 
 import * as a5 from '../../images/people/a5.jpg';
 import * as a6 from '../../images/people/a6.jpg';
@@ -44,6 +44,7 @@ class Header extends React.Component {
     super(props);
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.switchSidebar = this.switchSidebar.bind(this);
     this.toggleNotifications = this.toggleNotifications.bind(this);
 
     this.state = {
@@ -86,6 +87,11 @@ class Header extends React.Component {
       .dispatch(logoutUser()); // eslint-disable-line
   }
 
+  switchSidebar() {
+    let dispatchNavigation = this.props.sidebarOpened ? closeSidebar : openSidebar;
+    this.props.dispatch(dispatchNavigation());
+  }
+
   toggleMenu() {
     this.setState({
       menuOpen: !this.state.menuOpen,
@@ -103,7 +109,7 @@ class Header extends React.Component {
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
           </NavItem>
-          <NavLink className={`${s.navLink} ${s.navLg} hidden-md-up`} href="#" onClick={() => this.props.dispatch(toggleSidebar())}>
+          <NavLink className={`${s.navLink} ${s.navLg} hidden-md-up`} href="#" onClick={this.switchSidebar}>
             <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg" /></span>
             <i className="fa fa-bars fa-lg hidden-sm-down" />
           </NavLink>
@@ -122,7 +128,7 @@ class Header extends React.Component {
             <Input id="search-input" placeholder="Search Dashboard" />
           </InputGroup>
         </Nav>
-        <a className={`${s.navbarBrand} hidden-md-up`}>
+        <NavLink className={`${s.navbarBrand} hidden-md-up`}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
@@ -130,7 +136,7 @@ class Header extends React.Component {
           &nbsp;
           <i className="fa fa-circle text-warning mr-n-sm" />
           <i className="fa fa-circle text-gray" />
-        </a>
+        </NavLink>
         <Nav>
           <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="hidden-sm-down">
             <DropdownToggle nav caret className={s.navLink}>
@@ -183,8 +189,11 @@ class Header extends React.Component {
     );
   }
 }
-function mapStateToProps() {
-  return {};
+
+function mapStateToProps(store) {
+  return {
+    sidebarOpened: store.navigation.sidebarOpened,
+  };
 }
 
 export default withRouter(connect(mapStateToProps)(withStyles(s)(Header)));
