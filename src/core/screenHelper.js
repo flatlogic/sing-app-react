@@ -1,6 +1,4 @@
-import React from 'react';
-
-let config = {
+const config = {
   name: 'sing',
   title: 'Sing Dashboard App with Angular 2.0 support by Flatlogic',
   version: '3.2.0',
@@ -13,14 +11,14 @@ let config = {
       'md-max': 991,
       'lg-min': 992,
       'lg-max': 1199,
-      'xl-min': 1200
+      'xl-min': 1200,
     },
-    navCollapseTimeout: 2500
-  }
+    navCollapseTimeout: 2500,
+  },
 };
 
-export function isScreen(size) {
-  let screenPx = window.innerWidth;
-  return (screenPx >= config.settings.screens[size + '-min'] || size === 'xs')
-    && (screenPx <= config.settings.screens[size + '-max'] || size === 'xl');
+export default function isScreen(size) {
+  const screenPx = window.innerWidth;
+  return (screenPx >= config.settings.screens[`${size}-min`] || size === 'xs')
+    && (screenPx <= config.settings.screens[`${size}-max`] || size === 'xl');
 }

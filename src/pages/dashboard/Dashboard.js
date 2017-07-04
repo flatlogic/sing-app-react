@@ -2,7 +2,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Row, Col } from 'reactstrap';
 
-import * as a2 from '../../images/a2.png';
+import a2 from '../../images/a2.png';
 
 import Widget from '../../components/Widget';
 

@@ -9,19 +9,18 @@ import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
 import { openSidebar, closeSidebar } from '../../actions/navigation';
-import { isScreen } from '../../core/screenHelper';
+import isScreen from '../../core/screenHelper';
 
 class Sidebar extends React.Component {
   static propTypes = {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
-    dispatch: PropTypes.func,
+    dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
-    dispatch: () => {},
   };
   constructor(props) {
     super(props);
@@ -43,8 +42,7 @@ class Sidebar extends React.Component {
   }
 
   dismissAlert(id) {
-    this.props
-      .dispatch(dismissAlert(id)); // eslint-disable-line
+    this.props.dispatch(dismissAlert(id));
   }
 
   render() {

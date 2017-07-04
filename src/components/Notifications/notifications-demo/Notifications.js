@@ -6,10 +6,10 @@ import {
   Button,
 } from 'reactstrap';
 
-import * as a3 from '../../../images/people/a3.jpg';
-import * as a5 from '../../../images/people/a5.jpg';
+import s from './ListGroup.scss';
 
-import s from './ListGroup.scss'; // eslint-disable-line
+import a3 from '../../../images/people/a3.jpg';
+import a5 from '../../../images/people/a5.jpg';
 
 class NotificationsDemo extends React.Component {
   render() {

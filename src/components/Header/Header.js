@@ -24,20 +24,16 @@ import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
 import { toggleSidebar, openSidebar, closeSidebar } from '../../actions/navigation';
 
-import * as a5 from '../../images/people/a5.jpg';
-import * as a6 from '../../images/people/a6.jpg';
+import a5 from '../../images/people/a5.jpg';
+import a6 from '../../images/people/a6.jpg';
 
 import s from './Header.scss';
 
 class Header extends React.Component {
   static propTypes = {
-    chatToggle: PropTypes.func,
-    dispatch: PropTypes.func,
-  };
-
-  static defaultProps = {
-    chatToggle: () => {},
-    dispatch: () => {},
+    sidebarOpened: PropTypes.bool.isRequired,
+    chatToggle: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -83,12 +79,11 @@ class Header extends React.Component {
   }
 
   doLogout() {
-    this.props
-      .dispatch(logoutUser()); // eslint-disable-line
+    this.props.dispatch(logoutUser());
   }
 
   switchSidebar() {
-    let dispatchNavigation = this.props.sidebarOpened ? closeSidebar : openSidebar;
+    const dispatchNavigation = this.props.sidebarOpened ? closeSidebar : openSidebar;
     this.props.dispatch(dispatchNavigation());
   }
 
