@@ -152,17 +152,17 @@ class Header extends React.Component {
             <DropdownMenu right className="super-colors">
               <DropdownItem><i className="glyphicon glyphicon-user" /> My Account</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem>Calendar</DropdownItem>
-              <DropdownItem>Inbox &nbsp;&nbsp;<Badge color="danger" pill>9</Badge></DropdownItem>
+              <DropdownItem href="/calendar">Calendar</DropdownItem>
+              <DropdownItem href="/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
               <DropdownItem divider />
-              <DropdownItem><i className="fa fa-sign-out" /> Log Out</DropdownItem>
+              <DropdownItem href="/login"><i className="fa fa-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
             <NavLink id="toggle-chat" className={`${s.navLink} hidden-sm-down`} href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
-            <NavLink id="chat-notification" className={`${s.chatNotification} hide`} onClick={this.props.chatToggle}>
+            <NavLink id="chat-notification" className={`${s.chatNotification} hide  hidden-sm-down`} onClick={this.props.chatToggle}>
               <div className={s.chatNotificationInner}>
                 <h6 className={s.title}>
                   <span className="thumb-xs">
