@@ -43,6 +43,7 @@
     "pretty-error": "^2.1.0",
     "prop-types": "^15.5.8",
     "query-string": "^4.3.4",
+    "rc-hammerjs": "^0.6.8",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "15.5.2",
     "react-cookie": "^1.0.5",

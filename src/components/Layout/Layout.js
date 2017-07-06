@@ -5,6 +5,8 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Switch, Route, withRouter } from 'react-router';
 import $ from 'jquery';
 
+import Hammer from 'rc-hammerjs';
+
 // an example of react-router code-splitting
 /* eslint-disable */
 import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
@@ -15,6 +17,7 @@ import Header from '../Header';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
+import { openSidebar, closeSidebar } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
@@ -25,6 +28,7 @@ class Layout extends React.Component {
   static propTypes = {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
+    dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -35,6 +39,7 @@ class Layout extends React.Component {
     super(props);
 
     this.chatToggle = this.chatToggle.bind(this);
+    this.handleSwipe = this.handleSwipe.bind(this);
 
     this.state = {
       chatOpen: false,
@@ -56,6 +61,21 @@ class Layout extends React.Component {
     }, 1000);
   }
 
+  handleSwipe(e) {
+    if ('ontouchstart' in window) {
+      if (e.direction === 4 && !this.state.chatOpen) {
+        this.props.dispatch(openSidebar());
+      }
+
+      if (e.direction === 2 && this.props.sidebarOpened) {
+        this.props.dispatch(closeSidebar());
+        return;
+      }
+
+      this.setState({ chatOpen: e.direction === 2 });
+    }
+  }
+
   render() {
     return (
       <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
@@ -63,12 +83,14 @@ class Layout extends React.Component {
         <div className={s.wrap}>
           <Header chatToggle={this.chatToggle} />
           <Chat chatOpen={this.state.chatOpen} />
-          <main className={s.content}>
-            <Switch>
-              <Route path="/app" exact component={Dashboard} />
-              <Route path="/app/profile" exact component={ProfileBundle} />
-            </Switch>
-          </main>
+          <Hammer onSwipe={this.handleSwipe}>
+            <main className={s.content}>
+              <Switch>
+                <Route path="/app" exact component={Dashboard} />
+                <Route path="/app/profile" exact component={ProfileBundle} />
+              </Switch>
+            </main>
+          </Hammer>
         </div>
       </div>
     );
