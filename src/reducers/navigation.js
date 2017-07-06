@@ -1,7 +1,7 @@
 import { TOGGLE_SIDEBAR, OPEN_SIDEBAR, CLOSE_SIDEBAR } from '../actions/navigation';
 
 const initialState = {
-  sidebarOpened: false,
+  sidebarOpened: true,
   sidebarStatic: false,
 };
 

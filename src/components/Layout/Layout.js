@@ -46,6 +46,12 @@ class Layout extends React.Component {
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.dispatch(closeSidebar());
+    }, 2500);
+  }
+
   chatToggle() {
     this.setState({ chatOpen: !this.state.chatOpen });
     $('.chat-notification-sing').remove();
