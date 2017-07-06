@@ -141,7 +141,7 @@ class Header extends React.Component {
               Philip <span className="fw-semi-bold">Smith</span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right className={s.dropdownNotifications}>
+            <DropdownMenu right className={`${s.dropdownNotifications} animated animated-fast fadeInUp`}>
               <Notifications />
             </DropdownMenu>
           </NavDropdown>

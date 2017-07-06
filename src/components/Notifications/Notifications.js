@@ -47,7 +47,7 @@ class Notifications extends React.Component {
           <div className="text-center mb-sm">
             <strong>You have 13 notifications</strong>
           </div>
-          <ButtonGroup>
+          <ButtonGroup id="notification-buttons">
             <Button color="secondary" onClick={() => this.changeNotificationsTab(1)} active={this.state.notificationsTabSelected === 1}>Notifications</Button>
             <Button color="secondary" onClick={() => this.changeNotificationsTab(2)} active={this.state.notificationsTabSelected === 2}>Messages</Button>
             <Button color="secondary" onClick={() => this.changeNotificationsTab(3)} active={this.state.notificationsTabSelected === 3}>Progress</Button>
