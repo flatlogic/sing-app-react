@@ -33,11 +33,11 @@ const context = {
   storeSubscription: null,
 };
 
-if (localStorage.getItem('nav-static') === 'true') {
-  window.App.state.navigation.sidebarStatic = true;
-} else {
-  window.App.state.navigation.sidebarOpened = true;
-}
+// if (localStorage.getItem('nav-static') === 'true') {
+//   window.App.state.navigation.sidebarStatic = true;
+// } else {
+//   window.App.state.navigation.sidebarOpened = true;
+// }
 
 // Switch off the native scroll restoration behavior and handle it manually
 // https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration

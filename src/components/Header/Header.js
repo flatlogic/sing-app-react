@@ -44,6 +44,7 @@ class Header extends React.Component {
     this.switchSidebar = this.switchSidebar.bind(this);
     this.toggleNotifications = this.toggleNotifications.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.doLogout = this.doLogout.bind(this);
 
     this.state = {
       menuOpen: false,
@@ -162,7 +163,7 @@ class Header extends React.Component {
               <DropdownItem href="/calendar">Calendar</DropdownItem>
               <DropdownItem href="/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="/login"><i className="fa fa-sign-out" /> Log Out</DropdownItem>
+              <DropdownItem onClick={this.doLogout}><i className="fa fa-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
           </NavDropdown>
           <NavItem>

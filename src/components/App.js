@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route, Redirect, withRouter } from 'react-router';
-import { Provider as ReduxProvider } from 'react-redux';
+import { connect, Provider as ReduxProvider } from 'react-redux';
+
+import Bundle from '../core/Bundle';
+
+/* eslint-disable */
+import loadErrorPage from 'bundle-loader?lazy!../pages/error/ErrorPage';
+/* eslint-enable */
 
 import LayoutComponent from '../components/Layout/Layout';
 import LoginComponent from '../pages/login/Login';
-import ErrorPage from '../pages/error/ErrorPage';
 
 
-// import { auth } from '../config';
+const ErrorPageBundle = Bundle.generateBundle(loadErrorPage);
+
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -29,10 +35,30 @@ const ContextType = {
 //   return true;
 // };
 
+
+const PrivateRoute = ({ component, isAuthenticated, ...rest }) => ( // eslint-disable-line
+  <Route
+    {...rest} render={props => (
+    isAuthenticated ? (
+      React.createElement(component, props)
+    ) : (
+      <Redirect
+        to={{
+          pathname: '/login',
+          state: { from: props.location }, // eslint-disable-line
+        }}
+      />
+    )
+  )}
+  />
+);
+
 class App extends React.PureComponent {
 
   static propTypes = {
     context: PropTypes.shape(ContextType),
+    store: PropTypes.any, // eslint-disable-line
+    isAuthenticated: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -42,6 +68,7 @@ class App extends React.PureComponent {
 
   static contextTypes = {
     router: PropTypes.any,
+    store: PropTypes.any,
   };
 
   static childContextTypes = ContextType;
@@ -55,12 +82,18 @@ class App extends React.PureComponent {
     return (
       <Switch>
         <Route path="/" exact render={() => <Redirect to="/app" />} />
-        <Route path="/app" component={LayoutComponent} />
+        <PrivateRoute isAuthenticated={this.props.isAuthenticated} path="/app" component={LayoutComponent} />
         <Route path="/login" exact component={LoginComponent} />
-        <Route component={ErrorPage} />
+        <Route component={ErrorPageBundle} />
       </Switch>
     );
   }
 }
 
-export default withRouter(App);
+function mapStateToProps(store) {
+  return {
+    isAuthenticated: store.auth.isAuthenticated,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(App));

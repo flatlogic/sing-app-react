@@ -24,14 +24,14 @@ export function receiveLogin(user) {
   };
 }
 
-// function loginError(message) {
-//   return {
-//     type: LOGIN_FAILURE,
-//     isFetching: false,
-//     isAuthenticated: false,
-//     message,
-//   };
-// }
+function loginError(message) {
+  return {
+    type: LOGIN_FAILURE,
+    isFetching: false,
+    isAuthenticated: false,
+    message,
+  };
+}
 
 function requestLogout() {
   return {
@@ -60,17 +60,32 @@ export function logoutUser() {
 }
 
 export function loginUser(creds) {
-  // const config = {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   credentials: 'include',
-  //   body: `login=${creds.login}&password=${creds.password}`,
-  // };
+  const config = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    credentials: 'include',
+    body: `login=${creds.login}&password=${creds.password}`,
+  };
 
   return (dispatch) => {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds));
 
-    dispatch(receiveLogin({ id_token: 123 }));
+    return fetch('/login', config)
+      .then(response =>
+        response.json().then(user => ({ user, response })),
+      ).then(({ user, response }) => { // eslint-disable-line
+        if (!response.ok) {
+          // If there was a problem, we want to
+          // dispatch the error condition
+          dispatch(loginError(user.message));
+          return Promise.reject(user);
+        }
+        // in posts create new action and check http status, if malign logout
+        // If login was successful, set the token in local storage
+        localStorage.setItem('id_token', user.id_token);
+          // Dispatch the success action
+        dispatch(receiveLogin(user));
+      }).catch(err => console.log('Error: ', err)); // eslint-disable-line
   };
 }

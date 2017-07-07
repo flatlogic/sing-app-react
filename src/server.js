@@ -2,6 +2,8 @@ import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import expressJwt, { UnauthorizedError as Jwt401Error } from 'express-jwt';
+import jwt from 'jsonwebtoken';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
@@ -16,7 +18,6 @@ import { receiveLogin, receiveLogout } from './actions/user';
 import config from './config';
 import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import theme from './styles/theme.scss';
-
 
 const app = express();
 
@@ -36,10 +37,48 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//
+// Authentication
+// -----------------------------------------------------------------------------
+app.use(expressJwt({
+  secret: config.auth.jwt.secret,
+  credentialsRequired: false,
+  getToken: req => req.cookies.id_token,
+}));
+// Error handler for express-jwt
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  if (err instanceof Jwt401Error) {
+    console.error('[express-jwt-error]', req.cookies.id_token);
+    // `clearCookie`, otherwise user can't use web-app until cookie expires
+    res.clearCookie('id_token');
+  } else {
+    next(err);
+  }
+});
 
 if (__DEV__) {
   app.enable('trust proxy');
 }
+app.post('/login', (req, res) => {
+  // replace with real database check in production
+  // const user = graphql.find(req.login, req.password);
+  let user = false;
+  const login = req.body.login;
+  const password = req.body.password;
+  if (login && password) {
+    user = { user, login };
+  }
+
+  if (user) {
+    const expiresIn = 60 * 60 * 24 * 180; // 180 days
+    const token = jwt.sign(user, config.auth.jwt.secret, { expiresIn });
+    res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: false });
+    res.json({ id_token: token });
+  } else {
+    res.status(401).json({ message: 'To login use user/password' });
+  }
+});
+
 
 //
 // Register server-side rendering middleware
