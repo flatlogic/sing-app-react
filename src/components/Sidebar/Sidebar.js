@@ -44,14 +44,12 @@ class Sidebar extends React.Component {
   dismissAlert(id) {
     this.props.dispatch(dismissAlert(id));
   }
-
   render() {
     return (
-      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>
-
         <ul className={s.nav}>
           <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
           <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
@@ -73,7 +71,7 @@ class Sidebar extends React.Component {
           <li>
             <a href="#">
               <i className="fa fa-circle text-gray mr-2" />
-              <span className={s.labelName}>Starred</span>
+                <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>

@@ -34,7 +34,6 @@ class Chat extends React.Component {
 
     this.state = {
       todayConversations: [{
-        id: 0,
         name: 'Chris Gray',
         status: 'success',
         lastMessage: 'Hey! What\'s up? So many times since we',
@@ -71,7 +70,6 @@ class Chat extends React.Component {
         image: a4,
       }],
       lastWeekConversations: [{
-        id: 0,
         name: 'Freda Edison',
         status: 'gray-light',
         lastMessage: 'Hey what\'s up? Me and Monica going for a lunch somewhere. Wanna join?',
