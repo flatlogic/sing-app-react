@@ -32,6 +32,7 @@ import s from './Header.scss';
 class Header extends React.Component {
   static propTypes = {
     sidebarOpened: PropTypes.bool.isRequired,
+    sidebarStatic: PropTypes.bool.isRequired,
     chatToggle: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
   };
@@ -42,6 +43,7 @@ class Header extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.switchSidebar = this.switchSidebar.bind(this);
     this.toggleNotifications = this.toggleNotifications.bind(this);
+    this.toggleSidebar = this.toggleSidebar.bind(this);
 
     this.state = {
       menuOpen: false,
@@ -87,6 +89,11 @@ class Header extends React.Component {
     this.props.dispatch(dispatchNavigation());
   }
 
+  toggleSidebar() {
+    this.props.dispatch(toggleSidebar());
+    localStorage.setItem('nav-static', !this.props.sidebarStatic);
+  }
+
   toggleMenu() {
     this.setState({
       menuOpen: !this.state.menuOpen,
@@ -97,7 +104,7 @@ class Header extends React.Component {
       <Navbar className={s.navbar}>
         <Nav className={s.nav}>
           <NavItem>
-            <NavLink className={`${s.navLink} hidden-sm-down`} href="#" id="toggleSidebar" onClick={() => this.props.dispatch(toggleSidebar())}>
+            <NavLink className={`${s.navLink} hidden-sm-down`} href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
               <i className="fa fa-bars fa-lg" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
@@ -188,6 +195,7 @@ class Header extends React.Component {
 function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
+    sidebarStatic: store.navigation.sidebarStatic,
   };
 }
 

@@ -47,9 +47,11 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.props.dispatch(closeSidebar());
-    }, 2500);
+    if (this.props.sidebarOpened) {
+      setTimeout(() => {
+        this.props.dispatch(closeSidebar());
+      }, 2500);
+    }
   }
 
   chatToggle() {
