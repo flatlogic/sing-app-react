@@ -42,4 +42,8 @@
   // 20px for footer height
   padding: $content-padding $content-padding ($content-padding + 20px);
   background-color: $body-bg;
+
+  @media (max-width: 768px) {
+    padding: 20px 15px;
+  }
 }
