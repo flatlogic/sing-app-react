@@ -198,22 +198,23 @@ class Chat extends React.Component {
         </div>
         <div className={[s.chatPanel, s.chatMessages, this.state.chatMessageOpened ? '' : s.chatMessageOpen].join(' ')}>
           <h6 className={s.messagesTitle}>
-            <a href="" onClick={() => this.setState({ chatMessageOpened: true })}>
+            {/* eslint-disable */}
+            <a onClick={() => this.setState({ chatMessageOpened: true })}>
               <i className="fa fa-angle-left mr-xs" />
               {this.state.conversation.name}
             </a>
+            {/* eslint-disable */}
           </h6>
           <ListGroup>
             {this.state.conversation.messages &&
             this.state.conversation.messages
               .filter(this.filterMessages)
-              .map(item =>
-                <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '']}>
-                  <span className="thumb-sm">
-                    <img className="rounded-circle" src={item.fromMe ? avatar : this.state.conversation.image} alt="..." />
-                  </span>
-                  <div className={s.messageBody}>{item.text}</div>
-                </ListGroupItem>,
+              .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '']}>
+                              <span className="thumb-sm">
+                                <img className="rounded-circle" src={item.fromMe ? avatar : this.state.conversation.image} alt="..." />
+                              </span>
+                              <div className={s.messageBody}>{item.text}</div>
+                            </ListGroupItem>,
             )}
           </ListGroup>
 
