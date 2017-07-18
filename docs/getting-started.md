@@ -50,8 +50,6 @@ You can start by cloning the latest version of React Dashboard on your
 local machine by running:
 
 ```shell
-$ git clone -o react-dashboard -b master --single-branch \
-      https://github.com/flatlogic/react-dashboard.git MyApp
 $ cd MyApp
 ```
 
