@@ -44,11 +44,11 @@ class Buttons extends React.Component {
   }
 
   onRadioBtnClickOne(rSelectedOne) {
-    this.setState({rSelectedOne});
+    this.setState({ rSelectedOne });
   }
 
   onRadioBtnClickTwo(rSelectedTwo) {
-    this.setState({rSelectedTwo});
+    this.setState({ rSelectedTwo });
   }
 
   onCheckboxBtnClickOne(selected) {
@@ -58,7 +58,7 @@ class Buttons extends React.Component {
     } else {
       this.state.cSelectedOne.splice(index, 1);
     }
-    this.setState({cSelectedOne: [...this.state.cSelectedOne]});
+    this.setState({ cSelectedOne: [...this.state.cSelectedOne] });
   }
 
   onCheckboxBtnClickTwo(selected) {
@@ -68,7 +68,7 @@ class Buttons extends React.Component {
     } else {
       this.state.cSelectedTwo.splice(index, 1);
     }
-    this.setState({cSelectedTwo: [...this.state.cSelectedTwo]});
+    this.setState({ cSelectedTwo: [...this.state.cSelectedTwo] });
   }
 
   toggleOne() {
@@ -167,7 +167,7 @@ class Buttons extends React.Component {
               <div>
                 <p className="fs-mini text-muted">
                   Create block level buttons - those that span the full width
-                  of a parent— by adding <code>.btn-block</code>.
+                  of a parent— by adding <code>block</code> to <code>&lt;Button&gt;</code> component.
                   Great for menu & social buttons.
                 </p>
                 <Button color="info" block>Block Button</Button>
@@ -186,7 +186,7 @@ class Buttons extends React.Component {
               <div>
                 <p className="fs-mini text-muted">
                   Make buttons look unclickable by fading them back 50%.
-                  Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.
+                  Add the <code>disabled</code> to <code>&lt;Button&gt;</code> component.
                 </p>
                 <p>
                   <Button color="primary" disabled className="mr-xs">Primary button</Button>
@@ -250,7 +250,7 @@ class Buttons extends React.Component {
                 </p>
 
                 <div className="mb-xs">
-                  <ButtonDropdown isOpen={this.state.dropdownOpenOne} toggle={this.toggleOne}>
+                  <ButtonDropdown isOpen={this.state.dropdownOpenOne} toggle={this.toggleOne} className="mr-xs">
                     <DropdownToggle caret color="danger">
                       &nbsp; One &nbsp;
                     </DropdownToggle>
@@ -277,7 +277,7 @@ class Buttons extends React.Component {
                   </ButtonDropdown>
                 </div>
                 <div className="mb-xs">
-                  <ButtonDropdown isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree}>
+                  <ButtonDropdown isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree} className="mr-xs">
                     <Button id="dropdownThree">Gray</Button>
                     <DropdownToggle caret className="dropdown-toggle-split"/>
                     <DropdownMenu>
@@ -289,8 +289,8 @@ class Buttons extends React.Component {
                     </DropdownMenu>
                   </ButtonDropdown>
                   <ButtonDropdown isOpen={this.state.dropdownOpenFour} toggle={this.toggleFour}>
-                    <Button size="sm" id="dropdownFour" color="secondary">Gray</Button>
-                    <DropdownToggle size="sm" caret color="secondary" className="dropdown-toggle-split"/>
+                    <Button size="sm" id="dropdownFour" color="gray">Gray</Button>
+                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split"/>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
@@ -403,10 +403,10 @@ class Buttons extends React.Component {
                     </Button>
                     <Button color="inverse" className="width-100 mr-xs">
                       <i className="glyphicon glyphicon-globe text-info mr-xs mb-xs"/>
-                      Globe
+                      <span className="text-info">Globe</span>
                     </Button>
                     <Button color="inverse" className="width-100 mr-xs">
-                      <span className="circle bg-white">
+                      <span className="circle bg-white mr-xs">
                         <i className="fa fa-map-marker text-gray"/>
                       </span>
                       Map

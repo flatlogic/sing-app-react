@@ -10,6 +10,7 @@ import Hammer from 'rc-hammerjs';
 // an example of react-router code-splitting
 /* eslint-disable */
 import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
+import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons/Buttons';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -21,9 +22,9 @@ import { openSidebar, closeSidebar } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
-import Buttons from '../../pages/ui-elements/buttons/Buttons';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
+const UIButtonsBundle = Bundle.generateBundle(loadUIButtons);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -97,7 +98,7 @@ class Layout extends React.Component {
               <Switch>
                 <Route path="/app" exact component={Dashboard} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
-                <Route path="/app/ui-elements/buttons" exact component={Buttons} />
+                <Route path="/app/ui-elements/buttons" exact component={UIButtonsBundle} />
               </Switch>
             </main>
           </Hammer>
