@@ -39,7 +39,7 @@ class LinksGroup extends Component {
         <li className={[s.headerLink, this.props.className].join(' ')}>
           <NavLink to={this.props.headerLink} activeClassName={s.headerLinkActive} exact>
             <span className={s.icon}>
-              <i className={`fa ${this.props.iconName}`} />
+              <i className={`fa ${this.props.iconName}`}/>
             </span>
             {this.props.header}
             {this.props.badge ? <Badge className={s.badge} color="danger">9</Badge> : null}
@@ -59,11 +59,11 @@ class LinksGroup extends Component {
                 className={match ? s.headerLinkActive : ''}
                 onClick={() => this.setState({ isOpen: !this.state.isOpen })}
               >
-                <i className={`glyphicon ${this.props.iconName}`} />
+                <i className={`fa ${this.props.iconName}`}/>
 
                 {this.props.header}
 
-                <b className={['caret', s.caret].join(' ')} />
+                <b className={['caret', s.caret].join(' ')}/>
               </a>
               {/* eslint-enable */}
               <Collapse className={s.panel} isOpen={expanded}>
@@ -78,7 +78,7 @@ class LinksGroup extends Component {
                         {child.name}
                       </NavLink>
                     </li>
-                      ))}
+                  ))}
                 </ul>
               </Collapse>
             </li>

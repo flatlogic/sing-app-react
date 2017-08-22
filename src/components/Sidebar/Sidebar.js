@@ -22,6 +22,7 @@ class Sidebar extends React.Component {
     sidebarStatic: false,
     sidebarOpened: false,
   };
+
   constructor(props) {
     super(props);
 
@@ -44,39 +45,48 @@ class Sidebar extends React.Component {
   dismissAlert(id) {
     this.props.dispatch(dismissAlert(id));
   }
+
   render() {
     return (
-      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+           className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>
         <ul className={s.nav}>
-          <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
-          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
+          <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child"/>
+          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9"/>
+          <LinksGroup header="UI Elements"
+                      iconName="fa-child"
+                      headerLink="/app/ui-elements"
+                      childrenLinks={[{
+                        name: "Buttons", link: "/app/ui-elements/buttons", iconName: "fa-child"
+                      }]}
+          />
         </ul>
         <h5 className={s.navTitle}>
           LABELS
           <a className={s.actionLink}>
-            <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`} />
+            <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`}/>
           </a>
         </h5>
         {/* eslint-disable */}
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2" />
+              <i className="fa fa-circle text-warning mr-2"/>
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2" />
-                <span className={s.labelName}>Starred</span>
+              <i className="fa fa-circle text-gray mr-2"/>
+              <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2" />
+              <i className="fa fa-circle text-danger mr-2"/>
               <span className={s.labelName}>Background</span>
             </a>
           </li>
@@ -93,8 +103,8 @@ class Sidebar extends React.Component {
               isOpen={true} // eslint-disable-line
               toggle={() => { this.dismissAlert(alert.id); }}
             >
-              <span className="text-white fw-semi-bold">{alert.title}</span><br />
-              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value} />
+              <span className="text-white fw-semi-bold">{alert.title}</span><br/>
+              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value}/>
               <small>{alert.footer}</small>
             </Alert>,
           )}

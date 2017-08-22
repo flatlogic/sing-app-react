@@ -323,6 +323,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   display: block !important;
 }
 
+.btn-group.show{
+  display: inline-flex !important;
+}
+
 .help-block {
   margin-top: 5px;
   font-size: $font-size-smaller;

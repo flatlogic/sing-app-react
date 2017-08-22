@@ -21,6 +21,7 @@ import { openSidebar, closeSidebar } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard/Dashboard';
+import Buttons from '../../pages/ui-elements/buttons/Buttons';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 
@@ -96,6 +97,7 @@ class Layout extends React.Component {
               <Switch>
                 <Route path="/app" exact component={Dashboard} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
+                <Route path="/app/ui-elements/buttons" exact component={Buttons} />
               </Switch>
             </main>
           </Hammer>

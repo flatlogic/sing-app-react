@@ -6,21 +6,80 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
 @import '../../styles/app';
-
-.widget {
-  display: block;
-  position: relative;
-  margin-bottom: 30px;
-  padding: 15px 20px;
-  background: $widget-bg;
-  border-radius: 3px;
-}
 
 .title {
   margin-top: 0;
   color: $widget-title-color;
 
   @include clearfix();
+}
+
+.widget {
+  display: block;
+  position: relative;
+  margin-bottom: $grid-gutter-width;
+  padding: $widget-padding-vertical $widget-padding-horizontal;
+  background: $widget-bg-color;
+  border-radius: $border-radius-sm;
+  > header {
+    margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
+    padding: $widget-padding-vertical $widget-padding-horizontal;
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+  }
+
+  > .widgetBody.no-padding {
+    margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
+  }
+}
+
+.widgetBody,
+.widgetBody.no-padding {
+  margin-top: $widget-padding-vertical;
+}
+
+.widgetControls {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  padding: 14px;
+  font-size: $font-size-sm;
+
+  &.left {
+    left: 0;
+    right: auto;
+  }
+
+  &.widgetControls-hover {
+    opacity: 0;
+    @include transition(opacity .15s);
+  }
+
+   a {
+    padding: 1px 4px;
+    border-radius: 4px;
+    color: rgba($black, .4);
+    @include transition(color .15s ease-in-out);
+
+    &:hover {
+      color: rgba($black, .1);
+      text-decoration: none;
+    }
+
+    > .glyphicon {
+      vertical-align: 0;
+      font-size: 12px;
+    }
+
+    > .fa {
+      vertical-align: 1px;
+    }
+  }
+
+  > .btn-group {
+    vertical-align: baseline;
+  }
 }

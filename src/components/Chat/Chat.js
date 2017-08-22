@@ -129,9 +129,9 @@ class Chat extends React.Component {
 
   filterConversations(item) {
     const isFindName = item.name.toLowerCase()
-        .indexOf(this.state.searchValue.toLowerCase()) !== -1;
+      .indexOf(this.state.searchValue.toLowerCase()) !== -1;
     const isFindMessage = item.lastMessage.toLowerCase()
-        .indexOf(this.state.searchValue.toLowerCase()) !== -1;
+      .indexOf(this.state.searchValue.toLowerCase()) !== -1;
     return isFindName || isFindMessage;
   }
 
@@ -146,9 +146,10 @@ class Chat extends React.Component {
           <h4 className={s.chatTitle}>Contacts</h4>
           <div className="form-group no-margin">
             <div className="input-group input-group-dark">
-              <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
+              <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue}
+                     onChange={this.handleChangeContacts}/>
               <span className="input-group-addon">
-                <i className="fa fa-search" />
+                <i className="fa fa-search"/>
               </span>
             </div>
           </div>
@@ -163,16 +164,16 @@ class Chat extends React.Component {
                   key={item.id}
                   onClick={() => this.openMessages(item)}
                 >
-                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
+                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')}/>
                   <span className="thumb-sm pull-left mr">
-                    <img className="rounded-circle" src={item.image} alt="..." />
+                    <img className="rounded-circle" src={item.image} alt="..."/>
                   </span>
                   <div>
                     <h6 className={s.messageSender}>{item.name}</h6>
                     <p className={s.messagePreview}>{item.lastMessage}</p>
                   </div>
                 </ListGroupItem>,
-            )}
+              )}
           </ListGroup>
 
           <h5 className={s.navTitle}>LAST WEEK</h5>
@@ -184,23 +185,23 @@ class Chat extends React.Component {
                   key={item.id}
                   onClick={() => this.openMessages(item)}
                 >
-                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
+                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')}/>
                   <span className="thumb-sm pull-left mr">
-                    <img className="rounded-circle" src={item.image} alt="..." />
+                    <img className="rounded-circle" src={item.image} alt="..."/>
                   </span>
                   <div>
                     <h6 className={s.messageSender}>{item.name}</h6>
                     <p className={s.messagePreview}>{item.lastMessage}</p>
                   </div>
                 </ListGroupItem>,
-            )}
+              )}
           </ListGroup>
         </div>
         <div className={[s.chatPanel, s.chatMessages, this.state.chatMessageOpened ? '' : s.chatMessageOpen].join(' ')}>
           <h6 className={s.messagesTitle}>
             {/* eslint-disable */}
             <a onClick={() => this.setState({ chatMessageOpened: true })}>
-              <i className="fa fa-angle-left mr-xs" />
+              <i className="fa fa-angle-left mr-xs"/>
               {this.state.conversation.name}
             </a>
             {/* eslint-disable */}
@@ -211,15 +212,17 @@ class Chat extends React.Component {
               .filter(this.filterMessages)
               .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '']}>
                               <span className="thumb-sm">
-                                <img className="rounded-circle" src={item.fromMe ? avatar : this.state.conversation.image} alt="..." />
+                                <img className="rounded-circle"
+                                     src={item.fromMe ? avatar : this.state.conversation.image} alt="..."/>
                               </span>
-                              <div className={s.messageBody}>{item.text}</div>
-                            </ListGroupItem>,
-            )}
+                  <div className={s.messageBody}>{item.text}</div>
+                </ListGroupItem>,
+              )}
           </ListGroup>
 
           <footer className={[s.chatFooter, 'form-group'].join(' ')}>
-            <input className="form-control input-dark fs-mini" onKeyPress={this.addMessage} type="text" placeholder="Type your message" />
+            <input className="form-control input-dark fs-mini" onKeyPress={this.addMessage} type="text"
+                   placeholder="Type your message"/>
           </footer>
         </div>
       </aside>
