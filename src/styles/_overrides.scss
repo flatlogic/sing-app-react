@@ -72,10 +72,12 @@
 }
 
 .badge {
-  //font-size: 12px;
+  font-size: .875rem;
 
   &.badge-pill {
     font-size: 100%;
+    padding: .4em .6em;
+    font-weight: 700;
   }
 
   .list-group-item > & {
@@ -156,6 +158,41 @@ small {
 
 .btn-secondary.active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn {
+  font-family: $font-family-sans-serif;
+  .glyphicon {
+    top: 3px;
+  }
+}
+
+.btn, .btn-inverse, .btn-gray {
+  &:not(.active) {
+    box-shadow: none !important;
+  }
+}
+
+.btn-sm {
+  padding-top: .35rem;
+  padding-bottom: .35rem;
+}
+
+.btn-rounded {
+  @include border-radius(6px);
+}
+
+.btn-gray {
+  @include button-variant($text-color, $gray-semi-lighter, darken($gray-semi-lighter, 5%));
+}
+
+.btn-outline {
+  @include button-variant($white, transparent, $white);
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, .1);
+  }
 }
 
 ///////// Dropdowns //////////
@@ -271,4 +308,21 @@ h6,
     font-size: 75%;
     color: $text-muted;
   }
+}
+
+// Popovers
+
+.popover {
+  border: none;
+  @include box-shadow(none);
+}
+
+.popover-content {
+  padding: 20px;
+}
+
+// Modal
+
+.modal-body {
+  background: $gray-lighter;
 }

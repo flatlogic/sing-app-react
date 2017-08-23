@@ -11,6 +11,7 @@ import Hammer from 'rc-hammerjs';
 /* eslint-disable */
 import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
 import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons/Buttons';
+import loadUIComponent from 'bundle-loader?lazy!../../pages/ui-elements/components/Components';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -25,6 +26,7 @@ import Dashboard from '../../pages/dashboard/Dashboard';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 const UIButtonsBundle = Bundle.generateBundle(loadUIButtons);
+const UIComponentsBundle = Bundle.generateBundle(loadUIComponent);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -99,6 +101,7 @@ class Layout extends React.Component {
                 <Route path="/app" exact component={Dashboard} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
                 <Route path="/app/ui-elements/buttons" exact component={UIButtonsBundle} />
+                <Route path="/app/ui-elements/components" exact component={UIComponentsBundle} />
               </Switch>
             </main>
           </Hammer>

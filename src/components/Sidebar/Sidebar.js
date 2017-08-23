@@ -59,9 +59,14 @@ class Sidebar extends React.Component {
           <LinksGroup header="UI Elements"
                       iconName="fa-child"
                       headerLink="/app/ui-elements"
-                      childrenLinks={[{
-                        name: "Buttons", link: "/app/ui-elements/buttons", iconName: "fa-child"
-                      }]}
+                      childrenLinks={[
+                        {
+                          name: "Buttons", link: "/app/ui-elements/buttons", iconName: "fa-child"
+                        },
+                        {
+                          name: "Components", link: "/app/ui-elements/components", iconName: "fa-child"
+                        }
+                      ]}
           />
         </ul>
         <h5 className={s.navTitle}>

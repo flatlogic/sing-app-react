@@ -15,7 +15,7 @@ class Widget extends React.Component {
     close: PropTypes.bool,
     collapse: PropTypes.bool,
     refresh: PropTypes.bool,
-
+    settings: PropTypes.bool
   };
 
   static defaultProps = {
@@ -25,7 +25,8 @@ class Widget extends React.Component {
     children: [],
     close: false,
     collapse: false,
-    refresh: false
+    refresh: false,
+    settings: false
   };
 
   render() {
@@ -39,6 +40,9 @@ class Widget extends React.Component {
           )
         }
         <div className={s.widgetControls}>
+          {this.props.settings && (
+            <a href="#"><i className="glyphicon glyphicon-cog"/></a>
+          )}
           {this.props.refresh && (
             <a href="#"><i className="fa fa-refresh"/></a>
           )}

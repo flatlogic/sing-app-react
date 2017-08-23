@@ -58,7 +58,7 @@
     @include transition(opacity .15s);
   }
 
-   a {
+  a {
     padding: 1px 4px;
     border-radius: 4px;
     color: rgba($black, .4);
@@ -68,13 +68,12 @@
       color: rgba($black, .1);
       text-decoration: none;
     }
-
-    > .glyphicon {
+    i.glyphicon {
       vertical-align: 0;
       font-size: 12px;
     }
 
-    > .fa {
+    i.fa {
       vertical-align: 1px;
     }
   }
