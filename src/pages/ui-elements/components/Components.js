@@ -114,9 +114,11 @@ class Components extends React.Component {
             <Widget
               title={<h6> Alert <span className="fw-semi-bold">Messages</span></h6>}
               close settings refresh
-              body={<div className="mb-5">
+            >
+              <div className="mb-5">
                 <h3>Small <span className="fw-semi-bold">Elements</span></h3>
-                <p className="mb-lg">Gaining direct user attention on some matter. Add dismiss functionality to
+                <p className="mb-lg">Gaining direct user attention on some matter. Add dismiss
+                  functionality to
                   all
                   alert messages with this plugin.</p>
                 <div>
@@ -129,8 +131,8 @@ class Components extends React.Component {
                 </div>
                 <Button color="secondary" size="sm" className="float-right" onClick={this.addAlert}>Add
                   Alert</Button>
-              </div>}
-            />
+              </div>
+            </Widget>
           </Col>
         </Row>
 
@@ -141,7 +143,8 @@ class Components extends React.Component {
               title={<h6>
                 Labels & Badge <span className="fw-semi-bold">Options</span>
               </h6>} close settings refresh
-              body={<div>
+            >
+              <div>
                 <h3>Label <span className="fw-semi-bold">Colors</span></h3>
                 <p>
                   Just use <code>&lt;Badge&gt;</code>
@@ -163,7 +166,10 @@ class Components extends React.Component {
                 </p>
                 <p>
                   <Button color="primary">
-                    Notifications &nbsp;&nbsp; <Badge color="white" pill className="text-primary">3</Badge>
+                    Notifications &nbsp;&nbsp; <Badge
+                      color="white" pill
+                      className="text-primary"
+                    >3</Badge>
                   </Button>{' '}
                   <Badge color="danger" pill>01</Badge>{' '}
                   <Badge color="warning" pill>20</Badge>{' '}
@@ -171,8 +177,8 @@ class Components extends React.Component {
                   <Badge color="info" pill>18</Badge>{' '}
                   <Badge color="primary" pill>41</Badge>{' '}
                 </p>
-              </div>}
-            />
+              </div>
+            </Widget>
           </Col>
 
           {/* Tooltip, Popover, Modal*/}
@@ -181,14 +187,17 @@ class Components extends React.Component {
               title={<h6>
                 Tooltips & Popover <span className="fw-semi-bold">Variations</span>
               </h6>} settings close refresh
-              body={<div>
+            >
+              <div>
                 {/* Tooltip*/}
                 <div className="mb-5">
                   <h3>Position <span className="fw-semi-bold">Tooltips</span></h3>
                   <p>Stable four position options available:</p>
                   <div>
-                    {this.state.tooltips.map(tooltip =>
-                      <TooltipItem key={tooltip.id} item={tooltip} id={tooltip.id} />)}
+                    {this.state.tooltips.map(tooltip => <TooltipItem
+                      key={tooltip.id} item={tooltip}
+                      id={tooltip.id}
+                    />)}
                   </div>
                 </div>
                 {/* Popover*/}
@@ -204,11 +213,14 @@ class Components extends React.Component {
                       toggle={this.togglePopoverOne}
                     >
                       <PopoverContent>
-                        {"And here's some amazing content. It's very engaging. Right?"}
+                        {'And here\'s some amazing content. It\'s very engaging. Right?'}
                       </PopoverContent>
                     </Popover>
 
-                    <Button className="ml-xs" id="Popover2" color="info" onClick={this.togglePopoverTwo}>
+                    <Button
+                      className="ml-xs" id="Popover2" color="info"
+                      onClick={this.togglePopoverTwo}
+                    >
                       Popover on left
                     </Button>
                     <Popover
@@ -217,7 +229,7 @@ class Components extends React.Component {
                     >
                       <PopoverTitle>Titled Popover</PopoverTitle>
                       <PopoverContent>
-                        {"And here's some amazing content. It's very engaging. Right?"}
+                        {'And here\'s some amazing content. It\'s very engaging. Right?'}
                       </PopoverContent>
                     </Popover>
                   </div>
@@ -230,7 +242,10 @@ class Components extends React.Component {
                   <Button color="gray" onClick={this.toggleModal}>Launch demo modal</Button>
                   <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
                     <ModalHeader>
-                      <button type="button" onClick={this.toggleModal} className="close" aria-label="close">
+                      <button
+                        type="button" onClick={this.toggleModal} className="close"
+                        aria-label="close"
+                      >
                         <span aria-hidden="true">{String.fromCharCode(215)}</span>
                       </button>
                       <h4
@@ -257,7 +272,8 @@ class Components extends React.Component {
                           <Col md={4} xs={12}>
                             <FormGroup>
                               <Input
-                                type="text" id="middle-name" name="middle-name" className="input-no-border"
+                                type="text" id="middle-name" name="middle-name"
+                                className="input-no-border"
                                 placeholder="Middle Name"
                               />
                             </FormGroup>
@@ -307,8 +323,8 @@ class Components extends React.Component {
                     </ModalFooter>
                   </Modal>
                 </div>
-              </div>}
-            />
+              </div>
+            </Widget>
           </Col>
         </Row>
         {/* Progress Bars*/}
@@ -317,11 +333,13 @@ class Components extends React.Component {
             <Widget
               title={<h6> Progress <span className="fw-semi-bold">Bars</span>
               </h6>} close refresh settings
-              body={<div>
+            >
+              <div>
                 <Row>
                   <Col md={4} xs={12}>
                     <h3>Progress Bar <span className="fw-semi-bold">Colors</span></h3>
-                    <p className="fs-mini text-muted">Easily perceptible colored options for Bootstrap progress
+                    <p className="fs-mini text-muted">Easily perceptible colored options for
+                      Bootstrap progress
                       bars:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
@@ -335,7 +353,8 @@ class Components extends React.Component {
 
                   <Col md={4} xs={12}>
                     <h3>Progress Bar <span className="fw-semi-bold">Sizes</span></h3>
-                    <p className="fs-mini text-muted">Three different sizes for all of possible use cases:</p>
+                    <p className="fs-mini text-muted">Three different sizes for all of possible use
+                      cases:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
                         <Progress color="gray" value="60" className="progress-xs mb-xs" />
@@ -347,17 +366,21 @@ class Components extends React.Component {
 
                   <Col md={4} xs={12}>
                     <h3>More <span className="fw-semi-bold">Options</span></h3>
-                    <p className="text-muted fs-mini">Animated, stripped and progress bars containing text:</p>
+                    <p className="text-muted fs-mini">Animated, stripped and progress bars
+                      containing text:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
                         <Progress animated color="info" value="51" className="mb-xs">51%</Progress>
-                        <Progress animated color="gray-light" value="51" className="progress-sm mb-xs" />
+                        <Progress
+                          animated color="gray-light" value="51"
+                          className="progress-sm mb-xs"
+                        />
                       </Col>
                     </Row>
                   </Col>
                 </Row>
-              </div>}
-            />
+              </div>
+            </Widget>
           </Col>
         </Row>
       </div>

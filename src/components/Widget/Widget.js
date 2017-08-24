@@ -6,7 +6,6 @@ import s from './Widget.scss';
 class Widget extends React.Component {
   static propTypes = {
     title: PropTypes.node,
-    body: PropTypes.node,
     className: PropTypes.string,
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
@@ -20,7 +19,6 @@ class Widget extends React.Component {
 
   static defaultProps = {
     title: null,
-    body: null,
     className: '',
     children: [],
     close: false,
@@ -59,13 +57,9 @@ class Widget extends React.Component {
 
           )}
         </div>
-
-        {this.props.body && (
-          <div className={s.widgetBody}>
-            {this.props.body}
-          </div>
-        )}
-        {this.props.children}
+        <div className={s.widgetBody}>
+          {this.props.children}
+        </div>
       </section>
     );
   }
