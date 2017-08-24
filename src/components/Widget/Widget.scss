@@ -22,21 +22,23 @@
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
+
   > header {
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
     padding: $widget-padding-vertical $widget-padding-horizontal;
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
     }
   }
-
-  > .widgetBody.no-padding {
-    margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
-  }
 }
 
-.widgetBody,
-.widgetBody.no-padding {
+.widgetBody {
   margin-top: $widget-padding-vertical;
 }
 
@@ -48,37 +50,16 @@
   padding: 14px;
   font-size: $font-size-sm;
 
-  &.left {
-    left: 0;
-    right: auto;
-  }
-
-  &.widgetControls-hover {
-    opacity: 0;
-    @include transition(opacity .15s);
-  }
-
   a {
     padding: 1px 4px;
     border-radius: 4px;
-    color: rgba($black, .4);
-    @include transition(color .15s ease-in-out);
+    color: rgba($black, 0.4);
+
+    @include transition(color 0.15s ease-in-out);
 
     &:hover {
-      color: rgba($black, .1);
+      color: rgba($black, 0.1);
       text-decoration: none;
     }
-    i.glyphicon {
-      vertical-align: 0;
-      font-size: 12px;
-    }
-
-    i.fa {
-      vertical-align: 1px;
-    }
-  }
-
-  > .btn-group {
-    vertical-align: baseline;
   }
 }

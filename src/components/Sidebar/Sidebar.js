@@ -48,31 +48,34 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-           className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <nav
+        onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+        className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
+      >
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>
         <ul className={s.nav}>
-          <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child"/>
-          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9"/>
-          <LinksGroup header="UI Elements"
-                      iconName="fa-child"
-                      headerLink="/app/ui-elements"
-                      childrenLinks={[
-                        {
-                          name: "Buttons", link: "/app/ui-elements/buttons", iconName: "fa-child"
-                        },
-                        {
-                          name: "Components", link: "/app/ui-elements/components", iconName: "fa-child"
-                        }
-                      ]}
+          <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
+          <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
+          <LinksGroup
+            header="UI Elements"
+            iconName="fa-child"
+            headerLink="/app/ui-elements"
+            childrenLinks={[
+              {
+                name: 'Buttons', link: '/app/ui-elements/buttons', iconName: 'fa-child',
+              },
+              {
+                name: 'Components', link: '/app/ui-elements/components', iconName: 'fa-child',
+              },
+            ]}
           />
         </ul>
         <h5 className={s.navTitle}>
           LABELS
           <a className={s.actionLink}>
-            <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`}/>
+            <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`} />
           </a>
         </h5>
         {/* eslint-disable */}
@@ -108,8 +111,8 @@ class Sidebar extends React.Component {
               isOpen={true} // eslint-disable-line
               toggle={() => { this.dismissAlert(alert.id); }}
             >
-              <span className="text-white fw-semi-bold">{alert.title}</span><br/>
-              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value}/>
+              <span className="text-white fw-semi-bold">{alert.title}</span><br />
+              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value} />
               <small>{alert.footer}</small>
             </Alert>,
           )}

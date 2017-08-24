@@ -15,7 +15,7 @@ class Widget extends React.Component {
     close: PropTypes.bool,
     collapse: PropTypes.bool,
     refresh: PropTypes.bool,
-    settings: PropTypes.bool
+    settings: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -26,7 +26,7 @@ class Widget extends React.Component {
     close: false,
     collapse: false,
     refresh: false,
-    settings: false
+    settings: false,
   };
 
   render() {
@@ -41,21 +41,21 @@ class Widget extends React.Component {
         }
         <div className={s.widgetControls}>
           {this.props.settings && (
-            <a href="#"><i className="glyphicon glyphicon-cog"/></a>
+            <a><i className="glyphicon glyphicon-cog" /></a>
           )}
           {this.props.refresh && (
-            <a href="#"><i className="fa fa-refresh"/></a>
+            <a><i className="fa fa-refresh" /></a>
           )}
           {this.props.collapse && (
             <span>
-              <a data-widgster="collapse" title="Collapse" href="#"><i
-                className="glyphicon glyphicon-chevron-down"/></a>
-              {/*<a data-widgster="expand" title="Expand" href="#"><i className="glyphicon glyphicon-chevron-up"/></a>*/}
+              <a data-widgster="collapse" title="Collapse"><i
+                className="glyphicon glyphicon-chevron-down"
+              /></a>
             </span>
           )}
 
           {this.props.close && (
-            <a href="#" data-widgster="close"><i className="glyphicon glyphicon-remove"/></a>
+            <a data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
 
           )}
         </div>

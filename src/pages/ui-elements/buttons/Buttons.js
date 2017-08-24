@@ -9,7 +9,7 @@ import {
   ButtonDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from 'reactstrap';
 
 import Widget from '../../../components/Widget';
@@ -39,8 +39,8 @@ class Buttons extends React.Component {
       cSelectedOne: [2],
       cSelectedTwo: [1, 3],
       rSelectedTwo: 2,
-      rSelectedOne: null
-    }
+      rSelectedOne: null,
+    };
   }
 
   onRadioBtnClickOne(rSelectedOne) {
@@ -73,25 +73,25 @@ class Buttons extends React.Component {
 
   toggleOne() {
     this.setState({
-      dropdownOpenOne: !this.state.dropdownOpenOne
+      dropdownOpenOne: !this.state.dropdownOpenOne,
     });
   }
 
   toggleTwo() {
     this.setState({
-      dropdownOpenTwo: !this.state.dropdownOpenTwo
+      dropdownOpenTwo: !this.state.dropdownOpenTwo,
     });
   }
 
   toggleThree() {
     this.setState({
-      dropdownOpenThree: !this.state.dropdownOpenThree
+      dropdownOpenThree: !this.state.dropdownOpenThree,
     });
   }
 
   toggleFour() {
     this.setState({
-      dropdownOpenFour: !this.state.dropdownOpenFour
+      dropdownOpenFour: !this.state.dropdownOpenFour,
     });
   }
 
@@ -107,15 +107,15 @@ class Buttons extends React.Component {
         <h1 className="page-title">Buttons - <span className="fw-semi-bold">Styles </span></h1>
 
         <Row>
-          {/*Color options*/}
+          {/* Color options*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Color <span className="fw-semi-bold">Options</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Color <span className="fw-semi-bold">Options</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Use any of the available button classes to quickly create a styled button.
-                  Semantically distinguishable beauty.
-                </p>
+                Use any of the available button classes to quickly create a styled button.
+                Semantically distinguishable beauty.
+              </p>
                 <p className="text-center">
                   <Button color="secondary" className="width-100 mb-xs mr-xs">Secondary</Button>
                   <Button color="primary" className="width-100 mb-xs mr-xs">Primary</Button>
@@ -126,19 +126,20 @@ class Buttons extends React.Component {
                   <Button color="gray" className="width-100 mb-xs mr-xs">Gray</Button>
                   <Button color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
                 </p>
-              </div>}>
-            </Widget>
+              </div>}
+            />
           </Col>
 
-          {/*Size variants*/}
+          {/* Size variants*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Size <span className="fw-semi-bold">Variants</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Size <span className="fw-semi-bold">Variants</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Fancy larger or smaller buttons? Four separate sizes available for all use cases: from
-                  tiny 10px button to large one.
-                </p>
+                Fancy larger or smaller buttons?
+                Four separate sizes available for all use cases:
+                from tiny 10px button to large one.
+              </p>
                 <p className="mb-xs">
                   <Button color="primary" size="lg" className="mb-xs mr-xs">Large button</Button>
                   <Button color="secondary" size="lg" className="mb-xs mr-xs">Large button</Button>
@@ -155,39 +156,38 @@ class Buttons extends React.Component {
                   <Button color="primary" size="xs" className="mb-xs mr-xs">Tiny button</Button>
                   <Button color="secondary" size="xs" className="mb-xs mr-xs">Tiny button</Button>
                 </p>
-              </div>
-            }>
-            </Widget>
+              </div>}
+            />
           </Col>
 
-          {/*Block Buttons*/}
+          {/* Block Buttons*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Block <span className="fw-semi-bold">Buttons</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Block <span className="fw-semi-bold">Buttons</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Create block level buttons - those that span the full width
-                  of a parent— by adding <code>block</code> to <code>&lt;Button&gt;</code> component.
-                  Great for menu & social buttons.
-                </p>
+                Create block level buttons - those that span the full width
+                of a parent— by adding <code>block</code>
+                to <code>&lt;Button&gt;</code> component.
+                Great for menu & social buttons.
+              </p>
                 <Button color="info" block>Block Button</Button>
-                <Button color="secondary" block>Show Menu &nbsp;&nbsp;&nbsp;<i className="fa fa-bars"/></Button>
-                <Button color="primary" block><i className="fa fa-facebook"/>&nbsp;&nbsp;Login mit Facebook</Button>
+                <Button color="secondary" block>Show Menu &nbsp;&nbsp;&nbsp;<i className="fa fa-bars" /></Button>
+                <Button color="primary" block><i className="fa fa-facebook" />&nbsp;&nbsp;Login mit Facebook</Button>
                 <Button color="warning" block>Are you sure?</Button>
-              </div>
-            }>
-            </Widget>
+              </div>}
+            />
           </Col>
 
-          {/*Disabled Buttons*/}
+          {/* Disabled Buttons*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Disabled <span className="fw-semi-bold">Buttons</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Disabled <span className="fw-semi-bold">Buttons</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Make buttons look unclickable by fading them back 50%.
-                  Add the <code>disabled</code> to <code>&lt;Button&gt;</code> component.
-                </p>
+                Make buttons look unclickable by fading them back 50%.
+                Add the <code>disabled</code> to <code>&lt;Button&gt;</code> component.
+              </p>
                 <p>
                   <Button color="primary" disabled className="mr-xs">Primary button</Button>
                   <Button color="secondary" disabled className="mr-xs">Button</Button>
@@ -196,20 +196,21 @@ class Buttons extends React.Component {
                   <Button color="success" size="sm" disabled className="mr-xs">Primary Link</Button>
                   <Button color="secondary" size="sm" disabled className="mr-xs">Link</Button>
                 </p>
-              </div>
-            }>
-            </Widget>
+              </div>}
+            />
           </Col>
 
-          {/*Buttons Groups*/}
+          {/* Buttons Groups*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Button <span className="fw-semi-bold">Groups</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Button <span className="fw-semi-bold">Groups</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Group a series of buttons together on a single line with the button group.
-                  Add on optional JavaScript radio and checkbox style behavior with Bootstrap buttons plugin.
-                </p>
+                Group a series of buttons together on a single
+                line with the button group.
+                Add on optional JavaScript radio and checkbox
+                style behavior with Bootstrap buttons plugin.
+              </p>
                 <ButtonGroup className="mb-xs">
                   <Button color="secondary">Left</Button>
                   <Button color="secondary">Middle</Button>
@@ -233,45 +234,45 @@ class Buttons extends React.Component {
                   </ButtonGroup>
                 </ButtonToolbar>
 
-              </div>
-            }>
-            </Widget>
+              </div>}
+            />
           </Col>
 
-          {/*Button Dropdowns*/}
+          {/* Button Dropdowns*/}
           <Col md={4} sm={6} xs={12}>
-            <Widget title={<h5> Button <span className="fw-semi-bold">Dropdowns</span>
-            </h5>} close collapse body={
-              <div>
+            <Widget
+              title={<h5> Button <span className="fw-semi-bold">Dropdowns</span>
+              </h5>} close collapse body={<div>
                 <p className="fs-mini text-muted">
-                  Add dropdown menus to nearly anything with this simple plugin, including the buttons,
-                  navbar, tabs, and pills.
-                  Both solid & segmented dropdown options available.
-                </p>
+                Add dropdown menus to nearly anything with
+                this simple plugin, including the buttons,
+                navbar, tabs, and pills.
+                Both solid & segmented dropdown options available.
+              </p>
 
                 <div className="mb-xs">
                   <ButtonDropdown isOpen={this.state.dropdownOpenOne} toggle={this.toggleOne} className="mr-xs">
                     <DropdownToggle caret color="danger">
-                      &nbsp; One &nbsp;
-                    </DropdownToggle>
+                    &nbsp; One &nbsp;
+                  </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
                       <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider/>
+                      <DropdownItem divider />
                       <DropdownItem>Separated link</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
 
                   <ButtonDropdown isOpen={this.state.dropdownOpenTwo} toggle={this.toggleTwo}>
                     <DropdownToggle size="sm" caret color="gray">
-                      &nbsp; One &nbsp;
-                    </DropdownToggle>
+                    &nbsp; One &nbsp;
+                  </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
                       <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider/>
+                      <DropdownItem divider />
                       <DropdownItem>Separated link</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
@@ -279,149 +280,173 @@ class Buttons extends React.Component {
                 <div className="mb-xs">
                   <ButtonDropdown isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree} className="mr-xs">
                     <Button id="dropdownThree">Gray</Button>
-                    <DropdownToggle caret className="dropdown-toggle-split"/>
+                    <DropdownToggle caret className="dropdown-toggle-split" />
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
                       <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider/>
+                      <DropdownItem divider />
                       <DropdownItem>Separated link</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
                   <ButtonDropdown isOpen={this.state.dropdownOpenFour} toggle={this.toggleFour}>
                     <Button size="sm" id="dropdownFour" color="gray">Gray</Button>
-                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split"/>
+                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split" />
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
                       <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider/>
+                      <DropdownItem divider />
                       <DropdownItem>Separated link</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
                 </div>
-              </div>
-            }>
-            </Widget>
+              </div>}
+            />
           </Col>
         </Row>
 
         <Row>
           <Col md={12} sm={12} xs={12}>
-            <Widget title={<h6> Button <span className="fw-semi-bold">Options</span>
-            </h6>} close collapse body={
-              <Row>
-                {/*Checkboxes*/}
+            <Widget
+              title={<h6> Button <span className="fw-semi-bold">Options</span>
+              </h6>} close collapse body={<Row>
+                {/* Checkboxes*/}
                 <Col md={4} sm={6} xs={12}>
                   <h4> Button <span className="fw-semi-bold">Checkboxes</span></h4>
                   <p className="fs-mini text-muted">
-                    Do more with buttons. Control button states or create groups of buttons for more components like
-                    toolbars.
-                    Use <code>ButtonGroup</code> to a group of checkboxes for checkbox style toggling on
-                    btn-group.
-                  </p>
+                  Do more with buttons. Control button states
+                  or create groups of buttons for more components like
+                  toolbars.
+                  Use <code>ButtonGroup</code> to a group
+                  of checkboxes for checkbox style toggling on
+                  btn-group.
+                </p>
                   <div className="mb-xs">
                     <ButtonGroup>
-                      <Button color="secondary" onClick={() => this.onCheckboxBtnClickOne(1)}
-                              active={this.state.cSelectedOne.includes(1)}>Left way</Button>
-                      <Button color="secondary" onClick={() => this.onCheckboxBtnClickOne(2)}
-                              active={this.state.cSelectedOne.includes(2)}>Middle way</Button>
-                      <Button color="secondary" onClick={() => this.onCheckboxBtnClickOne(3)}
-                              active={this.state.cSelectedOne.includes(3)}>Right way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onCheckboxBtnClickOne(1)}
+                        active={this.state.cSelectedOne.includes(1)}
+                      >Left way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onCheckboxBtnClickOne(2)}
+                        active={this.state.cSelectedOne.includes(2)}
+                      >Middle way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onCheckboxBtnClickOne(3)}
+                        active={this.state.cSelectedOne.includes(3)}
+                      >Right way</Button>
                     </ButtonGroup>
                   </div>
                   <div className="mb-xs">
                     <ButtonGroup>
-                      <Button size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(1)}
-                              active={this.state.cSelectedTwo.includes(1)}>Left way</Button>
-                      <Button size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(2)}
-                              active={this.state.cSelectedTwo.includes(2)}>Middle way</Button>
-                      <Button size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(3)}
-                              active={this.state.cSelectedTwo.includes(3)}>Right way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(1)}
+                        active={this.state.cSelectedTwo.includes(1)}
+                      >Left way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(2)}
+                        active={this.state.cSelectedTwo.includes(2)}
+                      >Middle way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onCheckboxBtnClickTwo(3)}
+                        active={this.state.cSelectedTwo.includes(3)}
+                      >Right way</Button>
                     </ButtonGroup>
                   </div>
 
                 </Col>
 
-                {/*Radios*/}
+                {/* Radios*/}
                 <Col md={4} sm={6} xs={12}>
                   <h4> Button <span className="fw-semi-bold">Radios</span></h4>
                   <p className="fs-mini text-muted">
-                    Do more with buttons. Control button states or create groups of buttons for more components like
-                    toolbars.
-                    Use <code>ButtonGroup</code> to a group of radio inputs for radio style toggling on
-                    btn-group.
-                  </p>
+                  Do more with buttons. Control button states
+                  or create groups of buttons for more components like toolbars.
+                  Use <code>ButtonGroup</code> to a group of radio
+                  inputs for radio style toggling on btn-group.
+                </p>
                   <div className="mb-xs">
                     <ButtonGroup>
-                      <Button color="secondary" onClick={() => this.onRadioBtnClickOne(1)}
-                              active={this.state.rSelectedOne === 1}>Left way</Button>
-                      <Button color="secondary" onClick={() => this.onRadioBtnClickOne(2)}
-                              active={this.state.rSelectedOne === 2}>Middle way</Button>
-                      <Button color="secondary" onClick={() => this.onRadioBtnClickOne(3)}
-                              active={this.state.rSelectedOne === 3}>Right way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onRadioBtnClickOne(1)}
+                        active={this.state.rSelectedOne === 1}
+                      >Left way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onRadioBtnClickOne(2)}
+                        active={this.state.rSelectedOne === 2}
+                      >Middle way</Button>
+                      <Button
+                        color="secondary" onClick={() => this.onRadioBtnClickOne(3)}
+                        active={this.state.rSelectedOne === 3}
+                      >Right way</Button>
                     </ButtonGroup>
                   </div>
                   <div className="mb-xs">
                     <ButtonGroup>
-                      <Button size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(1)}
-                              active={this.state.rSelectedTwo === 1}>Left way</Button>
-                      <Button size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(2)}
-                              active={this.state.rSelectedTwo === 2}>Middle way</Button>
-                      <Button size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(3)}
-                              active={this.state.rSelectedTwo === 3}>Right way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(1)}
+                        active={this.state.rSelectedTwo === 1}
+                      >Left way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(2)}
+                        active={this.state.rSelectedTwo === 2}
+                      >Middle way</Button>
+                      <Button
+                        size="sm" color="secondary" onClick={() => this.onRadioBtnClickTwo(3)}
+                        active={this.state.rSelectedTwo === 3}
+                      >Right way</Button>
                     </ButtonGroup>
                   </div>
                 </Col>
 
-                {/*Buttons with Icons*/}
+                {/* Buttons with Icons*/}
                 <Col md={4} sm={6} xs={12}>
                   <h4> Use with <span className="fw-semi-bold">Icons</span></h4>
                   <p className="fs-mini text-muted">
-                    Fontawesome and Glyph- icons may be used in buttons, button groups for a toolbar, navigation, or
-                    prepended form inputs.
-                    Let your buttons shine!
-                  </p>
+                  Fontawesome and Glyph- icons may be used in buttons,
+                  button groups for a toolbar, navigation, or prepended form inputs.
+                  Let your buttons shine!
+                </p>
                   <div className="text-center mb-sm">
                     <Button color="secondary" className="width-100 mr-xs">
-                      <i className="glyphicon glyphicon-tree-conifer text-success mr-xs mb-xs"/>
-                      Forest
-                    </Button>
+                      <i className="glyphicon glyphicon-tree-conifer text-success mr-xs mb-xs" />
+                    Forest
+                  </Button>
                     <Button color="secondary" className="width-100 mr-xs">
-                      <i className="fa fa-check text-danger mr-xs mb-xs"/>
-                      Submit
-                    </Button>
+                      <i className="fa fa-check text-danger mr-xs mb-xs" />
+                    Submit
+                  </Button>
                     <Button color="secondary" className="width-100 mr-xs">
-                      <i className="fa fa-facebook text-primary mr-xs mb-xs"/>
-                      Login
-                    </Button>
+                      <i className="fa fa-facebook text-primary mr-xs mb-xs" />
+                    Login
+                  </Button>
                   </div>
                   <div className="text-center">
                     <Button color="inverse" className="width-100 mr-xs">
-                      <i className="fa fa-exclamation text-warning mr-xs mb-xs"/>
-                      Error
-                    </Button>
+                      <i className="fa fa-exclamation text-warning mr-xs mb-xs" />
+                    Error
+                  </Button>
                     <Button color="inverse" className="width-100 mr-xs">
-                      <i className="glyphicon glyphicon-globe text-info mr-xs mb-xs"/>
+                      <i className="glyphicon glyphicon-globe text-info mr-xs mb-xs" />
                       <span className="text-info">Globe</span>
                     </Button>
                     <Button color="inverse" className="width-100 mr-xs">
                       <span className="circle bg-white mr-xs">
-                        <i className="fa fa-map-marker text-gray"/>
+                        <i className="fa fa-map-marker text-gray" />
                       </span>
-                      Map
-                    </Button>
+                    Map
+                  </Button>
                   </div>
                 </Col>
-              </Row>
-            }>
-            </Widget>
+              </Row>}
+            />
           </Col>
         </Row>
 
       </div>
-    )
-  };
+    );
+  }
 
 }
 

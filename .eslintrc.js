@@ -48,6 +48,9 @@ module.exports = {
 
       // Allow js files to use jsx syntax, too
       'react/jsx-filename-extension': 'off',
+      
+      //Allow to reassignment of function parameters
+      'no-param-reassign': [2, {'props': false}],
 
       // https://github.com/kriasoft/react-starter-kit/pull/961
       // You can reopen this if you still want this rule

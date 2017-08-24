@@ -72,11 +72,11 @@
 }
 
 .badge {
-  font-size: .875rem;
+  font-size: 0.875rem;
 
   &.badge-pill {
     font-size: 100%;
-    padding: .4em .6em;
+    padding: 0.4em 0.6em;
     font-weight: 700;
   }
 
@@ -162,20 +162,23 @@ small {
 
 .btn {
   font-family: $font-family-sans-serif;
+
   .glyphicon {
     top: 3px;
   }
 }
 
-.btn, .btn-inverse, .btn-gray {
+.btn,
+.btn-inverse,
+.btn-gray {
   &:not(.active) {
     box-shadow: none !important;
   }
 }
 
 .btn-sm {
-  padding-top: .35rem;
-  padding-bottom: .35rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
 .btn-rounded {
@@ -191,7 +194,7 @@ small {
 
   &:hover,
   &:focus {
-    background-color: rgba($white, .1);
+    background-color: rgba($white, 0.1);
   }
 }
 
@@ -314,6 +317,7 @@ h6,
 
 .popover {
   border: none;
+
   @include box-shadow(none);
 }
 
