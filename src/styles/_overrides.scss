@@ -330,3 +330,69 @@ h6,
 .modal-body {
   background: $gray-lighter;
 }
+
+// Navs
+// --------------------------------------------------
+
+.nav-tabs {
+  &.nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  border-bottom: none;
+  background-color: $gray-semi-lighter;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+  > .nav-item {
+    margin-bottom: -2px;
+
+    > .nav-link {
+      padding: 12px 18px;
+      border: none;
+      color: $text-muted;
+
+      .label {
+        margin-bottom: -2px;
+      }
+
+      @include transition(color 0.15s ease-in-out);
+
+      &:hover {
+        background-color: transparent;
+        color: $text-color;
+      }
+    }
+
+    .nav-link.open {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+      }
+    }
+
+    .nav-link.active {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+        border: none;
+
+        @include box-shadow(1px 1px 2px #ccc);
+      }
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+
+  > .tab-pane {
+    padding: $line-height-computed*2 $line-height-computed*2;
+  }
+}

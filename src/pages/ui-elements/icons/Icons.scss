@@ -1,0 +1,42 @@
+@import '../../../styles/app';
+
+.root {
+  :global {
+    .icon-list {
+      margin-top: $line-height-computed;
+    }
+
+    .icon-list-item {
+      height: 32px;
+      font-size: 14px;
+      line-height: 32px;
+
+      > a {
+        color: $text-color;
+        text-decoration: none;
+      }
+
+      .glyphicon,
+      .fa {
+        width: 32px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        .glyphicon,
+        .fa {
+          font-size: 28px;
+          top: 2px;
+        }
+
+        .fa {
+          vertical-align: -5px;
+        }
+
+        .glyphicon {
+          vertical-align: -6px;
+        }
+      }
+    }
+  }
+}

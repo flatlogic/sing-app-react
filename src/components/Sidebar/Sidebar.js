@@ -64,10 +64,13 @@ class Sidebar extends React.Component {
             headerLink="/app/ui-elements"
             childrenLinks={[
               {
-                name: 'Buttons', link: '/app/ui-elements/buttons', iconName: 'fa-child',
+                name: 'Buttons', link: '/app/ui/buttons', iconName: 'fa-child',
               },
               {
-                name: 'Components', link: '/app/ui-elements/components', iconName: 'fa-child',
+                name: 'Components', link: '/app/ui/components', iconName: 'fa-child',
+              },
+              {
+                name: 'Icons', link: '/app/ui/icons', iconName: 'fa-child',
               },
             ]}
           />
