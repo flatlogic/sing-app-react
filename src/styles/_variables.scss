@@ -33,27 +33,55 @@ $gray-lighter: lighten(#000, 93.5%) !default; // #eee
 $gray-semi-light: #777;
 $gray-semi-lighter: #ddd;
 
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #dfdfdf !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #555 !default;
+$gray-800: #343434 !default;
+$gray-900: #242424 !default;
+$black: #000 !default;
+
+$blue: #5d8fc2 !default;
+$red: #dd5826 !default;
+$yellow: #f0b518 !default;
+$green: #64bd63 !default;
+$cyan: #5dc4bf !default;
+
+$theme-colors: (
+  primary: $blue,
+  secondary: $gray-100,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-200,
+  dark: $gray-800,
+  inverse: $gray-700,
+  gray: $gray-300,
+  default: #f8f8f8
+);
+
 $text-color: #555;
 $link-color: #337ab7;
-$white: #fff;
 
-$brand-primary: #5d8fc2 !default; //#618fb0 !default;
-$brand-success: #64bd63 !default;
-$brand-info: #5dc4bf !default; //#61c4b8 !default; //#5DADE2 !default;
-$brand-warning: #f0b518 !default;
-$brand-danger: #dd5826 !default; // #e5603b !default;
+$state-success-text: theme-color('success') !default;
+$state-success-bg: lighten(theme-color('success'), 70%) !default;
 
-$state-success-text: $brand-success !default;
-$state-success-bg: lighten($brand-success, 70%) !default;
+$state-info-text: theme-color('info') !default;
+$state-info-bg: lighten(theme-color('info'), 70%) !default;
 
-$state-info-text: $brand-info !default;
-$state-info-bg: lighten($brand-info, 70%) !default;
+$state-warning-text: theme-color('warning') !default;
+$state-warning-bg: lighten(theme-color('warning'), 70%) !default;
 
-$state-warning-text: $brand-warning !default;
-$state-warning-bg: lighten($brand-warning, 70%) !default;
-
-$state-danger-text: $brand-danger !default;
-$state-danger-bg: lighten($brand-danger, 70%) !default;
+$state-danger-text: theme-color('danger') !default;
+$state-danger-bg: lighten(theme-color('danger'), 70%) !default;
 
 $alert-success-bg: #e6fff2 !default;
 $alert-success-text: $state-success-text !default;
@@ -89,7 +117,7 @@ $brand-primary-light: #dee4ee !default;
 
 $brand-success-light: #ecfaec !default;
 $brand-info-light: #f2fafa !default;
-$brand-warning-light: lighten($brand-warning, 43%) !default;
+$brand-warning-light: lighten(theme-color('warning'), 43%) !default;
 $brand-danger-light: #fff2ef !default;
 
 $addition-bg: #f8f8f8 !default;
@@ -212,6 +240,15 @@ $btn-secondary-bg: $addition-bg !default;
 
 //== Navs
 //
-$nav-tabs-active-link-hover-bg:             $white !default;
-$nav-tabs-active-link-hover-color:          $gray !default;
-$nav-tabs-active-link-hover-border-color:   #ddd !default;
+$nav-tabs-active-link-hover-bg: $white !default;
+$nav-tabs-active-link-hover-color: $gray !default;
+$nav-tabs-active-link-hover-border-color: #ddd !default;
+
+//== Forms
+//
+$input-border-focus: #4d90fe !default; //webkit focus color
+
+//*  Popover  */
+$popover-bg: #ebeff1 !default;
+$popover-arrow-outer-color: $popover-bg !default;
+$popover-arrow-color: $popover-bg !default;

@@ -61,5 +61,12 @@
       color: rgba($black, 0.1);
       text-decoration: none;
     }
+
+    :global {
+      .fa {
+        position: relative;
+        top: 2px;
+      }
+    }
   }
 }

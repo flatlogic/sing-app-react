@@ -17,6 +17,7 @@ import {
   InputGroupAddon,
   InputGroup,
   Input,
+  FormGroup,
 } from 'reactstrap';
 import $ from 'jquery';
 
@@ -105,33 +106,43 @@ class Header extends React.Component {
       <Navbar className={s.navbar}>
         <Nav className={s.nav}>
           <NavItem>
-            <NavLink className={`${s.navLink} hidden-sm-down`} href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
+            <NavLink className={`${s.navLink} d-none d-md-block d-lg-block d-xl-block`} href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
               <i className="fa fa-bars fa-lg" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
           </NavItem>
-          <NavLink className={`${s.navLink} ${s.navLg} hidden-md-up`} href="#" onClick={this.switchSidebar}>
+          <NavLink className={`${s.navLink} ${s.navLg} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`} href="#" onClick={this.switchSidebar}>
             <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg" /></span>
-            <i className="fa fa-bars fa-lg hidden-sm-down" />
+            <i className="fa fa-bars fa-lg d-none d-md-block d-lg-block d-xl-block" />
           </NavLink>
-          <NavItem className="ml-lg hidden-sm-down">
+          <NavItem className="ml-lg d-none d-md-block d-lg-block d-xl-block">
             <NavLink className={`${s.navLink}`} href="#">
               <i className="fa fa-refresh fa-lg" />
             </NavLink>
           </NavItem>
-          <NavItem className="hidden-sm-down">
+          <NavItem className="d-none d-md-block d-lg-block d-xl-block">
             <NavLink className={s.navLink} href="#">
               <i className={`${s.faTimes} fa fa-times fa-lg`} />
             </NavLink>
           </NavItem>
-          <InputGroup className={`${s.navbarForm} hidden-sm-down`}>
-            <InputGroupAddon className={s.inputAddon}><i className="fa fa-search" /></InputGroupAddon>
-            <Input id="search-input" placeholder="Search Dashboard" />
-          </InputGroup>
+
+          <div className="navbar-form float-left">
+            <FormGroup>
+              <InputGroup className={`${s.navbarForm} d-none d-md-block d-lg-block d-xl-block`}>
+                <InputGroupAddon className={s.inputAddon}><i
+                  className="fa fa-search"
+                /></InputGroupAddon>
+                <Input id="search-input" placeholder="Search Dashboard" />
+              </InputGroup>
+            </FormGroup>
+          </div>
+
         </Nav>
-        <NavLink className={`${s.navbarBrand} hidden-md-up`}>
+
+
+        <NavLink className={`${s.navbarBrand} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
@@ -140,8 +151,9 @@ class Header extends React.Component {
           <i className="fa fa-circle text-warning mr-n-sm" />
           <i className="fa fa-circle text-gray" />
         </NavLink>
+
         <Nav>
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="hidden-sm-down">
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="d-none d-md-block d-lg-block d-xl-block">
             <DropdownToggle nav caret className={s.navLink}>
               <span className={`${s.avatar} thumb-sm float-left`}>
                 <img className="rounded-circle" src={a5} alt="..." />
@@ -153,7 +165,7 @@ class Header extends React.Component {
               <Notifications />
             </DropdownMenu>
           </NavDropdown>
-          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="hidden-sm-down">
+          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-none d-md-block d-lg-block d-xl-block">
             <DropdownToggle nav className={s.navLink}>
               <i className="fa fa-cog fa-lg" />
             </DropdownToggle>
@@ -167,10 +179,10 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink id="toggle-chat" className={`${s.navLink} hidden-sm-down`} href="#" onClick={this.props.chatToggle}>
+            <NavLink id="toggle-chat" className={`${s.navLink} d-none d-md-block d-lg-block d-xl-block`} href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
-            <NavLink id="chat-notification" className={`${s.chatNotification} hide  hidden-sm-down`} onClick={this.props.chatToggle}>
+            <NavLink id="chat-notification" className={`${s.chatNotification} hide  d-none d-md-block d-lg-block d-xl-block`} onClick={this.props.chatToggle}>
               <div className={s.chatNotificationInner}>
                 <h6 className={s.title}>
                   <span className="thumb-xs">
@@ -182,7 +194,7 @@ class Header extends React.Component {
               </div>
             </NavLink>
           </NavItem>
-          <NavItem className={`${s.navLg} hidden-md-up`}>
+          <NavItem className={`${s.navLg} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`}>
             <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
               <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg" /></span>
             </NavLink>

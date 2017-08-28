@@ -3,10 +3,6 @@
 // Util Components
 // ----------------------------
 
-.btn-default {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-}
-
 $opacity-variants: (10: 0.1, 20: 0.2, 30: 0.3, 40: 0.4, 50: 0.5, 60: 0.6, 70: 0.7, 80: 0.8, 90: 0.9);
 
 @include property-variants('.opacity', 'opacity', $opacity-variants);
@@ -34,31 +30,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 .text-default {
   color: $text-color;
-}
-
-// Add colors for badges
-.badge-primary {
-  @include badge-variant($badge-primary-bg);
-}
-
-.badge-success {
-  @include badge-variant($badge-success-bg);
-}
-
-.badge-info {
-  @include badge-variant($badge-info-bg);
-}
-
-.badge-warning {
-  @include badge-variant($badge-warning-bg);
-}
-
-.badge-danger {
-  @include badge-variant($badge-danger-bg);
-}
-
-.badge-white {
-  @include badge-variant($white);
 }
 
 /**
@@ -95,11 +66,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   border: #{$line-height-base/5}em solid transparent;
 
   // stylelint-disable
-  &.circle-o-danger { border-color: $brand-danger };
-  &.circle-o-warning { border-color: $brand-warning };
-  &.circle-o-success { border-color: $brand-success };
-  &.circle-o-info { border-color: $brand-info };
-  &.circle-o-primary { border-color: $brand-primary };
+  &.circle-o-danger { border-color: theme-color('danger') };
+  &.circle-o-warning { border-color: theme-color('warning') };
+  &.circle-o-success { border-color: theme-color('success') };
+  &.circle-o-info { border-color: theme-color('info') };
+  &.circle-o-primary { border-color: theme-color('primary') };
   &.circle-o-black { border-color: $black };
   &.circle-o-gray-darker { border-color: $gray-darker };
   &.circle-o-gray-dark { border-color: $gray-dark };
@@ -219,11 +190,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //copy bg classes after bootstrap so it's possible to overload other bootstrap classes
 
-@include bg-variant('.bg-primary', $brand-primary);
-@include bg-variant('.bg-success', $brand-success);
-@include bg-variant('.bg-info', $brand-info);
-@include bg-variant('.bg-warning', $brand-warning);
-@include bg-variant('.bg-danger', $brand-danger);
+@include bg-variant('.bg-primary', theme-color('primary'));
+@include bg-variant('.bg-success', theme-color('success'));
+@include bg-variant('.bg-info', theme-color('info'));
+@include bg-variant('.bg-warning', theme-color('warning'));
+@include bg-variant('.bg-danger', theme-color('danger'));
 @include bg-variant('.bg-primary-light', $brand-primary-light);
 @include bg-variant('.bg-success-light', $brand-success-light);
 @include bg-variant('.bg-info-light', $brand-info-light);
@@ -256,11 +227,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //override bs .text-* classes so they use $brand-* variables
 
-@include text-emphasis-variant('.text-primary', $brand-primary);
-@include text-emphasis-variant('.text-success', $brand-success);
-@include text-emphasis-variant('.text-info', $brand-info);
-@include text-emphasis-variant('.text-warning', $brand-warning);
-@include text-emphasis-variant('.text-danger', $brand-danger);
+@include text-emphasis-variant('.text-primary', theme-color('primary'));
+@include text-emphasis-variant('.text-success', theme-color('success'));
+@include text-emphasis-variant('.text-info', theme-color('info'));
+@include text-emphasis-variant('.text-warning', theme-color('warning'));
+@include text-emphasis-variant('.text-danger', theme-color('danger'));
 @include text-emphasis-variant('.text-link', $link-color);
 @include text-emphasis-variant('.text-white', $white);
 @include text-emphasis-variant('.text-gray', $gray);

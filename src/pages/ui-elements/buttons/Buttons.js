@@ -252,6 +252,7 @@ class Buttons extends React.Component {
           </Col>
 
           {/* Button Dropdowns*/}
+          {/* todo: check after reactstrap update */}
           <Col md={4} sm={6} xs={12}>
             <Widget
               title={<h5> Button <span className="fw-semi-bold">Dropdowns</span>

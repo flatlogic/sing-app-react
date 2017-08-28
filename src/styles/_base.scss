@@ -15,7 +15,7 @@
 
 .chat-notification-sing {
   position: absolute;
-  top: 14px;
+  top: 20px;
   right: 39px;
   display: inline-block;
   width: 8px;
@@ -26,7 +26,7 @@
 
 #chat-sidebar-user-group {
   .list-group-item.active h6 {
-    color: $brand-warning;
+    color: theme-color('warning');
     font-weight: $badge-font-weight;
   }
 

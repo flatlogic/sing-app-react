@@ -200,7 +200,9 @@ class Components extends React.Component {
                     />)}
                   </div>
                 </div>
-                {/* Popover*/}
+                {/* Popover */}
+                {/* todo: check popover after update reactstrap
+                (changed class title to header, content to body */}
                 <div className="mb-5">
                   <h3>Popover <span className="fw-semi-bold">Options</span></h3>
                   <p>Placing help text where needed:</p>
@@ -221,7 +223,7 @@ class Components extends React.Component {
                       className="ml-xs" id="Popover2" color="info"
                       onClick={this.togglePopoverTwo}
                     >
-                      Popover on left
+                      Titled Popover
                     </Button>
                     <Popover
                       placement="top" isOpen={this.state.popoverOpenTwo} target="Popover2"

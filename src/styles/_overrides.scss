@@ -71,6 +71,24 @@
   }
 }
 
+/*  Badge */
+// Add colors for badges
+
+.badge-success,
+.badge-info,
+.badge-warning,
+.badge-danger {
+  color: $white;
+}
+
+.badge-white {
+  @include badge-variant($white);
+}
+
+.badge-default {
+  @include badge-variant($gray-600);
+}
+
 .badge {
   font-size: 0.875rem;
 
@@ -145,8 +163,34 @@ small {
   }
 }
 
+.btn-secondary {
+  border-color: $gray-400;
+  color: $gray-800;
+}
+
+.btn-success,
+.btn-info,
+.btn-warning,
 .btn-inverse {
-  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-gray {
+  border-color: $gray-400;
+  color: $gray-700;
+}
+
+.btn-default {
+  border-color: $gray-300;
+  color: $gray-800;
+}
+
+.btn-inverse {
+  border-color: $gray-800;
 }
 
 .btn-xs {
@@ -183,10 +227,6 @@ small {
 
 .btn-rounded {
   @include border-radius(6px);
-}
-
-.btn-gray {
-  @include button-variant($text-color, $gray-semi-lighter, darken($gray-semi-lighter, 5%));
 }
 
 .btn-outline {
@@ -235,7 +275,7 @@ small {
 
 .breadcrumb {
   color: $gray-light;
-  margin-bottom: $spacer-y*1.5;
+  margin-bottom: 1.5rem;
   margin-top: 0;
   font-size: $font-size-sm;
 
