@@ -158,9 +158,9 @@ class Chat extends React.Component {
           <ListGroup id="chat-sidebar-user-group">
             {this.state.todayConversations
             .filter(this.filterConversations)
-            .map(item =>
+            .map((item, index) =>
               <ListGroupItem
-                key={item.id}
+                key={index.toString()}
                 onClick={() => this.openMessages(item)}
               >
                 <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
@@ -179,9 +179,9 @@ class Chat extends React.Component {
           <ListGroup>
             {this.state.lastWeekConversations
             .filter(this.filterConversations)
-            .map(item =>
+            .map((item, index) =>
               <ListGroupItem
-                key={item.id}
+                key={index.toString()}
                 onClick={() => this.openMessages(item)}
               >
                 <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
