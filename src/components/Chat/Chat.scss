@@ -148,14 +148,14 @@
         .messageBody {
           margin-left: 0;
           margin-right: 50px;
-          background-color: $brand-warning;
+          background-color: theme-color('warning');
           color: $gray-dark;
 
           &::before {
             right: auto;
             left: 100%;
             border-right-color: rgba(0, 0, 0, 0);
-            border-left-color: $brand-warning;
+            border-left-color: theme-color('warning');
           }
         }
       }

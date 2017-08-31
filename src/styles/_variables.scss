@@ -1,3 +1,12 @@
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
 $glyphicons-halflings-include-bonus: false !default;
 $glyphicons-halflings-class-prefix: glyphicon !default;
 $glyphicons-halflings-font-base-size: 14px !default;
@@ -10,59 +19,87 @@ $fa-font-path: '../fonts/font-awesome' !default;
  * ======================================================================== */
 $font-size-root: 14px;
 
-$font-size-larger:        1.071rem !default;
-$font-size-mini:          0.9286rem !default;
-$font-size-smaller:       85% !default;
+$font-size-larger: 1.071rem !default;
+$font-size-mini: 0.9286rem !default;
+$font-size-smaller: 85% !default;
 
 $font-family-base: 'Open Sans', sans-serif;
 
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              #343434 !default;
-$gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             lighten(#000, 60%) !default;   // #999
-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
-$gray-semi-light:        #777;
-$gray-semi-lighter:      #ddd;
+$gray-darker: lighten(#000, 13.5%) !default; // #222
+$gray-dark: #343434 !default;
+$gray: lighten(#000, 33.5%) !default; // #555
+$gray-light: lighten(#000, 60%) !default; // #999
+$gray-lighter: lighten(#000, 93.5%) !default; // #eee
+$gray-semi-light: #777;
+$gray-semi-lighter: #ddd;
 
-$text-color:                     #555;
-$link-color:                     #337ab7;
-$white:                          #fff;
+// Color system
+//
 
-$brand-primary:         #5d8fc2 !default; //#618fb0 !default;
-$brand-success:         #64bd63 !default;
-$brand-info:            #5dc4bf !default; //#61c4b8 !default; //#5DADE2 !default;
-$brand-warning:         #f0b518 !default;
-$brand-danger:          #dd5826 !default; // #e5603b !default;
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #dfdfdf !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #555 !default;
+$gray-800: #343434 !default;
+$gray-900: #242424 !default;
+$black: #000 !default;
 
-$state-success-text:             $brand-success !default;
-$state-success-bg:               lighten($brand-success, 70%) !default;
+$blue: #5d8fc2 !default;
+$red: #dd5826 !default;
+$yellow: #f0b518 !default;
+$green: #64bd63 !default;
+$cyan: #5dc4bf !default;
 
-$state-info-text:                $brand-info !default;
-$state-info-bg:                  lighten($brand-info, 70%) !default;
+$theme-colors: (
+  primary: $blue,
+  secondary: $gray-100,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-200,
+  dark: $gray-800,
+  inverse: $gray-700,
+  gray: $gray-300,
+  default: #f8f8f8
+);
 
-$state-warning-text:             $brand-warning !default;
-$state-warning-bg:               lighten($brand-warning, 70%) !default;
+$text-color: #555;
+$link-color: #337ab7;
 
-$state-danger-text:              $brand-danger !default;
-$state-danger-bg:                lighten($brand-danger, 70%) !default;
+$state-success-text: theme-color('success') !default;
+$state-success-bg: lighten(theme-color('success'), 70%) !default;
 
-$alert-success-bg:            #e6fff2 !default;
-$alert-success-text:          $state-success-text !default;
-$alert-success-border:        rgba($alert-success-text, 0.15) !default;
+$state-info-text: theme-color('info') !default;
+$state-info-bg: lighten(theme-color('info'), 70%) !default;
 
-$alert-info-bg:               #d2f1fb !default;
-$alert-info-text:             $link-color !default;
-$alert-info-border:           rgba($alert-info-text, 0.09) !default;
+$state-warning-text: theme-color('warning') !default;
+$state-warning-bg: lighten(theme-color('warning'), 70%) !default;
 
-$alert-warning-bg:            #fff8e6 !default;
-$alert-warning-text:          darken($state-warning-text, 5%) !default;
-$alert-warning-border:        rgba($state-warning-text, 0.2) !default;
+$state-danger-text: theme-color('danger') !default;
+$state-danger-bg: lighten(theme-color('danger'), 70%) !default;
 
-$alert-danger-bg:             #fbdcd7 !default;
-$alert-danger-text:           $state-danger-text !default;
-$alert-danger-border:         rgba($alert-danger-text, 0.09) !default;
+$alert-success-bg: #e6fff2 !default;
+$alert-success-text: $state-success-text !default;
+$alert-success-border: rgba($alert-success-text, 0.15) !default;
 
-$text-color:            $gray !default;
+$alert-info-bg: #d2f1fb !default;
+$alert-info-text: $link-color !default;
+$alert-info-border: rgba($alert-info-text, 0.09) !default;
+
+$alert-warning-bg: #fff8e6 !default;
+$alert-warning-text: darken($state-warning-text, 5%) !default;
+$alert-warning-border: rgba($state-warning-text, 0.2) !default;
+
+$alert-danger-bg: #fbdcd7 !default;
+$alert-danger-text: $state-danger-text !default;
+$alert-danger-border: rgba($alert-danger-text, 0.09) !default;
+
+$text-color: $gray !default;
 
 $font-weight-bold: 700 !default;
 $font-weight-semi-bold: 600 !default;
@@ -71,17 +108,17 @@ $font-weight-thin: 300 !default;
 $font-weight-base: $font-weight-thin !default;
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.5 !default;
+$line-height-base: 1.5 !default;
 
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed:    floor(($font-size-root * $line-height-base)) !default;
+$line-height-computed: floor(($font-size-root * $line-height-base)) !default;
 
 $brand-primary-light: #dee4ee !default;
 
-$brand-success-light:         #ecfaec !default;
-$brand-info-light:            #f2fafa !default;
-$brand-warning-light:         lighten($brand-warning, 43%) !default;
-$brand-danger-light:          #fff2ef !default;
+$brand-success-light: #ecfaec !default;
+$brand-info-light: #f2fafa !default;
+$brand-warning-light: lighten(theme-color('warning'), 43%) !default;
+$brand-danger-light: #fff2ef !default;
 
 $addition-bg: #f8f8f8 !default;
 
@@ -102,6 +139,7 @@ $max-content-width: 1000px;
 $grid-float-breakpoint: 0;
 
 $body-bg: #eee;
+$grid-gutter-width: 30px !default;
 
 ///*
 // * Media queries breakpoints
@@ -117,14 +155,14 @@ $body-bg: #eee;
 
 $content-padding: 40px;
 
-$navbar-height:      50px;
+$navbar-height: 50px;
 $navbar-border-radius: 0;
 
 $nav-link-padding: 14px;
 
 $navbar-margin-bottom: -$navbar-height;
 
-$navbar-dashboard-link-color:                #666 !default;
+$navbar-dashboard-link-color: #666 !default;
 
 //== Sidebar
 //
@@ -160,27 +198,57 @@ $input-height-small: 30px;
 //== Navbar
 //
 
-$navbar-font-size:                 $font-size-mini !default;
+$navbar-font-size: $font-size-mini !default;
 
-$navbar-margin-bottom:             0 !default;
-$navbar-border-radius:             0 !default;
+$navbar-margin-bottom: 0 !default;
+$navbar-border-radius: 0 !default;
 
-$navbar-dashboard-bg:                $white !default;
-$navbar-dashboard-color:             #777 !default;
-$navbar-dashboard-border:            darken($navbar-dashboard-bg, 6.5%) !default;
-
-// Navbar links
-$navbar-dashboard-link-color:                #666 !default;
+$navbar-dashboard-bg: $white !default;
+$navbar-dashboard-color: #777 !default;
+$navbar-dashboard-border: darken($navbar-dashboard-bg, 6.5%) !default;
 
 // Navbar links
-$navbar-dashboard-link-hover-color:          #333 !default;
-$navbar-dashboard-link-hover-bg:             transparent !default;
-$navbar-dashboard-link-active-color:         #555 !default;
-$navbar-dashboard-link-active-bg:            darken($navbar-dashboard-bg, 6.5%) !default;
-$navbar-dashboard-link-disabled-color:       #ccc !default;
-$navbar-dashboard-link-disabled-bg:          transparent !default;
+$navbar-dashboard-link-color: #666 !default;
+
+// Navbar links
+$navbar-dashboard-link-hover-color: #333 !default;
+$navbar-dashboard-link-hover-bg: transparent !default;
+$navbar-dashboard-link-active-color: #555 !default;
+$navbar-dashboard-link-active-bg: darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-dashboard-link-disabled-color: #ccc !default;
+$navbar-dashboard-link-disabled-bg: transparent !default;
 
 // Screens
 // -------------------------
 
 $screen-lg-height: 670px !default;
+
+// Widgets
+// -------------------------
+$widget-padding-vertical: 15px !default;
+$widget-padding-horizontal: 20px !default;
+$widget-bg-color: $white;
+
+//== Buttons
+//
+$btn-padding-y: 0.375rem;
+$btn-padding-x-sm: 0.75rem;
+$btn-line-height: 1.5;
+$btn-default-bg: $addition-bg !default;
+$btn-default-color: $gray-dark !default;
+$btn-secondary-bg: $addition-bg !default;
+
+//== Navs
+//
+$nav-tabs-active-link-hover-bg: $white !default;
+$nav-tabs-active-link-hover-color: $gray !default;
+$nav-tabs-active-link-hover-border-color: #ddd !default;
+
+//== Forms
+//
+$input-border-focus: #4d90fe !default; //webkit focus color
+
+//*  Popover  */
+$popover-bg: #ebeff1 !default;
+$popover-arrow-outer-color: $popover-bg !default;
+$popover-arrow-color: $popover-bg !default;
