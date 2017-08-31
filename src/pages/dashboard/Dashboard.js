@@ -9,18 +9,6 @@ import Widget from '../../components/Widget';
 import s from './Dashboard.scss';
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      alert1Visible: true,
-      alert2Visible: true,
-      alert3Visible: true,
-      alert4Visible: true,
-    };
-  }
-
-
   render() {
     return (
       <div className={s.root}>

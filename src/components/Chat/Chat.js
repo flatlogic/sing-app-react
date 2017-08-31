@@ -119,7 +119,7 @@ class Chat extends React.Component {
         }),
       });
 
-      e.target.value = '';
+      e.target.value = ''; // eslint-disable-line
     }
   }
 
