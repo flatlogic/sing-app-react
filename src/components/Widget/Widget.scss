@@ -50,7 +50,8 @@
   padding: 14px;
   font-size: $font-size-sm;
 
-  a {
+  a,
+  a:not([href]):not([tabindex]) {
     padding: 1px 4px;
     border-radius: 4px;
     color: rgba($black, 0.4);
@@ -67,6 +68,18 @@
         position: relative;
         top: 2px;
       }
+    }
+  }
+}
+
+.inverse {
+  top: 2px;
+  position: relative;
+  margin-left: 3px;
+
+  :global {
+    .glyphicon {
+      vertical-align: baseline;
     }
   }
 }

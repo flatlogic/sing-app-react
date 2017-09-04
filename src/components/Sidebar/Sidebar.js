@@ -59,9 +59,19 @@ class Sidebar extends React.Component {
           <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
           <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
           <LinksGroup
+            header="Forms"
+            iconName="fa-child"
+            headerLink="/app/forms"
+            childrenLinks={[
+              {
+                name: 'Forms Elements', link: '/app/forms/elements',
+              },
+            ]}
+          />
+          <LinksGroup
             header="UI Elements"
             iconName="fa-child"
-            headerLink="/app/ui-elements"
+            headerLink="/app/ui"
             childrenLinks={[
               {
                 name: 'Buttons', link: '/app/ui/buttons', iconName: 'fa-child',

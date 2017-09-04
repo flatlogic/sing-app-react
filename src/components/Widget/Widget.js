@@ -15,6 +15,7 @@ class Widget extends React.Component {
     collapse: PropTypes.bool,
     refresh: PropTypes.bool,
     settings: PropTypes.bool,
+    settingsInverse: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -25,6 +26,7 @@ class Widget extends React.Component {
     collapse: false,
     refresh: false,
     settings: false,
+    settingsInverse: false,
   };
 
   render() {
@@ -40,6 +42,9 @@ class Widget extends React.Component {
         <div className={s.widgetControls}>
           {this.props.settings && (
             <a><i className="glyphicon glyphicon-cog" /></a>
+          )}
+          {this.props.settingsInverse && (
+            <a className={`bg-gray-transparent ${s.inverse}`}><i className="glyphicon glyphicon-cog text-white" /></a>
           )}
           {this.props.refresh && (
             <a><i className="fa fa-refresh" /></a>

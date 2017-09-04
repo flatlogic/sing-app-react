@@ -28,10 +28,12 @@
     }
   }
 }
+//
+//*  Forms */
+//
 
 .form-control {
   font-family: $font-family-base;
-  font-size: $font-size-base - 0.0625rem;
   box-shadow: none;
   transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.15s;
 
@@ -47,6 +49,19 @@
       background-color: darken($input-bg, 7%);
     }
   }
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $line-height-computed;
+  line-height: inherit;
+  color: $legend-color;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+  font-weight: $font-weight-normal;
 }
 
 .input-sm {
