@@ -8,7 +8,6 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   UncontrolledTooltip,
   UncontrolledButtonDropdown,
   InputGroup,
@@ -132,8 +131,8 @@ class Elements extends React.Component {
 
   onChangeInputFiles(e) {
     const files = [];
-    const i = 0;
-    for (i; i < e.target.files.length; i + 1) {
+    let i = 0;
+    for (i; i < e.target.files.length; i += 1) {
       files.push(e.target.files[i]);
     }
     this.setState({
@@ -143,28 +142,16 @@ class Elements extends React.Component {
 
   onChangeInputImage(e) {
     const files = [];
-    const i = 0;
-    let count = 0;
-    const length = e.target.files.length;
-    for (i; i < e.target.files.length; i + 1) {
-      const reader = new FileReader();
-      files.push(e.target.files[i]);
-
-      (function (index, readerSelf, that) {
-        readerSelf.onloadend = () => {
-          files[index].preview = readerSelf.result;
-          files[index].toUpload = true;
-          count+=1;
-
-          if (count === length) {
-            that.setState({
-              imageFiles: files,
-            });
-          }
-        };
-      }(i, reader, this));
-      reader.readAsDataURL(e.target.files[i]);
-    }
+    const reader = new FileReader();
+    files.push(e.target.files[0]);
+    reader.onloadend = () => {
+      files[0].preview = reader.result;
+      files[0].toUpload = true;
+      this.setState({
+        imageFiles: files,
+      });
+    };
+    reader.readAsDataURL(e.target.files[0]);
   }
 
 
@@ -1055,12 +1042,13 @@ class Elements extends React.Component {
                     <Col xs="6">
                       <div className="datepicker">
                         <Datetime
+                          id="datepicker"
                           open={this.state.isDatePickerOpen}
                           ref={(picker) => { this.refDatepicker = picker; }}
-                          viewMode="days"
+                          viewMode="days" timeFormat={false}
                         />
                         <InputGroupAddon onClick={this.toggleDatePicker}>
-                          <span className="glyphicon glyphicon-th" />
+                          <Label for="datepicker"><i className="glyphicon glyphicon-th" /></Label>
                         </InputGroupAddon>
                       </div>
                     </Col>
@@ -1069,10 +1057,10 @@ class Elements extends React.Component {
                         <Datetime
                           ref={(picker) => { this.refTimepicker = picker; }}
                           open={this.state.isTimePickerOpen} id="timepicker"
-                          viewMode="time"
+                          viewMode="time" dateFormat={false}
                         />
                         <InputGroupAddon onClick={this.toggleTimePicker}>
-                          <span className="glyphicon glyphicon-time" />
+                          <Label for="timepicker"><i className="glyphicon glyphicon-time" /></Label>
                         </InputGroupAddon>
                       </div>
                     </Col>
@@ -1304,7 +1292,7 @@ class Elements extends React.Component {
               refresh
             >
               <Form>
-                <blockquote className="blockquote-reverse">
+                <blockquote className="blockquote blockquote-reverse">
                   <p>The man who is really serious, with the urge to find out what truth is, has no
                     style at all. He lives only in what is.</p>
                   <footer>Bruce Lee</footer>
@@ -1323,8 +1311,8 @@ class Elements extends React.Component {
                       />
                       <Label for="fileupload1" className="form-control">
                         {this.state.inputFiles.length > 0 ? <div>
-                          {this.state.inputFiles.map(file => (<span>{file.name}</span>))}
-                        </div> : null}
+                          {this.state.inputFiles.map((file, idx) => (<span key={`select-id-${idx.toString()}`} >{file.name}</span>))}
+                        </div> : <span />}
                       </Label>
                       {this.state.inputFiles.length === 0 ? <InputGroupButton>
                         <Button type="button" color="secondary" className="btn-file">
@@ -1343,8 +1331,8 @@ class Elements extends React.Component {
                       </InputGroupButton>}
 
                     </InputGroup>
-                    <FormText>Awesome file input plugin allows you to create a visually appealing
-                      file or image inputs.</FormText>
+                    <span className="help-block">Awesome file input plugin allows you to create a visually appealing
+                      file or image inputs.</span>
                   </Col>
                 </FormGroup>
 
@@ -1358,11 +1346,11 @@ class Elements extends React.Component {
                       id="fileupload2"
                       type="file" name="file" className="display-none"
                     />
-                    <div className="fileinput fileinput-new">
+                    <div className="fileinput fileinput-new fileinput-fix">
                       <div className="fileinput-new thumbnail">
                         {this.state.imageFiles.length > 0 ? <div>
-                          {this.state.imageFiles.map(file => (
-                            <img alt="..." src={file.preview} />))}
+                          {this.state.imageFiles.map((file, idx) => (
+                            <img alt="..." src={file.preview} key={`img-id-${idx.toString()}`} />))}
                         </div> : <img
                           alt="..."
                           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTEiIGhlaWdodD0iMTQxIj48cmVjdCB3aWR0aD0iMTkxIiBoZWlnaHQ9IjE0MSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk1LjUiIHk9IjcwLjUiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xOTF4MTQxPC90ZXh0Pjwvc3ZnPg=="
@@ -1389,8 +1377,8 @@ class Elements extends React.Component {
                   className={`${s.dropzone} dropzone`}
                 >
                   {this.state.dropFiles.length > 0 ? <div>
-                    {this.state.dropFiles.map((file) => (
-                      <div className="display-inline-block mr-xs mb-xs">
+                    {this.state.dropFiles.map((file, idx) => (
+                      <div className="display-inline-block mr-xs mb-xs" key={`drop-id-${idx.toString()}`}>
                         <img alt="..." src={file.preview} width={100} />
                         <div>{file.name}</div>
                       </div>

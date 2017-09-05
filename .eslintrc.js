@@ -57,5 +57,9 @@ module.exports = {
       'react/prefer-stateless-function': 'off',
 
       "linebreak-style": 0,
+  
+      // maximum line length
+      // ignore urls and strings
+      "max-len": ["error", 200, { "ignoreUrls": true }, {"ignoreStrings": true}],
     },
   };

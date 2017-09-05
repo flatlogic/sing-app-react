@@ -254,9 +254,7 @@ $popover-bg: #ebeff1 !default;
 $popover-arrow-outer-color: $popover-bg !default;
 $popover-arrow-color: $popover-bg !default;
 
-
 //* for awesome checkbox  */
-
 $brand-primary: #5d8fc2 !default; //#618fb0 !default;
 $brand-success: #64bd63 !default;
 $brand-info: #5dc4bf !default; //#61c4b8 !default; //#5DADE2 !default;
@@ -264,8 +262,10 @@ $brand-warning: #f0b518 !default;
 $brand-danger: #dd5826 !default; // #e5603b !default;
 $input-bg-disabled: $gray-lighter !default;
 
-
 // Options
-
 $enable-shadows:            true;
 $enable-gradients:          true;
+$enable-hover-media-query:  true;
+
+// Image thumbnails
+$thumbnail-bg: $white;

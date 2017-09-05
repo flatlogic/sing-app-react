@@ -328,6 +328,14 @@ small {
   display: inline-block !important;
 }
 
+.tooltip.in {
+  opacity: 1;
+}
+
+.tooltip-inner {
+  @include border-radius(3px);
+}
+
 ///////// Base Elements //////////
 
 .navbar-notifications {
