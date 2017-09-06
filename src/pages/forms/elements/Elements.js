@@ -27,6 +27,7 @@ import ColorPicker from 'rc-color-picker';
 import MaskedInput from 'react-maskedinput';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import Dropzone from 'react-dropzone';
+import TextareaAutosize from 'react-autosize-textarea';
 
 
 import Widget from '../../../components/Widget';
@@ -586,10 +587,10 @@ class Elements extends React.Component {
                   <Label md={3} className="text-md-right" for="elastic-textarea">Auto-growing
                     textarea</Label>
                   <Col md={9}>
-                    <Input
-                      rows="3" type="textarea" name="text" id="elastic-textarea"
+                    <TextareaAutosize
+                      rows={3} id="elastic-textarea"
                       placeholder="Try to add few new lines.."
-                      className={`${s.autogrow} transition-height`}
+                      className={`form-control ${s.autogrow} transition-height`}
                     />
                   </Col>
                 </FormGroup>

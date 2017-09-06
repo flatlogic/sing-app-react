@@ -300,6 +300,10 @@ autoprefixer@^6.0.0, autoprefixer@^6.3.1, autoprefixer@^6.7.7:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
+autosize@^3.0.15:
+  version "3.0.21"
+  resolved "https://registry.yarnpkg.com/autosize/-/autosize-3.0.21.tgz#f182f40d17757d978a139a4c9ca40c4c0e448603"
+
 awesome-bootstrap-checkbox@^1.0.0-alpha.5:
   version "1.0.0-alpha.5"
   resolved "https://registry.yarnpkg.com/awesome-bootstrap-checkbox/-/awesome-bootstrap-checkbox-1.0.0-alpha.5.tgz#359db3d5ab1da7c1dffde6f90ab19ca6bc4ae14f"
@@ -1758,6 +1762,10 @@ component-indexof@0.0.3:
 component-inherit@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/component-inherit/-/component-inherit-0.0.3.tgz#645fc4adf58b72b649d5cae65135619db26ff143"
+
+computed-style@~0.1.3:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/computed-style/-/computed-style-0.1.4.tgz#7f344fd8584b2e425bedca4a1afc0e300bb05d74"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -4140,6 +4148,12 @@ limiter@^1.0.5:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/limiter/-/limiter-1.1.0.tgz#6e2bd12ca3fcdaa11f224e2e53c896df3f08d913"
 
+line-height@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/line-height/-/line-height-0.3.1.tgz#4b1205edde182872a5efa3c8f620b3187a9c54c9"
+  dependencies:
+    computed-style "~0.1.3"
+
 linkify-it@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
@@ -5994,6 +6008,14 @@ react-addons-test-utils@^15.5.1:
   dependencies:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
+
+react-autosize-textarea@^0.4.8:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/react-autosize-textarea/-/react-autosize-textarea-0.4.8.tgz#691a842fc3af838792a99650d795af10b29ad149"
+  dependencies:
+    autosize "^3.0.15"
+    line-height "^0.3.1"
+    prop-types "^15.5.6"
 
 react-bootstrap-slider@^2.0.1:
   version "2.0.1"

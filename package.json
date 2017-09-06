@@ -49,6 +49,7 @@
     "rc-hammerjs": "^0.6.8",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "15.5.2",
+    "react-autosize-textarea": "^0.4.8",
     "react-bootstrap-slider": "^2.0.1",
     "react-cookie": "^1.0.5",
     "react-datetime": "^2.10.1",
