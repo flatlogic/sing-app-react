@@ -47,8 +47,6 @@ class Elements extends React.Component {
     this.changeSelectDropdownBig = this.changeSelectDropdownBig.bind(this);
     this.changeColorValue = this.changeColorValue.bind(this);
     this.changeColorInput = this.changeColorInput.bind(this);
-    this.toggleDatePicker = this.toggleDatePicker.bind(this);
-    this.toggleTimePicker = this.toggleTimePicker.bind(this);
     this.onChangeInputFiles = this.onChangeInputFiles.bind(this);
     this.removeInputFiles = this.removeInputFiles.bind(this);
     this.onChangeInputImage = this.onChangeInputImage.bind(this);
@@ -109,6 +107,7 @@ class Elements extends React.Component {
       defaultSelectVal: 'Andromeda',
       groupSelectVal: '',
       colorpickerValue: '#ff0000',
+      colorpickerInputValue: '#ff0000',
       isDatePickerOpen: false,
       isTimePickerOpen: false,
       dropFiles: [],
@@ -188,13 +187,22 @@ class Elements extends React.Component {
   changeColorValue(colors) {
     this.setState({
       colorpickerValue: colors.color,
+      colorpickerInputValue: colors.color,
     });
   }
-
-  changeColorInput(val) {
-    this.setState({
-      colorpickerValue: val,
-    });
+  
+  changeColorInput(e) {
+    if (e.target.value.length > 3 && e.target.value.length < 8) {
+      this.setState({
+        colorpickerInputValue: e.target.value,
+        colorpickerValue: e.target.value,
+      });
+    }
+    if (e.target.value.length <= 3) {
+      this.setState({
+        colorpickerInputValue: e.target.value,
+      });
+    }
   }
   
   removeInputFiles() {
@@ -202,29 +210,6 @@ class Elements extends React.Component {
       inputFiles: [],
     });
   }
-
-  toggleDatePicker() {
-    this.setState({
-      isDatePickerOpen: !this.state.isDatePickerOpen,
-    });
-    if (this.state.isDatePickerOpen) {
-      this.refDatepicker.openCalendar();
-    } else {
-      this.refDatepicker.closeCalendar();
-    }
-  }
-
-  toggleTimePicker() {
-    this.setState({
-      isTimePickerOpen: !this.state.isTimePickerOpen,
-    });
-    if (this.state.isTimePickerOpen) {
-      this.refTimepicker.openCalendar();
-    } else {
-      this.refTimepicker.closeCalendar();
-    }
-  }
-
 
   render() {
     return (
@@ -1044,23 +1029,23 @@ class Elements extends React.Component {
                         <Datetime
                           id="datepicker"
                           open={this.state.isDatePickerOpen}
-                          ref={(picker) => { this.refDatepicker = picker; }}
                           viewMode="days" timeFormat={false}
+                          inputProps={{ref: (input) => {this.refDatePicker = input;}}}
                         />
-                        <InputGroupAddon onClick={this.toggleDatePicker}>
-                          <Label for="datepicker"><i className="glyphicon glyphicon-th" /></Label>
+                        <InputGroupAddon onClick={() => {this.refDatePicker.focus()}}>
+                          <i className="glyphicon glyphicon-th" />
                         </InputGroupAddon>
                       </div>
                     </Col>
                     <Col xs="6">
                       <div className="datepicker">
                         <Datetime
-                          ref={(picker) => { this.refTimepicker = picker; }}
                           open={this.state.isTimePickerOpen} id="timepicker"
+                          inputProps={{ref: (input) => {this.refTimePicker = input;}}}
                           viewMode="time" dateFormat={false}
                         />
-                        <InputGroupAddon onClick={this.toggleTimePicker}>
-                          <Label for="timepicker"><i className="glyphicon glyphicon-time" /></Label>
+                        <InputGroupAddon onClick={() => {this.refTimePicker.focus()}}>
+                          <i className="glyphicon glyphicon-time" />
                         </InputGroupAddon>
                       </div>
                     </Col>
@@ -1079,7 +1064,7 @@ class Elements extends React.Component {
                     <InputGroup id="colorpicker"> {/* todo: fix value input*/}
                       <Input
                         type="text" onChange={this.changeColorInput} id="colorpickeri"
-                        value={this.state.colorpickerValue}
+                        value={this.state.colorpickerInputValue}
                       />
                       <InputGroupAddon>
                         <ColorPicker
