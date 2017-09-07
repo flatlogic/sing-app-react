@@ -8,7 +8,7 @@ import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 
-import { openSidebar, closeSidebar } from '../../actions/navigation';
+import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
 
 class Sidebar extends React.Component {
@@ -16,6 +16,7 @@ class Sidebar extends React.Component {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
+    activeItem: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -59,6 +60,8 @@ class Sidebar extends React.Component {
           <LinksGroup header="Dashboard" headerLink="/app" iconName="fa-child" />
           <LinksGroup header="Another Page" headerLink="/app/profile" iconName="fa-tree" badge="9" />
           <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/forms'))}
+            isActive={this.props.activeItem === '/app/forms'}
             header="Forms"
             iconName="fa-child"
             headerLink="/app/forms"
@@ -69,18 +72,20 @@ class Sidebar extends React.Component {
             ]}
           />
           <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/ui'))}
+            isActive={this.props.activeItem === '/app/ui'}
             header="UI Elements"
             iconName="fa-child"
             headerLink="/app/ui"
             childrenLinks={[
               {
-                name: 'Buttons', link: '/app/ui/buttons', iconName: 'fa-child',
+                name: 'Buttons', link: '/app/ui/buttons',
               },
               {
-                name: 'Components', link: '/app/ui/components', iconName: 'fa-child',
+                name: 'Components', link: '/app/ui/components',
               },
               {
-                name: 'Icons', link: '/app/ui/icons', iconName: 'fa-child',
+                name: 'Icons', link: '/app/ui/icons',
               },
             ]}
           />
@@ -140,6 +145,7 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     alertsList: store.alerts.alertsList,
+    activeItem: store.navigation.activeItem,
   };
 }
 
