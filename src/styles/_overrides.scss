@@ -21,14 +21,6 @@
   margin-bottom: 5px;
 }
 
-@media (min-width: $grid-float-breakpoint) {
-  .navbar-right {
-    .dropdown-menu {
-      left: 0;
-    }
-  }
-}
-
 .form-control {
   font-family: $font-family-base;
   font-size: $font-size-base - 0.0625rem;
@@ -251,8 +243,8 @@ small {
 
   &.show {
     .nav-link {
-      background-color: $gray-lighter;
-      color: $gray;
+      background-color: $gray-300;
+      color: $gray-700;
     }
   }
 }
@@ -274,7 +266,7 @@ small {
 ///////// Breadcrumbs //////////
 
 .breadcrumb {
-  color: $gray-light;
+  color: $gray-600;
   margin-bottom: 1.5rem;
   margin-top: 0;
   font-size: $font-size-sm;
@@ -288,7 +280,7 @@ small {
 
 .breadcrumb-item + .breadcrumb-item::before {
   content: ">";
-  color: $gray-light;
+  color: $gray-600;
 }
 
 ///////// Glyphicons //////////
@@ -368,7 +360,7 @@ h6,
 // Modal
 
 .modal-body {
-  background: $gray-lighter;
+  background: $gray-200;
 }
 
 // Navs
@@ -380,7 +372,7 @@ h6,
   }
 
   border-bottom: none;
-  background-color: $gray-semi-lighter;
+  background-color: $gray-300;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 
@@ -433,6 +425,6 @@ h6,
   background-color: $white;
 
   > .tab-pane {
-    padding: $line-height-computed*2 $line-height-computed*2;
+    padding: $spacer*2;
   }
 }

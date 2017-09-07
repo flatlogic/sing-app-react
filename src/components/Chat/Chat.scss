@@ -122,7 +122,7 @@
         padding: 10px;
         font-size: 13px;
         font-weight: $font-weight-normal;
-        background-color: $gray-lighter;
+        background-color: $gray-200;
         color: $text-color;
         border-radius: 0.25rem;
 
@@ -134,7 +134,7 @@
           width: 0;
           position: absolute;
           border: 10px solid rgba(0, 0, 0, 0);
-          border-right-color: $gray-lighter;
+          border-right-color: $gray-200;
         }
       }
 
@@ -149,7 +149,7 @@
           margin-left: 0;
           margin-right: 50px;
           background-color: theme-color('warning');
-          color: $gray-dark;
+          color: $gray-800;
 
           &::before {
             right: auto;

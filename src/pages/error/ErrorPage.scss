@@ -1,7 +1,7 @@
 @import '../../styles/app';
 
 .errorPage {
-  background-color: $gray-semi-lighter;
+  background-color: $gray-600;
   height: 100%;
 }
 
@@ -19,7 +19,7 @@
   margin: 20px;
   font-size: 80px;
   font-weight: $font-weight-normal;
-  color: $gray-dark;
+  color: $gray-800;
 
   @include media-breakpoint-up(md) {
     font-size: 180px;
@@ -28,7 +28,7 @@
 
 .errorInfo {
   font-size: 20px;
-  color: $gray-dark;
+  color: $gray-800;
 }
 
 .errorHelp {
