@@ -3,12 +3,11 @@
 .root {
   padding-top: 5%;
   height: 100%;
-  background-color: $gray-600;
+  background-color: $gray-light;
 }
 
 .widget {
   max-width: 360px;
-  margin: 0 auto;
   padding: 30px !important;
 
   h1,

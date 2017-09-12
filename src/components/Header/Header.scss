@@ -1,23 +1,5 @@
 @import '../../styles/app';
 
-.navbar {
-  background: $white;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: $navbar-font-size;
-  font-weight: 500;
-}
-
-.navLink {
-  color: $text-color;
-
-  &:hover {
-    color: $navbar-dashboard-link-hover-color;
-  }
-}
-
 .navbarForm {
   padding: 6px 0 6px 1rem;
   margin-left: 10px;
@@ -44,19 +26,11 @@
 
 .avatar {
   width: 30px;
-  margin-top: -5px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.dropdownNotifications {
-  padding-bottom: 0;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
 }
 
 .chatNotification {
   position: absolute;
-  right: 12px;
+  right: 11px;
   top: 35px;
   z-index: 20;
   margin-top: 3px;
@@ -105,7 +79,7 @@
 
 .navbarBrand {
   height: 60px;
-  line-height: 30px;
+  line-height: 40px;
   position: absolute;
   left: 0;
   right: 0;
@@ -113,6 +87,7 @@
   text-align: center;
   padding-top: 10px;
   font-size: 1.25rem;
+  pointer-events: none;
 
   i {
     font-size: 10px;

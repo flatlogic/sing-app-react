@@ -40,6 +40,8 @@
 
 .widgetBody {
   margin-top: $widget-padding-vertical;
+
+  @include clearfix();
 }
 
 .widgetControls {

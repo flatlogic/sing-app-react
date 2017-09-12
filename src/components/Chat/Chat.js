@@ -155,7 +155,7 @@ class Chat extends React.Component {
         </header>
         <div className={[s.chatPanel, s.chatContacts, this.state.chatMessageOpened ? s.chatMessageOpen : ''].join(' ')}>
           <h5 className={s.navTitle}>TODAY</h5>
-          <ListGroup id="chat-sidebar-user-group">
+          <ListGroup id="chat-sidebar-user-group" className={s.chatSidebarUserGroup}>
             {this.state.todayConversations
               .filter(this.filterConversations)
               .map(item =>
@@ -163,8 +163,8 @@ class Chat extends React.Component {
                   key={item.id}
                   onClick={() => this.openMessages(item)}
                 >
-                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
-                  <span className="thumb-sm pull-left mr">
+                  <i className={['fa fa-circle float-right', s.cirle, `text-${item.status}`].join(' ')} />
+                  <span className="thumb-sm float-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>
                   <div>
@@ -184,7 +184,7 @@ class Chat extends React.Component {
                   key={item.id}
                   onClick={() => this.openMessages(item)}
                 >
-                  <i className={['fa fa-circle flex-last', s.cirle, `text-${item.status}`].join(' ')} />
+                  <i className={['fa fa-circle float-right', s.cirle, `text-${item.status}`].join(' ')} />
                   <span className="thumb-sm pull-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>

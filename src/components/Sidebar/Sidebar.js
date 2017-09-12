@@ -46,7 +46,7 @@ class Sidebar extends React.Component {
   }
   render() {
     return (
-      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <nav onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
         <header className={s.logo}>
           <Link to="/app">sing</Link>
         </header>

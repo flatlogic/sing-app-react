@@ -55,22 +55,24 @@ class Header extends React.Component {
     };
   }
   componentDidMount() {
-    setTimeout(() => {
-      const $chatNotification = $('#chat-notification');
-      $chatNotification.removeClass('hide').addClass('animated fadeIn')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-          $chatNotification.removeClass('animated fadeIn');
-          setTimeout(() => {
-            $chatNotification.addClass('animated fadeOut')
-              .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
-                ' oanimationend animationend', () => {
-                  $chatNotification.addClass('hide');
-                });
-          }, 6000);
-        });
-      $chatNotification.siblings('#toggle-chat')
-        .append('<i class="chat-notification-sing animated bounceIn"></i>');
-    }, 4000);
+    if (window.innerWidth > 576) {
+      setTimeout(() => {
+        const $chatNotification = $('#chat-notification');
+        $chatNotification.removeClass('hide').addClass('animated fadeIn')
+          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
+            $chatNotification.removeClass('animated fadeIn');
+            setTimeout(() => {
+              $chatNotification.addClass('animated fadeOut')
+                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
+                  ' oanimationend animationend', () => {
+                    $chatNotification.addClass('hide');
+                  });
+            }, 6000);
+          });
+        $chatNotification.siblings('#toggle-chat')
+          .append('<i class="chat-notification-sing animated bounceIn"></i>');
+      }, 4000);
+    }
 
     $('#search-input').on('blur focus', (e) => {
       $('#search-input').parents('.input-group')[e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
@@ -104,11 +106,11 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className={s.navbar}>
-        <Nav>
+      <Navbar color={'white'}>
+        <Nav className="ml-3">
           <NavItem>
             <NavLink className="d-md-down-none" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className="fa fa-bars fa-lg" />
+              <i className={'fa fa-bars fa-lg'} />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
@@ -118,22 +120,22 @@ class Header extends React.Component {
               <i className="fa fa-bars fa-lg d-sm-down-none" />
             </NavLink>
           </NavItem>
-          <NavItem className="ml-lg">
-            <NavLink href="#">
+          <NavItem className="d-md-down-none ml-3">
+            <NavLink href="#" className="px-2">
               <i className="fa fa-refresh fa-lg" />
             </NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink href="#">
+          <NavItem className="d-md-down-none">
+            <NavLink href="#" className="px-2">
               <i className="fa fa-times fa-lg" />
             </NavLink>
           </NavItem>
 
         </Nav>
 
-        <Form inline>
+        <Form className="d-sm-down-none ml-5" inline>
           <FormGroup>
-            <InputGroup>
+            <InputGroup className="input-group-no-border">
               <InputGroupAddon><i
                 className="fa fa-search"
               /></InputGroupAddon>
@@ -152,20 +154,20 @@ class Header extends React.Component {
           <i className="fa fa-circle text-gray" />
         </NavLink>
 
-        <Nav>
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="">
+        <Nav className="ml-auto mr-3">
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="d-sm-down-none position">
             <DropdownToggle nav caret>
-              <span className={`${s.avatar} thumb-sm float-left`}>
+              <span className={`${s.avatar} thumb-sm float-left mr-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
               </span>
               Philip <span className="fw-semi-bold">Smith</span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right className={`${s.dropdownNotifications} animated animated-fast fadeInUp`}>
+            <DropdownMenu right className={'pb-0 animated animated-fast fadeInUp'}>
               <Notifications />
             </DropdownMenu>
           </NavDropdown>
-          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="">
+          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
             <DropdownToggle nav>
               <i className="fa fa-cog fa-lg" />
             </DropdownToggle>
@@ -179,10 +181,10 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink id="toggle-chat" href="#" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
-            <NavLink id="chat-notification" className={`${s.chatNotification} hide `} onClick={this.props.chatToggle}>
+            <div id="chat-notification" className={`${s.chatNotification} hide `}>
               <div className={s.chatNotificationInner}>
                 <h6 className={s.title}>
                   <span className="thumb-xs">
@@ -192,9 +194,9 @@ class Header extends React.Component {
                 </h6>
                 <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
               </div>
-            </NavLink>
+            </div>
           </NavItem>
-          <NavItem className={'fs-lg'}>
+          <NavItem className="fs-lg d-md-none">
             <NavLink href="#" onClick={this.props.chatToggle}>
               <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg" /></span>
             </NavLink>

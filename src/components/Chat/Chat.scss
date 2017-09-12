@@ -7,7 +7,7 @@
   bottom: 0;
   right: -254px;
   width: 254px;
-  background-color: #242424;
+  background-color: $chat-sidebar-bg-color;
   color: #aaa;
   transition: right 0.3s ease-in-out;
 
@@ -21,6 +21,7 @@
     top: 0;
     z-index: 3;
     padding: 10px;
+    background-color: $chat-sidebar-bg-color;
 
     input {
       padding: 0.6rem 0.85rem;
@@ -40,6 +41,9 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    overflow-y: auto;
+
+    @include scroll-bar(rgba($black, 0.8));
 
     ul {
       li {
@@ -183,6 +187,22 @@
         padding: 10px 16px;
         background-color: rgba(255, 255, 255, 0.1);
       }
+    }
+  }
+
+  .chatSidebarUserGroup {
+    :global .list-group-item.active {
+      background: rgba($white, 0.1);
+    }
+
+    :global .list-group-item.active h6 {
+      color: theme-color('warning');
+      font-weight: $badge-font-weight;
+    }
+
+    :global .badge {
+      margin: 8px 5px 0 0;
+      padding: 3px 5px;
     }
   }
 }

@@ -64,8 +64,8 @@ class Layout extends React.Component {
       $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
         .addClass('active js-notification-added')
         .find('.fa-circle')
-        .before('<span class="badge badge-danger badge-pill ' +
-          'flex-last animated bounceInDown">3</span>');
+        .after('<span class="badge badge-danger badge-pill ' +
+          'float-right animated bounceInDown">3</span>');
     }, 1000);
   }
 

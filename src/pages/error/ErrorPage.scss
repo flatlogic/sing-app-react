@@ -1,12 +1,13 @@
 @import '../../styles/app';
 
 .errorPage {
-  background-color: $gray-600;
+  padding-top: 5%;
+  background-color: $gray-light;
   height: 100%;
 }
 
 .errorContainer {
-  padding-top: 5%;
+  width: 365px;
   text-align: center;
 }
 

@@ -18,8 +18,20 @@
   border-right: none;
   display: block;
 
+  :global .progress {
+    transition: background 0.15s ease-in-out;
+
+    &:hover {
+      background: $black;
+    }
+  }
+
   &:hover {
     background-color: $list-group-hover-bg;
+
+    :global .progress {
+      background: $white !important;
+    }
   }
 
   &:first-child {

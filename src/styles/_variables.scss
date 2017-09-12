@@ -1,5 +1,7 @@
 // Meta
 
+$enable-shadows:            true !default;
+
 $glyphicons-halflings-include-bonus: false !default;
 $glyphicons-halflings-class-prefix: glyphicon !default;
 $glyphicons-halflings-font-base-size: 14px !default;
@@ -34,6 +36,7 @@ $gray-700: #555 !default;
 $gray-800: #343434 !default;
 $gray-900: #242424 !default;
 $black: #000 !default;
+$gray-light: #ddd !default;
 
 $blue: #5d8fc2 !default;
 $red: #dd5826 !default;
@@ -55,7 +58,6 @@ $theme-colors: (
   default: #f8f8f8
 );
 
-$text-color: #555;
 $link-color: #337ab7;
 
 $text-color: $gray-700 !default;
@@ -98,6 +100,8 @@ $sidebar-item-border-color: #2d2d2d;
 $sidebar-item-active-color: #f2be35;
 $sidebar-item-hover-bg-color: #111;
 
+$chat-sidebar-bg-color: $gray-900 !default;
+
 $breadcrumb-separator: '>';
 $breadcrumb-padding-horizontal: 0;
 $breadcrumb-bg: transparent;
@@ -118,24 +122,17 @@ $input-height-small: 30px;
 //== Navbar
 //
 
-$navbar-font-size: $font-size-mini !default;
-
-$navbar-margin-bottom: 0 !default;
-$navbar-border-radius: 0 !default;
-
-$navbar-dashboard-bg: $white !default;
-$navbar-dashboard-color: #777 !default;
-$navbar-dashboard-border: darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-height:  50px !default;
+$navbar-padding-y: 0 !default;
+$navbar-padding-x: 0 !default;
 
 // Navbar links
-$navbar-dashboard-link-color: #666 !default;
-
-// Navbar links
-$navbar-dashboard-link-hover-color: #333 !default;
+$navbar-dashboard-link-color: $text-color !default;
+$navbar-dashboard-link-hover-color: $gray-800 !default;
 $navbar-dashboard-link-hover-bg: transparent !default;
-$navbar-dashboard-link-active-color: #555 !default;
-$navbar-dashboard-link-active-bg: darken($navbar-dashboard-bg, 6.5%) !default;
-$navbar-dashboard-link-disabled-color: #ccc !default;
+$navbar-dashboard-link-active-color: $gray-700 !default;
+$navbar-dashboard-link-active-bg: $gray-300 !default;
+$navbar-dashboard-link-disabled-color: $gray-400 !default;
 $navbar-dashboard-link-disabled-bg: transparent !default;
 
 // Widgets

@@ -4,7 +4,54 @@
 }
 
 .navbar {
+  height: $navbar-height;
   border: none;
+  font-weight: 500;
+  justify-content: flex-start;
+
+  .nav {
+    height: 100%;
+  }
+
+  .nav-item {
+    .nav-link {
+      display: flex;
+      align-items: center;
+      color: $navbar-dashboard-link-color;
+      height: 100%;
+      position: relative;
+
+      @include hover {
+        color: $navbar-dashboard-link-hover-color;
+        background: $navbar-dashboard-link-hover-bg;
+      }
+
+      .fa-times {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .nav > .nav-item > .nav-link.bs-tether-target.show {
+    display: flex !important;
+  }
+
+  .input-group {
+    width: 245px;
+  }
+
+  .form-control {
+    line-height: 1.7;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .dropdown-menu {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-lg;
+  }
 }
 
 .progress-bar {
@@ -231,19 +278,24 @@ small {
 
 ///////// Dropdowns //////////
 
-.dropdown-menu {
-  font-size: $font-size-mini;
+.dropdown {
+  &.show {
+    .dropdown-menu {
+      display: block;
+    }
+  }
+}
+
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
 }
 
 .nav-item.dropdown {
-  .nav-link {
-    height: 100%;
-  }
-
   &.show {
-    .nav-link {
-      background-color: $gray-300;
-      color: $gray-700;
+    .nav-link.active {
+      background: $navbar-dashboard-link-active-bg;
+      color: $navbar-dashboard-link-active-color;
     }
   }
 }

@@ -9,20 +9,8 @@
   background-color: $sidebar-bg-color;
   color: $sidebar-color;
   overflow-y: auto;
-}
 
-.sidebarScroll {
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border: none;
-    background-color: #eee;
-
-    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, 0.1));
-  }
+  @include scroll-bar($gray-600);
 }
 
 .logo {
