@@ -24,10 +24,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   font-weight: 600;
 }
 
-.fs-sm {
-  font-size: $font-size-sm;
-}
-
 .text-default {
   color: $text-color;
 }
@@ -460,3 +456,24 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.mb', 'margin-bottom', $margin-vertical-variants);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
+
+// Display classes UP
+
+//
+// Utilities for common `display` values
+//
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-down($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .d#{$infix}-down-none { display: none !important; }
+    .d#{$infix}-down-inline { display: inline !important; }
+    .d#{$infix}-down-inline-block { display: inline-block !important; }
+    .d#{$infix}-down-block { display: block !important; }
+    .d#{$infix}-down-table { display: table !important; }
+    .d#{$infix}-down-table-cell { display: table-cell !important; }
+    .d#{$infix}-down-flex { display: flex !important; }
+    .d#{$infix}-down-inline-flex { display: inline-flex !important; }
+  }
+}

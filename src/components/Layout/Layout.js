@@ -86,7 +86,14 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <div
+        className={[
+          s.root,
+          this.props.sidebarStatic ? s.sidebarStatic : '',
+          this.state.chatOpen ? s.chatOpen : '',
+          !this.props.sidebarOpened ? s.sidebarClose : '',
+        ].join(' ')}
+      >
         <Sidebar />
         <div className={s.wrap}>
           <Header chatToggle={this.chatToggle} />

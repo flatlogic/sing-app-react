@@ -2,7 +2,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Row, Col } from 'reactstrap';
 
-import a2 from '../../images/a2.png';
+import react from '../../images/react.png';
 
 import Widget from '../../components/Widget';
 
@@ -16,12 +16,10 @@ class Dashboard extends React.Component {
         <Row>
           <Col md={6}>
             <Widget title={<h4>Example <span className="fw-semi-bold">Widget</span></h4>}>
-              <div className={s.widgetBody}>
-                <img className="pull-left mr-sm" src={a2} alt="Angular 2.0" width="100" />
-                <p className="lead">You are looking at a completely new version of Sing App built
-                with <strong>React JS</strong></p>
-                <p>Made by <a href="http://flatlogic.com" target="_blank" rel="noopener noreferrer">Flatlogic</a>.</p>
-              </div>
+              <img className="pull-left mr-sm" src={react} alt="React JS" width="100" />
+              <p className="lead">You are looking at a completely new version of Sing App built
+              with <strong>React JS</strong></p>
+              <p>Made by <a href="http://flatlogic.com" target="_blank" rel="noopener noreferrer">Flatlogic</a>.</p>
             </Widget>
           </Col>
         </Row>

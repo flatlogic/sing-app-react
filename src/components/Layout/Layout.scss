@@ -4,10 +4,10 @@
   height: 100%;
   position: relative;
   left: 0;
-  transition: left 0.3s ease-in-out;
+  transition: left $sidebar-transition-time ease-in-out;
 
   &.chatOpen {
-    left: -254px;
+    left: -($sidebar-width-open + $sidebar-width-closed);
   }
 }
 
@@ -17,13 +17,13 @@
   display: flex;
   margin-left: 50px;
   flex-direction: column;
-  left: 150px;
+  left: $sidebar-width-open - $sidebar-width-closed;
   right: 0;
-  transition: left 0.3s ease-in-out;
+  transition: left $sidebar-transition-time ease-in-out;
 
-  @media (max-width: 768px) {
+  @media (max-width: breakpoint-max(sm)) {
     margin-left: 0;
-    left: 200px;
+    left: $sidebar-width-open;
   }
 }
 
@@ -34,7 +34,7 @@
 .sidebarStatic .wrap {
   transition: none;
   left: 0;
-  margin-left: 200px;
+  margin-left: $sidebar-width-open;
 }
 
 .content {
@@ -43,7 +43,7 @@
   padding: $content-padding $content-padding ($content-padding + 20px);
   background-color: $body-bg;
 
-  @media (max-width: 768px) {
+  @media (max-width: breakpoint-max(sm)) {
     padding: 20px 15px;
   }
 }

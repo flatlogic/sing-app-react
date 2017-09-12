@@ -10,30 +10,12 @@
   font-weight: 500;
 }
 
-.nav {
-  margin-left: 10px;
-  margin-right: 1rem;
-
-  .navLink {
-    padding: 16px 0.5rem 1rem;
-
-    .faTimes {
-      font-size: 20px;
-    }
-  }
-}
-
 .navLink {
   color: $text-color;
 
   &:hover {
     color: $navbar-dashboard-link-hover-color;
   }
-}
-
-.navLg {
-  z-index: 1;
-  font-size: 16px;
 }
 
 .navbarForm {
@@ -52,7 +34,6 @@
   }
 
   input {
-    font-size: 13px;
     border: none;
     padding: 0.6rem 0.85rem 0.6rem 0;
     display: inline !important;

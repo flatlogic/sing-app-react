@@ -113,7 +113,7 @@ class Chat extends React.Component {
       this.setState({
         conversation: Object.assign({}, this.state.conversation, {
           messages: [
-            ...this.state.conversation.messages,
+            ...this.state.conversation.messages || [],
             value,
           ],
         }),
