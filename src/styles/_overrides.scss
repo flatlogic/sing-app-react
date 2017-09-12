@@ -28,6 +28,7 @@
     }
   }
 }
+
 //
 //*  Forms */
 //
@@ -272,6 +273,19 @@ small {
   }
 }
 
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid;
+  // IE8
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
 ///////// Alerts //////////
 
 .alert {
@@ -458,4 +472,21 @@ h6,
   > .tab-pane {
     padding: $line-height-computed*2 $line-height-computed*2;
   }
+}
+
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+  background-color: transparent;
+  border: none;
+}
+
+.panel-header {
+  background-color: $gray-semi-lighter;
+  color: $gray-800;
+  border-bottom: 1px solid transparent;
+
+  @include border-top-radius(($border-radius));
 }

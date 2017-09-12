@@ -13,6 +13,7 @@ import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
 import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons/Buttons';
 import loadUIComponent from 'bundle-loader?lazy!../../pages/ui-elements/components/Components';
 import loadUIIcons from 'bundle-loader?lazy!../../pages/ui-elements/icons/Icons';
+import loadUITabsAccordion from 'bundle-loader?lazy!../../pages/ui-elements/tabs-accordion/TabsAccordion';
 import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements/Elements';
 /* eslint-enable */
 
@@ -30,6 +31,7 @@ const ProfileBundle = Bundle.generateBundle(loadProfile);
 const UIButtonsBundle = Bundle.generateBundle(loadUIButtons);
 const UIComponentsBundle = Bundle.generateBundle(loadUIComponent);
 const UIIconsBundle = Bundle.generateBundle(loadUIIcons);
+const UITabsAccordionBundle = Bundle.generateBundle(loadUITabsAccordion);
 const FormsElementsBundle = Bundle.generateBundle(loadFormsElements);
 
 class Layout extends React.Component {
@@ -107,6 +109,7 @@ class Layout extends React.Component {
                 <Route path="/app/ui/buttons" exact component={UIButtonsBundle} />
                 <Route path="/app/ui/components" exact component={UIComponentsBundle} />
                 <Route path="/app/ui/icons" exact component={UIIconsBundle} />
+                <Route path="/app/ui/tabs-accordion" exact component={UITabsAccordionBundle} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
               </Switch>
             </main>

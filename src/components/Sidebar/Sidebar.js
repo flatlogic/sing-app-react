@@ -63,7 +63,7 @@ class Sidebar extends React.Component {
             onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/forms'))}
             isActive={this.props.activeItem === '/app/forms'}
             header="Forms"
-            iconName="fa-child"
+            iconName="fa-align-right"
             headerLink="/app/forms"
             childrenLinks={[
               {
@@ -75,7 +75,7 @@ class Sidebar extends React.Component {
             onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/ui'))}
             isActive={this.props.activeItem === '/app/ui'}
             header="UI Elements"
-            iconName="fa-child"
+            iconName="fa-tree"
             headerLink="/app/ui"
             childrenLinks={[
               {
@@ -86,6 +86,9 @@ class Sidebar extends React.Component {
               },
               {
                 name: 'Icons', link: '/app/ui/icons',
+              },
+              {
+                name: 'Tabs & Accordion', link: '/app/ui/tabs-accordion',
               },
             ]}
           />
