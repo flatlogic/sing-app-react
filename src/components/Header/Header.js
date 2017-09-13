@@ -23,7 +23,7 @@ import $ from 'jquery';
 
 import Notifications from '../Notifications/Notifications';
 import { logoutUser } from '../../actions/user';
-import { toggleSidebar, openSidebar, closeSidebar } from '../../actions/navigation';
+import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
 import a6 from '../../images/people/a6.jpg';
@@ -86,14 +86,22 @@ class Header extends React.Component {
     this.props.dispatch(logoutUser());
   }
 
+  // collapse/uncolappse
   switchSidebar() {
     const dispatchNavigation = this.props.sidebarOpened ? closeSidebar : openSidebar;
     this.props.dispatch(dispatchNavigation());
   }
 
+  // static/non-static
   toggleSidebar() {
     this.props.dispatch(toggleSidebar());
-    localStorage.setItem('nav-static', !this.props.sidebarStatic);
+    if (this.props.sidebarStatic) {
+      this.props.dispatch(changeActiveSidebarItem(null));
+    } else {
+      const paths = this.props.location.pathname.split('/');
+      paths.pop();
+      this.props.dispatch(changeActiveSidebarItem(paths.join('/')));
+    }
   }
 
   toggleMenu() {

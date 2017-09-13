@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
-    activeItem: PropTypes.string.isRequired,
+    activeItem: PropTypes.string,
   };
 
   static defaultProps = {
@@ -33,13 +33,17 @@ class Sidebar extends React.Component {
 
   onMouseEnter() {
     if (!this.props.sidebarStatic && (isScreen('lg') || isScreen('xl'))) {
+      const paths = this.props.location.pathname.split('/');
+      paths.pop();
       this.props.dispatch(openSidebar());
+      this.props.dispatch(changeActiveSidebarItem(paths.join('/')));
     }
   }
 
   onMouseLeave() {
     if (!this.props.sidebarStatic && (isScreen('lg') || isScreen('xl'))) {
       this.props.dispatch(closeSidebar());
+      this.props.dispatch(changeActiveSidebarItem(null));
     }
   }
 
