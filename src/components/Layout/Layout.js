@@ -61,7 +61,7 @@ class Layout extends React.Component {
     setTimeout(() => {
       // demo: add class & badge to indicate incoming messages from contact
       // .js-notification-added ensures notification added only once
-      $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
+      $('#chat-sidebar-user-group').find('.list-group-item:first-child:not(.js-notification-added)')
         .addClass('active js-notification-added')
         .find('.fa-circle')
         .after('<span class="badge badge-danger badge-pill ' +

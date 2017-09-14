@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { withRouter } from 'react-router-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import $ from 'jquery';
 
 import * as a1 from '../../images/people/a1.jpg';
 import * as a2 from '../../images/people/a2.jpg';
@@ -96,11 +97,12 @@ class Chat extends React.Component {
     };
   }
 
-  openMessages(conversation) {
+  openMessages(conversation, e) {
     this.setState({
       conversation,
       chatMessageOpened: false,
     });
+    $(e.currentTarget).removeClass('active').find('.badge').remove();
   }
 
   addMessage(e) {
@@ -161,7 +163,7 @@ class Chat extends React.Component {
               .map(item =>
                 <ListGroupItem
                   key={item.id}
-                  onClick={() => this.openMessages(item)}
+                  onClick={(e) => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', s.cirle, `text-${item.status}`].join(' ')} />
                   <span className="thumb-sm float-left mr">
