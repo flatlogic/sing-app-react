@@ -67,7 +67,7 @@ class LinksGroup extends Component {
           return (
             <li className={[s.headerLink, this.props.className].join(' ')}>
               <a className={[match ? s.headerLinkActive : '', isOpen ? s.collapsed : ''].join(' ')}
-                 onClick={this.togglePanelCollapse}
+                 onClick={this.togglePanelCollapse} href="#"
               >
                 <span className={s.icon}>
                   <i className={`fa ${this.props.iconName}`} />
