@@ -116,13 +116,13 @@ class Elements extends React.Component {
       imageFiles: [],
     };
   }
-  
+
   onEditorStateChange(editorState) {
     this.setState({
       editorState,
     });
   }
-  
+
   onDrop(files) {
     this.setState({
       dropFiles: files,
@@ -191,7 +191,7 @@ class Elements extends React.Component {
       colorpickerInputValue: colors.color,
     });
   }
-  
+
   changeColorInput(e) {
     if (e.target.value.length > 3 && e.target.value.length < 8) {
       this.setState({
@@ -205,7 +205,7 @@ class Elements extends React.Component {
       });
     }
   }
-  
+
   removeInputFiles() {
     this.setState({
       inputFiles: [],
@@ -1031,9 +1031,9 @@ class Elements extends React.Component {
                           id="datepicker"
                           open={this.state.isDatePickerOpen}
                           viewMode="days" timeFormat={false}
-                          inputProps={{ref: (input) => {this.refDatePicker = input;}}}
+                          inputProps={{ ref: (input) => { this.refDatePicker = input; } }}
                         />
-                        <InputGroupAddon onClick={() => {this.refDatePicker.focus()}}>
+                        <InputGroupAddon onClick={() => { this.refDatePicker.focus(); }}>
                           <i className="glyphicon glyphicon-th" />
                         </InputGroupAddon>
                       </div>
@@ -1042,10 +1042,10 @@ class Elements extends React.Component {
                       <div className="datepicker">
                         <Datetime
                           open={this.state.isTimePickerOpen} id="timepicker"
-                          inputProps={{ref: (input) => {this.refTimePicker = input;}}}
+                          inputProps={{ ref: (input) => { this.refTimePicker = input; } }}
                           viewMode="time" dateFormat={false}
                         />
-                        <InputGroupAddon onClick={() => {this.refTimePicker.focus()}}>
+                        <InputGroupAddon onClick={() => { this.refTimePicker.focus(); }}>
                           <i className="glyphicon glyphicon-time" />
                         </InputGroupAddon>
                       </div>

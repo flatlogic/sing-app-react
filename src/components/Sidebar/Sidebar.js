@@ -94,6 +94,9 @@ class Sidebar extends React.Component {
               {
                 name: 'Tabs & Accordion', link: '/app/ui/tabs-accordion',
               },
+              {
+                name: 'List Groups', link: '/app/ui/list-groups',
+              },
             ]}
           />
         </ul>
