@@ -192,7 +192,7 @@ class Header extends React.Component {
                   </span>
                   Jess Smith
                 </h6>
-                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
+                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-primary">React JS</strong> </p>
               </div>
             </div>
           </NavItem>

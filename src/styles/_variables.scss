@@ -58,7 +58,7 @@ $theme-colors: (
   default: #f8f8f8
 );
 
-$link-color: #337ab7;
+$link-color: #218bc3;
 
 $text-color: $gray-700 !default;
 
@@ -102,8 +102,8 @@ $sidebar-item-hover-bg-color: #111;
 
 $chat-sidebar-bg-color: $gray-900 !default;
 
-$breadcrumb-separator: '>';
-$breadcrumb-padding-horizontal: 0;
+$breadcrumb-divider: '>';
+$breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
 $badge-font-weight: 600;
@@ -111,11 +111,10 @@ $badge-font-weight: 600;
 $widget-bg: #fff;
 $widget-title-color: #444;
 
-$btn-inverse-color: #fff;
-$btn-inverse-bg: $sidebar-bg-color;
-$btn-inverse-border: #414749;
+$input-btn-line-height: 1.5;
 
-$btn-padding-y-sm: 0.35rem;
+$input-btn-padding-y-sm: 0.4rem;
+$input-btn-padding-x-sm: 0.8rem;
 
 $input-height-small: 30px;
 

@@ -208,8 +208,7 @@ small {
 
 .btn-success,
 .btn-info,
-.btn-warning,
-.btn-inverse {
+.btn-warning {
   color: $white;
 
   &:hover {
@@ -225,10 +224,6 @@ small {
 .btn-default {
   border-color: $gray-300;
   color: $gray-800;
-}
-
-.btn-inverse {
-  border-color: $gray-800;
 }
 
 .btn-xs {
@@ -256,11 +251,6 @@ small {
   &:not(.active) {
     box-shadow: none !important;
   }
-}
-
-.btn-sm {
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
 }
 
 .btn-rounded {

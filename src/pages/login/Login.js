@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container, Alert } from 'reactstrap';
+import { Container, Alert, FormGroup, Input, Label } from 'reactstrap';
 import Widget from '../../components/Widget';
 import s from './Login.scss';
 import { loginUser } from '../../actions/user';
@@ -86,9 +86,17 @@ class Login extends React.Component {
                   <button type="submit" href="/app" className="btn btn-inverse btn-sm">{this.props.isFetching ? 'Loading...' : 'Login'}</button>
                 </div>
               </div>
-              <div className="row m-t-1">
-                <div className="col-md-6">
-                  <a className="mt-sm float-right fs-sm" href="">Trouble with account?</a>
+              <div className="row no-gutters mt-3">
+                <div className="col">
+                  <a className="mt-sm" href="">Trouble with account?</a>
+                </div>
+                <div className="col =">
+                  <FormGroup className="abc-checkbox float-right" check>
+                    <Input id="checkbox1" type="checkbox" />{' '}
+                    <Label className="fw-normal" for="checkbox1" check>
+                      Keep me signed in
+                    </Label>
+                  </FormGroup>
                 </div>
               </div>
             </form>

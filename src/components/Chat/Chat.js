@@ -163,9 +163,9 @@ class Chat extends React.Component {
               .map(item =>
                 <ListGroupItem
                   key={item.id}
-                  onClick={(e) => this.openMessages(item, e)}
+                  onClick={e => this.openMessages(item, e)}
                 >
-                  <i className={['fa fa-circle float-right', s.cirle, `text-${item.status}`].join(' ')} />
+                  <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
                   <span className="thumb-sm float-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>
@@ -186,7 +186,7 @@ class Chat extends React.Component {
                   key={item.id}
                   onClick={() => this.openMessages(item)}
                 >
-                  <i className={['fa fa-circle float-right', s.cirle, `text-${item.status}`].join(' ')} />
+                  <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
                   <span className="thumb-sm pull-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>

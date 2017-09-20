@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "animate.css": "3.5.2",
+    "awesome-bootstrap-checkbox": "1.0.0",
     "babel-polyfill": "6.23.0",
     "bluebird": "3.5.0",
     "body-parser": "1.17.1",
