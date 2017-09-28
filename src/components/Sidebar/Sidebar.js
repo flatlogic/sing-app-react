@@ -83,13 +83,16 @@ class Sidebar extends React.Component {
             headerLink="/app/ui"
             childrenLinks={[
               {
-                name: 'Buttons', link: '/app/ui/buttons',
-              },
-              {
                 name: 'Components', link: '/app/ui/components',
               },
               {
+                name: 'Notifications', link: '/app/ui/notifications',
+              },
+              {
                 name: 'Icons', link: '/app/ui/icons',
+              },
+              {
+                name: 'Buttons', link: '/app/ui/buttons',
               },
               {
                 name: 'Tabs & Accordion', link: '/app/ui/tabs-accordion',

@@ -90,7 +90,8 @@ const config = {
         ],
       },
       {
-        test: /theme.scss$/,
+        // Use [name]Global.scss file to include non isomorphic style
+        test: /theme.scss$|Global.scss$/,
         loaders: [
           'isomorphic-style-loader',
           `css-loader?${isDebug ? 'sourceMap&' : 'minimize&'}modules&localIdentName=[local]&importLoaders=2`,
@@ -99,7 +100,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        exclude: [/theme.scss$/],
+        exclude: [/theme.scss$|Global.scss$/],
         use: [
           'isomorphic-style-loader',
           `css-loader?${isDebug ? 'sourceMap&' : 'minimize&'}modules&localIdentName=
@@ -186,6 +187,13 @@ const clientConfig = {
       path: path.resolve(__dirname, '../build'),
       filename: 'assets.json',
       prettyPrint: true,
+    }),
+
+    // Include jquery plugin
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
     }),
 
     // Move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk).
