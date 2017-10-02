@@ -36,6 +36,13 @@ class Header extends React.Component {
     sidebarStatic: PropTypes.bool.isRequired,
     chatToggle: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }),
+  };
+
+  static defaultProps = {
+    location: { pathname: '' },
   };
 
   constructor(props) {

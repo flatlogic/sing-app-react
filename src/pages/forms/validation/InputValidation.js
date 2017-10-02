@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
 
-const InputValidation = React.createClass({
+const InputValidation = React.createClass({ // eslint-disable-line
   propTypes: {
     trigger: PropTypes.string,
     type: PropTypes.string,
@@ -13,12 +13,14 @@ const InputValidation = React.createClass({
 
   mixins: [Formsy.Mixin],
 
-  defaultProps: {
-    trigger: null,
-    type: 'text',
-    className: '',
-    name: '',
-    id: '',
+  getDefaultProps() {
+    return {
+      trigger: null,
+      type: 'text',
+      className: '',
+      name: '',
+      id: '',
+    };
   },
 
   changeValue(event) {
