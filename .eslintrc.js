@@ -48,7 +48,7 @@ module.exports = {
 
       // Allow js files to use jsx syntax, too
       'react/jsx-filename-extension': 'off',
-      
+
       //Allow to reassignment of function parameters
       'no-param-reassign': [2, {'props': false}],
 
@@ -56,8 +56,11 @@ module.exports = {
       // You can reopen this if you still want this rule
       'react/prefer-stateless-function': 'off',
 
+      // allow any
+      'react/forbid-prop-types': ['error', { forbid: ['array', 'object'] }],
+
       "linebreak-style": 0,
-  
+
       // maximum line length
       // ignore urls and strings
       "max-len": ["error", 200, { "ignoreUrls": true }, {"ignoreStrings": true}],

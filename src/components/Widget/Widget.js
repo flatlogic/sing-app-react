@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Widget.scss';
+import s from './Widget.scss'; // eslint-disable-line css-modules/no-unused-class
 
 class Widget extends React.Component {
   static propTypes = {

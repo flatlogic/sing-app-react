@@ -43,7 +43,7 @@ class ProgressDemo extends React.Component {
             &nbsp;
             Finish The Road to Hell Song
           </h6>
-          <Progress className={['progress-sm', 'm-0'].join(' ')} color="gray-light" value="44" />
+          <Progress className={['progress-sm', 'm-0'].join(' ')} color="gray-dark" value="44" />
           <span className="help-block">last update: 2h ago</span>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>

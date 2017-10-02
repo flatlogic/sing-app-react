@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger';
+import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger'; // eslint-disable-line
 import {
   Row, Col, Button,
 } from 'reactstrap';
@@ -8,7 +9,7 @@ import {
 import Widget from '../../../components/Widget';
 
 import s from './Notifications.scss';
-import messengerStyle from './MessengerGlobal.scss';
+import messengerStyle from './MessengerGlobal.scss'; // eslint-disable-line css-modules/no-unused-class
 
 
 messengerStyle._insertCss();

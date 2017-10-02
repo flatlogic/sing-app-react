@@ -17,6 +17,7 @@ import {
   InputGroupAddon,
   InputGroup,
   Input,
+  Form,
   FormGroup,
 } from 'reactstrap';
 import $ from 'jquery';
@@ -28,7 +29,7 @@ import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } fro
 import a5 from '../../images/people/a5.jpg';
 import a6 from '../../images/people/a6.jpg';
 
-import s from './Header.scss';
+import s from './Header.scss'; // eslint-disable-line css-modules/no-unused-class
 
 class Header extends React.Component {
   static propTypes = {
@@ -36,6 +37,7 @@ class Header extends React.Component {
     sidebarStatic: PropTypes.bool.isRequired,
     chatToggle: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
+    location: PropTypes.any.isRequired,
   };
 
   constructor(props) {
@@ -54,22 +56,24 @@ class Header extends React.Component {
     };
   }
   componentDidMount() {
-    setTimeout(() => {
-      const $chatNotification = $('#chat-notification');
-      $chatNotification.removeClass('hide').addClass('animated fadeIn')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-          $chatNotification.removeClass('animated fadeIn');
-          setTimeout(() => {
-            $chatNotification.addClass('animated fadeOut')
-              .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
-                ' oanimationend animationend', () => {
-                  $chatNotification.addClass('hide');
-                });
-          }, 6000);
-        });
-      $chatNotification.siblings('#toggle-chat')
-        .append('<i class="chat-notification-sing animated bounceIn"></i>');
-    }, 4000);
+    if (window.innerWidth > 576) {
+      setTimeout(() => {
+        const $chatNotification = $('#chat-notification');
+        $chatNotification.removeClass('hide').addClass('animated fadeIn')
+          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
+            $chatNotification.removeClass('animated fadeIn');
+            setTimeout(() => {
+              $chatNotification.addClass('animated fadeOut')
+                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
+                  ' oanimationend animationend', () => {
+                    $chatNotification.addClass('hide');
+                  });
+            }, 6000);
+          });
+        $chatNotification.siblings('#toggle-chat')
+          .append('<i class="chat-notification-sing animated bounceIn"></i>');
+      }, 4000);
+    }
 
     $('#search-input').on('blur focus', (e) => {
       $('#search-input').parents('.input-group')[e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
@@ -111,46 +115,45 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className={s.navbar}>
-        <Nav className={s.nav}>
+      <Navbar color={'white'}>
+        <Nav className="ml-3">
           <NavItem>
-            <NavLink className={`${s.navLink} d-none d-md-block d-lg-block d-xl-block`} href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className="fa fa-bars fa-lg" />
+            <NavLink className="d-md-down-none" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
+              <i className={'fa fa-bars fa-lg'} />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
+            <NavLink className="fs-lg d-lg-none" href="#" onClick={this.switchSidebar}>
+              <span className="rounded rounded-lg bg-gray text-white d-md-none"><i className="fa fa-bars fa-lg" /></span>
+              <i className="fa fa-bars fa-lg d-sm-down-none" />
+            </NavLink>
           </NavItem>
-          <NavLink className={`${s.navLink} ${s.navLg} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`} href="#" onClick={this.switchSidebar}>
-            <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-bars fa-lg" /></span>
-            <i className="fa fa-bars fa-lg d-none d-md-block d-lg-block d-xl-block" />
-          </NavLink>
-          <NavItem className="ml-lg d-none d-md-block d-lg-block d-xl-block">
-            <NavLink className={`${s.navLink}`} href="#">
+          <NavItem className="d-md-down-none ml-3">
+            <NavLink href="#" className="px-2">
               <i className="fa fa-refresh fa-lg" />
             </NavLink>
           </NavItem>
-          <NavItem className="d-none d-md-block d-lg-block d-xl-block">
-            <NavLink className={s.navLink} href="#">
-              <i className={`${s.faTimes} fa fa-times fa-lg`} />
+          <NavItem className="d-md-down-none">
+            <NavLink href="#" className="px-2">
+              <i className="fa fa-times fa-lg" />
             </NavLink>
           </NavItem>
 
-          <div className="navbar-form float-left">
-            <FormGroup>
-              <InputGroup className={`${s.navbarForm} d-none d-md-block d-lg-block d-xl-block`}>
-                <InputGroupAddon className={s.inputAddon}><i
-                  className="fa fa-search"
-                /></InputGroupAddon>
-                <Input id="search-input" placeholder="Search Dashboard" />
-              </InputGroup>
-            </FormGroup>
-          </div>
-
         </Nav>
 
+        <Form className="d-sm-down-none ml-5" inline>
+          <FormGroup>
+            <InputGroup className="input-group-no-border">
+              <InputGroupAddon><i
+                className="fa fa-search"
+              /></InputGroupAddon>
+              <Input id="search-input" placeholder="Search Dashboard" />
+            </InputGroup>
+          </FormGroup>
+        </Form>
 
-        <NavLink className={`${s.navbarBrand} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`}>
+        <NavLink className={`${s.navbarBrand} d-md-none`}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
@@ -160,21 +163,21 @@ class Header extends React.Component {
           <i className="fa fa-circle text-gray" />
         </NavLink>
 
-        <Nav>
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="d-none d-md-block d-lg-block d-xl-block">
-            <DropdownToggle nav caret className={s.navLink}>
-              <span className={`${s.avatar} thumb-sm float-left`}>
+        <Nav className="ml-auto mr-3">
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="d-sm-down-none position">
+            <DropdownToggle nav caret>
+              <span className={`${s.avatar} thumb-sm float-left mr-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
               </span>
               Philip <span className="fw-semi-bold">Smith</span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right className={`${s.dropdownNotifications} animated animated-fast fadeInUp`}>
+            <DropdownMenu right className={'pb-0 animated animated-fast fadeInUp'}>
               <Notifications />
             </DropdownMenu>
           </NavDropdown>
-          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-none d-md-block d-lg-block d-xl-block">
-            <DropdownToggle nav className={s.navLink}>
+          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
+            <DropdownToggle nav>
               <i className="fa fa-cog fa-lg" />
             </DropdownToggle>
             <DropdownMenu right className="super-colors">
@@ -187,10 +190,10 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink id="toggle-chat" className={`${s.navLink} d-none d-md-block d-lg-block d-xl-block`} href="#" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
-            <NavLink id="chat-notification" className={`${s.chatNotification} hide  d-none d-md-block d-lg-block d-xl-block`} onClick={this.props.chatToggle}>
+            <div id="chat-notification" className={`${s.chatNotification} hide `}>
               <div className={s.chatNotificationInner}>
                 <h6 className={s.title}>
                   <span className="thumb-xs">
@@ -198,12 +201,12 @@ class Header extends React.Component {
                   </span>
                   Jess Smith
                 </h6>
-                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-danger">Angular 2.0 Final Release</strong> </p>
+                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-primary">React JS</strong> </p>
               </div>
-            </NavLink>
+            </div>
           </NavItem>
-          <NavItem className={`${s.navLg} d-none d-xs-block d-sm-block d-md-none d-lg-none d-xl-none`}>
-            <NavLink className={s.navLink} href="#" onClick={this.props.chatToggle}>
+          <NavItem className="fs-lg d-md-none">
+            <NavLink href="#" onClick={this.props.chatToggle}>
               <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg" /></span>
             </NavLink>
           </NavItem>

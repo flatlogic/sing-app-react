@@ -76,11 +76,11 @@ class Layout extends React.Component {
     setTimeout(() => {
       // demo: add class & badge to indicate incoming messages from contact
       // .js-notification-added ensures notification added only once
-      $('#chat-sidebar-user-group .list-group-item:first-child:not(.js-notification-added)')
+      $('#chat-sidebar-user-group').find('.list-group-item:first-child:not(.js-notification-added)')
         .addClass('active js-notification-added')
         .find('.fa-circle')
-        .before('<span class="badge badge-danger badge-pill ' +
-          'flex-last animated bounceInDown">3</span>');
+        .after('<span class="badge badge-danger badge-pill ' +
+          'float-right animated bounceInDown">3</span>');
     }, 1000);
   }
 
@@ -101,7 +101,14 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className={[s.root, this.props.sidebarStatic ? s.sidebarStatic : '', this.state.chatOpen ? s.chatOpen : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}>
+      <div
+        className={[
+          s.root,
+          this.props.sidebarStatic ? s.sidebarStatic : '',
+          this.state.chatOpen ? s.chatOpen : '',
+          !this.props.sidebarOpened ? s.sidebarClose : '',
+        ].join(' ')}
+      >
         <Sidebar />
         <div className={s.wrap}>
           <Header chatToggle={this.chatToggle} />

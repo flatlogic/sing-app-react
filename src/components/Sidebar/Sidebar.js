@@ -16,7 +16,8 @@ class Sidebar extends React.Component {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
-    activeItem: PropTypes.string,
+    activeItem: PropTypes.string.isRequired,
+    location: PropTypes.any.isRequired,
   };
 
   static defaultProps = {
@@ -55,7 +56,7 @@ class Sidebar extends React.Component {
     return (
       <nav
         onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-        className={[s.root, s.sidebarScroll, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
+        className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
       >
         <header className={s.logo}>
           <Link to="/app">sing</Link>
