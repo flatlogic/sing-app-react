@@ -93,7 +93,7 @@ legend {
   padding: 0;
   margin-bottom: $spacer;
   line-height: inherit;
-  color: $legend-color;
+  color: $text-muted;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
   font-size: 15px;
@@ -514,7 +514,7 @@ h6,
 }
 
 .panel-header {
-  background-color: $gray-semi-lighter;
+  background-color: $gray-400;
   color: $gray-800;
   border-bottom: 1px solid transparent;
 

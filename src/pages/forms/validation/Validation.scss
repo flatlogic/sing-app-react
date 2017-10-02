@@ -1,9 +1,10 @@
 @import '../../../styles/app';
 
+//todo @franckeeva why duplicate? same in validation.scss
 .submitBlock {
   background-color: #f5f5f5;
-  margin: $line-height-computed 0 0;
-  padding: $line-height-computed/2 $line-height-computed;
+  margin: $spacer 0 0;
+  padding: $spacer/2 $spacer;
 }
 
 .root {

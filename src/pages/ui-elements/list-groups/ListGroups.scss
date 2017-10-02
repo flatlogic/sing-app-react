@@ -10,13 +10,13 @@
         border-radius: $border-radius;
 
         + .list-group-item {
-          margin-top: $line-height-computed/2;
+          margin-top: $spacer;
         }
       }
 
       > .list-group-item-placeholder {
-        border: 1px dashed $gray-light;
-        background-color: $gray-semi-lighter;
+        border: 1px dashed $gray-300;
+        background-color: $gray-600;
       }
 
       &:last-of-type > .list-group-item:last-child {
