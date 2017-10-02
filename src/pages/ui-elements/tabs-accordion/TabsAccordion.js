@@ -157,6 +157,7 @@ class TabsAccordion extends React.Component {
                       <span
                         data-toggle="dropdown"
                       >Dropdown <b className="caret" /></span>
+                      { /* eslint-disable */ }
                       <DropdownMenu>
                         <div
                           role="menuitem"
@@ -171,6 +172,7 @@ class TabsAccordion extends React.Component {
                         >@mdo
                         </div>
                       </DropdownMenu>
+                      { /* eslint-enable */ }
                     </NavLink>
                   </UncontrolledDropdown>
 
@@ -388,10 +390,12 @@ class TabsAccordion extends React.Component {
 
             {this.state.accordionFirstContent.map((element, index) => (
               <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
+                { /* eslint-disable */ }
                 <div
                   className="card-header panel-header" role="button"
                   onClick={() => { this.toggleAccordionFirst(index); }}
                 >
+                  { /* eslint-enable */ }
                   <div className="mb-0">
                     <a className="accordion-toggle" role="button">
                       {element.title}
@@ -407,10 +411,12 @@ class TabsAccordion extends React.Component {
 
           <Col md="6" xs="12">
             {this.state.accordionSecondContent.map((element, index) => (<div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
+              { /* eslint-disable */ }
               <div
                 className="card-header panel-header" role="button"
                 onClick={() => { this.toggleAccordionSecond(index); }}
               >
+                { /* eslint-enable */ }
                 <div className="mb-0">
                   <a className="accordion-toggle" role="button">
                     {element.title}

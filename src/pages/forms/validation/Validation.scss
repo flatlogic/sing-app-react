@@ -1,0 +1,17 @@
+@import '../../../styles/app';
+
+.submitBlock {
+  background-color: #f5f5f5;
+  margin: $line-height-computed 0 0;
+  padding: $line-height-computed/2 $line-height-computed;
+}
+
+.root {
+  :global {
+    .badge {
+      font-size: 0.875rem;
+      padding: 6px;
+      font-weight: 700;
+    }
+  }
+}

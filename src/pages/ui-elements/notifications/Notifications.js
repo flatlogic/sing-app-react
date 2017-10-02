@@ -1,16 +1,18 @@
 /* eslint-disable */
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger'; // eslint-disable-line
 import {
   Row, Col, Button,
 } from 'reactstrap';
 
 import Widget from '../../../components/Widget';
-
 import s from './Notifications.scss';
-import messengerStyle from './MessengerGlobal.scss'; // eslint-disable-line css-modules/no-unused-class
 
+ /* eslint-disable */
+import messengerStyle from './MessengerGlobal.scss';
+import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger';
+
+const Messenger = window.Messenger;
 
 messengerStyle._insertCss();
 
@@ -61,6 +63,7 @@ function initializationMessengerCode() {
     };
   }).call(window);
 }
+{ /* eslint-enable */ }
 
 class Notifications extends React.Component {
   constructor() {
@@ -118,6 +121,7 @@ class Notifications extends React.Component {
       successMessage: 'Alien planet destroyed!',
       extraClasses: this.state.locationClasses,
       action(opts) {
+        /* eslint-disable */
         if (++i < 3) {
           return opts.error({
             status: 500,
@@ -125,6 +129,7 @@ class Notifications extends React.Component {
             responseText: 0,
           });
         }
+        /* eslint-enable */
         return opts.success();
       },
     });
@@ -161,6 +166,7 @@ class Notifications extends React.Component {
                 them
                 to change notifications position:</p>
               <div className="location-selector">
+                { /* eslint-disable */}
                 <div
                   className="bit top left" onClick={() => {
                     this.toggleLocation('top', 'left');
@@ -191,6 +197,7 @@ class Notifications extends React.Component {
                     this.toggleLocation('bottom', '');
                   }}
                 />
+                { /* eslint-enable */}
               </div>
             </Col>
 

@@ -17,7 +17,9 @@ class Sidebar extends React.Component {
     sidebarOpened: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
     activeItem: PropTypes.string.isRequired,
-    location: PropTypes.any.isRequired,
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }).isRequired,
   };
 
   static defaultProps = {
@@ -73,6 +75,9 @@ class Sidebar extends React.Component {
             childrenLinks={[
               {
                 name: 'Forms Elements', link: '/app/forms/elements',
+              },
+              {
+                name: 'Forms Validation', link: '/app/forms/validation',
               },
             ]}
           />
