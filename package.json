@@ -29,6 +29,7 @@
     "express-jwt": "^5.3.0",
     "fastclick": "^1.0.6",
     "font-awesome": "4.7.0",
+    "formsy-react": "^0.19.5",
     "glyphicons-halflings": "https://github.com/inway/glyphicons-halflings.git#df545d9e4bdae9b5ffa112fcb70b3f8350929875",
     "graphql": "^0.9.3",
     "graphql-relay": "^0.5.1",

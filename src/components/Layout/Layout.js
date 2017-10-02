@@ -17,6 +17,7 @@ import loadUITabsAccordion from 'bundle-loader?lazy!../../pages/ui-elements/tabs
 import loadUINotifications from 'bundle-loader?lazy!../../pages/ui-elements/notifications/Notifications';
 import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-groups/ListGroups';
 import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements/Elements';
+import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation/Validation';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -37,6 +38,7 @@ const UITabsAccordionBundle = Bundle.generateBundle(loadUITabsAccordion);
 const UINotificationsBundle = Bundle.generateBundle(loadUINotifications);
 const UIListGroupsBundle = Bundle.generateBundle(loadUIListGroups);
 const FormsElementsBundle = Bundle.generateBundle(loadFormsElements);
+const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -118,6 +120,7 @@ class Layout extends React.Component {
                 <Route path="/app/ui/notifications" exact component={UINotificationsBundle} />
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
+                <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
               </Switch>
             </main>
           </Hammer>
