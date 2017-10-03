@@ -49,10 +49,20 @@ module.exports = {
       // Allow js files to use jsx syntax, too
       'react/jsx-filename-extension': 'off',
 
+      //Allow to reassignment of function parameters
+      'no-param-reassign': [2, {'props': false}],
+
       // https://github.com/kriasoft/react-starter-kit/pull/961
       // You can reopen this if you still want this rule
       'react/prefer-stateless-function': 'off',
 
+      // allow any
+      'react/forbid-prop-types': ['error', { forbid: ['array', 'object'] }],
+
       "linebreak-style": 0,
+
+      // maximum line length
+      // ignore urls and strings
+      "max-len": ["error", 121, { "ignoreUrls": true }, {"ignoreStrings": true}],
     },
   };

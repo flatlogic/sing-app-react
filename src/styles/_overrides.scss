@@ -17,13 +17,13 @@
     .nav-link {
       display: flex;
       align-items: center;
-      color: $navbar-dashboard-link-color;
+      color: $navbar-link-color;
       height: 100%;
       position: relative;
 
       @include hover {
-        color: $navbar-dashboard-link-hover-color;
-        background: $navbar-dashboard-link-hover-bg;
+        color: $navbar-link-hover-color;
+        background: $navbar-link-hover-bg;
       }
 
       .fa-times {
@@ -85,6 +85,19 @@
       background-color: darken($input-bg, 7%);
     }
   }
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $spacer;
+  line-height: inherit;
+  color: $text-muted;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+  font-weight: $font-weight-normal;
 }
 
 .input-sm {
@@ -284,10 +297,23 @@ small {
 .nav-item.dropdown {
   &.show {
     .nav-link.active {
-      background: $navbar-dashboard-link-active-bg;
-      color: $navbar-dashboard-link-active-color;
+      background: $navbar-link-active-bg;
+      color: $navbar-link-active-color;
     }
   }
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid;
+  // IE8
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 }
 
 ///////// Alerts //////////
@@ -344,6 +370,14 @@ small {
 
 .bs-tether-target.show {
   display: inline-block !important;
+}
+
+.tooltip.in {
+  opacity: 1;
+}
+
+.tooltip-inner {
+  @include border-radius(3px);
 }
 
 ///////// Base Elements //////////
@@ -467,5 +501,49 @@ h6,
 
   > .tab-pane {
     padding: $spacer*2;
+  }
+}
+
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+  background-color: transparent;
+  border: none;
+}
+
+.panel-header {
+  background-color: $gray-400;
+  color: $gray-800;
+  border-bottom: 1px solid transparent;
+
+  @include border-top-radius(($border-radius));
+}
+
+// Code
+// -----------------
+
+pre {
+  display: block;
+  padding: 6.5px;
+  margin: 0 0 (1rem / 2);
+  font-size: 13px;
+  line-height: 1rem;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: $pre-color;
+  background-color: $gray-100;
+  border: 1px solid $gray-400;
+  border-radius: $border-radius;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
   }
 }

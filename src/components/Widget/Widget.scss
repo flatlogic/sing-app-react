@@ -64,11 +64,21 @@
       text-decoration: none;
     }
 
-    :global {
-      .fa {
-        position: relative;
-        top: 2px;
-      }
+    :global .fa {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.inverse {
+  top: 2px;
+  position: relative;
+  margin-left: 3px;
+
+  :global {
+    .glyphicon {
+      vertical-align: baseline;
     }
   }
 }

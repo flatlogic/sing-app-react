@@ -36,7 +36,6 @@ $gray-700: #555 !default;
 $gray-800: #343434 !default;
 $gray-900: #242424 !default;
 $black: #000 !default;
-$gray-light: #ddd !default;
 
 $blue: #5d8fc2 !default;
 $red: #dd5826 !default;
@@ -67,12 +66,6 @@ $font-weight-semi-bold: 600 !default;
 $font-weight-normal: 400 !default;
 $font-weight-thin: 300 !default;
 $font-weight-base: $font-weight-thin !default;
-
-$brand-primary-light: #dee4ee !default;
-
-$brand-success-light: #ecfaec !default;
-$brand-info-light: #f2fafa !default;
-$brand-danger-light: #fff2ef !default;
 
 $addition-bg: #f8f8f8 !default;
 
@@ -116,8 +109,6 @@ $input-btn-line-height: 1.5;
 $input-btn-padding-y-sm: 0.4rem;
 $input-btn-padding-x-sm: 0.8rem;
 
-$input-height-small: 30px;
-
 //== Navbar
 //
 
@@ -125,14 +116,14 @@ $navbar-height:  50px !default;
 $navbar-padding-y: 0 !default;
 $navbar-padding-x: 0 !default;
 
-// Navbar links
-$navbar-dashboard-link-color: $text-color !default;
-$navbar-dashboard-link-hover-color: $gray-800 !default;
-$navbar-dashboard-link-hover-bg: transparent !default;
-$navbar-dashboard-link-active-color: $gray-700 !default;
-$navbar-dashboard-link-active-bg: $gray-300 !default;
-$navbar-dashboard-link-disabled-color: $gray-400 !default;
-$navbar-dashboard-link-disabled-bg: transparent !default;
+// Custom navbar links
+$navbar-link-color: $text-color !default;
+$navbar-link-hover-color: $gray-800 !default;
+$navbar-link-hover-bg: transparent !default;
+$navbar-link-active-color: $gray-700 !default;
+$navbar-link-active-bg: $gray-300 !default;
+$navbar-link-disabled-color: $gray-400 !default;
+$navbar-link-disabled-bg: transparent !default;
 
 // Dropdowns
 $dropdown-link-color: $text-color;
@@ -150,7 +141,7 @@ $nav-tabs-active-link-hover-color: $gray-700 !default;
 
 //== Forms
 //
-$input-border-focus: #4d90fe !default; //webkit focus color
+$input-focus-border-color: #4d90fe !default; //webkit focus color
 
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
