@@ -815,7 +815,8 @@ class Elements extends React.Component {
 
                     <legend>Basic</legend>
                     <p>
-                      Supports bootstrap brand colors: <code>.abc-checkbox-primary</code>, <code>.abc-checkbox-info</code>
+                      Supports bootstrap brand colors: <code>.abc-checkbox-primary</code>,
+                      <code>.abc-checkbox-info</code>
                       etc.
                       Pure <abbr title="Cascading Style Sheet">css</abbr> solution with no
                       javascript.
@@ -1297,7 +1298,9 @@ class Elements extends React.Component {
                       />
                       <Label for="fileupload1" className="form-control">
                         {this.state.inputFiles.length > 0 ? <div>
-                          {this.state.inputFiles.map((file, idx) => (<span key={`select-id-${idx.toString()}`} >{file.name}</span>))}
+                          {this.state.inputFiles.map((file, idx) => (
+                            <span key={`select-id-${idx.toString()}`} >{file.name}</span>
+                          ))}
                         </div> : <span />}
                       </Label>
                       {this.state.inputFiles.length === 0 ? <InputGroupButton>

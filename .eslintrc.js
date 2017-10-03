@@ -63,6 +63,6 @@ module.exports = {
 
       // maximum line length
       // ignore urls and strings
-      "max-len": ["error", 200, { "ignoreUrls": true }, {"ignoreStrings": true}],
+      "max-len": ["error", 121, { "ignoreUrls": true }, {"ignoreStrings": true}],
     },
   };
