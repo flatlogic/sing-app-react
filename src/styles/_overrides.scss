@@ -17,13 +17,13 @@
     .nav-link {
       display: flex;
       align-items: center;
-      color: $navbar-dashboard-link-color;
+      color: $navbar-link-color;
       height: 100%;
       position: relative;
 
       @include hover {
-        color: $navbar-dashboard-link-hover-color;
-        background: $navbar-dashboard-link-hover-bg;
+        color: $navbar-link-hover-color;
+        background: $navbar-link-hover-bg;
       }
 
       .fa-times {
@@ -297,8 +297,8 @@ small {
 .nav-item.dropdown {
   &.show {
     .nav-link.active {
-      background: $navbar-dashboard-link-active-bg;
-      color: $navbar-dashboard-link-active-color;
+      background: $navbar-link-active-bg;
+      color: $navbar-link-active-color;
     }
   }
 }

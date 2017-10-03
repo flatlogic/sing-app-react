@@ -48,7 +48,7 @@ class Icons extends React.Component {
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              <span className="mr-xs">FA 4.6.3</span>
+              <span className="mr-xs">FA 4.7.0</span>
               <Badge color="danger">new</Badge>
             </NavLink>
           </NavItem>

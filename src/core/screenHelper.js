@@ -1,7 +1,7 @@
 const config = {
   name: 'sing',
-  title: 'Sing Dashboard App with Angular 2.0 support by Flatlogic',
-  version: '3.2.0',
+  title: 'Sing Dashboard App built with React JS by Flatlogic',
+  version: '3.8.0',
   settings: {
     screens: {
       'xs-max': 543,

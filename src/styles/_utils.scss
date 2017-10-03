@@ -199,10 +199,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-info', theme-color('info'));
 @include bg-variant('.bg-warning', theme-color('warning'));
 @include bg-variant('.bg-danger', theme-color('danger'));
-@include bg-variant('.bg-primary-light', $brand-primary-light);
-@include bg-variant('.bg-success-light', $brand-success-light);
-@include bg-variant('.bg-info-light', $brand-info-light);
-@include bg-variant('.bg-danger-light', $brand-danger-light);
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
 @include bg-variant('.bg-gray', $gray-700);
@@ -401,7 +397,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
   .form-control:focus + .input-group-addon,
   &.focus .input-group-addon {
-    border-color: $input-border-focus;
+    border-color: $input-focus-border-color;
   }
 }
 

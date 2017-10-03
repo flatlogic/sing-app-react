@@ -98,6 +98,7 @@ class Components extends React.Component {
     this.setState({ alerts: this.state.alerts });
   }
 
+  /* eslint-disable react/no-danger */
   render() {
     return (
       <div className={s.root}>

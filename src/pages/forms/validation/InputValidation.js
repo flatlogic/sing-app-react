@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
 
+// todo @franckeeva why create class?
 const InputValidation = React.createClass({ // eslint-disable-line
   propTypes: {
     trigger: PropTypes.string,
