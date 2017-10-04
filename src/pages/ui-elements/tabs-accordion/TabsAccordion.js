@@ -181,7 +181,7 @@ class TabsAccordion extends React.Component {
             </div>
             {/* tab content */}
 
-            <TabContent activeTab={this.state.activeFirstTab}>
+            <TabContent className='mb-lg' activeTab={this.state.activeFirstTab}>
               <TabPane tabId="tab11">
                 <h3>Tabs-enabled widget</h3>
                 <p>You will never know exactly how something will go until you try it.</p>
@@ -201,6 +201,7 @@ class TabsAccordion extends React.Component {
                   <Button color="inverse" className="mr-xs">Cancel</Button>
                   <Button color="primary">Some button</Button>
                 </div>
+                <div className="clearfix"/>
               </TabPane>
 
               <TabPane tabId="tab12">
@@ -267,7 +268,7 @@ class TabsAccordion extends React.Component {
                   </NavItem>
                 </Nav>
 
-                <TabContent activeTab={this.state.activeSecondTab}>
+                <TabContent className='mb-lg' activeTab={this.state.activeSecondTab}>
                   <TabPane tabId="tab21">
                     <p>
                       I had an idea named Great Work. It was a service aimed to help people find
@@ -339,7 +340,7 @@ class TabsAccordion extends React.Component {
                   </NavItem>
                 </Nav>
 
-                <TabContent activeTab={this.state.activeThirdTab}>
+                <TabContent className='mb-lg' activeTab={this.state.activeThirdTab}>
                   <TabPane tabId="tab31">
                     <p>
                       I had an idea named Great Work. It was a service aimed to help people find
@@ -386,7 +387,7 @@ class TabsAccordion extends React.Component {
 
         {/* Accordion */}
         <Row className="mt-xs">
-          <Col md="6" xs="12">
+          <Col md="6" xs="12" className='mb-lg'>
 
             {this.state.accordionFirstContent.map((element, index) => (
               <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
@@ -409,7 +410,7 @@ class TabsAccordion extends React.Component {
               </div>))}
           </Col>
 
-          <Col md="6" xs="12">
+          <Col md="6" xs="12" className='mb-lg'>
             {this.state.accordionSecondContent.map((element, index) => (<div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
               { /* eslint-disable */ }
               <div

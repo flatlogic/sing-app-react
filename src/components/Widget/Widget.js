@@ -39,29 +39,30 @@ class Widget extends React.Component {
               : <header className={s.title}>{this.props.title}</header>
           )
         }
+        {/* eslint-disable */}
         <div className={s.widgetControls}>
           {this.props.settings && (
-            <a><i className="glyphicon glyphicon-cog" /></a>
+            <a href="#"><i className="glyphicon glyphicon-cog" /></a>
           )}
           {this.props.settingsInverse && (
-            <a className={`bg-gray-transparent ${s.inverse}`}><i className="glyphicon glyphicon-cog text-white" /></a>
+            <a href="#" className={`bg-gray-transparent ${s.inverse}`}><i className="glyphicon glyphicon-cog text-white" /></a>
           )}
           {this.props.refresh && (
-            <a><i className="fa fa-refresh" /></a>
+            <a href="#"><i className="fa fa-refresh" /></a>
           )}
           {this.props.collapse && (
             <span>
-              <a data-widgster="collapse" title="Collapse"><i
+              <a href="#" data-widgster="collapse" title="Collapse"><i
                 className="glyphicon glyphicon-chevron-down"
               /></a>
             </span>
           )}
 
           {this.props.close && (
-            <a data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
-
+            <a href="#" data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
           )}
         </div>
+        {/* eslint-enable*/}
         <div className={s.widgetBody}>
           {this.props.children}
         </div>

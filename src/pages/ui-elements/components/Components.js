@@ -139,7 +139,7 @@ class Components extends React.Component {
 
         <Row>
           {/* Label & Badge*/}
-          <Col md={6} xs={12}>
+          <Col lg={6} md={12}>
             <Widget
               title={<h6>
                 Labels & Badge <span className="fw-semi-bold">Options</span>
@@ -183,7 +183,7 @@ class Components extends React.Component {
           </Col>
 
           {/* Tooltip, Popover, Modal*/}
-          <Col md={6} xs={12}>
+          <Col lg={6} md={12}>
             <Widget
               title={<h6>
                 Tooltips & Popover <span className="fw-semi-bold">Variations</span>

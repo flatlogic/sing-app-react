@@ -233,7 +233,7 @@ small {
 }
 
 .btn-default {
-  border-color: $gray-300;
+  border-color: $gray-400;
   color: $gray-800;
 }
 
@@ -334,7 +334,6 @@ small {
   color: $gray-600;
   margin-bottom: 1.5rem;
   margin-top: 0;
-  font-size: $font-size-sm;
 
   > .active {
     font-weight: $font-weight-semi-bold;
@@ -445,7 +444,7 @@ h6,
   }
 
   border-bottom: none;
-  background-color: $gray-300;
+  background-color: $gray-400;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 

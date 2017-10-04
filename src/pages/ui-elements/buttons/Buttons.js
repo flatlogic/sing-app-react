@@ -108,7 +108,7 @@ class Buttons extends React.Component {
 
         <Row>
           {/* Color options*/}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Color <span className="fw-semi-bold">Options</span>
               </h5>} close collapse
@@ -133,7 +133,7 @@ class Buttons extends React.Component {
           </Col>
 
           {/* Size variants*/}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Size <span className="fw-semi-bold">Variants</span>
               </h5>} close collapse
@@ -165,7 +165,7 @@ class Buttons extends React.Component {
           </Col>
 
           {/* Block Buttons*/}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Block <span className="fw-semi-bold">Buttons</span>
               </h5>} close collapse
@@ -189,7 +189,7 @@ class Buttons extends React.Component {
           </Col>
 
           {/* Disabled Buttons*/}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Disabled <span className="fw-semi-bold">Buttons</span>
               </h5>} close collapse
@@ -212,7 +212,7 @@ class Buttons extends React.Component {
           </Col>
 
           {/* Buttons Groups*/}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Button <span className="fw-semi-bold">Groups</span>
               </h5>} close collapse
@@ -253,7 +253,7 @@ class Buttons extends React.Component {
 
           {/* Button Dropdowns*/}
           {/* todo: check after reactstrap update */}
-          <Col md={4} sm={6} xs={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Button <span className="fw-semi-bold">Dropdowns</span>
               </h5>} close collapse
@@ -382,7 +382,7 @@ class Buttons extends React.Component {
                 </Col>
 
                 {/* Radios*/}
-                <Col md={4} sm={6} xs={12}>
+                <Col lg={4} md={6} sm={12} xs={12}>
                   <h4> Button <span className="fw-semi-bold">Radios</span></h4>
                   <p className="fs-mini text-muted">
                     Do more with buttons. Control button states
@@ -425,7 +425,7 @@ class Buttons extends React.Component {
                 </Col>
 
                 {/* Buttons with Icons*/}
-                <Col md={4} sm={6} xs={12}>
+                <Col lg={4} md={6} sm={12} xs={12}>
                   <h4> Use with <span className="fw-semi-bold">Icons</span></h4>
                   <p className="fs-mini text-muted">
                     Fontawesome and Glyph- icons may be used in buttons,

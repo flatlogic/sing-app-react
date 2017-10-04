@@ -12,7 +12,7 @@ $fa-font-path: '../fonts/font-awesome' !default;
 /*
  * Typography
  * ======================================================================== */
-$font-size-initial:       13px; // reset default browser value from 16px to 13px
+$font-size-initial:       14px; // reset default browser value from 16px to 13px
 $font-size-base:          1rem !default;
 $font-size-lg:            1.25rem !default;
 $font-size-sm:            0.875rem !default;
@@ -28,8 +28,8 @@ $font-family-base: 'Open Sans', sans-serif;
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #dfdfdf !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-300: #eee !default;
+$gray-400: #ddd !default;
 $gray-500: #adb5bd !default;
 $gray-600: #868e96 !default;
 $gray-700: #555 !default;
@@ -151,3 +151,6 @@ $badge-font-weight: 700;
 $badge-font-size: 0.875em;
 $badge-padding-y: 0.4em;
 $badge-padding-x: 0.4em;
+
+// Breadcrumbs
+$breadcrumb-active-color: $gray-700;

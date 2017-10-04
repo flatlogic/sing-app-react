@@ -224,7 +224,7 @@ class Elements extends React.Component {
 
         <Row>
           {/* Horizontal form */}
-          <Col lg={6}>
+          <Col lg={6} md={12}>
             <Widget title={<h6> Inputs </h6>} settings refresh close>
               <FormGroup>
                 <Form>
@@ -354,7 +354,7 @@ class Elements extends React.Component {
           </Col>
 
           {/* Default form*/}
-          <Col lg={6}>
+          <Col lg={6} md={12}>
             <Widget title={<h6> Prepended and appended inputs </h6>} settings refresh close>
               <FormGroup>
                 <Form>
@@ -500,7 +500,7 @@ class Elements extends React.Component {
 
         <Row>
           {/* Control sizing */}
-          <Col lg={8}>
+          <Col lg={8} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
               settingsInverse refresh close
@@ -528,7 +528,7 @@ class Elements extends React.Component {
           </Col>
 
           {/* Input Groups*/}
-          <Col lg={4}>
+          <Col lg={4} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
               settingsInverse refresh close
@@ -572,7 +572,7 @@ class Elements extends React.Component {
 
         <Row>
           {/* textares */}
-          <Col lg="6">
+          <Col lg="6" md={12}>
             <Widget title={<h6><i className="fa fa-font" />Textareas</h6>} settings refresh close>
               <Form>
                 <legend>Small form</legend>
@@ -643,7 +643,7 @@ class Elements extends React.Component {
           </Col>
 
           {/* selects*/}
-          <Col lg="6">
+          <Col lg="6" md={12}>
             <Widget
               title={<h6><i className="fa fa-list-alt" /> Selects </h6>} refresh close
               settings
@@ -804,7 +804,7 @@ class Elements extends React.Component {
 
         {/* checkbox */}
         <Row>
-          <Col sm="12">
+          <Col md="12">
             <Widget
               title={<h6> Checkbox <strong>Controls</strong></h6>} settingsInverse refresh
               close
@@ -1019,7 +1019,7 @@ class Elements extends React.Component {
 
         <Row>
           {/* pickers */}
-          <Col lg="6" xs="12">
+          <Col lg="6" md="12">
             <Widget title={<h6>Pickers</h6>} close refresh settingsInverse>
               <Form>
                 <legend>Date & Time</legend>
@@ -1083,7 +1083,7 @@ class Elements extends React.Component {
           </Col>
 
           {/* input masks*/}
-          <Col lg="6" xs="12">
+          <Col lg="6" md="12">
             <Widget title={<h6> Input <strong>Masks</strong></h6>} close settingsInverse refresh>
               <Form className="form-label-left">
                 <legend>Masked inputs</legend>
@@ -1273,7 +1273,7 @@ class Elements extends React.Component {
 
         <Row>
           {/* Simple file uploads*/}
-          <Col lg="6">
+          <Col lg="6" md={12}>
             <Widget
               title={<h6>Simple <strong>file uploads</strong></h6>} settingsInverse close
               refresh
@@ -1358,7 +1358,7 @@ class Elements extends React.Component {
           </Col>
 
           {/*  Drop zone */}
-          <Col lg="6">
+          <Col lg="6" md={12}>
             <Widget title={<h6><strong>Drop</strong> Zone</h6>} settingsInverse refresh close>
               <div>
                 <Dropzone
