@@ -162,7 +162,7 @@ class Chat extends React.Component {
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
-                  key={item.id}
+                  key={item.name}
                   onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
@@ -183,7 +183,7 @@ class Chat extends React.Component {
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
-                  key={item.id}
+                  key={item.name}
                   onClick={() => this.openMessages(item)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />

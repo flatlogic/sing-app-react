@@ -341,7 +341,7 @@ class Elements extends React.Component {
                     </Col>
                   </FormGroup>
 
-                  <FormGroup row className={s.submitBlock}>
+                  <FormGroup row className="form-action">
                     <Label md={4} />
                     <Col md={7}>
                       <Button color="primary" type="submit" className="mr-xs">Save Changes</Button>
@@ -486,7 +486,7 @@ class Elements extends React.Component {
                     </Col>
                   </Row>
 
-                  <FormGroup className={s.submitBlock}>
+                  <FormGroup className="form-action">
                     <Button color="inverse" type="submit" className="mr-xs">
                       Save Changes
                     </Button>

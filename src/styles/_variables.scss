@@ -99,8 +99,6 @@ $breadcrumb-divider: '>';
 $breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
-$badge-font-weight: 600;
-
 $widget-bg: #fff;
 $widget-title-color: #444;
 
@@ -147,3 +145,9 @@ $input-focus-border-color: #4d90fe !default; //webkit focus color
 $popover-bg: #ebeff1 !default;
 $popover-arrow-outer-color: $popover-bg !default;
 $popover-arrow-color: $popover-bg !default;
+
+// Badge
+$badge-font-weight: 700;
+$badge-font-size: 0.875em;
+$badge-padding-y: 0.4em;
+$badge-padding-x: 0.4em;

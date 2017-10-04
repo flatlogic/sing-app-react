@@ -90,8 +90,7 @@ const config = {
         ],
       },
       {
-        // Use [name]Global.scss file to include non isomorphic style
-        test: /theme.scss$|Global.scss$/,
+        test: /theme.scss$/,
         loaders: [
           'isomorphic-style-loader',
           `css-loader?${isDebug ? 'sourceMap&' : 'minimize&'}modules&localIdentName=[local]&importLoaders=2`,
@@ -100,7 +99,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        exclude: [/theme.scss$|Global.scss$/],
+        exclude: [/theme.scss$/],
         use: [
           'isomorphic-style-loader',
           `css-loader?${isDebug ? 'sourceMap&' : 'minimize&'}modules&localIdentName=

@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
-    activeItem: PropTypes.string.isRequired,
+    activeItem: PropTypes.string,
     location: PropTypes.shape({
       pathname: PropTypes.string,
     }).isRequired,
@@ -25,6 +25,7 @@ class Sidebar extends React.Component {
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
+    activeItem: '',
   };
 
   constructor(props) {

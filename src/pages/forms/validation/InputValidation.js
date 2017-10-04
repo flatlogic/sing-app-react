@@ -2,35 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
 
-// todo @franckeeva why create class?
-const InputValidation = React.createClass({ // eslint-disable-line
-  propTypes: {
+Formsy.addValidationRule('isRange', (values, value, array) => (value >= array[0] && value <= array[1]));
+
+class InputValidation extends React.Component {
+  /* eslint-disable */
+  static propTypes = {
     trigger: PropTypes.string,
     type: PropTypes.string,
     className: PropTypes.string,
     name: PropTypes.string,
     id: PropTypes.string,
-  },
+    placeholder: PropTypes.string,
+    setValue: PropTypes.func,
+    isFormSubmitted: PropTypes.func,
+    getErrorMessage: PropTypes.func,
+    showRequired: PropTypes.func,
+  };
+  /* eslint-enable */
 
-  mixins: [Formsy.Mixin],
+  static defaultProps = {
+    trigger: null,
+    type: 'text',
+    className: '',
+    name: '',
+    id: '',
+    placeholder: '',
+  };
 
-  getDefaultProps() {
-    return {
-      trigger: null,
-      type: 'text',
-      className: '',
-      name: '',
-      id: '',
-    };
-  },
+  constructor() {
+    super();
+    this.changeValue = this.changeValue.bind(this);
+  }
 
   changeValue(event) {
-    this.setValue(event.currentTarget.value);
-  },
+    this.props.setValue(event.currentTarget.value);
+  }
 
   render() {
-    const errorMessageObj = (this.isFormSubmitted() || this.props.trigger) ? this.getErrorMessage() : null;
-    const required = (this.isFormSubmitted() && this.showRequired()) ?
+    const errorMessageObj = (this.props.isFormSubmitted() || this.props.trigger) ? this.props.getErrorMessage() : null;
+    const required = (this.props.isFormSubmitted() && this.props.showRequired()) ?
       <span className={'help-block text-danger'}>This value is required.</span> : null;
     const errorMsg = [];
     if (errorMessageObj) {
@@ -45,19 +55,18 @@ const InputValidation = React.createClass({ // eslint-disable-line
     return (
       <div className={this.props.className}>
         <input
-          type={this.props.type || 'text'}
+          type={this.props.type}
           name={this.props.name}
           id={this.props.id}
           className={'form-control'}
           onBlur={this.changeValue}
+          placeholder={this.props.placeholder}
         />
         {required}
         {errorList}
       </div>
     );
-  },
-});
+  }
+}
 
-Formsy.addValidationRule('isRange', (values, value, array) => (value >= array[0] && value <= array[1]));
-
-export default InputValidation;
+export default Formsy.HOC(InputValidation);

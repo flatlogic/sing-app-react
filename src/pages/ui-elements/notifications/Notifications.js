@@ -3,21 +3,17 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Row, Col, Button,
 } from 'reactstrap';
+/* eslint-disable */
+import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger';
+/* eslint-enable */
 
 import Widget from '../../../components/Widget';
 import s from './Notifications.scss';
 
- /* eslint-disable */
-//todo @franckeeva fix eslint
-import messengerStyle from './MessengerGlobal.scss';
-import 'imports-loader?$=jquery,this=>window!messenger/build/js/messenger';
-
-//todo @franckeeva what about server side rendering? this will fail unless launched as lazy route
+// todo @franckeeva what about server side rendering? this will fail unless launched as lazy route
 const Messenger = window.Messenger;
 
-//todo @franckeeva why insert separately?
-messengerStyle._insertCss();
-
+/* eslint-disable */
 function initializationMessengerCode() {
   (function () {
     let $,
@@ -65,7 +61,7 @@ function initializationMessengerCode() {
     };
   }).call(window);
 }
-{ /* eslint-enable */ }
+/* eslint-enable */
 
 class Notifications extends React.Component {
   constructor() {

@@ -18,7 +18,7 @@ class Validation extends React.Component {
 
   render() {
     return (
-      <div className={s.root}>
+      <div>
         <ol className="breadcrumb">
           <li className="breadcrumb-item">YOU ARE HERE</li>
           <li className="breadcrumb-item active">Form Validation</li>
@@ -174,7 +174,7 @@ class Validation extends React.Component {
                   </FormGroup>
                 </fieldset>
 
-                <div className={s.submitBlock}>
+                <div className="form-action">
                   <Button type="submit" color="danger" className="btn-rounded float-right">Validate & submit</Button>
                   <Button type="button" color="default" className="btn-rounded">Cancel</Button>
                 </div>
