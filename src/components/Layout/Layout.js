@@ -9,15 +9,15 @@ import Hammer from 'rc-hammerjs';
 
 // an example of react-router code-splitting
 /* eslint-disable */
-import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
-import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons/Buttons';
-import loadUIComponent from 'bundle-loader?lazy!../../pages/ui-elements/components/Components';
-import loadUIIcons from 'bundle-loader?lazy!../../pages/ui-elements/icons/Icons';
-import loadUITabsAccordion from 'bundle-loader?lazy!../../pages/ui-elements/tabs-accordion/TabsAccordion';
-import loadUINotifications from 'bundle-loader?lazy!../../pages/ui-elements/notifications/Notifications';
-import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-groups/ListGroups';
-import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements/Elements';
-import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation/Validation';
+import loadProfile from 'bundle-loader?lazy!../../pages/profile';
+import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons';
+import loadUIComponent from 'bundle-loader?lazy!../../pages/ui-elements/components';
+import loadUIIcons from 'bundle-loader?lazy!../../pages/ui-elements/icons';
+import loadUITabsAccordion from 'bundle-loader?lazy!../../pages/ui-elements/tabs-accordion/';
+import loadUINotifications from 'bundle-loader?lazy!../../pages/ui-elements/notifications';
+import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-groups';
+import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements';
+import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -28,7 +28,7 @@ import Chat from '../Chat';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
-import Dashboard from '../../pages/dashboard/Dashboard';
+import Dashboard from '../../pages/dashboard';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 const UIButtonsBundle = Bundle.generateBundle(loadUIButtons);

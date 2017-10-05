@@ -22,7 +22,7 @@ import {
 import s from './Components.scss';
 
 import Widget from '../../../components/Widget';
-import TooltipItem from '../../../components/TooltipItem/TooltipItem';
+import TooltipItem from '../../../components/TooltipItem';
 
 class Components extends React.Component {
   constructor(props) {
