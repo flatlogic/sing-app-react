@@ -9,7 +9,7 @@ import Hammer from 'rc-hammerjs';
 
 // an example of react-router code-splitting
 /* eslint-disable */
-import loadProfile from 'bundle-loader?lazy!../../pages/profile/Profile';
+import loadProfile from 'bundle-loader?lazy!../../pages/profile';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -20,7 +20,7 @@ import Chat from '../Chat';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
-import Dashboard from '../../pages/dashboard/Dashboard';
+import Dashboard from '../../pages/dashboard';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 

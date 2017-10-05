@@ -6,11 +6,11 @@ import { connect, Provider as ReduxProvider } from 'react-redux';
 import Bundle from '../core/Bundle';
 
 /* eslint-disable */
-import loadErrorPage from 'bundle-loader?lazy!../pages/error/ErrorPage';
+import loadErrorPage from 'bundle-loader?lazy!../pages/error';
 /* eslint-enable */
 
-import LayoutComponent from '../components/Layout/Layout';
-import LoginComponent from '../pages/login/Login';
+import LayoutComponent from '../components/Layout';
+import LoginComponent from '../pages/login';
 
 
 const ErrorPageBundle = Bundle.generateBundle(loadErrorPage);

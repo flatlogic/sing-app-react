@@ -22,7 +22,7 @@ import {
 } from 'reactstrap';
 import $ from 'jquery';
 
-import Notifications from '../Notifications/Notifications';
+import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
