@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import Formsy from 'formsy-react';
 
-import InputValidation from './InputValidation';
+import InputValidation from '../../../components/InputValidation';
 import Widget from '../../../components/Widget';
 import s from './Validation.scss';
 

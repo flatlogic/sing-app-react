@@ -1,0 +1,6 @@
+{
+  "name": "InputValidation",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./InputValidation.js"
+}
