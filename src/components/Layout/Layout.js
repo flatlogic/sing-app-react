@@ -18,6 +18,7 @@ import loadUINotifications from 'bundle-loader?lazy!../../pages/ui-elements/noti
 import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-groups';
 import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements';
 import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation';
+import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -39,6 +40,7 @@ const UINotificationsBundle = Bundle.generateBundle(loadUINotifications);
 const UIListGroupsBundle = Bundle.generateBundle(loadUIListGroups);
 const FormsElementsBundle = Bundle.generateBundle(loadFormsElements);
 const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
+const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -128,6 +130,7 @@ class Layout extends React.Component {
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
+                <Route path="/app/tables/static" exact component={TablesStaticBundle} />
               </Switch>
             </main>
           </Hammer>

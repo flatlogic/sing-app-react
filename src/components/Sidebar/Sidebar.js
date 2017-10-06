@@ -109,6 +109,18 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+          <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/tables'))}
+            isActive={this.props.activeItem === '/app/tables'}
+            header="Tables"
+            iconName="fa-table"
+            headerLink="/app/tables"
+            childrenLinks={[
+              {
+                name: 'Tables Basic', link: '/app/tables/static',
+              },
+            ]}
+          />
         </ul>
         <h5 className={s.navTitle}>
           LABELS
