@@ -7230,6 +7230,10 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.1"
 
+widgster@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/widgster/-/widgster-1.0.0.tgz#75aceb4e67cf46dfc4fd7e56c639922354ffcd72"
+
 window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"

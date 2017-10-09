@@ -25,6 +25,7 @@ class Sidebar extends React.Component {
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
+    activeItem: '',
   };
 
   constructor(props) {
@@ -77,19 +78,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2" />
+              <i className="fa fa-circle text-warning mr-2"/>
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2" />
-                <span className={s.labelName}>Starred</span>
+              <i className="fa fa-circle text-gray mr-2"/>
+              <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2" />
+              <i className="fa fa-circle text-danger mr-2"/>
               <span className={s.labelName}>Background</span>
             </a>
           </li>
