@@ -121,6 +121,18 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+          <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/maps'))}
+            isActive={this.props.activeItem === '/app/maps'}
+            header="Maps"
+            iconName="fa-map"
+            headerLink="/app/maps"
+            childrenLinks={[
+              {
+                name: 'Google Maps', link: '/app/maps/google',
+              },
+            ]}
+          />
         </ul>
         <h5 className={s.navTitle}>
           LABELS

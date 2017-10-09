@@ -59,6 +59,7 @@
     "react-dom": "15.5.4",
     "react-draft-wysiwyg": "1.10.8",
     "react-dropzone": "4.1.1",
+    "react-google-maps": "8.3.5",
     "react-markdown": "2.5.0",
     "react-maskedinput": "4.0.0",
     "react-redux": "5.0.4",

@@ -1,5 +1,9 @@
 @import '../../styles/app';
 
+.root {
+  z-index: 100;
+}
+
 .navbarForm {
   padding: 6px 0 6px 1rem;
   margin-left: 10px;

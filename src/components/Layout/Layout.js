@@ -19,6 +19,7 @@ import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-gr
 import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements';
 import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation';
 import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
+import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -41,6 +42,7 @@ const UIListGroupsBundle = Bundle.generateBundle(loadUIListGroups);
 const FormsElementsBundle = Bundle.generateBundle(loadFormsElements);
 const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
 const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
+const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -131,6 +133,7 @@ class Layout extends React.Component {
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
+                <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
               </Switch>
             </main>
           </Hammer>
