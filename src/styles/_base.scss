@@ -71,3 +71,9 @@
 .table-bordered th {
   background-color: $gray-300;
 }
+
+table > thead > tr > th {
+  border-top: none !important;
+  border-bottom-width: 1px !important;
+  text-transform: uppercase;
+}

@@ -21,6 +21,7 @@ import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation
 import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
 import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
 import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
+import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -45,6 +46,7 @@ const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
 const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
 const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
 const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
+const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -137,6 +139,7 @@ class Layout extends React.Component {
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
                 <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
+                <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
               </Switch>
             </main>
           </Hammer>

@@ -117,7 +117,7 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar color={'white'} className={s.root}>
+      <Navbar color={'white'} className={`${s.root} d-print-none`}>
         <Nav className="ml-3">
           <NavItem>
             <NavLink className="d-md-down-none" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>

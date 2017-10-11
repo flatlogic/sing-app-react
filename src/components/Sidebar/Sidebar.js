@@ -143,6 +143,9 @@ class Sidebar extends React.Component {
               {
                 name: 'Calendar', link: '/app/extra/calendar',
               },
+              {
+                name: 'Invoice', link: '/app/extra/invoice',
+              },
             ]}
           />
         </ul>
