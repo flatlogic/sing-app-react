@@ -133,6 +133,18 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+          <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/extra'))}
+            isActive={this.props.activeItem === '/app/extra'}
+            header="Extra"
+            iconName="fa-leaf"
+            headerLink="/app/extra"
+            childrenLinks={[
+              {
+                name: 'Calendar', link: '/app/extra/calendar',
+              },
+            ]}
+          />
         </ul>
         <h5 className={s.navTitle}>
           LABELS
