@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import jQuery from 'jquery';
+import 'imports-loader?window.jQuery=jquery,this=>window!widgster'; // eslint-disable-line
 import s from './Widget.scss'; // eslint-disable-line css-modules/no-unused-class
 
 class Widget extends React.Component {
@@ -12,6 +14,7 @@ class Widget extends React.Component {
       PropTypes.node,
     ]),
     close: PropTypes.bool,
+    fullscreen: PropTypes.bool,
     collapse: PropTypes.bool,
     refresh: PropTypes.bool,
     settings: PropTypes.bool,
@@ -22,16 +25,21 @@ class Widget extends React.Component {
     title: null,
     className: '',
     children: [],
-    close: false,
+    close: true,
+    fullscreen: false,
     collapse: false,
     refresh: false,
     settings: false,
     settingsInverse: false,
   };
 
+  componentDidMount() {
+    jQuery(this.el).widgster();
+  }
+
   render() {
     return (
-      <section className={[s.widget, this.props.className].join(' ')}>
+      <section className={[s.widget, this.props.className].join(' ')} ref={(widget) => { this.el = widget; }} >
         {
           this.props.title && (
             typeof this.props.title === 'string'
@@ -41,14 +49,24 @@ class Widget extends React.Component {
         }
         <div className={s.widgetControls}>
           {this.props.settings && (
-            <a><i className="glyphicon glyphicon-cog" /></a>
+            <a href="#"><i className="glyphicon glyphicon-cog" /></a>
           )}
           {this.props.settingsInverse && (
-            <a className={`bg-gray-transparent ${s.inverse}`}><i className="glyphicon glyphicon-cog text-white" /></a>
+            <a href="#" className={`bg-gray-transparent ${s.inverse}`}><i className="glyphicon glyphicon-cog text-white" /></a>
           )}
           {this.props.refresh && (
-            <a><i className="fa fa-refresh" /></a>
+            <a href="#"><i className="fa fa-refresh" /></a>
           )}
+          {this.props.fullscreen && (
+          <a href="#" data-widgster="fullscreen" title="Fullscreen"><i
+            className="glyphicon glyphicon-resize-full"
+          /></a>
+          )}
+          {this.props.fullscreen && (
+          <a href="#" data-widgster="restore" title="Restore"><i
+            className="glyphicon glyphicon-resize-small"
+          /></a>
+            )}
           {this.props.collapse && (
             <span>
               <a data-widgster="collapse" title="Collapse"><i
