@@ -46,3 +46,28 @@
 .btn-toolbar .btn {
   margin-left: 0.5rem;
 }
+
+/* Forms */
+.form-action {
+  background-color: #f5f5f5;
+  margin: $spacer 0 0;
+  padding: $spacer/2 $spacer;
+}
+
+.widget-table-overflow {
+  margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+
+  th:first-child,
+  td:first-child {
+    padding-left: $widget-padding-horizontal;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: $widget-padding-horizontal;
+  }
+}
+
+.table-bordered th {
+  background-color: $gray-300;
+}

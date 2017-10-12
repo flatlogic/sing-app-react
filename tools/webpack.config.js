@@ -188,6 +188,13 @@ const clientConfig = {
       prettyPrint: true,
     }),
 
+    // Include jquery plugin
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
+    }),
+
     // Move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk).
     // http://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
     new webpack.optimize.CommonsChunkPlugin({
