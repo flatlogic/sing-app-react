@@ -64,5 +64,8 @@ module.exports = {
       // maximum line length
       // ignore urls and strings
       "max-len": ["error", 121, { "ignoreUrls": true }, {"ignoreStrings": true}],
+
+      // allow href="#"
+      'jsx-a11y/href-no-hash': 'off'
     },
   };
