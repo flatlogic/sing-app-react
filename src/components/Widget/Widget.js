@@ -34,12 +34,14 @@ class Widget extends React.Component {
   };
 
   componentDidMount() {
-    jQuery(this.el).widgster();
+    jQuery(this.el).widgster({
+      bodySelector: '.widget-body',
+    });
   }
 
   render() {
     return (
-      <section className={[s.widget, this.props.className].join(' ')} ref={(widget) => { this.el = widget; }} >
+      <section className={[s.widget, 'widget', this.props.className].join(' ')} ref={(widget) => { this.el = widget; }} >
         {
           this.props.title && (
             typeof this.props.title === 'string'
@@ -47,7 +49,6 @@ class Widget extends React.Component {
               : <header className={s.title}>{this.props.title}</header>
           )
         }
-        {/* eslint-disable */}
         <div className={s.widgetControls}>
           {this.props.settings && (
             <a href="#"><i className="glyphicon glyphicon-cog" /></a>
@@ -59,14 +60,14 @@ class Widget extends React.Component {
             <a href="#"><i className="fa fa-refresh" /></a>
           )}
           {this.props.fullscreen && (
-              <a href="#" data-widgster="fullscreen" title="Fullscreen"><i
-                className="glyphicon glyphicon-resize-full"
-              /></a>
+          <a href="#" data-widgster="fullscreen" title="Fullscreen"><i
+            className="glyphicon glyphicon-resize-full"
+          /></a>
           )}
           {this.props.fullscreen && (
-              <a href="#" data-widgster="restore" title="Restore"><i
-                className="glyphicon glyphicon-resize-small"
-              /></a>
+          <a href="#" data-widgster="restore" title="Restore"><i
+            className="glyphicon glyphicon-resize-small"
+          /></a>
             )}
           {this.props.collapse && (
             <span>
@@ -75,13 +76,19 @@ class Widget extends React.Component {
               /></a>
             </span>
           )}
+          {this.props.collapse && (
+            <span>
+              <a href="#" data-widgster="expand" title="Expand"><i
+                className="glyphicon glyphicon-chevron-up"
+              /></a>
+            </span>
+          )}
 
           {this.props.close && (
             <a href="#" data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
           )}
         </div>
-        {/* eslint-enable*/}
-        <div className={s.widgetBody}>
+        <div className={`${s.widgetBody} widget-body`}>
           {this.props.children}
         </div>
       </section>
