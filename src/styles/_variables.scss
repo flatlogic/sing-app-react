@@ -12,7 +12,7 @@ $fa-font-path: '../fonts/font-awesome' !default;
 /*
  * Typography
  * ======================================================================== */
-$font-size-initial:       13px; // reset default browser value from 16px to 13px
+$font-size-initial:       14px; // reset default browser value from 16px to 13px
 $font-size-base:          1rem !default;
 $font-size-lg:            1.25rem !default;
 $font-size-sm:            0.875rem !default;
@@ -28,10 +28,10 @@ $font-family-base: 'Open Sans', sans-serif;
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #dfdfdf !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-300: #eee !default;
+$gray-400: #ddd !default;
 $gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
+$gray-600: #777 !default;
 $gray-700: #555 !default;
 $gray-800: #343434 !default;
 $gray-900: #242424 !default;
@@ -99,8 +99,6 @@ $breadcrumb-divider: '>';
 $breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
-$badge-font-weight: 600;
-
 $widget-bg: #fff;
 $widget-title-color: #444;
 
@@ -147,3 +145,41 @@ $input-focus-border-color: #4d90fe !default; //webkit focus color
 $popover-bg: #ebeff1 !default;
 $popover-arrow-outer-color: $popover-bg !default;
 $popover-arrow-color: $popover-bg !default;
+
+// Badge
+$badge-font-weight: 700;
+$badge-font-size: 0.875em;
+$badge-padding-y: 0.4em;
+$badge-padding-x: 0.4em;
+
+// Breadcrumbs
+$breadcrumb-active-color: $gray-700;
+
+// Progress bars
+$progress-height: 0.65rem !default;
+
+// Buttons
+$input-btn-padding-y:       0.375rem !default;
+$input-btn-padding-x:       1rem !default;
+
+// Table
+$table-border-width: 1px;
+
+// Pagination
+$pagination-color:                     $gray-700 !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    transparent !default;
+
+$pagination-hover-color:               $gray-700 !default;
+$pagination-hover-bg:                  transparent !default;
+$pagination-hover-border:              transparent !default;
+$pagination-hover-border-color:        transparent !default;
+
+$pagination-active-color:              $gray-700 !default;
+$pagination-active-bg:                 transparent !default;
+$pagination-active-border:             transparent !default;
+$pagination-active-border-color:       transparent !default;
+
+$pagination-disabled-color:            $gray-700 !default;
+$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-border:           transparent !default;
