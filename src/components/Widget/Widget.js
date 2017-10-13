@@ -34,12 +34,14 @@ class Widget extends React.Component {
   };
 
   componentDidMount() {
-    jQuery(this.el).widgster();
+    jQuery(this.el).widgster({
+      bodySelector: '.widget-body',
+    });
   }
 
   render() {
     return (
-      <section className={[s.widget, this.props.className].join(' ')} ref={(widget) => { this.el = widget; }} >
+      <section className={[s.widget, 'widget', this.props.className].join(' ')} ref={(widget) => { this.el = widget; }} >
         {
           this.props.title && (
             typeof this.props.title === 'string'
@@ -69,18 +71,24 @@ class Widget extends React.Component {
             )}
           {this.props.collapse && (
             <span>
-              <a data-widgster="collapse" title="Collapse"><i
+              <a href="#" data-widgster="collapse" title="Collapse"><i
                 className="glyphicon glyphicon-chevron-down"
+              /></a>
+            </span>
+          )}
+          {this.props.collapse && (
+            <span>
+              <a href="#" data-widgster="expand" title="Expand"><i
+                className="glyphicon glyphicon-chevron-up"
               /></a>
             </span>
           )}
 
           {this.props.close && (
-            <a data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
-
+            <a href="#" data-widgster="close"><i className="glyphicon glyphicon-remove" /></a>
           )}
         </div>
-        <div className={s.widgetBody}>
+        <div className={`${s.widgetBody} widget-body`}>
           {this.props.children}
         </div>
       </section>
