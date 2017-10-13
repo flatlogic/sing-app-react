@@ -31,7 +31,7 @@ $gray-200: #dfdfdf !default;
 $gray-300: #eee !default;
 $gray-400: #ddd !default;
 $gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
+$gray-600: #777 !default;
 $gray-700: #555 !default;
 $gray-800: #343434 !default;
 $gray-900: #242424 !default;
@@ -164,3 +164,22 @@ $input-btn-padding-x:       1rem !default;
 
 // Table
 $table-border-width: 1px;
+
+// Pagination
+$pagination-color:                     $gray-700 !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    transparent !default;
+
+$pagination-hover-color:               $gray-700 !default;
+$pagination-hover-bg:                  transparent !default;
+$pagination-hover-border:              transparent !default;
+$pagination-hover-border-color:        transparent !default;
+
+$pagination-active-color:              $gray-700 !default;
+$pagination-active-bg:                 transparent !default;
+$pagination-active-border:             transparent !default;
+$pagination-active-border-color:       transparent !default;
+
+$pagination-disabled-color:            $gray-700 !default;
+$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-border:           transparent !default;

@@ -22,6 +22,7 @@ import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
 import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
 import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
+import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -47,6 +48,7 @@ const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
 const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
 const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
+const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -140,6 +142,7 @@ class Layout extends React.Component {
                 <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
+                <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
               </Switch>
             </main>
           </Hammer>

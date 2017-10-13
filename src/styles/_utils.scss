@@ -481,3 +481,16 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
     .d#{$infix}-down-inline-flex { display: inline-flex !important; }
   }
 }
+
+/* .h* + .fw-bold */
+$font-sizes: 54px, $h1-font-size, $h2-font-size, $h3-font-size, $h4-font-size, $h5-font-size, $h6-font-size;
+$i: 0;
+
+@each $font-size in $font-sizes {
+  .value#{$i} {
+    margin: 0;
+    font-size: $font-size;
+    font-weight: $font-weight-semi-bold;
+  }
+  $i: $i + 1 !global;
+}
