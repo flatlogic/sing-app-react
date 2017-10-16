@@ -7,6 +7,7 @@ import {
   Input,
   Button,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import s from './ErrorPage.scss';
 
@@ -27,9 +28,11 @@ class ErrorPage extends React.Component {
               <FormGroup>
                 <Input className="input-no-border" type="text" placeholder="Search Pages" />
               </FormGroup>
-              <Button className={s.errorBtn} type="submit" color="inverse">
-                Search <i className="fa fa-search text-warning ml-xs" />
-              </Button>
+              <Link to="app/extra/search">
+                <Button className={s.errorBtn} type="submit" color="inverse">
+                  Search <i className="fa fa-search text-warning ml-xs" />
+                </Button>
+              </Link>
             </Form>
           </div>
           <footer className={s.pageFooter}>

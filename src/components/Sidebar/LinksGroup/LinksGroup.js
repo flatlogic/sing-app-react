@@ -82,6 +82,7 @@ class LinksGroup extends Component {
                   this.props.childrenLinks.map(child =>
                     <li key={child.name}>
                       <NavLink
+                        onClick={() => (child.onClick ? child.onClick() : null)}
                         to={child.link}
                         exact
                         activeClassName={s.headerLinkActive}
