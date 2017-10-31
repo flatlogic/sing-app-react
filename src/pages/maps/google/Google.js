@@ -9,18 +9,18 @@ import {
 
 import s from './Google.scss';
 
+const BasicMap = withScriptjs(withGoogleMap(() =>
+  <GoogleMap
+    defaultZoom={12}
+    defaultCenter={{ lat: parseFloat(-37.813179), lng: parseFloat(144.950259) }}
+  >
+    <Marker position={{ lat: -37.813179, lng: 144.950259 }} />
+  </GoogleMap>,
+));
+
 class Maps extends React.Component {
 
   render() {
-    const BasicMap = withScriptjs(withGoogleMap(() =>
-      <GoogleMap
-        defaultZoom={12}
-        defaultCenter={{ lat: parseFloat(-37.813179), lng: parseFloat(144.950259) }}
-      >
-        <Marker position={{ lat: -37.813179, lng: 144.950259 }} />
-      </GoogleMap>,
-    ));
-
     return (
       <div>
         <h1 className={`${s.MapTitle} page-title`}>
