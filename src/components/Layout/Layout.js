@@ -23,6 +23,7 @@ import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
 import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
+import loadExtraTimeline from 'bundle-loader?lazy!../../pages/extra/timeline';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -49,6 +50,7 @@ const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
 const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
+const ExtraTimelineBundle = Bundle.generateBundle(loadExtraTimeline);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -143,6 +145,7 @@ class Layout extends React.Component {
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
+                <Route path="/app/extra/timeline" exact component={ExtraTimelineBundle} />
               </Switch>
             </main>
           </Hammer>

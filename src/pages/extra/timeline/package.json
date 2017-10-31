@@ -1,0 +1,6 @@
+{
+  "name": "timeline",
+  "version": "0.0.0",
+  "main": "./Timeline.js",
+  "private": true
+}

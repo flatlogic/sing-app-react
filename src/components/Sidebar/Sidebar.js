@@ -161,6 +161,9 @@ class Sidebar extends React.Component {
               {
                 name: 'Search Result', link: '/app/extra/search',
               },
+              {
+                name: 'Time line', link: '/app/extra/timeline',
+              },
             ]}
           />
         </ul>
