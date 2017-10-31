@@ -13,6 +13,9 @@ import {
   NavItem,
   NavLink,
   Collapse,
+  DropdownItem,
+  DropdownToggle,
+  UncontrolledNavDropdown,
 } from 'reactstrap';
 import classnames from 'classnames';
 
@@ -148,35 +151,25 @@ class TabsAccordion extends React.Component {
                     <span>Assumtion</span>
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <UncontrolledDropdown>
-
-                    <NavLink
-                      className={classnames({ active: this.state.activeFirstTab === 'tab13' || this.state.activeFirstTab === 'tab14' })}
-                    >
-                      <span
-                        data-toggle="dropdown"
-                      >Dropdown <b className="caret" /></span>
-                      { /* eslint-disable */ }
-                      <DropdownMenu>
-                        <div
-                          role="menuitem"
-                          className="dropdown-item display-block"
-                          onClick={() => { this.toggleFirstTabs('tab13'); }}
-                        >@fat
-                        </div>
-                        <div
-                          role="menuitem"
-                          className="dropdown-item display-block"
-                          onClick={() => { this.toggleFirstTabs('tab14'); }}
-                        >@mdo
-                        </div>
-                      </DropdownMenu>
-                      { /* eslint-enable */ }
-                    </NavLink>
-                  </UncontrolledDropdown>
-
-                </NavItem>
+                <UncontrolledNavDropdown>
+                  <DropdownToggle nav caret
+                                  className={classnames({
+                                    active: this.state.activeFirstTab === 'tab13' ||
+                                    this.state.activeFirstTab === 'tab14'
+                                  })}>
+                    Dropdown
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem onClick={() => {
+                      this.toggleFirstTabs('tab13');
+                    }}>@fat
+                    </DropdownItem>
+                    <DropdownItem onClick={() => {
+                      this.toggleFirstTabs('tab14');
+                    }}>@mdo
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledNavDropdown>
               </Nav>
             </div>
             {/* tab content */}
