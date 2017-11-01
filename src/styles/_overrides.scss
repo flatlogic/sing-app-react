@@ -268,10 +268,9 @@ small {
 }
 
 .btn-outline {
-  @include button-variant($white, transparent, $white);
+  @include button-variant(transparent, $white);
 
-  &:hover,
-  &:focus {
+  @include hover-focus() {
     background-color: rgba($white, 0.1);
   }
 }

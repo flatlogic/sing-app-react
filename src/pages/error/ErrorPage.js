@@ -15,7 +15,7 @@ class ErrorPage extends React.Component {
   render() {
     return (
       <div className={s.errorPage}>
-        <Container className="height-100">
+        <Container>
           <div className={`${s.errorContainer} mx-auto`}>
             <h1 className={s.errorCode}>404</h1>
             <p className={s.errorInfo}>

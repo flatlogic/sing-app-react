@@ -3,3 +3,154 @@
 .root {
   // some styles
 }
+
+.profileContactContainer {
+  margin-top: -75px;
+}
+
+.profileContacts {
+  @include list-unstyled();
+
+  display: inline-block;
+  text-align: left;
+
+  > li {
+    margin-bottom: $spacer / 2;
+  }
+
+  > li > a {
+    color: lighten($text-color, 30%);
+    text-decoration: none;
+
+    @include hover-focus {
+      color: $text-color;
+    }
+  }
+}
+
+.profileAvatar {
+  border: 3px solid $white;
+}
+
+.profileStat {
+  border-left: none !important;
+  padding-right: 0 !important;
+}
+
+.profileStatValue {
+  font-size: 28px;
+  font-weight: $font-weight-base !important;
+}
+
+.event {
+  background: $white;
+  border-radius: $border-radius;
+  padding: 20px 20px 0;
+  position: relative;
+  margin-bottom: $spacer;
+}
+
+.eventTitle {
+  margin-bottom: 2px;
+  font-weight: $font-weight-semi-bold;
+
+  a {
+    text-decoration: none;
+    color: #7ca9dd;
+  }
+
+  small > a {
+    color: $text-muted;
+  }
+}
+
+.eventAvatar,
+.commentAvatar {
+  float: left;
+  margin-right: $spacer;
+}
+
+.eventAvatar > img {
+  width: 34px;
+}
+
+.commentAvatar > img {
+  width: 28px;
+}
+
+.likeAvatar {
+  float: right;
+  margin-left: $spacer / 2;
+
+  img {
+    width: 34px;
+  }
+}
+
+.eventBody {
+  font-size: 0.9rem;
+  margin-bottom: $spacer;
+}
+
+.eventFooter {
+  background-color: #f3f3f3;
+  margin-left: -$widget-padding-horizontal;
+  margin-right: -$widget-padding-horizontal;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.eventTimestamp {
+  color: $text-muted;
+}
+
+.eventSocial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacer*0.7 $widget-padding-horizontal;
+}
+
+.recentLikes,
+.eventLinks {
+  margin-bottom: 0;
+  padding-left: 0;
+
+  > li {
+    display: inline-block;
+  }
+}
+
+.eventLinks {
+  font-size: $font-size-sm;
+
+  li + li {
+    &::before {
+      content: '\25cf';
+      padding: 0 $spacer/2;
+    }
+  }
+
+  > li > a {
+    text-decoration: none;
+    color: $text-muted;
+
+    &:hover {
+      color: $text-muted;
+    }
+  }
+}
+
+.postComments {
+  @include list-unstyled();
+
+  > li {
+    display: flex;
+    padding: $spacer;
+    border-top: 1px solid $gray-200;
+  }
+}
+
+.commentInput {
+  flex-grow: 1;
+}

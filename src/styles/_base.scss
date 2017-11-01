@@ -47,11 +47,46 @@
   margin-left: 0.5rem;
 }
 
-/* Forms */
+/* --------- Forms --------- */
 .form-action {
   background-color: #f5f5f5;
   margin: $spacer 0 0;
   padding: $spacer/2 $spacer;
+}
+
+.widget-top-overflow,
+.widget-middle-overflow {
+  position: relative;
+  margin: 0 (-$widget-padding-horizontal);
+
+  > img {
+    max-width: 100%;
+  }
+}
+
+.widget-top-overflow {
+  margin-top: 2 * (-$widget-padding-vertical);
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  overflow: hidden;
+
+  > img {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  > .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin-right: $widget-padding-horizontal;
+
+    @include media-breakpoint-up(md) {
+      top: auto;
+      bottom: 0;
+    }
+  }
 }
 
 .widget-table-overflow {
@@ -78,7 +113,7 @@ table > thead > tr > th {
   text-transform: uppercase;
 }
 
-// Pagination
+/* --------- Pagination --------- */
 .pagination {
   font-weight: $font-weight-normal;
 
@@ -95,5 +130,36 @@ table > thead > tr > th {
       text-decoration: none;
       border: none;
     }
+  }
+}
+
+/* --------- Stats Row --------- */
+.stats-row {
+  margin-bottom: 1.25rem;
+}
+
+.stat-item {
+  display: inline-block;
+  padding-right: 1.25rem;
+
+  & + .stat-item {
+    padding-left: 1.25rem;
+    border-left: 1px solid $hr-border-color;
+  }
+
+  .name {
+    margin-bottom: 0.25rem;
+    font-size: $font-size-sm;
+  }
+
+  .value {
+    font-weight: bold;
+  }
+
+  &.stat-item-mini-chart {
+    position: relative;
+    top: -1rem;
+    padding-left: 0;
+    border-left: none;
   }
 }

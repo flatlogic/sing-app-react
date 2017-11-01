@@ -25,7 +25,7 @@ class Widget extends React.Component {
     title: null,
     className: '',
     children: [],
-    close: true,
+    close: false,
     fullscreen: false,
     collapse: false,
     refresh: false,
