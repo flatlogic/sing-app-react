@@ -19,6 +19,7 @@ import loadUIListGroups from 'bundle-loader?lazy!../../pages/ui-elements/list-gr
 import loadFormsElements from 'bundle-loader?lazy!../../pages/forms/elements';
 import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation';
 import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
+import loadTablesDynamic from 'bundle-loader?lazy!../../pages/tables/dynamic';
 import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
 import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
@@ -47,6 +48,7 @@ const UIListGroupsBundle = Bundle.generateBundle(loadUIListGroups);
 const FormsElementsBundle = Bundle.generateBundle(loadFormsElements);
 const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
 const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
+const TablesDynamicBundle = Bundle.generateBundle(loadTablesDynamic);
 const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
 const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
@@ -144,6 +146,7 @@ class Layout extends React.Component {
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
+                <Route path="/app/tables/dynamic" exact component={TablesDynamicBundle} />
                 <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />

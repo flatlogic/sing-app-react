@@ -789,3 +789,18 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   -o-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
 }
+
+/* ----------- React Bootstrap Table ----------- */
+@include media-breakpoint-down(sm) {
+  .react-bs-table table {
+    table-layout: inherit;
+  }
+
+  .react-bs-table-pagination {
+    .col-xs-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+
