@@ -24,6 +24,7 @@ import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
 import loadExtraTimeline from 'bundle-loader?lazy!../../pages/extra/timeline';
+import loadCharts from 'bundle-loader?lazy!../../pages/charts';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -51,6 +52,7 @@ const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
 const ExtraTimelineBundle = Bundle.generateBundle(loadExtraTimeline);
+const ChartsBundle = Bundle.generateBundle(loadCharts);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -132,6 +134,7 @@ class Layout extends React.Component {
               <Switch>
                 <Route path="/app" exact component={Dashboard} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
+                <Route path="/app/charts" exact component={ChartsBundle} />
                 <Route path="/app/ui/buttons" exact component={UIButtonsBundle} />
                 <Route path="/app/ui/components" exact component={UIComponentsBundle} />
                 <Route path="/app/ui/icons" exact component={UIIconsBundle} />

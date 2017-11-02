@@ -494,3 +494,7 @@ $i: 0;
   }
   $i: $i + 1 !global;
 }
+
+.chart-overflow-bottom {
+  margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+}
