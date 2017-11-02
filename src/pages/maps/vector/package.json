@@ -1,0 +1,6 @@
+{
+  "name": "Vector",
+  "version": "0.0.0",
+  "main": "./Vector.js",
+  "private": true
+}

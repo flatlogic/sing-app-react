@@ -141,6 +141,9 @@ class Sidebar extends React.Component {
               {
                 name: 'Google Maps', link: '/app/maps/google',
               },
+              {
+                name: 'Vector Map', link: '/app/maps/vector',
+              },
             ]}
           />
           <LinksGroup

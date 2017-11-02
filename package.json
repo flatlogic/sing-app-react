@@ -47,6 +47,7 @@
     "jquery-sparkline": "2.4.0",
     "jquery-ui": "1.12.1",
     "jsonwebtoken": "7.3.0",
+    "jvectormap": "2.0.4",
     "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",
     "moment": "2.18.1",
     "napa": "2.3.0",
@@ -173,7 +174,8 @@
     "write-file-webpack-plugin": "4.0.2"
   },
   "napa": {
-    "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751"
+    "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
+    "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js"
   },
   "babel": {
     "presets": [

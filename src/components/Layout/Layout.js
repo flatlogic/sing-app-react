@@ -21,6 +21,7 @@ import loadFormsValidation from 'bundle-loader?lazy!../../pages/forms/validation
 import loadTablesStatic from 'bundle-loader?lazy!../../pages/tables/static';
 import loadTablesDynamic from 'bundle-loader?lazy!../../pages/tables/dynamic';
 import loadMapsGoogle from 'bundle-loader?lazy!../../pages/maps/google';
+import loadMapsVector from 'bundle-loader?lazy!../../pages/maps/vector';
 import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
@@ -50,6 +51,7 @@ const FormsValidationBundle = Bundle.generateBundle(loadFormsValidation);
 const TablesStaticBundle = Bundle.generateBundle(loadTablesStatic);
 const TablesDynamicBundle = Bundle.generateBundle(loadTablesDynamic);
 const MapsGoogleBundle = Bundle.generateBundle(loadMapsGoogle);
+const MapsVectorBundle = Bundle.generateBundle(loadMapsVector);
 const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
@@ -148,6 +150,7 @@ class Layout extends React.Component {
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
                 <Route path="/app/tables/dynamic" exact component={TablesDynamicBundle} />
                 <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
+                <Route path="/app/maps/vector" exact component={MapsVectorBundle} />
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
