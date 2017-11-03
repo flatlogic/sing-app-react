@@ -804,3 +804,21 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   }
 }
 
+.rc-color-picker-wrap {
+  line-height: 1;
+}
+
+.rst__rowContents,
+.rst__moveHandle,
+.rst__loadingHandle {
+  box-shadow: none;
+}
+
+.rst__rowContents {
+  border-radius: 0 $border-radius $border-radius 0;
+}
+
+.rst__moveHandle,
+.rst__loadingHandle {
+  border-radius: $border-radius 0 0 $border-radius;
+}
