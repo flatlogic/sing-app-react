@@ -822,3 +822,16 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 .rst__loadingHandle {
   border-radius: $border-radius 0 0 $border-radius;
 }
+
+.rst__lineHalfHorizontalRight::before,
+.rst__lineFullVertical::after,
+.rst__lineHalfVerticalTop::after,
+.rst__lineHalfVerticalBottom::after,
+.rst__lineChildren::after {
+  background-color: $gray-500;
+}
+
+.rst__collapseButton,
+.rst__expandButton {
+  box-shadow: 0 0 0 1px $gray-700;
+}
