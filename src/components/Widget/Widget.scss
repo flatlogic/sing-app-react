@@ -1,4 +1,3 @@
-
 @import '../../styles/app';
 
 .title {
@@ -29,6 +28,33 @@
       margin: 0;
     }
   }
+
+  :global {
+    .loader {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      .spinner {
+        position: absolute;
+        top: 50%;
+        width: 100%; //ie fix
+        margin-top: -10px;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    .widget-body.p-0 {
+      margin: $widget-padding-vertical (-$widget-padding-horizontal) (-$widget-padding-vertical);
+
+      + footer {
+        margin-top: $widget-padding-vertical;
+      }
+    }
+  }
 }
 
 .widgetBody {
@@ -37,7 +63,8 @@
   @include clearfix();
 }
 
-.widgetControls {
+.widgetControls,
+:global(.widget-controls) {
   position: absolute;
   z-index: 1;
   top: 0;

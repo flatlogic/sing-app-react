@@ -163,3 +163,19 @@ table > thead > tr > th {
     border-left: none;
   }
 }
+
+/*         Widgets Grid          */
+
+.widget-container {
+  min-height: 30px;
+
+  .widget:not(.fullscreened) > header {
+    cursor: move;
+  }
+}
+
+.widget-placeholder {
+  background: rgba($white, 0.4);
+  border: 1px dashed $gray-600;
+  margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
+}

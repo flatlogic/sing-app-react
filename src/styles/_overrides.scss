@@ -393,6 +393,38 @@ small {
   }
 }
 
+.list-group-lg {
+  .list-group-item {
+    padding: 1.25rem;
+  }
+}
+
+.list-group-item {
+  @include transition(background 0.15s ease-in-out);
+
+  &:first-child {
+    border-radius: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $gray-100;
+  }
+
+  &,
+  &:hover {
+    color: $text-color;
+  }
+
+  &:not(.ui-sortable-handle) {
+    border-left: none;
+    border-right: none;
+  }
+}
+
 ////////// Headings //////////
 
 h1,

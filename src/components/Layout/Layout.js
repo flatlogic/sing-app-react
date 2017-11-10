@@ -27,6 +27,7 @@ import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
 import loadExtraTimeline from 'bundle-loader?lazy!../../pages/extra/timeline';
 import loadCharts from 'bundle-loader?lazy!../../pages/charts';
+import loadGrid from 'bundle-loader?lazy!../../pages/grid';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -57,6 +58,7 @@ const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
 const ExtraTimelineBundle = Bundle.generateBundle(loadExtraTimeline);
 const ChartsBundle = Bundle.generateBundle(loadCharts);
+const GridBundle = Bundle.generateBundle(loadGrid);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -145,6 +147,7 @@ class Layout extends React.Component {
                 <Route path="/app/ui/tabs-accordion" exact component={UITabsAccordionBundle} />
                 <Route path="/app/ui/notifications" exact component={UINotificationsBundle} />
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
+                <Route path="/app/grid" exact component={GridBundle} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />

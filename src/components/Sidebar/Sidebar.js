@@ -116,6 +116,7 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+          <LinksGroup header="Grid" headerLink="/app/grid" iconName="fa-th" />
           <LinksGroup
             onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/tables'))}
             isActive={this.props.activeItem === '/app/tables'}

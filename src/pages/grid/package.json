@@ -1,0 +1,6 @@
+{
+  "name": "grid",
+  "version": "0.0.0",
+  "main": "./Grid.js",
+  "private": true
+}
