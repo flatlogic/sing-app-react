@@ -3088,6 +3088,10 @@ etag@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.7.0.tgz#03d30b5f67dd6e632d2945d30d6652731a34d5d8"
 
+eve-raphael@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eve-raphael/-/eve-raphael-0.5.0.tgz#17c754b792beef3fa6684d79cf5a47c63c4cda30"
+
 "eve@git://github.com/adobe-webplatform/eve.git#eef80ed":
   version "0.4.1"
   resolved "git://github.com/adobe-webplatform/eve.git#eef80ed8d188423c2272746fb8ae5cc8dad84cb1"
@@ -4467,7 +4471,15 @@ joi@^6.10.1:
     moment "2.x.x"
     topo "1.x.x"
 
-jquery-mousewheel@~3.1.13:
+jquery-mapael@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jquery-mapael/-/jquery-mapael-2.1.0.tgz#527a89d79f4eefdbec94e08c03c77c80c73d33c7"
+  dependencies:
+    jquery "^3.0"
+    jquery-mousewheel "^3.1"
+    raphael "^2.2"
+
+jquery-mousewheel@^3.1, jquery-mousewheel@~3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
 
@@ -4479,7 +4491,13 @@ jquery-ui@1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
 
-"jquery@2 - 3", jquery@3.2.1, jquery@>=1.5:
+jquery.animate-number@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/jquery.animate-number/-/jquery.animate-number-0.0.14.tgz#9263bb87e3c9ac2e2fc173d16ebd607589ad3198"
+  dependencies:
+    jquery ">= 1.7.0"
+
+"jquery@2 - 3", jquery@3.2.1, "jquery@>= 1.7.0", jquery@>=1.5, jquery@^3.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -6028,9 +6046,9 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-popper.js@1.12.4:
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.12.4.tgz#ba8eac2a45a0f549a1f56bd5b122fa61f433b4b3"
+popper.js@1.12.5:
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.12.5.tgz#229e4dea01629e1f1a1e26991ffade5024220fa6"
 
 popper.js@^1.12.5:
   version "1.12.6"
@@ -6618,6 +6636,12 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raphael@^2.2:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/raphael/-/raphael-2.2.7.tgz#231b19141f8d086986d8faceb66f8b562ee2c810"
+  dependencies:
+    eve-raphael "0.5.0"
 
 raw-body@^2.1.0, raw-body@~2.2.0:
   version "2.2.0"

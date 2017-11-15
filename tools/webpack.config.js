@@ -193,6 +193,7 @@ const clientConfig = {
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery',
+      Popper: 'popper.js/dist/umd/popper.js',
     }),
 
     // Move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk).
