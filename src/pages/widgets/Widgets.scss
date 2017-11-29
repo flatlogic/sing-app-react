@@ -1,0 +1,225 @@
+@import '../../styles/app';
+
+:global {
+  /*         Post Links           */
+
+  .post-links {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    padding-left: 0;
+
+    @include clearfix();
+
+    > li {
+      float: left;
+      list-style: none;
+
+      + li {
+        &::before {
+          color: #999;
+          content: '\25cf';
+          padding: 0 8px;
+        }
+      }
+
+      > a {
+        text-decoration: none;
+        color: $text-muted;
+
+        &:hover {
+          color: $text-muted;
+        }
+      }
+    }
+
+    &.no-separator > li + li {
+      margin-left: 12px;
+
+      &::before {
+        content: normal;
+      }
+    }
+  }
+
+  /*          Post Comments           */
+
+  .post-links + .post-comments {
+    margin-top: $spacer / 2;
+  }
+
+  .post-comments {
+    font-size: $font-size-sm;
+    padding-left: 0;
+
+    @include clearfix();
+
+    > li {
+      padding: 10px;
+      border-top: 1px solid #e7e7e7;
+      list-style: none;
+
+      @include clearfix();
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .avatar {
+      margin-top: 1px;
+    }
+
+    .author {
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #7ca9dd;
+    }
+
+    .comment-body {
+      overflow: auto;
+    }
+
+    h6.author > small {
+      font-size: 11px;
+    }
+
+    .widget > footer & {
+      margin-left: -$widget-padding-horizontal;
+      margin-right: -$widget-padding-horizontal;
+    }
+  }
+
+  /*          Post User           */
+
+  .post-user {
+    position: relative;
+
+    @include clearfix();
+
+    img {
+      border: 3px solid white;
+    }
+  }
+
+  /*            Tags              */
+
+  .tags {
+    padding-left: 0;
+    list-style: none;
+
+    @include clearfix();
+
+    > li {
+      float: left;
+
+      > a {
+        padding: 2px 8px;
+        font-size: $font-size-mini;
+        border-radius: 6px;
+        border: 1px solid white;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .fa {
+          font-size: 8px;
+          margin-right: 3px;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    > li + li > a {
+      margin-left: 6px;
+    }
+  }
+
+  .widget-top-overflow > img + .tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  /*           Weather             */
+  .widget-image .forecast {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+  }
+
+  /*       Chat List Group         */
+  .widget-chat-list-group {
+    padding-top: $spacer/2;
+
+    .list-group-item {
+      margin-left: $widget-padding-horizontal;
+      margin-right: $widget-padding-horizontal;
+      padding: 0;
+      border: 0;
+      display: flex;
+
+      &:hover {
+        background: none;
+      }
+
+      & + .list-group-item {
+        margin-top: 20px;
+      }
+
+      .thumb,
+      .thumb-sm {
+        float: left;
+        margin-right: 15px;
+      }
+
+      .time {
+        float: right;
+        font-size: $font-size-sm;
+        color: $link-color;
+      }
+
+      .sender {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: $font-size-mini;
+        font-weight: $font-weight-normal;
+      }
+
+      .body {
+        font-size: $font-size-mini;
+        color: $text-muted;
+      }
+
+      &.on-right {
+        .thumb,
+        .thumb-sm {
+          order: 1;
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+        .time {
+          float: left;
+        }
+
+        .sender {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+

@@ -94,7 +94,8 @@ const config = {
         loaders: [
           'isomorphic-style-loader',
           `css-loader?${isDebug ? 'sourceMap&' : 'minimize&'}modules&localIdentName=[local]&importLoaders=2`,
-          'sass-loader',
+          'resolve-url-loader',
+          'sass-loader?sourceMap',
         ],
       },
       {

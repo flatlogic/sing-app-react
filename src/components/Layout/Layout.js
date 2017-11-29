@@ -28,6 +28,7 @@ import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
 import loadExtraTimeline from 'bundle-loader?lazy!../../pages/extra/timeline';
 import loadCharts from 'bundle-loader?lazy!../../pages/charts';
 import loadGrid from 'bundle-loader?lazy!../../pages/grid';
+import loadWidgets from 'bundle-loader?lazy!../../pages/widgets';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -59,6 +60,7 @@ const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
 const ExtraTimelineBundle = Bundle.generateBundle(loadExtraTimeline);
 const ChartsBundle = Bundle.generateBundle(loadCharts);
 const GridBundle = Bundle.generateBundle(loadGrid);
+const WidgetsBundle = Bundle.generateBundle(loadWidgets);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -158,6 +160,7 @@ class Layout extends React.Component {
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
                 <Route path="/app/extra/timeline" exact component={ExtraTimelineBundle} />
+                <Route path="/app/widgets" exact component={WidgetsBundle} />
               </Switch>
             </main>
           </Hammer>
