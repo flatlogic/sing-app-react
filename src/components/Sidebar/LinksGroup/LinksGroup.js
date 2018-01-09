@@ -63,7 +63,8 @@ class LinksGroup extends Component {
     return (
       <Route
         path={this.props.headerLink}
-        children={({ match }) => {
+        children={(params) => {
+          const { match } = params;
           return (
             <li className={[s.headerLink, this.props.className].join(' ')}>
               <a className={[match ? s.headerLinkActive : '', isOpen ? s.collapsed : ''].join(' ')}

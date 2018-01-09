@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Switch, Route, withRouter } from 'react-router';
+import { Switch, Route, withRouter, Redirect } from 'react-router';
 import $ from 'jquery';
 
 import Hammer from 'rc-hammerjs';
@@ -142,9 +142,12 @@ class Layout extends React.Component {
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
               <Switch>
-                <Route path="/app" exact component={Dashboard} />
+                <Route path="/app/main" exact render={() => <Redirect to="/app/main/dashboard" />} />
+                <Route path="/app/main/dashboard" exact component={Dashboard} />
+                <Route path="/app/main/widgets" exact component={WidgetsBundle} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
                 <Route path="/app/charts" exact component={ChartsBundle} />
+                <Route path="/app/ui" exact render={() => <Redirect to="/app/ui/components" />} />
                 <Route path="/app/ui/buttons" exact component={UIButtonsBundle} />
                 <Route path="/app/ui/components" exact component={UIComponentsBundle} />
                 <Route path="/app/ui/icons" exact component={UIIconsBundle} />
@@ -152,18 +155,21 @@ class Layout extends React.Component {
                 <Route path="/app/ui/notifications" exact component={UINotificationsBundle} />
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
                 <Route path="/app/grid" exact component={GridBundle} />
+                <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
                 <Route path="/app/forms/wizard" exact component={FormsWizardBundle} />
+                <Route path="/app/tables" exact render={() => <Redirect to="/app/tables/static" />} />
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
                 <Route path="/app/tables/dynamic" exact component={TablesDynamicBundle} />
+                <Route path="/app/maps" exact render={() => <Redirect to="/app/maps/google" />} />
                 <Route path="/app/maps/google" exact component={MapsGoogleBundle} />
                 <Route path="/app/maps/vector" exact component={MapsVectorBundle} />
+                <Route path="/app/extra" exact render={() => <Redirect to="/app/extra/calendar" />} />
                 <Route path="/app/extra/calendar" exact component={ExtraCalendarBundle} />
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
                 <Route path="/app/extra/timeline" exact component={ExtraTimelineBundle} />
-                <Route path="/app/widgets" exact component={WidgetsBundle} />
               </Switch>
             </main>
           </Hammer>

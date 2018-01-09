@@ -72,21 +72,25 @@ class Sidebar extends React.Component {
         </header>
         <ul className={s.nav}>
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app'))}
-            isActive={this.props.activeItem === '/app'}
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/main'))}
+            isActive={this.props.activeItem === '/app/main'}
             header="Dashboard"
             iconName="fa-desktop"
-            headerLink="/app"
+            headerLink="/app/main"
             childrenLinks={[
               {
-                name: 'Dashboard', link: '/app',
+                name: 'Dashboard', link: '/app/main/dashboard',
               },
               {
-                name: 'Widgets', link: '/app/widgets',
+                name: 'Widgets', link: '/app/main/widgets',
               },
             ]}
           />
-          <LinksGroup header="Profile" headerLink="/app/profile" iconName="fa-user" />
+          <LinksGroup
+            header="Profile"
+            headerLink="/app/profile"
+            iconName="fa-user"
+          />
           <LinksGroup header="Charts" headerLink="/app/charts" iconName="fa-bar-chart" />
           <LinksGroup
             onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/forms'))}
