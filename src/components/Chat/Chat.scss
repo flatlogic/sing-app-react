@@ -5,8 +5,8 @@
   overflow: hidden;
   top: 0;
   bottom: 0;
-  right: -254px;
-  width: 254px;
+  right: -250px;
+  width: 250px;
   background-color: $chat-sidebar-bg-color;
   color: #aaa;
   transition: right 0.3s ease-in-out;
@@ -193,6 +193,10 @@
   }
 
   .chatSidebarUserGroup {
+    :global .list-group-item {
+      transition: $transition-base;
+    }
+
     :global .list-group-item.active {
       background: rgba($white, 0.1);
     }
@@ -202,6 +206,11 @@
       font-weight: $badge-font-weight;
     }
 
+    :global .list-group-item:hover:not(.active) {
+      background: rgba($black, 0.1);
+      color: $white;
+    }
+
     :global .badge {
       margin: 8px 5px 0 0;
       padding: 3px 5px;
@@ -209,6 +218,12 @@
 
     :global .fa {
       margin-top: 11px;
+    }
+  }
+
+  .messageItem {
+    &:hover {
+      background: transparent;
     }
   }
 }

@@ -76,6 +76,7 @@ class Widget extends React.Component {
       ...attributes
     } = this.props;
     const randomId = this.state.randomId;
+    const mainControls = !!(close || fullscreen || collapse || refresh || settings || settingsInverse);
     return (
       <section
         className={[s.widget, 'widget', className].join(' ')}
@@ -89,7 +90,7 @@ class Widget extends React.Component {
           )
         }
         {
-          !customControls && (
+          !customControls && mainControls && (
             <div className={`${s.widgetControls} widget-controls`}>
               {settings && (
                 <a href="#"><i className="glyphicon glyphicon-cog" /></a>

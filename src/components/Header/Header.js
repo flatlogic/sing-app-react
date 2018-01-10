@@ -166,7 +166,7 @@ class Header extends React.Component {
         </NavLink>
 
         <Nav className="ml-auto mr-3">
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className="d-sm-down-none position">
+          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret>
               <span className={`${s.avatar} thumb-sm float-left mr-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
@@ -174,7 +174,7 @@ class Header extends React.Component {
               Philip <span className="fw-semi-bold">Smith</span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right className={'pb-0 animated animated-fast fadeInUp'}>
+            <DropdownMenu right className={`${s.notificationsWrapper} pb-0 animated animated-fast fadeInUp`}>
               <Notifications />
             </DropdownMenu>
           </NavDropdown>

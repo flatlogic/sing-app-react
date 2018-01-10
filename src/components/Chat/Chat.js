@@ -178,7 +178,7 @@ class Chat extends React.Component {
           </ListGroup>
 
           <h5 className={s.navTitle}>LAST WEEK</h5>
-          <ListGroup>
+          <ListGroup className={s.chatSidebarUserGroup}>
             {this.state.lastWeekConversations
               .filter(this.filterConversations)
               .map(item =>
@@ -211,7 +211,7 @@ class Chat extends React.Component {
             {this.state.conversation.messages &&
             this.state.conversation.messages
             .filter(this.filterMessages)
-            .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '']}>
+            .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '', s.messageItem]}>
                               <span className="thumb-sm">
                                 <img className="rounded-circle"
                                      src={item.fromMe ? avatar : this.state.conversation.image} alt="..."/>

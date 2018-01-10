@@ -58,9 +58,15 @@
 }
 
 .widgetBody {
-  margin-top: $widget-padding-vertical;
-
   @include clearfix();
+
+  > footer {
+    margin: $spacer/2 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+  }
+}
+
+.widgetControls + .widgetBody {
+  margin-top: $widget-padding-vertical;
 }
 
 .widgetControls,

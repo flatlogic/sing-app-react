@@ -8,6 +8,7 @@
   .calendar {
     font-size: $font-size-mini;
     padding: $spacer/2 0;
+    background: lighten($blue, 35%);
   }
 
   .calendar a {

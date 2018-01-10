@@ -5,10 +5,70 @@ import {
   Button,
   Badge,
 } from 'reactstrap';
+import ReactFlot from 'react-flot';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+
 import Widget from '../../../../components/Widget';
+import s from './FlotCharts.scss';
 
 class FlotCharts extends React.Component {
+  static generateRandomData(labels) {
+    function random() {
+      return (Math.floor(Math.random() * 30)) + 10;
+    }
+
+    const data = [];
+    let maxValueIndex = 5;
+
+    for (let i = 0; i < labels.length; i += 1) {
+      const randomSeries = [];
+      for (let j = 0; j < 25; j += 1) {
+        randomSeries.push([j, Math.floor(maxValueIndex * j) + random()]);
+      }
+      maxValueIndex -= 1;
+      data.push({
+        data: randomSeries,
+        showLabels: true,
+        label: labels[i].label,
+        labelPlacement: 'below',
+        canvasRender: true,
+        cColor: 'red',
+        color: labels[i].color,
+      });
+    }
+    return data;
+  }
+
   render() {
+    const flotOptions = {
+      series: {
+        lines: {
+          show: true,
+          lineWidth: 1,
+          fill: false,
+          fillColor: { colors: [{ opacity: 0.001 }, { opacity: 0.5 }] },
+        },
+        points: {
+          show: false,
+          fill: true,
+        },
+        shadowSize: 0,
+      },
+      legend: false,
+      grid: {
+        show: false,
+        margin: 0,
+        labelMargin: 0,
+        axisMargin: 0,
+        hoverable: true,
+        clickable: true,
+        tickColor: 'rgba(255,255,255,1)',
+        borderWidth: 0,
+      },
+    };
+
+    const generateData = this.constructor.generateRandomData;
+
     return (<Row>
       <Col lg={6} xs={12}>
         <Widget
@@ -44,23 +104,30 @@ class FlotCharts extends React.Component {
               <Button color="default" size="xs">Reject</Button>
             </div>
           </div>
-          <div className="chart bg-body-light">
-            {/* <div flot-chart [data]="generateRandomData([{
-            label: 'Visitors', color: configFn.darkenColor(config.settings.colors['gray-lighter'], .05)
-          },{
-            label: 'Charts', color: config.settings.colors['brand-danger']
-          }])" className="chart-inner"></div>*/}
+          <div className={`${s.chart} bg-body-light`}>
+            <ReactFlot
+              id="product-chart-1"
+              data={
+                generateData([{
+                  label: 'Visitors', color: '#777',
+                }, {
+                  label: 'Charts', color: '#dd5826',
+                }])}
+              options={flotOptions}
+              height={'100%'}
+            />
           </div>
         </Widget>
       </Col>
       <Col lg={6} xs={12}>
         <Widget
           className=" widget-chart-stats-simple" title={<Row>
-            <h6 className="mb-0">
-              <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2017</Badge>
-            </h6>
-            <br />
-            <span className="text-muted fs-mini">monthly report will be available in <a href="#">6 hours</a></span>
+            <Col xs={12}>
+              <h6 className="mb-0">
+                <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2017</Badge>
+              </h6>
+              <span className="text-muted fs-mini">monthly report will be available in <a href="#">6 hours</a></span>
+            </Col>
           </Row>}
           settings close
         >
@@ -93,14 +160,19 @@ class FlotCharts extends React.Component {
                 <p className="fw-semi-bold">23.06.2013</p>
               </div>
             </div>
-            {/*        <div className="chart bg-body-light">
-            <div flot-chart
-            [data] = "generateRandomData([{
-            label: 'Controllers', color: '#777'
-          },{
-            label: 'Scopes', color: config.settings.colors['brand-warning']
-          }])" className="chart-inner"></div>
-        </div>*/}
+          </div>
+          <div className={`${s.chart} bg-body-light`}>
+            <ReactFlot
+              id="product-chart-2"
+              data={
+                generateData([{
+                  label: 'Controllers', color: '#777',
+                }, {
+                  label: 'Scopes', color: '#f0b518',
+                }])}
+              options={flotOptions}
+              height={'100%'}
+            />
           </div>
         </Widget>
       </Col>
@@ -109,4 +181,4 @@ class FlotCharts extends React.Component {
   }
 }
 
-export default (FlotCharts);
+export default withStyles(s)(FlotCharts);

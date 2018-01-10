@@ -5,12 +5,14 @@ import {
   Col,
   Progress,
 } from 'reactstrap';
+
 import Widget from '../../components/Widget';
 import LiveTile from './components/live-tile/LiveTile';
 import ChangesChart from './components/changes-chart/ChangesChart';
 import RealtimeTraffic from './components/realtime-traffic/RealtimeTraffic';
 import YearsMap from './components/years-map/YearsMap';
 import FlotCharts from './components/flot-charts/FlotCharts';
+import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
 import s from './Widgets.scss';
 
 /* todo:
@@ -215,47 +217,42 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
         </Row>
-        <Row>
-          <FlotCharts />
-          {/* flot chart widget*/}
-        </Row>
-
+        <FlotCharts />
         <Row>
           <Col lg={4} xs={12}>
             <Widget refresh close bodyClass="mt-0">
-              <div className="widget-body">
-                <div className="widget-top-overflow widget-padding-md clearfix bg-warning text-white">
-                  <h3 className="mt-lg mb-lg">Sing - <span className="fw-semi-bold">Next Generation</span> Admin
-                    Dashboard
-                    Template</h3>
-                  <ul className="tags text-white pull-right">
-                    <li><a href="#">features</a></li>
-                  </ul>
-                </div>
-                <div className="post-user mt-negative-lg">
-                  <span className="thumb-lg pull-left mr">
-                    <img className="rounded-circle" src={peopleA4} alt="..." />
-                  </span>
-                  <h6 className="m-b-1 fw-normal text-white">Jeremy
-                    <small className="text-white text-light">@sing</small>
-                  </h6>
-                  <p className="fs-mini text-muted">
-                    <time>25 mins</time>
-                    &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
-                  </p>
-                </div>
-                <p className="text-light fs-mini m">Lots of cool stuff is happening around you. Just calm down for a
-                  sec
-                  and listen. Colors, sounds,
-                  thoughts, ideas. </p>
+              <div className="widget-top-overflow widget-padding-md clearfix bg-warning text-white">
+                <h3 className="mt-lg mb-lg">Sing - <span className="fw-semi-bold">Next Generation</span> Admin
+                  Dashboard
+                  Template</h3>
+                <ul className="tags text-white pull-right">
+                  <li><a href="#">features</a></li>
+                </ul>
               </div>
+              <div className="post-user mt-negative-lg">
+                <span className="thumb-lg pull-left mr">
+                  <img className="rounded-circle" src={peopleA4} alt="..." />
+                </span>
+                <h6 className="m-b-1 fw-normal text-white">Jeremy
+                  <small className="text-white text-light">@sing</small>
+                </h6>
+                <p className="fs-mini text-muted">
+                  <time>25 mins</time>
+                  &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
+                </p>
+              </div>
+              <p className="text-light fs-mini m">Lots of cool stuff is happening around you. Just calm down for a
+                sec
+                and listen. Colors, sounds,
+                thoughts, ideas.
+              </p>
               <footer className="bg-body-light">
                 <ul className="post-links">
                   <li><a href="#">1 hour</a></li>
                   <li><a href="#"><span className="text-danger"><i className="fa fa-heart" /> Like</span></a></li>
                   <li><a href="#">Comment</a></li>
                 </ul>
-                <ul className="post-comments mt mb-0">
+                <ul className="post-comments mb-0">
                   <li>
                     <span className="thumb-xs avatar pull-left mr-sm">
                       <img className="rounded-circle" src={peopleA1} alt="..." />
@@ -466,15 +463,15 @@ class Widgets extends React.Component {
           <Col lg={6} xs={12}>
             <Row>
               <Col md={6} xs={12}>
-                <Widget className="widget-chart-simple widget-sm">
-                  <h6 className="mb-xs fw-normal">
+                <Widget className="widget-sm">
+                  <h6 className="mt-3 fw-normal">
                     Nasdaq
                   </h6>
-                  <div className="chart-value">
+                  <h3>
                     355 <span className="fw-semi-bold">USD</span>
-                  </div>
+                  </h3>
                   <p>Last Sale 354.94 USD</p>
-                  {/* <div className="chart" nasdaq-sparkline-widget />*/}
+                  <NasdaqSparkline />
                 </Widget>
               </Col>
               <Col md={6} xs={12}>
@@ -491,7 +488,7 @@ class Widgets extends React.Component {
                     &nbsp;
                     <span className="fw-semi-bold">7</span> shares
                   </p>
-                  <p className="text-light fs-sm mt-lg">
+                  <p className="fs-sm mt-lg">
                     <time>10 June</time>
                   </p>
                 </Widget>

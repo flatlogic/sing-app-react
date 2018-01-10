@@ -5,7 +5,6 @@ import {
   Col,
   Progress,
   Table,
-  FormGroup,
   Label,
   Input,
 } from 'reactstrap';
@@ -328,41 +327,44 @@ class Dashboard extends React.Component {
                   <thead className="no-bd">
                     <tr>
                       <th>
-                        <FormGroup className="checkbox abc-checkbox">
+                        <div className="checkbox abc-checkbox">
                           <Input
+                            className="mt-0"
                             id="checkbox210" type="checkbox" onClick={() => this.checkTable(0)}
                             checked={this.state.checkedArr[0]}
                           />{' '}
                           <Label for="checkbox210" />
-                        </FormGroup>
+                        </div>
                       </th>
-                      <th />
-                      <th />
+                      <th>&nbsp;</th>
+                      <th>&nbsp;</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>
-                        <FormGroup className="checkbox abc-checkbox">
+                        <div className="checkbox abc-checkbox">
                           <Input
+                            className="mt-0"
                             id="checkbox212" type="checkbox" onClick={() => this.checkTable(1)}
                             checked={this.state.checkedArr[1]}
                           />{' '}
                           <Label for="checkbox212" />
-                        </FormGroup>
+                        </div>
                       </td>
                       <td>HP Core i7</td>
                       <td className="text-align-right fw-semi-bold">$346.1</td>
                     </tr>
                     <tr>
                       <td>
-                        <FormGroup className="checkbox abc-checkbox">
+                        <div className="checkbox abc-checkbox">
                           <Input
+                            className="mt-0"
                             id="checkbox214" onClick={() => this.checkTable(2)} type="checkbox"
                             checked={this.state.checkedArr[2]}
                           />{' '}
                           <Label for="checkbox214" />
-                        </FormGroup>
+                        </div>
                       </td>
                       <td>Air Pro</td>
                       <td className="text-align-right fw-semi-bold">$533.1</td>

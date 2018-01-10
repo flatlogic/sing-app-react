@@ -4,6 +4,7 @@
   /*         Post Links           */
 
   .post-links {
+    padding: 10px 20px !important;
     margin-bottom: 0;
     font-size: $font-size-sm;
     padding-left: 0;
@@ -43,26 +44,17 @@
 
   /*          Post Comments           */
 
-  .post-links + .post-comments {
-    margin-top: $spacer / 2;
-  }
-
   .post-comments {
     font-size: $font-size-sm;
-    padding-left: 0;
 
     @include clearfix();
 
     > li {
-      padding: 10px;
+      padding: 10px 20px;
       border-top: 1px solid #e7e7e7;
       list-style: none;
 
       @include clearfix();
-
-      &:last-child {
-        padding-bottom: 0;
-      }
     }
 
     p:last-child {

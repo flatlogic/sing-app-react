@@ -461,6 +461,10 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
 
+.mt-negative-lg {
+  margin-top: -($spacer * 1.5);
+}
+
 // Display classes UP
 
 //
