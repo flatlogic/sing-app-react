@@ -39,9 +39,9 @@ ol ul {
   list-style: none;
 }
 
-ul:not(.text-list),
-ol:not(.text-list) {
+ul,
+ol {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 

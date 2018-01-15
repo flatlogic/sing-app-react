@@ -38,7 +38,7 @@ import Header from '../Header';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
-import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
+import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
 import Dashboard from '../../pages/dashboard';
@@ -89,7 +89,10 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.sidebarOpened) {
+    const staticSidebar = JSON.parse(localStorage.getItem('staticSidebar'));
+    if (staticSidebar) {
+      this.props.dispatch(toggleSidebar());
+    } else if (this.props.sidebarOpened) {
       setTimeout(() => {
         this.props.dispatch(closeSidebar());
         this.props.dispatch(changeActiveSidebarItem(null));

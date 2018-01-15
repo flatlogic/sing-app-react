@@ -399,6 +399,11 @@ small {
   }
 }
 
+.list-group:not(.list-group-sortable) .list-group-item {
+  border-left: none;
+  border-right: none;
+}
+
 .list-group-item {
   @include transition(background 0.15s ease-in-out);
 
@@ -417,11 +422,6 @@ small {
   &,
   &:hover {
     color: $text-color;
-  }
-
-  &:not(.ui-sortable-handle) {
-    border-left: none;
-    border-right: none;
   }
 }
 

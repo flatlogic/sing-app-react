@@ -102,8 +102,10 @@ class Header extends React.Component {
   toggleSidebar() {
     this.props.dispatch(toggleSidebar());
     if (this.props.sidebarStatic) {
+      localStorage.setItem('staticSidebar', 'false');
       this.props.dispatch(changeActiveSidebarItem(null));
     } else {
+      localStorage.setItem('staticSidebar', 'true');
       const paths = this.props.location.pathname.split('/');
       paths.pop();
       this.props.dispatch(changeActiveSidebarItem(paths.join('/')));
@@ -118,9 +120,9 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar color={'white'} className={`${s.root} d-print-none`}>
-        <Nav className="ml-3">
+        <Nav>
           <NavItem>
-            <NavLink className="d-md-down-none" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
+            <NavLink className="d-md-down-none ml-3" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
               <i className={'fa fa-bars fa-lg'} />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
@@ -165,7 +167,7 @@ class Header extends React.Component {
           <i className="fa fa-circle text-gray" />
         </NavLink>
 
-        <Nav className="ml-auto mr-3">
+        <Nav className="ml-auto">
           <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret>
               <span className={`${s.avatar} thumb-sm float-left mr-2`}>
@@ -192,7 +194,7 @@ class Header extends React.Component {
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
-            <NavLink className="d-sm-down-none" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none mr-3" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
               <i className="fa fa-globe fa-lg" />
             </NavLink>
             <div id="chat-notification" className={`${s.chatNotification} hide `}>
