@@ -94,8 +94,15 @@ class Header extends React.Component {
 
   // collapse/uncolappse
   switchSidebar() {
-    const dispatchNavigation = this.props.sidebarOpened ? closeSidebar : openSidebar;
-    this.props.dispatch(dispatchNavigation());
+    if (this.props.sidebarOpened) {
+      this.props.dispatch(closeSidebar());
+      this.props.dispatch(changeActiveSidebarItem(null));
+    } else {
+      const paths = this.props.location.pathname.split('/');
+      paths.pop();
+      this.props.dispatch(openSidebar());
+      this.props.dispatch(changeActiveSidebarItem(paths.join('/')));
+    }
   }
 
   // static/non-static
