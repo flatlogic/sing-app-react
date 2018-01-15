@@ -179,3 +179,88 @@ table > thead > tr > th {
   border: 1px dashed $gray-600;
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
 }
+
+/*         Post Links           */
+
+.post-links {
+  margin-bottom: 0;
+  font-size: $font-size-sm;
+  padding-left: 0;
+
+  @include clearfix();
+
+  > li {
+    float: left;
+    list-style: none;
+
+    + li {
+      &::before {
+        color: #999;
+        content: '\25cf';
+        padding: 0 8px;
+      }
+    }
+
+    > a {
+      text-decoration: none;
+      color: $text-muted;
+
+      &:hover {
+        color: $text-muted;
+      }
+    }
+  }
+
+  &.no-separator > li + li {
+    margin-left: 12px;
+
+    &::before {
+      content: normal;
+    }
+  }
+}
+
+/*          Post Comments           */
+
+.post-comments {
+  margin-left: -20px;
+  margin-right: -20px;
+  font-size: $font-size-sm;
+
+  @include clearfix();
+
+  > li {
+    padding: 10px;
+    border-top: 1px solid #e7e7e7;
+    list-style: none;
+
+    @include clearfix();
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .avatar {
+    margin-top: 1px;
+  }
+
+  .author {
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #7ca9dd;
+  }
+
+  .comment-body {
+    overflow: auto;
+  }
+
+  h6.author > small {
+    font-size: 11px;
+  }
+
+  .widget > footer & {
+    margin-left: -$widget-padding-horizontal;
+    margin-right: -$widget-padding-horizontal;
+  }
+}

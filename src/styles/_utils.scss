@@ -259,6 +259,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .text-light {
+  color: inherit !important;
   opacity: 0.8;
 }
 

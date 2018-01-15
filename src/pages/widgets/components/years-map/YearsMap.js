@@ -9,7 +9,7 @@ import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/jquery.mapael';
 import s from './YearsMap.scss';
 
 const fakeWorldData = {
-  2008: {
+  2012: {
     areas: {
       AF: {
         value: 19880820,
@@ -1171,7 +1171,7 @@ const fakeWorldData = {
       },
     },
   },
-  2009: {
+  2013: {
     areas: {
       AF: {
         value: 52466800,
@@ -2333,7 +2333,7 @@ const fakeWorldData = {
       },
     },
   },
-  2010: {
+  2014: {
     areas: {
       AF: {
         value: 44310251,
@@ -3495,7 +3495,7 @@ const fakeWorldData = {
       },
     },
   },
-  2011: {
+  2015: {
     areas: {
       AF: {
         value: 59288907,
@@ -4657,7 +4657,7 @@ const fakeWorldData = {
       },
     },
   },
-  2012: {
+  2016: {
     areas: {
       AF: {
         value: 9658627,
@@ -5819,7 +5819,7 @@ const fakeWorldData = {
       },
     },
   },
-  2013: {
+  2017: {
     areas: {
       AF: {
         value: 30428397,
@@ -6987,7 +6987,7 @@ class YearsMap extends React.Component {
   constructor(prop) {
     super(prop);
     this.state = {
-      activeYear: 2009,
+      activeYear: 2012,
     };
     this.triggerYear = this.triggerYear.bind(this);
   }
@@ -7113,22 +7113,22 @@ class YearsMap extends React.Component {
       </div>
       <Nav className="map-controls" pills fill>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2008} onClick={() => this.triggerYear(2008)}>2008</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink active={this.state.activeYear === 2009} onClick={() => this.triggerYear(2009)}>2009</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink active={this.state.activeYear === 2010} onClick={() => this.triggerYear(2010)}>2010</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink active={this.state.activeYear === 2011} onClick={() => this.triggerYear(2011)}>2011</NavLink>
-        </NavItem>
-        <NavItem>
           <NavLink active={this.state.activeYear === 2012} onClick={() => this.triggerYear(2012)}>2012</NavLink>
         </NavItem>
         <NavItem>
           <NavLink active={this.state.activeYear === 2013} onClick={() => this.triggerYear(2013)}>2013</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active={this.state.activeYear === 2014} onClick={() => this.triggerYear(2014)}>2014</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active={this.state.activeYear === 2015} onClick={() => this.triggerYear(2015)}>2015</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active={this.state.activeYear === 2016} onClick={() => this.triggerYear(2016)}>2016</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active={this.state.activeYear === 2017} onClick={() => this.triggerYear(2017)}>2017</NavLink>
         </NavItem>
       </Nav>
     </div>);

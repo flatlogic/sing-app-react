@@ -27,6 +27,7 @@ import loadExtraCalendar from 'bundle-loader?lazy!../../pages/extra/calendar';
 import loadExtraInvoice from 'bundle-loader?lazy!../../pages/extra/invoice';
 import loadExtraSearch from 'bundle-loader?lazy!../../pages/extra/search';
 import loadExtraTimeline from 'bundle-loader?lazy!../../pages/extra/timeline';
+import loadExtraGallery from 'bundle-loader?lazy!../../pages/extra/gallery';
 import loadCharts from 'bundle-loader?lazy!../../pages/charts';
 import loadGrid from 'bundle-loader?lazy!../../pages/grid';
 import loadWidgets from 'bundle-loader?lazy!../../pages/widgets';
@@ -60,6 +61,7 @@ const ExtraCalendarBundle = Bundle.generateBundle(loadExtraCalendar);
 const ExtraInvoiceBundle = Bundle.generateBundle(loadExtraInvoice);
 const ExtraSearchBundle = Bundle.generateBundle(loadExtraSearch);
 const ExtraTimelineBundle = Bundle.generateBundle(loadExtraTimeline);
+const ExtraGallerylineBundle = Bundle.generateBundle(loadExtraGallery);
 const ChartsBundle = Bundle.generateBundle(loadCharts);
 const GridBundle = Bundle.generateBundle(loadGrid);
 const WidgetsBundle = Bundle.generateBundle(loadWidgets);
@@ -170,6 +172,7 @@ class Layout extends React.Component {
                 <Route path="/app/extra/invoice" exact component={ExtraInvoiceBundle} />
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
                 <Route path="/app/extra/timeline" exact component={ExtraTimelineBundle} />
+                <Route path="/app/extra/gallery" exact component={ExtraGallerylineBundle} />
               </Switch>
             </main>
           </Hammer>

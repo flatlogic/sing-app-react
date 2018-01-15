@@ -1,15 +1,14 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Rickshaw from 'rickshaw';
+
 import $ from 'jquery';
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!jquery-sparkline';
-/* eslint-enable */
 
 import {
   Row, Col,
 } from 'reactstrap';
 
+import Sparklines from '../../../../components/Sparklines';
 import s from './ChangesChart.scss';
 
 class ChangesChart extends React.Component {
@@ -18,14 +17,16 @@ class ChangesChart extends React.Component {
     super(prop);
     this.state = {
       rickshawGraph: null,
+      sparklineData: [],
+      sparklineOptions: {},
     };
     this.onResizeRickshaw = this.onResizeRickshaw.bind(this);
     this.initRickshaw = this.initRickshaw.bind(this);
+    this.initSparkline();
   }
 
   componentDidMount() {
     this.initRickshaw();
-    this.initSparkline();
     window.addEventListener('resize', this.onResizeRickshaw);
   }
 
@@ -79,23 +80,19 @@ class ChangesChart extends React.Component {
   }
 
   initSparkline() {
-    // let data = [3, 6, 2, 4, 5, 8, 6, 8];
-    //  let data = [[3, 5], [6, 2], [2, 6], [4, 4], [5, 3], [8, 0], [6, 2], [8, 0]];
-    const data = [[5, 3], [2, 6], [6, 2], [4, 4], [3, 5], [0, 8], [2, 6], [0, 8]];
-    //  let data = [[3, 8], [6, 8], [2, 8], [4, 8], [5, 8], [8, 8], [6, 8], [8, 8]];
-  //  const maxData = Math.max(data);
-    const minData = Math.min(data);
-    // const backData = data.map(() => maxData);
-  /*  const sparklineData = [backData, data];
-    const options = [
+    const data = [3, 6, 2, 4, 5, 8, 6, 8];
+    const dataMax = Math.max.apply(null, data);
+    const backgroundData = data.map(() => dataMax);
+
+    this.state.sparklineData = [backgroundData, data];
+    this.state.sparklineOptions = [
       {
         type: 'bar',
         height: 26,
         barColor: '#eee',
-        //   barColor: '#64bd63',
         barWidth: 7,
         barSpacing: 5,
-        chartRangeMin: minData,
+        chartRangeMin: Math.min.apply(null, data),
         tooltipFormat: new $.SPFormatClass(''),
       },
       {
@@ -105,21 +102,7 @@ class ChangesChart extends React.Component {
         barWidth: 7,
         barSpacing: 5,
       },
-    ];*/
-    const opt = {
-      type: 'bar',
-      height: 26,
-      stackedBarColor: '#eee',
-      barColor: '#64bd63',
-      barWidth: 7,
-      barSpacing: 5,
-      chartRangeMin: minData,
-      tooltipFormat: new $.SPFormatClass(''),
-    };
-
-    $(this.sparklineRef).sparkline(data, opt);
-
-    // barColor: '#64bd63', //'brand-success',
+    ];
   }
 
   render() {
@@ -162,8 +145,7 @@ class ChangesChart extends React.Component {
                   this.sparklineRef = r;
                 }}
               />
-
-              {/*  <span jq-sparkline [data]="sparklineData" [options]="sparklineOptions"></span>*/}
+              <Sparklines data={this.state.sparklineData} options={this.state.sparklineOptions} />
               <p className="deemphasize">GOOG</p>
             </Col>
           </Row>

@@ -1,18 +1,11 @@
 import React from 'react';
 
 import $ from 'jquery';
-
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!jquery-sparkline';
-/* eslint-enable */
+import Sparklines from '../../../../components/Sparklines';
 
 class NasdaqSparkline extends React.Component {
 
-  componentDidMount() {
-    this.initSparkline();
-  }
-
-  initSparkline() {
+  render() {
     const data = [4, 6, 5, 7, 5];
     const options = {
       type: 'line',
@@ -32,16 +25,9 @@ class NasdaqSparkline extends React.Component {
       chartRangeMin: Math.min.apply(null, data) - 1,
     };
 
-    $(this.sparklineRef).sparkline(data, options);
-  }
 
-  render() {
     return (
-      <div
-        className="sparkline" ref={(r) => {
-          this.sparklineRef = r;
-        }}
-      />
+      <Sparklines data={data} options={options} />
     );
   }
 }

@@ -252,13 +252,13 @@ class Widgets extends React.Component {
                   <li><a href="#"><span className="text-danger"><i className="fa fa-heart" /> Like</span></a></li>
                   <li><a href="#">Comment</a></li>
                 </ul>
-                <ul className="post-comments mb-0">
+                <ul className="post-comments mb-0 mt-2">
                   <li>
                     <span className="thumb-xs avatar pull-left mr-sm">
                       <img className="rounded-circle" src={peopleA1} alt="..." />
                     </span>
                     <div className="comment-body">
-                      <h6 className="author fs-sm fw-semi-bold">Ignacio Abad
+                      <h6 className="author fs-sm fw-semi-bold">Ignacio Abad&nbsp;
                         <small>6 mins ago</small>
                       </h6>
                       <p className="fs-mini">Hey, have you heard anything about that?</p>
@@ -488,7 +488,7 @@ class Widgets extends React.Component {
                     &nbsp;
                     <span className="fw-semi-bold">7</span> shares
                   </p>
-                  <p className="fs-sm mt-lg">
+                  <p className="fs-sm mt-lg text-light">
                     <time>10 June</time>
                   </p>
                 </Widget>
@@ -498,7 +498,7 @@ class Widgets extends React.Component {
               <Col md={6} xs={12}>
                 <Widget className="widget-sm bg-primary text-white">
                   <p className="mb-xs"><i className="fa fa-arrow-circle-up fa-3x opacity-50" /></p>
-                  <p className="text-light mb">
+                  <p className="mb text-light">
                     <time>10 June</time>
                   </p>
                   <h3>

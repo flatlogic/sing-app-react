@@ -188,6 +188,9 @@ class Sidebar extends React.Component {
                 name: 'Error Page', link: '/error',
               },
               {
+                name: 'Gallery', link: '/app/extra/gallery',
+              },
+              {
                 name: 'Search Result', link: '/app/extra/search',
               },
               {
