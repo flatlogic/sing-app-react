@@ -4,7 +4,9 @@ import {
   ButtonGroup,
   Button,
 } from 'reactstrap';
+import classnames from 'classnames';
 import NotificationsDemo from './notifications-demo/Notifications';
+import NewNotificationsDemo from './notifications-demo/NewNotifications';
 import MessagesDemo from './notifications-demo/Messages';
 import ProgressDemo from './notifications-demo/Progress';
 
@@ -16,14 +18,31 @@ class Notifications extends React.Component {
 
     this.state = {
       notificationsTabSelected: 1,
+      newNotifications: null,
+      isLoad: false,
     };
   }
 
   changeNotificationsTab(tab) {
     this.setState({
       notificationsTabSelected: tab,
+      newNotifications: null,
     });
   }
+
+  loadNotifications() {
+    this.setState({
+      isLoad: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        newNotifications: (<NewNotificationsDemo />),
+        isLoad: false,
+      });
+    }, 1500);
+  }
+
   render() {
     let notificationsTab;
 
@@ -53,14 +72,15 @@ class Notifications extends React.Component {
             <Button color="secondary" onClick={() => this.changeNotificationsTab(3)} active={this.state.notificationsTabSelected === 3}>Progress</Button>
           </ButtonGroup>
         </header>
-        {notificationsTab}
+        {this.state.newNotifications || notificationsTab}
         <footer className={[s.cardFooter, 'text-sm', 'card-footer'].join(' ')}>
           <Button
             color="link"
-            className={[s.btnNotificationsReload, 'btn-xs', 'float-right', 'py-0'].join(' ')}
+            className={classnames({ disabled: this.state.isLoad }, s.btnNotificationsReload, 'btn-xs', 'float-right', 'py-0')}
+            onClick={() => this.loadNotifications()}
             id="load-notifications-btn"
           >
-            <i className="fa fa-refresh" />
+            {this.state.isLoad ? <span><i className="fa fa-refresh fa-spin mr-xs" /> Loading...</span> : <i className="fa fa-refresh" />}
           </Button>
           <span className="fs-mini">Synced at: 21 Apr 2014 18:36</span>
         </footer>

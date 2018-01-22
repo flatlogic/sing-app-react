@@ -309,6 +309,24 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   display: block;
 }
 
+@include keyframes('bg-attention') {
+  0% {
+    background-color: lighten(theme-color('warning'), 43%);
+  }
+
+  5% {
+    background-color: lighten(theme-color('warning'), 33%);
+  }
+
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.bg-attention {
+  animation: bg-attention 10s;
+}
+
 .thin-scroll {
   &::-webkit-scrollbar {
     height: 8px;
