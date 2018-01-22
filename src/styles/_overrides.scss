@@ -383,6 +383,15 @@ small {
       background: $white;
     }
   }
+
+  .btn-link {
+    color: #666;
+    text-decoration: none;
+
+    &:hover {
+      color: #333;
+    }
+  }
 }
 
 ///////// List Group //////////
