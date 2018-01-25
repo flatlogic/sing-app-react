@@ -64,27 +64,13 @@
   }
 }
 
-.eventAvatar,
-.commentAvatar {
+.eventAvatar {
   float: left;
   margin-right: $spacer;
 }
 
 .eventAvatar > img {
   width: 34px;
-}
-
-.commentAvatar > img {
-  width: 28px;
-}
-
-.likeAvatar {
-  float: right;
-  margin-left: $spacer / 2;
-
-  img {
-    width: 34px;
-  }
 }
 
 .eventBody {
@@ -94,63 +80,10 @@
 
 .eventFooter {
   background-color: #f3f3f3;
-  margin-left: -$widget-padding-horizontal;
-  margin-right: -$widget-padding-horizontal;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
+  margin: 20px -20px 0;
+  padding: 10px 20px;
 }
 
 .eventTimestamp {
   color: $text-muted;
-}
-
-.eventSocial {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: $spacer*0.7 $widget-padding-horizontal;
-}
-
-.recentLikes,
-.eventLinks {
-  margin-bottom: 0;
-  padding-left: 0;
-
-  > li {
-    display: inline-block;
-  }
-}
-
-.eventLinks {
-  font-size: $font-size-sm;
-
-  li + li {
-    &::before {
-      content: '\25cf';
-      padding: 0 $spacer/2;
-    }
-  }
-
-  > li > a {
-    text-decoration: none;
-    color: $text-muted;
-
-    &:hover {
-      color: $text-muted;
-    }
-  }
-}
-
-.postComments {
-  @include list-unstyled();
-
-  > li {
-    display: flex;
-    padding: $spacer;
-    border-top: 1px solid $gray-200;
-  }
-}
-
-.commentInput {
-  flex-grow: 1;
 }

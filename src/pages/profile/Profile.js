@@ -110,13 +110,11 @@ const Profile = () => (
               Because when there is a maturity, there is ...
             </div>
             <footer className={s.eventFooter}>
-              <div className={s.eventSocial}>
-                <ul className={s.eventLinks}>
-                  <li><a href="#">1 hour</a></li>
-                  <li><a href="#"><span className="text-danger"><i className="fa fa-heart" /> Like</span></a></li>
-                  <li><a href="#">Comment</a></li>
-                </ul>
-              </div>
+              <ul className="post-links">
+                <li><a href="#">1 hour</a></li>
+                <li><a href="#"><span className="text-danger"><i className="fa fa-heart" /> Like</span></a></li>
+                <li><a href="#">Comment</a></li>
+              </ul>
             </footer>
           </section>
           <section className={s.event}>
@@ -129,46 +127,41 @@ const Profile = () => (
               my brand new HDD 40TB. Thanks god I found it!
             </div>
             <footer className={s.eventFooter}>
-              <div className={s.eventSocial}>
-                <ul className={s.eventLinks}>
+              <div className="clearfix">
+                <ul className="post-links mt-sm pull-left">
                   <li><a href="#">1 hour</a></li>
                   <li><a href="#"><span className="text-danger"><i className="fa fa-heart-o" /> Like</span></a></li>
                   <li><a href="#">Comment</a></li>
                 </ul>
-                <ul className={s.recentLikes}>
-                  <li>
-                    <span className={s.likeAvatar}>
-                      <a href="#"><img className="rounded-circle" src={a1} alt="..." /></a>
-                    </span>
-                  </li>
-                  <li>
-                    <span className={s.likeAvatar}>
-                      <a href="#"><img className="rounded-circle" src={a5} alt="..." /></a>
-                    </span>
-                  </li>
-                  <li>
-                    <span className={s.likeAvatar}>
-                      <a href="#"><img className="rounded-circle" src={a3} alt="..." /></a>
-                    </span>
-                  </li>
-                </ul>
+
+                <span className="thumb thumb-sm pull-right">
+                  <a href="#">
+                    <img className="rounded-circle" alt="..." src={a1} />
+                  </a>
+                </span>
+                <span className="thumb thumb-sm pull-right">
+                  <a href="#"><img className="rounded-circle" alt="..." src={a5} /></a>
+                </span>
+                <span className="thumb thumb-sm pull-right">
+                  <a href="#"><img className="rounded-circle" alt="..." src={a3} /></a>
+                </span>
               </div>
-              <ul className={s.postComments}>
+              <ul className="post-comments mt-sm">
                 <li>
-                  <span className={s.commentAvatar}>
+                  <span className="thumb-xs avatar pull-left mr-sm">
                     <img className="rounded-circle" src={a1} alt="..." />
                   </span>
-                  <div>
-                    <h6 className="fs-sm fw-semi-bold">Ignacio Abad <small>6 mins ago</small></h6>
-                    <p className="mb-0">Hey, have you heard anything about that?</p>
+                  <div className="comment-body">
+                    <h6 className="author fs-sm fw-semi-bold">Ignacio Abad <small>6 mins ago</small></h6>
+                    <p>Hey, have you heard anything about that?</p>
                   </div>
                 </li>
                 <li>
-                  <span className={s.commentAvatar}>
+                  <span className="thumb-xs avatar pull-left mr-sm">
                     <img className="rounded-circle" src={avatar} alt="..." />
                   </span>
-                  <div className={s.commentInput}>
-                    <Input size="sm" type="text" placeholder="Write your comment..." />
+                  <div className="comment-body">
+                    <input className="form-control form-control-sm" type="text" placeholder="Write your comment..." />
                   </div>
                 </li>
               </ul>

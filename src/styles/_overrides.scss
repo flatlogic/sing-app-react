@@ -127,6 +127,11 @@ legend {
 
 /*  Badge */
 // Add colors for badges
+.badge {
+  padding: 4px;
+  font-weight: $font-weight-bold;
+  font-size: 11px;
+}
 
 .badge-success,
 .badge-info,
@@ -140,7 +145,7 @@ legend {
 }
 
 .badge-default {
-  @include badge-variant($gray-600);
+  @include badge-variant($gray-300);
 }
 
 .badge {

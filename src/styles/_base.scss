@@ -223,6 +223,7 @@ table > thead > tr > th {
 /*          Post Comments           */
 
 .post-comments {
+  margin-bottom: $spacer / 2;
   margin-left: -20px;
   margin-right: -20px;
   font-size: $font-size-sm;
