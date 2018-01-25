@@ -346,10 +346,10 @@ class Components extends React.Component {
                       bars:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
-                        <Progress color="danger" value="75" className="progress-sm mb-xs" />
-                        <Progress color="warning" value="60" className="progress-sm mb-xs" />
-                        <Progress color="success" value="45" className="progress-sm mb-xs" />
-                        <Progress color="primary" value="30" className="progress-sm mb-xs" />
+                        <Progress color="danger" value="75" className="progress-sm" />
+                        <Progress color="warning" value="60" className="progress-sm" />
+                        <Progress color="success" value="45" className="progress-sm" />
+                        <Progress color="primary" value="30" className="progress-sm" />
                       </Col>
                     </Row>
                   </Col>
@@ -360,9 +360,9 @@ class Components extends React.Component {
                       cases:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
-                        <Progress color="gray" value="60" className="progress-xs mb-xs" />
-                        <Progress color="warning" value="60" className="progress-sm mb-xs" />
-                        <Progress color="info" value="33" className="mb-xs" />
+                        <Progress color="gray" value="60" className="progress-xs" />
+                        <Progress color="warning" value="60" className="progress-sm" />
+                        <Progress color="info" value="33" />
                       </Col>
                     </Row>
                   </Col>
@@ -373,10 +373,10 @@ class Components extends React.Component {
                       containing text:</p>
                     <Row>
                       <Col md={{ size: 10 }} xs={12}>
-                        <Progress animated color="info" value="51" className="mb-xs">51%</Progress>
+                        <Progress animated color="info" value="51">51%</Progress>
                         <Progress
                           animated color="gray-light" value="51"
-                          className="progress-sm mb-xs"
+                          className="progress-sm"
                         />
                       </Col>
                     </Row>
