@@ -1,6 +1,10 @@
 @import '../../../styles/app';
 
 .headerLink {
+  @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+    font-size: $font-size-larger;
+  }
+
   a {
     display: block;
     color: $sidebar-color;
@@ -25,6 +29,10 @@
     > i {
       margin-right: 7px;
     }
+
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+      line-height: 44px;
+    }
   }
 
   .icon {
@@ -39,6 +47,10 @@
 
     i {
       color: rgba(170, 170, 170, 0.7);
+    }
+
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+      top: 8px;
     }
   }
 
@@ -62,6 +74,10 @@
   line-height: 35px;
 
   @include transition(transform 0.3s ease-in-out);
+
+  @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+    line-height: 44px;
+  }
 }
 
 a.headerLinkActive {
@@ -105,6 +121,10 @@ a.headerLinkActive {
   ul {
     padding-left: 0;
     font-size: 13px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+      font-size: 14px;
+    }
 
     li {
       list-style: none;
