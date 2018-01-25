@@ -393,7 +393,7 @@ class TabsAccordion extends React.Component {
                   <div className="mb-0">
                     <a className="accordion-toggle" role="button">
                       {element.title}
-                      <i className="fa fa-angle-down float-right" />
+                      <i className={`fa fa-angle-down ${this.state.accordionFirst[index] ? 'expanded' : ''}`} />
                     </a>
                   </div>
                 </div>
