@@ -71,6 +71,14 @@ class Dynamic extends React.Component {
       );
     }
 
+    function descriptionFormatter(cell) {
+      return (
+        <a href="#">
+          {cell}
+        </a>
+      );
+    }
+
     function progressFormatter(cell) {
       return (
         <Progress color={cell.type} value={cell.progress} />
@@ -92,7 +100,7 @@ class Dynamic extends React.Component {
     }
 
     return (
-      <div className={s.root}>
+      <div>
         <Breadcrumb>
           <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
           <BreadcrumbItem active>Tables Dynamic</BreadcrumbItem>
@@ -102,11 +110,11 @@ class Dynamic extends React.Component {
           <p>
             Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
           </p>
-          <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search>
+          <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}>
             <TableHeaderColumn className="width-50" columnClassName="width-50" dataField="id" isKey>ID</TableHeaderColumn>
             <TableHeaderColumn dataField="name" dataSort>Name</TableHeaderColumn>
             <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="info" dataFormat={infoFormatter}>Info</TableHeaderColumn>
-            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="description">Description</TableHeaderColumn>
+            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>Description</TableHeaderColumn>
             <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>Date</TableHeaderColumn>
             <TableHeaderColumn className="width-150" columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>Status</TableHeaderColumn>
           </BootstrapTable>
