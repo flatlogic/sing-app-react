@@ -117,7 +117,7 @@ class ChangesChart extends React.Component {
             }}
           />
           {/*    <div rickshaw-chart [series]="series" [height]="100" [renderer]="'multi'"
-          [configureProps]="{gapSize: 0.5, min: 'auto', strokeWidth: 3}"></div>*/}
+          [configureProps]="{gapSize: 0.5, min: 'auto', strokeWidth: 3}"></div> */}
         </div>
         <h4 className={s.chartTitle}><span className="fw-normal">Salt Lake City</span>, Utah</h4>
         <p className="deemphasize">Today 13:34</p>

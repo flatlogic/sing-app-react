@@ -107,7 +107,7 @@ class Buttons extends React.Component {
         <h1 className="page-title">Buttons - <span className="fw-semi-bold">Styles </span></h1>
 
         <Row>
-          {/* Color options*/}
+          {/* Color options */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Color <span className="fw-semi-bold">Options</span>
@@ -132,7 +132,7 @@ class Buttons extends React.Component {
             </Widget>
           </Col>
 
-          {/* Size variants*/}
+          {/* Size variants */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Size <span className="fw-semi-bold">Variants</span>
@@ -164,7 +164,7 @@ class Buttons extends React.Component {
             </Widget>
           </Col>
 
-          {/* Block Buttons*/}
+          {/* Block Buttons */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Block <span className="fw-semi-bold">Buttons</span>
@@ -188,7 +188,7 @@ class Buttons extends React.Component {
             </Widget>
           </Col>
 
-          {/* Disabled Buttons*/}
+          {/* Disabled Buttons */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Disabled <span className="fw-semi-bold">Buttons</span>
@@ -211,7 +211,7 @@ class Buttons extends React.Component {
             </Widget>
           </Col>
 
-          {/* Buttons Groups*/}
+          {/* Buttons Groups */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
               title={<h5> Button <span className="fw-semi-bold">Groups</span>
@@ -251,7 +251,7 @@ class Buttons extends React.Component {
             </Widget>
           </Col>
 
-          {/* Button Dropdowns*/}
+          {/* Button Dropdowns */}
           {/* todo: check after reactstrap update */}
           <Col lg={4} md={6} sm={12} xs={12}>
             <Widget
@@ -335,7 +335,7 @@ class Buttons extends React.Component {
               </h6>} close collapse
             >
               <Row>
-                {/* Checkboxes*/}
+                {/* Checkboxes */}
                 <Col md={4} sm={6} xs={12}>
                   <h4> Button <span className="fw-semi-bold">Checkboxes</span></h4>
                   <p className="fs-mini text-muted">
@@ -381,7 +381,7 @@ class Buttons extends React.Component {
 
                 </Col>
 
-                {/* Radios*/}
+                {/* Radios */}
                 <Col lg={4} md={6} sm={12} xs={12}>
                   <h4> Button <span className="fw-semi-bold">Radios</span></h4>
                   <p className="fs-mini text-muted">
@@ -424,7 +424,7 @@ class Buttons extends React.Component {
                   </div>
                 </Col>
 
-                {/* Buttons with Icons*/}
+                {/* Buttons with Icons */}
                 <Col lg={4} md={6} sm={12} xs={12}>
                   <h4> Use with <span className="fw-semi-bold">Icons</span></h4>
                   <p className="fs-mini text-muted">

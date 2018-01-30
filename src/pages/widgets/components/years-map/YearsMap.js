@@ -7039,7 +7039,7 @@ class YearsMap extends React.Component {
             {
               max: 5000000,
               attrs: {
-                fill: 'rgb(245, 249, 251)', //lightenColor('#ebeff1', .04)
+                fill: 'rgb(245, 249, 251)', // lightenColor('#ebeff1', .04)
               },
               label: 'Less than 5M',
             },
@@ -7055,14 +7055,14 @@ class YearsMap extends React.Component {
               min: 10000000,
               max: 50000000,
               attrs: {
-                fill: '#eee', //gray-lighter
+                fill: '#eee', // gray-lighter
               },
               label: 'Between 10M and 50M',
             },
             {
               min: 50000000,
               attrs: {
-                fill: 'rgb(209, 213, 215)', //darkenColor('#ebeff1', .1)
+                fill: 'rgb(209, 213, 215)', // darkenColor('#ebeff1', .1)
               },
               label: 'More than 50M',
             },

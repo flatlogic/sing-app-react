@@ -88,7 +88,7 @@ class Validation extends React.Component {
                       <span className="help-block">
                         This one is triggered even when 1 character has been input
                       </span>
-                      {/* todo: change triggered*/}
+                      {/* todo: change triggered */}
                     </Col>
                   </FormGroup>
                   <FormGroup row>

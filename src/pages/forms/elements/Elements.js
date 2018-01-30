@@ -353,7 +353,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
 
-          {/* Default form*/}
+          {/* Default form */}
           <Col lg={6} md={12}>
             <Widget title={<h6> Prepended and appended inputs </h6>} settings refresh close>
               <FormGroup>
@@ -527,7 +527,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
 
-          {/* Input Groups*/}
+          {/* Input Groups */}
           <Col lg={4} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
@@ -583,7 +583,7 @@ class Elements extends React.Component {
                     <Input rows="4" type="textarea" name="text" id="default-textarea" />
                   </Col>
                 </FormGroup>
-                <FormGroup row> {/* todo: fix autosize*/}
+                <FormGroup row> {/* todo: fix autosize */}
                   <Label md={3} className="text-md-right" for="elastic-textarea">Auto-growing
                     textarea</Label>
                   <Col md={9}>
@@ -619,7 +619,7 @@ class Elements extends React.Component {
                     Markdown Editor
                   </Label>
                   <Col md={9}>
-                    {/* todo: change markdown*/}
+                    {/* todo: change markdown */}
                     <ReactMarkdown
                       source='
                     ### Hello there
@@ -642,7 +642,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
 
-          {/* selects*/}
+          {/* selects */}
           <Col lg="6" md={12}>
             <Widget
               title={<h6><i className="fa fa-list-alt" /> Selects </h6>} refresh close
@@ -660,7 +660,7 @@ class Elements extends React.Component {
                     />
                   </Col>
                 </FormGroup>
-                <FormGroup row> {/* todo: fix group select*/}
+                <FormGroup row> {/* todo: fix group select */}
                   <Label md="4" for="grouped-select">Select with search & groups</Label>
                   <Col md="6" className={s.select2}>
                     <Select2
@@ -1063,7 +1063,7 @@ class Elements extends React.Component {
                     <span className="help-block">
                       Colorpicker plugin for Twitter Bootstrap, originally written by Stefan Petre
                     </span>
-                    <InputGroup id="colorpicker"> {/* todo: fix value input*/}
+                    <InputGroup id="colorpicker"> {/* todo: fix value input */}
                       <Input
                         type="text" onChange={this.changeColorInput} id="colorpickeri"
                         value={this.state.colorpickerInputValue}
@@ -1082,7 +1082,7 @@ class Elements extends React.Component {
             </Widget>
           </Col>
 
-          {/* input masks*/}
+          {/* input masks */}
           <Col lg="6" md="12">
             <Widget title={<h6> Input <strong>Masks</strong></h6>} close settingsInverse refresh>
               <Form className="form-label-left">
@@ -1272,7 +1272,7 @@ class Elements extends React.Component {
 
 
         <Row>
-          {/* Simple file uploads*/}
+          {/* Simple file uploads */}
           <Col lg="6" md={12}>
             <Widget
               title={<h6>Simple <strong>file uploads</strong></h6>} settingsInverse close

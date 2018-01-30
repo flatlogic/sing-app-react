@@ -1,0 +1,14 @@
+.filterElement {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.filterElementLable {
+  margin-right: 10px;
+  font-weight: 400;
+}

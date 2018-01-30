@@ -109,7 +109,7 @@ class Components extends React.Component {
 
         <h1 className="page-title">Components - <span className="fw-semi-bold">Bootstrap</span></h1>
 
-        {/* Alerts*/}
+        {/* Alerts */}
         <Row>
           <Col md={12}>
             <Widget
@@ -138,7 +138,7 @@ class Components extends React.Component {
         </Row>
 
         <Row>
-          {/* Label & Badge*/}
+          {/* Label & Badge */}
           <Col lg={6} md={12}>
             <Widget
               title={<h6>
@@ -182,7 +182,7 @@ class Components extends React.Component {
             </Widget>
           </Col>
 
-          {/* Tooltip, Popover, Modal*/}
+          {/* Tooltip, Popover, Modal */}
           <Col lg={6} md={12}>
             <Widget
               title={<h6>
@@ -190,7 +190,7 @@ class Components extends React.Component {
               </h6>} settings close refresh
             >
               <div>
-                {/* Tooltip*/}
+                {/* Tooltip */}
                 <div className="mb-5">
                   <h3>Position <span className="fw-semi-bold">Tooltips</span></h3>
                   <p>Stable four position options available:</p>
@@ -237,7 +237,7 @@ class Components extends React.Component {
                     </Popover>
                   </div>
                 </div>
-                {/* Modal*/}
+                {/* Modal */}
                 <div>
                   <h3><span className="fw-semi-bold">Bootstrap</span> Modals</h3>
                   <p>Modals are streamlined, but flexible, dialog prompts with the minimum
@@ -330,7 +330,7 @@ class Components extends React.Component {
             </Widget>
           </Col>
         </Row>
-        {/* Progress Bars*/}
+        {/* Progress Bars */}
         <Row>
           <Col md={12}>
             <Widget

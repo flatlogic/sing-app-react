@@ -1,0 +1,24 @@
+.gridFilter {
+  display: flex;
+}
+
+.gridButton {
+  padding: 0;
+  display: flex;
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

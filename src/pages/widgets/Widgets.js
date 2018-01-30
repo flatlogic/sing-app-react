@@ -367,7 +367,7 @@ class Widgets extends React.Component {
                       <div className="row mt-xs">
                         <div className="col-6 p-0">
                           {/*     <canvas skycon [weather]="'clear-day'" [color]="config.settings.colors['white']"
-                          width="40" height="40"></canvas>*/}
+                          width="40" height="40"></canvas> */}
                           <p className="m-0 fw-normal mt-n-xs">sunny</p>
                         </div>
                         <div className="col-6 p-0">
@@ -379,13 +379,13 @@ class Widgets extends React.Component {
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">TOMMOROW</h6>
                       {/* <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas>*/}
+                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
                       <p className="m-0 fw-semi-bold">32&deg;</p>
                     </div>
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">TUE</h6>
                       {/*    <canvas className="mt-xs" skycon [weather]="'rain'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas>*/}
+                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
                       <p className="m-0 fw-semi-bold">25&deg;</p>
                     </div>
                     <div className="col-3 col-md-2 p-0">
@@ -398,7 +398,7 @@ class Widgets extends React.Component {
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">THU</h6>
                       {/*     <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas>*/}
+                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
                       <p className="m-0 fw-semi-bold">17&deg;</p>
                     </div>
                   </div>
@@ -411,7 +411,7 @@ class Widgets extends React.Component {
                   <Row className="m-0">
                     <div className="col-5 bg-danger btlr bblr">
                       {/*        <canvas className="mt" skycon [weather]="'clear-day'"
-                      [color]="config.settings.colors['white']" width="62" height="62"></canvas>*/}
+                      [color]="config.settings.colors['white']" width="62" height="62"></canvas> */}
                       <h6 className="text-white fw-normal m-t-1">FRIDAY</h6>
                     </div>
                     <div className="col-7">
@@ -422,7 +422,7 @@ class Widgets extends React.Component {
                       <div className="row mt-n-xs mb-xs">
                         <div className="col-6 p-0">
                           {/*  <canvas skycon [weather]="'wind'" [
-                          color]="config.settings.colors['gray-light']" width="20" height="20"></canvas>*/}
+                          color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
                           <div className="display-inline-block">
                             <p className="value6">4</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MPS</p>
@@ -430,7 +430,7 @@ class Widgets extends React.Component {
                         </div>
                         <div className="col-6 p-0">
                           {/*   <canvas skycon [weather]="'rain'"
-                          [color]="config.settings.colors['gray-light']" width="20" height="20"></canvas>*/}
+                          [color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
                           <div className="display-inline-block">
                             <p className="value6">52</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MM</p>
@@ -452,7 +452,7 @@ class Widgets extends React.Component {
                     </div>
                     <div className="col-5">
                       {/*  <canvas className="mt" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['brand-success']" width="60" height="60"></canvas>*/}
+                      [color]="config.settings.colors['brand-success']" width="60" height="60"></canvas> */}
                       <p className="fw-normal fs-sm text-muted">WINDY</p>
                     </div>
                   </div>
@@ -669,7 +669,7 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
 
-          {/* todo: fix rickshaw bar and sparkline*/}
+          {/* todo: fix rickshaw bar and sparkline */}
           <Col lg={3} xs={12}>
             <Widget className="widget-chart-changes" close refresh bodyClass="mt-0">
               <ChangesChart />

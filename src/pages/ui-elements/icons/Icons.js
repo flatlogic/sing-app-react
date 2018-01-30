@@ -2632,7 +2632,7 @@ class Icons extends React.Component {
             </div>
           </TabPane>
 
-          {/* tab #7*/}
+          {/* tab #7 */}
           <TabPane tabId="7">
             <div>
               <h4>File Type <span className="fw-semi-bold">Icons</span></h4>

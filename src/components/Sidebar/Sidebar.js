@@ -87,6 +87,21 @@ class Sidebar extends React.Component {
             ]}
           />
           <LinksGroup
+            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/pages'))}
+            isActive={this.props.activeItem === '/app/pages'}
+            header="Pages"
+            iconName="fa-file-o"
+            headerLink="/app/pages"
+            childrenLinks={[
+              {
+                name: 'Products Grid', link: '/app/pages/products',
+              },
+              {
+                name: 'Product Page', link: '/app/pages/product',
+              },
+            ]}
+          />
+          <LinksGroup
             header="Profile"
             headerLink="/app/profile"
             iconName="fa-user"
@@ -209,19 +224,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2"/>
+              <i className="fa fa-circle text-warning mr-2" />
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2"/>
+              <i className="fa fa-circle text-gray mr-2" />
               <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2"/>
+              <i className="fa fa-circle text-danger mr-2" />
               <span className={s.labelName}>Background</span>
             </a>
           </li>
