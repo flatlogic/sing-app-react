@@ -52,8 +52,11 @@ class LinksGroup extends Component {
   }
 
   render() {
-    const isOpen = this.props.activeItem.includes(this.props.index) &&
-      this.state.headerLinkWasClicked;
+    let isOpen = false;
+    if (!!this.props.activeItem) {
+      isOpen = this.props.activeItem.includes(this.props.index) &&
+        this.state.headerLinkWasClicked;
+    }
 
     if (!this.props.childrenLinks) {
       if (this.props.isHeader) {
