@@ -69,15 +69,12 @@
 }
 
 .caret {
-  float: right;
-  margin-right: 18px;
-  line-height: 35px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 15px;
 
   @include transition(transform 0.3s ease-in-out);
-
-  @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-    line-height: 44px;
-  }
 }
 
 a.headerLinkActive {

@@ -23,7 +23,7 @@ const ProductList = (props) => {
         <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
         <BreadcrumbItem active>E-commerce</BreadcrumbItem>
       </Breadcrumb>
-      <h1 className="page-title">E-commerce > <span className="fw-semi-bold">Product grid</span></h1>
+      <h1 className="page-title">E-commerce &gt; <span className="fw-semi-bold">Product grid</span></h1>
       <div className={s.productsListFilters}>
         <FilterElement defaultLable="Type" options={['Shoes', 'Boots', 'Trainers']} />
         <FilterElement defaultLable="Brands" options={['All', 'Nike', 'Adidas']} />

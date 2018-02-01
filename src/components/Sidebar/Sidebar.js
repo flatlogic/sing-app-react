@@ -72,144 +72,226 @@ class Sidebar extends React.Component {
         </header>
         <ul className={s.nav}>
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/main'))}
-            isActive={this.props.activeItem === '/app/main'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Dashboard"
+            isHeader
             iconName="fa-desktop"
-            headerLink="/app/main"
+            link="/app/main"
+            index="main"
             childrenLinks={[
               {
-                name: 'Dashboard', link: '/app/main/dashboard',
+                header: 'Dashboard', link: '/app/main/dashboard',
               },
               {
-                name: 'Widgets', link: '/app/main/widgets',
+                header: 'Widgets', link: '/app/main/widgets',
               },
             ]}
           />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/pages'))}
-            isActive={this.props.activeItem === '/app/pages'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Pages"
+            isHeader
             iconName="fa-file-o"
-            headerLink="/app/pages"
+            link="/app/pages"
+            index="pages"
             childrenLinks={[
               {
-                name: 'Products Grid', link: '/app/pages/products',
+                header: 'Products Grid', link: '/app/pages/products',
               },
               {
-                name: 'Product Page', link: '/app/pages/product',
+                header: 'Product Page', link: '/app/pages/product',
               },
             ]}
           />
           <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Profile"
-            headerLink="/app/profile"
+            link="/app/profile"
+            isHeader
             iconName="fa-user"
+            index="profile"
           />
-          <LinksGroup header="Charts" headerLink="/app/charts" iconName="fa-bar-chart" />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/forms'))}
-            isActive={this.props.activeItem === '/app/forms'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Charts"
+            link="/app/charts"
+            isHeader
+            iconName="fa-bar-chart"
+            index="charts"
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Forms"
+            isHeader
             iconName="fa-align-right"
-            headerLink="/app/forms"
+            link="/app/forms"
+            index="forms"
             childrenLinks={[
               {
-                name: 'Forms Elements', link: '/app/forms/elements',
+                header: 'Forms Elements', link: '/app/forms/elements',
               },
               {
-                name: 'Forms Validation', link: '/app/forms/validation',
+                header: 'Forms Validation', link: '/app/forms/validation',
               },
               {
-                name: 'Forms Wizard', link: '/app/forms/wizard',
+                header: 'Forms Wizard', link: '/app/forms/wizard',
               },
             ]}
           />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/ui'))}
-            isActive={this.props.activeItem === '/app/ui'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="UI Elements"
+            isHeader
             iconName="fa-tree"
-            headerLink="/app/ui"
+            link="/app/ui"
+            index="ui"
             childrenLinks={[
               {
-                name: 'Components', link: '/app/ui/components',
+                header: 'Components', link: '/app/ui/components',
               },
               {
-                name: 'Notifications', link: '/app/ui/notifications',
+                header: 'Notifications', link: '/app/ui/notifications',
               },
               {
-                name: 'Icons', link: '/app/ui/icons',
+                header: 'Icons', link: '/app/ui/icons',
               },
               {
-                name: 'Buttons', link: '/app/ui/buttons',
+                header: 'Buttons', link: '/app/ui/buttons',
               },
               {
-                name: 'Tabs & Accordion', link: '/app/ui/tabs-accordion',
+                header: 'Tabs & Accordion', link: '/app/ui/tabs-accordion',
               },
               {
-                name: 'List Groups', link: '/app/ui/list-groups',
+                header: 'List Groups', link: '/app/ui/list-groups',
               },
             ]}
           />
-          <LinksGroup header="Grid" headerLink="/app/grid" iconName="fa-th" />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/tables'))}
-            isActive={this.props.activeItem === '/app/tables'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Grid"
+            link="/app/grid"
+            isHeader
+            iconName="fa-th"
+            index="grid"
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={t => this.props.dispatch(changeActiveSidebarItem(t))}
+            activeItem={this.props.activeItem}
             header="Tables"
+            isHeader
             iconName="fa-table"
-            headerLink="/app/tables"
+            link="/app/tables"
+            index="tables"
             childrenLinks={[
               {
-                name: 'Tables Basic', link: '/app/tables/static',
+                header: 'Tables Basic', link: '/app/tables/static',
               },
               {
-                name: 'Tables Dynamic', link: '/app/tables/dynamic',
+                header: 'Tables Dynamic', link: '/app/tables/dynamic',
               },
             ]}
           />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/maps'))}
-            isActive={this.props.activeItem === '/app/maps'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Maps"
+            isHeader
             iconName="fa-map"
-            headerLink="/app/maps"
+            link="/app/maps"
+            index="maps"
             childrenLinks={[
               {
-                name: 'Google Maps', link: '/app/maps/google',
+                header: 'Google Maps', link: '/app/maps/google',
               },
               {
-                name: 'Vector Map', link: '/app/maps/vector',
+                header: 'Vector Map', link: '/app/maps/vector',
               },
             ]}
           />
           <LinksGroup
-            onActiveSidebarItemChange={() => this.props.dispatch(changeActiveSidebarItem('/app/extra'))}
-            isActive={this.props.activeItem === '/app/extra'}
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Extra"
+            isHeader
             iconName="fa-leaf"
-            headerLink="/app/extra"
+            link="/app/extra"
+            index="extra"
             childrenLinks={[
               {
-                name: 'Calendar', link: '/app/extra/calendar',
+                header: 'Calendar', link: '/app/extra/calendar',
               },
               {
-                name: 'Invoice', link: '/app/extra/invoice',
+                header: 'Invoice', link: '/app/extra/invoice',
               },
               {
-                name: 'Login Page', link: '/login', onClick: this.doLogout,
+                header: 'Login Page', link: '/login', onClick: this.doLogout,
               },
               {
-                name: 'Error Page', link: '/error',
+                header: 'Error Page', link: '/error',
               },
               {
-                name: 'Gallery', link: '/app/extra/gallery',
+                header: 'Gallery', link: '/app/extra/gallery',
               },
               {
-                name: 'Search Result', link: '/app/extra/search',
+                header: 'Search Result', link: '/app/extra/search',
               },
               {
-                name: 'Time line', link: '/app/extra/timeline',
+                header: 'Time line', link: '/app/extra/timeline',
+              },
+            ]}
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Menu Levels"
+            isHeader
+            iconName="fa-desktop"
+            link="/app/menu"
+            index="menu"
+            childrenLinks={[
+              {
+                header: 'Level 1.1', link: '/app/menu/level1',
+              },
+              {
+                header: 'Level 1.2',
+                link: '/app/menu/level_12',
+                index: 'level_12',
+                childrenLinks: [
+                  {
+                    header: 'Level 2.1',
+                    link: '/app/menu/level_12/level_21',
+                    index: 'level_21',
+                  },
+                  {
+                    header: 'Level 2.2',
+                    link: '/app/menu/level_12/level_22',
+                    index: 'level_22',
+                    childrenLinks: [
+                      {
+                        header: 'Level 3.1',
+                        link: '/app/menu/level_12/level_22/level_31',
+                        index: 'level_31',
+                      },
+                      {
+                        header: 'Level 3.2',
+                        link: '/app/menu/level_12/level_22/level_32',
+                        index: 'level_32 ',
+                      },
+                    ],
+                  },
+                  {
+                    header: 'Level 2.3',
+                    link: '/app/menu/level_12/level_23',
+                    index: 'level_23',
+                  },
+                ],
               },
             ]}
           />
@@ -224,19 +306,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2" />
+              <i className="fa fa-circle text-warning mr-2"/>
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2" />
+              <i className="fa fa-circle text-gray mr-2"/>
               <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2" />
+              <i className="fa fa-circle text-danger mr-2"/>
               <span className={s.labelName}>Background</span>
             </a>
           </li>
