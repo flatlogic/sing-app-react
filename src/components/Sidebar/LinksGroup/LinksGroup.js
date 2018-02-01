@@ -62,7 +62,6 @@ class LinksGroup extends Component {
             <NavLink
               to={this.props.link}
               activeClassName={s.headerLinkActive}
-              onClick={() => this.togglePanelCollapse(this.props.link)}
               exact
             >
               <span className={s.icon}>
