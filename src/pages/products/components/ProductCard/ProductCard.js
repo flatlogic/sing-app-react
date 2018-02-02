@@ -1,37 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+
+
+import Rating from '../../../product/components/Rating/Rating';
 
 import star from '../../../../images/stars/star.svg';
 import starFilled from '../../../../images/stars/star-filled.svg';
 
 import s from './ProductCard.scss';
 
-const ProductCard = (props) => {
-  const { img, lable, title, description, price, favourite } = props;
-  return (
-    <div className={s.productCard}>
-      <div className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
-        {lable && <div className={[s.lable, s[`lable--${lable.color}`]].join(' ')}>{lable.title}</div>}
-        <div className={s.star}>
-          <img src={favourite ? starFilled : star} alt="star" />
+class ProductCard extends Component {
+  state = {
+    favourite: this.props.favourite,
+  }
+
+  changeFavourite() {
+    this.setState(pvState => ({ favourite: !pvState.favourite }));
+  }
+
+  render() {
+    const { img, lable, title, description, price, rating } = this.props;
+    const { favourite } = this.state;
+    return (
+      <div className={[s.productCard, 'product-card'].join(' ')}>
+        <div className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
+          {lable && <div className={[s.lable, s[`lable--${lable.color}`]].join(' ')}>{lable.title}</div>}
+          <button className={s.star} onClick={() => this.changeFavourite()}>
+            <img src={favourite ? starFilled : star} alt="star" />
+          </button>
+        </div>
+        <div className={s.productsCardTitle}>{title}</div>
+        <div className={s.productsCardDescription}>{description}</div>
+        <div className={s.productsCardPrice}>
+          {typeof price === 'number'
+            ? `$${price}`
+            : <div className={s.sale}>
+              <span className={s.old}>${price.old}</span>
+              {price.percents}% off
+           <span className={s.new}> ${price.new}</span>
+            </div>
+          }
+          {rating && <Rating rating={rating} />}
         </div>
       </div>
-      <div className={s.productsCardTitle}>{title}</div>
-      <div className={s.productsCardDescription}>{description}</div>
-      <div className={s.productsCardPrice}>
-        {typeof price === 'number'
-          ? `$${price}`
-          : <div className={s.sale}>
-            <span className={s.old}>${price.old}</span>
-            {price.percents}% off
-           <span className={s.new}> ${price.new}</span>
-          </div>
-        }
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 ProductCard.propTypes = {
   img: PropTypes.string.isRequired,
@@ -40,6 +55,11 @@ ProductCard.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.any.isRequired,
   favourite: PropTypes.bool.isRequired,
+  rating: PropTypes.number,
+};
+
+ProductCard.getDefaultProps = {
+  rating: null,
 };
 
 export default withStyles(s)(ProductCard);

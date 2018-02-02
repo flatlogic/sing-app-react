@@ -1,3 +1,5 @@
+@import '../../../../styles/app';
+
 .productCard {
   margin-bottom: 65px;
 }
@@ -17,11 +19,11 @@
     color: #fff;
 
     &--red {
-      background-color: #f66;
+      background-color: theme-color('danger');
     }
 
     &--green {
-      background-color: #3c9;
+      background-color: theme-color('success');
     }
   }
 
@@ -31,8 +33,17 @@
     top: 12px;
     padding: 5px;
     border-radius: 50%;
+    border: none;
     background: #fff;
     display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
 
     img {
       height: 15px;
@@ -45,23 +56,25 @@
   text-transform: uppercase;
   margin-top: 15px;
   letter-spacing: 0.1px;
-  font-weight: 400;
-  color: #336;
+  font-weight: $font-weight-normal;
+  color: theme-color('dark');
 }
 
 .productsCardDescription {
   text-transform: capitalize;
-  color: #666;
+  color: theme-color('inverce');
   margin: 1.5px 0;
 }
 
 .productsCardPrice {
   display: flex;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: $font-size-larger;
+  font-weight: $font-weight-semi-bold;
+  align-items: center;
+  justify-content: space-between;
 
   .sale {
-    font-weight: 500;
+    font-weight: $font-weight-normal;
   }
 
   .old {
@@ -92,7 +105,15 @@
   }
 
   .new {
-    color: #f66;
-    font-weight: 600;
+    color: theme-color('danger');
+    font-weight: $font-weight-semi-bold;
+  }
+
+  & :global .rating {
+    flex-direction: row-reverse;
+
+    svg {
+      margin-right: 7.5px;
+    }
   }
 }

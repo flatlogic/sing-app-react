@@ -1,0 +1,22 @@
+.selects {
+  display: flex;
+  margin: 7.5px 0;
+
+  & > div {
+    height: 50px;
+
+    button {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &:first-child {
+      width: 65%;
+    }
+
+    &:last-child {
+      width: calc(35% - 7.5px);
+      margin-left: 7.5px;
+    }
+  }
+}

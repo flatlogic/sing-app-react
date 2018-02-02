@@ -1,0 +1,17 @@
+@import '../../../../styles/app';
+
+.section {
+  margin-bottom: 75px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: $font-weight-normal;
+  color: theme-color('dark');
+}

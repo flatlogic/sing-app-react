@@ -1,0 +1,13 @@
+@import '../../../../styles/app';
+
+.rating {
+  display: flex;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: theme-color('warning');
+  align-items: center;
+
+  svg {
+    margin: -2px 0 0 10px;
+  }
+}

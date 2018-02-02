@@ -1,27 +1,10 @@
 .productsListFilters {
   display: flex;
-}
-
-.productListGridTypes {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 30px 0 25px;
+  margin-bottom: 30px;
 }
 
 .productsListElements {
   display: grid;
   grid-gap: 15px;
-
-  &Four {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  &Three {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  &Two {
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
