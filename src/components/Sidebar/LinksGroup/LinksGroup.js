@@ -102,10 +102,11 @@ class LinksGroup extends Component {
         children={(params) => {
           const {match} = params;
           return (
-            <li className={classnames({[s.headerLink]: this.props.isHeader}, this.props.className)}>
-              <a className={classnames({[s.headerLinkActive]: match}, {[s.collapsed]: isOpen}, "d-flex")}
-                 style={{paddingLeft: `${this.props.deep == 0 ? 50 : 36 + 10 * (this.props.deep - 1)}px`}}
-                 onClick={() => this.togglePanelCollapse(this.props.link)}
+            <li className={classnames({ [s.headerLink]: this.props.isHeader }, this.props.className)}>
+              <a className={classnames({ [s.headerLinkActive]: match }, { [s.collapsed]: isOpen }, "d-flex")}
+                style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 36 + 10 * (this.props.deep - 1)}px` }}
+                onClick={() => this.togglePanelCollapse(this.props.link)}
+                href="#"
               >
                 {this.props.isHeader ?
                   <span className={s.icon}>

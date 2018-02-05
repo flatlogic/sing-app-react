@@ -18,6 +18,10 @@
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
 
+    &.headerLinkActive {
+      background-color: $sidebar-item-hover-bg-color;
+    }
+
     &:hover {
       background-color: $sidebar-item-hover-bg-color;
     }
@@ -83,7 +87,7 @@ a.headerLinkActive {
   box-shadow: none;
   margin: 0;
   border-radius: 0;
-  background-color: lighten($sidebar-bg-color, 5%);
+  background-color: saturate(darken($sidebar-bg-color, 5%), 10%);
 
   &::before {
     content: '';
