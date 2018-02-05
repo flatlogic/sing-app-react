@@ -180,7 +180,7 @@ class Header extends React.Component {
               <span className={`${s.avatar} thumb-sm float-left mr-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
               </span>
-              Philip <span className="fw-semi-bold">Smith</span>
+              <span className="small">Philip <span className="fw-semi-bold">Smith</span></span>
               <span className="ml-1 circle bg-warning fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} pb-0 animated animated-fast fadeInUp`}>

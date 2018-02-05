@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <h1 className="page-title">Dashboard
+        <h1 className="page-title">Dashboard &nbsp;
           <small>
             <small>The Lucky One</small>
           </small>
@@ -103,7 +103,7 @@ class Dashboard extends React.Component {
             >
               <p>Status: <strong>Live</strong></p>
               <p>
-                <span className="circle bg-warning"><i className="fa fa-map-marker" /></span>
+                <span className="circle bg-warning"><i className="fa fa-map-marker" /></span> &nbsp;
                 146 Countries, 2759 Cities
               </p>
               <div className="row progress-stats">
