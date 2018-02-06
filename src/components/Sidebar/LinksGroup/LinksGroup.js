@@ -17,6 +17,7 @@ class LinksGroup extends Component {
     iconName: PropTypes.string,
     className: PropTypes.string,
     badge: PropTypes.string,
+    label: PropTypes.string,
     activeItem: PropTypes.string,
     isHeader: PropTypes.bool,
     index: PropTypes.string,
@@ -32,6 +33,7 @@ class LinksGroup extends Component {
     isHeader: false,
     deep: 0,
     activeItem: '',
+    label: '',
   };
 
   constructor(props) {
@@ -68,8 +70,8 @@ class LinksGroup extends Component {
               <span className={s.icon}>
                 <i className={`fa ${this.props.iconName}`} />
               </span>
-              {this.props.header}
-              {this.props.badge ? <Badge className={s.badge} color="danger">9</Badge> : null}
+              {this.props.header} {this.props.label && <sup className={s.headerLabel}>{this.props.label}</sup>}
+              {this.props.badge && <Badge className={s.badge} color="danger">9</Badge>}
             </NavLink>
           </li>
         );
@@ -88,7 +90,7 @@ class LinksGroup extends Component {
             }}
             exact
           >
-            {this.props.header}
+            {this.props.header} {this.props.label && <sup className={s.headerLabel}>{this.props.label}</sup>}
           </NavLink>
         </li>
       );
@@ -111,14 +113,14 @@ class LinksGroup extends Component {
                     <i className={`fa ${this.props.iconName}`} />
                   </span> : null
                 }
-                {this.props.header}
+                {this.props.header} {this.props.label && <sup className={s.header}>{this.props.label}</sup>}
                 <b className={['fa fa-angle-left', s.caret].join(' ')} />
               </a>
               {/* eslint-enable */}
               <Collapse className={s.panel} isOpen={isOpen}>
                 <ul>
                   {this.props.childrenLinks &&
-                    this.props.childrenLinks.map(child =>
+                    this.props.childrenLinks.map((child, ind) =>
                       <LinksGroup
                         onActiveSidebarItemChange={this.props.onActiveSidebarItemChange}
                         activeItem={this.props.activeItem}
@@ -127,6 +129,7 @@ class LinksGroup extends Component {
                         index={child.index}
                         childrenLinks={child.childrenLinks}
                         deep={this.props.deep + 1}
+                        key={ind} // eslint-disable-line
                       />,
                     )}
                 </ul>

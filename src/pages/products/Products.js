@@ -17,7 +17,9 @@ const ProductList = () => (
       <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
       <BreadcrumbItem active>E-commerce</BreadcrumbItem>
     </Breadcrumb>
+    {/* eslint-disable */}
     <h1 className="page-title">E-commerce > <span className="fw-semi-bold">Product grid</span></h1>
+    {/* eslint-enable */}
     <div className={s.productsListFilters}>
       <FilterElement defaultLable="Type" options={['Shoes', 'Boots', 'Trainers']} />
       <FilterElement defaultLable="Brands" options={['All', 'Nike', 'Adidas']} />

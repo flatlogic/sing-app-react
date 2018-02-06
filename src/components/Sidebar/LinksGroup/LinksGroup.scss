@@ -1,6 +1,12 @@
 @import '../../../styles/app';
 
 .headerLink {
+  overflow-x: hidden;
+
+  @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+    font-size: $font-size-larger;
+  }
+
   a {
     display: block;
     color: $sidebar-color;
@@ -57,11 +63,15 @@
   .badge {
     float: right;
     line-height: 8px;
-    margin-top: 7px;
+    margin-top: 8px;
     margin-right: 15px;
     padding: 7px;
     border-radius: 0.2rem;
   }
+}
+
+.headerLabel {
+  color: theme-color('warning');
 }
 
 .collapsed .caret {

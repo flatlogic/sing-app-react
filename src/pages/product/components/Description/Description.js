@@ -10,7 +10,7 @@ const Description = ({ description, code, technologies, tag, rating, reviews }) 
   <div className={s.productDescription}>
     <div className={s.productDescriptionInfo}>
       <h3>PRODUCT DESCRIPTION</h3>
-      {description.map((text, index) => <p key={index}>{text}</p>)}
+      {description.map(({ text, id }) => <p key={id}>{text}</p>)}
     </div>
     <div>
       <h3>PRODUCT CODE</h3>
@@ -28,7 +28,7 @@ const Description = ({ description, code, technologies, tag, rating, reviews }) 
     <div>
       <h3>TECHNOLOGY</h3>
       <ul>
-        {technologies.map((tech, index) => <li key={index}>{tech}</li>)}
+        {technologies.map(({ text, id }) => <li key={id}>{text}</li>)}
       </ul>
     </div>
     <div>

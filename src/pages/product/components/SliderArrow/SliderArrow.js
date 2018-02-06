@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
@@ -10,8 +11,9 @@ const SliderArrow = ({ orientation, itemsToDisplay, currentSlide, slideCount, ..
   const active = orientation === 'left'
     ? currentSlide !== 0
     : currentSlide + itemsToDisplay < slideCount;
+  const orientationClass = orientation === 'left' ? s['arrow--left'] : s['arrow--right'];
   return (
-    <button {...otherProps} className={[s.arrow, s[`arrow--${orientation}`], s[active && 'active']].join(' ')}>
+    <button {...otherProps} className={cx(s.arrow, orientationClass, { [s.active]: active })}>
       <img src={arrow} alt="arrow" />
     </button>
   );

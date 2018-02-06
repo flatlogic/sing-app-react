@@ -33,6 +33,8 @@ import loadGrid from 'bundle-loader?lazy!../../pages/grid';
 import loadWidgets from 'bundle-loader?lazy!../../pages/widgets';
 import loadProducts from 'bundle-loader?lazy!../../pages/products';
 import loadProduct from 'bundle-loader?lazy!../../pages/product';
+import loadPackage from 'bundle-loader?lazy!../../pages/package';
+import loadEmail from 'bundle-loader?lazy!../../pages/email';
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -69,6 +71,8 @@ const GridBundle = Bundle.generateBundle(loadGrid);
 const WidgetsBundle = Bundle.generateBundle(loadWidgets);
 const ProductsBundle = Bundle.generateBundle(loadProducts);
 const ProductBundle = Bundle.generateBundle(loadProduct);
+const PackageBundle = Bundle.generateBundle(loadPackage);
+const EmailBundle = Bundle.generateBundle(loadEmail);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -158,6 +162,7 @@ class Layout extends React.Component {
                 <Route path="/app/pages/product" exact component={ProductBundle} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
                 <Route path="/app/charts" exact component={ChartsBundle} />
+                <Route path="/app/inbox" exact component={EmailBundle} />
                 <Route path="/app/ui" exact render={() => <Redirect to="/app/ui/components" />} />
                 <Route path="/app/ui/buttons" exact component={UIButtonsBundle} />
                 <Route path="/app/ui/components" exact component={UIComponentsBundle} />
@@ -166,6 +171,7 @@ class Layout extends React.Component {
                 <Route path="/app/ui/notifications" exact component={UINotificationsBundle} />
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
                 <Route path="/app/grid" exact component={GridBundle} />
+                <Route path="/app/package" exact component={PackageBundle} />
                 <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />

@@ -1,0 +1,37 @@
+@import '../../../../styles/app';
+
+.messageAttachments {
+  width: 50%;
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+}
+
+.attachmentsInfo {
+  margin: -5px 0 10px;
+
+  a {
+    margin-left: 5px;
+  }
+}
+
+.attachment {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  h5 {
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.attachmentButtons {
+  margin: -5px 0 15px;
+
+  a {
+    margin-left: 10px;
+  }
+}

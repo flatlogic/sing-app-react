@@ -19,7 +19,9 @@ const Product = () => (
       <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
       <BreadcrumbItem active>E-commerce</BreadcrumbItem>
     </Breadcrumb>
+    {/* eslint-disable */}
     <h1 className="page-title">E-commerce > <span className="fw-semi-bold">Product details</span></h1>
+    {/* eslint-enable */}
     <Banner image={img} />
     <Section title="PRODUCT DESCRIPTION">
       <Description {...mock} />

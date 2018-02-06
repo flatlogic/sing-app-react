@@ -91,6 +91,41 @@ class Sidebar extends React.Component {
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
+            header="Profile"
+            link="/app/profile"
+            isHeader
+            iconName="fa-user"
+            index="profile"
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Email"
+            link="/app/inbox"
+            isHeader
+            iconName="fa-envelope"
+            index="inbox"
+            badge="9"
+          />
+          <LinksGroup
+            header="Charts"
+            link="/app/charts"
+            isHeader
+            iconName="fa-bar-chart"
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Sing Package"
+            link="/app/package"
+            isHeader
+            iconName="fa-database"
+            index="packages"
+            label="4.0"
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
             header="Pages"
             isHeader
             iconName="fa-file-o"
@@ -105,18 +140,7 @@ class Sidebar extends React.Component {
               },
             ]}
           />
-          <LinksGroup
-            header="Profile"
-            link="/app/profile"
-            isHeader
-            iconName="fa-user"
-          />
-          <LinksGroup
-            header="Charts"
-            link="/app/charts"
-            isHeader
-            iconName="fa-bar-chart"
-          />
+          <h5 className={[s.navTitle, s.groupTitle].join(' ')}>TEMPLATE</h5>
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
@@ -297,19 +321,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2"/>
+              <i className="fa fa-circle text-warning mr-2" />
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2"/>
+              <i className="fa fa-circle text-gray mr-2" />
               <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2"/>
+              <i className="fa fa-circle text-danger mr-2" />
               <span className={s.labelName}>Background</span>
             </a>
           </li>
@@ -332,7 +356,7 @@ class Sidebar extends React.Component {
             </Alert>,
           )}
         </div>
-      </nav>
+      </nav >
     );
   }
 }
