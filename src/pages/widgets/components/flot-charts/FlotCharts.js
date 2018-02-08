@@ -73,12 +73,12 @@ class FlotCharts extends React.Component {
       <Col lg={6} xs={12}>
         <Widget
           title={<Row>
-            <Col xs={3}>
+            <Col xs={4}>
               <h6>
                 Total Sales
               </h6>
               <p className="value5">
-                January, 2014
+                January, 2018
               </p>
             </Col>
             <Col xs={3}>
@@ -86,7 +86,7 @@ class FlotCharts extends React.Component {
                 <small>Best</small>
               </h5>
               <p className="value6 fs-sm">
-                March, 2013 + 1
+                March, 2018 + 1
               </p>
             </Col>
           </Row>}

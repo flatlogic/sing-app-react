@@ -61,7 +61,7 @@ class ChangesChart extends React.Component {
       }, {
         name: 'humidity',
         data: seriesData.shift()
-          .map(d => ({ x: d.x, y: ((d.y * (Math.random() * 0.1)) + 1.1) })),
+          .map(d => ({ x: d.x, y: ((d.y * (Math.random() * 0.5)) + 30.1) })),
         renderer: 'line',
         color: '#fff',
         gapSize: 2,

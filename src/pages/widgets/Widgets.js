@@ -15,27 +15,12 @@ import FlotCharts from './components/flot-charts/FlotCharts';
 import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
 import s from './Widgets.scss';
 
-/* todo:
-* + row1
-* - row2: graphics. need to continue
-* - row3: change styles
-* - row4: weather. graphic
-* + 3 card
-* + map
-* - recent chart: fix styles
-* + recent update
-* + beautiful thing
-* - slat lake city: fix graphic
-* + 2 card
-* */
-
 import peopleA1 from '../../images/people/a1.jpg';
 import peopleA2 from '../../images/people/a2.jpg';
 import peopleA4 from '../../images/people/a4.jpg';
 import peopleA6 from '../../images/people/a6.jpg';
 import peopleA3 from '../../images/people/a3.jpg';
 import avatar from '../../images/avatar.png';
-import img18 from '../../images/pictures/18.jpg';
 import img17 from '../../images/pictures/17.jpg';
 
 class Widgets extends React.Component {
@@ -230,10 +215,10 @@ class Widgets extends React.Component {
                 </ul>
               </div>
               <div className="post-user mt-negative-lg">
-                <span className="thumb-lg pull-left mr">
+                <span className="thumb-lg pull-left mr mt-n-sm">
                   <img className="rounded-circle" src={peopleA4} alt="..." />
                 </span>
-                <h6 className="m-b-1 fw-normal text-white">Jeremy
+                <h6 className="m-b-1 fw-normal text-white">Jeremy &nbsp;
                   <small className="text-white text-light">@sing</small>
                 </h6>
                 <p className="fs-mini text-muted">
@@ -241,7 +226,7 @@ class Widgets extends React.Component {
                   &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
                 </p>
               </div>
-              <p className="text-light fs-mini m">Lots of cool stuff is happening around you. Just calm down for a
+              <p className="text-light fs-mini mt-lg">Lots of cool stuff is happening around you. Just calm down for a
                 sec
                 and listen. Colors, sounds,
                 thoughts, ideas.
@@ -290,10 +275,10 @@ class Widgets extends React.Component {
                   </ul>
                 </div>
                 <div className="post-user mt-sm">
-                  <span className="thumb pull-left mr">
+                  <span className="thumb pull-left mr mt-n-sm">
                     <img className="rounded-circle" src={peopleA6} alt="..." />
                   </span>
-                  <h6 className="mb-xs mt-xs"><span className="fw-semi-bold">Maryna</span> Nilson</h6>
+                  <h6 className="mb-xs mt"><span className="fw-semi-bold">Maryna</span> Nilson</h6>
                   <p className="fs-mini text-muted">
                     <time>25 mins</time>
                     &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
@@ -316,7 +301,7 @@ class Widgets extends React.Component {
             <Widget refresh close>
               <div>
                 <div className="post-user mt-n-xs">
-                  <span className="thumb pull-left mr">
+                  <span className="thumb pull-left mr mt-n-sm">
                     <img className="rounded-circle" src={peopleA2} alt="..." />
                   </span>
                   <h6 className="mb-xs mt-xs">Jess <span className="fw-semi-bold">@jessica</span></h6>
@@ -349,198 +334,81 @@ class Widgets extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col lg={6} xs={12}>
-            <Widget bodyClass="mt-0">
-              <div className="widget-image text-white">
-                <img src={img18} alt="..." />
-                <h4 className="title">
-                  <span className="fw-normal">Sunnyvale</span>, CA
-                </h4>
-                <div className="info text-right">
-                  <i className="fa fa-map-marker h1 m-0 mr-xs" />
-                  <h6 className="m-0 mt-xs">FLORIDA, USA</h6>
-                  <p className="fs-sm">9:41 am</p>
-                </div>
-                <div className="forecast">
-                  <div className="row">
-                    <div className="col-6 col-md-4">
-                      <div className="row mt-xs">
-                        <div className="col-6 p-0">
-                          {/*     <canvas skycon [weather]="'clear-day'" [color]="config.settings.colors['white']"
-                          width="40" height="40"></canvas> */}
-                          <p className="m-0 fw-normal mt-n-xs">sunny</p>
-                        </div>
-                        <div className="col-6 p-0">
-                          <h6 className="fw-semi-bold m-0">SUNDAY</h6>
-                          <p className="value1 ">29&deg;</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-3 col-md-2 p-0">
-                      <h6 className="m-0">TOMMOROW</h6>
-                      {/* <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
-                      <p className="m-0 fw-semi-bold">32&deg;</p>
-                    </div>
-                    <div className="col-3 col-md-2 p-0">
-                      <h6 className="m-0">TUE</h6>
-                      {/*    <canvas className="mt-xs" skycon [weather]="'rain'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
-                      <p className="m-0 fw-semi-bold">25&deg;</p>
-                    </div>
-                    <div className="col-3 col-md-2 p-0">
-                      <h6 className="m-0">WED</h6>
-                      {/*     <canvas className="mt-xs" skycon [weather]="'clear-day'"
-                      [color]="configFn.lightenColor(config.settings.colors['brand-warning'], 0.1)"
-                      width="28" height="28"></canvas> */}
-                      <p className="m-0 fw-semi-bold">28&deg;</p>
-                    </div>
-                    <div className="col-3 col-md-2 p-0">
-                      <h6 className="m-0">THU</h6>
-                      {/*     <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
-                      <p className="m-0 fw-semi-bold">17&deg;</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <Col lg={3} md={6} xs={12}>
+            <Widget className="widget-sm">
+              <h6 className="mt-3 fw-normal">
+                Nasdaq
+              </h6>
+              <h3>
+                355 <span className="fw-semi-bold">USD</span>
+              </h3>
+              <p>Last Sale 354.94 USD</p>
+              <NasdaqSparkline />
             </Widget>
-            <Row>
-              <Col md={6} xs={12}>
-                <Widget className="p-0 text-center">
-                  <Row className="m-0">
-                    <div className="col-5 bg-danger btlr bblr">
-                      {/*        <canvas className="mt" skycon [weather]="'clear-day'"
-                      [color]="config.settings.colors['white']" width="62" height="62"></canvas> */}
-                      <h6 className="text-white fw-normal m-t-1">FRIDAY</h6>
-                    </div>
-                    <div className="col-7">
-                      <p className="value0 text-danger mt-n-xs mr-n-xs">
-                        33&deg;
-                      </p>
-                      <p className="mt-n-sm m-b-0 fw-normal fs-sm text-muted">WINDY</p>
-                      <div className="row mt-n-xs mb-xs">
-                        <div className="col-6 p-0">
-                          {/*  <canvas skycon [weather]="'wind'" [
-                          color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
-                          <div className="display-inline-block">
-                            <p className="value6">4</p>
-                            <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MPS</p>
-                          </div>
-                        </div>
-                        <div className="col-6 p-0">
-                          {/*   <canvas skycon [weather]="'rain'"
-                          [color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
-                          <div className="display-inline-block">
-                            <p className="value6">52</p>
-                            <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MM</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Row>
-                </Widget>
-              </Col>
-              <Col md={6} xs={12}>
-                <Widget className="p-0 text-center">
-                  <div className="row m-0">
-                    <div className="col-7 bg-success btlr bblr">
-                      <p className="value0 text-white mt-sm mr-n-xs">
-                        20&deg;
-                      </p>
-                      <p className="text-white display-inline-block fw-normal display-inline-block mb">SUNDAY</p>
-                    </div>
-                    <div className="col-5">
-                      {/*  <canvas className="mt" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['brand-success']" width="60" height="60"></canvas> */}
-                      <p className="fw-normal fs-sm text-muted">WINDY</p>
-                    </div>
-                  </div>
-                </Widget>
-              </Col>
-            </Row>
           </Col>
-          <Col lg={6} xs={12}>
-            <Row>
-              <Col md={6} xs={12}>
-                <Widget className="widget-sm">
-                  <h6 className="mt-3 fw-normal">
-                    Nasdaq
-                  </h6>
-                  <h3>
-                    355 <span className="fw-semi-bold">USD</span>
-                  </h3>
-                  <p>Last Sale 354.94 USD</p>
-                  <NasdaqSparkline />
-                </Widget>
-              </Col>
-              <Col md={6} xs={12}>
-                <Widget className="widget-sm bg-success text-white">
-                  <p className="mb-xs"><i className="fa fa-comments fa-2x" /></p>
-                  <h5>
-                    Lots of <span className="fw-semi-bold">possibilities</span> to customize your
-                    new <span className="fw-semi-bold">admin template</span>
-                  </h5>
-                  <p className="fs-mini mt-sm">
-                    <span className="fw-semi-bold">83</span> likes
-                    &nbsp;
-                    <span className="fw-semi-bold">96</span> comments
-                    &nbsp;
-                    <span className="fw-semi-bold">7</span> shares
-                  </p>
-                  <p className="fs-sm mt-lg text-light">
-                    <time>10 June</time>
-                  </p>
-                </Widget>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6} xs={12}>
-                <Widget className="widget-sm bg-primary text-white">
-                  <p className="mb-xs"><i className="fa fa-arrow-circle-up fa-3x opacity-50" /></p>
-                  <p className="mb text-light">
-                    <time>10 June</time>
-                  </p>
-                  <h3>
-                    Lots of <span className="fw-semi-bold">new</span> amazing possibilities
-                  </h3>
-                  <p className="fs-mini mt">
-                    <span className="fw-semi-bold">214</span> likes
-                    &nbsp;
-                    <span className="fw-semi-bold">96</span> comments
-                  </p>
-                </Widget>
-              </Col>
-              <Col md={6} xs={12}>
-                <Widget
-                  className="widget-sm"
-                  title={<h6>Server <span className="fw-semi-bold">Overview</span></h6>}
-                >
-                  <div className="clearfix fs-mini">
-                    <span className="pull-right m-0 fw-semi-bold">CPU</span>
-                    <span className="fs-mini">60% / 37°C / 3.3 Ghz</span>
-                  </div>
-                  <Progress color="bg-gray-lighter" className="progress-xs" value={60} />
-                  <div className="clearfix fs-mini mt">
-                    <span className="pull-right m-0 fw-semi-bold">Mem</span>
-                    <span className="fs-mini">29% / 4GB (16 GB)</span>
-                  </div>
-                  <Progress color="warning" className="bg-gray-lighter progress-xs" value={29} />
-                  <div className="clearfix fs-mini mt">
-                    <span className="pull-right m-0 fw-semi-bold">LAN</span>
-                    <span className="fs-mini">6 Mb/s <i className="fa fa-caret-down" /> &nbsp; 3 Mb/s <i
-                      className="fa fa-caret-up"
-                    /></span>
-                  </div>
-                  <Progress color="danger" className="bg-gray-lighter progress-xs" value={48} />
-                  <div className="clearfix fs-mini mt">
-                    <span className="pull-right m-0 fw-semi-bold">Access</span>
-                    <span className="fs-mini">17 Mb/s <i className="fa fa-caret-up" /> &nbsp; (+18%)</span>
-                  </div>
-                  <Progress color="success" className="bg-gray-lighter progress-xs" value={64} />
-                </Widget>
-              </Col>
-            </Row>
+          <Col lg={3} md={6} xs={12}>
+            <Widget className="widget-sm bg-success text-white">
+              <p className="mb-xs"><i className="fa fa-comments fa-2x" /></p>
+              <h5>
+                Lots of <span className="fw-semi-bold">possibilities</span> to customize your
+                new <span className="fw-semi-bold">admin template</span>
+              </h5>
+              <p className="fs-mini mt-sm">
+                <span className="fw-semi-bold">83</span> likes
+                &nbsp;
+                <span className="fw-semi-bold">96</span> comments
+                &nbsp;
+                <span className="fw-semi-bold">7</span> shares
+              </p>
+              <p className="fs-sm mt-lg text-light">
+                <time>10 June</time>
+              </p>
+            </Widget>
+          </Col>
+          <Col lg={3} md={6} xs={12}>
+            <Widget className="widget-sm bg-primary text-white">
+              <p className="mb-xs"><i className="fa fa-arrow-circle-up fa-3x opacity-50" /></p>
+              <p className="mb text-light">
+                <time>10 June</time>
+              </p>
+              <h3>
+                Lots of <span className="fw-semi-bold">new</span> amazing possibilities
+              </h3>
+              <p className="fs-mini mt">
+                <span className="fw-semi-bold">214</span> likes
+                &nbsp;
+                <span className="fw-semi-bold">96</span> comments
+              </p>
+            </Widget>
+          </Col>
+          <Col lg={3} md={6} xs={12}>
+            <Widget
+              className="widget-sm"
+              title={<h6>Server <span className="fw-semi-bold">Overview</span></h6>}
+            >
+              <div className="clearfix fs-mini">
+                <span className="pull-right m-0 fw-semi-bold">CPU</span>
+                <span className="fs-mini">60% / 37°C / 3.3 Ghz</span>
+              </div>
+              <Progress color="bg-gray-lighter" className="progress-xs" value={60} />
+              <div className="clearfix fs-mini mt">
+                <span className="pull-right m-0 fw-semi-bold">Mem</span>
+                <span className="fs-mini">29% / 4GB (16 GB)</span>
+              </div>
+              <Progress color="warning" className="bg-gray-lighter progress-xs" value={29} />
+              <div className="clearfix fs-mini mt">
+                <span className="pull-right m-0 fw-semi-bold">LAN</span>
+                <span className="fs-mini">6 Mb/s <i className="fa fa-caret-down" /> &nbsp; 3 Mb/s <i
+                  className="fa fa-caret-up"
+                /></span>
+              </div>
+              <Progress color="danger" className="bg-gray-lighter progress-xs" value={48} />
+              <div className="clearfix fs-mini mt">
+                <span className="pull-right m-0 fw-semi-bold">Access</span>
+                <span className="fs-mini">17 Mb/s <i className="fa fa-caret-up" /> &nbsp; (+18%)</span>
+              </div>
+              <Progress color="success" className="bg-gray-lighter progress-xs" value={64} />
+            </Widget>
           </Col>
         </Row>
 
@@ -638,7 +506,7 @@ class Widgets extends React.Component {
                   <div>
                     <h3>Basic & <span className="fw-semi-bold">Advanced</span> Features</h3>
                     <p className="value4 mt-lg">All you need in one app</p>
-                    <div className="h4 mt-lg mb-lg">
+                    <div className="h5 mt-lg mb-lg">
                       <i className="fa fa-quote-left opacity-50" />
                       &nbsp;That&apos;s awesome!  &nbsp;
                       <i className="fa fa-quote-right opacity-50" />
@@ -651,7 +519,7 @@ class Widgets extends React.Component {
                   <div>
                     <h3>Beautiful <span className="fw-semi-bold">Thing</span></h3>
                     <p className="value4 mt-lg">Life-time package support</p>
-                    <div className="h4 mt-lg mb-lg">
+                    <div className="h5 mt-lg mb-lg">
                       <i className="fa fa-quote-left opacity-50" />
                       &nbsp;That&apos;s awesome!  &nbsp;
                       <i className="fa fa-quote-right opacity-50" />
@@ -669,7 +537,6 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
 
-          {/* todo: fix rickshaw bar and sparkline */}
           <Col lg={3} xs={12}>
             <Widget className="widget-chart-changes" close refresh bodyClass="mt-0">
               <ChangesChart />

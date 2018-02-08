@@ -8,11 +8,12 @@ import {
 import Widget from '../../components/Widget';
 import s from './SPackage.scss';
 import reactLogo from '../../images/react-logo.svg';
-import angularLogo from '../../images/angular-logo.svg';
+import angularLogo from '../../images/angularjs-logo.svg';
+import angularJSLogo from '../../images/angular-logo.svg';
 import vueLogo from '../../images/vue-logo.svg';
 import jsLogo from '../../images/js-logo.svg';
 
-class LBPackage extends React.Component {
+class SPackage extends React.Component {
 
   render() {
     return (
@@ -23,36 +24,31 @@ class LBPackage extends React.Component {
         <p className="lead">You will get access to all those versions
           listed below after you purchase any Sing licence!</p>
         <Row>
-          <Col lg={5} md={6} xs={12}>
+          <Col lg={5} md={6}>
             <Widget
               title={
-                <h6>Pure Ajax Version</h6>
+                <h6>React JS Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={jsLogo} width="80" alt="" />
-              <h3>HTML Version</h3>
-              <p className="text-muted">During last 4 years we
-                invested more than <span className="fw-semi-bold">1000</span> man-hours
-                crafting and maintaining this version.</p>
-              <p>Basic HTML version is the most generic version of Light Blue App
-                that can be used with any platform
-                starting from PHP and Rails to .NET and Java. It contains pure
-                w3c-validated <strong>HTML5</strong> markup
-                and valid <strong>CSS3</strong> styles. It can work in two modes:
-                (a) as a <strong>Single
-                Page Application</strong>, using ajax to fetch page contents, or
-                (b) as a static application, where
-                pages served directly from server.
-                The mode can be switched by changing the
-                value of &nbsp;<code>window.PJAX_ENABLED</code> global variable.</p>
-              <p>Moreover, this version comes with three different color
-                schemes which you can easily switch based on your choice.</p>
-              <a
-                className="btn btn-default btn-lg btn-block"
-                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/ajax-bootstrap4/"
-              >
-                Go to Demo
-              </a>
+              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={reactLogo} width="80" alt="" />
+              <h3>React JS Version</h3>
+              <p className="text-muted">We spent another <span className="fw-semi-bold">500</span> man-hours
+                developing and designing
+                React version, to save you time and money.</p>
+              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">React</a> is
+                the most trendy and advanced
+                component-based JavaScript library for building user interfaces. Our React
+                version follows latest industry
+                best practices and uses <strong>Redux</strong> as a state manager and
+                supports <strong>Server Side Rendering</strong> which makes this app incredibly fast
+                and SEO-friendly.
+              </p>
+              <p>This version is a great choice when you want to be in control
+                of your own codebase and
+                decide on development approaches that are the best for your project.
+                <a href="https://webpack.js.org/">Webpack</a> Module Bundler and Yarn as a package
+                manager are under the hood.</p>
+              <a className="btn btn-transparent btn-lg btn-block disabled" href="#">(You are here)</a>
             </Widget>
           </Col>
           <Col lg={5} md={6} xs={12}>
@@ -86,39 +82,71 @@ class LBPackage extends React.Component {
               </a>
             </Widget>
           </Col>
-        </Row>
-        <Row>
           <Col lg={5} md={6}>
             <Widget
               title={
-                <h6>React JS Version</h6>
+                <h6>AngularJS 1.X Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={reactLogo} width="80" alt="" />
-              <h3>React JS Version</h3>
-              <p className="text-muted">We spent another <span className="fw-semi-bold">500</span> man-hours
-                developing and designing
-                React version, to save you time and money.</p>
-              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">React</a> is
-                the most trendy and advanced
-                component-based JavaScript library for building user interfaces. Our React
-                version follows latest industry
-                best practices and uses <strong>Redux</strong> as a state manager and
-                supports <strong>Server Side Rendering</strong> which makes this app incredibly fast
-                and SEO-friendly.
-              </p>
-              <p>This version is a great choice when you want to be in control
-                of your own codebase and
-                decide on development approaches that are the best for your project.
-                <a href="https://webpack.js.org/">Webpack</a> Module Bundler and Yarn as a package
-                manager are under the hood.</p>
-              <a className="btn btn-transparent btn-lg btn-block disabled" href="#">(You are here)</a>
+              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularJSLogo} width="80" alt="" />
+              <h3>AngularJS Version</h3>
+              <p className="text-muted">We don’t know about you but we’re very excited that it’s finally here!
+                Our brand new Light Blue Angular version.</p>
+              <p><strong>Angular 1.0</strong> have so many opportunities in comparison to HTML. It lets you
+                extend HTML vocabulary.
+                And as a result your application can be very expressive and readable.
+                <strong>Directives</strong> can hide complex DOM structure, CSS. They can let you invent new
+                HTML syntax, specific to your application.
+                We strongly believe that there’s nothing better than arranging an outstanding end-user experience.</p>
+              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">Angular</a>
+                should be definitely
+                among your top considerations when choosing the right framework.</p>
+              <p>Angular version makes it possible by letting responsive, fast-loading and
+                seamlessly-navigating application.</p>
+              <a
+                className="btn btn-default btn-lg btn-block"
+                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/angularjs/"
+              >
+                Go to Demo
+              </a>
+            </Widget>
+          </Col>
+          <Col lg={5} md={6} xs={12}>
+            <Widget
+              title={
+                <h6>Pure HTML5 Version</h6>
+              } settings collapse close
+            >
+              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={jsLogo} width="80" alt="" />
+              <h3>HTML5 Version</h3>
+              <p className="text-muted">During last 4 years we
+                invested more than <span className="fw-semi-bold">1000</span> man-hours
+                crafting and maintaining this version.</p>
+              <p>Basic HTML version is the most generic version of Light Blue App
+                that can be used with any platform
+                starting from PHP and Rails to .NET and Java. It contains pure
+                w3c-validated <strong>HTML5</strong> markup
+                and valid <strong>CSS3</strong> styles. It can work in two modes:
+                (a) as a <strong>Single
+                  Page Application</strong>, using ajax to fetch page contents, or
+                (b) as a static application, where
+                pages served directly from server.
+                The mode can be switched by changing the
+                value of &nbsp;<code>window.PJAX_ENABLED</code> global variable.</p>
+              <p>Moreover, this version comes with three different color
+                schemes which you can easily switch based on your choice.</p>
+              <a
+                className="btn btn-default btn-lg btn-block"
+                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/html-bs4/"
+              >
+                Go to Demo
+              </a>
             </Widget>
           </Col>
           <Col lg={5} md={6}>
             <Widget
               title={
-                <h6>Angular Version</h6>
+                <h6>Vue JS Version</h6>
               } settings collapse close
             >
               <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={vueLogo} width="80" alt="" />
@@ -143,4 +171,4 @@ class LBPackage extends React.Component {
   }
 }
 
-export default (withStyles(s)(LBPackage));
+export default (withStyles(s)(SPackage));

@@ -54,6 +54,19 @@
     .select2-container {
       width: 100% !important;
     }
+
+    .select2-selection--single {
+      border-color: $input-border-color;
+
+      &,
+      & :global .select2-selection__arrow {
+        height: $input-height;
+      }
+
+      & :global .select2-selection__rendered {
+        line-height: $input-height;
+      }
+    }
   }
 }
 

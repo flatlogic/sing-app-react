@@ -46,4 +46,9 @@
   @media (max-width: breakpoint-max(sm)) {
     padding: 20px 15px;
   }
+
+  // hammers disallows text selection, allowing it for large screens
+  @media (min-width: breakpoint-min(sm)) {
+    user-select: auto !important;
+  }
 }
