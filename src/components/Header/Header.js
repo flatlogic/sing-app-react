@@ -206,7 +206,7 @@ class Header extends React.Component {
             </NavLink>
             <div id="chat-notification" className={`${s.chatNotification} hide `}>
               <div className={s.chatNotificationInner}>
-                <h6 className={s.title}>
+                <h6 className={`${s.title} d-flex`}>
                   <span className="thumb-xs">
                     <img src={a6} alt="" className="rounded-circle mr-xs float-left" />
                   </span>
