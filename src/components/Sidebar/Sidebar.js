@@ -123,23 +123,6 @@ class Sidebar extends React.Component {
             index="packages"
             label="4.0"
           />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Pages"
-            isHeader
-            iconName="fa-file-o"
-            link="/app/pages"
-            index="pages"
-            childrenLinks={[
-              {
-                header: 'Products Grid', link: '/app/pages/products',
-              },
-              {
-                header: 'Product Page', link: '/app/pages/product',
-              },
-            ]}
-          />
           <h5 className={[s.navTitle, s.groupTitle].join(' ')}>TEMPLATE</h5>
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

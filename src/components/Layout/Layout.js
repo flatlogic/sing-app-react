@@ -31,8 +31,6 @@ import loadExtraGallery from 'bundle-loader?lazy!../../pages/extra/gallery';
 import loadCharts from 'bundle-loader?lazy!../../pages/charts';
 import loadGrid from 'bundle-loader?lazy!../../pages/grid';
 import loadWidgets from 'bundle-loader?lazy!../../pages/widgets';
-import loadProducts from 'bundle-loader?lazy!../../pages/products';
-import loadProduct from 'bundle-loader?lazy!../../pages/product';
 import loadPackage from 'bundle-loader?lazy!../../pages/package';
 import loadEmail from 'bundle-loader?lazy!../../pages/email';
 /* eslint-enable */
@@ -69,8 +67,6 @@ const ExtraGallerylineBundle = Bundle.generateBundle(loadExtraGallery);
 const ChartsBundle = Bundle.generateBundle(loadCharts);
 const GridBundle = Bundle.generateBundle(loadGrid);
 const WidgetsBundle = Bundle.generateBundle(loadWidgets);
-const ProductsBundle = Bundle.generateBundle(loadProducts);
-const ProductBundle = Bundle.generateBundle(loadProduct);
 const PackageBundle = Bundle.generateBundle(loadPackage);
 const EmailBundle = Bundle.generateBundle(loadEmail);
 
@@ -158,8 +154,6 @@ class Layout extends React.Component {
                 <Route path="/app/main" exact render={() => <Redirect to="/app/main/dashboard" />} />
                 <Route path="/app/main/dashboard" exact component={Dashboard} />
                 <Route path="/app/main/widgets" exact component={WidgetsBundle} />
-                <Route path="/app/pages/products" exact component={ProductsBundle} />
-                <Route path="/app/pages/product" exact component={ProductBundle} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
                 <Route path="/app/charts" exact component={ChartsBundle} />
                 <Route path="/app/inbox" exact component={EmailBundle} />
