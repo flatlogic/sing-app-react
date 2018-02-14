@@ -14,6 +14,7 @@
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
+  box-shadow: $widget-shadow;
 
   > header {
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
@@ -54,6 +55,10 @@
         margin-top: $widget-padding-vertical;
       }
     }
+  }
+
+  &:global.bg-transparent {
+    box-shadow: none;
   }
 }
 

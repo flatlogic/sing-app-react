@@ -76,7 +76,7 @@ class SPackage extends React.Component {
                 works out of the box! <br /><br /></p>
               <a
                 className="btn btn-default btn-lg btn-block"
-                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/angular/"
+                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.1/angular/"
               >
                 Go to Demo
               </a>
@@ -105,7 +105,7 @@ class SPackage extends React.Component {
                 seamlessly-navigating application.</p>
               <a
                 className="btn btn-default btn-lg btn-block"
-                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/angularjs/"
+                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.1/angularjs/"
               >
                 Go to Demo
               </a>
@@ -137,7 +137,7 @@ class SPackage extends React.Component {
                 schemes which you can easily switch based on your choice.</p>
               <a
                 className="btn btn-default btn-lg btn-block"
-                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/html-bs4/"
+                href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.1/html-bs4/"
               >
                 Go to Demo
               </a>

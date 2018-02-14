@@ -18,12 +18,8 @@ class MapaelMap extends React.Component {
       map: {
         name: 'usa_states',
         defaultArea: {
-          attrs: {
-            fill: '#465060',
-            stroke: '#878a8e',
-          },
           attrsHover: {
-            fill: '#363f4e',
+            fill: '#242424',
             animDuration: 100,
           },
           tooltip: {
