@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
@@ -30,8 +31,10 @@ class ProductCard extends Component {
             <img src={favourite ? starFilled : star} alt="star" />
           </button>
         </div>
-        <div className={s.productsCardTitle}>{title}</div>
-        <div className={s.productsCardDescription}>{description}</div>
+        <div className={s.productCardDataWrapper}>
+          <div className={cx(s.productsCardTitle, 'title')}>{title}</div>
+          <div className={cx(s.productsCardDescription, 'description')}>{description}</div>
+        </div>
         <div className={s.productsCardPrice}>
           {typeof price === 'number'
             ? `$${price}`

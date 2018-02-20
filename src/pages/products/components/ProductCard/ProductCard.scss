@@ -2,6 +2,10 @@
 
 .productCard {
   margin-bottom: 65px;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 15px;
+  }
 }
 
 .productCardPhoto {
@@ -10,6 +14,18 @@
   background-position: center;
   background-size: cover;
   position: relative;
+
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 250px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 150px;
+  }
 
   .lable {
     position: absolute;
@@ -37,6 +53,12 @@
     background: #fff;
     display: flex;
 
+    @include media-breakpoint-down(sm) {
+      top: auto;
+      bottom: 12px;
+      padding: 8px;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -49,6 +71,15 @@
       height: 15px;
       width: 15px;
     }
+  }
+}
+
+.productCardDataWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column-reverse;
   }
 }
 

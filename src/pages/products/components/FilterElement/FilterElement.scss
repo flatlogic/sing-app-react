@@ -1,9 +1,10 @@
 .filterElement {
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
 
-  &:first-child {
+  &:last-child {
     margin-left: 0;
   }
 }

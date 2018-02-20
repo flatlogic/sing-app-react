@@ -1,10 +1,65 @@
+@import '../../styles/app';
+
 .productsListFilters {
   display: flex;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.mobileFilterButtons {
+  display: none;
+  margin: auto -15px 25px;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+  }
+
+  button {
+    width: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    i {
+      color: #ccc;
+      margin-left: 10px;
+    }
+
+    &:first-child {
+      border-right: 1px solid #ccc;
+    }
+  }
 }
 
 .productsListElements {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & :global .title {
+      margin: 2px 0 8px;
+    }
+
+    & :global .description {
+      margin-top: 10px;
+    }
+  }
 }
+
