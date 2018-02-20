@@ -22,7 +22,7 @@ export default {
     {
       text: 'Vulcanized rubber soles',
       id: 2,
-    }
+    },
   ],
   tag: '#whitetrainers',
   rating: 4.8,

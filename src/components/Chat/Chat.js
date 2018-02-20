@@ -146,12 +146,12 @@ class Chat extends React.Component {
       <aside className={[s.root, this.props.chatOpen ? s.chatOpen : ''].join(' ')}>
         <header className={s.chatHeader}>
           <h4 className={s.chatTitle}>Contacts</h4>
-            <div className="input-group input-group-dark">
-              <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
-              <span className="input-group-addon">
-                <i className="fa fa-search" />
-              </span>
-            </div>
+          <div className="input-group input-group-dark">
+            <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
+            <span className="input-group-addon">
+              <i className="fa fa-search" />
+            </span>
+          </div>
         </header>
         <div className={[s.chatPanel, s.chatContacts, this.state.chatMessageOpened ? s.chatMessageOpen : ''].join(' ')}>
           <h5 className={s.navTitle}>TODAY</h5>

@@ -9,6 +9,7 @@ import Widget from '../../components/Widget';
 import s from './SPackage.scss';
 import reactLogo from '../../images/react-logo.svg';
 import angularLogo from '../../images/angular-logo.svg';
+import angularJSLogo from '../../images/angularjs-logo.svg';
 import vueLogo from '../../images/vue-logo.svg';
 import jsLogo from '../../images/js-logo.svg';
 
@@ -135,6 +136,30 @@ class LBPackage extends React.Component {
                 priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
                 so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
               <a className="btn btn-transparent btn-lg btn-block disabled" href="#">Coming Soon!</a>
+            </Widget>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={5} md={6}>
+            <Widget
+              title={
+                <h6>Angular JS Version</h6>
+              } settings collapse close
+            >
+              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularJSLogo} width="80" alt="" />
+              <h3>React JS Version</h3>
+              <p className="text-muted">We don’t know about you but we’re very excited that it’s finally here!
+                Our brand new Light Blue Angular version.</p>
+              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">Angular</a> should be
+                definitely among your top considerations when choosing the right framework.</p>
+              <p><strong>Angular 1.0</strong> have so many opportunities in comparison to HTML. It lets you
+                extend HTML vocabulary. And as a result your application can be very expressive and readable.
+                <strong> Directives</strong> can hide complex DOM structure, CSS. They can let you invent new
+                HTML syntax, specific to your application. We strongly believe that there’s nothing better
+                than arranging an outstanding end-user experience.</p>
+              <p>Angular version makes it possible by letting responsive, fast-loading and
+                seamlessly-navigating application.</p>
+              <a className="btn btn-default btn-lg btn-block" href="http://demo.flatlogic.com/sing-wrapbootstrap-4.0.0/angularjs/">Go to Demo</a>
             </Widget>
           </Col>
         </Row>
