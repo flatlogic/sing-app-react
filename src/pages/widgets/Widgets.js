@@ -13,6 +13,7 @@ import RealtimeTraffic from './components/realtime-traffic/RealtimeTraffic';
 import YearsMap from './components/years-map/YearsMap';
 import FlotCharts from './components/flot-charts/FlotCharts';
 import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
+import Skycon from '../../components/Skycon/Skycon';
 import s from './Widgets.scss';
 
 /* todo:
@@ -366,8 +367,7 @@ class Widgets extends React.Component {
                     <div className="col-6 col-md-4">
                       <div className="row mt-xs">
                         <div className="col-6 p-0">
-                          {/*     <canvas skycon [weather]="'clear-day'" [color]="config.settings.colors['white']"
-                          width="40" height="40"></canvas> */}
+                          <Skycon icon="CLEAR_DAY" color="white" width="40" height="40" />
                           <p className="m-0 fw-normal mt-n-xs">sunny</p>
                         </div>
                         <div className="col-6 p-0">
@@ -378,27 +378,22 @@ class Widgets extends React.Component {
                     </div>
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">TOMMOROW</h6>
-                      {/* <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
+                      <Skycon className="mt-1" icon="PARTLY_CLOUDY_DAY" color="white" width="28" height="28" />
                       <p className="m-0 fw-semi-bold">32&deg;</p>
                     </div>
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">TUE</h6>
-                      {/*    <canvas className="mt-xs" skycon [weather]="'rain'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
+                      <Skycon className="mt-1" icon="RAIN" color="white" width="28" height="28" />
                       <p className="m-0 fw-semi-bold">25&deg;</p>
                     </div>
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">WED</h6>
-                      {/*     <canvas className="mt-xs" skycon [weather]="'clear-day'"
-                      [color]="configFn.lightenColor(config.settings.colors['brand-warning'], 0.1)"
-                      width="28" height="28"></canvas> */}
+                      <Skycon className="mt-1" icon="CLEAR_DAY" color="#f0b518" width="28" height="28" />
                       <p className="m-0 fw-semi-bold">28&deg;</p>
                     </div>
                     <div className="col-3 col-md-2 p-0">
                       <h6 className="m-0">THU</h6>
-                      {/*     <canvas className="mt-xs" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['white']" width="28" height="28"></canvas> */}
+                      <Skycon className="mt-1" icon="PARTLY_CLOUDY_DAY" color="white" width="28" height="28" />
                       <p className="m-0 fw-semi-bold">17&deg;</p>
                     </div>
                   </div>
@@ -410,8 +405,7 @@ class Widgets extends React.Component {
                 <Widget className="p-0 text-center">
                   <Row className="m-0">
                     <div className="col-5 bg-danger btlr bblr">
-                      {/*        <canvas className="mt" skycon [weather]="'clear-day'"
-                      [color]="config.settings.colors['white']" width="62" height="62"></canvas> */}
+                      <Skycon className="mt-3" icon="CLEAR_DAY" color="white" width="62" height="62" />
                       <h6 className="text-white fw-normal m-t-1">FRIDAY</h6>
                     </div>
                     <div className="col-7">
@@ -421,17 +415,15 @@ class Widgets extends React.Component {
                       <p className="mt-n-sm m-b-0 fw-normal fs-sm text-muted">WINDY</p>
                       <div className="row mt-n-xs mb-xs">
                         <div className="col-6 p-0">
-                          {/*  <canvas skycon [weather]="'wind'" [
-                          color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
-                          <div className="display-inline-block">
+                          <Skycon icon="WIND" color="#999" width="20" height="20" />
+                          <div className="d-inline-block ml-1">
                             <p className="value6">4</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MPS</p>
                           </div>
                         </div>
                         <div className="col-6 p-0">
-                          {/*   <canvas skycon [weather]="'rain'"
-                          [color]="config.settings.colors['gray-light']" width="20" height="20"></canvas> */}
-                          <div className="display-inline-block">
+                          <Skycon icon="RAIN" color="#999" width="20" height="20" />
+                          <div className="d-inline-block ml-1">
                             <p className="value6">52</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MM</p>
                           </div>
@@ -448,11 +440,10 @@ class Widgets extends React.Component {
                       <p className="value0 text-white mt-sm mr-n-xs">
                         20&deg;
                       </p>
-                      <p className="text-white display-inline-block fw-normal display-inline-block mb">SUNDAY</p>
+                      <p className="text-white fw-normal d-inline-block mb">SUNDAY</p>
                     </div>
                     <div className="col-5">
-                      {/*  <canvas className="mt" skycon [weather]="'partly-cloudy-day'"
-                      [color]="config.settings.colors['brand-success']" width="60" height="60"></canvas> */}
+                      <Skycon className="mt-3" icon="PARTLY_CLOUDY_DAY" color="#64bd63" width="60" height="60" />
                       <p className="fw-normal fs-sm text-muted">WINDY</p>
                     </div>
                   </div>
