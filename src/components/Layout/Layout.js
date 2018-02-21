@@ -190,7 +190,7 @@ class Layout extends React.Component {
                 <Route path="/app/extra/gallery" exact component={ExtraGallerylineBundle} />
               </Switch>
               <footer className={s.contentFooter}>
-                Light Blue 4.0 Angular Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+                Sing React Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
               </footer>
             </main>
           </Hammer>
