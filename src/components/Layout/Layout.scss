@@ -38,6 +38,7 @@
 }
 
 .content {
+  position: relative;
   flex-grow: 1;
   // 20px for footer height
   padding: $content-padding $content-padding ($content-padding + 20px);
@@ -46,4 +47,10 @@
   @media (max-width: breakpoint-max(sm)) {
     padding: 20px 15px;
   }
+}
+
+.contentFooter {
+  position: absolute;
+  bottom: 15px;
+  color: $text-muted;
 }
