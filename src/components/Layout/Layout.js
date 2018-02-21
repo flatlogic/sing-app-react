@@ -105,6 +105,9 @@ class Layout extends React.Component {
                 <Route path="/app" exact component={Dashboard} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
               </Switch>
+              <footer className={s.contentFooter}>
+                Sing React Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+              </footer>
             </main>
           </Hammer>
         </div>
