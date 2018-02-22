@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
@@ -8,9 +9,12 @@ import s from './General.scss';
 
 const General = ({ rating, title, subtitle, price }) => (
   <div className={s.general}>
-    <Rating rating={rating} />
-    <span className={s.title}>{title}</span>
-    <span className={s.subtitle}>{subtitle}</span>
+    <div className={s.ratingWrapper}>
+      <Rating rating={rating} />
+    </div>
+    <div className={s.dataWrapper}>
+      <span className={cx(s.title, 'title')}>{title}</span>
+      <span className={cx(s.subtitle, 'subtitle')}>{subtitle}</span></div>
     <span className={s.price}>${price}</span>
   </div>
 );

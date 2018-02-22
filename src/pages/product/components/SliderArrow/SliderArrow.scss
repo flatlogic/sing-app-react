@@ -1,3 +1,5 @@
+@import '../../../../styles/app';
+
 .arrow {
   opacity: 0;
   transition: 0.3s;
@@ -41,4 +43,8 @@
 
 .active {
   opacity: 1;
+
+  @include media-breakpoint-down(sm) {
+    opacity: 0;
+  }
 }

@@ -2,6 +2,7 @@
 
 .productCard {
   margin-bottom: 65px;
+  width: 100%;
 
   @include media-breakpoint-down(sm) {
     margin-bottom: 15px;
@@ -80,6 +81,14 @@
 
   @include media-breakpoint-down(sm) {
     flex-direction: column-reverse;
+
+    & :global .title {
+      margin: 2px 0 8px;
+    }
+
+    & :global .description {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -145,6 +154,12 @@
 
     svg {
       margin-right: 7.5px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    & :global .rating {
+      display: none;
     }
   }
 }

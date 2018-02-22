@@ -1,3 +1,5 @@
+@import '../../../../styles/app';
+
 .slider {
   width: 100%;
   max-width: 1300px;
@@ -5,14 +7,22 @@
   position: relative;
   overflow: hidden;
 
+  @include media-breakpoint-down(sm) {
+    margin-bottom: -20px;
+    padding-bottom: 50px;
+  }
+
   & :global .product-card {
     margin-bottom: 0;
   }
 }
 
 .sliderItem {
-  width: 25%;
   padding: 0 10px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 5px;
+  }
 }
 
 .slick {

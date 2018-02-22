@@ -11,3 +11,11 @@
     margin: -2px 0 0 10px;
   }
 }
+
+.rating-sm {
+  font-size: $font-size-base;
+
+  svg {
+    height: 14px;
+  }
+}

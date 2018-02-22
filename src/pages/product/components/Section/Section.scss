@@ -3,6 +3,15 @@
 .section {
   margin-bottom: 75px;
 
+  @include media-breakpoint-down(sm) {
+    background-color: #fff;
+    margin: 0 -15px;
+
+    & :global .hideon-sm {
+      display: none;
+    }
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -14,4 +23,9 @@
   margin-bottom: 35px;
   font-weight: $font-weight-normal;
   color: theme-color('dark');
+
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 }

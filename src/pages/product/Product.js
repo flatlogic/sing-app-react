@@ -23,7 +23,7 @@ const Product = () => (
     <h1 className="page-title">E-commerce > <span className="fw-semi-bold">Product details</span></h1>
     {/* eslint-enable */}
     <Banner image={img} />
-    <Section title="PRODUCT DESCRIPTION">
+    <Section title="PRODUCT DESCRIPTION" h>
       <Description {...mock} />
     </Section>
     <Section title="YOU MAY ALSO LIKE">

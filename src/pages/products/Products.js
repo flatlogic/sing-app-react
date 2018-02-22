@@ -38,11 +38,6 @@ const filtersData = [{
     id: 4,
     label: 'Range',
     options: ['All', '-', 'None'],
-  },
-  {
-    id: 5,
-    label: 'Range',
-    options: ['All', '-', 'None'],
   }],
 },
 {

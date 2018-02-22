@@ -16,21 +16,16 @@ class MobileModal extends Component {
     isPages: typeof this.props.data.data[0] !== 'string',
     isPageOpened: false,
     activePageId: 0,
-    activeOptions: [],
+    activeOptions: {},
   }
 
-  toggleOptionActive(option) {
-    const { activeOptions } = this.state;
-    const index = activeOptions.indexOf(option);
-    const newActiveOptions = [...activeOptions];
+  toggleOptionActive(field, value) {
+    const newActiveOption = {
+      ...this.state.activeOptions,
+      [field]: value,
+    };
 
-    if (index === -1) {
-      newActiveOptions.push(option);
-    } else {
-      newActiveOptions.splice(index, 1);
-    }
-
-    this.setState({ activeOptions: newActiveOptions });
+    this.setState({ activeOptions: newActiveOption });
   }
 
   handleBackClick = () => {
@@ -51,13 +46,14 @@ class MobileModal extends Component {
     const { active } = this.props;
     const { activePageId, isPages, isPageOpened, data: { data, title }, activeOptions } = this.state;
     const openedPage = isPageOpened && data[activePageId];
+    const renderedTitle = openedPage ? openedPage.label : title;
     return (
       <div className={cx(s.mobileModal, { [s.mobileModalActive]: active })}>
         <div className={s.mobileModalTitle}>
           <button onClick={openedPage ? this.handleBackClick : this.handleCloseClick}>
             <img className={cx({ back: openedPage })} src={openedPage ? backImg : closeImg} alt="close" />
           </button>
-          <h5>{openedPage ? openedPage.label : title}</h5>
+          <h5>{renderedTitle}</h5>
         </div>
         <ul className={s.mobileModalBody}>
           {/* eslint-disable */}
@@ -65,15 +61,15 @@ class MobileModal extends Component {
             ? !isPageOpened
               ? data.map(({ label, id }, index) => <li onClick={() => this.openPage(index)} key={id}>{label}</li>)
               : openedPage.options.map((option, index) => <ModalMenuOption
-                active={activeOptions.indexOf(option) !== -1}
-                onClick={() => this.toggleOptionActive(option)}
+                active={activeOptions[renderedTitle] === index}
+                onClick={() => this.toggleOptionActive(renderedTitle, index)}
                 key={index}
               >
                 {option}
               </ModalMenuOption>)
             : data.map((option, index) => <ModalMenuOption
-              active={activeOptions.indexOf(option) !== -1}
-              onClick={() => this.toggleOptionActive(option)}
+              active={activeOptions[renderedTitle] === index}
+              onClick={() => this.toggleOptionActive(renderedTitle, index)}
               key={index}
             >
               {option}

@@ -44,7 +44,7 @@ class ProductCard extends Component {
            <span className={s.new}> ${price.new}</span>
             </div>
           }
-          {rating && <Rating rating={rating} />}
+          {rating && <Rating rating={rating} size="sm" />}
         </div>
       </div>
     );
