@@ -77,24 +77,37 @@
     font-size: 0.875rem;
 
     span {
-      margin-right: 7px;
+      margin-right: 5px;
     }
   }
 }
 
 .navbarBrand {
-  height: 60px;
-  line-height: 40px;
   position: absolute;
   left: 0;
   right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  text-align: center;
-  padding-top: 10px;
   font-size: 1.25rem;
   pointer-events: none;
 
   i {
     font-size: 10px;
   }
+}
+
+.notificationsMenu {
+  :global .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+    top: $navbar-height !important;
+  }
+}
+
+.notificationsWrapper {
+  width: min-content;
 }

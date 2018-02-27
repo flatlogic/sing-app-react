@@ -146,12 +146,12 @@ class Chat extends React.Component {
       <aside className={[s.root, this.props.chatOpen ? s.chatOpen : ''].join(' ')}>
         <header className={s.chatHeader}>
           <h4 className={s.chatTitle}>Contacts</h4>
-            <div className="input-group input-group-dark">
-              <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
-              <span className="input-group-addon">
-                <i className="fa fa-search" />
-              </span>
-            </div>
+          <div className="input-group input-group-dark">
+            <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
+            <span className="input-group-addon">
+              <i className="fa fa-search" />
+            </span>
+          </div>
         </header>
         <div className={[s.chatPanel, s.chatContacts, this.state.chatMessageOpened ? s.chatMessageOpen : ''].join(' ')}>
           <h5 className={s.navTitle}>TODAY</h5>
@@ -160,7 +160,7 @@ class Chat extends React.Component {
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
-                  key={item.id}
+                  key={item.name}
                   onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
@@ -176,12 +176,12 @@ class Chat extends React.Component {
           </ListGroup>
 
           <h5 className={s.navTitle}>LAST WEEK</h5>
-          <ListGroup>
+          <ListGroup className={s.chatSidebarUserGroup}>
             {this.state.lastWeekConversations
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
-                  key={item.id}
+                  key={item.name}
                   onClick={() => this.openMessages(item)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
@@ -208,18 +208,20 @@ class Chat extends React.Component {
           <ListGroup>
             {this.state.conversation.messages &&
             this.state.conversation.messages
-              .filter(this.filterMessages)
-              .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '']}>
+            .filter(this.filterMessages)
+            .map(item => <ListGroupItem key={item.id} className={[item.fromMe ? s.fromMe : '', s.messageItem]}>
                               <span className="thumb-sm">
-                                <img className="rounded-circle" src={item.fromMe ? avatar : this.state.conversation.image} alt="..." />
+                                <img className="rounded-circle"
+                                     src={item.fromMe ? avatar : this.state.conversation.image} alt="..."/>
                               </span>
-                              <div className={s.messageBody}>{item.text}</div>
-                            </ListGroupItem>,
+                <div className={s.messageBody}>{item.text}</div>
+              </ListGroupItem>,
             )}
           </ListGroup>
 
           <footer className={[s.chatFooter, 'form-group'].join(' ')}>
-            <input className="form-control input-dark fs-mini" onKeyPress={this.addMessage} type="text" placeholder="Type your message" />
+            <input className="form-control input-dark fs-mini" onKeyPress={this.addMessage} type="text"
+                   placeholder="Type your message"/>
           </footer>
         </div>
       </aside>

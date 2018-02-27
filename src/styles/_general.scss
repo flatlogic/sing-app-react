@@ -33,3 +33,15 @@ label {
 strong {
   font-weight: 700;
 }
+
+ul ul,
+ol ul {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+

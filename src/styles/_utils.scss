@@ -15,7 +15,7 @@ $width-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px);
 
 @include property-variants('.width', 'width', $width-variants);
 
-$height-variants: (50: 50%, 100: 100%, 150: 150%, 200: 200%, 250: 250%);
+$height-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px, 250: 250px);
 
 @include property-variants('.height', 'height', $height-variants);
 @include property-variants('.max-height', 'max-height', $height-variants);
@@ -85,7 +85,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   // stylelint-enable
 }
 
-@include thumb('.thumb-xlg', 100px);
+@include thumb('.thumb-xl', 100px);
 @include thumb('.thumb-lg', 60px);
 @include thumb('.thumb', 48px);
 @include thumb('.thumb-sm', 34px);
@@ -94,7 +94,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 .thumb-xs,
 .thumb-sm,
 .thumb-lg,
-.thumb-xlg,
+.thumb-xl,
 .thumb {
   position: relative;
   display: inline-block;
@@ -205,7 +205,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-gray-transparent', rgba($gray-700, 0.6));
 @include bg-variant('.bg-gray-dark', $gray-800);
 @include bg-variant('.bg-black', $black);
-@include bg-variant('.bg-gray-light', $gray-300);
+@include bg-variant('.bg-gray-light', $gray-600);
 @include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
@@ -259,6 +259,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .text-light {
+  color: inherit !important;
   opacity: 0.8;
 }
 
@@ -479,6 +480,10 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
 
+.mt-negative-lg {
+  margin-top: -($spacer * 1.5);
+}
+
 // Display classes UP
 
 //
@@ -511,4 +516,8 @@ $i: 0;
     font-weight: $font-weight-semi-bold;
   }
   $i: $i + 1 !global;
+}
+
+.chart-overflow-bottom {
+  margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
 }

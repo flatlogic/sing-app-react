@@ -206,20 +206,21 @@ const clientConfig = {
       // Minimize all JavaScript output of chunks
       // https://github.com/mishoo/UglifyJS2#compressor-options
       new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
         compress: {
-          screw_ie8: true, // React doesn't support IE8
           warnings: isVerbose,
           unused: true,
           dead_code: true,
+          screw_ie8: true,
         },
         mangle: {
           screw_ie8: true,
+          except: ['$super'],
         },
         output: {
           comments: false,
           screw_ie8: true,
         },
+        sourceMap: true,
       }),
     ],
 
