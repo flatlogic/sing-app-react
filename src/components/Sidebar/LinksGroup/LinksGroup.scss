@@ -87,7 +87,7 @@ a.headerLinkActive {
   box-shadow: none;
   margin: 0;
   border-radius: 0;
-  background-color: saturate(darken($sidebar-bg-color, 5%), 10%);
+  background-color: lighten($sidebar-bg-color, 5%);
 
   &::before {
     content: '';
