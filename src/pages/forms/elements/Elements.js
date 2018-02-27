@@ -20,7 +20,6 @@ import {
 } from 'reactstrap';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
-import ReactMarkdown from 'react-markdown';
 import Select2 from 'react-select2-wrapper';
 import Datetime from 'react-datetime';
 import ColorPicker from 'rc-color-picker';
@@ -613,31 +612,6 @@ class Elements extends React.Component {
                     </div>
                   </Col>
                 </FormGroup>
-
-                <FormGroup row>
-                  <Label md={3} className="text-md-right" for="markdown-editor">
-                    Markdown Editor
-                  </Label>
-                  <Col md={9}>
-                    {/* todo: change markdown */}
-                    <ReactMarkdown
-                      source='
-                    ### Hello there
-                      How are you?
-
-                      I have bellow task for you :
-
-                      Select from this text...
-                      Click the bold on THIS WORD and make THESE ONE italic
-                      Link GOOGLE to google.com
-                      Test to insert image (and try to tab after write the image description)
-                      Test Preview
-                      And ending here... Click "List"
-
-                      Enjoy!'
-                    />
-                  </Col>
-                </FormGroup>
               </Form>
             </Widget>
           </Col>
@@ -652,9 +626,8 @@ class Elements extends React.Component {
                 <legend>Default form with labels on left</legend>
                 <FormGroup row>
                   <Label md="4" for="default-select">Default select</Label>
-                  <Col md="6">
+                  <Col md="6" className={s.select2}>
                     <Select2
-                      className={s.select2}
                       value={this.state.defaultSelectVal}
                       data={this.state.selectDefaultData}
                     />

@@ -96,6 +96,7 @@ class Sidebar extends React.Component {
             isHeader
             iconName="fa-user"
             index="profile"
+            label="new"
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

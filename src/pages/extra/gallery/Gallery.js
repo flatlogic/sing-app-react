@@ -256,7 +256,7 @@ class Gallery extends React.Component {
           {this.state.children.map((item, index) => {
             const key = item.name + index;
             return (
-              <div key={key} className={`${s.picture} card bg-body`}>
+              <div key={key} className={`${s.picture} card`}>
                 <a href={item.src} onClick={e => this.openLightbox(index, e)}><img className="figure-img" src={item.src} alt="..." /></a>
                 <div className={s.description}>
                   <h6 className="mt-0 mb-xs">{item.name}</h6>

@@ -76,7 +76,7 @@ app.post('/login', (req, res) => {
     res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: false });
     res.json({ id_token: token });
   } else {
-    res.status(401).json({ message: 'To login use user/password' });
+    res.status(401).json({ message: 'To login use any user/password combination' });
   }
 });
 
@@ -135,8 +135,8 @@ app.get('*', async (req, res, next) => {
     css.add(theme._getCss());
 
     const data = {
-      title: 'React Dashboard',
-      description: 'React Dashboard Starter project based on react-router 4, redux, graphql, bootstrap',
+      title: 'Sing App 4.0.0 - Isomorphic React Dashboard',
+      description: 'Sing App 4.0.0 - Isomorphic React Dashboard based on react-router 4, redux, graphql, bootstrap',
     };
     data.styles = [
       { id: 'css', cssText: [...css].join('') },

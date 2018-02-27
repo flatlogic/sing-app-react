@@ -16,20 +16,6 @@ import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparklin
 import Skycon from '../../components/Skycon/Skycon';
 import s from './Widgets.scss';
 
-/* todo:
-* + row1
-* - row2: graphics. need to continue
-* - row3: change styles
-* - row4: weather. graphic
-* + 3 card
-* + map
-* - recent chart: fix styles
-* + recent update
-* + beautiful thing
-* - slat lake city: fix graphic
-* + 2 card
-* */
-
 import peopleA1 from '../../images/people/a1.jpg';
 import peopleA2 from '../../images/people/a2.jpg';
 import peopleA4 from '../../images/people/a4.jpg';
@@ -231,10 +217,10 @@ class Widgets extends React.Component {
                 </ul>
               </div>
               <div className="post-user mt-negative-lg">
-                <span className="thumb-lg pull-left mr">
+                <span className="thumb-lg pull-left mr mt-n-sm">
                   <img className="rounded-circle" src={peopleA4} alt="..." />
                 </span>
-                <h6 className="m-b-1 fw-normal text-white">Jeremy
+                <h6 className="m-b-1 fw-normal text-white">Jeremy &nbsp;
                   <small className="text-white text-light">@sing</small>
                 </h6>
                 <p className="fs-mini text-muted">
@@ -242,7 +228,7 @@ class Widgets extends React.Component {
                   &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
                 </p>
               </div>
-              <p className="text-light fs-mini m">Lots of cool stuff is happening around you. Just calm down for a
+              <p className="text-light fs-mini mt-lg">Lots of cool stuff is happening around you. Just calm down for a
                 sec
                 and listen. Colors, sounds,
                 thoughts, ideas.
@@ -291,10 +277,10 @@ class Widgets extends React.Component {
                   </ul>
                 </div>
                 <div className="post-user mt-sm">
-                  <span className="thumb pull-left mr">
+                  <span className="thumb pull-left mr mt-n-sm">
                     <img className="rounded-circle" src={peopleA6} alt="..." />
                   </span>
-                  <h6 className="mb-xs mt-xs"><span className="fw-semi-bold">Maryna</span> Nilson</h6>
+                  <h6 className="mb-xs mt"><span className="fw-semi-bold">Maryna</span> Nilson</h6>
                   <p className="fs-mini text-muted">
                     <time>25 mins</time>
                     &nbsp; <i className="fa fa-map-marker" /> &nbsp; near Amsterdam
@@ -317,7 +303,7 @@ class Widgets extends React.Component {
             <Widget refresh close>
               <div>
                 <div className="post-user mt-n-xs">
-                  <span className="thumb pull-left mr">
+                  <span className="thumb pull-left mr mt-n-sm">
                     <img className="rounded-circle" src={peopleA2} alt="..." />
                   </span>
                   <h6 className="mb-xs mt-xs">Jess <span className="fw-semi-bold">@jessica</span></h6>
@@ -629,7 +615,7 @@ class Widgets extends React.Component {
                   <div>
                     <h3>Basic & <span className="fw-semi-bold">Advanced</span> Features</h3>
                     <p className="value4 mt-lg">All you need in one app</p>
-                    <div className="h4 mt-lg mb-lg">
+                    <div className="h5 mt-lg mb-lg">
                       <i className="fa fa-quote-left opacity-50" />
                       &nbsp;That&apos;s awesome!  &nbsp;
                       <i className="fa fa-quote-right opacity-50" />
@@ -642,7 +628,7 @@ class Widgets extends React.Component {
                   <div>
                     <h3>Beautiful <span className="fw-semi-bold">Thing</span></h3>
                     <p className="value4 mt-lg">Life-time package support</p>
-                    <div className="h4 mt-lg mb-lg">
+                    <div className="h5 mt-lg mb-lg">
                       <i className="fa fa-quote-left opacity-50" />
                       &nbsp;That&apos;s awesome!  &nbsp;
                       <i className="fa fa-quote-right opacity-50" />
@@ -660,7 +646,6 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
 
-          {/* todo: fix rickshaw bar and sparkline */}
           <Col lg={3} xs={12}>
             <Widget className="widget-chart-changes" close refresh bodyClass="mt-0">
               <ChangesChart />

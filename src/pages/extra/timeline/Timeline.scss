@@ -134,6 +134,7 @@
   border-radius: $border-radius;
   padding: 20px 20px 0;
   position: relative;
+  box-shadow: $widget-shadow;
 
   .timeline & {
     float: right;
@@ -161,7 +162,7 @@
     padding: 10px 20px;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-    background-color: #f3f3f3;
+    background-color: #fafafa;
 
     @include clearfix();
 
@@ -239,6 +240,7 @@
     border: 7px solid $white;
     border-radius: 50%;
     text-align: center;
+    box-shadow: $widget-shadow;
 
     &.eventIconDanger {
       background-color: theme-color('danger');
