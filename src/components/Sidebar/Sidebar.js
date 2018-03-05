@@ -127,17 +127,17 @@ class Sidebar extends React.Component {
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
-            header="Pages"
+            header="E-commerce"
             isHeader
-            iconName="fa-file-o"
-            link="/app/pages"
-            index="pages"
+            iconName="fa-dollar"
+            link="/app/ecommerce"
+            index="ecommerce"
             childrenLinks={[
               {
-                header: 'Products Grid', link: '/app/pages/products',
+                header: 'Products Grid', link: '/app/ecommerce/products',
               },
               {
-                header: 'Product Page', link: '/app/pages/product',
+                header: 'Product Page', link: '/app/ecommerce/product',
               },
             ]}
           />

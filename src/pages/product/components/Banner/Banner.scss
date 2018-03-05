@@ -3,6 +3,8 @@
 .productDetailsBanner {
   display: flex;
   margin: 40px 0 75px;
+  border-radius: $border-radius;
+  box-shadow: $widget-shadow;
 
   @include media-breakpoint-down(sm) {
     flex-direction: column;
@@ -14,6 +16,8 @@
   background-size: cover;
   background-position: center;
   width: 66.6%;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
 
   @include media-breakpoint-down(md) {
     width: 55%;
@@ -30,6 +34,8 @@
   background: #fff;
   width: 33.3%;
   padding: 15px 20px;
+  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: $border-radius;
 
   @include media-breakpoint-down(md) {
     width: 45%;

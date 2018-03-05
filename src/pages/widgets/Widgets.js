@@ -35,12 +35,12 @@ class Widgets extends React.Component {
       <div className="root">
         <Row>
           <Col lg={3} md={6} xs={12}>
-            <Widget className="bg-primary text-white">
+            <Widget className="">
               <div className="clearfix">
                 <Row className="flex-nowrap">
                   <Col xs={3}>
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-globe" />
+                      <i className="glyphicon glyphicon-globe text-primary" />
                     </span>
                   </Col>
                   <Col xs="9">
@@ -62,12 +62,12 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
           <Col lg={3} md={6} xs={12}>
-            <Widget className="bg-info text-white">
+            <Widget className="">
               <div className="clearfix">
                 <Row className="flex-nowrap">
                   <Col xs="3">
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-user" />
+                      <i className="glyphicon glyphicon-user text-info" />
                     </span>
                   </Col>
                   <Col xs="9">
@@ -120,13 +120,13 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
           <Col lg={3} md={6} xs={12}>
-            <Widget className="bg-gray">
+            <Widget className="">
               <div className="clearfix">
                 <LiveTile
                   data-mode="fade" data-speed="750" data-delay="4000"
                   data-height="104"
                 >
-                  <div className="bg-gray text-white">
+                  <div className="bg-white text-gray">
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
@@ -149,7 +149,7 @@ class Widgets extends React.Component {
                       </Col>
                     </Row>
                   </div>
-                  <div className="text-white">
+                  <div className="text-gray">
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
@@ -177,12 +177,12 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
           <Col lg={3} md={6} xs={12}>
-            <Widget className="bg-success text-white">
+            <Widget className="">
               <div className="clearfix">
                 <Row className="flex-nowrap">
                   <Col xs={3}>
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-usd" />
+                      <i className="glyphicon glyphicon-usd text-success" />
                     </span>
                   </Col>
                   <Col xs={9}>

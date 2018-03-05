@@ -2,6 +2,8 @@
 
 .productDescription {
   background-color: #fff;
+  box-shadow: $widget-shadow;
+  border-radius: $border-radius;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;

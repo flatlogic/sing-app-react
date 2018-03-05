@@ -10,8 +10,6 @@ import {
 } from 'reactstrap';
 import Bundle from '../../core/Bundle';
 
-import react from '../../images/react.png';
-
 import Widget from '../../components/Widget';
 
 /* eslint-disable */
@@ -80,22 +78,16 @@ class Dashboard extends React.Component {
             <small>The Lucky One</small>
           </small>
         </h1>
-        <div className="mb-5">
-          <img className="float-left mr-sm" src={react} alt="React JS" width="80" />
-          <p className="lead">You are looking at a completely new version of Sing App built
-            with <strong>React JS</strong></p>
-          <p className="fs-mini">Made by <a href="http://flatlogic.com" target="_blank" rel="noopener noreferrer">Flatlogic</a>.
-          </p>
-        </div>
 
         <Row>
-          <Col lg={8} xs={12}>
+          <Col lg={7}>
             <Widget className="bg-transparent">
               <MapBundle />
             </Widget>
           </Col>
+          <Col lg={1} />
 
-          <Col lg={4} xs={12}>
+          <Col lg={4}>
             <Widget
               className="bg-transparent"
               title={<h5> Map
@@ -110,7 +102,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Foreign Visits</h6>
                   <p className="description deemphasize mb-xs">Some Cool Text</p>
-                  <Progress color="primary" value="60" className="bg-white progress-sm" />
+                  <Progress color="primary" value="60" className="bg-white progress-xs" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -122,7 +114,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Local Visits</h6>
                   <p className="description deemphasize mb-xs">P. to C. Conversion</p>
-                  <Progress color="danger" value="39" className="bg-white progress-sm" />
+                  <Progress color="danger" value="39" className="bg-white progress-xs" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -134,7 +126,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <p className="description deemphasize mb-xs">Average Bitrate</p>
-                  <Progress color="success" value="80" className="bg-white progress-sm" />
+                  <Progress color="success" value="80" className="bg-white progress-xs" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -254,7 +246,6 @@ class Dashboard extends React.Component {
         <Row>
           <Col lg={4} xs={12}>
             <Widget
-              className="post-comments"
               title={<h6><span className="badge badge-danger">New</span> Messages</h6>}
               refresh close
             >

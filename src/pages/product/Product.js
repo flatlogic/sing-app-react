@@ -20,13 +20,13 @@ const Product = () => (
       <BreadcrumbItem active>E-commerce</BreadcrumbItem>
     </Breadcrumb>
     {/* eslint-disable */}
-    <h1 className="page-title">E-commerce > <span className="fw-semi-bold">Product details</span></h1>
+    <h1 className="page-title">E-commerce - <span className="fw-semi-bold">Product Detail</span></h1>
     {/* eslint-enable */}
     <Banner image={img} />
-    <Section title="PRODUCT DESCRIPTION" h>
+    <Section title="Product Description" h>
       <Description {...mock} />
     </Section>
-    <Section title="YOU MAY ALSO LIKE">
+    <Section title="You may also like">
       <Slider slides={cardsMock} />
     </Section>
   </div >
