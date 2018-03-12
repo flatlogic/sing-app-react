@@ -27,6 +27,7 @@ import MaskedInput from 'react-maskedinput';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import Dropzone from 'react-dropzone';
 import TextareaAutosize from 'react-autosize-textarea';
+import ReactMde, { ReactMdeCommands } from 'react-mde';
 
 
 import Widget from '../../../components/Widget';
@@ -113,6 +114,9 @@ class Elements extends React.Component {
       dropFiles: [],
       inputFiles: [],
       imageFiles: [],
+      reactMdeValue: {
+        text: '',
+        selection: null },
     };
   }
 
@@ -153,6 +157,9 @@ class Elements extends React.Component {
     reader.readAsDataURL(e.target.files[0]);
   }
 
+  handleValueChange = (value) => {
+    this.setState({ reactMdeValue: value });
+  }
 
   changeValueDropdown(e) {
     this.setState({ dropDownValue: e.currentTarget.textContent });
@@ -610,6 +617,24 @@ class Elements extends React.Component {
                       <Button color="danger" className="mr-xs">Save</Button>
                       <Button color="secondary">Clear</Button>
                     </div>
+                  </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                  <Label md={3} className="text-md-right" for="markdown-editor">
+                    Markdown Editor
+                  </Label>
+                  <Col md={9}>
+                    {/* todo: change markdown */}
+                    <ReactMde
+                      textAreaProps={{
+                        id: 'ta1',
+                        name: 'ta1',
+                      }}
+                      value={this.state.reactMdeValue}
+                      onChange={this.handleValueChange}
+                      commands={ReactMdeCommands.getDefaultCommands()}
+                    />
                   </Col>
                 </FormGroup>
               </Form>
