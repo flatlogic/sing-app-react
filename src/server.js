@@ -135,8 +135,8 @@ app.get('*', async (req, res, next) => {
     css.add(theme._getCss());
 
     const data = {
-      title: 'Sing App 4.0.0 - Isomorphic React Dashboard',
-      description: 'Sing App 4.0.0 - Isomorphic React Dashboard based on react-router 4, redux, graphql, bootstrap',
+      title: 'Sing App 4.1.0 - Isomorphic React Dashboard',
+      description: 'Sing App 4.1.0 - Isomorphic React Dashboard based on react-router 4, redux, graphql, bootstrap',
     };
     data.styles = [
       { id: 'css', cssText: [...css].join('') },
