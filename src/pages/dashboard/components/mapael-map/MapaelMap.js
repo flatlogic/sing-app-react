@@ -124,7 +124,7 @@ class MapaelMap extends React.Component {
         <div className="stats">
           <h6 className="text-white mt-1">GEO-LOCATIONS</h6>
           <p className="h3 text-warning m-0">
-            <strong className="mr-xs"><AnimateNumber>1 656 843</AnimateNumber></strong>
+            <span className="mr-xs fw-normal"><AnimateNumber>1 656 843</AnimateNumber></span>
             <i className="fa fa-map-marker" />
           </p>
         </div>
