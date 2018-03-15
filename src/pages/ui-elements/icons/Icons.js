@@ -92,6 +92,15 @@ class Icons extends React.Component {
               <span>Other</span>
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink
+              className={classnames({ active: this.state.activeTab === '8' })}
+              onClick={() => { this.toggle('8'); }}
+            >
+              <span className="mr-xs">Flaticons</span>
+              <Badge color="danger">new</Badge>
+            </NavLink>
+          </NavItem>
         </Nav>
 
         {/* tab content */}
@@ -2981,6 +2990,1156 @@ class Icons extends React.Component {
                 ><i className="fa fa-wheelchair" /> wheelchair</a></Col>
               </Row>
 
+            </div>
+          </TabPane>
+
+          {/* tab #8 */}
+
+          <TabPane tabId="8">
+            <div>
+              <h4>File Type <span className="fw-semi-bold">Icons</span></h4>
+              <Row>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-add" /> add
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-add-1" /> add-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-add-2" /> add-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-add-3" /> add-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-agenda" /> agenda
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-alarm" /> alarm
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-alarm-1" /> alarm-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-alarm-clock" /> alarm-clock
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-alarm-clock-1" /> alarm-clock-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-albums" /> albums
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-app" /> app
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-archive" /> archive
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-archive-1" /> archive-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-archive-2" /> archive-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-archive-3" /> archive-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-attachment" /> attachment
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-back" /> back
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery" /> battery
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-1" /> battery-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-2" /> battery-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-3" /> battery-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-4" /> battery-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-5" /> battery-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-6" /> battery-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-7" /> battery-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-8" /> battery-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-battery-9" /> battery-9
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-binoculars" /> binoculars
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-blueprint" /> blueprint
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-bluetooth" /> bluetooth
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-bluetooth-1" /> bluetooth-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-bookmark" /> bookmark
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-bookmark-1" /> bookmark-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-briefcase" /> briefcase
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-broken-link" /> broken-link
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calculator" /> calculator
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calculator-1" /> calculator-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar" /> calendar
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-1" /> calendar-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-2" /> calendar-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-3" /> calendar-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-4" /> calendar-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-5" /> calendar-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-6" /> calendar-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-calendar-7" /> calendar-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-checked" /> checked
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-checked-1" /> checked-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-clock" /> clock
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-clock-1" /> clock-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-close" /> close
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud" /> cloud
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing" /> cloud-computing
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing-1" /> cloud-computing-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing-2" /> cloud-computing-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing-3" /> cloud-computing-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing-4" /> cloud-computing-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-cloud-computing-5" /> cloud-computing-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-command" /> command
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-compact-disc" /> compact-disc
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-compact-disc-1" /> compact-disc-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-compact-disc-2" /> compact-disc-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-compass" /> compass
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-compose" /> compose
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls" /> controls
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-1" /> controls-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-2" /> controls-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-3" /> controls-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-4" /> controls-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-5" /> controls-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-6" /> controls-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-7" /> controls-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-8" /> controls-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-controls-9" /> controls-9
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-database" /> database
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-database-1" /> database-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-database-2" /> database-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-database-3" /> database-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-diamond" /> diamond
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-diploma" /> diploma
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-dislike" /> dislike
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-dislike-1" /> dislike-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-divide" /> divide
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-divide-1" /> divide-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-division" /> division
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-document" /> document
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-download" /> download
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-edit" /> edit
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-edit-1" /> edit-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-eject" /> eject
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-eject-1" /> eject-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-equal" /> equal
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-equal-1" /> equal-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-equal-2" /> equal-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-error" /> error
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-exit" /> exit
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-exit-1" /> exit-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-exit-2" /> exit-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-eyeglasses" /> eyeglasses
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-fast-forward" /> fast-forward
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-fast-forward-1" /> fast-forward-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-fax" /> fax
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-file" /> file
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-file-1" /> file-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-file-2" /> file-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-film" /> film
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-fingerprint" /> fingerprint
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-flag" /> flag
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-flag-1" /> flag-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-flag-2" /> flag-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-flag-3" /> flag-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-flag-4" /> flag-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-focus" /> focus
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder" /> folder
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-1" /> folder-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-10" /> folder-10
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-11" /> folder-11
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-12" /> folder-12
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-13" /> folder-13
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-14" /> folder-14
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-15" /> folder-15
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-16" /> folder-16
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-17" /> folder-17
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-18" /> folder-18
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-19" /> folder-19
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-2" /> folder-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-3" /> folder-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-4" /> folder-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-5" /> folder-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-6" /> folder-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-7" /> folder-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-8" /> folder-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-folder-9" /> folder-9
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-forbidden" /> forbidden
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-funnel" /> funnel
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-garbage" /> garbage
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-garbage-1" /> garbage-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-garbage-2" /> garbage-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-gift" /> gift
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-help" /> help
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hide" /> hide
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hold" /> hold
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-home" /> home
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-home-1" /> home-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-home-2" /> home-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hourglass" /> hourglass
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hourglass-1" /> hourglass-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hourglass-2" /> hourglass-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-hourglass-3" /> hourglass-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-house" /> house
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card" /> id-card
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card-1" /> id-card-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card-2" /> id-card-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card-3" /> id-card-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card-4" /> id-card-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-id-card-5" /> id-card-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-idea" /> idea
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-incoming" /> incoming
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-infinity" /> infinity
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-info" /> info
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-internet" /> internet
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-key" /> key
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-lamp" /> lamp
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-layers" /> layers
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-layers-1" /> layers-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-like" /> like
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-like-1" /> like-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-like-2" /> like-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-link" /> link
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-list" /> list
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-list-1" /> list-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-lock" /> lock
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-lock-1" /> lock-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked" /> locked
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-1" /> locked-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-2" /> locked-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-3" /> locked-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-4" /> locked-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-5" /> locked-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-locked-6" /> locked-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-login" /> login
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-magic-wand" /> magic-wand
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-magnet" /> magnet
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-magnet-1" /> magnet-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-magnet-2" /> magnet-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-map" /> map
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-map-1" /> map-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-map-2" /> map-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-map-location" /> map-location
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-megaphone" /> megaphone
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-megaphone-1" /> megaphone-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-menu" /> menu
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-menu-1" /> menu-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-menu-2" /> menu-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-menu-3" /> menu-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-menu-4" /> menu-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-microphone" /> microphone
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-microphone-1" /> microphone-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-minus" /> minus
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-minus-1" /> minus-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-more" /> more
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-more-1" /> more-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-more-2" /> more-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-multiply" /> multiply
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-multiply-1" /> multiply-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-music-player" /> music-player
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-music-player-1" /> music-player-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-music-player-2" /> music-player-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-music-player-3" /> music-player-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-mute" /> mute
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-muted" /> muted
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-navigation" /> navigation
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-navigation-1" /> navigation-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-network" /> network
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-newspaper" /> newspaper
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-next" /> next
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-note" /> note
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook" /> notebook
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook-1" /> notebook-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook-2" /> notebook-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook-3" /> notebook-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook-4" /> notebook-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notebook-5" /> notebook-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notepad" /> notepad
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notepad-1" /> notepad-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notepad-2" /> notepad-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-notification" /> notification
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-paper-plane" /> paper-plane
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-paper-plane-1" /> paper-plane-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-pause" /> pause
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-pause-1" /> pause-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-percent" /> percent
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-percent-1" /> percent-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-perspective" /> perspective
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-photo-camera" /> photo-camera
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-photo-camera-1" /> photo-camera-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-photos" /> photos
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-picture" /> picture
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-picture-1" /> picture-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-picture-2" /> picture-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-pin" /> pin
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-placeholder" /> placeholder
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-placeholder-1" /> placeholder-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-placeholder-2" /> placeholder-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-placeholder-3" /> placeholder-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-placeholders" /> placeholders
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-play-button" /> play-button
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-play-button-1" /> play-button-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-plus" /> plus
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-power" /> power
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-previous" /> previous
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-price-tag" /> price-tag
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-print" /> print
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-push-pin" /> push-pin
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-radar" /> radar
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-reading" /> reading
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-record" /> record
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-repeat" /> repeat
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-repeat-1" /> repeat-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-restart" /> restart
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-resume" /> resume
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-rewind" /> rewind
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-rewind-1" /> rewind-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-route" /> route
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-save" /> save
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-search" /> search
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-search-1" /> search-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-send" /> send
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-server" /> server
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-server-1" /> server-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-server-2" /> server-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-server-3" /> server-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings" /> settings
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-1" /> settings-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-2" /> settings-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-3" /> settings-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-4" /> settings-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-5" /> settings-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-6" /> settings-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-7" /> settings-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-8" /> settings-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-settings-9" /> settings-9
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-share" /> share
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-share-1" /> share-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-share-2" /> share-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-shuffle" /> shuffle
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-shuffle-1" /> shuffle-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-shutdown" /> shutdown
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-sign" /> sign
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-sign-1" /> sign-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-skip" /> skip
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone" /> smartphone
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-1" /> smartphone-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-10" /> smartphone-10
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-11" /> smartphone-11
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-2" /> smartphone-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-3" /> smartphone-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-4" /> smartphone-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-5" /> smartphone-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-6" /> smartphone-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-7" /> smartphone-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-8" /> smartphone-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-smartphone-9" /> smartphone-9
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker" /> speaker
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-1" /> speaker-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-2" /> speaker-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-3" /> speaker-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-4" /> speaker-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-5" /> speaker-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-6" /> speaker-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-7" /> speaker-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-speaker-8" /> speaker-8
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-spotlight" /> spotlight
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-star" /> star
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-star-1" /> star-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stop" /> stop
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stop-1" /> stop-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stopwatch" /> stopwatch
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stopwatch-1" /> stopwatch-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stopwatch-2" /> stopwatch-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stopwatch-3" /> stopwatch-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-stopwatch-4" /> stopwatch-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-street" /> street
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-street-1" /> street-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-substract" /> substract
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-substract-1" /> substract-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-success" /> success
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch" /> switch
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-1" /> switch-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-2" /> switch-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-3" /> switch-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-4" /> switch-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-5" /> switch-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-6" /> switch-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-switch-7" /> switch-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-tabs" /> tabs
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-tabs-1" /> tabs-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-target" /> target
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-television" /> television
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-television-1" /> television-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-time" /> time
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-trash" /> trash
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-umbrella" /> umbrella
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-unlink" /> unlink
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-unlocked" /> unlocked
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-unlocked-1" /> unlocked-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-unlocked-2" /> unlocked-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-upload" /> upload
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user" /> user
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-1" /> user-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-2" /> user-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-3" /> user-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-4" /> user-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-5" /> user-5
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-6" /> user-6
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-user-7" /> user-7
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-users" /> users
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-users-1" /> users-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-video-camera" /> video-camera
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-video-camera-1" /> video-camera-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-video-player" /> video-player
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-video-player-1" /> video-player-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-video-player-2" /> video-player-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-view" /> view
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-view-1" /> view-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-view-2" /> view-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-volume-control" /> volume-control
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-volume-control-1" /> volume-control-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-warning" /> warning
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-wifi" /> wifi
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-wifi-1" /> wifi-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-windows" /> windows
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-windows-1" /> windows-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-windows-2" /> windows-2
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-windows-3" /> windows-3
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-windows-4" /> windows-4
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-wireless-internet" /> wireless-internet
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-worldwide" /> worldwide
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-worldwide-1" /> worldwide-1
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-zoom-in" /> zoom-in
+                </Col>
+                <Col className="icon-list-item" lg={3} md={4} xs={12}>
+                  <i className="fi flaticon-zoom-out" /> zoom-out
+                </Col>
+              </Row>
             </div>
           </TabPane>
         </TabContent>

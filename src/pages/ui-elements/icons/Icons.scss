@@ -17,19 +17,22 @@
       }
 
       .glyphicon,
-      .fa {
+      .fa,
+      .fi {
         width: 32px;
         margin-right: 10px;
       }
 
       &:hover {
         .glyphicon,
-        .fa {
+        .fa,
+        .fi {
           font-size: 28px;
           top: 2px;
         }
 
-        .fa {
+        .fa,
+        .fi {
           vertical-align: -5px;
         }
 
