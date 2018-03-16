@@ -1,3 +1,5 @@
+@import '../../../../styles/app';
+
 .bag {
   display: flex;
   height: 50px;
@@ -5,11 +7,11 @@
 
 .add {
   width: 100%;
-  background-color: #363f4e;
+  background-color: theme-color('dark');
   text-transform: uppercase;
-  color: #fff;
+  color: $white;
   border: none;
-  margin-right: 7.5px;
+  margin-right: $spacer / 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +35,7 @@
   justify-content: center;
   align-items: center;
   width: 55px;
-  border: 2px solid #d8dfe5;
+  border: 2px solid $border-color;
   background: transparent;
 
   &:hover {

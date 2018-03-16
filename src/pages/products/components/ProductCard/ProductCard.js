@@ -21,12 +21,12 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { img, lable, title, description, price, rating } = this.props;
+    const { img, label, title, description, price, rating } = this.props;
     const { favourite } = this.state;
     return (
       <div className={[s.productCard, 'product-card'].join(' ')}>
         <div className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
-          {lable && <div className={[s.lable, s[`lable--${lable.color}`]].join(' ')}>{lable.title}</div>}
+          {label && <div className={cx(s.label, label === 'Sale' ? 'bg-danger' : 'bg-success')}>{label}</div>}
           <button className={s.star} onClick={() => this.changeFavourite()}>
             <img src={favourite ? starFilled : star} alt="star" />
           </button>
@@ -53,7 +53,7 @@ class ProductCard extends Component {
 
 ProductCard.propTypes = {
   img: PropTypes.string.isRequired,
-  lable: PropTypes.any.isRequired,
+  label: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.any.isRequired,

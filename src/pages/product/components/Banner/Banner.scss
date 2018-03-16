@@ -2,13 +2,15 @@
 
 .productDetailsBanner {
   display: flex;
-  margin: 40px 0 75px;
+  margin: $content-padding 0 75px;
   border-radius: $border-radius;
   box-shadow: $widget-shadow;
 
   @include media-breakpoint-down(sm) {
     flex-direction: column;
-    margin-bottom: 0;
+    width: calc(100% + 30px);
+    box-shadow: none;
+    margin: auto -15px 0;
   }
 }
 
@@ -25,15 +27,15 @@
 
   @include media-breakpoint-down(sm) {
     height: 300px;
-    width: calc(100% + 30px);
-    margin: 0 -15px;
+    width: 100%;
+    border-radius: 0;
   }
 }
 
 .productInfo {
-  background: #fff;
+  background: $white;
   width: 33.3%;
-  padding: 15px 20px;
+  padding: 15px $content-padding / 2;
   border-bottom-right-radius: $border-radius;
   border-top-right-radius: $border-radius;
 
@@ -42,8 +44,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    margin: 0 -15px;
-    width: calc(100% + 30px);
+    width: 100%;
   }
 }
 
@@ -60,7 +61,7 @@
 .payments {
   display: flex;
   height: 25px;
-  margin: 25px 0 20px;
+  margin: 25px 0 $content-padding / 2;
 
   div {
     width: 40px;

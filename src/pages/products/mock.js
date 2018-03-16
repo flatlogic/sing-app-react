@@ -16,7 +16,7 @@ export default [
     description: 'Trainers In White',
     price: 76,
     favourite: true,
-    lable: false,
+    label: false,
   },
   {
     id: 1,
@@ -29,10 +29,7 @@ export default [
       percents: 20,
     },
     favourite: false,
-    lable: {
-      title: 'Sale',
-      color: 'red',
-    },
+    label: 'Sale',
   },
   {
     id: 2,
@@ -41,10 +38,7 @@ export default [
     description: 'Trainers In White',
     price: 55,
     favourite: false,
-    lable: {
-      title: 'New',
-      color: 'green',
-    },
+    label: 'New',
   },
   {
     id: 3,
@@ -53,7 +47,7 @@ export default [
     description: 'Trainers In White',
     price: 76,
     favourite: true,
-    lable: false,
+    label: false,
   },
   {
     id: 4,
@@ -66,10 +60,7 @@ export default [
       percents: 20,
     },
     favourite: false,
-    lable: {
-      title: 'Sale',
-      color: 'red',
-    },
+    label: 'Sale',
   },
   {
     id: 5,
@@ -78,9 +69,6 @@ export default [
     description: 'Trainers In White',
     price: 55,
     favourite: false,
-    lable: {
-      title: 'New',
-      color: 'green',
-    },
+    label: 'New',
   },
 ];

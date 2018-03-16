@@ -1,8 +1,10 @@
+@import '../../../../styles/app';
+
 .filterElement {
   display: flex;
   align-items: center;
   margin-right: 30px;
-  margin-bottom: 20px;
+  margin-bottom: $content-padding / 2;
 
   &:last-child {
     margin-left: 0;
@@ -11,5 +13,5 @@
 
 .filterElementLable {
   margin-right: 10px;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }

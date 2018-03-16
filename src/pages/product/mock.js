@@ -5,10 +5,11 @@ export default {
       extraClass: 'productDescriptionInfo',
       title: 'PRODUCT DESCRIPTION',
       body: `
-      <p>Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) 
+      <p class="dot-before">Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, 
+      takkies, or trainers) 
       are shoes primarily designed for sports or other forms of physical exercise, but which are 
       now also often used for everyday wear.</p>
-      <p>The term generally describes a type of footwear with a flexible sole made of rubber or 
+      <p class="dot-before">The term generally describes a type of footwear with a flexible sole made of rubber or 
       synthetic material and an upper part made of leather or synthetic materials.</p>`,
     },
     {
@@ -33,9 +34,9 @@ export default {
       id: 3,
       title: 'TECHNOLOGY',
       body: `<ul>
-        <li>Ollie patch</li>
-        <li>Cup soles</li>
-        <li>Vulcanized rubber soles</li>
+        <li class="dot-before">Ollie patch</li>
+        <li class="dot-before">Cup soles</li>
+        <li class="dot-before">Vulcanized rubber soles</li>
       </ul>`,
     },
     {

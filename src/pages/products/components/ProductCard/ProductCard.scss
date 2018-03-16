@@ -1,11 +1,11 @@
 @import '../../../../styles/app';
 
 .productCard {
-  margin-bottom: 65px;
+  margin-bottom: $spacer * 5;
   width: 100%;
 
   @include media-breakpoint-down(sm) {
-    margin-bottom: 15px;
+    margin-bottom: $spacer;
   }
 }
 
@@ -30,20 +30,12 @@
     height: 150px;
   }
 
-  .lable {
+  .label {
     position: absolute;
     left: 0;
     top: 15px;
     padding: 1px 11px;
-    color: #fff;
-
-    &--red {
-      background-color: theme-color('danger');
-    }
-
-    &--green {
-      background-color: theme-color('success');
-    }
+    color: $white;
   }
 
   .star {
@@ -53,7 +45,7 @@
     padding: 5px;
     border-radius: 50%;
     border: none;
-    background: #fff;
+    background: $white;
     display: flex;
 
     @include media-breakpoint-down(sm) {
@@ -96,7 +88,7 @@
 
 .productsCardTitle {
   text-transform: uppercase;
-  margin-top: 15px;
+  margin-top: $spacer;
   letter-spacing: 0.1px;
   font-weight: $font-weight-normal;
   color: theme-color('dark');
@@ -120,9 +112,9 @@
   }
 
   .old {
-    color: #ccc;
+    color: $border-color;
     position: relative;
-    margin-right: 15px;
+    margin-right: $spacer;
 
     &::before {
       content: '';
@@ -131,7 +123,7 @@
       left: 0;
       bottom: 0;
       transform: translateY(-10px);
-      background-color: #ccc;
+      background-color: $border-color;
       position: absolute;
     }
 
@@ -141,7 +133,7 @@
       position: absolute;
       width: 1px;
       height: 15px;
-      background-color: #666;
+      background-color: theme-color('light');
       margin: 0 7.5px;
     }
   }

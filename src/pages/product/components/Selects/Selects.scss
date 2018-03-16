@@ -1,6 +1,8 @@
+@import '../../../../styles/app';
+
 .selects {
   display: flex;
-  margin: 7.5px 0;
+  margin: $spacer / 2 0;
 
   & > div {
     height: 50px;
@@ -15,8 +17,8 @@
     }
 
     &:last-child {
-      width: calc(35% - 7.5px);
-      margin-left: 7.5px;
+      width: calc(35% - #{$spacer / 2});
+      margin-left: $spacer / 2;
     }
   }
 }

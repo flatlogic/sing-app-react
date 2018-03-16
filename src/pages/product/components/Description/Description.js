@@ -25,7 +25,7 @@ class Description extends Component {
     return (
       <div>
         <div className={s.productDescription}>
-          {description.map(item => <div className={cx(item.extraClass)} key={item.id}>
+          {description.map(item => <div className={cx(item.extraClass, s.productDescriptionBlock)} key={item.id}>
             <h3>{item.title}</h3>
             {/* eslint-disable */}
             <div dangerouslySetInnerHTML={{ __html: item.body }} />

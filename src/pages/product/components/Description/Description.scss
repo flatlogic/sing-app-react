@@ -1,7 +1,7 @@
 @import '../../../../styles/app';
 
 .productDescription {
-  background-color: #fff;
+  background-color: $white;
   box-shadow: $widget-shadow;
   border-radius: $border-radius;
   display: grid;
@@ -12,17 +12,6 @@
     display: none;
   }
 
-  & > div {
-    padding: 30px 20px;
-    font-weight: $font-weight-normal;
-    display: flex;
-    flex-direction: column;
-
-    &:nth-child(n + 4) {
-      padding-top: 0;
-    }
-  }
-
   h3 {
     font-size: 1.4rem;
     font-weight: $font-weight-normal;
@@ -30,8 +19,7 @@
     color: theme-color('dark');
   }
 
-  p,
-  li {
+  :global .dot-before {
     margin: 3px 0;
 
     &::before {
@@ -51,10 +39,10 @@
 
   :global .socialList {
     display: flex;
-    margin-top: 15px;
+    margin-top: $spacer;
 
     div {
-      transition: 0.3s;
+      transition: $transition-base;
       height: 25px;
       width: 25px;
       border-radius: 50%;
@@ -62,7 +50,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: $white;
 
       &:hover {
         cursor: pointer;
@@ -114,10 +102,9 @@
   }
 
   & :global .panel-header {
-    margin: auto 20px;
-    background-color: #fff;
+    background-color: $white;
     border-top: 1px solid;
-    color: #adb5bd;
+    color: $gray-500;
   }
 
   & :global .card-header {
@@ -127,6 +114,7 @@
 
   & :global .card-body {
     padding-top: 0;
+    padding-left: 0;
   }
 
   & :global .panel-first {
@@ -134,10 +122,22 @@
   }
 }
 
+.productDescriptionBlock {
+  padding: 30px $content-padding / 2;
+  font-weight: $font-weight-normal;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(n + 4) {
+    padding-top: 0;
+  }
+}
+
 .productDescriptionMobile {
   display: none;
-  font-weight: normal;
-  padding: 5px 0 10px;
+  margin: 0;
+  font-weight: $font-weight-normal;
+  padding: 5px 5px 10px;
 
   @include media-breakpoint-down(sm) {
     display: block;

@@ -1,11 +1,13 @@
+@import '../../../../styles/app';
+
 .option {
   span {
-    margin: 0 20px 0 -10px;
-    transition: 0.3s;
+    margin: 0 $content-padding / 2 0 -10px;
+    transition: $sidebar-transition-time;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid #f8f8f8;
+    border: 2px solid $addition-bg;
     display: flex;
     align-items: center;
     justify-content: center;

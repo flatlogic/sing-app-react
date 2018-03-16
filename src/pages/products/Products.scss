@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: calc(#{$spacer} - 4px);
 
   @include media-breakpoint-down(sm) {
     display: none;
@@ -15,8 +15,8 @@
   display: none;
   margin: auto -15px 25px;
   padding: 10px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 
   @include media-breakpoint-down(sm) {
     display: flex;
@@ -31,12 +31,12 @@
     padding: 0;
 
     i {
-      color: #ccc;
-      margin-left: 10px;
+      color: $border-color;
+      margin-left: $content-padding / 4;
     }
 
     &:first-child {
-      border-right: 1px solid #ccc;
+      border-right: 1px solid $border-color;
     }
   }
 }

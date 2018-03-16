@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
@@ -20,11 +21,11 @@ class Bag extends Component {
     const { favourite } = this.state;
     return (
       <div className={s.bag} >
-        <button className={s.add}>
+        <button className={cx('btn', s.add)}>
           add to bag
       <img src={bag} alt="bag" />
         </button>
-        <button className={s.star} onClick={() => this.changeFavourite()}>
+        <button className={cx('btn', s.star)} onClick={() => this.changeFavourite()}>
           <img src={favourite ? starFilled : star} alt="star" />
         </button>
       </div>

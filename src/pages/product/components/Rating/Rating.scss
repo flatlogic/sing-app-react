@@ -3,7 +3,7 @@
 .rating {
   display: flex;
   font-size: $font-size-lg;
-  font-weight: 600;
+  font-weight: $font-weight-semi-bold;
   color: theme-color('warning');
   align-items: center;
 
