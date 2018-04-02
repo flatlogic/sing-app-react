@@ -76,7 +76,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Dashboard"
             isHeader
-            iconName="fa-desktop"
+            iconName="flaticon-home"
             link="/app/main"
             index="main"
             childrenLinks={[
@@ -94,7 +94,7 @@ class Sidebar extends React.Component {
             header="Profile"
             link="/app/profile"
             isHeader
-            iconName="fa-user"
+            iconName="flaticon-paper-plane"
             index="profile"
             label="new"
           />
@@ -104,7 +104,7 @@ class Sidebar extends React.Component {
             header="Email"
             link="/app/inbox"
             isHeader
-            iconName="fa-envelope"
+            iconName="flaticon-controls"
             index="inbox"
             badge="9"
           />
@@ -112,7 +112,7 @@ class Sidebar extends React.Component {
             header="Charts"
             link="/app/charts"
             isHeader
-            iconName="fa-bar-chart"
+            iconName="flaticon-user"
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
@@ -120,7 +120,7 @@ class Sidebar extends React.Component {
             header="Sing Package"
             link="/app/package"
             isHeader
-            iconName="fa-database"
+            iconName="flaticon-database-1"
             index="packages"
             label="4.0"
           />
@@ -129,7 +129,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="E-commerce"
             isHeader
-            iconName="fa-dollar"
+            iconName="flaticon-diamond"
             link="/app/ecommerce"
             index="ecommerce"
             childrenLinks={[
@@ -147,7 +147,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Forms"
             isHeader
-            iconName="fa-align-right"
+            iconName="flaticon-list"
             link="/app/forms"
             index="forms"
             childrenLinks={[
@@ -167,7 +167,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="UI Elements"
             isHeader
-            iconName="fa-tree"
+            iconName="flaticon-layers"
             link="/app/ui"
             index="ui"
             childrenLinks={[
@@ -195,14 +195,14 @@ class Sidebar extends React.Component {
             header="Grid"
             link="/app/grid"
             isHeader
-            iconName="fa-th"
+            iconName="flaticon-menu-4"
           />
           <LinksGroup
             onActiveSidebarItemChange={t => this.props.dispatch(changeActiveSidebarItem(t))}
             activeItem={this.props.activeItem}
             header="Tables"
             isHeader
-            iconName="fa-table"
+            iconName="flaticon-map-location"
             link="/app/tables"
             index="tables"
             childrenLinks={[
@@ -219,7 +219,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Maps"
             isHeader
-            iconName="fa-map"
+            iconName="flaticon-equal-1"
             link="/app/maps"
             index="maps"
             childrenLinks={[
@@ -236,7 +236,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Extra"
             isHeader
-            iconName="fa-leaf"
+            iconName="flaticon-star"
             link="/app/extra"
             index="extra"
             childrenLinks={[
@@ -268,7 +268,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Menu Levels"
             isHeader
-            iconName="fa-desktop"
+            iconName="flaticon-folder-10"
             link="/app/menu"
             index="menu"
             childrenLinks={[

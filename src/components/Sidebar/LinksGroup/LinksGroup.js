@@ -68,7 +68,7 @@ class LinksGroup extends Component {
               exact
             >
               <span className={s.icon}>
-                <i className={`fa ${this.props.iconName}`} />
+                <i className={`fi ${this.props.iconName}`} />
               </span>
               {this.props.header} {this.props.label && <sup className={s.headerLabel}>{this.props.label}</sup>}
               {this.props.badge && <Badge className={s.badge} color="danger">9</Badge>}
@@ -110,7 +110,7 @@ class LinksGroup extends Component {
               >
                 {this.props.isHeader ?
                   <span className={s.icon}>
-                    <i className={`fa ${this.props.iconName}`} />
+                    <i className={`fi ${this.props.iconName}`} />
                   </span> : null
                 }
                 {this.props.header} {this.props.label && <sup className={s.header}>{this.props.label}</sup>}
