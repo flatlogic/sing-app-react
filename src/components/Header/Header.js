@@ -126,28 +126,28 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar color={'white'} className={`${s.root} d-print-none`}>
+      <Navbar className={`${s.root} d-print-none`}>
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-3" href="#" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className={'fa fa-bars fa-lg'} />
+              <i className="la la-bars" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
             <NavLink className="fs-lg d-lg-none" href="#" onClick={this.switchSidebar}>
-              <span className="rounded rounded-lg bg-gray text-white d-md-none"><i className="fa fa-bars fa-lg" /></span>
-              <i className="fa fa-bars fa-lg d-sm-down-none" />
+              <span className="rounded rounded-lg bg-gray text-white d-md-none"><i className="la la-bars" /></span>
+              <i className="la la-bars ml-3 d-sm-down-none" />
             </NavLink>
           </NavItem>
-          <NavItem className="d-md-down-none ml-3">
+          <NavItem className="d-sm-down-none">
             <NavLink href="#" className="px-2">
-              <i className="fa fa-refresh fa-lg" />
+              <i className="la la-refresh" />
             </NavLink>
           </NavItem>
-          <NavItem className="d-md-down-none">
+          <NavItem className="d-sm-down-none">
             <NavLink href="#" className="px-2">
-              <i className="fa fa-times fa-lg" />
+              <i className="la la-times" />
             </NavLink>
           </NavItem>
 
@@ -157,7 +157,7 @@ class Header extends React.Component {
           <FormGroup>
             <InputGroup className="input-group-no-border">
               <InputGroupAddon><i
-                className="fa fa-search"
+                className="la la-search"
               /></InputGroupAddon>
               <Input id="search-input" placeholder="Search Dashboard" />
             </InputGroup>
@@ -181,28 +181,28 @@ class Header extends React.Component {
                 <img className="rounded-circle" src={a5} alt="..." />
               </span>
               <span className="small">Philip <span className="fw-semi-bold">Smith</span></span>
-              <span className="ml-1 circle bg-warning fw-bold">13</span>
+              <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
             </DropdownToggle>
-            <DropdownMenu right className={`${s.notificationsWrapper} pb-0 animated animated-fast fadeInUp`}>
+            <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
               <Notifications />
             </DropdownMenu>
           </NavDropdown>
           <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
             <DropdownToggle nav>
-              <i className="fa fa-cog fa-lg" />
+              <i className="la la-cog" />
             </DropdownToggle>
             <DropdownMenu right className="super-colors">
-              <DropdownItem><i className="glyphicon glyphicon-user" /> My Account</DropdownItem>
+              <DropdownItem><i className="la la-user" /> My Account</DropdownItem>
               <DropdownItem divider />
               <DropdownItem href="/calendar">Calendar</DropdownItem>
               <DropdownItem href="/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
               <DropdownItem divider />
-              <DropdownItem onClick={this.doLogout}><i className="fa fa-sign-out" /> Log Out</DropdownItem>
+              <DropdownItem onClick={this.doLogout}><i className="la la-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
           </NavDropdown>
           <NavItem>
             <NavLink className="d-sm-down-none mr-3" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
-              <i className="fa fa-globe fa-lg" />
+              <i className="la la-globe" />
             </NavLink>
             <div id="chat-notification" className={`${s.chatNotification} hide `}>
               <div className={s.chatNotificationInner}>
@@ -218,7 +218,7 @@ class Header extends React.Component {
           </NavItem>
           <NavItem className="fs-lg d-md-none">
             <NavLink href="#" onClick={this.props.chatToggle}>
-              <span className="rounded rounded-lg bg-gray text-white"><i className="fa fa-globe fa-lg" /></span>
+              <span className="rounded rounded-lg bg-gray text-white"><i className="la la-globe" /></span>
             </NavLink>
           </NavItem>
         </Nav>

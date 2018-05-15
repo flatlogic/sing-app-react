@@ -242,14 +242,14 @@ class Gallery extends React.Component {
 
         <div className={s.galleryControls}>
           <ButtonGroup id="shuffle-buttons">
-            <Button color="secondary" onClick={() => this.filterChildren('all')} active={this.state.activeGroup === 'all'}>All</Button>
-            <Button color="secondary" onClick={() => this.filterChildren('nature')} active={this.state.activeGroup === 'nature'}>Nature</Button>
-            <Button color="secondary" onClick={() => this.filterChildren('people')} active={this.state.activeGroup === 'people'}>People</Button>
-            <Button color="secondary" onClick={() => this.filterChildren('space')} active={this.state.activeGroup === 'space'}>Space</Button>
+            <Button color="default" onClick={() => this.filterChildren('all')} active={this.state.activeGroup === 'all'}>All</Button>
+            <Button color="default" onClick={() => this.filterChildren('nature')} active={this.state.activeGroup === 'nature'}>Nature</Button>
+            <Button color="default" onClick={() => this.filterChildren('people')} active={this.state.activeGroup === 'people'}>People</Button>
+            <Button color="default" onClick={() => this.filterChildren('space')} active={this.state.activeGroup === 'space'}>Space</Button>
           </ButtonGroup>
           <ButtonGroup id="order-buttons">
-            <Button color="secondary" onClick={() => this.orderChildren('asc')} active={this.state.order === 'asc'}><i className="fa fa-sort-numeric-asc" /></Button>
-            <Button color="secondary" onClick={() => this.orderChildren('desc')} active={this.state.order === 'desc'}><i className="fa fa-sort-numeric-desc" /></Button>
+            <Button color="default" onClick={() => this.orderChildren('asc')} active={this.state.order === 'asc'}><i className="fa fa-sort-numeric-asc" /></Button>
+            <Button color="default" onClick={() => this.orderChildren('desc')} active={this.state.order === 'desc'}><i className="fa fa-sort-numeric-desc" /></Button>
           </ButtonGroup>
         </div>
         <Shuffle duration={500} fade={false} className={s.gallery}>

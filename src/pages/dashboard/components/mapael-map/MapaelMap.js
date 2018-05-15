@@ -18,9 +18,13 @@ class MapaelMap extends React.Component {
       map: {
         name: 'usa_states',
         defaultArea: {
+          attrs: {
+            fill: '#e5e7f1',
+            stroke: '#fafbff',
+          },
           attrsHover: {
-            fill: '#242424',
-            animDuration: 100,
+            fill: '#e9ebf6',
+            animDuration: 50,
           },
           tooltip: {
             content: () => `<strong>${state}</strong>`,
@@ -34,7 +38,7 @@ class MapaelMap extends React.Component {
         defaultPlot: {
           size: 17,
           attrs: {
-            fill: '#f0b518',
+            fill: '#ffc247',
             stroke: '#fff',
             'stroke-width': 0,
             'stroke-linejoin': 'round',
@@ -122,8 +126,8 @@ class MapaelMap extends React.Component {
     return (
       <div className={`mapael ${s.mapael}`} id="mapael">
         <div className="stats">
-          <h6 className="text-white mt-1">GEO-LOCATIONS</h6>
-          <p className="h3 text-warning m-0">
+          <h6 className="mt-1">GEO-LOCATIONS</h6>
+          <p className="h3 m-0">
             <span className="mr-xs fw-normal"><AnimateNumber>1 656 843</AnimateNumber></span>
             <i className="fa fa-map-marker" />
           </p>

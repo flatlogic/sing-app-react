@@ -15,13 +15,13 @@
 
 .chat-notification-sing {
   position: absolute;
-  top: 16px;
-  left: 9px;
+  top: 12px;
+  left: 14px;
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #dd5826;
+  background-color: theme-color('danger');
 }
 
 #notification-buttons {
@@ -150,10 +150,6 @@ table > thead > tr > th {
   .name {
     margin-bottom: 0.25rem;
     font-size: $font-size-sm;
-  }
-
-  .value {
-    font-weight: bold;
   }
 
   &.stat-item-mini-chart {

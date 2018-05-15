@@ -4,7 +4,7 @@
   overflow-x: hidden;
 
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-    font-size: $font-size-larger;
+    font-size: $font-size-base;
   }
 
   a {
@@ -24,10 +24,6 @@
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
 
-    &.headerLinkActive {
-      background-color: $sidebar-item-hover-bg-color;
-    }
-
     &:hover {
       background-color: $sidebar-item-hover-bg-color;
     }
@@ -37,11 +33,12 @@
     }
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-      line-height: 44px;
+      line-height: 55px;
     }
   }
 
   .icon {
+    font-size: $font-size-larger;
     display: block;
     position: absolute;
     top: 3px;
@@ -51,22 +48,17 @@
     line-height: 28px;
     text-align: center;
 
-    i {
-      color: rgba(170, 170, 170, 0.7);
-    }
-
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-      top: 8px;
+      top: 12px;
     }
   }
 
   .badge {
     float: right;
     line-height: 8px;
-    margin-top: 8px;
+    margin-top: 16px;
     margin-right: 15px;
     padding: 7px;
-    border-radius: 0.2rem;
   }
 }
 
@@ -96,7 +88,7 @@ a.headerLinkActive {
     background-color: $sidebar-item-active-color;
 
     i {
-      color: #242424;
+      color: $white;
     }
   }
 }
@@ -108,37 +100,22 @@ a.headerLinkActive {
   border-radius: 0;
   background-color: lighten($sidebar-bg-color, 5%);
 
-  &::before {
-    content: '';
-    display: block;
-    padding-top: $spacer/2;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    padding-bottom: $spacer/2;
-  }
-
   a.headerLinkActive {
-    color: $white;
-    font-weight: $font-weight-thin;
+    font-weight: $font-weight-semi-bold;
+    color: $sidebar-color;
   }
 
   ul {
-    padding-left: 0;
-    font-size: 13px;
-
-    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-      font-size: 14px;
-    }
+    background: $sidebar-action-bg;
+    padding: $spacer;
 
     li {
       list-style: none;
     }
 
     a {
-      padding: 4px 20px 4px 36px;
+      padding: 10px 20px 10px 26px;
+      font-size: $font-size-mini;
 
       &:hover {
         background-color: $sidebar-item-hover-bg-color;

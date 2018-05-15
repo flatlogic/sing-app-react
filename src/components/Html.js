@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
-import config from '../config';
+// import config from '../config';
 
 /* eslint-disable react/no-danger */
 
@@ -43,7 +43,7 @@ class Html extends React.Component {
               dangerouslySetInnerHTML={{ __html: style.cssText }}
             />,
           )}
-          <script dangerouslySetInnerHTML={{__html: {/* analytics here */}}}/>
+          <script dangerouslySetInnerHTML={{ __html: {/* analytics here */} }} />
         </head>
         <body>
           <div id="app" dangerouslySetInnerHTML={{ __html: children }} />

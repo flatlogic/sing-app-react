@@ -1,0 +1,6 @@
+{
+  "name": "Rickshaw",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Rickshaw.js"
+}

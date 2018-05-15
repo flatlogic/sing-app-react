@@ -50,6 +50,7 @@
     "jquery.animate-number": "0.0.14",
     "jsonwebtoken": "7.3.0",
     "jvectormap": "2.0.4",
+    "line-awesome": "github:icons8/line-awesome",
     "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",
     "metrojs": "0.9.77",
     "moment": "2.18.1",
@@ -187,7 +188,9 @@
   "napa": {
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
     "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
-    "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1"
+    "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
+    "jquery.flot-orderBars": "https://github.com/emmerich/flot-orderBars.git",
+    "flot.dashes": "https://github.com/cquartier/flot.dashes.git"
   },
   "resolutions": {
     "jquery": "3.3.1"

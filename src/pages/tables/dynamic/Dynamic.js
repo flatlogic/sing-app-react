@@ -40,7 +40,7 @@ class Dynamic extends React.Component {
 
     return (
       <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
-        <DropdownToggle caret>
+        <DropdownToggle color="default" caret>
           { props.currSizePerPage }
         </DropdownToggle>
         <DropdownMenu>

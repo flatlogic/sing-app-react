@@ -53,8 +53,6 @@
   &::-webkit-scrollbar-thumb {
     border: none;
     background-color: $color;
-
-    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, 0.1));
   }
 }
 

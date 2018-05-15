@@ -49,7 +49,7 @@ class Filters extends Component {
             >
               {button.title}
               {button.notifications &&
-                <Badge color={button.lable || 'white'} pill>{button.notifications}</Badge>}
+                <Badge color={button.lable || 'default'} pill>{button.notifications}</Badge>}
             </button>,
           )}
         </div>

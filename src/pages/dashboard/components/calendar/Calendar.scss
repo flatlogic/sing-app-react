@@ -8,7 +8,15 @@
   .calendar {
     font-size: $font-size-mini;
     padding: $spacer/2 0;
-    background: lighten($blue, 35%);
+    background: $gray-light;
+  }
+
+  .calendar-white {
+    background: $white;
+
+    .calendar {
+      background: inherit;
+    }
   }
 
   .calendar a {

@@ -34,7 +34,7 @@ class Icons extends React.Component {
         <h1 className="page-title">UI - <span className="fw-semi-bold">Icons</span></h1>
 
         {/* tabs */}
-        <Nav tabs>
+        <Nav className="bg-light" tabs>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '1' })}

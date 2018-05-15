@@ -426,7 +426,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   @include transition(background-color ease-in-out 0.15s);
 
   &:focus {
-    background-color: #f1f1f1;
+    background-color: $gray-100;
   }
 }
 
@@ -480,6 +480,14 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
 
+$padding-vertical-variants: (xlg: 40px, lg: $spacer*3/2, md: $spacer, sm: $spacer/2, xs: $spacer/4, 0: 0);
+$padding-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
+
+@include property-variants('.pt', 'padding-top', $padding-vertical-variants);
+@include property-variants('.pb', 'padding-bottom', $padding-vertical-variants);
+@include property-variants('.pl', 'padding-left', $padding-horizontal-variants);
+@include property-variants('.pr', 'padding-right', $padding-horizontal-variants);
+
 .mt-negative-lg {
   margin-top: -($spacer * 1.5);
 }
@@ -520,4 +528,11 @@ $i: 0;
 
 .chart-overflow-bottom {
   margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+}
+
+// Background
+
+.background-cover {
+  background-size: cover;
+  background-position: center;
 }

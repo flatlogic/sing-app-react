@@ -39,7 +39,7 @@ class Search extends React.Component {
         <div className="btn-toolbar justify-content-between">
           <div className="d-inline-flex">
             <UncontrolledButtonDropdown>
-              <DropdownToggle caret>
+              <DropdownToggle color="default" caret>
                 Popular
               </DropdownToggle>
               <DropdownMenu>
@@ -50,7 +50,7 @@ class Search extends React.Component {
               </DropdownMenu>
             </UncontrolledButtonDropdown>
             <UncontrolledButtonDropdown>
-              <DropdownToggle caret>
+              <DropdownToggle color="default" caret>
                 All Time
               </DropdownToggle>
               <DropdownMenu>
