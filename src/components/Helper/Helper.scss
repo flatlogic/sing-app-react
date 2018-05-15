@@ -1,0 +1,91 @@
+@import '../../styles/app';
+
+.themeHelper {
+  width: $sidebar-width-open;
+  position: fixed;
+  right: -$sidebar-width-open;
+  top: $navbar-height * 1.5;
+  z-index: 100;
+
+  @include transition(right $sidebar-transition-time ease-in-out);
+
+  &.themeHelperOpened {
+    right: 0;
+  }
+
+  .themeHelperBtn {
+    width: $sidebar-width-open / 4;
+    margin-left: -($sidebar-width-open / 4 + $widget-padding-horizontal);
+    margin-top: -($widget-padding-vertical);
+    cursor: pointer;
+    z-index: 200;
+    border-radius: 50% 0 0 50%;
+    padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
+    box-shadow: $widget-shadow-designated !important;
+
+    i {
+      animation-duration: 6500ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    i:first-of-type {
+      animation-name: spin;
+      margin-right: -$spacer * 1.15;
+      vertical-align: text-bottom;
+    }
+
+    i:last-of-type {
+      animation-name: spin-reverse;
+      vertical-align: $font-size-sm;
+    }
+  }
+
+  .themeHelperSpinner {
+    font-size: $font-size-lg * 1.4;
+    line-height: initial;
+  }
+
+  .themeHelperHeader {
+    padding-top: 0;
+
+    h6 {
+      margin: auto;
+    }
+  }
+
+  .themeHelperContent {
+    box-shadow: $widget-shadow-designated;
+    border-radius: 0;
+  }
+
+  .themeHelperSharing,
+  .themeHelperCssSwitcher {
+    font-size: $font-size-lg;
+    cursor: pointer;
+  }
+
+  :global .glyphicon {
+    vertical-align: top;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(-360deg);
+    }
+  }
+}

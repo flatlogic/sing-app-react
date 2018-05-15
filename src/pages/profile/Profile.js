@@ -174,10 +174,10 @@ const Profile = () => (
             </FormGroup>
             <div className="btn-toolbar">
               <div className="btn-group">
-                <a href="#" className="btn btn-sm btn-gray">
+                <a href="#" className="btn btn-sm btn-default">
                   <i className="fa fa-camera fa-lg" />
                 </a>
-                <a href="#" className="btn btn-sm btn-gray">
+                <a href="#" className="btn btn-sm btn-default">
                   <i className="fa fa-map-marker fa-lg" />
                 </a>
               </div>

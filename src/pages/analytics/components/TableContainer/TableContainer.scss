@@ -1,0 +1,12 @@
+@import '../../../../styles/app';
+
+.table {
+  td,
+  th {
+    font-weight: normal;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: $gray-light;
+  }
+}

@@ -373,9 +373,9 @@ class Elements extends React.Component {
                         </Label>
                         <InputGroup>
                           <Input type="text" id="search-input" />
-                          <InputGroupButton><Button
-                            color="secondary"
-                          >Search</Button></InputGroupButton>
+                          <InputGroupButton>
+                            <Button color="default">Search</Button>
+                          </InputGroupButton>
                         </InputGroup>
                       </FormGroup>
 
@@ -496,7 +496,7 @@ class Elements extends React.Component {
                     <Button color="inverse" type="submit" className="mr-xs">
                       Save Changes
                     </Button>
-                    <Button color="secondary">Cancel</Button>
+                    <Button color="default">Cancel</Button>
                   </FormGroup>
                 </Form>
               </FormGroup>
@@ -615,7 +615,7 @@ class Elements extends React.Component {
                     />
                     <div className="text-md-right mt-xs">
                       <Button color="danger" className="mr-xs">Save</Button>
-                      <Button color="secondary">Clear</Button>
+                      <Button color="default">Clear</Button>
                     </div>
                   </Col>
                 </FormGroup>
@@ -675,7 +675,7 @@ class Elements extends React.Component {
                   <Col md="8">
                     <UncontrolledButtonDropdown>
                       <DropdownToggle
-                        caret color="secondary"
+                        caret color="default"
                         className="dropdown-toggle-split mr-xs"
                       >
                         {this.state.simpleSelectDropdownValue}
@@ -776,7 +776,7 @@ class Elements extends React.Component {
                   <Col md="8">
                     <UncontrolledButtonDropdown id="simple-big-select">
                       <DropdownToggle
-                        caret color="secondary" size="lg"
+                        caret color="default" size="lg"
                         className="dropdown-toggle-split"
                       >
                         <span className="mr-5"> {this.state.bigSelectDropdownValue}</span>
@@ -1302,15 +1302,15 @@ class Elements extends React.Component {
                         </div> : <span />}
                       </Label>
                       {this.state.inputFiles.length === 0 ? <InputGroupButton>
-                        <Button type="button" color="secondary" className="btn-file">
+                        <Button type="button" color="default" className="btn-file">
                           <Label for="fileupload1">Select file</Label>
                         </Button>
                       </InputGroupButton> : <InputGroupButton>
-                        <Button type="button" color="secondary">
+                        <Button type="button" color="default">
                           <Label for="fileupload1">Change file</Label>
                         </Button>
                         <Button
-                          type="reset" color="secondary"
+                          type="reset" color="default"
                           onClick={this.removeInputFiles}
                         >
                           <Label>Remove file</Label>
@@ -1345,7 +1345,7 @@ class Elements extends React.Component {
                       </div>
                     </div>
                     <div>
-                      <Button type="button" color="secondary"><Label for="fileupload2">Select
+                      <Button type="button" color="default"><Label for="fileupload2">Select
                         image</Label></Button>
                     </div>
                     <span className="help-block">Showing a thumbnail instead of the filename when uploading an image.</span>

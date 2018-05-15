@@ -10,22 +10,22 @@
   color: $sidebar-color;
   overflow-y: auto;
 
-  @include scroll-bar($gray-600);
+  @include scroll-bar($sidebar-scrollbar-bg);
 }
 
 .logo {
   margin: 15px 0;
   font-size: 18px;
   width: 100%;
-  font-weight: 700;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  font-weight: $font-weight-thin;
+  text-align: center;
   transition: width $sidebar-transition-time ease-in-out;
 
   a {
+    color: $gray-800;
+    padding: 0 5px;
     text-decoration: none;
-    color: #fff;
+    white-space: nowrap;
   }
 }
 
@@ -94,11 +94,12 @@
   padding-right: 15px;
 
   > li + li {
-    margin-top: 7px;
+    margin-top: 10px;
   }
 
   li > a {
-    color: #eee;
+    font-size: $font-size-mini;
+    color: $sidebar-color;
     text-decoration: none;
 
     > i {
@@ -124,6 +125,7 @@
 }
 
 .sidebarAlerts {
+  margin-bottom: $spacer * 2;
   transition: opacity $sidebar-transition-time ease-in-out;
   opacity: 1;
 }

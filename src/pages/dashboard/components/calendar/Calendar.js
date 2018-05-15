@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 /* eslint-disable */
@@ -26,6 +28,13 @@ const monthNames = [
 const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 class Calendar extends React.Component {
+  static propTypes = {
+    white: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    white: false,
+  }
 
   componentDidMount() {
     const $calendar = $('#calendar');
@@ -86,7 +95,7 @@ class Calendar extends React.Component {
   }
 
   render() {
-    return (<div id="calendar" className="bg-primary-light" />);
+    return (<div id="calendar" className={cx('calendar', { 'calendar-white': this.props.white })} />);
   }
 }
 

@@ -11,6 +11,11 @@
   color: #aaa;
   transition: right 0.3s ease-in-out;
 
+  @include media-breakpoint-down(md) {
+    right: -275px;
+    width: 275px;
+  }
+
   &.chatOpen {
     right: 0;
   }
@@ -103,6 +108,7 @@
     padding-top: 100px;
     right: -100%;
     transition: right 0.2s ease-in-out;
+    background-color: $gray-light;
 
     :global .list-group {
       position: absolute;
@@ -174,7 +180,7 @@
       width: 100%;
       margin-bottom: 0;
       padding: 10px;
-      background-color: #3a3a3a;
+      background-color: $white;
     }
 
     &.chatMessageOpen {
@@ -186,8 +192,9 @@
 
       a {
         display: block;
-        padding: 10px 16px;
-        background-color: rgba(255, 255, 255, 0.1);
+        margin-top: -7px;
+        padding: 17px 16px;
+        background-color: $white;
       }
     }
   }
@@ -206,9 +213,8 @@
       font-weight: $badge-font-weight;
     }
 
-    :global .list-group-item:hover:not(.active) {
-      background: rgba($black, 0.1);
-      color: $white;
+    :global .list-group-item:hover {
+      background: $gray-100;
     }
 
     :global .badge {

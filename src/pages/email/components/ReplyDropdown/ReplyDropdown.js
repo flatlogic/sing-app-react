@@ -20,10 +20,10 @@ class ReplyDropdown extends Component {
     const { compose } = this.props;
     return (
       <ButtonDropdown isOpen={open} toggle={() => this.toggle()}>
-        <Button size="sm" id="dropdownFour" color="gray" onClick={() => compose()}>
+        <Button size="sm" id="dropdownFour" color="default" onClick={() => compose()}>
           <i className="fa fa-reply" /> Reply
         </Button>
-        <DropdownToggle size="sm" color="gray" className="dropdown-toggle-split">
+        <DropdownToggle size="sm" color="default" className="dropdown-toggle-split">
           <i className="fa fa-angle-down" />
         </DropdownToggle>
         <DropdownMenu>

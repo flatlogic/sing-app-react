@@ -11,7 +11,6 @@ import Hammer from 'rc-hammerjs';
 /* eslint-disable */
 import loadProfile from 'bundle-loader?lazy!../../pages/profile';
 import loadUIButtons from 'bundle-loader?lazy!../../pages/ui-elements/buttons';
-import loadUIComponent from 'bundle-loader?lazy!../../pages/ui-elements/components';
 import loadUIIcons from 'bundle-loader?lazy!../../pages/ui-elements/icons';
 import loadUITabsAccordion from 'bundle-loader?lazy!../../pages/ui-elements/tabs-accordion/';
 import loadUINotifications from 'bundle-loader?lazy!../../pages/ui-elements/notifications';
@@ -35,6 +34,25 @@ import loadProducts from 'bundle-loader?lazy!../../pages/products';
 import loadProduct from 'bundle-loader?lazy!../../pages/product';
 import loadPackage from 'bundle-loader?lazy!../../pages/package';
 import loadEmail from 'bundle-loader?lazy!../../pages/email';
+import loadCoreTypography from 'bundle-loader?lazy!../../pages/core/typography';
+import loadCoreColors from 'bundle-loader?lazy!../../pages/core/colors';
+import loadCoreGrid from 'bundle-loader?lazy!../../pages/core/grid';
+import loadUIAlerts from 'bundle-loader?lazy!../../pages/ui-elements/alerts';
+import loadUIBadge from 'bundle-loader?lazy!../../pages/ui-elements/badge';
+import loadUICard from 'bundle-loader?lazy!../../pages/ui-elements/card';
+import loadUICarousel from 'bundle-loader?lazy!../../pages/ui-elements/carousel';
+import loadUIJumbotron from 'bundle-loader?lazy!../../pages/ui-elements/jumbotron';
+import loadUIModal from 'bundle-loader?lazy!../../pages/ui-elements/modal';
+import loadUIProgress from 'bundle-loader?lazy!../../pages/ui-elements/progress';
+import loadUINavbar from 'bundle-loader?lazy!../../pages/ui-elements/navbar';
+import loadUINav from 'bundle-loader?lazy!../../pages/ui-elements/nav';
+import loadUIPopovers from 'bundle-loader?lazy!../../pages/ui-elements/popovers';
+import loadChartsEasyPie from 'bundle-loader?lazy!../../pages/charts/easy-pie';
+import loadChartsMorris from 'bundle-loader?lazy!../../pages/charts/morris';
+import loadChartsFlot from 'bundle-loader?lazy!../../pages/charts/flot';
+import loadChartsSparkline from 'bundle-loader?lazy!../../pages/charts/sparkline';
+import loadChartsRickshaw from 'bundle-loader?lazy!../../pages/charts/rickshaw';
+import loadDashboardAnalytics from 'bundle-loader?lazy!../../pages/analytics'; 
 /* eslint-enable */
 
 import s from './Layout.scss';
@@ -42,6 +60,7 @@ import Header from '../Header';
 import Bundle from '../../core/Bundle';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
+import Helper from '../Helper';
 import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 
 // Dashboard component is loaded directly as an example of server side rendering
@@ -49,7 +68,6 @@ import Dashboard from '../../pages/dashboard';
 
 const ProfileBundle = Bundle.generateBundle(loadProfile);
 const UIButtonsBundle = Bundle.generateBundle(loadUIButtons);
-const UIComponentsBundle = Bundle.generateBundle(loadUIComponent);
 const UIIconsBundle = Bundle.generateBundle(loadUIIcons);
 const UITabsAccordionBundle = Bundle.generateBundle(loadUITabsAccordion);
 const UINotificationsBundle = Bundle.generateBundle(loadUINotifications);
@@ -73,6 +91,25 @@ const ProductsBundle = Bundle.generateBundle(loadProducts);
 const ProductBundle = Bundle.generateBundle(loadProduct);
 const PackageBundle = Bundle.generateBundle(loadPackage);
 const EmailBundle = Bundle.generateBundle(loadEmail);
+const CoreTypographyBundle = Bundle.generateBundle(loadCoreTypography);
+const CoreColorsBundle = Bundle.generateBundle(loadCoreColors);
+const CoreGridBundle = Bundle.generateBundle(loadCoreGrid);
+const UIAlertsBundle = Bundle.generateBundle(loadUIAlerts);
+const UIBadgeBundle = Bundle.generateBundle(loadUIBadge);
+const UICardBundle = Bundle.generateBundle(loadUICard);
+const UICarouselBundle = Bundle.generateBundle(loadUICarousel);
+const UIJumbotronBundle = Bundle.generateBundle(loadUIJumbotron);
+const UIModalBundle = Bundle.generateBundle(loadUIModal);
+const UIProgressBundle = Bundle.generateBundle(loadUIProgress);
+const UINavbarBundle = Bundle.generateBundle(loadUINavbar);
+const UINavBundle = Bundle.generateBundle(loadUINav);
+const UIPopoversBundle = Bundle.generateBundle(loadUIPopovers);
+const ChartsEasyPieBundle = Bundle.generateBundle(loadChartsEasyPie);
+const ChartsMorrisBundle = Bundle.generateBundle(loadChartsMorris);
+const ChartsFlotBundle = Bundle.generateBundle(loadChartsFlot);
+const ChartsSparklineBundle = Bundle.generateBundle(loadChartsSparkline);
+const ChartsRickshawBundle = Bundle.generateBundle(loadChartsRickshaw);
+const DashboardAnalyticsBundle = Bundle.generateBundle(loadDashboardAnalytics);
 
 class Layout extends React.Component {
   static propTypes = {
@@ -152,30 +189,47 @@ class Layout extends React.Component {
         <div className={s.wrap}>
           <Header chatToggle={this.chatToggle} />
           <Chat chatOpen={this.state.chatOpen} />
+          <Helper />
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
               <Switch>
-                <Route path="/app/main" exact render={() => <Redirect to="/app/main/dashboard" />} />
+                <Route path="/app/main" exact render={() => <Redirect to="/app/main/analytics" />} />
                 <Route path="/app/main/dashboard" exact component={Dashboard} />
                 <Route path="/app/main/widgets" exact component={WidgetsBundle} />
+                <Route path="/app/main/analytics" exact component={DashboardAnalyticsBundle} />
                 <Route path="/app/ecommerce/products" exact component={ProductsBundle} />
                 <Route path="/app/ecommerce/product" exact component={ProductBundle} />
                 <Route path="/app/profile" exact component={ProfileBundle} />
-                <Route path="/app/charts" exact component={ChartsBundle} />
                 <Route path="/app/inbox" exact component={EmailBundle} />
                 <Route path="/app/ui" exact render={() => <Redirect to="/app/ui/components" />} />
                 <Route path="/app/ui/buttons" exact component={UIButtonsBundle} />
-                <Route path="/app/ui/components" exact component={UIComponentsBundle} />
                 <Route path="/app/ui/icons" exact component={UIIconsBundle} />
                 <Route path="/app/ui/tabs-accordion" exact component={UITabsAccordionBundle} />
                 <Route path="/app/ui/notifications" exact component={UINotificationsBundle} />
                 <Route path="/app/ui/list-groups" exact component={UIListGroupsBundle} />
+                <Route path="/app/ui/alerts" exact component={UIAlertsBundle} />
+                <Route path="/app/ui/badge" exact component={UIBadgeBundle} />
+                <Route path="/app/ui/card" exact component={UICardBundle} />
+                <Route path="/app/ui/carousel" exact component={UICarouselBundle} />
+                <Route path="/app/ui/jumbotron" exact component={UIJumbotronBundle} />
+                <Route path="/app/ui/modal" exact component={UIModalBundle} />
+                <Route path="/app/ui/popovers" exact component={UIPopoversBundle} />
+                <Route path="/app/ui/progress" exact component={UIProgressBundle} />
+                <Route path="/app/ui/navbar" exact component={UINavbarBundle} />
+                <Route path="/app/ui/nav" exact component={UINavBundle} />
                 <Route path="/app/grid" exact component={GridBundle} />
                 <Route path="/app/package" exact component={PackageBundle} />
                 <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                 <Route path="/app/forms/elements" exact component={FormsElementsBundle} />
                 <Route path="/app/forms/validation" exact component={FormsValidationBundle} />
                 <Route path="/app/forms/wizard" exact component={FormsWizardBundle} />
+                <Route path="/app/charts/" exact render={() => <Redirect to="/app/charts/overview" />} />
+                <Route path="/app/charts/overview" exact component={ChartsBundle} />
+                <Route path="/app/charts/easy-pie" exact component={ChartsEasyPieBundle} />
+                <Route path="/app/charts/morris" exact component={ChartsMorrisBundle} />
+                <Route path="/app/charts/flot" exact component={ChartsFlotBundle} />
+                <Route path="/app/charts/sparkline" exact component={ChartsSparklineBundle} />
+                <Route path="/app/charts/rickshaw" exact component={ChartsRickshawBundle} />
                 <Route path="/app/tables" exact render={() => <Redirect to="/app/tables/static" />} />
                 <Route path="/app/tables/static" exact component={TablesStaticBundle} />
                 <Route path="/app/tables/dynamic" exact component={TablesDynamicBundle} />
@@ -188,6 +242,10 @@ class Layout extends React.Component {
                 <Route path="/app/extra/search" exact component={ExtraSearchBundle} />
                 <Route path="/app/extra/timeline" exact component={ExtraTimelineBundle} />
                 <Route path="/app/extra/gallery" exact component={ExtraGallerylineBundle} />
+                <Route path="/app/core" exact render={() => <Redirect to="/app/core/typography" />} />
+                <Route path="/app/core/typography" exact component={CoreTypographyBundle} />
+                <Route path="/app/core/colors" exact component={CoreColorsBundle} />
+                <Route path="/app/core/grid" exact component={CoreGridBundle} />
               </Switch>
               <footer className={s.contentFooter}>
                 Sing React Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>

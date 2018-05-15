@@ -134,7 +134,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <div className="clearfix">
 
-              <Nav tabs className="float-left">
+              <Nav tabs className="float-left bg-light">
                 <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeFirstTab === 'tab11' })}
@@ -234,7 +234,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <Row>
               <Col xs="12" className="mb-5">
-                <Nav tabs>
+                <Nav className="bg-light" tabs>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeSecondTab === 'tab21' })}
@@ -286,7 +286,7 @@ class TabsAccordion extends React.Component {
                     <div className="clearfix">
                       <div className="btn-toolbar">
                         <Button color="danger">&nbsp;&nbsp;Check&nbsp;&nbsp;</Button>
-                        <Button color="secondary">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</Button>
+                        <Button color="default">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</Button>
                       </div>
                     </div>
                   </TabPane>
@@ -306,7 +306,7 @@ class TabsAccordion extends React.Component {
 
             <Row>
               <Col xs="12">
-                <Nav tabs>
+                <Nav className="bg-light" tabs>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeThirdTab === 'tab31' })}
@@ -358,7 +358,7 @@ class TabsAccordion extends React.Component {
                     <div className="clearfix">
                       <div className="btn-toolbar">
                         <Button color="danger">&nbsp;&nbsp;Check&nbsp;&nbsp;</Button>
-                        <Button color="secondary">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</Button>
+                        <Button color="default">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</Button>
                       </div>
                     </div>
                   </TabPane>
@@ -386,7 +386,7 @@ class TabsAccordion extends React.Component {
               <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
                 { /* eslint-disable */ }
                 <div
-                  className="card-header panel-header" role="button"
+                  className="card-header panel-header bg-light" role="button"
                   onClick={() => { this.toggleAccordionFirst(index); }}
                 >
                   { /* eslint-enable */ }
@@ -407,7 +407,7 @@ class TabsAccordion extends React.Component {
             {this.state.accordionSecondContent.map((element, index) => (<div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
               { /* eslint-disable */ }
               <div
-                className="card-header panel-header" role="button"
+                className="card-header panel-header bg-light" role="button"
                 onClick={() => { this.toggleAccordionSecond(index); }}
               >
                 { /* eslint-enable */ }

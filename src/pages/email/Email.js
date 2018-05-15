@@ -73,7 +73,7 @@ class Email extends Component {
           <h1 className="page-title">Email - <span className="fw-semi-bold">Inbox</span></h1>
           <Alert
             isOpen={isNotificationOpen}
-            color="warning"
+            color="success"
             toggle={() => this.closeNotification()}
             className={cx(s.alert, { [s.alertAfter]: alertAfter })}
           >

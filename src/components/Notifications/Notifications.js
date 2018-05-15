@@ -80,7 +80,7 @@ class Notifications extends React.Component {
             onClick={() => this.loadNotifications()}
             id="load-notifications-btn"
           >
-            {this.state.isLoad ? <span><i className="fa fa-refresh fa-spin mr-xs" /> Loading...</span> : <i className="fa fa-refresh" />}
+            {this.state.isLoad ? <span><i className="la la-refresh la-spin" /> Loading...</span> : <i className="la la-refresh" />}
           </Button>
           <span className="fs-mini">Synced at: 21 Apr 2014 18:36</span>
         </footer>

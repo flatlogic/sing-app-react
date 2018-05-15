@@ -40,12 +40,16 @@ class Chat extends React.Component {
         lastMessage: 'Hey! What\'s up? So many times since we',
         image: a2,
         messages: [{
+          id: 0,
           text: 'Hey! What\'s up?',
         }, {
+          id: 1,
           text: 'Are you there?',
         }, {
+          id: 2,
           text: 'Let me know when you come back.',
         }, {
+          id: 3,
           text: 'I am here!',
           fromMe: true,
         }],
@@ -146,7 +150,7 @@ class Chat extends React.Component {
       <aside className={[s.root, this.props.chatOpen ? s.chatOpen : ''].join(' ')}>
         <header className={s.chatHeader}>
           <h4 className={s.chatTitle}>Contacts</h4>
-          <div className="input-group input-group-dark">
+          <div className="input-group input-group-transparent">
             <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
             <span className="input-group-addon">
               <i className="fa fa-search" />
@@ -182,7 +186,7 @@ class Chat extends React.Component {
               .map(item =>
                 <ListGroupItem
                   key={item.name}
-                  onClick={() => this.openMessages(item)}
+                  onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
                   <span className="thumb-sm pull-left mr">
@@ -220,7 +224,7 @@ class Chat extends React.Component {
           </ListGroup>
 
           <footer className={[s.chatFooter, 'form-group'].join(' ')}>
-            <input className="form-control input-dark fs-mini" onKeyPress={this.addMessage} type="text"
+            <input className="form-control fs-mini" onKeyPress={this.addMessage} type="text"
                    placeholder="Type your message"/>
           </footer>
         </div>

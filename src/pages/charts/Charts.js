@@ -5,9 +5,11 @@ import $ from 'jquery';
 import 'imports-loader?jQuery=jquery,this=>window!webpack-raphael/raphael';
 import 'imports-loader?jQuery=jquery,this=>window!govpredict-morris/morris';
 import 'imports-loader?jQuery=jquery,this=>window!flot';
+import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.resize';
 import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.time';
 import 'imports-loader?jQuery=jquery,this=>window!jquery.flot.animator/jquery.flot.animator';
 import 'imports-loader?jQuery=jquery,this=>window!easy-pie-chart/dist/jquery.easypiechart.js';
+import 'imports-loader?jQuery=jquery,this=>window!jquery.flot-orderBars/js/jquery.flot.orderBars';
 import 'imports-loader?jQuery=jquery,this=>window!jquery-sparkline';
 /* eslint-enable */
 import d3 from 'd3';
@@ -18,6 +20,7 @@ import {
   Row, Col, Progress,
 } from 'reactstrap';
 
+import FlotBars from './flot/charts/BarsChart';
 import Widget from '../../components/Widget';
 
 import s from './Charts.scss';
@@ -36,7 +39,7 @@ const FlotChartData = [
       fill: 0.3,
       lineWidth: 0,
     },
-    color: ['#ccc'],
+    color: ['#fff8e3'],
   }, {
     label: 'Traffic',
     data: [[1, 13],
@@ -50,7 +53,7 @@ const FlotChartData = [
       fill: 0.6,
       lineWidth: 0,
     },
-    color: ['#F7653F'],
+    color: ['#ffebb2'],
   }, {
     label: 'Traffic',
     data: [[1, 20],
@@ -63,7 +66,7 @@ const FlotChartData = [
     animator: { steps: 60, duration: 1000, start: 0 },
     lines: { lineWidth: 2 },
     shadowSize: 0,
-    color: '#F7553F',
+    color: '#ffc247',
   },
 ];
 const Morris = window.Morris;
@@ -78,17 +81,18 @@ class Charts extends React.Component {
   }
 
   componentDidMount() {
-    this.initMorrisDonutCharts();
+    this.initFlotChart();
+    this.initEasyPie();
+    this.initSparklineLine();
+    this.initSparklinePie();
+    this.initD3Charts();
     this.initMorrisLineChart();
     this.initMorrisAreaChart();
-    this.initD3Charts();
-    this.initFlotChart();
-    this.initFlotBarChart();
-    this.initEasyPieChart();
-    this.initSparklinePie();
-    this.initSparklineComposite();
-    this.initInteractiveSparklines();
     this.initRickshaw();
+    this.initEasyPieChart();
+    this.initInteractiveSparklines();
+    this.initSparklineAreaChart();
+    this.initMorrisDonutCharts();
     window.addEventListener('resize', this.onResize);
   }
 
@@ -97,11 +101,17 @@ class Charts extends React.Component {
   }
 
   onResize() {
+    this.initFlotChart();
+    this.initSparklineLine();
+    this.initD3Charts();
+    this.initMorrisLineChart();
+    this.initMorrisAreaChart();
+    this.initEasyPieChart();
     this.initInteractiveSparklines();
-    this.initSparklineComposite();
-    this.initFlotBarChart();
-    this.onResizeFlotChat();
+    this.initSparklineAreaChart();
+    this.initMorrisDonutCharts();
     this.onResizeRickshaw();
+    this.onResizeFlotChat();
   }
 
   onResizeFlotChat() {
@@ -144,6 +154,54 @@ class Charts extends React.Component {
   onResizeRickshaw() {
     this.state.graph.configure({ height: 130 });
     this.state.graph.render();
+  }
+
+  initEasyPie() {
+    this.$easyPieChart.easyPieChart({
+      barColor: '#8fe5d4',
+      trackColor: '#f8f9fa',
+      scaleColor: false,
+      lineWidth: 10,
+      size: 120,
+    });
+  }
+
+  initSparklineAreaChart() { // eslint-disable-line
+    this.$sparklineAreaChart.sparkline([2, 4, 6, 2, 7, 5, 3, 7, 8, 3, 6], {
+      width: '100%',
+      fillColor: '#e2e1ff',
+      height: '100px',
+      lineColor: 'transparent',
+      spotColor: '#b7b3ff',
+      minSpotColor: null,
+      maxSpotColor: null,
+      highlightSpotColor: '#ffebb2',
+      highlightLineColor: '#ffebb2',
+    }).sparkline([5, 3, 7, 8, 3, 6, 2, 4, 6, 2, 7], {
+      composite: true,
+      lineColor: 'transparent',
+      spotColor: '#b7b3ff',
+      fillColor: '#b7b3ff',
+      minSpotColor: null,
+      maxSpotColor: null,
+      highlightSpotColor: '#b7b3ff',
+      highlightLineColor: '#b7b3ff',
+    });
+  }
+
+  initSparklineLine() {
+    this.$sparklineLineChart.sparkline([1, 2, 4, 2, 3, 7], {
+      width: '100%',
+      height: '100px',
+      lineColor: '#ffc247',
+      fillColor: false,
+      highlightLineColor: '#8fe5d4',
+      spotColor: '#8fe5d4',
+      minSpotColor: '#ffc247',
+      maxSpotColor: '#ffc247',
+      spotRadius: 2,
+      lineWidth: 2,
+    });
   }
 
   initD3Charts() {
@@ -198,7 +256,7 @@ class Charts extends React.Component {
       const chart = nv.models.lineChart()
         .useInteractiveGuideline(true)
         .margin({ left: 28, bottom: 30, right: 0 })
-        .color(['#82DFD6', '#ddd'])
+        .color(['#ffd7de', '#e2e1ff'])
         .showLegend(true);
       chart.xAxis
         .showMaxMin(false)
@@ -222,7 +280,7 @@ class Charts extends React.Component {
     nv.addGraph(() => {
       const bar = nv.models.multiBarChart()
         .margin({ left: 28, bottom: 30, right: 0 })
-        .color(['#F7653F', '#ddd']);
+        .color(['#8fe5d4', '#ffd7de']);
       bar.xAxis
         .showMaxMin(false)
         .tickFormat(d => d3.time.format('%b %d')(new Date(d)));
@@ -250,11 +308,10 @@ class Charts extends React.Component {
     $(this.morrisDonutChart).html('');
     Morris.Donut({
       element: this.morrisDonutChart,
-      colors: ['#F7653F', '#F8C0A2', '#e6e6e6'],
+      colors: ['#ffd7de', '#ffebb2'],
       data: [
         { label: 'Download Sales', value: 12 },
         { label: 'In-Store Sales', value: 30 },
-        { label: 'Mail-Order Sales', value: 20 },
       ],
     });
   }
@@ -276,7 +333,7 @@ class Charts extends React.Component {
       xkey: 'y',
       ykeys: ['a', 'b'],
       labels: ['Series A', 'Series B'],
-      lineColors: ['#88C4EE', '#ccc'],
+      lineColors: ['#8fe5d4', '#ffebb2'],
     });
   }
 
@@ -297,7 +354,7 @@ class Charts extends React.Component {
       xkey: 'y',
       ykeys: ['a', 'b'],
       labels: ['Series A', 'Series B'],
-      lineColors: ['#80DE78', '#9EEE9B'],
+      lineColors: ['#f59f9f', '#f55d5d'],
       lineWidth: 0,
     });
   }
@@ -453,7 +510,7 @@ class Charts extends React.Component {
       type: 'pie',
       width: '100px',
       height: '100px',
-      sliceColors: ['#F5CB7B', '#FAEEE5', '#f0f0f0'],
+      sliceColors: ['#b7b3ff', '#ffebb2', '#f8f9fa'],
     };
     $(this.sparklinePie).sparkline(data, option);
   }
@@ -488,8 +545,8 @@ class Charts extends React.Component {
 
   initInteractiveSparklines() {
     const data = [9, 12, 14, 15, 10, 14, 20];
-    const option = { type: 'bar', barColor: '#f0b518', height: '30px', barWidth: 6, barSpacing: 2 };
-    const option2 = { type: 'bar', barColor: '#FFA587', height: '30px', barWidth: 6, barSpacing: 2 };
+    const option = { type: 'bar', barColor: '#FFC247', height: '30px', barWidth: 6, barSpacing: 2 };
+    const option2 = { type: 'bar', barColor: '#FFF8E3', height: '30px', barWidth: 6, barSpacing: 2 };
     $(this.InteractiveSparkline1).sparkline(data, option);
     $(this.InteractiveSparkline2).sparkline(data, option2);
   }
@@ -506,11 +563,11 @@ class Charts extends React.Component {
       height: 130,
       series: [
         {
-          color: '#96E593',
+          color: '#ffebb2',
           data: seriesData[0],
           name: 'Uploads',
         }, {
-          color: '#ecfaec',
+          color: '#fff8e3',
           data: seriesData[1],
           name: 'Downloads',
         },
@@ -541,7 +598,6 @@ class Charts extends React.Component {
           <li className="breadcrumb-item active">Charts</li>
         </ol>
         <h1 className="page-title">Visual - <span className="fw-semi-bold">Charts</span></h1>
-
         <div>
           <Row>
             <Col lg={6} xl={5} xs={12}>
@@ -549,7 +605,6 @@ class Charts extends React.Component {
                 title={<h5>Flot <span className="fw-semi-bold">Charts</span></h5>}
                 close collapse
               >
-
                 <div>
                   <div className="mt mb" id="flotChart" ref={(r) => { this.flotChart = r; }} style={{ width: '100%', height: '260px' }} />
                   <div className="chart-tooltip" id="flot-main-tooltip" style={{ opacity: 0 }} />
@@ -582,7 +637,6 @@ class Charts extends React.Component {
                       </div>
                     </Col>
                   </Row>
-
                   <p className="fs-mini text-muted">
                     This jQuery plugin generates sparklines (small inline charts) directly in the browser using
                     data supplied either inline in the HTML, or via javascript.
@@ -590,77 +644,53 @@ class Charts extends React.Component {
                 </div>
               </Widget>
             </Col>
-
-            <Col lg={6} xl={4} xs={12}>
-              <Widget
-                title={<h5> Realtime <span className="fw-semi-bold">Rickshaw</span></h5>}
-                collapse close
-              >
-                <div>
-                  <p className="fs-mini text-muted mb-lg">
-                    Rickshaw provides the elements you need to create interactive graphs: renderers, legends,
-                    hovers, range selectors, etc. You put the pieces together.
-                    It&apos;s all based on <span className="fw-semi-bold">d3</span> underneath, so graphs are drawn with
-                    standard
-                    SVG and styled with CSS.
-                    Customize all you like with techniques you already know.
-                  </p>
-                  <h5>720 Users</h5>
-                  <Progress value="60" color="gray" size="xs" className="mb-sm progress-xs" />
-                  <p className="fs-mini text-muted mb-lg">
-                    <span className="circle bg-success text-white">
-                      <i className="fa fa-circle" />
-                    </span>
-                    &nbsp;
-                    Target <span className="fw-semi-bold">820</span> users
-                    is <span className="fw-semi-bold">96%</span> reached.
-                  </p>
-                  <div ref={(r) => { this.rickshawChart = r; }} className="chart-overflow-bottom" style={{ height: '130px' }} />
-                </div>
-              </Widget>
-            </Col>
-
-            <Col lg={6} xl={3} xs={12}>
-              <Widget
-                title={<h5> Line <span className="fw-semi-bold">Sparkline</span></h5>}
-                collapse close
-              >
-                <div>
-                  <p className="fs-mini text-muted">
-                    Each example displayed below takes just 1 line of HTML or javascript to generate.
-                  </p>
-                  <div className="stats-row mt">
-                    <div className="stat-item">
-                      <h6 className="name">Overall Growth</h6>
-                      <p className="value">43.75%</p>
+            <Col lg={6} xl={7} xs={12}>
+              <Row>
+                <Col xs={12} lg={7}>
+                  <Widget
+                    title={<h5> Easy <span className="fw-semi-bold">Pie Charts</span></h5>}
+                    collapse close
+                  >
+                    <div>
+                      <div ref={(r) => { this.$easyPieChart = $(r); }} className="mb text-center" data-percent="47" />
+                      <p className="fs-mini text-muted">
+                        Easy pie chart is a jQuery plugin that uses the canvas element to render
+                        simple pie charts for single values. These charts are highly customizable,
+                        very easy to implement, scale to the resolution of the display of the client
+                        to provide sharp charts even on retina displays.
+                      </p>
                     </div>
-                    <div className="stat-item">
-                      <h6 className="name">Montly</h6>
-                      <p className="value">86.34%</p>
+                  </Widget>
+                </Col>
+                <Col xs={12} lg={5}>
+                  <Widget
+                    title={<h5> Sparkline <span className="fw-semi-bold">Pie Charts</span></h5>}
+                    collapse close
+                  >
+                    <div>
+                      <p className="fs-mini text-muted">
+                        Each example displayed below takes just 1 line of HTML or javascript to generate.
+                      </p>
+                      <div ref={(r) => { this.sparklinePie = r; }} className="chart-overflow-bottom mb-0 text-center" />
+                      <p className="fs-mini text-muted">
+                        Nevertheless Sparkline charts can be configured quite accurate.
+                      </p>
                     </div>
-                  </div>
-                  <p className="text-muted fs-mini">
-                    <span className="fw-semi-bold">17% higher</span> than last month</p>
-                  <div className="chart-overflow-bottom" ref={(r) => { this.sparklineComposite = r; }} />
-
-                </div>
-              </Widget>
-              <Widget
-                title={<h5> Sparkline <span className="fw-semi-bold">Pie Charts</span></h5>}
-                collapse close
-              >
-                <div>
-                  <p className="fs-mini text-muted">
-                    Each example displayed below takes just 1 line of HTML or javascript to generate.
-                  </p>
-                  <div ref={(r) => { this.sparklinePie = r; }} className="chart-overflow-bottom mb-0 text-center" />
-                </div>
-              </Widget>
+                  </Widget>
+                </Col>
+                <Col xs={12}>
+                  <Widget
+                    title={<h5> Sparkline <span className="fw-semi-bold">Line Charts</span></h5>}
+                    collapse close
+                  >
+                    <div>
+                      <div ref={(r) => { this.$sparklineLineChart = $(r); }} className="chart-overflow-bottom mb-0 text-center" />
+                    </div>
+                  </Widget>
+                </Col>
+              </Row>
             </Col>
-          </Row>
-
-          <Row>
-            <Col lg={7} xl={8} xs={12}>
+            <Col xs={12}>
               <Widget
                 title={<h5><span className="fw-semi-bold">D3</span> Charts</h5>}
                 close
@@ -678,8 +708,7 @@ class Charts extends React.Component {
                 </div>
               </Widget>
             </Col>
-
-            <Col lg={5} xl={4} xs={12}>
+            <Col lg={7} xs={12}>
               <Widget
                 title={<h5><span className="fw-semi-bold">D3</span> Charts</h5>}
                 close
@@ -695,9 +724,35 @@ class Charts extends React.Component {
                 </div>
               </Widget>
             </Col>
-
+            <Col lg={5} xs={12}>
+              <Widget
+                title={<h5> Realtime <span className="fw-semi-bold">Rickshaw</span></h5>}
+                collapse close
+              >
+                <div>
+                  <p className="fs-mini text-muted mb-lg">
+                    Rickshaw provides the elements you need to create interactive graphs: renderers, legends,
+                    hovers, range selectors, etc. You put the pieces together.
+                    It&apos;s all based on <span className="fw-semi-bold">d3</span> underneath, so graphs are drawn with
+                    standard
+                    SVG and styled with CSS.
+                    Customize all you like with techniques you already know.
+                  </p>
+                  <h5>720 Users</h5>
+                  <Progress value="60" color="gray" size="xs" className="mb-sm progress-xs" />
+                  <p className="fs-mini text-muted mb-lg">
+                    <span className="circle bg-warning-light text-white">
+                      <i className="fa fa-circle" />
+                    </span>
+                    &nbsp;
+                    Target <span className="fw-semi-bold">820</span> users
+                    is <span className="fw-semi-bold">96%</span> reached.
+                  </p>
+                  <div ref={(r) => { this.rickshawChart = r; }} className="chart-overflow-bottom" style={{ height: '130px' }} />
+                </div>
+              </Widget>
+            </Col>
           </Row>
-
           <Row>
             <Col lg={6} xs={12}>
               <Widget
@@ -714,7 +769,6 @@ class Charts extends React.Component {
                 </div>
               </Widget>
             </Col>
-
             <Col lg={6} xs={12}>
               <Widget
                 title={<h5> Morris <span className="fw-semi-bold">Line Charts</span></h5>}
@@ -731,27 +785,44 @@ class Charts extends React.Component {
               </Widget>
             </Col>
           </Row>
-
           <Row>
-            <Col lg={6} xl={4} xs={12}>
+            <Col xs={12} lg={6} xl={3}>
               <Widget
-                title={<h5> Easy <span className="fw-semi-bold">Pie Charts</span></h5>}
+                title={<h5>Area <span className="fw-semi-bold">Sparkline</span></h5>}
                 close collapse
               >
-                <div className="clearfix">
-                  <div className="text-center">
-                    <div ref={(r) => { this.easyPieChart = r; }} className="easy-pie-chart mb-lg" data-percent="73">73</div>
+                <p className="fs-mini text-muted">Each example displayed below takes just 1 line of HTML or javascript to generate.</p>
+                <div className="stats-row text-muted mt">
+                  <div className="stat-item">
+                    <h6 className="name">Overall Growth</h6>
+                    <p className="value">43.75%</p>
                   </div>
+                  <div className="stat-item">
+                    <h6 className="name">Montly</h6>
+                    <p className="value">86.34%</p>
+                  </div>
+                </div>
+                <p className="text-muted fs-mini">
+                  <span className="fw-semi-bold">17% higher</span> than last month
+                </p>
+                <div className="chart-overflow-bottom" ref={(r) => { this.$sparklineAreaChart = $(r); }} />
+              </Widget>
+            </Col>
+            <Col lg={6} xl={6} xs={12}>
+              <Widget
+                title={<h5> Flot <span className="fw-semi-bold">Bars</span></h5>}
+                close collapse
+              >
+                <div>
+                  <FlotBars />
                   <p className="fs-mini text-muted">
-                    Easy pie chart is a jQuery plugin that uses the canvas element to render simple pie charts
-                    for single values. These charts are highly customizable, very easy to implement, scale to
-                    the resolution of the display of the client to provide sharp charts even on retina displays.
+                    Flot is a <span className="fw-semi-bold">pure</span> JavaScript plotting library for jQuery, with a
+                    focus on simple usage, attractive looks and interactive features.
                   </p>
                 </div>
               </Widget>
             </Col>
-
-            <Col lg={6} xl={4} xs={12}>
+            <Col lg={6} xl={3} xs={12}>
               <Widget
                 title={<h5> Morris <span className="fw-semi-bold">Donut Charts</span></h5>}
                 close collapse
@@ -767,25 +838,8 @@ class Charts extends React.Component {
                 </div>
               </Widget>
             </Col>
-
-            <Col lg={6} xl={4} xs={12}>
-              <Widget
-                title={<h5> Flot <span className="fw-semi-bold">Bars</span></h5>}
-                close collapse
-              >
-                <div>
-                  <div className="mt-lg" ref={(r) => { this.flotBarChart = r; }} style={{ width: '100%', height: '260px' }} />
-                  <p className="fs-mini text-muted">
-                    Flot is a <span className="fw-semi-bold">pure</span> JavaScript plotting library for jQuery, with a
-                    focus on simple usage, attractive looks and interactive features.
-                  </p>
-                </div>
-              </Widget>
-            </Col>
           </Row>
-
         </div>
-
       </div>
     );
   }

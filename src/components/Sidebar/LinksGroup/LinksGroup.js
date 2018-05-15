@@ -71,7 +71,7 @@ class LinksGroup extends Component {
                 <i className={`fi ${this.props.iconName}`} />
               </span>
               {this.props.header} {this.props.label && <sup className={s.headerLabel}>{this.props.label}</sup>}
-              {this.props.badge && <Badge className={s.badge} color="danger">9</Badge>}
+              {this.props.badge && <Badge className={s.badge} color="warning" pill>9</Badge>}
             </NavLink>
           </li>
         );
@@ -81,7 +81,7 @@ class LinksGroup extends Component {
           <NavLink
             to={this.props.link}
             activeClassName={s.headerLinkActive}
-            style={{ paddingLeft: `${36 + (10 * (this.props.deep - 1))}px` }}
+            style={{ paddingLeft: `${26 + (10 * (this.props.deep - 1))}px` }}
             onClick={(e) => {
               // able to go to link is not available(for Demo)
               if (this.props.link.includes('menu')) {
@@ -104,7 +104,7 @@ class LinksGroup extends Component {
           return (
             <li className={classnames({ [s.headerLink]: this.props.isHeader }, this.props.className)}>
               <a className={classnames({ [s.headerLinkActive]: match }, { [s.collapsed]: isOpen }, "d-flex")}
-                style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 36 + 10 * (this.props.deep - 1)}px` }}
+                style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 26 + 10 * (this.props.deep - 1)}px` }}
                 onClick={() => this.togglePanelCollapse(this.props.link)}
                 href="#"
               >
