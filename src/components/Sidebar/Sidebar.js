@@ -68,7 +68,7 @@ class Sidebar extends React.Component {
         className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
       >
         <header className={s.logo}>
-          <Link to="/app"><span className="text-warning">Sing</span> App</Link>
+          <Link to="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</Link>
         </header>
         <ul className={s.nav}>
           <LinksGroup
