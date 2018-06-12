@@ -93,18 +93,18 @@ class Widget extends React.Component {
           !customControls && mainControls && (
             <div className={`${s.widgetControls} widget-controls`}>
               {settings && (
-                <a href="#"><i className="glyphicon glyphicon-cog" /></a>
+                <a href="#"><i className="la la-cog" /></a>
               )}
               {settingsInverse && (
                 <a href="#" className={`bg-gray-transparent ${s.inverse}`}><i
-                  className="glyphicon glyphicon-cog text-white"
+                  className="la la-cog text-white"
                 /></a>
               )}
               {refresh && (
                 <a href="#" data-widgster="load" id={`reloadId-${randomId}`}>
                   {typeof refresh === 'string' ?
                     <strong className="text-gray-light">{refresh}</strong> :
-                    <i className="fa fa-refresh" />}
+                    <i className="la la-refresh" />}
                   {showTooltip && (
                     <UncontrolledTooltip
                       placement={tooltipPlacement}
@@ -138,7 +138,7 @@ class Widget extends React.Component {
               {collapse && (
                 <span>
                   <a href="#" data-widgster="collapse" id={`collapseId-${randomId}`}>
-                    <i className="glyphicon glyphicon-chevron-down" />
+                    <i className="la la-angle-down" />
                     {showTooltip && (
                       <UncontrolledTooltip
                         placement={tooltipPlacement}
@@ -151,7 +151,7 @@ class Widget extends React.Component {
               {collapse && (
                 <span>
                   <a href="#" data-widgster="expand" id={`expandId-${randomId}`}>
-                    <i className="glyphicon glyphicon-chevron-up" />
+                    <i className="la la-angle-up" />
                     {showTooltip && (
                       <UncontrolledTooltip
                         placement={tooltipPlacement}
@@ -166,7 +166,7 @@ class Widget extends React.Component {
                 <a href="#" data-widgster="close" id={`closeId-${randomId}`}>
                   {typeof close === 'string' ?
                     <strong className="text-gray-light">{close}</strong> :
-                    <i className="glyphicon glyphicon-remove" />}
+                    <i className="la la-remove" />}
                   {showTooltip && (
                     <UncontrolledTooltip
                       placement={tooltipPlacement}
