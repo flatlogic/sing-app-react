@@ -533,7 +533,7 @@ class Widgets extends React.Component {
                 <header className="bb">
                   <h6>Recent <span className="fw-semi-bold">Chats</span></h6>
                 </header>
-            }
+              }
             >
               <div className="widget-body">
                 <div className="widget-middle-overflow">
@@ -546,10 +546,10 @@ class Widgets extends React.Component {
                       <span className="thumb">
                         <img className="rounded-circle" src={peopleA6} alt="..." />
                       </span>
-                      <div>
-                        <time className="time">10 sec ago</time>
+                      <div className="message">
                         <h6 className="sender">Chris Gray</h6>
                         <p className="body">Hey! What&apos;s up? So much time since we saw each other there</p>
+                        <time className="time">10 sec ago</time>
                       </div>
                     </li>
                     <li className="list-group-item on-right">
@@ -557,9 +557,9 @@ class Widgets extends React.Component {
                         <img className="rounded-circle" src={avatar} alt="..." />
                       </span>
                       <div>
-                        <time className="time">10 sec ago</time>
                         <h6 className="sender">John Doe</h6>
                         <p className="body">True! Totally makes sense. But how do we find that?</p>
+                        <time className="time">10 sec ago</time>
                       </div>
                     </li>
                     <li className="list-group-item">
@@ -567,9 +567,9 @@ class Widgets extends React.Component {
                         <img className="rounded-circle" src={peopleA6} alt="..." />
                       </span>
                       <div>
-                        <time className="time">10 sec ago</time>
                         <h6 className="sender">Chris Gray</h6>
                         <p className="body">OK, but so now what? What should we do now? Not sure actually.</p>
+                        <time className="time">10 sec ago</time>
                       </div>
                     </li>
                     <li className="list-group-item on-right">
@@ -577,9 +577,9 @@ class Widgets extends React.Component {
                         <img className="rounded-circle" src={avatar} alt="..." />
                       </span>
                       <div>
-                        <time className="time">10 sec ago</time>
                         <h6 className="sender">John Doe</h6>
                         <p className="body">Hey guys, didn&apos;t you notice this conversation is sort of jubberish?</p>
+                        <time className="time">10 sec ago</time>
                       </div>
                     </li>
                   </ul>

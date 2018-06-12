@@ -79,8 +79,8 @@ class Calendar extends React.Component {
         html: true,
       },
     });
-    $calendar.find('.icon-arrow-left').addClass('fa fa-arrow-left');
-    $calendar.find('.icon-arrow-right').addClass('fa fa-arrow-right');
+    $calendar.find('.icon-arrow-left').addClass('la la-arrow-left');
+    $calendar.find('.icon-arrow-right').addClass('la la-arrow-right');
     const restyleCalendar = () => {
       $calendar.find('.event').each((index, el) => {
         const $eventIndicator = $('<span></span>');

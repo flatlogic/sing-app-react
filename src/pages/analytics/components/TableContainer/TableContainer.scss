@@ -4,6 +4,13 @@
   td,
   th {
     font-weight: normal;
+    border: none;
+    align-items: center;
+    min-width: 100px;
+  }
+
+  th {
+    font-size: $font-size-sm;
   }
 
   tbody tr:nth-child(odd) {

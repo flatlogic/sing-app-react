@@ -61,11 +61,11 @@ class Dynamic extends React.Component {
       return (
         <div>
           <small>
-            <span className="fw-semi-bold">Type:</span>&nbsp;{cell.type}
+            Type:&nbsp;<span className="fw-semi-bold">{cell.type}</span>
           </small>
           <br />
           <small>
-            <span className="fw-semi-bold">Dimensions:</span>&nbsp;{cell.dimensions}
+            Dimensions:&nbsp;<span className="fw-semi-bold">{cell.dimensions}</span>
           </small>
         </div>
       );
@@ -81,7 +81,7 @@ class Dynamic extends React.Component {
 
     function progressFormatter(cell) {
       return (
-        <Progress color={cell.type} value={cell.progress} />
+        <Progress style={{ height: '15px' }} color={cell.type} value={cell.progress} />
       );
     }
 
@@ -111,12 +111,24 @@ class Dynamic extends React.Component {
             Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
           </p>
           <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}>
-            <TableHeaderColumn className="width-50" columnClassName="width-50" dataField="id" isKey>ID</TableHeaderColumn>
-            <TableHeaderColumn dataField="name" dataSort>Name</TableHeaderColumn>
-            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="info" dataFormat={infoFormatter}>Info</TableHeaderColumn>
-            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>Description</TableHeaderColumn>
-            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>Date</TableHeaderColumn>
-            <TableHeaderColumn className="width-150" columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>Status</TableHeaderColumn>
+            <TableHeaderColumn className="width-50" columnClassName="width-50" dataField="id" isKey>
+              <span className="fs-sm">ID</span>
+            </TableHeaderColumn>
+            <TableHeaderColumn dataField="name" dataSort>
+              <span className="fs-sm">Name</span>
+            </TableHeaderColumn>
+            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="info" dataFormat={infoFormatter}>
+              <span className="fs-sm">Info</span>
+            </TableHeaderColumn>
+            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>
+              <span className="fs-sm">Description</span>
+            </TableHeaderColumn>
+            <TableHeaderColumn className="d-none d-md-table-cell" columnClassName="d-none d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>
+              <span className="fs-sm">Date</span>
+            </TableHeaderColumn>
+            <TableHeaderColumn className="width-150" columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>
+              <span className="fs-sm">Status</span>
+            </TableHeaderColumn>
           </BootstrapTable>
         </Widget>
         <Widget title={<h4>React <span className="fw-semi-bold">Table</span></h4>} collapse close>

@@ -77,7 +77,7 @@ class RealtimeTraffic extends React.Component {
           <small><span className="circle bg-warning text-gray-dark"><i
             className="glyphicon glyphicon-chevron-up"
           /></span></small>
-          <strong>17% higher</strong>
+          <strong className="px-1">17% higher</strong>
           than last month
         </p>
         <p className="fs-sm text-gray-lighter mb-0">Remaining hours</p>

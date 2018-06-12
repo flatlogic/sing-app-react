@@ -213,6 +213,10 @@ small {
 
 ///////// Buttons //////////
 
+.dropdown-toggle::after {
+  margin-top: 3px;
+}
+
 .btn-link {
   &:focus {
     box-shadow: none;

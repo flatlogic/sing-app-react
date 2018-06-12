@@ -4,6 +4,9 @@ import { Row, Col } from 'reactstrap';
 
 /* eslint-disable */
 import 'imports-loader?jQuery=jquery,this=>window!flot';
+import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.selection.js';
+import 'imports-loader?jQuery=jquery,this=>window!jquery.flot.animator/jquery.flot.animator';
+
 import 'imports-loader?jQuery=jquery,this=>window!flot.dashes/jquery.flot.dashes';
 /* eslint-enable */
 
@@ -102,12 +105,15 @@ export default class RevenueChart extends PureComponent {
         border: 0,
         borderRadius: 0,
         paddingTop: 5,
+        display: 'flex',
+        justifyContent: 'center',
       })
       .children('div')
       .css({
         borderWidth: 1,
         borderRadius: 0,
-        width: 75,
+        width: 10,
+        height: 10,
       });
 
     this.$chartLegend.find('tbody td').css({
@@ -177,6 +183,7 @@ export default class RevenueChart extends PureComponent {
       shadowSize: 0,
     }], {
       xaxis: {
+        tickColor: '#f8f9fa',
         tickSize: tickInterval,
         tickFormatter: i => ticks[i / tickInterval],
         font: {
