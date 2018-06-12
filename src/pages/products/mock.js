@@ -2,7 +2,7 @@
 import img1 from '../../images/products/img1.jpg';
 import img2 from '../../images/products/img2.jpg';
 import img3 from '../../images/products/img3.jpg';
-import img4 from '../../images/products/img4.jpeg';
+import img4 from '../../images/products/img4.jpg';
 import img5 from '../../images/products/img5.jpeg';
 import img6 from '../../images/products/img6.jpg';
 // import img7 from '../../images/products/img7.jpg';
