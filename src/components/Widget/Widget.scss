@@ -96,9 +96,15 @@
       text-decoration: none;
     }
 
-    :global .fa {
-      position: relative;
-      top: 2px;
+    :global {
+      .la {
+        position: relative;
+        top: 2px;
+      }
+
+      .glyphicon {
+        font-size: 0.7rem;
+      }
     }
   }
 }

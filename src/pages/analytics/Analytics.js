@@ -27,10 +27,10 @@ class Analytics extends Component {
                 <div className="pb-xlg h-100">
                   <Widget
                     className="mb-0 h-100"
-                    bodyClass="mt"
-                    title={<h4>Visits Today</h4>}
+                    bodyClass="mt-lg"
+                    title={<h5>Visits Today</h5>}
                   >
-                    <div className="d-flex justify-content-between align-items-center mb-lg">
+                    <div className="d-flex justify-content-between align-items-center mb">
                       <h2>4,332</h2>
                       <i className="la la-arrow-right text-success rotate-315" />
                     </div>
@@ -56,7 +56,7 @@ class Analytics extends Component {
                   <Widget
                     bodyClass="mt"
                     className="mb-0 h-100"
-                    title={<h4>Revenue Breakdown</h4>}
+                    title={<h5>Revenue Breakdown</h5>}
                   >
                     <RevenueChart />
                   </Widget>
@@ -67,31 +67,31 @@ class Analytics extends Component {
                   <Widget
                     bodyClass="mt"
                     className="mb-0 h-100"
-                    title={<h4>App Perfomance</h4>}
+                    title={<h5>App Perfomance</h5>}
                   >
                     <p className="text-muted d-flex flex-wrap">
                       <small className="mr-lg d-flex align-items-center">
                         <span className="circle bg-success text-success mr-xs" style={{ fontSize: '4px' }}>.</span>
-                                        This Period
-                                    </small>
+                        This Period
+                      </small>
                       <small className="mr-lg d-flex align-items-center">
                         <span className="circle bg-warning text-warning mr-xs" style={{ fontSize: '4px' }}>.</span>
-                                        Last Period
-                                    </small>
+                        Last Period
+                      </small>
                     </p>
-                    <h6>SDK</h6>
-                    <div className="progress mb-xs" style={{ height: '5px' }} >
+                    <h6 className="fs-sm text-muted">SDK</h6>
+                    <div className="progress mb-xs" style={{ height: '4px' }} >
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '60%' }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress" style={{ height: '5px' }} >
-                      <div className="progress-bar bg-warning" role="progressbar" style={{ width: '30%' }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" />
+                    <div className="progress" style={{ height: '4px' }} >
+                      <div className="progress-bar bg-info" role="progressbar" style={{ width: '30%' }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <h6 className="mt-sm">Integration</h6>
-                    <div className="progress mb-xs" style={{ height: '5px' }} >
+                    <h6 className="mt fs-sm text-muted">Integration</h6>
+                    <div className="progress mb-xs" style={{ height: '4px' }} >
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '40%' }} aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress" style={{ height: '5px' }} >
-                      <div className="progress-bar bg-warning" role="progressbar" style={{ width: '55%' }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" />
+                    <div className="progress" style={{ height: '4px' }} >
+                      <div className="progress-bar bg-info" role="progressbar" style={{ width: '55%' }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" />
                     </div>
                   </Widget>
                 </div>
@@ -99,9 +99,9 @@ class Analytics extends Component {
               <Col xs={12} xl={3} md={6}>
                 <div className="pb-xlg h-100">
                   <Widget
-                    bodyClass="mt"
+                    bodyClass="mt-lg"
                     className="mb-0 h-100"
-                    title={<h4>Server Overview</h4>}
+                    title={<h5>Server Overview</h5>}
                   >
                     <div className="d-flex justify-content-between flex-wrap mb-sm">
                       <p className="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
@@ -161,7 +161,7 @@ class Analytics extends Component {
               <Col xs={12} md={6} xl={12} className={s.lastSideElement}>
                 <Widget
                   className="widget"
-                  bodyClass={cx(s.notifications, 'w-100 mt')}
+                  bodyClass={cx(s.notifications, 'w-100 mt-lg')}
                   title={
                     <h4>Notifications <span className="badge badge-pill badge-success fw-normal pull-right mt-xs">{mock.notifications.length}</span></h4>
                   }
@@ -169,7 +169,10 @@ class Analytics extends Component {
                   {mock.notifications.map(({ id, icon, color, content }) => (
                     <div className="d-flex align-items-start" key={id}>
                       <i className={`la la-${icon} mr text-${color}`} />
-                      <p dangerouslySetInnerHTML={{ __html: content }} />
+                      <p
+                        className={cx({ 'mb-0': id === mock.notifications.length - 1 })}
+                        dangerouslySetInnerHTML={{ __html: content }}
+                      />
                     </div>
                   ))}
                 </Widget>

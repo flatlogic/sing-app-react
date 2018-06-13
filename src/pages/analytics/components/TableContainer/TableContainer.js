@@ -32,12 +32,12 @@ class TableContainer extends PureComponent {
     const keys = Object.keys(data[0]).map(i => i.toUpperCase());
     keys.shift(); // delete "id" key
     return (
-      <Table className={cx('mb-0', s.table)} responsive>
+      <Table className={cx('mb-0', s.table)} borderless responsive>
         <thead>
           <tr className="text-muted">
             {keys.map((key, index) => (
               index === 0
-              ? <th key={key} scope="col"><span className="pl-3">{key}</span></th>
+              ? <th key={key} scope="col"><span className="pl-2">{key}</span></th>
               : <th key={key} scope="col">{key}</th>
             ))}
           </tr>
@@ -46,7 +46,7 @@ class TableContainer extends PureComponent {
           {
             data.map(({ name, email, product, price, date, city, status }) => (
               <tr key={name}>
-                <th className="pl-4 fw-normal">{name}</th>
+                <td className="pl-3 fw-normal">{name}</td>
                 <td>{email}</td>
                 <td>{product}</td>
                 <td>{price}</td>
@@ -56,7 +56,7 @@ class TableContainer extends PureComponent {
                   <Button
                     color={states[status.toLowerCase()]}
                     size="xs"
-                    className="p-1 px-3"
+                    className="px-2"
                   >
                     {status}
                   </Button>

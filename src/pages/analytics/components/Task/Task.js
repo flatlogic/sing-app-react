@@ -24,7 +24,7 @@ class Task extends PureComponent {
           <input className="form-check-input" id={`checkbox${id}`} type="checkbox" onChange={() => toggle(index)} />
           <label className="form-check-label" htmlFor={`checkbox${id}`} />
         </div>
-        <div className="task-content">
+        <div className="task-content pl-2">
           <p className="text-muted mb-xs"><small>{type}</small></p>
           <h6>{title}</h6>
           <p className="text-muted"><small>{time}</small></p>

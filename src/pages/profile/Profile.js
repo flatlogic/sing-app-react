@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Breadcrumb,
@@ -54,7 +55,7 @@ const Profile = () => (
                   <i className="fa fa-envelope ml-2" />&nbsp;
                 </a>
                 <div>
-                  <ul className={s.profileContacts}>
+                  <ul className={cx(s.profileContacts, 'mt-sm')}>
                     <li><i className="fa fa-lg fa-phone fa-fw mr-2" /><a href="#"> +375 29 555-55-55</a></li>
                     <li><i className="fa fa-lg fa-envelope fa-fw mr-2" /><a href="#"> psmith@example.com</a></li>
                     <li><i className="fa fa-lg fa-map-marker fa-fw mr-2" /><a href="#"> Minsk, Belarus</a></li>
@@ -63,7 +64,7 @@ const Profile = () => (
               </div>
             </Col>
             <Col md={7} xs={12}>
-              <div className="stats-row text-right mt-3">
+              <div className="stats-row mt-3">
                 <div className={[s.profileStat, 'stat-item'].join(' ')}>
                   <p className={[s.profileStatValue, 'value text-right'].join(' ')}>251</p>
                   <h6 className="name">Posts</h6>
@@ -77,15 +78,15 @@ const Profile = () => (
                   <h6 className="name">Followers</h6>
                 </div>
               </div>
-              <p className="text-right">
-                <a href="#" className="badge badge-warning"> UI/UX </a>
-                <a href="#" className="badge badge-danger ml-2"> Web Design </a>
-                <a href="#" className="badge badge-default ml-2"> Mobile Apps </a>
+              <p>
+                <a href="#" className="badge badge-warning rounded-0"> UI/UX </a>
+                <a href="#" className="badge badge-danger rounded-0 ml-2"> Web Design </a>
+                <a href="#" className="badge badge-default rounded-0 ml-2"> Mobile Apps </a>
               </p>
-              <p className="lead">
+              <p className="lead mt-xlg">
                 My name is Adam Johns and here is my new Sing user profile page.
               </p>
-              <p>
+              <p className="text-muted">
                 I love reading people&apos;s summaries page especially those who are in the same industry as me.
                 Sometimes it&apos;s much easier to find your concentration during the night.
               </p>

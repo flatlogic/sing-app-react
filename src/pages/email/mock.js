@@ -1,6 +1,6 @@
-import photo1 from '../../images/tables/1.jpg';
-import photo2 from '../../images/tables/2.jpg';
-import photo3 from '../../images/tables/3.jpg';
+import photo1 from '../../images/tables/1.png';
+import photo2 from '../../images/tables/2.png';
+import photo3 from '../../images/tables/3.png';
 
 export default [
   {
@@ -12,11 +12,11 @@ export default [
     theme: 'Hi, Welcom to Google Mail',
     date: '18:31',
     unreaded: true,
-    content: `<p>Projecting surrounded literature yet delightful alteration but bed men. Open are from long why cold. 
-    If must snug by upon sang loud left. As me do preference entreaties compliment motionless ye literature. 
+    content: `<p>Projecting surrounded literature yet delightful alteration but bed men. Open are from long why cold.
+    If must snug by upon sang loud left. As me do preference entreaties compliment motionless ye literature.
     Day behaviour explained law remainder.</p>
-    <p><strong>On then sake home</strong> is am leaf. Of suspicion do departure at extremely he believing. 
-    Do know said mind do rent they oh hope of. General enquire picture letters 
+    <p><strong>On then sake home</strong> is am leaf. Of suspicion do departure at extremely he believing.
+    Do know said mind do rent they oh hope of. General enquire picture letters
     garrets on offices of no on.</p>
     <p>All the best,</p>
     <p>Vitaut the Great, CEO, <br />

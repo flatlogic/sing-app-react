@@ -102,12 +102,15 @@ export default class RevenueChart extends PureComponent {
         border: 0,
         borderRadius: 0,
         paddingTop: 5,
+        display: 'flex',
+        justifyContent: 'center',
       })
       .children('div')
       .css({
         borderWidth: 1,
         borderRadius: 0,
-        width: 75,
+        width: 10,
+        height: 10,
       });
 
     this.$chartLegend.find('tbody td').css({
@@ -177,6 +180,7 @@ export default class RevenueChart extends PureComponent {
       shadowSize: 0,
     }], {
       xaxis: {
+        tickColor: '#f8f9fa',
         tickSize: tickInterval,
         tickFormatter: i => ticks[i / tickInterval],
         font: {

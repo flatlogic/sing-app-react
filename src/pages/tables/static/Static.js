@@ -28,7 +28,7 @@ class Static extends React.Component {
       tableStyles: [
         {
           id: 1,
-          picture: require('../../../images/tables/1.jpg'), // eslint-disable-line global-require
+          picture: require('../../../images/tables/1.png'), // eslint-disable-line global-require
           description: 'Palo Alto',
           info: {
             type: 'JPEG',
@@ -43,7 +43,7 @@ class Static extends React.Component {
         },
         {
           id: 2,
-          picture: require('../../../images/tables/2.jpg'), // eslint-disable-line global-require
+          picture: require('../../../images/tables/2.png'), // eslint-disable-line global-require
           description: 'The Sky',
           info: {
             type: 'PSD',
@@ -58,7 +58,7 @@ class Static extends React.Component {
         },
         {
           id: 3,
-          picture: require('../../../images/tables/3.jpg'), // eslint-disable-line global-require
+          picture: require('../../../images/tables/3.png'), // eslint-disable-line global-require
           description: 'Down the road',
           label: {
             colorClass: 'danger',
@@ -77,7 +77,7 @@ class Static extends React.Component {
         },
         {
           id: 4,
-          picture: require('../../../images/tables/4.jpg'), // eslint-disable-line global-require
+          picture: require('../../../images/tables/4.png'), // eslint-disable-line global-require
           description: 'The Edge',
           info: {
             type: 'PNG',
@@ -92,7 +92,7 @@ class Static extends React.Component {
         },
         {
           id: 5,
-          picture: require('../../../images/tables/5.jpg'), // eslint-disable-line global-require
+          picture: require('../../../images/tables/5.png'), // eslint-disable-line global-require
           description: 'Fortress',
           info: {
             type: 'JPEG',
@@ -153,13 +153,14 @@ class Static extends React.Component {
             >
               <Table>
                 <thead>
-                  <tr>
+                  <tr className="fs-sm">
                     <th className="hidden-sm-down">#</th>
                     <th>Picture</th>
                     <th>Description</th>
                     <th className="hidden-sm-down">Info</th>
                     <th className="hidden-sm-down">Date</th>
                     <th className="hidden-sm-down">Size</th>
+                    <th className="hidden-sm-down">Status</th>
                     <th />
                   </tr>
                 </thead>
@@ -182,14 +183,14 @@ class Static extends React.Component {
                       <td>
                         <p className="mb-0">
                           <small>
-                            <span className="fw-semi-bold">Type:</span>
-                            <span className="text-muted">&nbsp; {row.info.type}</span>
+                            Type:
+                            <span className="text-muted fw-semi-bold">&nbsp; {row.info.type}</span>
                           </small>
                         </p>
                         <p>
                           <small>
-                            <span className="fw-semi-bold">Dimensions:</span>
-                            <span className="text-muted">&nbsp; {row.info.dimensions}</span>
+                            Dimensions:
+                            <span className="text-muted fw-semi-bold">&nbsp; {row.info.dimensions}</span>
                           </small>
                         </p>
                       </td>

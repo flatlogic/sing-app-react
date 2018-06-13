@@ -40,7 +40,7 @@ class BigStat extends Component {
       <div className="pb-xlg h-100">
         <Widget
           className="mb-0 h-100"
-          bodyClass="p-0 mt"
+          bodyClass="p-0 mt px-5"
           title={
             <div className="d-flex justify-content-between flex-wrap">
               <h4 className={cx('d-flex align-items-center pb-1', s.bigStatTitle)}>
@@ -69,23 +69,23 @@ class BigStat extends Component {
             </div>
           }
         >
-          <h4 className="fw-semi-bold ml-lg mb-lg">{total}</h4>
+          <h4 className="fw-semi-bold mb-lg">{total}</h4>
           <div className="d-flex border-top">
-            <div className="w-50 border-right p-3 px-4">
-              <div className="d-flex justify-content-between align-items-center">
+            <div className="w-50 border-right py-3 pr-2">
+              <div className="d-flex align-items-start">
                 <h6>+{registrations.value}</h6>
                 <i
-                  className={`la la-arrow-right text-${registrations.profit ? 'success' : 'danger'}
+                  className={`la la-arrow-right ml-sm text-${registrations.profit ? 'success' : 'danger'}
                   rotate-${registrations.profit ? '315' : '45'}`}
                 />
               </div>
               <p className="text-muted mb-0 mr"><small>Registrations</small></p>
             </div>
-            <div className="w-50 p-3 px-4">
-              <div className="d-flex justify-content-between align-items-center">
+            <div className="w-50 py-3 pl-2">
+              <div className="d-flex align-items-start">
                 <h6>{bounce.value}%</h6>
                 <i
-                  className={`la la-arrow-right text-${bounce.profit ? 'success' : 'danger'} 
+                  className={`la la-arrow-right ml-sm text-${bounce.profit ? 'success' : 'danger'}
                   rotate-${bounce.profit ? '315' : '45'}`}
                 />
               </div>
