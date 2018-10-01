@@ -3,7 +3,8 @@
   "version": "4.1.0",
   "private": true,
   "engines": {
-    "node": "9.11.1"
+    "node": ">=6.5",
+    "npm": ">=3.10"
   },
   "browserslist": [
     ">1%",
