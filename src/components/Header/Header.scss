@@ -2,11 +2,32 @@
 
 .root {
   z-index: 100;
-  background: $body-bg;
-  padding: 7px 10px 0;
+  background: $navbar-bg;
+  padding: 7px 10px;
 
   @include media-breakpoint-down(sm) {
-    padding: 7px 0 0;
+    padding: 7px 0;
+  }
+
+  :global {
+    .input-group {
+      overflow: hidden;
+    }
+
+    .input-group-prepend {
+      background-color: #fff;
+      transition: background-color ease-in-out 0.15s;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+    }
+
+    .focus .input-group-prepend {
+      background: #f8f9fa;
+    }
   }
 }
 

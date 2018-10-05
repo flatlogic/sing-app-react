@@ -6,7 +6,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Navbar,
   Nav,
-  NavDropdown,
+  Dropdown,
   NavItem,
   NavLink,
   Badge,
@@ -156,9 +156,9 @@ class Header extends React.Component {
         <Form className="d-sm-down-none ml-5" inline>
           <FormGroup>
             <InputGroup className="input-group-no-border">
-              <InputGroupAddon><i
-                className="la la-search"
-              /></InputGroupAddon>
+              <InputGroupAddon addonType="prepend">
+                <i className="la la-search" />
+              </InputGroupAddon>
               <Input id="search-input" placeholder="Search Dashboard" />
             </InputGroup>
           </FormGroup>
@@ -175,7 +175,7 @@ class Header extends React.Component {
         </NavLink>
 
         <Nav className="ml-auto">
-          <NavDropdown isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
+          <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret>
               <span className={`${s.avatar} thumb-sm float-left mr-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
@@ -186,8 +186,8 @@ class Header extends React.Component {
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
               <Notifications />
             </DropdownMenu>
-          </NavDropdown>
-          <NavDropdown isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
+          </Dropdown>
+          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
             <DropdownToggle nav>
               <i className="la la-cog" />
             </DropdownToggle>
@@ -199,7 +199,7 @@ class Header extends React.Component {
               <DropdownItem divider />
               <DropdownItem onClick={this.doLogout}><i className="la la-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
-          </NavDropdown>
+          </Dropdown>
           <NavItem>
             <NavLink className="d-sm-down-none mr-3" id="toggle-chat" href="#" onClick={this.props.chatToggle}>
               <i className="la la-globe" />

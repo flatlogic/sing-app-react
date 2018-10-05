@@ -59,7 +59,7 @@ $theme-colors: (
   warning-light: #fdf7e6,
   danger-light: #fff2ef,
   info: $purple,
-  warning: #000,
+  warning: $yellow,
   danger: $red,
   dark: $gray-800,
   inverse: $gray-700,
@@ -82,6 +82,8 @@ $addition-bg: $gray-100 !default;
 $body-bg: #f6f9fc !default;
 $body-bg-light: lighten($body-bg, 3%);
 
+$logo-color: white;
+
 //== Components
 //
 
@@ -96,7 +98,7 @@ $border-radius-sm:       0.25rem !default;
 //== Sidebar
 //
 
-$sidebar-width-open: 24px;
+$sidebar-width-open: 224px;
 $sidebar-width-closed: 50px;
 $sidebar-transition-time: 0.3s !default;
 
@@ -140,6 +142,7 @@ $navbar-link-active-color: $gray-700 !default;
 $navbar-link-active-bg: $gray-300 !default;
 $navbar-link-disabled-color: $gray-400 !default;
 $navbar-link-disabled-bg: transparent !default;
+$navbar-bg: #fff !default;
 
 // Dropdowns
 $dropdown-link-color: $text-color;

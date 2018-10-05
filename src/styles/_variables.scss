@@ -83,6 +83,8 @@ $addition-bg: $gray-100 !default;
 $body-bg: #fafbff !default;
 $body-bg-light: lighten($body-bg, 3%);
 
+$logo-color: $gray-800;
+
 //== Components
 //
 
@@ -141,6 +143,7 @@ $navbar-link-active-color: $gray-700 !default;
 $navbar-link-active-bg: $gray-300 !default;
 $navbar-link-disabled-color: $gray-400 !default;
 $navbar-link-disabled-bg: transparent !default;
+$navbar-bg: $body-bg !default;
 
 // Dropdowns
 $dropdown-link-color: $text-color;
