@@ -2,7 +2,33 @@
 
 .root {
   z-index: 100;
-  box-shadow: $widget-shadow;
+  background: $navbar-bg;
+  padding: 7px 10px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 7px 0;
+  }
+
+  :global {
+    .input-group {
+      overflow: hidden;
+    }
+
+    .input-group-prepend {
+      background-color: #fff;
+      transition: background-color ease-in-out 0.15s;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+    }
+
+    .focus .input-group-prepend {
+      background: #f8f9fa;
+    }
+  }
 }
 
 .navbarForm {
@@ -35,8 +61,8 @@
 
 .chatNotification {
   position: absolute;
-  right: 11px;
-  top: 35px;
+  right: 15px;
+  top: 50px;
   z-index: 20;
   margin-top: 3px;
   padding: 5px 0;
@@ -51,7 +77,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #343434;
+    border-bottom: 5px solid $gray-800;
   }
 
   .chatNotificationInner {
@@ -60,7 +86,7 @@
     font-size: 12px;
     border-radius: 0.25rem;
     text-decoration: none;
-    background-color: #343434;
+    background-color: $gray-800;
     color: #fff;
   }
 
@@ -77,7 +103,7 @@
     font-size: 0.875rem;
 
     span {
-      margin-right: 5px;
+      margin-right: 7px;
     }
   }
 }

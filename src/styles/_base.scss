@@ -97,3 +97,10 @@ table > thead > tr > th {
     }
   }
 }
+
+.input-group-addon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}

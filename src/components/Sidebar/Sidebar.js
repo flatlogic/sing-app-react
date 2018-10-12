@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Progress, Alert } from 'reactstrap';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
@@ -68,7 +68,7 @@ class Sidebar extends React.Component {
         className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
       >
         <header className={s.logo}>
-          <Link to="/app">sing</Link>
+          <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</a>
         </header>
         <ul className={s.nav}>
           <LinksGroup header="Dashboard" link="/app" iconName="fa-child" isHeader />
