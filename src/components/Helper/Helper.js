@@ -37,7 +37,7 @@ class Helper extends Component {
         >
           <div className="mt-4">
             <Button
-              href="https://wrapbootstrap.com/theme/sing-app-html5-angular-react-admin-WB0J6BJ85"
+              href="https://flatlogic.com/dashboards/sing-app-react"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini"
               color="warning"
