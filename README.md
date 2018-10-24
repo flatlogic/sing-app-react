@@ -1,7 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sing App React 5.0.0
+
+Our React version follows latest industry best practices and uses Redux as a state manager. This version is a great choice when you want to be in control of your own codebase and decide on development approaches that are the best for your project. Webpack Module Bundler and Yarn as a package manager are under the hood.
 
 Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
 
@@ -2564,4 +2565,4 @@ If you're seeing this error, you're likely using an old version of `react-script
 
 ## Something Missing?
 
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebook/create-react-app/issues) or [contribute some!](https://github.com/facebook/create-react-app/edit/master/packages/react-scripts/template/README.md)
+If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/flatlogic/sing-app-react/issues).
