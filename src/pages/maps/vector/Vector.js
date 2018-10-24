@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 /* eslint-disable */
 import 'imports-loader?jQuery=jquery,this=>window!jvectormap/jquery-jvectormap.min.js';
-import 'imports-loader?jQuery=jquery,this=>window!jvectormap-world/jquery-jvectormap-world-mill-en.js';
+import 'imports-loader?jQuery=jquery,this=>window!./jvector-world.js';
 /* eslint-enable */
 
 import s from './Vector.module.scss';

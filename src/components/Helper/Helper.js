@@ -15,6 +15,10 @@ class Helper extends Component {
     }));
   }
 
+  changeLocation = (link) => {
+    window.open(link);
+  }
+
   render() {
     const { isOpened } = this.state;
     return (
@@ -34,6 +38,16 @@ class Helper extends Component {
             </header>
           }
         >
+          <div class="theme-switcher d-flex justify-content-center">
+              <div class="form-check abc-radio abc-radio-warning form-check-inline">
+                <input class="form-check-input" type="radio" id="css-light" value="option2" checked name="css-light" aria-label="Sing Light"/>
+                <label class="form-check-label" for="css-light"></label>
+              </div>
+              <div class="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
+                <input class="form-check-input" onClick={() => this.changeLocation('http://sing-app.herokuapp.com/')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark"/>
+                <label class="form-check-label" for="css-dark"></label>
+              </div>
+            </div>
           <div className="mt-4">
             <Button
               href="https://flatlogic.com/dashboards/sing-app-react"

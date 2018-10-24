@@ -74,7 +74,6 @@
   },
   "napa": {
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
-    "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "jquery.flot-orderBars": "https://github.com/emmerich/flot-orderBars.git",
     "flot.dashes": "https://github.com/cquartier/flot.dashes.git"
