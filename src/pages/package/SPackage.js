@@ -161,7 +161,12 @@ class SPackage extends React.Component {
               <p>Creating Vue JS version is a main
                 priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
                 so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-              <button className="btn btn-transparent btn-lg btn-block disabled">Coming Soon!</button>
+                <a
+                  className="btn btn-default btn-lg btn-block"
+                  href="https://sing-app-vue-full.herokuapp.com/"
+                >
+                Go to Demo
+              </a>
             </Widget>
           </Col>
         </Row>
