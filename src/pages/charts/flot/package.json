@@ -1,0 +1,6 @@
+{
+  "name": "Flot",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Flot.js"
+}

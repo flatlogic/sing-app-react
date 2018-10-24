@@ -1,0 +1,54 @@
+@import '../../../../styles/app';
+
+:global {
+  @import '../../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg';
+}
+
+.compose {
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  input {
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin-left: 7.5px;
+  }
+}
+
+.wysiwygWrapper {
+  border: 1px solid #ccc !important;
+  overflow: visible;
+  height: 270px;
+  margin-bottom: 15px;
+}
+
+.wysiwygToolbar {
+  color: $gray-800 !important;
+  background-color: #ddd !important;
+  border-color: transparent !important;
+
+  :global {
+    .rdw-option-wrapper {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      height: 30px;
+      min-width: 30px;
+      margin: 0;
+      background: #f8f8f8;
+    }
+
+    .rdw-dropdown-wrapper {
+      background: #f8f8f8;
+    }
+  }
+}
+
+.wysiwygEditor {
+  position: relative !important;
+  overflow: hidden !important;
+  height: 150px;
+  line-height: 0.1;
+}

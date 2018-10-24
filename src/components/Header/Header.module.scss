@@ -1,0 +1,139 @@
+@import '../../styles/app';
+
+.root {
+  z-index: 100;
+  background: $navbar-bg;
+  padding: 7px 10px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 7px 0;
+  }
+
+  :global {
+    .input-group {
+      overflow: hidden;
+    }
+
+    .input-group-prepend {
+      background-color: #fff;
+      transition: background-color ease-in-out 0.15s;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+    }
+
+    .focus .input-group-prepend {
+      background: #f8f9fa;
+    }
+  }
+}
+
+.navbarForm {
+  padding: 6px 0 6px 1rem;
+  margin-left: 10px;
+  display: inline-block;
+  top: 2px;
+  width: auto;
+
+  .inputAddon {
+    position: relative;
+    display: inline;
+    border: none;
+    background-color: #fff;
+    transition: background-color ease-in-out 0.15s;
+  }
+
+  input {
+    border: none;
+    padding: 0.6rem 0.85rem 0.6rem 0;
+    display: inline !important;
+    width: 250px !important;
+    top: 2px;
+  }
+}
+
+.avatar {
+  width: 30px;
+}
+
+.chatNotification {
+  position: absolute;
+  right: 15px;
+  top: 50px;
+  z-index: 20;
+  margin-top: 3px;
+  padding: 5px 0;
+  cursor: pointer;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $gray-800;
+  }
+
+  .chatNotificationInner {
+    min-width: 120px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    background-color: $gray-800;
+    color: #fff;
+  }
+
+  .text {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: $gray-600;
+  }
+
+  .title {
+    margin: 0;
+    font-weight: 600;
+    line-height: 28px;
+    font-size: 0.875rem;
+
+    span {
+      margin-right: 7px;
+    }
+  }
+}
+
+.navbarBrand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  pointer-events: none;
+
+  i {
+    font-size: 10px;
+  }
+}
+
+.notificationsMenu {
+  :global .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+    top: $navbar-height !important;
+  }
+}
+
+.notificationsWrapper {
+  width: min-content;
+}

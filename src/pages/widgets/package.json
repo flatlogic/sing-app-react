@@ -1,0 +1,6 @@
+{
+  "name": "widgets",
+  "version": "0.0.0",
+  "main": "./Widgets.js",
+  "private": true
+}

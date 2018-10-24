@@ -1,0 +1,6 @@
+{
+  "name": "email",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Email.js"
+}

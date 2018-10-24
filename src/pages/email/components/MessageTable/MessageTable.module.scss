@@ -1,0 +1,63 @@
+@import '../../../../styles/app';
+
+.messages {
+  width: 84%;
+  border-radius: 0.2rem;
+
+  @media screen and (max-width: 1125px) {
+    width: 100%;
+  }
+
+  & :global .form-check-input {
+    margin: 0;
+    position: relative;
+  }
+
+  & :global .table {
+    margin-bottom: 0;
+  }
+}
+
+.unreadedMessage {
+  td {
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.messageCheckbox {
+  width: 50px;
+  padding-right: 0;
+
+  :global .form-check {
+    margin-bottom: 0;
+  }
+}
+
+.messageStar {
+  left: 25px;
+  margin-left: -10px;
+}
+
+.messageStarred {
+  color: theme-color('warning');
+}
+
+.messageFrom,
+.messageClip {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.messageDate {
+  display: flex;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 768px) {
+    width: 65px;
+  }
+}
+
+.backButton {
+  margin-bottom: 15px;
+}

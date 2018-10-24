@@ -1,0 +1,6 @@
+@import '../../../../styles/app';
+
+.chart {
+  height: 200px;
+  margin: $spacer/2 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+}

@@ -1,0 +1,56 @@
+@import '../../../../styles/app';
+
+.messageHeader {
+  width: 100%;
+}
+
+.messageHeaderLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.messageFrom {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+  }
+}
+
+.messageFromInfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.email {
+  color: #868e96;
+  font-size: $font-size-mini;
+  margin-left: 5px;
+}
+
+.to {
+  color: #868e96;
+}
+
+.messageHeaderDate {
+  padding: 15px 0;
+
+  & :global .btn-group {
+    margin-left: 10px;
+
+    button {
+      font-size: 12px;
+
+      i {
+        margin-right: 3px;
+      }
+    }
+  }
+}
