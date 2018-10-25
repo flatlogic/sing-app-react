@@ -3,23 +3,52 @@
   "version": "5.0.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@svgr/webpack": "2.4.1",
     "animate.css": "^3.7.0",
     "awesome-bootstrap-checkbox": "^1.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "babel-plugin-named-asset-import": "^0.2.2",
+    "babel-preset-react-app": "^5.0.4",
+    "bfj": "6.1.1",
     "bootstrap": "4.0.0",
     "bootstrap-slider": "^10.2.1",
     "bundle-loader": "^0.5.6",
+    "case-sensitive-paths-webpack-plugin": "2.1.2",
+    "chalk": "2.4.1",
+    "css-loader": "1.0.0",
+    "dotenv": "6.0.0",
+    "dotenv-expand": "4.2.0",
     "draft-js": "^0.10.5",
     "easy-pie-chart": "^2.1.7",
+    "eslint": "5.6.0",
+    "eslint-config-react-app": "^3.0.4",
+    "eslint-loader": "2.1.1",
+    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
     "expose-loader": "^0.7.5",
+    "file-loader": "2.0.0",
     "flot": "^0.8.0-alpha",
     "font-awesome": "4.7.0",
     "formsy-react": "0.19.5",
+    "fs-extra": "7.0.0",
     "fullcalendar": "^3.9.0",
     "glyphicons-halflings": "^1.9.1",
     "govpredict-morris": "0.5.1",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "identity-obj-proxy": "3.0.0",
     "imports-loader": "0.7.1",
     "isomorphic-style-loader": "2.0.0",
     "jasny-bootstrap": "^3.1.3",
+    "jest": "23.6.0",
+    "jest-pnp-resolver": "1.0.1",
+    "jest-resolve": "23.6.0",
     "jquery": "^3.3.1",
     "jquery-mapael": "^2.2.0",
     "jquery-sparkline": "^2.4.0",
@@ -29,18 +58,27 @@
     "line-awesome": "github:icons8/line-awesome",
     "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",
     "metrojs": "0.9.77",
+    "mini-css-extract-plugin": "0.4.3",
     "moment": "^2.22.2",
     "napa": "^3.0.0",
     "node-sass": "^4.9.4",
     "nvd3": "1.8.6",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pnp-webpack-plugin": "1.1.0",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.0.6",
+    "postcss-safe-parser": "4.0.1",
     "rc-color-picker": "^1.2.6",
     "rc-hammerjs": "0.6.9",
     "react": "^16.5.2",
     "react-animated-number": "^0.4.4",
+    "react-app-polyfill": "^0.1.3",
     "react-autosize-textarea": "^5.0.0",
     "react-bootstrap-slider": "^2.1.5",
     "react-bootstrap-table": "4.1.5",
     "react-datetime": "^2.16.1",
+    "react-dev-utils": "^6.0.5",
     "react-dom": "^16.5.2",
     "react-draft-wysiwyg": "1.10.12",
     "react-dropzone": "^6.2.4",
@@ -52,7 +90,6 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.5",
     "react-select2-wrapper": "^1.0.4-beta6",
     "react-shuffle": "2.1.0",
     "react-slick": "^0.23.1",
@@ -63,11 +100,20 @@
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "resolve": "1.8.1",
     "rickshaw": "1.6.6",
+    "sass-loader": "7.1.0",
     "showdown": "1.8.6",
     "skycons": "^1.0.0",
+    "style-loader": "0.23.0",
+    "terser-webpack-plugin": "1.1.0",
+    "url-loader": "1.1.1",
+    "webpack": "4.19.1",
+    "webpack-dev-server": "3.1.9",
+    "webpack-manifest-plugin": "2.0.4",
     "webpack-raphael": "^2.1.4",
-    "widgster": "^1.0.0"
+    "widgster": "^1.0.0",
+    "workbox-webpack-plugin": "3.6.2"
   },
   "resolutions": {
     "jquery": "3.3.1"
@@ -80,10 +126,9 @@
   },
   "scripts": {
     "install": "napa",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -93,5 +138,41 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  }
 }
