@@ -44,7 +44,7 @@ class Helper extends Component {
                 <label class="form-check-label" for="css-light"></label>
               </div>
               <div class="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
-                <input class="form-check-input" onClick={() => this.changeLocation('http://sing-app.herokuapp.com/')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark"/>
+                <input class="form-check-input" onClick={() => this.changeLocation('https://sing-app.herokuapp.com/')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark"/>
                 <label class="form-check-label" for="css-dark"></label>
               </div>
             </div>
