@@ -2,7 +2,7 @@ import {
   LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS,
 } from '../actions/user';
 
-const idToken = JSON.parse(localStorage.getItem('id_token'));
+const idToken = localStorage.getItem('id_token');
 // The auth reducer. The starting state sets authentication
 // based on a token being in local storage. In a real app,
 // we would also want a util to check if the token is expired.
