@@ -39,8 +39,8 @@ class App extends React.PureComponent {
           <Route path="/app" exact render={() => <Redirect to="/app/main" />} />
           <PrivateRoute path="/app" component={LayoutComponent} />
           <Route path="/login" exact component={LoginComponent} />
+          <Route path="/error" exact component={ErrorPage} />
           <Redirect from="*" to="/app/main/analytics" />
-          <Route component={ErrorPage} />
         </Switch>
       </BrowserRouter>
     );

@@ -14,8 +14,12 @@
       text-transform: uppercase;
     }
 
+    .fc-day-grid-event {
+      margin: 0;
+      padding: 0;
+    }
+
     .fc-event {
-      padding: 2px 3px;
       border: none;
       font-weight: $font-weight-normal;
       background-color: $gray-200;
@@ -29,6 +33,7 @@
     a.fc-event {
       height: auto;
       line-height: $line-height-base;
+      width: 100%;
     }
 
     /* ****  Full Calendar Custom   **** */

@@ -51,7 +51,7 @@ class BigStat extends Component {
                   caret color="default"
                   className="dropdown-toggle-split mr-xs"
                 >
-                  {this.state.simpleSelectDropdownValue}
+                  {this.state.simpleSelectDropdownValue}&nbsp;&nbsp;
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem onClick={this.changeSelectDropdownSimple}>

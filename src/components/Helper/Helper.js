@@ -38,19 +38,19 @@ class Helper extends Component {
             </header>
           }
         >
-          <div class="theme-switcher d-flex justify-content-center">
-              <div class="form-check abc-radio abc-radio-warning form-check-inline">
-                <input class="form-check-input" type="radio" id="css-light" value="option2" checked name="css-light" aria-label="Sing Light"/>
-                <label class="form-check-label" for="css-light"></label>
+          <div className="theme-switcher d-flex justify-content-center">
+              <div className="form-check abc-radio abc-radio-warning form-check-inline">
+                <input className="form-check-input" checked type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
+                <label className="form-check-label" htmlFor="css-light"></label>
               </div>
-              <div class="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
-                <input class="form-check-input" onClick={() => this.changeLocation('https://sing-app.herokuapp.com/')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark"/>
-                <label class="form-check-label" for="css-dark"></label>
+              <div className="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
+                <input className="form-check-input" onClick={() => this.changeLocation('https://sing-app.herokuapp.com/')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark" readOnly/>
+                <label className="form-check-label" htmlFor="css-dark"></label>
               </div>
             </div>
           <div className="mt-4">
             <Button
-              href="https://flatlogic.com/dashboards/sing-app-react"
+              href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini"
               color="warning"

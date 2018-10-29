@@ -101,25 +101,22 @@ export default class RevenueChart extends PureComponent {
       .css({
         border: 0,
         borderRadius: 0,
-        paddingTop: 5,
-        display: 'flex',
-        justifyContent: 'center',
+        paddingTop: 5
       })
       .children('div')
       .css({
         borderWidth: 1,
         borderRadius: 0,
-        width: 10,
-        height: 10,
+        width: 75
       });
 
     this.$chartLegend.find('tbody td').css({
       paddingLeft: 10,
       paddingRight: 10,
-      textAlign: 'center',
+      textAlign: 'center'
     });
 
-    const labels = this.$chartLegend.find('.legendLabel').detach();
+    let labels = this.$chartLegend.find('.legendLabel').detach();
     this.$chartLegend.find('tbody').prepend('<tr></tr>');
     this.$chartLegend.find('tbody tr:eq(0)').append(labels);
   }

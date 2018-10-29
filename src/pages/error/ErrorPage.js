@@ -1,5 +1,4 @@
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Container,
   Form,
@@ -9,7 +8,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-import s from './ErrorPage.scss';
+import s from './ErrorPage.module.scss';
 
 class ErrorPage extends React.Component {
   render() {
@@ -44,4 +43,4 @@ class ErrorPage extends React.Component {
   }
 }
 
-export default withStyles(s)(ErrorPage);
+export default ErrorPage;

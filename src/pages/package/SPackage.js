@@ -20,8 +20,7 @@ class SPackage extends React.Component {
         <h2 className="page-title">Sing - <span className="fw-semi-bold">Package</span>&nbsp;
           <small>More than 2000 man-hours already invested!</small>
         </h2>
-        <p className="lead">You will get access to all those versions
-          listed below after you purchase any Sing licence!</p>
+        <p className="lead">Over 8,000 developers worldwide chose our bootstrap admin templates to build their web applications, SAAS and E-Commerce platforms faster. Jump in to burn through your gig too!</p>
         <Row>
           <Col lg={5} md={6}>
             <Widget

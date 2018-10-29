@@ -34,7 +34,7 @@ class FilterElement extends Component {
             caret color="default"
             className="dropdown-toggle-split mr-xs"
           >
-            {currentOption}
+            {currentOption}&nbsp;&nbsp;
           </DropdownToggle>
           <DropdownMenu>
             {options.map(item =>

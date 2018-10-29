@@ -9,6 +9,16 @@
 
   @include transition(right $sidebar-transition-time ease-in-out);
 
+  & :global {
+    .abc-radio-secondary input[type="radio"]:not(:checked)+label::before {
+      background-color: #798892;
+    }
+
+    .abc-radio-warning input[type="radio"]:not(:checked)+label::before {
+      background-color: theme-color('warning');
+    }
+  }
+
   &.themeHelperOpened {
     right: 0;
   }
