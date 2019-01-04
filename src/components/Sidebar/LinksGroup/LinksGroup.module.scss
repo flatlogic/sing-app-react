@@ -88,13 +88,18 @@
 
 a.headerLinkActive {
   color: $sidebar-item-active-color;
+  font-weight: $font-weight-normal;
+
+  &:hover {
+    color: $sidebar-item-active-color;
+  }
 
   .icon {
     border-radius: 50%;
     background-color: $sidebar-item-active-color;
 
     i {
-      color: $white;
+      color: $sidebar-bg-color;
     }
   }
 }

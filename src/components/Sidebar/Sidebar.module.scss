@@ -48,6 +48,7 @@
   margin: 35px 0 5px 11px;
   font-size: $font-size-larger;
   transition: opacity $sidebar-transition-time ease-in-out;
+  color: darken(color-yiq($sidebar-bg-color), 13%);
 
   @media (min-width: breakpoint-min(lg)) {
     opacity: 1;

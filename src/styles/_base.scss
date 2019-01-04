@@ -65,7 +65,7 @@
 }
 
 .widget-top-overflow {
-  margin-top: 2 * (-$widget-padding-vertical);
+  margin-top: (-$widget-padding-vertical);
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   overflow: hidden;

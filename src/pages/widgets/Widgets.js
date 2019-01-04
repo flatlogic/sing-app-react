@@ -13,6 +13,7 @@ import YearsMap from './components/years-map/YearsMap';
 import FlotCharts from './components/flot-charts/FlotCharts';
 import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
 import Skycon from '../../components/Skycon/Skycon';
+import { Input, InputGroup, InputGroupAddon, Button } from 'reactstrap';
 import './Widgets.scss';
 
 import peopleA1 from '../../images/people/a1.jpg';
@@ -39,7 +40,7 @@ class Widgets extends React.Component {
                 <Row className="flex-nowrap">
                   <Col xs={3}>
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-globe text-primary" />
+                      <i className="fi flaticon-like text-primary" />
                     </span>
                   </Col>
                   <Col xs="9">
@@ -66,7 +67,7 @@ class Widgets extends React.Component {
                 <Row className="flex-nowrap">
                   <Col xs="3">
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-user text-info" />
+                      <i className="fi flaticon-magic-wand text-info" />
                     </span>
                   </Col>
                   <Col xs="9">
@@ -129,7 +130,7 @@ class Widgets extends React.Component {
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
-                          <i className="glyphicon glyphicon-globe" />
+                          <i className="fi flaticon-notebook-4" />
                         </span>
                       </Col>
                       <Col xs="9">
@@ -152,7 +153,7 @@ class Widgets extends React.Component {
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
-                          <i className="glyphicon glyphicon-certificate" />
+                          <i className="fi flaticon-shuffle" />
                         </span>
                       </Col>
                       <Col xs={9}>
@@ -181,7 +182,7 @@ class Widgets extends React.Component {
                 <Row className="flex-nowrap">
                   <Col xs={3}>
                     <span className="widget-icon">
-                      <i className="glyphicon glyphicon-usd text-success" />
+                      <i className="fi flaticon-diamond text-success" />
                     </span>
                   </Col>
                   <Col xs={9}>
@@ -271,8 +272,8 @@ class Widgets extends React.Component {
                 <div className="widget-top-overflow text-white">
                   <img src={img17} alt="..." />
                   <ul className="tags text-white pull-right">
-                    <li><button className="btn-link">design</button></li>
-                    <li><button className="btn-link">white</button></li>
+                    <li><a href="#">design</a></li>
+                    <li><a href="#">white</a></li>
                   </ul>
                 </div>
                 <div className="post-user mt-sm">
@@ -316,7 +317,7 @@ class Widgets extends React.Component {
                     Dashboard
                     Template</h3>
                   <ul className="tags text-white pull-right">
-                    <li><button className="btn-link">design</button></li>
+                    <li><a href="#">design</a></li>
                   </ul>
                 </div>
                 <p className="text-light fs-mini mt-sm">Lots of cool stuff is happening around you. Just calm down for
@@ -585,14 +586,10 @@ class Widgets extends React.Component {
                 </div>
               </div>
               <footer className="bg-body-light bt">
-                <div className="input-group input-group-sm">
-                  <input type="text" className="form-control" placeholder="Your message" />
-                  <span className="input-group-btn">
-                    <button type="submit" className="btn btn-default">
-              Send
-            </button>
-                  </span>
-                </div>
+                <InputGroup size="sm">
+                    <Input placeholder="Your message" />
+                    <InputGroupAddon addonType="append"><Button color="default">Send</Button></InputGroupAddon>
+                </InputGroup>
               </footer>
             </Widget>
           </Col>

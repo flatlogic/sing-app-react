@@ -521,7 +521,7 @@ $i: 0;
   .value#{$i} {
     margin: 0;
     font-size: $font-size;
-    font-weight: $font-weight-semi-bold;
+    font-weight: $font-weight-normal;
   }
   $i: $i + 1 !global;
 }
