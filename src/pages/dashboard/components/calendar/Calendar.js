@@ -36,7 +36,7 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    const $calendar = $('#calendar');
+    const $calendar = $(this.element);
     const now = new Date();
     const month = now.getMonth() + 1;
     const year = now.getFullYear();
@@ -94,7 +94,7 @@ class Calendar extends React.Component {
   }
 
   render() {
-    return (<div id="calendar" className={cx('calendar', { 'calendar-white': this.props.white })} />);
+    return (<div ref={(el) => this.element = el} className={cx('calendar', { 'calendar-white': this.props.white })} />);
   }
 }
 

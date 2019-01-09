@@ -536,3 +536,17 @@ $i: 0;
   background-size: cover;
   background-position: center;
 }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translate3d(0, 4%, 0) scale(.93);
+  transform: translate3d(0, 4%, 0) scale(.93);
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in, -webkit-transform 200ms ease-in, transform 200ms ease-in;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
