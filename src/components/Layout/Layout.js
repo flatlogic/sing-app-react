@@ -49,7 +49,7 @@ import ChartsMorris from '../../pages/charts/morris';
 import ChartsFlot from '../../pages/charts/flot';
 import ChartsSparkline from '../../pages/charts/sparkline';
 import ChartsRickshaw from '../../pages/charts/rickshaw';
-import DashboardAnalytics from '../../pages/analytics'; 
+import DashboardAnalytics from '../../pages/analytics';
 import Dashboard from '../../pages/dashboard';
 
 import Header from '../Header';
@@ -83,13 +83,26 @@ class Layout extends React.Component {
 
   componentDidMount() {
     const staticSidebar = JSON.parse(localStorage.getItem('staticSidebar'));
-    if (staticSidebar) {
+    if (staticSidebar && window.innerWidth > 768) {
       this.props.dispatch(toggleSidebar());
     } else if (this.props.sidebarOpened) {
       setTimeout(() => {
         this.props.dispatch(closeSidebar());
         this.props.dispatch(changeActiveSidebarItem(null));
       }, 2500);
+    }
+
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    if (window.innerWidth <= 768 && this.props.sidebarStatic) {
+      this.props.dispatch(toggleSidebar());
     }
   }
 
