@@ -196,7 +196,7 @@ class Layout extends React.Component {
                 <Route path="/app/core/grid" exact component={CoreGrid} />
               </Switch>
               <footer className={s.contentFooter}>
-                Sing React Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+                Sing App React Admin Dashboard Template - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
               </footer>
             </main>
           </Hammer>

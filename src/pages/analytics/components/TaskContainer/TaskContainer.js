@@ -20,7 +20,7 @@ export default class TasksContainer extends Component {
     const tasks = this.props.data;
 
     tasks.map((task) => {
-      task.complited = false;
+      task.completed = false;
       return task;
     });
 
@@ -30,14 +30,14 @@ export default class TasksContainer extends Component {
   toggleTaskState = (index) => {
     const newTasks = [...this.state.tasks];
 
-    newTasks[index].complited = !this.state.tasks[index].complited;
+    newTasks[index].completed = !this.state.tasks[index].completed;
 
     this.setState({ tasks: newTasks });
   }
 
   render() {
     const { tasks } = this.state;
-    const totalComplited = tasks.filter(i => i.complited).length;
+    const totalCompleted = tasks.filter(i => i.completed).length;
     return (
       <Widget
         className="mb-xlg pb-2"
@@ -45,7 +45,7 @@ export default class TasksContainer extends Component {
         title={
           <div>
             <h4>Today&apos;s Tasks <span className="badge badge-pill badge-success fw-normal pull-right mt-xs">{tasks.length}</span></h4>
-            <p className="text-primary mb-0"><small>{totalComplited} of {tasks.length} complited</small></p>
+            <p className="text-primary mb-0"><small>{totalCompleted} of {tasks.length} completed</small></p>
           </div>
         }
       >

@@ -50,11 +50,11 @@ class Widgets extends React.Component {
                 </Row>
                 <Row className="flex-nowrap">
                   <Col xs={6}>
-                    <h6 className="m-0">Registrations</h6>
+                    <h6 className="m-0 text-muted">Registrations</h6>
                     <p className="value5">+830</p>
                   </Col>
                   <Col xs="6">
-                    <h6 className="m-0">Bounce Rate</h6>
+                    <h6 className="m-0 text-muted">Bounce Rate</h6>
                     <p className="value5">4.5%</p>
                   </Col>
                 </Row>
@@ -88,7 +88,7 @@ class Widgets extends React.Component {
                 </Row>
                 <Row className="flex-nowrap">
                   <Col xs="6">
-                    <h6 className="m-0">New Visitors</h6>
+                    <h6 className="m-0 text-muted">New Visitors</h6>
                     <LiveTile
                       data-mode="carousel" data-speed="750" data-delay="3000"
                       data-height="25"
@@ -102,7 +102,7 @@ class Widgets extends React.Component {
                     </LiveTile>
                   </Col>
                   <Col xs="6">
-                    <h6 className="m-0">Bounce Rate</h6>
+                    <h6 className="m-0 text-muted">Bounce Rate</h6>
                     <LiveTile
                       data-mode="carousel" data-speed="750" data-delay="3000"
                       data-height="26"
@@ -163,11 +163,11 @@ class Widgets extends React.Component {
                     </Row>
                     <Row className="flex-nowrap">
                       <Col xs={6}>
-                        <h6 className="m-0">Basic</h6>
+                        <h6 className="m-0 text-muted">Basic</h6>
                         <p className="value5">3,692</p>
                       </Col>
                       <Col xs="6">
-                        <h6 className="m-0">Advanced</h6>
+                        <h6 className="m-0 text-muted">Advanced</h6>
                         <p className="value5">1,441</p>
                       </Col>
                     </Row>
@@ -192,11 +192,11 @@ class Widgets extends React.Component {
                 </Row>
                 <Row className="flex-nowrap">
                   <Col xs="6">
-                    <h6 className="m-0">Last Month</h6>
+                    <h6 className="m-0 text-muted">Last Month</h6>
                     <p className="value5">$83,541</p>
                   </Col>
                   <Col xs={6}>
-                    <h6 className="m-0">Last Week</h6>
+                    <h6 className="m-0 text-muted">Last Week</h6>
                     <p className="value5">$17,926</p>
                   </Col>
                 </Row>

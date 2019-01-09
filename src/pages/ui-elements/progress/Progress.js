@@ -57,7 +57,7 @@ const ProgressExamples = () => (
           </p>
           <Progress className="mb-sm" value="25">25%</Progress>
           <Progress className="mb-sm" value="100" color="danger">Something was wrong!</Progress>
-          <Progress value="100" color="success">Complited!</Progress>
+          <Progress value="100" color="success">Completed!</Progress>
         </Widget>
       </Col>
       <Col xs={12} md={6}>

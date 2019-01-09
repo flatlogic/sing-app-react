@@ -53,7 +53,7 @@ class Login extends React.Component {
         <Container>
           <h5 className={`${s.logo}`}>
             <i className="fa fa-circle text-gray" />
-            sing
+            Sing App
             <i className="fa fa-circle text-warning" />
           </h5>
           <Widget className={`${s.widget} mx-auto`} title={<h3 className="mt-0">Login to your Web App</h3>}>
@@ -81,15 +81,15 @@ class Login extends React.Component {
               </div>
               <div className="clearfix">
                 <div className="btn-toolbar float-right">
-                  <button type="reset" className="btn btn-secondary btn-sm">Create an Account</button>
+                  <button type="reset" className="btn btn-default btn-sm">Create an Account</button>
                   <button type="submit" href="/app" className="btn btn-inverse btn-sm">{this.props.isFetching ? 'Loading...' : 'Login'}</button>
                 </div>
               </div>
               <div className="row no-gutters mt-3">
-                <div className="col">
+                <div className="col-5">
                   <a className="mt-sm" href="#">Trouble with account?</a>
                 </div>
-                <div className="col =">
+                <div className="col-7">
                   <FormGroup className="abc-checkbox float-right" check>
                     <Input id="checkbox1" type="checkbox" />{' '}
                     <Label className="fw-normal" for="checkbox1" check>
@@ -102,7 +102,7 @@ class Login extends React.Component {
           </Widget>
         </Container>
         <footer className={s.footer}>
-          2017 &copy; Sing. Admin Dashboard Template.
+          2019 &copy; Sing App - React Admin Dashboard Template.
         </footer>
       </div>
     );

@@ -18,7 +18,7 @@ class Analytics extends Component {
   render() {
     return (
       <div>
-        <h1 className="page-title">Analytics</h1>
+        <h1 className="page-title">Analytics <small>Company performance</small></h1>
         <div className={s.sidesWrapper}>
           <div className={s.analyticsSide}>
             <Row>
