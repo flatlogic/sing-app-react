@@ -114,6 +114,7 @@ class ChangesChart extends React.Component {
           <p className={s.chartValue}><i className="fa fa-caret-up" /> 352.79</p>
           <p className={s.chartValueChange}>+2.04 (1.69%)</p>
           <div
+            style={{ overflow: 'hidden' }}
             ref={(r) => {
               this.rickshawChart = r;
             }}
