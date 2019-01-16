@@ -45,28 +45,28 @@ class Calendar extends React.Component {
         `2/${month}/${year}`,
         'The flower bed',
         '#',
-        '#5d8fc2',
+        '#547fff',
         'Contents here',
       ],
       [
         `5/${month}/${year}`,
         'Stop world water pollution',
         '#',
-        '#f0b518',
+        '#ffc247',
         'Have a kick off meeting with .inc company',
       ],
       [
         `18/${month}/${year}`,
         'Light Blue 2.2 release',
         '#',
-        '#64bd63',
+        '#3abf94',
         'Some contents here',
       ],
       [
         `29/${month}/${year}`,
         'A link',
         'http://www.flatlogic.com',
-        '#dd5826',
+        '#f55d5d',
       ],
     ];
     $calendar.calendar({

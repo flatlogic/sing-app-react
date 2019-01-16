@@ -20,6 +20,7 @@
       color: $navbar-link-color;
       height: 100%;
       position: relative;
+      padding: 0.5rem;
 
       @include hover {
         color: $navbar-link-hover-color;

@@ -128,7 +128,7 @@ class Header extends React.Component {
       <Navbar className={`${s.root} d-print-none`}>
         <Nav>
           <NavItem>
-            <NavLink className="d-md-down-none ml-3" id="toggleSidebar" onClick={this.toggleSidebar}>
+            <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
               <i className="la la-bars" />
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
@@ -200,7 +200,7 @@ class Header extends React.Component {
             </DropdownMenu>
           </Dropdown>
           <NavItem>
-            <NavLink className="d-sm-down-none mr-3" id="toggle-chat" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.props.chatToggle}>
               <i className="la la-globe" />
             </NavLink>
             <div id="chat-notification" className={`${s.chatNotification} hide `}>

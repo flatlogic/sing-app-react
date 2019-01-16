@@ -6,8 +6,13 @@
 
 .calendar {
   font-size: $font-size-mini;
-  padding: $spacer/2 0;
   background: $gray-light;
+
+  :global {
+    .la {
+      color: #798892;
+    }
+  }
 }
 
 .calendar-white {
@@ -31,6 +36,7 @@
 
 .calendar td {
   text-align: center;
+  font-size: 110%;
 }
 
 .calendar .header {
@@ -57,6 +63,7 @@
 
 .calendar .week_days {
   color: $gray-600;
+  font-size: 80%;
 }
 
 .calendar .event {
@@ -101,12 +108,13 @@
   margin-bottom: 3px;
 
   &.header {
-    margin-bottom: $spacer/2;
+    margin-bottom: $spacer;
   }
 }
 
 .calendar .visualmonthyear {
-  color: $gray-600;
+  font-size: 1.25rem;
+  color: #757575;
 }
 
 .dropdown-menu .calendar td a {

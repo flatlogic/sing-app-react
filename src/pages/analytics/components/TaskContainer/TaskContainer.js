@@ -45,13 +45,13 @@ export default class TasksContainer extends Component {
         title={
           <div>
             <h4>Today&apos;s Tasks <span className="badge badge-pill badge-success fw-normal pull-right mt-xs">{tasks.length}</span></h4>
-            <p className="text-primary mb-0"><small>{totalCompleted} of {tasks.length} completed</small></p>
+            <p className="text-muted mb-0"><small>{totalCompleted} of {tasks.length} completed</small></p>
           </div>
         }
       >
         {tasks.map((item, index) =>
           <Task key={item.id} index={index} toggle={this.toggleTaskState} {...item} />)}
-        <Button color="transparent" className="bg-white w-100 text-center text-muted">
+        <Button color="transparent" className="bg-white w-100 text-center text-primary">
           See All <i className="la la-arrow-down" />
         </Button>
       </Widget>

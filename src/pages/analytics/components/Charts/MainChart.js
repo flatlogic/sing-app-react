@@ -107,7 +107,7 @@ export default class RevenueChart extends PureComponent {
       .css({
         borderWidth: 1,
         borderRadius: 0,
-        width: 75
+        width: 50,
       });
 
     this.$chartLegend.find('tbody td').css({
@@ -192,6 +192,7 @@ export default class RevenueChart extends PureComponent {
           font: {
             lineHeight: 11,
             weight: 400,
+            labelFontColor: 'red'
           },
         },
         points: {
@@ -262,7 +263,9 @@ export default class RevenueChart extends PureComponent {
               </h5>
             </Col>
             <Col xs={12} sm={7}>
-              <div ref={(r) => { this.$chartLegend = $(r); }} />
+              <div className="d-flex justify-content-end">
+                <div ref={(r) => { this.$chartLegend = $(r); }} />
+              </div>
             </Col>
           </Row>
         }

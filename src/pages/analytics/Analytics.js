@@ -18,7 +18,7 @@ class Analytics extends Component {
   render() {
     return (
       <div>
-        <h1 className="page-title">Analytics <small>Company performance</small></h1>
+        <h1 className="page-title mb-xlg mt-lg">Analytics <small>Company performance</small></h1>
         <div className={s.sidesWrapper}>
           <div className={s.analyticsSide}>
             <Row>
@@ -28,10 +28,10 @@ class Analytics extends Component {
                     className="mb-0 h-100"
                     close
                     bodyClass="mt-lg"
-                    title={<h4>Visits Today</h4>}
+                    title={<h5 style={{ color: "#757575" }}>Visits Today</h5>}
                   >
                     <div className="d-flex justify-content-between align-items-center mb">
-                      <h2>4,332</h2>
+                      <h2 style={{ fontSize: '2.1rem' }}>4,332</h2>
                       <i className="la la-arrow-right text-success rotate-315" />
                     </div>
                     <div className="d-flex flex-wrap justify-content-between">
@@ -57,7 +57,7 @@ class Analytics extends Component {
                     bodyClass="mt"
                     close
                     className="mb-0 h-100"
-                    title={<h4>Revenue Breakdown</h4>}
+                    title={<h5 style={{ color: "#757575" }}>Revenue Breakdown</h5>}
                   >
                     <RevenueChart />
                   </Widget>
@@ -69,7 +69,7 @@ class Analytics extends Component {
                     bodyClass="mt"
                     close
                     className="mb-0 h-100"
-                    title={<h4>App Perfomance</h4>}
+                    title={<h5 style={{ color: "#757575" }}>App Perfomance</h5>}
                   >
                     <p className="text-muted d-flex flex-wrap">
                       <small className="mr-lg d-flex align-items-center">
@@ -82,17 +82,17 @@ class Analytics extends Component {
                       </small>
                     </p>
                     <h6 className="fs-sm text-muted">SDK</h6>
-                    <div className="progress progress-xs mb-sm">
+                    <div className="progress" style={{ height: '3px', marginBottom: '5px' }} >
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '60%' }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress progress-xs" >
+                    <div className="progress" style={{ height: '3px' }} >
                       <div className="progress-bar bg-warning" role="progressbar" style={{ width: '30%' }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" />
                     </div>
                     <h6 className="mt fs-sm text-muted">Integration</h6>
-                    <div className="progress progress-xs mb-sm">
+                    <div className="progress" style={{ height: '3px', marginBottom: '5px' }} >
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '40%' }} aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress progress-xs">
+                    <div className="progress" style={{ height: '3px' }} >
                       <div className="progress-bar bg-warning" role="progressbar" style={{ width: '55%' }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" />
                     </div>
                   </Widget>
@@ -104,22 +104,22 @@ class Analytics extends Component {
                     bodyClass="mt-lg"
                     close
                     className="mb-0 h-100"
-                    title={<h4>Server Overview</h4>}
+                    title={<h5 style={{ color: "#757575" }}>Server Overview</h5>}
                   >
                     <div className="d-flex justify-content-between flex-wrap mb-sm">
-                      <p className="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
+                      <p className="width-150"><small>60% <span style={{ color: '#a3aeb7' }}>/</span> 37°С <span style={{ color: '#a3aeb7' }}>/</span> 3.3 Ghz</small></p>
                       <div className={s.sparklineWrapper}>
                         <LineChart color="#ffc247" />
                       </div>
                     </div>
                     <div className="d-flex justify-content-between flex-wrap mb-sm">
-                      <p className="width-150"><small>54% / 31°С / 3.3 Ghz</small></p>
+                      <p className="width-150"><small>54% <span style={{ color: '#a3aeb7' }}>/</span> 31°С <span style={{ color: '#a3aeb7' }}>/</span> 3.3 Ghz</small></p>
                       <div className={s.sparklineWrapper}>
                         <LineChart color="#9964e3" />
                       </div>
                     </div>
                     <div className="d-none justify-content-between flex-wrap">
-                      <p className="width-150"><small>57% / 21°С / 3.3 Ghz</small></p>
+                      <p className="width-150"><small>57% <span className="text-muted">/</span> 21°С <span className="text-muted">/</span> 3.3 Ghz</small></p>
                       <div className={s.sparklineWrapper}>
                         <LineChart color="#3abf94" />
                       </div>
@@ -154,7 +154,7 @@ class Analytics extends Component {
           <div className={s.analyticsSide}>
             <Row>
               <Col xs={12} md={6} xl={12} className={s.lastSideElement}>
-                <Widget className="mb-xlg pt-0" bodyClass="p-0 mt-0">
+                <Widget className="mb-xlg" bodyClass="pb-0 mt-0">
                   <Calendar white />
                 </Widget>
               </Col>

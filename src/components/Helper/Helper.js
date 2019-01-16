@@ -40,7 +40,7 @@ class Helper extends Component {
         >
           <div className="theme-switcher d-flex justify-content-center">
               <div className="form-check abc-radio abc-radio-warning form-check-inline">
-                <input className="form-check-input" onClick={() => this.changeLocation('https://demo.flatlogic.com/sing-app-react-light/')} type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
+                <input className="form-check-input" onClick={() => this.changeLocation('https://demo.flatlogic.com/sing-app-react-light')} type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
                 <label className="form-check-label" htmlFor="css-light"></label>
               </div>
               <div className="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">

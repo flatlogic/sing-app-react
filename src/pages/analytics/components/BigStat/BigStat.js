@@ -46,7 +46,7 @@ class BigStat extends Component {
                 <span className={`circle bg-${color} mr-sm`} style={{ fontSize: '6px' }} />
                   Statistic <span className="fw-normal ml-xs">{product}</span>
               </h4>
-              <UncontrolledButtonDropdown>
+              <UncontrolledButtonDropdown className={s.dropdown}>
                 <DropdownToggle
                   caret color="default"
                   className="dropdown-toggle-split mr-xs"
