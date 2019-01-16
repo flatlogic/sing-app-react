@@ -39,7 +39,7 @@ class BigStat extends Component {
       <div className="pb-xlg h-100">
         <Widget
           className="mb-0 h-100"
-          bodyClass="p-0 mt px-5"
+          bodyClass="p-0 mt"
           title={
             <div className="d-flex justify-content-between flex-wrap">
               <h4 className={cx('d-flex align-items-center pb-1', s.bigStatTitle)}>
@@ -68,9 +68,9 @@ class BigStat extends Component {
             </div>
           }
         >
-          <h4 className="fw-semi-bold mb-lg">{total}</h4>
+          <h4 className="fw-semi-bold mb-lg px-4">{total}</h4>
           <div className="d-flex border-top">
-            <div className="w-50 border-right py-3 pr-2">
+            <div className="w-50 border-right py-3 pr-2 pl-4">
               <div className="d-flex align-items-start">
                 <h6>+{registrations.value}</h6>
                 <i

@@ -18,8 +18,8 @@ export default class LineChart extends PureComponent {
   getData() { // eslint-disable-line
     const randomData = [];
 
-    for (let i = 0; i < 25; i += 1) {
-      randomData.push(Math.random().toFixed(1) * 10);
+    for (let i = 0; i < 150; i += 1) {
+      randomData.push((i/9+Math.sin(i/6)*8+Math.random() * 2).toFixed(2));
     }
 
     return randomData;
@@ -28,9 +28,11 @@ export default class LineChart extends PureComponent {
   initChart(data) {
     this.$chartContainer.sparkline(data, {
       type: 'line',
-      lineWidth: 2,
+      lineWidth: 1.67,
       lineColor: this.props.color,
       normalRangeMin: '10px',
+      width: '160px',
+      height: '20px',
       fillColor: false,
       spotColor: false,
       minSpotColor: false,
@@ -38,6 +40,7 @@ export default class LineChart extends PureComponent {
       highlightSpotColor: false,
       highlightLineColor: false,
       drawNormalOnTop: false,
+      tooltipClassname: 'line-chart-tooltip'
     });
   }
 

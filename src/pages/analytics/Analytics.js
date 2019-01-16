@@ -26,6 +26,7 @@ class Analytics extends Component {
                 <div className="pb-xlg h-100">
                   <Widget
                     className="mb-0 h-100"
+                    close
                     bodyClass="mt-lg"
                     title={<h4>Visits Today</h4>}
                   >
@@ -54,6 +55,7 @@ class Analytics extends Component {
                 <div className="pb-xlg h-100">
                   <Widget
                     bodyClass="mt"
+                    close
                     className="mb-0 h-100"
                     title={<h4>Revenue Breakdown</h4>}
                   >
@@ -65,6 +67,7 @@ class Analytics extends Component {
                 <div className="pb-xlg h-100">
                   <Widget
                     bodyClass="mt"
+                    close
                     className="mb-0 h-100"
                     title={<h4>App Perfomance</h4>}
                   >
@@ -79,17 +82,17 @@ class Analytics extends Component {
                       </small>
                     </p>
                     <h6 className="fs-sm text-muted">SDK</h6>
-                    <div className="progress mb-xs" style={{ height: '4px' }} >
+                    <div className="progress progress-xs mb-sm">
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '60%' }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress" style={{ height: '4px' }} >
+                    <div className="progress progress-xs" >
                       <div className="progress-bar bg-warning" role="progressbar" style={{ width: '30%' }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" />
                     </div>
                     <h6 className="mt fs-sm text-muted">Integration</h6>
-                    <div className="progress mb-xs" style={{ height: '4px' }} >
+                    <div className="progress progress-xs mb-sm">
                       <div className="progress-bar bg-success" role="progressbar" style={{ width: '40%' }} aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" />
                     </div>
-                    <div className="progress" style={{ height: '4px' }} >
+                    <div className="progress progress-xs">
                       <div className="progress-bar bg-warning" role="progressbar" style={{ width: '55%' }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" />
                     </div>
                   </Widget>
@@ -99,6 +102,7 @@ class Analytics extends Component {
                 <div className="pb-xlg h-100">
                   <Widget
                     bodyClass="mt-lg"
+                    close
                     className="mb-0 h-100"
                     title={<h4>Server Overview</h4>}
                   >

@@ -126,7 +126,7 @@ $breadcrumb-bg: transparent;
 $widget-bg: #fff;
 $widget-title-color: #444;
 $widget-shadow: 0 23px 20px -20px rgba(darken($body-bg, 35%),0.1), 0 0 15px rgba(darken($body-bg, 35%),0.06);
-$widget-shadow-designated: -1px 0 8px rgba(0,0,0,.4);
+$widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
 $widget-border-radius: $border-radius-lg;
 
 $input-btn-line-height: 1.5;
@@ -185,6 +185,7 @@ $breadcrumb-active-color: $gray-700;
 
 // Progress bars
 $progress-height: 0.65rem !default;
+$progress-box-shadow: none;
 
 // Alerts
 $alert-transparent: 0.25;
