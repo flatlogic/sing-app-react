@@ -81,7 +81,7 @@ $font-weight-base: $font-weight-thin !default;
 
 $addition-bg: $gray-100 !default;
 
-$body-bg: #f6f9fc !default;
+$body-bg: #f9fbfd !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 $logo-color: white;
@@ -150,6 +150,7 @@ $navbar-link-active-bg: $gray-300 !default;
 $navbar-link-disabled-color: $gray-400 !default;
 $navbar-link-disabled-bg: transparent !default;
 $navbar-bg: #fff !default;
+$navbar-shadow: 0 15px 20px -20px rgba(darken($body-bg, 35%),0.1), 0 0 15px rgba(darken($body-bg, 35%),0.06);
 
 // Dropdowns
 $dropdown-link-color: $text-color;

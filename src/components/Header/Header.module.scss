@@ -3,6 +3,7 @@
 .root {
   z-index: 100;
   background: $navbar-bg;
+  box-shadow: $navbar-shadow;
   padding: 7px 10px;
 
   @include media-breakpoint-down(sm) {
