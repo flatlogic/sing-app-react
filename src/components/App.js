@@ -8,6 +8,7 @@ import ErrorPage from '../pages/error';
 /* eslint-enable */
 
 import LayoutComponent from '../components/Layout';
+import DocumentationLayoutComponent from '../components/Layout/DocumentationLayout';
 import LoginComponent from '../pages/login';
 import '../styles/theme.scss';
 
@@ -38,6 +39,8 @@ class App extends React.PureComponent {
           <Route path="/" exact render={() => <Redirect to="/app/main" />} />
           <Route path="/app" exact render={() => <Redirect to="/app/main" />} />
           <PrivateRoute path="/app" component={LayoutComponent} />
+          <Route path="/documentation" exact render={() => <Redirect to="/documentation/getting-started/overview" />} />
+          <Route path="/documentation" component={DocumentationLayoutComponent} />
           <Route path="/login" exact component={LoginComponent} />
           <Route path="/error" exact component={ErrorPage} />
           <Redirect from="*" to="/app/main/analytics" />
