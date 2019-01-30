@@ -1,9 +1,7 @@
 import React from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
-import dashboard from '../../../images/documentation/sing-screenshot.jpg';
-import Widget from "../../../components/Widget";
+import Widget from "../../../components/Widget/Widget";
 
 const QuickStart = () => (
   <Row>

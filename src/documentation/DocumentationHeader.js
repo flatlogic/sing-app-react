@@ -1,34 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { withRouter } from 'react-router';
 import {
   Navbar,
   Nav,
-  Dropdown,
   NavItem,
   NavLink,
-  Badge,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   UncontrolledTooltip,
-  InputGroupAddon,
-  InputGroup,
-  Input,
-  Form,
-  FormGroup,
 } from 'reactstrap';
-import $ from 'jquery';
 
-import Notifications from '../Notifications';
-import { logoutUser } from '../../actions/user';
-import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
+import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../actions/navigation';
 
-import a5 from '../../images/people/a5.jpg';
-import a6 from '../../images/people/a6.jpg';
-
-import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import s from '../components/Header/Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import sd from './styles.module.scss';
 
 class Header extends React.Component {
   static propTypes = {
@@ -46,7 +32,6 @@ class Header extends React.Component {
 
     this.toggleMenu = this.toggleMenu.bind(this);
     this.switchSidebar = this.switchSidebar.bind(this);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
 
     this.state = {
       menuOpen: false,
@@ -68,20 +53,6 @@ class Header extends React.Component {
     }
   }
 
-  // static/non-static
-  toggleSidebar() {
-    this.props.dispatch(toggleSidebar());
-    if (this.props.sidebarStatic) {
-      localStorage.setItem('staticSidebar', 'false');
-      this.props.dispatch(changeActiveSidebarItem(null));
-    } else {
-      localStorage.setItem('staticSidebar', 'true');
-      const paths = this.props.location.pathname.split('/');
-      paths.pop();
-      this.props.dispatch(changeActiveSidebarItem(paths.join('/')));
-    }
-  }
-
   toggleMenu() {
     this.setState({
       menuOpen: !this.state.menuOpen,
@@ -89,31 +60,50 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className={`${s.root} d-print-none`}>
+      <Navbar className={classnames(s.root, sd.header, 'd-print-none')}>
         <Nav>
           <NavItem>
-            <NavLink className="d-md-down-none ml-3" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className="la la-bars" />
-            </NavLink>
-            <UncontrolledTooltip placement="bottom" target="toggleSidebar">
-              Turn on/off<br />sidebar<br />collapsing
-            </UncontrolledTooltip>
-            <NavLink className="fs-lg d-lg-none" onClick={this.switchSidebar}>
-              <span className="rounded rounded-lg bg-gray text-white d-md-none"><i className="la la-bars" /></span>
+            <NavLink className="fs-lg d-lg-none d-md-none" onClick={this.switchSidebar}>
+              <span className="rounded rounded-lg text-white d-md-none"><i className="la la-bars" /></span>
               <i className="la la-bars ml-3 d-sm-down-none" />
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className="d-sm-down-none text-white">
+              Documentation
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className="d-sm-down-none text-warning fw-semi-bold ml-5">
+              Sing App
             </NavLink>
           </NavItem>
         </Nav>
 
-        <NavLink className={`${s.navbarBrand} d-md-none`}>
+        <NavLink className={`${s.navbarBrand} d-md-none text-muted`}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
-          sing
+          documentation
           &nbsp;
           <i className="fa fa-circle text-warning mr-n-sm" />
-          <i className="fa fa-circle text-gray" />
+          <i className="fa fa-circle text-muted" />
         </NavLink>
+
+        <Nav className="ml-auto d-sm-down-none">
+          <NavItem className="d-flex">
+            <NavLink href="/" className="ml-1">
+              <button className="btn btn-outline-warning">
+                Live Preview
+              </button>
+            </NavLink>
+            <NavLink href="https://flatlogic.com/admin-dashboards/sing-app-react" target="_blank" className="mr-1">
+              <button className="btn btn-warning text-white">
+                Buy Now
+              </button>
+            </NavLink>
+          </NavItem>
+        </Nav>
       </Navbar>
     );
   }

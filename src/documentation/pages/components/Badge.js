@@ -27,7 +27,7 @@ class Badges extends Component {
             <BreadcrumbItem active>Badge</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col md={8}>
+        <Col lg={8}>
           <h2>Badge</h2>
           <p className="mb-lg">Documentation and examples for badges, our small count and labeling component.</p>
           <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>

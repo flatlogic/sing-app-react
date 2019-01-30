@@ -8,7 +8,7 @@ import ErrorPage from '../pages/error';
 /* eslint-enable */
 
 import LayoutComponent from '../components/Layout';
-import DocumentationLayoutComponent from '../components/Layout/DocumentationLayout';
+import DocumentationLayoutComponent from '../documentation/DocumentationLayout';
 import LoginComponent from '../pages/login';
 import '../styles/theme.scss';
 

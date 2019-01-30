@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Table } from 'reactstrap';
 
-import Widget from '../../../components/Widget';
+import Widget from '../../../components/Widget/Widget';
+import Scrollspy from "../ScrollSpyComponent";
 
 const Licences = () => (
   <Row>
@@ -13,8 +14,8 @@ const Licences = () => (
         <BreadcrumbItem active>Licences</BreadcrumbItem>
       </Breadcrumb>
     </Col>
-    <Col md={8}>
-      <Widget>
+    <Col lg={8}>
+      <Widget id="Licences">
         <h2>Licences</h2>
         <p className="lead">
           A license grants you a non-exclusive and non-transferable right to use
@@ -55,7 +56,7 @@ const Licences = () => (
           </tbody>
         </Table>
       </Widget>
-      <Widget>
+      <Widget id="Single">
         <h3>Single Application License</h3>
         <p className="lead">
           Your use of the item is restricted to a single application. You may use the item
@@ -65,7 +66,7 @@ const Licences = () => (
           charge users for using your application.
         </p>
       </Widget>
-      <Widget>
+      <Widget id="Extended">
         <h3>Extended Application License</h3>
         <p className="lead">
           Your use of the item is restricted to a single application.
@@ -80,6 +81,15 @@ const Licences = () => (
         In case if you need any clarifications considering licenses feel free
         to contact us via email: <a class="text-warning" href="mailto:support@flatlogic.com">support@flatlogic.com</a>.
       </p>
+    </Col>
+    <Col lg={4}>
+      <Scrollspy
+        title="LICENCES"
+        ids={[
+        'Licences',
+        'Single',
+        'Extended',
+      ]} />
     </Col>
   </Row>
 );

@@ -78,7 +78,7 @@ class Widget extends React.Component {
     const mainControls = !!(close || fullscreen || collapse || refresh || settings || settingsInverse);
     return (
       <section
-        className={[s.widget, className].join(' ')}
+        className={['widget', s.widget, className].join(' ')}
         ref={(widget) => { this.el = widget; }} {...attributes}
       >
         {

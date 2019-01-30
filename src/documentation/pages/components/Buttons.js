@@ -29,7 +29,7 @@ class Buttons extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col md={8}>
+        <Col lg={8}>
           <h2>Buttons</h2>
           <p className="mb-lg">Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
           <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>

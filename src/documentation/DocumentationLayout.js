@@ -1,30 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { Switch, Route, withRouter, Redirect } from 'react-router';
 import Hammer from 'rc-hammerjs';
 
-import Header from '../Header/DocumentationHeader';
-import Sidebar from '../Sidebar/DocumentationSidebar';
-import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
-import s from './Layout.module.scss';
+import Header from './DocumentationHeader';
+import Sidebar from './DocumentationSidebar';
+import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../actions/navigation';
+import s from '../components/Layout/Layout.module.scss';
+import sd from './styles.module.scss';
 
-import Overview from '../../pages/documentation/getting-started/Overview'
-import Licences from '../../pages/documentation/getting-started/Licences';
-import QuickStart from '../../pages/documentation/getting-started/QuickStart';
-import Alerts from '../../pages/documentation/components/Alerts';
-import Badge from '../../pages/documentation/components/Badge';
-import Buttons from '../../pages/documentation/components/Buttons';
-import Card from '../../pages/documentation/components/Card';
-import Carousel from '../../pages/documentation/components/Carousel';
-import Modal from '../../pages/documentation/components/Modal';
-import Nav from '../../pages/documentation/components/Nav';
-import Navbar from '../../pages/documentation/components/Navbar';
-import Popovers from '../../pages/documentation/components/Popovers';
-import Progress from '../../pages/documentation/components/Progress';
-import Tabs from '../../pages/documentation/components/Tabs';
-import Libs from '../../pages/documentation/Libs';
-
+import Overview from './pages/getting-started/Overview'
+import Licences from './pages/getting-started/Licences';
+import QuickStart from './pages/getting-started/QuickStart';
+import Alerts from './pages/components/Alerts';
+import Badge from './pages/components/Badge';
+import Buttons from './pages/components/Buttons';
+import Card from './pages/components/Card';
+import Carousel from './pages/components/Carousel';
+import Modal from './pages/components/Modal';
+import Nav from './pages/components/Nav';
+import Navbar from './pages/components/Navbar';
+import Popovers from './pages/components/Popovers';
+import Progress from './pages/components/Progress';
+import Tabs from './pages/components/Tabs';
+import Libs from './pages/Libs';
+import Pages from './pages/Pages';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -37,15 +39,18 @@ class Layout extends React.Component {
     sidebarStatic: false,
     sidebarOpened: false,
   };
+
   constructor(props) {
     super(props);
-
     this.handleSwipe = this.handleSwipe.bind(this);
 
     this.state = {
       chatOpen: false,
+      width: window.innerWidth,
     };
+
   }
+
 
   componentDidMount() {
     const staticSidebar = JSON.parse(localStorage.getItem('staticSidebar'));
@@ -57,6 +62,14 @@ class Layout extends React.Component {
         this.props.dispatch(changeActiveSidebarItem(null));
       }, 2500);
     }
+
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    this.setState({
+      width: window.innerWidth,
+    })
   }
 
   handleSwipe(e) {
@@ -78,15 +91,15 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
-          this.props.sidebarStatic ? s.sidebarStatic : '',
-          !this.props.sidebarOpened ? s.sidebarClose : '',
+          this.state.width > 768 && s.sidebarStatic,
+          this.state.width < 768 && !this.props.sidebarOpened ? s.sidebarClose : '',
         ].join(' ')}
       >
-        <Sidebar />
+        <Header />
+        <Sidebar width={this.state.width} />
         <div className={s.wrap}>
-          <Header/>
           <Hammer onSwipe={this.handleSwipe}>
-            <main className={s.content}>
+            <main className={classnames(s.content, sd.content)}>
               <Switch>
                 <Route path="/documentation/getting-started/overview" exact component={Overview} />
                 <Route path="/documentation/getting-started/licences" exact component={Licences} />
@@ -103,6 +116,7 @@ class Layout extends React.Component {
                 <Route path="/documentation/components/tabs-accordion" exact component={Tabs} />
                 <Route path="/documentation/components/progress" exact component={Progress} />
                 <Route path="/documentation/libs" exact component={Libs} />
+                <Route path="/documentation/pages" exact component={Pages} />
               </Switch>
             </main>
           </Hammer>

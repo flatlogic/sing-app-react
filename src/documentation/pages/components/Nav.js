@@ -29,7 +29,7 @@ class NavPage extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col md={8}>
+        <Col lg={8}>
           <h2>Nav</h2>
           <p className="mb-lg">Change the style of Nav component with modifiers and utilities. Mix and match as needed, or build your own.</p>
           <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>

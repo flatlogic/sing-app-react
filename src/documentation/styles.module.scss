@@ -1,0 +1,45 @@
+@import '../styles/app';
+
+.content {
+  margin-top: $navbar-height;
+  background-color: #FFFBF8 !important;
+
+  & :global(.widget) {
+    box-shadow: none !important;
+    background: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.header {
+  position: fixed !important;
+  width: 100vw;
+  background-color: #4A4A4A !important;
+}
+
+.sidebar {
+  padding-top: 70px;
+
+  & :global(a) {
+    font-weight: 400 !important;
+
+    &[aria-current="page"] {
+      color: theme-color('warning') !important;
+    }
+  }
+
+  & :global(.link-wrapper) {
+    > a > span {
+      display: none !important;
+    }
+
+    > a {
+      padding-left: 25px !important;
+    }
+  }
+}
+
+.activeScrollSpy > a {
+  color: theme-color('warning') !important;
+}

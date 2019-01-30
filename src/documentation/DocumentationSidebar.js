@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Progress, Alert } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
-import { dismissAlert } from '../../actions/alerts';
-import s from './Sidebar.module.scss';
-import LinksGroup from './LinksGroup/LinksGroup';
+import { dismissAlert } from '../actions/alerts';
+import s from '../components/Sidebar/Sidebar.module.scss';
+import sd from './styles.module.scss'
+import { LinksGroup } from './components';
 
-import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
-import isScreen from '../../core/screenHelper';
-import { logoutUser } from '../../actions/user';
+import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../actions/navigation';
+import isScreen from '../core/screenHelper';
+import { logoutUser } from '../actions/user';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -54,12 +55,10 @@ class Sidebar extends React.Component {
   render() {
     return (
       <nav
-        onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-        className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
+        // onMouseEnter={this.onMouseEnter}
+        // onMouseLeave={this.onMouseLeave}
+        className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
       >
-        <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> Documentation</a>
-        </header>
         <ul className={s.nav}>
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
@@ -80,6 +79,7 @@ class Sidebar extends React.Component {
               }
             ]}
           />
+          {this.props.width}
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
@@ -87,20 +87,6 @@ class Sidebar extends React.Component {
             isHeader
             link="/documentation/pages"
             index="pages"
-            childrenLinks={[
-              {
-                header: 'Auth', link: '/documentation/pages/auth',
-              },
-              {
-                header: 'Inbox', link: '/documentation/pages/inbox',
-              },
-              {
-                header: 'Analytics', link: '/documentation/pages/analytics',
-              },
-              {
-                header: 'E-commerce', link: '/documentation/pages/ecommerce',
-              }
-            ]}
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

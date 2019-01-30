@@ -37,7 +37,7 @@ class Modals extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col md={8}>
+        <Col lg={8}>
           <h2>Modal</h2>
           <p className="mb-lg">Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
           <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>

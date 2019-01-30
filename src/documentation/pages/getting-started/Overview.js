@@ -3,7 +3,8 @@ import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import dashboard from '../../../images/documentation/sing-screenshot.jpg';
-import Widget from "../../../components/Widget";
+import Widget from "../../../components/Widget/Widget";
+import Scrollspy from "../ScrollSpyComponent";
 
 const Overview = () => (
   <Row>
@@ -15,8 +16,8 @@ const Overview = () => (
         <BreadcrumbItem active>Overview</BreadcrumbItem>
       </Breadcrumb>
     </Col>
-    <Col md={8}>
-      <Widget>
+    <Col lg={8}>
+      <Widget id="Overview">
         <h2>Overview</h2>
         <p className="lead">
           Sing App React is an admin dashboard template built with React 16.5.2. Sing App goes beyond usual admin
@@ -27,7 +28,7 @@ const Overview = () => (
         <img className="img-responsive w-100 border" src={dashboard} alt="screenshot" />
         <Link to="/app">Live demo</Link>
       </Widget>
-      <Widget>
+      <Widget id="Features">
         <h3 className="">Features</h3>
         <ul className="mt">
           <li className="lead"><i className="la la-check" /> Hundreds of Pages</li>
@@ -58,6 +59,15 @@ const Overview = () => (
           </Widget>
         </Col>
       </Row>
+    </Col>
+    <Col lg={4}>
+      <Scrollspy
+        title="OVERVIEW"
+        ids={[
+          'Overview',
+          'Features'
+        ]}
+      />
     </Col>
   </Row>
 );

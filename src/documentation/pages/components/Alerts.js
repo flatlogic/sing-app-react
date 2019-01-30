@@ -49,7 +49,7 @@ class Overview extends Component {
             <BreadcrumbItem active>Alerts</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col md={8}>
+        <Col lg={8}>
           <h2>Alerts</h2>
           <p className="mb-lg">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
           <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>

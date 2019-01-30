@@ -10,9 +10,10 @@ import DateTime from 'react-datetime';
 import { Editor } from 'react-draft-wysiwyg';
 import MaskedInput from 'react-maskedinput'
 import Select2 from 'react-select2-wrapper';
+import Scrollspy from './ScrollSpyComponent';
 
-import Widget from '../../components/Widget';
-import s from '../forms/elements/Elements.module.scss';
+import Widget from '../../components/Widget/Widget';
+import s from '../../pages/forms/elements/Elements.module.scss';
 import Skycon from "../../components/Skycon/Skycon";
 
 export default class Libs extends Component {
@@ -36,8 +37,8 @@ export default class Libs extends Component {
             <BreadcrumbItem active>Libs</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col md={8}>
-          <Widget>
+        <Col lg={8}>
+          <Widget id="Animate.css">
             <h3>Animate.css</h3>
             <p>animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great
               for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p>
@@ -48,7 +49,7 @@ export default class Libs extends Component {
             <p>For more examples please refer to <a href="https://github.com/daneden/animate.css/"
                                                     target="_blank">Animate.css</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Bootstrap-slide">
             <h3>Bootstrap-slide & React-bootstrap-slider</h3>
             <p>A complete rewrite of the original bootstrap-slider by Stefan Petre.</p>
             <h4>Example</h4>
@@ -69,21 +70,21 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/brownieboy/react-bootstrap-slider" target="_blank">React Bootstrap Slider</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Easy-pie-chart">
             <h3>Easy-pie-chart</h3>
             <p>Lightweight plugin to render simple, animated and retina optimized pie charts.</p>
             <p className="lead">Want to see examples? <a href="/app/charts/easy-pie">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/rendro/easy-pie-chart"
                                                                       target="_blank">Easy Pie Charts</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Flot">
             <h3>Flot & React-flot</h3>
             <p>Flot is a Javascript plotting library for jQuery.</p>
             <p className="lead">Want to see examples? <a href="/app/charts/flot">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/flot/flot"
                                                                       target="_blank">Flor</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Font-Awesome">
             <h3>Font-awesome</h3>
             <p>The iconic SVG, font, and CSS toolkit</p>
             <h4>Examples</h4>
@@ -102,21 +103,21 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/FortAwesome/Font-Awesome"
                                                                       target="_blank">Font Awesome</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Formsy-React">
             <h3>Formsy-react</h3>
             <p>A form input builder and validator for React JS</p>
             <p className="lead">Want to see examples? <a href="/app/forms/wizard">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/formsy/formsy-react"
                                                                       target="_blank">Formcy React</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Fullcalendar">
             <h3>Fullcalendar</h3>
             <p>A JavaScript event calendar. Customizable and open source.</p>
             <p className="lead">Want to see examples? <a href="/app/extra/calendar">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/fullcalendar/fullcalendar" target="_blank">Fullcalendar</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Glyphicons-Halflings">
             <h3>Glyphicons-halflings</h3>
             <p>TIncludes over 250 glyphs in font format from the Glyphicon Halflings set</p>
             <h4>Examples</h4>
@@ -135,21 +136,21 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://getbootstrap.com/docs/3.3/components/" target="_blank">Glyphicons</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Govpredict-Morris">
             <h3>Govpredict-morris</h3>
             <p>Pretty time-series line graphs</p>
             <p className="lead">Want to see examples? <a href="/app/charts/morris">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/morrisjs/morris.js"
                                                                       target="_blank">Morris</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Jquery-Mapael">
             <h3>Jquery-mapael</h3>
             <p>Ease the build of pretty data visualizations on dynamic vector maps</p>
             <p className="lead">Want to see examples? <a href="/app/main/dashboard">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/neveldo/jQuery-Mapael"
                                                                       target="_blank">Mapael</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Sparkline">
             <h3>Jquery-sparkline & React-sparkline</h3>
             <p>This jQuery plugin makes it easy to generate a number of different types of sparklines directly in the
               browser, using online a line of two of HTML and Javascript.</p>
@@ -169,14 +170,14 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/borisyankov/react-sparklines" target="_blank">React Sparklines</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Jquery-UI">
             <h3>Jquery-ui</h3>
             <p>The official jQuery user interface library.</p>
             <p className="lead">Want to see examples? <a href="/app/grid">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/jquery/jquery-ui"
                                                                       target="_blank">Jquery UI</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Jquery-Animate-Number">
             <h3>Jquery.animate-number</h3>
             <p>jQuery numbers animation plugin, adds 'number' property and step function to jQuery's animate function
               properties.</p>
@@ -184,7 +185,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/aishek/jquery-animateNumber" target="_blank">Animate Number</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Jvectormap">
             <h3>Jvectormap</h3>
             <p>jVectorMap is a vector-based, cross-browser and cross-platform component for interactive
               geography-related data visualization on the web. It
@@ -194,7 +195,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/bjornd/jvectormap"
                                                                       target="_blank">Vector Map</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Line-Awesome">
             <h3>Line-awesome</h3>
             <p>A single file that replaces Font Awesome with modern line icons.</p>
             <h4>Examples</h4>
@@ -209,21 +210,21 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/FortAwesome/Font-Awesome"
                                                                       target="_blank">Font Awesome</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Messenger">
             <h3>Messenger</h3>
             <p>Growl-style alerts and messages</p>
             <p className="lead">Want to see examples? <a href="/app/ui/notifications">Click</a></p>
             <p>For more examples and documentation please refer to <a href="https://github.com/HubSpot/messenger"
                                                                       target="_blank">Messenger</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Metrojs">
             <h3>Metrojs</h3>
             <p>Metro JS is a JavaScript plugin for jQuery developed to easily enable Metro interfaces on the web.</p>
             <p className="lead">Want to see examples? <a href="/app/main/widgets">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="http://www.drewgreenwell.com/projects/metrojs" target="_blank">metrojs</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Rc-color-picker">
             <h3>Rc-color-picker</h3>
             <p>Color piker component for React</p>
             <ColorPiker/>
@@ -232,13 +233,13 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/react-component/color-picker" target="_blank">Color Picker</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Rc-Hammerjs">
             <h3>Rc-hammerjs</h3>
             <p>ReactJS / HammerJS integration. Support touch events in your React app.</p>
             <p>For more examples and documentation please refer to <a href="https://github.com/JedWatson/react-hammerjs"
                                                                       target="_blank">HammerJS</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Autosize-Textarea">
             <h3>react-autosize-textarea</h3>
             <p>A light replacement for built-in <code>&lt;textarea /></code> component which automatically adjusts its
               height to match the content.</p>
@@ -248,7 +249,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/buildo/react-autosize-textarea" target="_blank">Textarea</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Datetime">
             <h3>React-datetime</h3>
             <p>A date and time picker in the same React.js component</p>
             <div style={{width: '150px'}}>
@@ -259,28 +260,28 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/YouCanBookMe/react-datetime" target="_blank">DetaTime</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Draft-Wysiwyg">
             <h3>React-draft-wysiwyg</h3>
             <p>A Wysiwyg editor built using ReactJS and DraftJS libraries</p>
             <Editor/>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/jpuri/react-draft-wysiwyg" target="_blank">React Wysiwyg</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Dropzone">
             <h3>React-dropzone</h3>
             <p>Simple HTML5-compliant drag'n'drop zone for files built with React.js.</p>
             <p className="lead">Want to see examples? <a href="/app/forms/elements">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/react-dropzone/react-dropzone" target="_blank">React Dropzone</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Google-Maps">
             <h3>React-google-maps</h3>
             <p>React.js Google Maps integration component</p>
             <p className="lead">Want to see examples? <a href="/app/maps/google">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/tomchentw/react-google-maps" target="_blank">Google Maps</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Maskedinput">
             <h3>React-maskedinput</h3>
             <p>A React component for <code>&lt;input></code> masking, built on top of inputmask-core.</p>
             <div style={{width: '200px'}}>
@@ -291,7 +292,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/insin/react-maskedinput"
                                                                       target="_blank">Masked Input</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-MDE">
             <h3>React-mde</h3>
             <p>A simple yet powerful and extensible Markdown Editor editor for React. React-mde is built on top of
               Draft.js.</p>
@@ -299,7 +300,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/andrerpena/react-mde"
                                                                       target="_blank">ReactMDE</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Select2-Wrapper">
             <h3>React-select2-wrapper</h3>
             <p>React wrapper for Select2</p>
             <Select2
@@ -314,28 +315,28 @@ export default class Libs extends Component {
             />
             <p>For more examples and documentation please refer to <a href="https://github.com/rkit/react-select2-wrapper" target="_blank">Select2</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Shuffle">
             <h3>React-shuffle</h3>
             <p>Animated shuffling of child components on change.</p>
             <p className="lead">Want to see examples? <a href="/app/extra/gallery">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/FormidableLabs/react-shuffle" target="_blank">Shuffle</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Slick">
             <h3>React-slick</h3>
             <p>React carousel component</p>
             <p className="lead">Want to see examples? <a href="/app/ecommerce/product">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/FormidableLabs/react-shuffle" target="_blank">React Slick</a></p>
           </Widget>
-          <Widget>
+          <Widget id="React-Sortable">
             <h3>React-sortable</h3>
             <p>A components to turn any list into an animated, touch-friendly, sortable list.</p>
             <p className="lead">Want to see examples? <a href="/app/ui/list-groups">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/clauderic/react-sortable-hoc" target="_blank">React Sortable</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Reactstrap">
             <h3>Reactstrap</h3>
             <p>React wrapper for Bootstrap 4</p>
             <Button color="success">Bootstrap Button</Button>
@@ -344,20 +345,59 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/clauderic/react-sortable-hoc" target="_blank">Reactstrap</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Rickshaw">
             <h3>rickshaw</h3>
             <p>JavaScript toolkit for creating interactive real-time graphs</p>
             <p className="lead">Want to see examples? <a href="/app/charts/rickshaw">Click</a></p>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/shutterstock/rickshaw" target="_blank">Rickshaw</a></p>
           </Widget>
-          <Widget>
+          <Widget id="Skycons">
             <h3>Skycons</h3>
             <p>Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag.</p>
             <Skycon icon="CLEAR_DAY" color="#17a2b8" width="40" height="40" />
             <p>For more examples and documentation please refer to <a
               href="https://github.com/darkskyapp/skycons" target="_blank">Skycons</a></p>
           </Widget>
+        </Col>
+        <Col lg={4}>
+          <Scrollspy
+            title="LIBS"
+            ids={[
+            'Animate.css',
+            'Bootstrap-slide',
+            'Easy-pie-chart',
+            'Flot',
+            'Font-Awesome',
+            'Formsy-React',
+            'Fullcalendar',
+            'Glyphicons-Halflings',
+            'Govpredict-Morris',
+            'Jquery-Mapael',
+            'React-Sparkline',
+            'Jquery-UI',
+            'Jquery-Animate-Number',
+            'Jvectormap',
+            'Line-Awesome',
+            'Messenger',
+            'Metrojs',
+            'Rc-color-picker',
+            'Rc-hammerjs',
+            'React-Autosize-Textarea',
+            'React-Datetime',
+            'React-Draft-Wysiwyg',
+            'React-dropzone',
+            'React-Google-Maps',
+            'React-Maskedinput',
+            'React-MDE',
+            'React-Select2-Wrapper',
+            'React-Shuffle',
+            'React-Slick',
+            'React-Sortable',
+            'Reactstrap',
+            'Rickshaw',
+            'Skycons',
+          ]} />
         </Col>
       </Row>
     )
