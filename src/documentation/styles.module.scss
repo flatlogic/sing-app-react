@@ -1,8 +1,16 @@
 @import '../styles/app';
 
+.root {
+  :global(.container) {
+    @media (min-width: 1200px) {
+      max-width: 1440px;
+    }
+  }
+}
+
 .content {
-  margin-top: $navbar-height;
   background-color: #FFFBF8 !important;
+  padding: $navbar-height*2 0 0 0 !important;
 
   & :global(.widget) {
     box-shadow: none !important;
@@ -19,7 +27,14 @@
 }
 
 .sidebar {
-  padding-top: 70px;
+  border-right: 0;
+  background: transparent;
+  position: relative;
+  width: auto;
+
+  > ul {
+    padding-top: 0;
+  }
 
   & :global(a) {
     font-weight: 400 !important;

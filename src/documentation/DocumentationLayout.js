@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Col } from 'reactstrap';
 import classnames from 'classnames';
-import { Switch, Route, withRouter, Redirect } from 'react-router';
+import { Switch, Route, withRouter } from 'react-router';
 import Hammer from 'rc-hammerjs';
 
 import Header from './DocumentationHeader';
@@ -95,33 +96,36 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
+          sd.root,
           this.state.width > 768 && s.sidebarStatic,
           this.state.width < 768 && !this.props.sidebarOpened ? s.sidebarClose : '',
         ].join(' ')}
       >
         <Header />
-        <Sidebar width={this.state.width} />
-        <div className={s.wrap}>
+        <div className="container">
           <Hammer onSwipe={this.handleSwipe}>
-            <main className={classnames(s.content, sd.content)}>
-              <Switch>
-                <Route path="/documentation/getting-started/overview" exact component={Overview} />
-                <Route path="/documentation/getting-started/licences" exact component={Licences} />
-                <Route path="/documentation/getting-started/quick-start" exact component={QuickStart} />
-                <Route path="/documentation/components/alerts" exact component={Alerts} />
-                <Route path="/documentation/components/badge" exact component={Badge} />
-                <Route path="/documentation/components/buttons" exact component={Buttons} />
-                <Route path="/documentation/components/card" exact component={Card} />
-                <Route path="/documentation/components/carousel" exact component={Carousel} />
-                <Route path="/documentation/components/modal" exact component={Modal} />
-                <Route path="/documentation/components/nav" exact component={Nav} />
-                <Route path="/documentation/components/navbar" exact component={Navbar} />
-                <Route path="/documentation/components/popovers" exact component={Popovers} />
-                <Route path="/documentation/components/tabs-accordion" exact component={Tabs} />
-                <Route path="/documentation/components/progress" exact component={Progress} />
-                <Route path="/documentation/libs" exact component={Libs} />
-                <Route path="/documentation/pages" exact component={Pages} />
-              </Switch>
+            <main className={classnames(s.content, sd.content, 'row')}>
+              <Sidebar width={this.state.width} />
+              <Col md={10}>
+                <Switch>
+                  <Route path="/documentation/getting-started/overview" exact component={Overview} />
+                  <Route path="/documentation/getting-started/licences" exact component={Licences} />
+                  <Route path="/documentation/getting-started/quick-start" exact component={QuickStart} />
+                  <Route path="/documentation/components/alerts" exact component={Alerts} />
+                  <Route path="/documentation/components/badge" exact component={Badge} />
+                  <Route path="/documentation/components/buttons" exact component={Buttons} />
+                  <Route path="/documentation/components/card" exact component={Card} />
+                  <Route path="/documentation/components/carousel" exact component={Carousel} />
+                  <Route path="/documentation/components/modal" exact component={Modal} />
+                  <Route path="/documentation/components/nav" exact component={Nav} />
+                  <Route path="/documentation/components/navbar" exact component={Navbar} />
+                  <Route path="/documentation/components/popovers" exact component={Popovers} />
+                  <Route path="/documentation/components/tabs-accordion" exact component={Tabs} />
+                  <Route path="/documentation/components/progress" exact component={Progress} />
+                  <Route path="/documentation/libs" exact component={Libs} />
+                  <Route path="/documentation/pages" exact component={Pages} />
+                </Switch>
+              </Col>
             </main>
           </Hammer>
         </div>

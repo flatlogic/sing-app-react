@@ -19,7 +19,7 @@ export default class Pages extends Component {
             <BreadcrumbItem active>Pages</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col lg={8}>
+        <Col lg={9}>
           <Widget id="Auth">
             <h3>Auth</h3>
             <p>Auth is a built-in module for an admin template dashboard. It contains all actions and handlers for any token authorization for your application.</p>
@@ -89,7 +89,7 @@ export default class Pages extends Component {
             </p>
           </Widget>
         </Col>
-        <Col lg={4}>
+        <Col lg={3}>
           <Scrollspy
             title="PAGES"
             ids={[

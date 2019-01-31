@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Progress, Alert } from 'reactstrap';
+import { Col } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
-import { dismissAlert } from '../actions/alerts';
 import s from '../components/Sidebar/Sidebar.module.scss';
 import sd from './styles.module.scss'
 import { LinksGroup } from './components';
 
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../actions/navigation';
 import isScreen from '../core/screenHelper';
-import { logoutUser } from '../actions/user';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -54,103 +52,105 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <nav
-        className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
-      >
-        <ul className={s.nav}>
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Getting Started"
-            isHeader
-            link="/documentation/getting-started"
-            index="getting-started"
-            childrenLinks={[
-              {
-                header: 'Overview', link: '/documentation/getting-started/overview',
-              },
-              {
-                header: 'Licences', link: '/documentation/getting-started/licences',
-              },
-              {
-                header: 'Quick Start', link: '/documentation/getting-started/quick-start',
-              }
-            ]}
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Pages"
-            isHeader
-            link="/documentation/pages"
-            index="pages"
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Components"
-            isHeader
-            link="/documentation/components"
-            index="components"
-            childrenLinks={[
-              {
-                header: 'Alerts', link: '/documentation/components/alerts',
-              },
-              {
-                header: 'Badge', link: '/documentation/components/badge',
-              },
-              {
-                header: 'Buttons', link: '/documentation/components/buttons',
-              },
-              {
-                header: 'Card', link: '/documentation/components/card',
-              },
-              {
-                header: 'Carousel', link: '/documentation/components/carousel',
-              },
-              {
-                header: 'Modal', link: '/documentation/components/modal',
-              },
-              {
-                header: 'Nav', link: '/documentation/components/nav',
-              },
-              {
-                header: 'Navbar', link: '/documentation/components/navbar',
-              },
-              {
-                header: 'Popovers & Tooltips', link: '/documentation/components/popovers',
-              },
-              {
-                header: 'Progress', link: '/documentation/components/progress',
-              },
-              {
-                header: 'Tabs & Accordion', link: '/documentation/components/tabs-accordion',
-              },
-            ]}
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Libs"
-            isHeader
-            link="/documentation/libs"
-            index="libs"
-          />
-          {/*<LinksGroup*/}
-            {/*onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}*/}
-            {/*activeItem={this.props.activeItem}*/}
-            {/*header="FAQ"*/}
-            {/*isHeader*/}
-            {/*link="/documentation/faq"*/}
-            {/*index="faq"*/}
-            {/*childrenLinks={[*/}
-              {/*{*/}
-                {/*header: 'Analytics', link: '/app/main/analytics',*/}
-              {/*}*/}
-            {/*]}*/}
-          {/*/>*/}
-        </ul>
-      </nav >
+      <Col md={2}>
+        <nav
+          className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
+        >
+          <ul className={s.nav}>
+            <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Getting Started"
+              isHeader
+              link="/documentation/getting-started"
+              index="getting-started"
+              childrenLinks={[
+                {
+                  header: 'Overview', link: '/documentation/getting-started/overview',
+                },
+                {
+                  header: 'Licences', link: '/documentation/getting-started/licences',
+                },
+                {
+                  header: 'Quick Start', link: '/documentation/getting-started/quick-start',
+                }
+              ]}
+            />
+            <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Pages"
+              isHeader
+              link="/documentation/pages"
+              index="pages"
+            />
+            <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Components"
+              isHeader
+              link="/documentation/components"
+              index="components"
+              childrenLinks={[
+                {
+                  header: 'Alerts', link: '/documentation/components/alerts',
+                },
+                {
+                  header: 'Badge', link: '/documentation/components/badge',
+                },
+                {
+                  header: 'Buttons', link: '/documentation/components/buttons',
+                },
+                {
+                  header: 'Card', link: '/documentation/components/card',
+                },
+                {
+                  header: 'Carousel', link: '/documentation/components/carousel',
+                },
+                {
+                  header: 'Modal', link: '/documentation/components/modal',
+                },
+                {
+                  header: 'Nav', link: '/documentation/components/nav',
+                },
+                {
+                  header: 'Navbar', link: '/documentation/components/navbar',
+                },
+                {
+                  header: 'Popovers & Tooltips', link: '/documentation/components/popovers',
+                },
+                {
+                  header: 'Progress', link: '/documentation/components/progress',
+                },
+                {
+                  header: 'Tabs & Accordion', link: '/documentation/components/tabs-accordion',
+                },
+              ]}
+            />
+            <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Libs"
+              isHeader
+              link="/documentation/libs"
+              index="libs"
+            />
+            {/*<LinksGroup*/}
+              {/*onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}*/}
+              {/*activeItem={this.props.activeItem}*/}
+              {/*header="FAQ"*/}
+              {/*isHeader*/}
+              {/*link="/documentation/faq"*/}
+              {/*index="faq"*/}
+              {/*childrenLinks={[*/}
+                {/*{*/}
+                  {/*header: 'Analytics', link: '/app/main/analytics',*/}
+                {/*}*/}
+              {/*]}*/}
+            {/*/>*/}
+          </ul>
+        </nav >
+      </Col>
     );
   }
 }
