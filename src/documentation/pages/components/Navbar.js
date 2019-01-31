@@ -47,7 +47,7 @@ class NavbarPage extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col lg={8}>
+        <Col lg={9}>
           <h2>Navbar</h2>
           <p className="mb-lg">Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar.
             Includes support for branding, navigation, and more, including support for our collapse plugin.</p>

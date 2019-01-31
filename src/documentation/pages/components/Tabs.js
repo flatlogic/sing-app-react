@@ -38,7 +38,7 @@ class Buttons extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col lg={8}>
+        <Col lg={9}>
           <h2>Tabs</h2>
           <p className="mb-lg">Activates a tab element and content container.</p>
           <SyntaxHighlighter language='javascript' style={tomorrow}>

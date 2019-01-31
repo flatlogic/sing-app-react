@@ -13,7 +13,7 @@ const QuickStart = () => (
         <BreadcrumbItem active>Quick Start</BreadcrumbItem>
       </Breadcrumb>
     </Col>
-    <Col md={8}>
+    <Col md={9}>
       <Widget>
         <h5>Requirements:</h5>
         <ol>

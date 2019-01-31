@@ -25,7 +25,7 @@ class Buttons extends Component {
             <BreadcrumbItem active>Carousel</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col lg={8}>
+        <Col lg={9}>
           <h2>Carousel</h2>
           <p className="mb-lg">A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
           <SyntaxHighlighter language='javascript' style={tomorrow}>

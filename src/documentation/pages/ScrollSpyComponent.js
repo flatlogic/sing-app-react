@@ -13,14 +13,14 @@ export default (props) => (
       paddingLeft: '15px'
     }}
   >
-    <h6 className="fw-semi-bold text-muted">{props.title}</h6>
+    <h6 className="fw-semi-bold">{props.title}</h6>
     <Scrollspy
       items={props.ids}
       currentClassName={s.activeScrollSpy}
       offset={-170}
     >
       {props.ids.map((id) => (
-        <li key="id" className="mb-xs"><a href={`#${id}`} className="text-muted">{id.split('-').join(' ')}</a></li>
+        <li key="id" className="mb-xs"><a href={`#${id}`} className="text-gray">{id.split('-').join(' ')}</a></li>
       ))}
     </Scrollspy>
   </div>

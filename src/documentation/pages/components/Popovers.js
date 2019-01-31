@@ -58,7 +58,7 @@ class NavbarPage extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col lg={8}>
+        <Col lg={9}>
           <h2>Popovers</h2>
           <p className="mb-lg">The Popover is similar to Tooltip; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.</p>
           <SyntaxHighlighter language='javascript' style={tomorrow}>

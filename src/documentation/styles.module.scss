@@ -23,7 +23,9 @@
 .header {
   position: fixed !important;
   width: 100vw;
-  background-color: #4A4A4A !important;
+  background-color: #fff !important;
+  height: 80px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 
 .sidebar {
@@ -51,6 +53,7 @@
 
     > a {
       padding-left: 25px !important;
+      font-weight: 600 !important;
     }
   }
 }

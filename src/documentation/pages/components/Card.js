@@ -27,7 +27,7 @@ class Buttons extends Component {
           </Breadcrumb>
         </Col>
 
-        <Col lg={8}>
+        <Col lg={9}>
           <h2>Card</h2>
           <p className="mb-lg">Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.</p>
           <SyntaxHighlighter language='javascript' style={tomorrow}>

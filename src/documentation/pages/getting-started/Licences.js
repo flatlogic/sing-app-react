@@ -14,7 +14,7 @@ const Licences = () => (
         <BreadcrumbItem active>Licences</BreadcrumbItem>
       </Breadcrumb>
     </Col>
-    <Col lg={8}>
+    <Col lg={9}>
       <Widget id="Licences">
         <h2>Licences</h2>
         <p className="lead">
@@ -82,7 +82,7 @@ const Licences = () => (
         to contact us via email: <a class="text-warning" href="mailto:support@flatlogic.com">support@flatlogic.com</a>.
       </p>
     </Col>
-    <Col lg={4}>
+    <Col lg={3}>
       <Scrollspy
         title="LICENCES"
         ids={[

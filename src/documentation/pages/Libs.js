@@ -37,7 +37,7 @@ export default class Libs extends Component {
             <BreadcrumbItem active>Libs</BreadcrumbItem>
           </Breadcrumb>
         </Col>
-        <Col lg={8}>
+        <Col lg={9}>
           <Widget id="Animate.css">
             <h3>Animate.css</h3>
             <p>animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great
@@ -360,7 +360,7 @@ export default class Libs extends Component {
               href="https://github.com/darkskyapp/skycons" target="_blank">Skycons</a></p>
           </Widget>
         </Col>
-        <Col lg={4}>
+        <Col lg={3}>
           <Scrollspy
             title="LIBS"
             ids={[

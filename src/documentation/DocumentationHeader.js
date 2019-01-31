@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledTooltip,
 } from 'reactstrap';
 
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../actions/navigation';
@@ -70,13 +69,8 @@ class Header extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="d-sm-down-none text-white">
-                Documentation
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="d-sm-down-none text-warning fw-semi-bold ml-5">
-                Sing App
+              <NavLink className={classnames(s.logo, 'd-sm-down-none px-4')} href={'/documentation'}>
+                <span className={'fw-semi-bold'}>Sing App React</span> &nbsp;  Documentation
               </NavLink>
             </NavItem>
           </Nav>
@@ -94,12 +88,12 @@ class Header extends React.Component {
           <Nav className="ml-auto">
             <NavItem className="d-flex">
               <NavLink href="/" className="d-sm-down-none ml-1">
-                <button className="btn btn-outline-warning">
+                <button className="btn btn-default">
                   Live Preview
                 </button>
               </NavLink>
-              <NavLink href="https://flatlogic.com/admin-dashboards/sing-app-react" target="_blank">
-                <button className="btn btn-warning text-white">
+              <NavLink href="https://flatlogic.com/admin-dashboards/sing-app-react" target="_blank" className="mr-1">
+                <button className="btn btn-warning text-gray fw-semi-bold">
                   Buy Now
                 </button>
               </NavLink>

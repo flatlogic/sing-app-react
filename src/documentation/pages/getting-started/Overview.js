@@ -16,9 +16,9 @@ const Overview = () => (
         <BreadcrumbItem active>Overview</BreadcrumbItem>
       </Breadcrumb>
     </Col>
-    <Col lg={8}>
+    <Col lg={9}>
       <Widget id="Overview">
-        <h2>Overview</h2>
+        <h1>Overview</h1>
         <p className="lead">
           Sing App React is an admin dashboard template built with React 16.5.2. Sing App goes beyond usual admin
           templates and provides you entire intuitive programming framework. Server Side Rendering and Node.js backend
@@ -44,14 +44,14 @@ const Overview = () => (
         </ul>
       </Widget>
       <Row>
-        <Col md={4}>
+        <Col md={5}>
           <Widget title="Continue with">
             <Link to="/documentation/getting-started/licences">
               <h4>Licences <i className="la la-arrow-right"/></h4>
             </Link>
           </Widget>
         </Col>
-        <Col md={4}>
+        <Col md={5}>
           <Widget title="Or learn about">
             <Link to="/documentation/getting-started/quick-start">
               <h4>How to start project <i className="la la-arrow-right"/></h4>
@@ -60,7 +60,7 @@ const Overview = () => (
         </Col>
       </Row>
     </Col>
-    <Col lg={4}>
+    <Col lg={3}>
       <Scrollspy
         title="OVERVIEW"
         ids={[
