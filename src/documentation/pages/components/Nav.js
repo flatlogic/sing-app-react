@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class NavPage extends Component {
   state = {
@@ -32,7 +32,7 @@ class NavPage extends Component {
         <Col lg={8}>
           <h2>Nav</h2>
           <p className="mb-lg">Change the style of Nav component with modifiers and utilities. Mix and match as needed, or build your own.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Nav, NavItem, NavLink } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -75,7 +75,7 @@ class NavPage extends Component {
               </Nav>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Nav>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Nav>\n' +
               '  <NavItem>\n' +
               '    <NavLink href="#">Link</NavLink>\n' +
               '  </NavItem>\n' +
@@ -131,7 +131,7 @@ class NavPage extends Component {
               </Nav>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Nav vertical>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Nav vertical>\n' +
               '  <NavItem>\n' +
               '    <NavLink href="#">Link</NavLink>\n' +
               '  </NavItem>\n' +
@@ -187,7 +187,7 @@ class NavPage extends Component {
               </Nav>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Nav>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Nav>\n' +
               '  <NavItem pills>\n' +
               '    <NavLink href="#" active>Link</NavLink>\n' +
               '  </NavItem>\n' +

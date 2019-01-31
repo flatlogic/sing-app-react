@@ -55,8 +55,6 @@ class Sidebar extends React.Component {
   render() {
     return (
       <nav
-        // onMouseEnter={this.onMouseEnter}
-        // onMouseLeave={this.onMouseLeave}
         className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
       >
         <ul className={s.nav}>
@@ -79,7 +77,6 @@ class Sidebar extends React.Component {
               }
             ]}
           />
-          {this.props.width}
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
@@ -139,19 +136,19 @@ class Sidebar extends React.Component {
             link="/documentation/libs"
             index="libs"
           />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="FAQ"
-            isHeader
-            link="/documentation/faq"
-            index="faq"
-            childrenLinks={[
-              {
-                header: 'Analytics', link: '/app/main/analytics',
-              }
-            ]}
-          />
+          {/*<LinksGroup*/}
+            {/*onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}*/}
+            {/*activeItem={this.props.activeItem}*/}
+            {/*header="FAQ"*/}
+            {/*isHeader*/}
+            {/*link="/documentation/faq"*/}
+            {/*index="faq"*/}
+            {/*childrenLinks={[*/}
+              {/*{*/}
+                {/*header: 'Analytics', link: '/app/main/analytics',*/}
+              {/*}*/}
+            {/*]}*/}
+          {/*/>*/}
         </ul>
       </nav >
     );

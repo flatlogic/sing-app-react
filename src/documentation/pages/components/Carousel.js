@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, UncontrolledCarousel, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 import firstSlide from '../../../images/slides/1.jpg';
 import secondSlide from '../../../images/slides/2.jpg';
@@ -28,11 +28,11 @@ class Buttons extends Component {
         <Col lg={8}>
           <h2>Carousel</h2>
           <p className="mb-lg">A slideshow component for cycling through elements—images or slides of text—like a carousel.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { UncontrolledCarousel} from 'reactstrap';"}
           </SyntaxHighlighter>
           <UncontrolledCarousel className="mb-lg mt-lg" captionTex={null} items={carouselItems} />
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'const carouselItems = [\n' +
+          <SyntaxHighlighter language='javascript' style={tomorrow}>{'const carouselItems = [\n' +
           '  { src: firstSlide, caption: \'\' },\n' +
           '  { src: secondSlide, caption: \'\' },\n' +
           '  { src: thirdSlide, caption: \'\' },\n' +

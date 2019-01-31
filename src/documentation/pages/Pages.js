@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import ProductCard from '../../pages/products/components/ProductCard/ProductCard';
 import products from '../../pages/products/mock'
 
@@ -26,7 +26,7 @@ export default class Pages extends Component {
             <p>All logic is in <code>src/actions/user.js</code> and <code>src/reducers/user.js</code>. You need to change <code>loginUser</code> function to get this work with your backend. <code>Creds</code> variable contains user login and password entered in the login form. You should do request to your server to get token and save it in <code>localStorage</code>.</p>
             <p><b>Important note.</b> Credentials validation must be on the server side.</p>
             <p>Another important part of authentication is <code>PrivateRoute</code> component. That’s how it looks like.</p>
-            <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'const PrivateRoute = ({ component, ...rest }) => {\n' +
+            <SyntaxHighlighter language='javascript' style={tomorrow}>{'const PrivateRoute = ({ component, ...rest }) => {\n' +
             '  return (\n' +
             '    <Route {...rest} render={props => (\n' +
             '      localStorage.getItem(\'id_token\') ? (\n' +

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import {Sparklines, SparklinesBars} from "react-sparklines";
 import ColorPiker from 'rc-color-picker';
@@ -45,7 +45,7 @@ export default class Libs extends Component {
             <h4>Example</h4>
             <h1 className="animated infinite fadeIn slow mt mb">Fade in</h1>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<h1 class="animated infinite fadeIn slow">Fade in</h1>'}</SyntaxHighlighter>
+                               style={tomorrow}>{'<h1 class="animated infinite fadeIn slow">Fade in</h1>'}</SyntaxHighlighter>
             <p>For more examples please refer to <a href="https://github.com/daneden/animate.css/"
                                                     target="_blank">Animate.css</a></p>
           </Widget>
@@ -60,7 +60,7 @@ export default class Libs extends Component {
               min={0}
               orientation="horizontal"
             />
-            <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<ReactBootstrapSlider\n' +
+            <SyntaxHighlighter language='javascript' style={tomorrow}>{'<ReactBootstrapSlider\n' +
             '  value={4}\n' +
             '  step={2}\n' +
             '  max={10}\n' +
@@ -94,7 +94,7 @@ export default class Libs extends Component {
             <i className="fa fa-grav fa-2x mr"/>
             <i className="fa fa-telegram fa-2x"/>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<i className="fa fa-arrow-left fa-2x mr" />\n' +
+                               style={tomorrow}>{'<i className="fa fa-arrow-left fa-2x mr" />\n' +
             '<i className="fa fa-github fa-2x mr" />\n' +
             '<i className="fa fa-bath fa-2x mr" />\n' +
             '<i className="fa fa-grav fa-2x mr" />\n' +
@@ -127,7 +127,7 @@ export default class Libs extends Component {
             <i className="glyphicon glyphicon-refresh mr"/>
             <i className="glyphicon glyphicon-camera"/>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<i className="glyphicon glyphicon-asterisk mr" />\n' +
+                               style={tomorrow}>{'<i className="glyphicon glyphicon-asterisk mr" />\n' +
             '<i className="glyphicon glyphicon-heart mr" />\n' +
             '<i className="glyphicon glyphicon-home mr" />\n' +
             '<i className="glyphicon glyphicon-refresh mr" />\n' +
@@ -161,7 +161,7 @@ export default class Libs extends Component {
               <SparklinesBars style={{stroke: 'white', fill: '#999'}}/>
             </Sparklines>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<Sparklines data={[13, 14, 16, 15, 4, 14, 20]} style={{ width: \'70px\', height: \'30px\', marginRight: \'10px\' }}>\n' +
+                               style={tomorrow}>{'<Sparklines data={[13, 14, 16, 15, 4, 14, 20]} style={{ width: \'70px\', height: \'30px\', marginRight: \'10px\' }}>\n' +
             '  <SparklinesBars style={{ stroke: \'white\', fill: \'#618fb0\' }} />\n' +
             '</Sparklines>\n' +
             '<Sparklines data={[14, 12, 16, 11, 17, 19, 16]} style={{ width: \'70px\', height: \'30px\' }}>\n' +
@@ -203,7 +203,7 @@ export default class Libs extends Component {
             <i className="la la-github la-2x mr"/>
             <i className="la la-facebook la-2x mr"/>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<i className="la la-arrow-left la-2x mr" />\n' +
+                               style={tomorrow}>{'<i className="la la-arrow-left la-2x mr" />\n' +
             '<i className="la la-github la-2x mr" />\n' +
             '<i className="la la-facebook la-2x mr" />'}</SyntaxHighlighter>
             <p className="lead">Want to see examples? <a href="/app/ui/icons">Click</a></p>
@@ -229,7 +229,7 @@ export default class Libs extends Component {
             <p>Color piker component for React</p>
             <ColorPiker/>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<ColorPiker />'}</SyntaxHighlighter>
+                               style={tomorrow}>{'<ColorPiker />'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/react-component/color-picker" target="_blank">Color Picker</a></p>
           </Widget>
@@ -245,7 +245,7 @@ export default class Libs extends Component {
               height to match the content.</p>
             <TextareaAutosize placeholder="Try to type"/>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<TextareaAutosize placeholder="Try to type"/>'}</SyntaxHighlighter>
+                               style={tomorrow}>{'<TextareaAutosize placeholder="Try to type"/>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/buildo/react-autosize-textarea" target="_blank">Textarea</a></p>
           </Widget>
@@ -256,7 +256,7 @@ export default class Libs extends Component {
               <DateTime/>
             </div>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<DateTime />'}</SyntaxHighlighter>
+                               style={tomorrow}>{'<DateTime />'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/YouCanBookMe/react-datetime" target="_blank">DetaTime</a></p>
           </Widget>
@@ -288,7 +288,7 @@ export default class Libs extends Component {
               <MaskedInput mask="1111 1111 1111 1111" name="card" size="20" className="form-control"/>
             </div>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{'<MaskedInput mask="1111 1111 1111 1111" name="card" size="20" className="form-control"/>'}</SyntaxHighlighter>
+                               style={tomorrow}>{'<MaskedInput mask="1111 1111 1111 1111" name="card" size="20" className="form-control"/>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a href="https://github.com/insin/react-maskedinput"
                                                                       target="_blank">Masked Input</a></p>
           </Widget>
@@ -341,7 +341,7 @@ export default class Libs extends Component {
             <p>React wrapper for Bootstrap 4</p>
             <Button color="success">Bootstrap Button</Button>
             <SyntaxHighlighter language='javascript'
-                               style={base16AteliersulphurpoolLight}>{' <Button color="success">Bootstrap Button</Button>'}</SyntaxHighlighter>
+                               style={tomorrow}>{' <Button color="success">Bootstrap Button</Button>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/clauderic/react-sortable-hoc" target="_blank">Reactstrap</a></p>
           </Widget>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Collapse, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class Buttons extends Component {
   state = {
@@ -41,7 +41,7 @@ class Buttons extends Component {
         <Col lg={8}>
           <h2>Tabs</h2>
           <p className="mb-lg">Activates a tab element and content container.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { TabContent, TabPane } from 'reactstrap';"}
           </SyntaxHighlighter>
           <h4 className="mt-lg">Example</h4>
@@ -76,7 +76,7 @@ class Buttons extends Component {
             </TabPane>
           </TabContent>
           <h4>Code</h4>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<TabContent className="mb-xlg" activeTab={this.state.activeTabId}>\n' +
+          <SyntaxHighlighter language='javascript' style={tomorrow}>{'<TabContent className="mb-xlg" activeTab={this.state.activeTabId}>\n' +
           '  <TabPane tabId="1">\n' +
           '    First tab content\n' +
           '  </TabPane>\n' +
@@ -87,7 +87,7 @@ class Buttons extends Component {
           For more examples please refer to <a href="https://reactstrap.github.io/components/tabs/" target="_blank">Reactstrap Tabs</a>
           <h2 className="mt-lg">Accordion</h2>
           <p className="mb-lg">Activates a tab element and content container.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Collapse } from 'reactstrap';"}
           </SyntaxHighlighter>
           <h4 className="mt-lg">Example</h4>
@@ -159,7 +159,7 @@ class Buttons extends Component {
             </Collapse>
           </div>
           <h4>Code</h4>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<div className="card panel mb-xs">\n' +
+          <SyntaxHighlighter language='javascript' style={tomorrow}>{'<div className="card panel mb-xs">\n' +
           '  <div\n' +
           '    className="card-header panel-header bg-light" role="button"\n' +
           '    onClick={this.toggleAccordion}\n' +

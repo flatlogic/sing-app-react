@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, ModalFooter, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class Modals extends Component {
   state = {
@@ -40,7 +40,7 @@ class Modals extends Component {
         <Col lg={8}>
           <h2>Modal</h2>
           <p className="mb-lg">Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -70,7 +70,7 @@ class Modals extends Component {
               <Button onClick={() => this.toggle('demo')} size="lg" color="primary">Default modal</Button>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Modal isOpen={} toggle={}>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Modal isOpen={} toggle={}>\n' +
               '  <ModalHeader toggle={}>Modal title</ModalHeader>\n' +
               '  <ModalBody className="bg-white">\n' +
               '    ...\n' +
@@ -111,7 +111,7 @@ class Modals extends Component {
               <Button onClick={() => this.toggle('large')} size="lg" color="success">Large modal</Button>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Modal isOpen={} toggle={}>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Modal isOpen={} toggle={}>\n' +
               '  <ModalHeader toggle={}>Modal title</ModalHeader>\n' +
               '  <ModalBody className="bg-white">\n' +
               '    {longContent}\n' +

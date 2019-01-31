@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class Buttons extends Component {
   state = {
@@ -32,7 +32,7 @@ class Buttons extends Component {
         <Col lg={8}>
           <h2>Buttons</h2>
           <p className="mb-lg">Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Button } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -69,7 +69,7 @@ class Buttons extends Component {
               <Button color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Button color="default" className="width-100 mb-xs mr-xs">Default</Button>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Button color="default" className="width-100 mb-xs mr-xs">Default</Button>\n' +
               '<Button color="primary">Primary</Button>\n' +
               '<Button color="info">Info</Button>\n' +
               '<Button color="success">Success</Button>\n' +
@@ -113,7 +113,7 @@ class Buttons extends Component {
               <Button outline color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+              <SyntaxHighlighter language='javascript' style={tomorrow}>
                 {'<Button outline color="default">Default</Button>\n' +
                 '<Button outline color="primary">Primary</Button>\n' +
                 '<Button outline color="info">Info</Button>\n' +
@@ -162,7 +162,7 @@ class Buttons extends Component {
               </p>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+              <SyntaxHighlighter language='javascript' style={tomorrow}>
                 {'<Button color="default" size="lg">Large button</Button>\n' +
                 '<Button color="primary">Default button</Button>\n' +
                 '<Button color="info" size="sm">Small button</Button>\n' +

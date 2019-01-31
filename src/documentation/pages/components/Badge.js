@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Badge, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class Badges extends Component {
   state = {
@@ -30,7 +30,7 @@ class Badges extends Component {
         <Col lg={8}>
           <h2>Badge</h2>
           <p className="mb-lg">Documentation and examples for badges, our small count and labeling component.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Badge } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -67,7 +67,7 @@ class Badges extends Component {
               <Button color="primary">Notifications <Badge color="danger">4</Badge></Button>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<h1>Example heading <Badge color="primary">Primary</Badge></h1>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<h1>Example heading <Badge color="primary">Primary</Badge></h1>\n' +
               '<h2>Example heading <Badge color="info">Info</Badge></h2>\n' +
               '<h3>Example heading <Badge color="warning">Warning</Badge></h3>\n' +
               '<h4>Example heading <Badge color="success">Success</Badge></h4>\n' +
@@ -124,7 +124,7 @@ class Badges extends Component {
               </p>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+              <SyntaxHighlighter language='javascript' style={tomorrow}>
                 {'<Badge className="mr-xs" color="primary" pill>Primary</Badge> \n' +
                 '<Badge className="mr-xs" href="#" color="primary">Primary</Badge>'}
               </SyntaxHighlighter>

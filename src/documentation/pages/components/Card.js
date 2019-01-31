@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button, Card, CardBody, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class Buttons extends Component {
   state = {
@@ -30,7 +30,7 @@ class Buttons extends Component {
         <Col lg={8}>
           <h2>Card</h2>
           <p className="mb-lg">Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Card, CardBody } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -81,7 +81,7 @@ class Buttons extends Component {
               </Card>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Card className="border-0">\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Card className="border-0">\n' +
               '  <CardBody>\n' +
               '    <button className="btn-link fw-semi-bold text-success">Avg Rating</button>\n' +
               '    <button className="btn-link fw-semi-bold text-muted ml-sm">All Time</button>\n' +

@@ -70,6 +70,10 @@ class Layout extends React.Component {
     this.setState({
       width: window.innerWidth,
     })
+
+    if(window.innerWidth < 768 && this.props.sidebarOpened) {
+      this.props.dispatch(closeSidebar());
+    }
   }
 
   handleSwipe(e) {

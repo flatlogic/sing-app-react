@@ -20,7 +20,7 @@ import {
 } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class NavbarPage extends Component {
   state = {
@@ -51,7 +51,7 @@ class NavbarPage extends Component {
           <h2>Navbar</h2>
           <p className="mb-lg">Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar.
             Includes support for branding, navigation, and more, including support for our collapse plugin.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import {\n" +
             "  Nav,\n" +
             "  NavItem,\n" +
@@ -123,7 +123,7 @@ class NavbarPage extends Component {
               </Navbar>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Navbar color="light" light expand="md">\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Navbar color="light" light expand="md">\n' +
               '  <NavbarBrand href="/">Sing</NavbarBrand>\n' +
               '  <NavbarToggler />\n' +
               '  <Collapse navbar>\n' +

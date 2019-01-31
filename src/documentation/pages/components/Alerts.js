@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Alert, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 const alerts = [{
   id: 'al-1',
@@ -52,7 +52,7 @@ class Overview extends Component {
         <Col lg={8}>
           <h2>Alerts</h2>
           <p className="mb-lg">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Alert } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -88,7 +88,7 @@ class Overview extends Component {
               </Alert>)}
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Alert\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Alert\n' +
               '  isOpen={true}\n' +
               '  toggle={this.closeAlert}\n' +
               '  color="danger"\n' +
@@ -131,7 +131,7 @@ class Overview extends Component {
               </Alert>)}
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Alert\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Alert\n' +
               '  className="alert-transparent"\n' +
               '  isOpen={true}\n' +
               '  toggle={this.closeAlert}\n' +

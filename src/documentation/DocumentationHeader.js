@@ -90,9 +90,9 @@ class Header extends React.Component {
           <i className="fa fa-circle text-muted" />
         </NavLink>
 
-        <Nav className="ml-auto d-sm-down-none">
+        <Nav className="ml-auto">
           <NavItem className="d-flex">
-            <NavLink href="/" className="ml-1">
+            <NavLink href="/" className="d-sm-down-none ml-1">
               <button className="btn btn-outline-warning">
                 Live Preview
               </button>

@@ -17,7 +17,7 @@ import {
 } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import classnames from 'classnames';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
 class NavbarPage extends Component {
   state = {
@@ -61,7 +61,7 @@ class NavbarPage extends Component {
         <Col lg={8}>
           <h2>Popovers</h2>
           <p className="mb-lg">The Popover is similar to Tooltip; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.</p>
-          <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>
+          <SyntaxHighlighter language='javascript' style={tomorrow}>
             {"import { Popover, PopoverHeader, PopoverBody, UncontrolledTooltip } from 'reactstrap';"}
           </SyntaxHighlighter>
           <Nav tabs className="bg-transparent mt">
@@ -118,7 +118,7 @@ class NavbarPage extends Component {
               </Popover>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Button id="popover" type="button" color="info" onClick={this.toggle}>\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Button id="popover" type="button" color="info" onClick={this.toggle}>\n' +
               '  Top\n' +
               '</Button>\n\n' +
               '<Popover placement="top" isOpen={this.state.isPopoverActive} target="popover" toggle={this.toggle}>\n' +
@@ -178,7 +178,7 @@ class NavbarPage extends Component {
               </UncontrolledTooltip>
             </TabPane>
             <TabPane tabId="2">
-              <SyntaxHighlighter language='javascript' style={base16AteliersulphurpoolLight}>{'<Button className="mr" id="tooltip" type="button" color="info">\n' +
+              <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Button className="mr" id="tooltip" type="button" color="info">\n' +
               '  Left\n' +
               '</Button>\n\n' +
               '<UncontrolledTooltip placement="left" target="tooltip">\n' +
