@@ -57,7 +57,7 @@ export default class RevenueChart extends PureComponent {
         <Col xs={12} md={6} lg={7} className="text-center">
           <div ref={(r) => { this.$chartContainer = $(r); }} style={{ height: '100px' }} />
         </Col>
-        <Col xs={12} md={5} lg={4}>
+        <Col xs={12} md={5} lg={4} className="display-flex flex-column justify-content-center">
           <div ref={(r) => { this.$chartLegend = $(r); }} />
         </Col>
       </Row>

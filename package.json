@@ -99,6 +99,7 @@
     "react-sparklines": "^1.7.0",
     "react-syntax-highlighter": "^10.1.2",
     "react-table": "6.7.6",
+    "react-transition-group": "^2.5.2",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",

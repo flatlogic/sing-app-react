@@ -1,5 +1,5 @@
 export default {
-  2012: {
+  2014: {
     areas: {
       AF: {
         value: 19880820,
@@ -1161,7 +1161,7 @@ export default {
       },
     },
   },
-  2013: {
+  2015: {
     areas: {
       AF: {
         value: 52466800,
@@ -2323,7 +2323,7 @@ export default {
       },
     },
   },
-  2014: {
+  2016: {
     areas: {
       AF: {
         value: 44310251,
@@ -3485,7 +3485,7 @@ export default {
       },
     },
   },
-  2015: {
+  2017: {
     areas: {
       AF: {
         value: 59288907,
@@ -4647,7 +4647,7 @@ export default {
       },
     },
   },
-  2016: {
+  2018: {
     areas: {
       AF: {
         value: 9658627,
@@ -5809,7 +5809,7 @@ export default {
       },
     },
   },
-  2017: {
+  2019: {
     areas: {
       AF: {
         value: 30428397,

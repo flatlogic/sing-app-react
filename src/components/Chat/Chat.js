@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, ListGroupItem, InputGroup, InputGroupAddon, Input, InputGroupText } from 'reactstrap';
 import $ from 'jquery';
 
 import * as a1 from '../../images/people/a1.jpg';
@@ -150,10 +150,14 @@ class Chat extends React.Component {
         <header className={s.chatHeader}>
           <h4 className={s.chatTitle}>Contacts</h4>
           <div className="input-group input-group-transparent">
-            <input className="form-control fs-mini" type="text" placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts} />
-            <span className="input-group-addon">
-              <i className="fa fa-search" />
-            </span>
+            <InputGroup size="sm">
+                <Input placeholder="Search..." value={this.state.searchValue} onChange={this.handleChangeContacts}  />
+                <InputGroupAddon addonType="append">
+                    <InputGroupText>
+                      <i className="fa fa-search"/>
+                    </InputGroupText>
+                </InputGroupAddon>
+            </InputGroup>
           </div>
         </header>
         <div className={[s.chatPanel, s.chatContacts, this.state.chatMessageOpened ? s.chatMessageOpen : ''].join(' ')}>

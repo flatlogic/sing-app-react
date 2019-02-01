@@ -80,7 +80,7 @@ class FlotCharts extends React.Component {
                 January, 2018
               </p>
             </Col>
-            <Col xs={3}>
+            <Col xs={4}>
               <h5>
                 <small>Best</small>
               </h5>
@@ -93,7 +93,7 @@ class FlotCharts extends React.Component {
         >
           <div className="chart-stats">
             <p className="text-muted fs-mini mt-xs">
-              <i className="fa fa-map-marker fa-5x pull-left" />
+              <i className="fi flaticon-placeholder fa-5x pull-left mr-3" />
               <span className="fw-semi-bold text-gray-dark">Jess:</span> Seems like statically it&apos;s getting impossible
                 to achieve any sort of
                 results in nearest future. The only thing we can hope for is pressing one of these two buttons:
@@ -123,7 +123,7 @@ class FlotCharts extends React.Component {
           className=" widget-chart-stats-simple" title={<Row>
             <Col xs={12}>
               <h6 className="mb-0">
-                <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2017</Badge>
+                <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2019</Badge>
               </h6>
               <span className="text-muted fs-mini">monthly report will be available in <button className="btn-link">6 hours</button></span>
             </Col>

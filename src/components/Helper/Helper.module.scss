@@ -32,7 +32,10 @@
     z-index: 200;
     border-radius: 50% 0 0 50%;
     padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
-    box-shadow: $widget-shadow-designated !important;
+    &,
+    &:not(.active) {
+      box-shadow: $widget-shadow-designated !important;
+    }
 
     i {
       animation-duration: 6500ms;

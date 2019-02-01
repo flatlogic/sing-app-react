@@ -4,7 +4,7 @@
   overflow-x: hidden;
 
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-    font-size: $font-size-base;
+    font-size: 13px;
   }
 
   a {
@@ -53,6 +53,7 @@
     height: 28px;
     line-height: 28px;
     text-align: center;
+    opacity: .7;
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       top: 12px;
@@ -88,13 +89,19 @@
 
 a.headerLinkActive {
   color: $sidebar-item-active-color;
+  font-weight: $font-weight-normal;
+
+  &:hover {
+    color: $sidebar-item-active-color;
+  }
 
   .icon {
     border-radius: 50%;
     background-color: $sidebar-item-active-color;
+    opacity: 1;
 
     i {
-      color: $white;
+      color: $sidebar-bg-color;
     }
   }
 }

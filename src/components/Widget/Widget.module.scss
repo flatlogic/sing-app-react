@@ -13,7 +13,7 @@
   margin-bottom: $grid-gutter-width;
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
-  border-radius: $border-radius-sm;
+  border-radius: $widget-border-radius;
   box-shadow: $widget-shadow;
 
   > header {

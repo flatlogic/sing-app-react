@@ -191,21 +191,6 @@ legend {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: 300;
-}
-
 .small,
 small {
   font-size: 85%;
@@ -214,7 +199,14 @@ small {
 ///////// Buttons //////////
 
 .dropdown-toggle::after {
-  margin-top: 3px;
+  font-family: LineAwesome;
+  content: "\F110";
+  border: none;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  opacity: .8;
+  font-size: 85%;
 }
 
 .btn-link {
@@ -261,6 +253,7 @@ small {
 
 .btn {
   font-family: $font-family-sans-serif;
+  background-image: linear-gradient(to right, #ffffff26, #fff0);
 
   .glyphicon {
     top: 3px;
@@ -1049,4 +1042,29 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border: 1px solid $gray-light;
   font-size: $font-size-mini;
   background-color: $white;
+}
+
+.card {
+  box-shadow: $widget-shadow;
+}
+
+.calendar {
+  border-radius: $widget-border-radius;
+}
+
+.line-chart-tooltip {
+  position: absolute;
+  box-sizing: content-box;
+  z-index: 1000;
+  border-radius: $tooltip-border-radius;
+  padding: 5px 10px;
+  background: rgba($tooltip-bg, .8);
+  color: $tooltip-color;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+
+  & * {
+    font-size: $tooltip-font-size !important;
+  }
 }

@@ -52,6 +52,10 @@
 
   &::-webkit-scrollbar-thumb {
     border: none;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
     background-color: $color;
   }
 }

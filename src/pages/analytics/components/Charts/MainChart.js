@@ -252,6 +252,7 @@ export default class RevenueChart extends PureComponent {
     return (
       <Widget
         bodyClass="mt"
+        collapse close
         className="mb-xlg"
         title={
           <Row>

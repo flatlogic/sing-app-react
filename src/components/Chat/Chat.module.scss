@@ -7,6 +7,7 @@
   bottom: 0;
   right: -250px;
   width: 250px;
+  border-left: $sidebar-border;
   background-color: $chat-sidebar-bg-color;
   color: #aaa;
   transition: right 0.3s ease-in-out;
@@ -70,6 +71,7 @@
 
     .messageSender {
       text-overflow: ellipsis;
+      color: $sidebar-color;
     }
 
     .messagePreview {
@@ -108,7 +110,7 @@
     padding-top: 100px;
     right: -100%;
     transition: right 0.2s ease-in-out;
-    background-color: $gray-light;
+    background-color: $sidebar-bg-color;
 
     :global .list-group {
       position: absolute;
@@ -194,7 +196,6 @@
         display: block;
         margin-top: -7px;
         padding: 17px 16px;
-        background-color: $white;
       }
     }
   }
