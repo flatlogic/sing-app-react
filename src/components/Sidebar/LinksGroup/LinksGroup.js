@@ -60,13 +60,14 @@ class LinksGroup extends Component {
     if (!this.props.childrenLinks) {
       if (this.props.isHeader) {
         return (
-          <li className={[s.headerLink, this.props.className].join(' ')}>
+          <li className={classnames('link-wrapper', s.headerLink, this.props.className)}>
             <NavLink
               to={this.props.link}
               activeClassName={s.headerLinkActive}
               exact
+              target={this.props.target}
             >
-              <span className={s.icon}>
+              <span className={classnames('icon', s.icon)}>
                 <i className={`fi ${this.props.iconName}`} />
               </span>
               {this.props.header} {this.props.label && <sup className={s.headerLabel}>{this.props.label}</sup>}
@@ -101,14 +102,13 @@ class LinksGroup extends Component {
         children={(params) => {
           const { match } = params;
           return (
-            <li className={classnames({ [s.headerLink]: this.props.isHeader }, this.props.className)}>
+            <li className={classnames('link-wrapper', { [s.headerLink]: this.props.isHeader }, this.props.className)}>
               <a className={classnames({ [s.headerLinkActive]: match }, { [s.collapsed]: isOpen }, "d-flex")}
                 style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 26 + 10 * (this.props.deep - 1)}px` }}
                 onClick={() => this.togglePanelCollapse(this.props.link)}
-                href="#"
               >
                 {this.props.isHeader ?
-                  <span className={s.icon}>
+                  <span className={classnames('icon', s.icon)}>
                     <i className={`fi ${this.props.iconName}`} />
                   </span> : null
                 }
