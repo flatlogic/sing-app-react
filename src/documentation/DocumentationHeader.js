@@ -69,7 +69,7 @@ class Header extends React.Component {
     return (
       <Navbar className={classnames(s.root, sd.header, 'd-print-none')}>
         <div className="container">
-          <div className="row w-100">
+          <div className="row w-100 d-flex align-items-center">
             <Nav>
               <NavItem>
                 <NavLink className="fs-lg d-lg-none d-md-none" onClick={this.switchSidebar}>
@@ -111,12 +111,12 @@ class Header extends React.Component {
                 <NavLink href="https://www.linkedin.com/company/flatlogic/" className="mr-1">
                   <img src={linkedinLogo} alt="linkedin" />
                 </NavLink>
-                <NavLink href="https://github.com/flatlogic" className="mr-1">
+                <NavLink href="https://github.com/flatlogic" className="mr-3">
                   <img src={githubLogo} alt="github" />
                 </NavLink>
               </NavItem>
               <NavItem className="d-flex align-items-center">
-                <NavItem>
+                <NavItem className="d-md-down-none">
                   <Link to="/" className="btn btn-default">
                     Live Preview
                   </Link>
