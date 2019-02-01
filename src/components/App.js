@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router';
-import { BrouserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 /* eslint-disable */
 import ErrorPage from '../pages/error';
@@ -34,7 +34,7 @@ const PrivateRoute = ({ component, ...rest }) => {
 class App extends React.PureComponent {
   render() {
     return (
-      <BrouserRouter>
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact render={() => <Redirect to="/app/main" />} />
           <Route path="/app" exact render={() => <Redirect to="/app/main" />} />
@@ -45,7 +45,7 @@ class App extends React.PureComponent {
           <Route path="/error" exact component={ErrorPage} />
           <Redirect from="*" to="/app/main/analytics" />
         </Switch>
-      </BrouserRouter>
+      </BrowserRouter>
     );
   }
 }
