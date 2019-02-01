@@ -98,7 +98,6 @@ class Sidebar extends React.Component {
             isHeader
             iconName="flaticon-database-1"
             index="packages"
-            label="new"
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
@@ -135,6 +134,17 @@ class Sidebar extends React.Component {
                 header: 'Product Page', link: '/app/ecommerce/product',
               },
             ]}
+          />
+          <LinksGroup
+            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+            activeItem={this.props.activeItem}
+            header="Documentation"
+            link="/documentation"
+            isHeader
+            iconName="flaticon-file"
+            index="documentation"
+            label="new"
+            target="_blank"
           />
           <h5 className={[s.navTitle, s.groupTitle].join(' ')}>TEMPLATE</h5>
           <LinksGroup

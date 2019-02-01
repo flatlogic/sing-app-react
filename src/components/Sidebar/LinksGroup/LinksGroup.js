@@ -65,6 +65,7 @@ class LinksGroup extends Component {
               to={this.props.link}
               activeClassName={s.headerLinkActive}
               exact
+              target={this.props.target}
             >
               <span className={classnames('icon', s.icon)}>
                 <i className={`fi ${this.props.iconName}`} />
@@ -105,7 +106,6 @@ class LinksGroup extends Component {
               <a className={classnames({ [s.headerLinkActive]: match }, { [s.collapsed]: isOpen }, "d-flex")}
                 style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 26 + 10 * (this.props.deep - 1)}px` }}
                 onClick={() => this.togglePanelCollapse(this.props.link)}
-                href="#"
               >
                 {this.props.isHeader ?
                   <span className={classnames('icon', s.icon)}>

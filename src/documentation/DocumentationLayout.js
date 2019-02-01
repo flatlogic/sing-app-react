@@ -102,30 +102,34 @@ class Layout extends React.Component {
         ].join(' ')}
       >
         <Header />
-        <div className="container">
+        <div>
           <Hammer onSwipe={this.handleSwipe}>
-            <main className={classnames(s.content, sd.content, 'row')}>
-              <Sidebar width={this.state.width} />
-              <Col md={10}>
-                <Switch>
-                  <Route path="/documentation/getting-started/overview" exact component={Overview} />
-                  <Route path="/documentation/getting-started/licences" exact component={Licences} />
-                  <Route path="/documentation/getting-started/quick-start" exact component={QuickStart} />
-                  <Route path="/documentation/components/alerts" exact component={Alerts} />
-                  <Route path="/documentation/components/badge" exact component={Badge} />
-                  <Route path="/documentation/components/buttons" exact component={Buttons} />
-                  <Route path="/documentation/components/card" exact component={Card} />
-                  <Route path="/documentation/components/carousel" exact component={Carousel} />
-                  <Route path="/documentation/components/modal" exact component={Modal} />
-                  <Route path="/documentation/components/nav" exact component={Nav} />
-                  <Route path="/documentation/components/navbar" exact component={Navbar} />
-                  <Route path="/documentation/components/popovers" exact component={Popovers} />
-                  <Route path="/documentation/components/tabs-accordion" exact component={Tabs} />
-                  <Route path="/documentation/components/progress" exact component={Progress} />
-                  <Route path="/documentation/libs" exact component={Libs} />
-                  <Route path="/documentation/pages" exact component={Pages} />
-                </Switch>
-              </Col>
+            <main className={classnames(s.content, sd.content)}>
+              <div className="container">
+                <div className="row">
+                  <Sidebar width={this.state.width} />
+                  <Col xl={10} md={9}>
+                    <Switch>
+                      <Route path="/documentation/getting-started/overview" exact component={Overview} />
+                      <Route path="/documentation/getting-started/licences" exact component={Licences} />
+                      <Route path="/documentation/getting-started/quick-start" exact component={QuickStart} />
+                      <Route path="/documentation/components/alerts" exact component={Alerts} />
+                      <Route path="/documentation/components/badge" exact component={Badge} />
+                      <Route path="/documentation/components/buttons" exact component={Buttons} />
+                      <Route path="/documentation/components/card" exact component={Card} />
+                      <Route path="/documentation/components/carousel" exact component={Carousel} />
+                      <Route path="/documentation/components/modal" exact component={Modal} />
+                      <Route path="/documentation/components/nav" exact component={Nav} />
+                      <Route path="/documentation/components/navbar" exact component={Navbar} />
+                      <Route path="/documentation/components/popovers" exact component={Popovers} />
+                      <Route path="/documentation/components/tabs-accordion" exact component={Tabs} />
+                      <Route path="/documentation/components/progress" exact component={Progress} />
+                      <Route path="/documentation/libs" exact component={Libs} />
+                      <Route path="/documentation/pages" exact component={Pages} />
+                    </Switch>
+                  </Col>
+                </div>
+              </div>
             </main>
           </Hammer>
         </div>

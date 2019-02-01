@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { Col } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
@@ -52,11 +53,11 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <Col md={2}>
+      <Col xl={2} md={3}>
         <nav
           className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
         >
-          <ul className={s.nav}>
+          <ul className={classnames(s.nav, sd.nav)}>
             <LinksGroup
               onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
               activeItem={this.props.activeItem}
@@ -149,6 +150,11 @@ class Sidebar extends React.Component {
               {/*]}*/}
             {/*/>*/}
           </ul>
+
+          <a className={classnames('d-md-down-none', sd.company)} href="http://flatlogic.com" target="_blank">
+            <img src="https://cdn.dribbble.com/users/883507/avatars/small/7ca04141e335237d393ab41008adb46d.png?1509465697"/>
+            Proudly built and maintained by <br/> Flatlogic
+          </a>
         </nav >
       </Col>
     );

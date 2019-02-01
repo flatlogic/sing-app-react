@@ -85,6 +85,7 @@ const Licences = () => (
     <Col lg={3}>
       <Scrollspy
         title="LICENCES"
+        prefix="getting-started/licences"
         ids={[
         'Licences',
         'Single',

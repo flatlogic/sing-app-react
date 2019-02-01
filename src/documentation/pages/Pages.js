@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import ProductCard from '../../pages/products/components/ProductCard/ProductCard';
 import products from '../../pages/products/mock'
+import { Link } from 'react-router-dom';
 
 import Widget from '../../components/Widget/Widget';
 import Scrollspy from "./ScrollSpyComponent";
@@ -54,7 +55,7 @@ export default class Pages extends Component {
               <li>Message attachments</li>
               <li>Reply functionality</li>
             </ul>
-            <a className="btn btn-primary" href="/app/inbox">Demo</a>
+            <Link className="btn btn-primary" to="/app/inbox">Demo</Link>
           </Widget>
           <Widget id="Dashboards">
             <h3>Dashboards</h3>
@@ -64,8 +65,8 @@ export default class Pages extends Component {
             <p>Visits dashboard page can be used for real-time displaying users & traffic data. It is a big vector map made with mapael in the center of this dashboard, that can display any region of the world with any data you want on hover action.</p>
             <p>All of this component can be used on any page of the application.</p>
             <p>
-              <a className="btn btn-primary mr-sm" href="/app/inbox">Analytics</a>
-              <a className="btn btn-primary" href="/app/inbox">Visits</a>
+              <Link className="btn btn-primary mr-sm" to="/app/inbox">Analytics</Link>
+              <Link className="btn btn-primary" to="/app/inbox">Visits</Link>
             </p>
           </Widget>
           <Widget id="E-Commerce">
@@ -84,14 +85,15 @@ export default class Pages extends Component {
               </Col>
             </Row>
             <p>
-              <a className="btn btn-primary mr-sm" href="/app/ecommerce/products">List</a>
-              <a className="btn btn-primary" href="/app/ecommerce/product">Details</a>
+              <Link className="btn btn-primary mr-sm" to="/app/ecommerce/products">List</Link>
+              <Link className="btn btn-primary" to="/app/ecommerce/product">Details</Link>
             </p>
           </Widget>
         </Col>
         <Col lg={3}>
           <Scrollspy
             title="PAGES"
+            prefix="pages"
             ids={[
             'Auth',
             'Inbox',

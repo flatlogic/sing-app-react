@@ -91,6 +91,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-router-hash-link": "^1.2.1",
     "react-scrollspy": "^3.3.5",
     "react-select2-wrapper": "^1.0.4-beta6",
     "react-shuffle": "2.1.0",

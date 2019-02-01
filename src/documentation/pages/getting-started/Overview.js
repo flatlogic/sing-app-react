@@ -63,6 +63,7 @@ const Overview = () => (
     <Col lg={3}>
       <Scrollspy
         title="OVERVIEW"
+        prefix="getting-started/overview"
         ids={[
           'Overview',
           'Features'
