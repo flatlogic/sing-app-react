@@ -538,10 +538,15 @@ $i: 0;
 }
 
 .fade-enter {
+  min-height: 100% !important;
   opacity: 0;
   z-index: 1;
   -webkit-transform: translate3d(0, 4%, 0) scale(.93);
   transform: translate3d(0, 4%, 0) scale(.93);
+}
+
+.fade-exit {
+  display: none;
 }
 
 .fade-enter.fade-enter-active {

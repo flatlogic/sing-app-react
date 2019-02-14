@@ -78,9 +78,9 @@ const Profile = () => (
                 </div>
               </div>
               <p>
-                <button className="btn-link badge badge-warning rounded-0"> UI/UX </button>
-                <button className="btn-link badge badge-danger rounded-0 ml-2"> Web Design </button>
-                <button className="btn-link badge badge-default rounded-0 ml-2"> Mobile Apps </button>
+                <span className="badge badge-warning rounded-0"> UI/UX </span>
+                <span className="badge badge-danger rounded-0 ml-2"> Web Design </span>
+                <span className="badge badge-default rounded-0 ml-2"> Mobile Apps </span>
               </p>
               <p className="lead mt-xlg">
                 My name is Adam Johns and here is my new Sing user profile page.
