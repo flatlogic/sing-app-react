@@ -7,10 +7,10 @@ import { HashRouter } from 'react-router-dom';
 import ErrorPage from '../pages/error';
 /* eslint-enable */
 
+import '../styles/theme.scss';
 import LayoutComponent from '../components/Layout';
 import DocumentationLayoutComponent from '../documentation/DocumentationLayout';
 import LoginComponent from '../pages/login';
-import '../styles/theme.scss';
 
 const PrivateRoute = ({ component, ...rest }) => {
   return ( // eslint-disable-line
@@ -52,6 +52,6 @@ class App extends React.PureComponent {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
-})
+});
 
 export default connect(mapStateToProps)(App);
