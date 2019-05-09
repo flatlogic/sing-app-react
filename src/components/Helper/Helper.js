@@ -9,6 +9,8 @@ import { changeTheme } from '../../actions/layout';
 import Widget from '../Widget';
 
 import s from './Helper.module.scss'; // eslint-disable-line
+import themeDark from '../../images/theme-dark.png';
+import themeLight from '../../images/theme-light.png';
 
 class Helper extends Component {
   static propTypes = {
@@ -17,7 +19,7 @@ class Helper extends Component {
   };
 
   static defaultProps = {
-    dashboardTheme: DashboardThemes.LIGHT
+    dashboardTheme: DashboardThemes.DARK
   };
 
   state = { isOpened: false };
@@ -47,20 +49,24 @@ class Helper extends Component {
                   <i className="la la-cog" />
                 </div>
               </Button>
-              <h6>Configuration</h6>
+              <h6>Theme</h6>
             </header>
           }
         >
-          <div className="theme-switcher d-flex justify-content-center">
-              <div className="form-check abc-radio abc-radio-warning form-check-inline">
-                <input className="form-check-input" checked={this.props.dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
-                <label className="form-check-label" htmlFor="css-light" />
-              </div>
-              <div className="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
-                <input className="form-check-input" checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark" readOnly/>
-                <label className="form-check-label" htmlFor="css-dark" />
-              </div>
+          <div className={s.themeSwitcher}>
+            <div className={cx(s.theme, "mb-3")}>
+              <input checked={this.props.dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
+              <label htmlFor="css-light">
+                <img className={s.themeImage} src={themeLight} alt="light theme"/>
+              </label>
             </div>
+            <div className={s.theme}>
+              <input checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
+              <label htmlFor="css-dark">
+                <img className={s.themeImage} src={themeDark} alt="dark theme"/>/>
+              </label>
+            </div>
+          </div>
           <div className="mt-4">
             <Button
               href="https://flatlogic.com/admin-dashboards/sing-app-react"

@@ -8,7 +8,7 @@ export const DashboardThemes = {
 Object.freeze(DashboardThemes);
 
 const defaultState = {
-  dashboardTheme: DashboardThemes.LIGHT
+  dashboardTheme: DashboardThemes.DARK
 };
 
 export default function layoutReducer(state = defaultState, action) {

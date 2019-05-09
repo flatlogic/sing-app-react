@@ -71,7 +71,7 @@ class Layout extends React.Component {
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
-    dashboardTheme: DashboardThemes.LIGHT
+    dashboardTheme: DashboardThemes.DARK
   };
   constructor(props) {
     super(props);
