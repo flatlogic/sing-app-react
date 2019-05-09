@@ -63,7 +63,7 @@ class Helper extends Component {
             <div className={s.theme}>
               <input checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
               <label htmlFor="css-dark">
-                <img className={s.themeImage} src={themeDark} alt="dark theme"/>/>
+                <img className={s.themeImage} src={themeDark} alt="dark theme"/>
               </label>
             </div>
           </div>
