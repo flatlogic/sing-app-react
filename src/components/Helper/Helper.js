@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { DashboardThemes } from '../../reducers/layout';
+import { changeTheme } from '../../actions/layout';
 
 import Widget from '../Widget';
 
 import s from './Helper.module.scss'; // eslint-disable-line
 
 class Helper extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    dashboardTheme: PropTypes.string
+  };
+
+  static defaultProps = {
+    dashboardTheme: DashboardThemes.LIGHT
+  };
+
   state = { isOpened: false };
 
   toggle = () => {
     this.setState(prevState => ({
       isOpened: !prevState.isOpened,
     }));
-  }
+  };
 
-  changeLocation = (link) => {
-    window.open(link);
-  }
+  changeTheme = (state) => {
+    this.props.dispatch(changeTheme(state));
+  };
 
   render() {
     const { isOpened } = this.state;
@@ -40,12 +53,12 @@ class Helper extends Component {
         >
           <div className="theme-switcher d-flex justify-content-center">
               <div className="form-check abc-radio abc-radio-warning form-check-inline">
-                <input className="form-check-input" checked type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
-                <label className="form-check-label" htmlFor="css-light"></label>
+                <input className="form-check-input" checked={this.props.dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="css-light" aria-label="Sing Light" readOnly/>
+                <label className="form-check-label" htmlFor="css-light" />
               </div>
               <div className="form-check abc-radio abc-radio-secondary mr-0 form-check-inline">
-                <input className="form-check-input" onClick={() => this.changeLocation('https://demo.flatlogic.com/sing-app-react-light')} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark" readOnly/>
-                <label className="form-check-label" htmlFor="css-dark"></label>
+                <input className="form-check-input" checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="css-light" aria-label="Single Dark" readOnly/>
+                <label className="form-check-label" htmlFor="css-dark" />
               </div>
             </div>
           <div className="mt-4">
@@ -110,4 +123,10 @@ class Helper extends Component {
   }
 }
 
-export default Helper;
+function mapStateToProps(store) {
+  return {
+    dashboardTheme: store.layout.dashboardTheme,
+  };
+}
+
+export default connect(mapStateToProps)(Helper);

@@ -58,17 +58,20 @@ import Chat from '../Chat';
 import Helper from '../Helper';
 import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
+import { DashboardThemes } from '../../reducers/layout';
 
 class Layout extends React.Component {
   static propTypes = {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
+    dashboardTheme: PropTypes.string,
     dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
+    dashboardTheme: DashboardThemes.LIGHT
   };
   constructor(props) {
     super(props);
@@ -145,6 +148,8 @@ class Layout extends React.Component {
           this.props.sidebarStatic ? s.sidebarStatic : '',
           this.state.chatOpen ? s.chatOpen : '',
           !this.props.sidebarOpened ? s.sidebarClose : '',
+          'sing-dashboard',
+          'dashboard-' + this.props.dashboardTheme,
         ].join(' ')}
       >
         <Sidebar />
@@ -232,6 +237,7 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
+    dashboardTheme: store.layout.dashboardTheme,
   };
 }
 
