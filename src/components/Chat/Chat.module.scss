@@ -8,7 +8,7 @@
   right: -250px;
   width: 250px;
   border-left: $sidebar-border;
-  background-color: $chat-sidebar-bg-color;
+  background-color: var(--chat-sidebar-bg-color);
   color: #aaa;
   transition: right 0.3s ease-in-out;
 
@@ -27,7 +27,7 @@
     top: 0;
     z-index: 3;
     padding: 10px;
-    background-color: $chat-sidebar-bg-color;
+    background-color: var(--chat-sidebar-bg-color);
 
     input {
       padding: 0.6rem 0.85rem;
@@ -71,7 +71,7 @@
 
     .messageSender {
       text-overflow: ellipsis;
-      color: $sidebar-color;
+      color: var(--sidebar-color);
     }
 
     .messagePreview {
@@ -110,7 +110,7 @@
     padding-top: 100px;
     right: -100%;
     transition: right 0.2s ease-in-out;
-    background-color: $sidebar-bg-color;
+    background-color: var(--sidebar-bg-color);
 
     :global .list-group {
       position: absolute;
@@ -215,7 +215,7 @@
     }
 
     :global .list-group-item:hover {
-      background: $gray-100;
+      background: var(--sidebar-action-bg);
     }
 
     :global .badge {
