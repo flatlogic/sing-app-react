@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Breadcrumb, BreadcrumbItem, UncontrolledCarousel, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+import { Row, Col, Breadcrumb, BreadcrumbItem, UncontrolledCarousel } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 
@@ -40,7 +40,8 @@ class Buttons extends Component {
           '\n' +
           '<UncontrolledCarousel captionTex={null} items={carouselItems} />'}
           </SyntaxHighlighter>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/carousel/" target="_blank">Reactstrap Carousel</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/carousel/" target="_blank"
+                                               rel="noopener noreferrer">Reactstrap Carousel</a>
         </Col>
       </Row>
     );

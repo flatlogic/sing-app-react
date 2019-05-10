@@ -186,8 +186,8 @@ class NavbarPage extends Component {
               '</UncontrolledTooltip>'}</SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/popovers/" target="_blank">Reactstrap Popovers</a>
-          &nbsp;and <a href="https://reactstrap.github.io/components/tooltips/" target="_blank">Reactstrap Tooltips</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/popovers/" target="_blank" rel="noopener noreferrer">Reactstrap Popovers</a>
+          &nbsp;and <a href="https://reactstrap.github.io/components/tooltips/" target="_blank" rel="noopener noreferrer">Reactstrap Tooltips</a>
         </Col>
       </Row>
     );

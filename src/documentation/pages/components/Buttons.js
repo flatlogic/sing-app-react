@@ -170,7 +170,7 @@ class Buttons extends Component {
               </SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/buttons/" target="_blank">Reactstrap Buttons</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/buttons/" target="_blank" rel="noopener noreferrer">Reactstrap Buttons</a>
         </Col>
       </Row>
     );

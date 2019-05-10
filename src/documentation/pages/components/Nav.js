@@ -203,7 +203,7 @@ class NavPage extends Component {
               '</Nav>'}</SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/card/" target="_blank">Reactstrap Card</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/card/" target="_blank" rel="noopener noreferrer">Reactstrap Card</a>
         </Col>
       </Row>
     );

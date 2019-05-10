@@ -97,7 +97,7 @@ class Buttons extends Component {
               '</Progress>'}</SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/progress/" target="_blank">Reactstrap Progress</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/progress/" target="_blank" rel="noopener noreferrer">Reactstrap Progress</a>
         </Col>
       </Row>
     );

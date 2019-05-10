@@ -84,7 +84,8 @@ class Buttons extends Component {
           '    Second tab content\n' +
           '  </TabPane>\n' +
           '</TabContent>'}</SyntaxHighlighter>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/tabs/" target="_blank">Reactstrap Tabs</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/tabs/"
+                                               rel="noopener noreferrer" target="_blank">Reactstrap Tabs</a>
           <h2 className="mt-lg">Accordion</h2>
           <p className="mb-lg">Activates a tab element and content container.</p>
           <SyntaxHighlighter language='javascript' style={tomorrow}>
@@ -167,7 +168,7 @@ class Buttons extends Component {
           '    <div className="mb-0">\n' +
           '      <a className="accordion-toggle" role="button">\n' +
           '        Normal Text Insertion\n' +
-          '        <i className={`fa fa-angle-down ${this.state.isAccordionOpened ? \'expanded\' : \'\'}`} />\n' +
+          '        <i className={["fa fa-angle-down", this.state.isAccordionOpened ? "expanded" : ""].join(" ")} />\n' +
           '      </a>\n' +
           '    </div>\n' +
           '  </div>\n' +
@@ -176,7 +177,7 @@ class Buttons extends Component {
           '    </p>\n' +
           '  </Collapse>\n' +
           '</div>'}</SyntaxHighlighter>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/collapse/" target="_blank">Reactstrap Collapse</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/collapse/" target="_blank" rel="noopener noreferrer">Reactstrap Collapse</a>
         </Col>
       </Row>
     );

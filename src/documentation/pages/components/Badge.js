@@ -130,7 +130,7 @@ class Badges extends Component {
               </SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/badge/" target="_blank">Reactstrap Badge</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/badge/" target="_blank" rel="noopener noreferrer">Reactstrap Badge</a>
         </Col>
       </Row>
     );

@@ -133,7 +133,7 @@ class Modals extends Component {
               '</Modal>'}</SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/modal/" target="_blank">Reactstrap Modal</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/modal/" target="_blank" rel="noopener noreferrer">Reactstrap Modal</a>
         </Col>
         <Modal isOpen={this.state.demo} toggle={() => this.toggle('demo')}>
           <ModalHeader toggle={() => this.toggle('demo')}>Modal title</ModalHeader>

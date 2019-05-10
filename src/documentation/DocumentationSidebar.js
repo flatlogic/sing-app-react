@@ -151,8 +151,8 @@ class Sidebar extends React.Component {
             {/*/>*/}
           </ul>
 
-          <a className={classnames('d-md-down-none', sd.company)} href="http://flatlogic.com/" target="_blank">
-            <img src="https://cdn.dribbble.com/users/883507/avatars/small/7ca04141e335237d393ab41008adb46d.png?1509465697"/>
+          <a className={classnames('d-md-down-none', sd.company)} href="http://flatlogic.com/" target="_blank" rel="noopener noreferrer">
+            <img alt="company logo" src="https://cdn.dribbble.com/users/883507/avatars/small/7ca04141e335237d393ab41008adb46d.png?1509465697"/>
             Proudly built and maintained by <br/> Flatlogic
           </a>
         </nav >

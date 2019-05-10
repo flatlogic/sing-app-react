@@ -141,7 +141,7 @@ class Overview extends Component {
               '</Alert>'}</SyntaxHighlighter>
             </TabPane>
           </TabContent>
-          For more examples please refer to <a href="https://reactstrap.github.io/components/alerts/" target="_blank">Reactstrap Alerts</a>
+          For more examples please refer to <a href="https://reactstrap.github.io/components/alerts/" target="_blank" rel="noopener noreferrer">Reactstrap Alerts</a>
         </Col>
       </Row>
     );

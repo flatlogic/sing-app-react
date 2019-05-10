@@ -213,7 +213,8 @@ class Widgets extends React.Component {
                   Dashboard
                   Template</h3>
                 <ul className="tags text-white pull-right">
-                  <li><button className="btn-link">features</button></li>
+                  {/* eslint-disable-next-line */}
+                  <li><a href="#">features</a></li>
                 </ul>
               </div>
               <div className="post-user mt-negative-lg">
@@ -272,7 +273,9 @@ class Widgets extends React.Component {
                 <div className="widget-top-overflow text-white">
                   <img src={img17} alt="..." />
                   <ul className="tags text-white pull-right">
+                    {/* eslint-disable-next-line */}
                     <li><a href="#">design</a></li>
+                    {/* eslint-disable-next-line */}
                     <li><a href="#">white</a></li>
                   </ul>
                 </div>
@@ -317,6 +320,7 @@ class Widgets extends React.Component {
                     Dashboard
                     Template</h3>
                   <ul className="tags text-white pull-right">
+                    {/* eslint-disable-next-line */}
                     <li><a href="#">design</a></li>
                   </ul>
                 </div>
