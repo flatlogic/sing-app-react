@@ -1603,7 +1603,7 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-animate.css@^3.7.0:
+animate.css@3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
 
@@ -1837,7 +1837,7 @@ autosize@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/autosize/-/autosize-4.0.2.tgz#073cfd07c8bf45da4b9fd153437f5bafbba1e4c9"
 
-awesome-bootstrap-checkbox@^1.0.1:
+awesome-bootstrap-checkbox@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/awesome-bootstrap-checkbox/-/awesome-bootstrap-checkbox-1.0.1.tgz#dab10146b6001129ab0a0ec1e54bb77c6c30457a"
 
