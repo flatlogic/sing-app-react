@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container, Alert, FormGroup, Input, Label } from 'reactstrap';
+import { Container, Alert, FormGroup, Input, Label, Button } from 'reactstrap';
+import cx from "classnames";
 import Widget from '../../components/Widget';
 import s from './Login.module.scss';
 import { loginUser, receiveToken } from '../../actions/user';
 import jwt from "jsonwebtoken";
+import microsoft from '../../images/microsoft.png';
 
 class Login extends React.Component {
     static propTypes = {
@@ -104,6 +106,18 @@ class Login extends React.Component {
                             </div>
                             <div className="form-group">
                                 <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
+                            </div>
+                            <p className={s.widgetLoginInfo}>or sign in with</p>
+                            <div className={s.socialButtons}>
+                                <Button onClick={this.googleLogin} color="primary" className={cx(s.socialButton, "mb-2")}>
+                                    <i className={cx(s.socialGoogle, s.socialIcon)}/>
+                                    <p className={s.socialText}>GOOGLE</p>
+                                </Button>
+                                <Button onClick={this.microsoftLogin} color="success" className={s.socialButton}>
+                                    <i className={cx(s.socialMicrosoft, s.socialIcon)}
+                                       style={{backgroundImage: `url(${microsoft})`}}/>
+                                    <p className={s.socialText}>MICROSOFT</p>
+                                </Button>
                             </div>
                             <div className="clearfix">
                                 <div className="btn-toolbar float-right">
