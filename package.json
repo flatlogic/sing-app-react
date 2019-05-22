@@ -55,6 +55,7 @@
   "dependencies": {
     "animate.css": "3.7.0",
     "awesome-bootstrap-checkbox": "1.0.1",
+    "axios": "^0.18.0",
     "bootstrap": "4.0.0",
     "bootstrap-slider": "^10.2.1",
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
@@ -76,6 +77,7 @@
     "jquery.animate-number": "0.0.14",
     "jquery.flot-orderBars": "https://github.com/emmerich/flot-orderBars.git",
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
+    "jsonwebtoken": "^8.5.1",
     "jvectormap": "2.0.4",
     "line-awesome": "github:icons8/line-awesome",
     "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",

@@ -10,25 +10,18 @@ import ErrorPage from '../pages/error';
 import '../styles/theme.scss';
 import LayoutComponent from '../components/Layout';
 import DocumentationLayoutComponent from '../documentation/DocumentationLayout';
-import LoginComponent from '../pages/login';
+import Login from '../pages/login';
+import { logoutUser } from '../actions/user';
 
-const PrivateRoute = ({ component, ...rest }) => {
-  return ( // eslint-disable-line
-    <Route
-      {...rest} render={props => (
-      localStorage.getItem('id_token') ? (
-        React.createElement(component, props)
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/login',
-            state: { from: props.location }, // eslint-disable-line
-          }}
-        />
-      )
-    )}
-    />
-  );
+const PrivateRoute = ({dispatch, component, ...rest }) => {
+    if (!Login.isAuthenticated(localStorage.getItem('token'))) {
+        dispatch(logoutUser());
+        return (<Redirect to="/login"/>)
+    } else {
+        return ( // eslint-disable-line
+            <Route {...rest} render={props => (React.createElement(component, props))}/>
+        );
+    }
 };
 
 class App extends React.PureComponent {
@@ -38,10 +31,10 @@ class App extends React.PureComponent {
         <Switch>
           <Route path="/" exact render={() => <Redirect to="/app/main" />} />
           <Route path="/app" exact render={() => <Redirect to="/app/main" />} />
-          <PrivateRoute path="/app" component={LayoutComponent} />
+          <PrivateRoute path="/app" dispatch={this.props.dispatch} component={LayoutComponent} />
           <Route path="/documentation" exact render={() => <Redirect to="/documentation/getting-started/overview" />} />
           <Route path="/documentation" component={DocumentationLayoutComponent} />
-          <Route path="/login" exact component={LoginComponent} />
+          <Route path="/login" exact component={Login} />
           <Route path="/error" exact component={ErrorPage} />
           <Redirect from="*" to="/app/main/analytics" />
         </Switch>

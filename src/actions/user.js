@@ -1,3 +1,6 @@
+import axios from 'axios';
+import config from '../config';
+
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
@@ -5,73 +8,72 @@ export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 
-
-function requestLogin(creds) {
-  return {
-    type: LOGIN_REQUEST,
-    isFetching: true,
-    isAuthenticated: false,
-    creds,
-  };
+function requestLogin() {
+    return {
+        type: LOGIN_REQUEST,
+    };
 }
 
-export function receiveLogin(user) {
-  return {
-    type: LOGIN_SUCCESS,
-    isFetching: false,
-    isAuthenticated: true,
-    id_token: user.id_token,
-  };
+export function receiveLogin() {
+    return {
+        type: LOGIN_SUCCESS
+    };
 }
 
-function loginError(message) {
-  return {
-    type: LOGIN_FAILURE,
-    isFetching: false,
-    isAuthenticated: false,
-    message,
-  };
+function loginError(payload) {
+    return {
+        type: LOGIN_FAILURE,
+        payload,
+    };
 }
 
 function requestLogout() {
-  return {
-    type: LOGOUT_REQUEST,
-    isFetching: true,
-    isAuthenticated: true,
-  };
+    return {
+        type: LOGOUT_REQUEST,
+    };
 }
 
 export function receiveLogout() {
-  return {
-    type: LOGOUT_SUCCESS,
-    isFetching: false,
-    isAuthenticated: false,
-  };
+    return {
+        type: LOGOUT_SUCCESS,
+    };
 }
 
 // Logs the user out
 export function logoutUser() {
-  return (dispatch) => {
-    dispatch(requestLogout());
-    localStorage.removeItem('id_token');
-    document.cookie = 'id_token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    dispatch(receiveLogout());
-  };
+    return (dispatch) => {
+        dispatch(requestLogout());
+        localStorage.removeItem('token');
+        document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        axios.defaults.headers.common['Authorization'] = "";
+        dispatch(receiveLogout());
+    };
+}
+
+export function receiveToken(token) {
+    return (dispatch) => {
+        localStorage.setItem('token', token);
+        axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+        dispatch(receiveLogin());
+    }
 }
 
 export function loginUser(creds) {
-  return (dispatch) => {
-    // We dispatch requestLogin to kickoff the call to the API
-    dispatch(requestLogin(creds));
+    return (dispatch) => {
+        dispatch(requestLogin());
+        if (creds.social) {
+            window.location.href = config.baseURLApi + "/user/signin/" + creds.social;
+        }
+        else if (creds.login.length > 0 && creds.password.length > 0) {
+            axios.post("/user/signin/local", creds).then(res => {
+                const token = res.data.token;
+                dispatch(receiveToken(token));
+            }).catch(err => {
+                dispatch(loginError(err.body));
+            })
 
-    return setTimeout(() => {
-      if (creds.login.length > 0 && creds.password.length > 0) {
-        localStorage.setItem('id_token', 1);
-        // Dispatch the success action with fake user
-        dispatch(receiveLogin({ id: 1 }));
-      } else {
-        dispatch(loginError('Somethins was wrong. Try again'));
-      }
-    }, 2000)
-  };
+        } else {
+            dispatch(loginError('Something was wrong. Try again'));
+        }
+    };
 }
