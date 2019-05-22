@@ -27,6 +27,7 @@ import ExtraGallery from '../../pages/extra/gallery';
 import Grid from '../../pages/grid';
 import Widgets from '../../pages/widgets';
 import Products from '../../pages/products';
+import Management from '../../pages/management';
 import Product from '../../pages/product';
 import Package from '../../pages/package';
 import Email from '../../pages/email';
@@ -170,6 +171,7 @@ class Layout extends React.Component {
                     <Route path="/app/main/dashboard" exact component={Dashboard} />
                     <Route path="/app/main/widgets" exact component={Widgets} />
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
+                    <Route path="/app/ecommerce/management" exact component={Management} />
                     <Route path="/app/ecommerce/products" exact component={Products} />
                     <Route path="/app/ecommerce/product" exact component={Product} />
                     <Route path="/app/profile" exact component={Profile} />

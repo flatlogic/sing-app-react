@@ -3,10 +3,12 @@ import auth from './auth';
 import navigation from './navigation';
 import alerts from './alerts';
 import layout from './layout';
+import products from './products';
 
 export default combineReducers({
   alerts,
   auth,
   navigation,
   layout,
+  products,
 });

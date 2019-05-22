@@ -1,0 +1,26 @@
+.bootstrapTable {
+  border: none;
+
+  :global .table {
+    thead,
+    tbody {
+      th,
+      td {
+        border-right: none;
+        border-left: none;
+      }
+    }
+
+    thead th {
+      background: transparent;
+    }
+
+    tbody td {
+      vertical-align: middle;
+    }
+  }
+}
+
+.image {
+  width: 100px;
+}

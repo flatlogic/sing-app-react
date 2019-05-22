@@ -127,12 +127,15 @@ class Sidebar extends React.Component {
             link="/app/ecommerce"
             index="ecommerce"
             childrenLinks={[
-              {
-                header: 'Products Grid', link: '/app/ecommerce/products',
-              },
-              {
-                header: 'Product Page', link: '/app/ecommerce/product',
-              },
+                {
+                    header: 'Product Management', link: '/app/ecommerce/management',
+                },
+                {
+                    header: 'Products Grid', link: '/app/ecommerce/products',
+                },
+                {
+                    header: 'Product Page', link: '/app/ecommerce/product',
+                },
             ]}
           />
           <LinksGroup
