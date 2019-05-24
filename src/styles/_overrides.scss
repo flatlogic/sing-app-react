@@ -285,6 +285,10 @@ small {
   }
 }
 
+.btn > a {
+  color: inherit;
+}
+
 ///////// Dropdowns //////////
 
 .dropdown {
@@ -1060,5 +1064,37 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 
   & * {
     font-size: $tooltip-font-size !important;
+  }
+}
+
+
+///// Toastify /////
+.Toastify {
+  .Toastify__toast {
+    font-family: Montserrat, sans-serif;
+    border-radius: $border-radius;
+    &.Toastify__toast--success {
+      background: $success;
+    }
+
+    &.Toastify__toast--warn {
+      background: $warning;
+    }
+
+    &.Toastify__toast--error {
+      background: $danger;
+    }
+
+    &.Toastify__toast--info {
+      background: $info;
+    }
+
+    &-body {
+      text-align: center;
+    }
+  }
+
+  .Toastify__progress-bar {
+    opacity: 0 !important;
   }
 }
