@@ -4,6 +4,7 @@ import navigation from './navigation';
 import alerts from './alerts';
 import layout from './layout';
 import products from './products';
+import register from './register';
 
 export default combineReducers({
   alerts,
@@ -11,4 +12,5 @@ export default combineReducers({
   navigation,
   layout,
   products,
+  register,
 });

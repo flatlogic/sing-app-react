@@ -62,7 +62,6 @@ import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } fro
 import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
 import ProductDetail from '../../pages/management/components/productDetail';
-import { ToastContainer } from 'react-toastify';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -161,7 +160,7 @@ class Layout extends React.Component {
           <Header chatToggle={this.chatToggle} />
           <Chat chatOpen={this.state.chatOpen} />
           <Helper />
-          <ToastContainer closeButton={<i className={cx("la la-close", s.notificationClose)}/>}/>
+
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
               <TransitionGroup>

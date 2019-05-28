@@ -64,12 +64,12 @@ export function loginUser(creds) {
         if (creds.social) {
             window.location.href = config.baseURLApi + "/user/signin/" + creds.social;
         }
-        else if (creds.login.length > 0 && creds.password.length > 0) {
+        else if (creds.email.length > 0 && creds.password.length > 0) {
             axios.post("/user/signin/local", creds).then(res => {
                 const token = res.data.token;
                 dispatch(receiveToken(token));
             }).catch(err => {
-                dispatch(loginError(err.body));
+                dispatch(loginError(err.response.data));
             })
 
         } else {

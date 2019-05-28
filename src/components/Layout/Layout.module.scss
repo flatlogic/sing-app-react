@@ -59,11 +59,3 @@
   bottom: 15px;
   color: $text-muted;
 }
-
-.notificationClose {
-  height: $font-size-base;
-
-  &:hover {
-    color: darken($white, 10%);
-  }
-}

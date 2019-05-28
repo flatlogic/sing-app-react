@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container, Alert, FormGroup, Input, Label, Button } from 'reactstrap';
-import cx from "classnames";
+import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../components/Widget';
-import s from './Login.module.scss';
 import { loginUser, receiveToken } from '../../actions/user';
 import jwt from "jsonwebtoken";
 import microsoft from '../../images/microsoft.png';
@@ -26,19 +24,20 @@ class Login extends React.Component {
         super(props);
 
         this.state = {
-            login: '',
+            email: '',
             password: '',
         };
 
         this.doLogin = this.doLogin.bind(this);
         this.googleLogin = this.googleLogin.bind(this);
         this.microsoftLogin = this.microsoftLogin.bind(this);
-        this.changeLogin = this.changeLogin.bind(this);
+        this.changeEmail = this.changeEmail.bind(this);
         this.changePassword = this.changePassword.bind(this);
+        this.signUp = this.signUp.bind(this);
     }
 
-    changeLogin(event) {
-        this.setState({ login: event.target.value });
+    changeEmail(event) {
+        this.setState({ email: event.target.value });
     }
 
     changePassword(event) {
@@ -47,7 +46,7 @@ class Login extends React.Component {
 
     doLogin(e) {
         e.preventDefault();
-        this.props.dispatch(loginUser({ login: this.state.login, password: this.state.password }));
+        this.props.dispatch(loginUser({ email: this.state.email, password: this.state.password }));
     }
 
     googleLogin() {
@@ -66,6 +65,10 @@ class Login extends React.Component {
         }
     }
 
+    signUp() {
+        this.props.history.push('/register');
+    }
+
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/app' } }; // eslint-disable-line
 
@@ -77,71 +80,52 @@ class Login extends React.Component {
         }
 
         return (
-            <div className={s.root}>
+            <div className="auth-page">
                 <Container>
-                    <h5 className={`${s.logo}`}>
+                    <h5 className="auth-logo">
                         <i className="fa fa-circle text-gray" />
                         Sing App
                         <i className="fa fa-circle text-warning" />
                     </h5>
-                    <Widget className={`${s.widget} mx-auto`} title={<h3 className="mt-0">Login to your Web App</h3>}>
-                        <p className={s.widgetLoginInfo}>
-                            Use Facebook, Twitter or your email to sign in.
+                    <Widget className="widget-auth mx-auto" title={<h3 className="mt-0">Login to your Web App</h3>}>
+                        <p className="widget-auth-info">
+                            Use your email to sign in.
                         </p>
-                        {/* eslint-disable */}
-                        <p className={s.widgetLoginInfo}>
-                            Don't have an account? Sign up now!
-                        </p>
-                        {/* eslint-disable */}
                         <form className="mt" onSubmit={this.doLogin}>
                             {
-                                this.props.errorMessage && ( // eslint-disable-line
-                                    <Alert className="alert-sm" bsStyle="danger">
+                                this.props.errorMessage && (
+                                    <Alert className="alert-sm" color="danger">
                                         {this.props.errorMessage}
                                     </Alert>
                                 )
                             }
                             <div className="form-group">
-                                <input className="form-control no-border" value={this.state.login} onChange={this.changeLogin} type="text" required name="username" placeholder="Username" />
+                                <input className="form-control no-border" value={this.state.email} onChange={this.changeEmail} type="email" required name="email" placeholder="Email (admin@flatlogic.com)" />
                             </div>
                             <div className="form-group">
-                                <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
+                                <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password (password)" />
                             </div>
-                            <p className={s.widgetLoginInfo}>or sign in with</p>
-                            <div className={s.socialButtons}>
-                                <Button onClick={this.googleLogin} color="primary" className={cx(s.socialButton, "mb-2")}>
-                                    <i className={cx(s.socialGoogle, s.socialIcon)}/>
-                                    <p className={s.socialText}>GOOGLE</p>
+                            <Button type="submit" color="inverse" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
+                            <p className="widget-auth-info">or sign in with</p>
+                            <div className="social-buttons">
+                                <Button onClick={this.googleLogin} color="primary" className="social-button mb-2">
+                                    <i className="social-icon social-google"/>
+                                    <p className="social-text">GOOGLE</p>
                                 </Button>
-                                <Button onClick={this.microsoftLogin} color="success" className={s.socialButton}>
-                                    <i className={cx(s.socialMicrosoft, s.socialIcon)}
+                                <Button onClick={this.microsoftLogin} color="success" className="social-button">
+                                    <i className="social-icon social-microsoft"
                                        style={{backgroundImage: `url(${microsoft})`}}/>
-                                    <p className={s.socialText}>MICROSOFT</p>
+                                    <p className="social-text">MICROSOFT</p>
                                 </Button>
-                            </div>
-                            <div className="clearfix">
-                                <div className="btn-toolbar float-right">
-                                    <button type="reset" className="btn btn-default btn-sm">Create an Account</button>
-                                    <button type="submit" href="/app" className="btn btn-inverse btn-sm">{this.props.isFetching ? 'Loading...' : 'Login'}</button>
-                                </div>
-                            </div>
-                            <div className="row no-gutters mt-3">
-                                <div className="col-5">
-                                    <a className="mt-sm" href="#">Trouble with account?</a>
-                                </div>
-                                <div className="col-7">
-                                    <FormGroup className="abc-checkbox float-right" check>
-                                        <Input id="checkbox1" type="checkbox" />{' '}
-                                        <Label className="fw-normal" for="checkbox1" check>
-                                            Keep me signed in
-                                        </Label>
-                                    </FormGroup>
-                                </div>
                             </div>
                         </form>
+                        <p className="widget-auth-info">
+                            Don't have an account? Sign up now!
+                        </p>
+                        <Link className="d-block text-center" to="register">Create an Account</Link>
                     </Widget>
                 </Container>
-                <footer className={s.footer}>
+                <footer className="auth-footer">
                     2019 &copy; Sing App - React Admin Dashboard Template.
                 </footer>
             </div>
