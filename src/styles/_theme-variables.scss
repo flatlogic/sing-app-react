@@ -1,6 +1,6 @@
 #root {
-  & > .sing-dashboard,
-  & > .dashboard-light {
+  .sing-dashboard,
+  .dashboard-light {
     --logo-color: #3c484f;
 
     --sidebar-bg-color: #fff;
@@ -16,7 +16,7 @@
     --navbar-shadow: none;
   }
 
-  & > .dashboard-dark {
+  .dashboard-dark {
     --logo-color: white;
 
     --sidebar-bg-color: #313947;
@@ -33,7 +33,7 @@
   }
 
   // dependable variables
-  & > .sing-dashboard {
+  .sing-dashboard {
     --chat-sidebar-bg-color: var(--sidebar-bg-color);
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);

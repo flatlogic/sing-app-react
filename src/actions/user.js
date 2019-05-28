@@ -1,5 +1,6 @@
 import axios from 'axios';
 import config from '../config';
+import jwt from "jsonwebtoken";
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -44,6 +45,7 @@ export function logoutUser() {
     return (dispatch) => {
         dispatch(requestLogout());
         localStorage.removeItem('token');
+        localStorage.removeItem('user');
         document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         axios.defaults.headers.common['Authorization'] = "";
         dispatch(receiveLogout());
@@ -52,7 +54,10 @@ export function logoutUser() {
 
 export function receiveToken(token) {
     return (dispatch) => {
+        let user = jwt.decode(token).user;
+        delete user.id;
         localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
         axios.defaults.headers.common['Authorization'] = "Bearer " + token;
         dispatch(receiveLogin());
     }

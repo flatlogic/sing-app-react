@@ -90,6 +90,28 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+            <LinksGroup
+                onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+                activeItem={this.props.activeItem}
+                header="E-commerce"
+                isHeader
+                iconName="flaticon-diamond"
+                link="/app/ecommerce"
+                index="ecommerce"
+                label="NodeJS"
+                labelColor="danger"
+                childrenLinks={[
+                    {
+                        header: 'Product Management', link: '/app/ecommerce/management',
+                    },
+                    {
+                        header: 'Products Grid', link: '/app/ecommerce/products',
+                    },
+                    {
+                        header: 'Product Page', link: '/app/ecommerce/product',
+                    },
+                ]}
+            />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
             activeItem={this.props.activeItem}
@@ -117,26 +139,6 @@ class Sidebar extends React.Component {
             iconName="flaticon-paper-plane"
             index="inbox"
             badge="9"
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="E-commerce"
-            isHeader
-            iconName="flaticon-diamond"
-            link="/app/ecommerce"
-            index="ecommerce"
-            childrenLinks={[
-                {
-                    header: 'Product Management', link: '/app/ecommerce/management',
-                },
-                {
-                    header: 'Products Grid', link: '/app/ecommerce/products',
-                },
-                {
-                    header: 'Product Page', link: '/app/ecommerce/product',
-                },
-            ]}
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

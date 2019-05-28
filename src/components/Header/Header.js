@@ -124,6 +124,10 @@ class Header extends React.Component {
     });
   }
   render() {
+    const user = JSON.parse(localStorage.getItem('user') || {});
+
+    const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
+
     return (
       <Navbar className={`${s.root} d-print-none`}>
         <Nav>
@@ -176,10 +180,14 @@ class Header extends React.Component {
         <Nav className="ml-auto">
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret>
-              <span className={`${s.avatar} thumb-sm float-left mr-2`}>
-                <img className="rounded-circle" src={a5} alt="..." />
+              <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
+                  {user.avatar ? (
+                      <img src={user.avatar || a5} alt="..."/>
+                  ) : (
+                      <span>{firstUserLetter}</span>
+                  )}
               </span>
-              <span className="small">Philip <span className="fw-semi-bold">Smith</span></span>
+              <span className="small">{user.name || user.email || "Philip smith"}</span>
               <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
