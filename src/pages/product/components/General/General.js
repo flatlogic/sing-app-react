@@ -19,7 +19,10 @@ const General = ({ rating, title, subtitle, price }) => (
 );
 
 General.propTypes = {
-  rating: PropTypes.number.isRequired,
+    rating: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   price: PropTypes.any.isRequired,

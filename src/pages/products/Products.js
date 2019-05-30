@@ -3,13 +3,16 @@ import {
   Breadcrumb,
   BreadcrumbItem,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 import FilterElement from './components/FilterElement/FilterElement';
 import ProductCard from './components/ProductCard/ProductCard';
 import MobileModal from './components/MobileModal/MobileModal';
 
-import mock from './mock';
 import s from './Products.module.scss';
+import { getProductsRequest } from '../../actions/products';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 
 const filtersData = [{
   title: 'Filter',
@@ -46,6 +49,15 @@ const filtersData = [{
 }];
 
 class ProductList extends Component {
+  static propTypes = {
+    products: PropTypes.array,
+    dispatch: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    products: []
+  };
+
   state = {
     isModalActive: false,
     modalId: null,
@@ -57,9 +69,14 @@ class ProductList extends Component {
 
   closeModal = () => {
     this.setState({ isModalActive: false, modalId: null });
+  };
+
+  componentDidMount() {
+      this.props.dispatch(getProductsRequest());
   }
 
   render() {
+    const products = this.props.products;
     const { isModalActive, modalId } = this.state;
     return (
       <div>
@@ -95,7 +112,7 @@ class ProductList extends Component {
               </button>
             </div>
             <div className={s.productsListElements}>
-              {mock.map(item => <ProductCard key={item.id} {...item} />)}
+              {products.map(item => <ProductCard key={item.id} {...item} />)}
             </div>
           </div>
         }
@@ -106,4 +123,10 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+function mapStateToProps(state) {
+    return {
+        products: state.products.data,
+    };
+}
+
+export default withRouter(connect(mapStateToProps)(ProductList));

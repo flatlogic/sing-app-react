@@ -5,7 +5,6 @@ import { Switch, Route, withRouter, Redirect } from 'react-router';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import $ from 'jquery';
 import Hammer from 'rc-hammerjs';
-import cx from "classnames";
 
 import Profile from '../../pages/profile';
 import UIButtons from '../../pages/ui-elements/buttons';
@@ -61,7 +60,7 @@ import Helper from '../Helper';
 import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
-import ProductDetail from '../../pages/management/components/productDetail';
+import ProductEdit from '../../pages/management/components/productEdit';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -175,10 +174,11 @@ class Layout extends React.Component {
                     <Route path="/app/main/widgets" exact component={Widgets} />
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
                     <Route path="/app/ecommerce/management" exact component={Management} />
-                    <Route path="/app/ecommerce/management/:id" exact component={ProductDetail} />
-                    <Route path="/app/ecommerce/management/create" exact component={ProductDetail} />
+                    <Route path="/app/ecommerce/management/:id" exact component={ProductEdit} />
+                    <Route path="/app/ecommerce/management/create" exact component={ProductEdit} />
                     <Route path="/app/ecommerce/products" exact component={Products} />
                     <Route path="/app/ecommerce/product" exact component={Product} />
+                    <Route path="/app/ecommerce/product/:id" exact component={Product} />
                     <Route path="/app/profile" exact component={Profile} />
                     <Route path="/app/inbox" exact component={Email} />
                     <Route path="/app/ui" exact render={() => <Redirect to="/app/ui/components" />} />

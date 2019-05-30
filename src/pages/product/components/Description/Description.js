@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Col, Row, Collapse } from 'reactstrap';
 
 import s from './Description.module.scss';
+import Rating from '../Rating/Rating';
 
 class Description extends Component {
   state = {
@@ -20,40 +21,154 @@ class Description extends Component {
   }
 
   render() {
-    const { description } = this.props;
+    const { data } = this.props;
     return (
       <div>
         <div className={s.productDescription}>
-          {description.map(item => <div className={cx(item.extraClass, s.productDescriptionBlock)} key={item.id}>
-            <h3>{item.title}</h3>
-            {/* eslint-disable */}
-            <div dangerouslySetInnerHTML={{ __html: item.body }} />
-            {/* eslint-enable */}
-          </div>)}
+            <div className={cx(s.productDescriptionInfo, s.productDescriptionBlock)}>
+                <h3>PRODUCT DESCRIPTION</h3>
+                <p className="dot-before">{data.description_1}</p>
+                <p className="dot-before">{data.description_2}</p>
+            </div>
+            <div className={s.productDescriptionBlock}>
+                <h3>PRODUCT CODE</h3>
+                <div>{data.code}</div>
+            </div>
+            <div className={s.productDescriptionBlock}>
+                <h3>SHARE</h3>
+                <div>
+                    {/* eslint-disable */}
+                    Share photo with a tag <a href="#">#{data.hashtag}</a>
+                    {/* eslint-enable */}
+                    <div className={s.socialList}>
+                        <div><i className="fa fa-facebook"/></div>
+                        <div><i className="fa fa-instagram"/></div>
+                        <div><i className="fa fa-twitter"/></div>
+                    </div>
+                </div>
+            </div>
+            <div className={s.productDescriptionBlock}>
+                <h3>TECHNOLOGY</h3>
+                <ul>
+                    {data.technology.map(t => (
+                        <li key={t} className="dot-before">{t}</li>
+                    ))}
+                </ul>
+            </div>
+            <div className={s.productDescriptionBlock}>
+                <h3>RATING & REVIEWS</h3>
+                <div className={s.reviews}>
+                    <Rating rating={data.rating}/>
+                    32 Reviews
+                    {/* eslint-disable */}
+                    <a href="#">Read all</a>
+                    {/* eslint-enable */}
+                </div>
+            </div>
         </div>
         <Row className={cx(s.productDescription, s.productDescriptionMobile)}>
           <Col xs="12">
-            {description.map((element, index) => (
-              <div className="card panel" key={`accord-${index.toString()}`}>
-                { /* eslint-disable */}
-                <div
-                  className={cx("card-header panel-header", { 'panel-first': index === 0 })} role="button"
-                  onClick={() => { this.toggleAccordion(index); }}
-                >
-                  { /* eslint-enable */}
-                  <div className="mb-0">
-                    <button className="accordion-toggle">
-                      {element.title}
-                      <i className={`fa fa-angle-down fa-2x ${this.state.accordion[index] ? 'expanded' : ''}`} />
-                    </button>
+              <div className="card panel">
+                  <div className='card-header panel-header panel-first' role="button" onClick={() => {this.toggleAccordion(0);}}>
+                      <div className="mb-0">
+                          <button className="accordion-toggle">
+                              PRODUCT DESCRIPTION
+                              <i className={`fa fa-angle-down fa-2x ${this.state.accordion[0] ? 'expanded' : ''}`}/>
+                          </button>
+                      </div>
                   </div>
-                </div>
-                <Collapse className="panel-body" isOpen={this.state.accordion[index]}>
-                  {/* eslint-disable */}
-                  <div className="card-body" dangerouslySetInnerHTML={{ __html: element.body }} />
-                  {/* eslint-enable */}
-                </Collapse>
-              </div>))}
+                  <Collapse className="panel-body" isOpen={this.state.accordion[0]}>
+                      <div className="card-body">
+                          <p className="dot-before">{data.description_1}</p>
+                          <p className="dot-before">{data.description_2}</p>
+                      </div>
+                  </Collapse>
+              </div>
+              <div className="card panel">
+                  <div className='card-header panel-header' role="button" onClick={() => {
+                      this.toggleAccordion(1);
+                  }}>
+                      <div className="mb-0">
+                          <button className="accordion-toggle">
+                              PRODUCT CODE
+                              <i className={`fa fa-angle-down fa-2x ${this.state.accordion[1] ? 'expanded' : ''}`}/>
+                          </button>
+                      </div>
+                  </div>
+                  <Collapse className="panel-body" isOpen={this.state.accordion[1]}>
+                      <div className="card-body">
+                          {data.code}
+                      </div>
+                  </Collapse>
+              </div>
+              <div className="card panel">
+                  <div className='card-header panel-header' role="button" onClick={() => {
+                      this.toggleAccordion(2);
+                  }}>
+                      <div className="mb-0">
+                          <button className="accordion-toggle">
+                              SHARE
+                              <i className={`fa fa-angle-down fa-2x ${this.state.accordion[2] ? 'expanded' : ''}`}/>
+                          </button>
+                      </div>
+                  </div>
+                  <Collapse className="panel-body" isOpen={this.state.accordion[2]}>
+                      <div className="card-body">
+                          {/* eslint-disable */}
+                          Share photo with a tag <a href="#">#{data.hashtag}</a>
+                          {/* eslint-enable */}
+                          <div className={s.socialList}>
+                              <div><i className="fa fa-facebook"/></div>
+                              <div><i className="fa fa-instagram"/></div>
+                              <div><i className="fa fa-twitter"/></div>
+                          </div>
+                      </div>
+                  </Collapse>
+              </div>
+              <div className="card panel">
+                  <div className='card-header panel-header' role="button" onClick={() => {
+                      this.toggleAccordion(3);
+                  }}>
+                      <div className="mb-0">
+                          <button className="accordion-toggle">
+                              TECHNOLOGY
+                              <i className={`fa fa-angle-down fa-2x ${this.state.accordion[3] ? 'expanded' : ''}`}/>
+                          </button>
+                      </div>
+                  </div>
+                  <Collapse className="panel-body" isOpen={this.state.accordion[3]}>
+                      <div className="card-body">
+                          <ul>
+                              {data.technology.map(t => (
+                                  <li key={t} className="dot-before">{t}</li>
+                              ))}
+                          </ul>
+                      </div>
+                  </Collapse>
+              </div>
+              <div className="card panel">
+                  <div className='card-header panel-header' role="button" onClick={() => {
+                      this.toggleAccordion(4);
+                  }}>
+                      <div className="mb-0">
+                          <button className="accordion-toggle">
+                              RATING & REVIEWS
+                              <i className={`fa fa-angle-down fa-2x ${this.state.accordion[4] ? 'expanded' : ''}`}/>
+                          </button>
+                      </div>
+                  </div>
+                  <Collapse className="panel-body" isOpen={this.state.accordion[4]}>
+                      <div className="card-body">
+                          <div className={s.reviews}>
+                              <Rating rating={data.rating}/>
+                              32 Reviews
+                              {/* eslint-disable */}
+                              <a href="#">Read all</a>
+                              {/* eslint-enable */}
+                          </div>
+                      </div>
+                  </Collapse>
+              </div>
           </Col>
         </Row>
       </div>
@@ -62,7 +177,7 @@ class Description extends Component {
 }
 
 Description.propTypes = {
-  description: PropTypes.any.isRequired,
+  data: PropTypes.any.isRequired,
 };
 
 export default Description;

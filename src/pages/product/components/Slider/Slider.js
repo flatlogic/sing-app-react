@@ -43,7 +43,7 @@ const Slider = ({ slides }) => {
     <div className={s.slider} >
       <Slick {...settings}>
         {slides.map(slide =>
-          <div className={s.sliderItem} key={slide.id}><ProductCard {...slide} rating={4.6} /></div>)}
+          <div className={s.sliderItem} key={slide.id}><ProductCard {...slide} /></div>)}
       </Slick>
     </div >
   );

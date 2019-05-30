@@ -12,11 +12,11 @@ import paypal from '../../../../images/payments/paypal.svg';
 
 import s from './Banner.module.scss';
 
-const Banner = ({ image }) => (
+const Banner = ({ data }) => (
   <div className={s.productDetailsBanner}>
-    <div className={s.productPhoto} style={{ backgroundImage: `url(${image})` }} />
+    <div className={s.productPhoto} style={{ backgroundImage: `url(${data.img})` }} />
     <div className={s.productInfo}>
-      <General rating={4.8} title="Trainers" subtitle="trainers in white" price={76} />
+      <General {...data} />
       <button className={`btn-link ${s.productGuide}`}>Size Guide</button>
       <Selects sizes={[1, 2, 3, 4, 5]} quantity={[1, 2, 3, 4, 5, 6, 7]} />
       <Bag />
@@ -32,7 +32,7 @@ const Banner = ({ image }) => (
 );
 
 Banner.propTypes = {
-  image: PropTypes.string.isRequired,
+  data: PropTypes.any.isRequired,
 };
 
 export default Banner;

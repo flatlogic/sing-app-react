@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import TagsInput from 'react-tagsinput'
 import { withRouter } from 'react-router';
 import {
     Input,
@@ -18,7 +19,7 @@ import {
 
 import { loadProductRequest, receiveProduct, updateProduct, updateProductRequest, createProductRequest, deleteProductRequest } from '../../../../actions/products';
 import Widget from '../../../../components/Widget';
-import s from './ProductDetail.module.scss';
+import s from './ProductEdit.module.scss';
 import img1 from "../../../../images/products/img1.jpg";
 import img2 from "../../../../images/products/img2.jpg";
 import img3 from "../../../../images/products/img3.jpg";
@@ -26,7 +27,7 @@ import img4 from "../../../../images/products/img4.jpg";
 import img5 from "../../../../images/products/img5.jpeg";
 import img6 from "../../../../images/products/img6.jpg";
 
-class ProductDetail extends React.Component {
+class ProductEdit extends React.Component {
     static propTypes = {
         products: PropTypes.array,
         dispatch: PropTypes.func.isRequired,
@@ -36,12 +37,8 @@ class ProductDetail extends React.Component {
         products: []
     };
 
-    constructor() {
-        super();
-        this.updateTitle = this.updateTitle.bind(this);
-        this.updateDescription = this.updateDescription.bind(this);
-        this.updatePrice = this.updatePrice.bind(this);
-        this.updateRating = this.updateRating.bind(this);
+    constructor(props) {
+        super(props);
         this.updateProductRequest = this.updateProductRequest.bind(this);
         this.createProductRequest = this.createProductRequest.bind(this);
         this.deleteProductRequest = this.deleteProductRequest.bind(this);
@@ -49,23 +46,27 @@ class ProductDetail extends React.Component {
 
         this.state = {
             dropdownOpen: false
-        }
-    }
+        };
 
-    componentDidMount() {
-        let product;
-        if(this.getId() > -1) {
-            product = this.findProduct(this.getId());
+        this.description_1 = React.createRef();
+        this.description_2 = React.createRef();
+
+        let product = this.findProduct(this.getId());
+        if (this.getId() > -1) {
             if (!product) {
                 this.props.dispatch(loadProductRequest(this.getId()));
             }
         } else {
-            this.props.dispatch(receiveProduct({
-                id: -1,
-                img: img1,
-                price: 0.01,
-                rating: 5
-            }));
+            if (!product) {
+                this.props.dispatch(receiveProduct({
+                    id: -1,
+                    img: img1,
+                    price: 0.01,
+                    rating: 5,
+                    technology: []
+                }));
+            }
+
         }
     }
 
@@ -97,26 +98,6 @@ class ProductDetail extends React.Component {
         }));
     }
 
-    updateTitle(event) {
-        this.updateProduct(event.target.value, 'title');
-    }
-
-    updateDescription(event) {
-        this.updateProduct(event.target.value, 'description');
-    }
-
-    updatePrice(event) {
-        this.updateProduct(event.target.value, 'price');
-    }
-
-    updateRating(event) {
-        this.updateProduct(event.target.value, 'rating');
-    }
-
-    updateImage(img) {
-        this.updateProduct(img, 'img');
-    }
-
     getImage() {
         let product = this.findProduct(this.getId());
         return product ? product.img : null;
@@ -140,9 +121,19 @@ class ProductDetail extends React.Component {
 
     render() {
         const isNew = this.getId() === -1;
-        let product = this.findProduct(this.getId()) || {};
+        let product = this.findProduct(this.getId()) || {
+            technology: []
+        };
 
         let image = this.getImage();
+
+        if (this.description_1.current) {
+            this.description_1.current.value = product.description_1 || "";
+        }
+
+        if (this.description_2.current) {
+            this.description_2.current.value = product.description_2 || "";
+        }
 
         return (
             <div>
@@ -158,7 +149,7 @@ class ProductDetail extends React.Component {
                                     </DropdownToggle>
                                     <DropdownMenu>
                                         {[img1, img2, img3, img4, img5, img6].map(img => (
-                                            <DropdownItem key={img} onClick={() => this.updateImage(img)}>
+                                            <DropdownItem key={img} onClick={() => this.updateProduct(img, 'img')}>
                                                 <img className={s.productImage} alt={img} src={img}/>
                                             </DropdownItem>
                                         ))}
@@ -169,28 +160,73 @@ class ProductDetail extends React.Component {
                         <FormGroup row>
                             <Label md={2} for="productTitle">Title</Label>
                             <Col md={5}>
-                                <Input id="productTitle" type="text" defaultValue={product.title} onChange={this.updateTitle}/>
+                                <Input id="productTitle" type="text" defaultValue={product.title} onChange={(event)=> this.updateProduct(event.target.value, 'title')}/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label md={2} for="productDescription">Description</Label>
+                            <Label md={2} for="productSubtitle">Subtitle</Label>
                             <Col md={5}>
-                                <Input id="productDescription" type="text" defaultValue={product.description}
-                                       onChange={this.updateDescription}/>
+                                <Input id="productSubtitle" type="text" defaultValue={product.subtitle}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'subtitle')}/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
                             <Label md={2} for="productPrice">Price</Label>
                             <Col md={2}>
                                 <Input id="productPrice" type="number" step={0.01} min={0.01} defaultValue={product.price}
-                                       onChange={this.updatePrice}/>
+                                       onChange={(event) => this.updateProduct(event.target.value, 'price')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productDiscount">Discount</Label>
+                            <Col md={2}>
+                                <Input id="productDiscount" type="number" step={1} min={0} max={100}
+                                       defaultValue={product.discount || 0}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'discount')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productDescription_1">Description 1</Label>
+                            <Col md={5}>
+                                <textarea rows={3} className="form-control" id="productDescription_1" ref={this.description_1}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'description_1')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productDescription_2">Description 2</Label>
+                            <Col md={5}>
+                                <textarea rows={3} className="form-control" id="productDescription_2" ref={this.description_2}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'description_2')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productCode">Code</Label>
+                            <Col md={2}>
+                                <Input id="productCode" type="text"
+                                       defaultValue={product.code}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'code')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productHashtag">Hashtag</Label>
+                            <Col md={5}>
+                                <Input id="productHashtag" type="text"
+                                       defaultValue={product.hashtag}
+                                       onChange={(event) => this.updateProduct(event.target.value, 'hashtag')}/>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label md={2} for="productTechnology">Technology</Label>
+                            <Col md={5}>
+                                <TagsInput className="react-tagsinput form-control" id="productTechnology" value={product.technology}
+                                           onChange={(tags) => this.updateProduct(tags, 'technology')}/>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
                             <Label md={2} for="productRating">Rating</Label>
                             <Col md={2}>
                                 <Input id="productRating" step={0.1} min={0} max={5} type="number" defaultValue={product.rating}
-                                       onChange={this.updateRating}/>
+                                       onChange={(event) => this.updateProduct(event.target.value, 'rating')}/>
                             </Col>
                         </FormGroup>
                         <ButtonToolbar>
@@ -212,4 +248,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default withRouter(connect(mapStateToProps)(ProductDetail));
+export default withRouter(connect(mapStateToProps)(ProductEdit));

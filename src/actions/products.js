@@ -45,7 +45,9 @@ export function deleteProductRequest(payload) {
     return (dispatch) => {
         axios.delete('/products/' + payload.id).then(res => {
             dispatch(deleteProduct({id: payload.id}));
-            payload.history.push('/app/ecommerce/management');
+            if (payload.history.location.pathname !== '/app/ecommerce/management') {
+                payload.history.push('/app/ecommerce/management');
+            }
             toast.success("Product has been Deleted!");
         })
     };

@@ -26,8 +26,10 @@ export default function productsReducer(state = defaultState, action) {
             });
         case DELETED_PRODUCT:
             let indexToDelete = state.data.findIndex(p => p.id === action.payload.id);
+            let data = [...state.data];
+            data.splice(indexToDelete, 1);
             return Object.assign({}, state, {
-                data: [...state.data.splice(indexToDelete, 1)]
+                data: [...data]
             });
         default:
             return state;

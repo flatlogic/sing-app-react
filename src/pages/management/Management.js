@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 import {
     Button,
+    ButtonToolbar,
     Dropdown,
     DropdownItem,
     DropdownMenu,
@@ -20,7 +21,7 @@ import Widget from '../../components/Widget';
 import Rating from '../product/components/Rating/Rating';
 import s from './Management.module.scss';
 
-import { getProductsRequest } from '../../actions/products'
+import { getProductsRequest, deleteProductRequest } from '../../actions/products'
 
 class Management extends React.Component {
     static propTypes = {
@@ -32,14 +33,18 @@ class Management extends React.Component {
         products: []
     };
 
-    constructor(props) {
+    constructor() {
         super();
-        props.dispatch(getProductsRequest());
+        this.apiFormatter = this.apiFormatter.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.dispatch(getProductsRequest());
     }
 
     imageFormatter(cell) {
         return (
-            <img src={cell} className={s.image} title="image"/>
+            <img src={cell} alt="..." className={s.image} title="image"/>
         )
     }
 
@@ -51,10 +56,26 @@ class Management extends React.Component {
 
     titleFormatter(cell, row) {
         return cell ? (
-            <Link to={'/app/ecommerce/management/' + row.id}>
+            <Link to={'/app/ecommerce/product/' + row.id}>
                {cell[0].toUpperCase() + cell.slice(1)}
             </Link>
         ) : ""
+    }
+
+    deleteProduct(id) {
+        this.props.dispatch(deleteProductRequest({
+            id,
+            history: this.props.history
+        }))
+    }
+
+    apiFormatter(cell, row) {
+        return (
+            <ButtonToolbar>
+                <Button color="info" size="xs" onClick={()=> this.props.history.push('/app/ecommerce/management/' + row.id)}>Edit</Button>
+                <Button color="danger" size="xs" onClick={()=>{this.deleteProduct(row.id)}}>Delete</Button>
+            </ButtonToolbar>
+        )
     }
 
     renderSizePerPageDropDown = (props) => {
@@ -94,15 +115,18 @@ class Management extends React.Component {
                     <Button color="success" onClick={() => this.createNewProduct()}>Create Product</Button>
                     <BootstrapTable data={this.props.products} version="4" pagination options={options} search
                                     tableContainerClass={`table-striped ${s.bootstrapTable}`}>
+                        <TableHeaderColumn dataField="id" isKey={true} className="width-50" columnClassName="width-50">
+                            <span className="fs-sm">ID</span>
+                        </TableHeaderColumn>
                         <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
                             <span className="fs-sm">Image</span>
                         </TableHeaderColumn>
-                        <TableHeaderColumn isKey={true} dataField="title" dataFormat={this.titleFormatter}>
+                        <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
                             <span className="fs-sm">Title</span>
                         </TableHeaderColumn>
                         {window.innerWidth >= 768 && (
-                            <TableHeaderColumn dataField="description">
-                                <span className="fs-sm">Description</span>
+                            <TableHeaderColumn dataField="subtitle">
+                                <span className="fs-sm">Subtitle</span>
                             </TableHeaderColumn>
                         )}
                         {window.innerWidth >= 768 && (
@@ -115,6 +139,9 @@ class Management extends React.Component {
                                 <span className="fs-sm">Rating</span>
                             </TableHeaderColumn>
                         )}
+                        <TableHeaderColumn dataFormat={this.apiFormatter}>
+                            <span className="fs-sm">Api</span>
+                        </TableHeaderColumn>
                     </BootstrapTable>
                 </Widget>
             </div>

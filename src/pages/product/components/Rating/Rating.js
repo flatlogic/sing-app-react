@@ -14,7 +14,10 @@ const Rating = ({ rating, size }) => (
 );
 
 Rating.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+  ]).isRequired,
   size: PropTypes.string,
 };
 

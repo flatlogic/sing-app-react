@@ -115,6 +115,7 @@
     "react-sparklines": "^1.7.0",
     "react-syntax-highlighter": "^10.1.2",
     "react-table": "6.7.6",
+    "react-tagsinput": "^3.19.0",
     "react-toastify": "^5.1.1",
     "react-transition-group": "^2.5.2",
     "reactstrap": "^6.5.0",

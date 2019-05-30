@@ -32,12 +32,12 @@
     color: $link-color;
   }
 
-  & :global .productDescriptionInfo {
+  .productDescriptionInfo {
     grid-row: 1 / 3;
     grid-column: 1;
   }
 
-  :global .socialList {
+  .socialList {
     display: flex;
     margin-top: $spacer;
 
@@ -82,17 +82,7 @@
     }
   }
 
-  & :global .rating {
-    font-weight: $font-weight-semi-bold;
-    color: theme-color('warning');
-    margin-bottom: 5px;
-
-    i {
-      margin-left: 7.5px;
-    }
-  }
-
-  & :global .reviews {
+  .reviews {
     display: flex;
     flex-direction: column;
 

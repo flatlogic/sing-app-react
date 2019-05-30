@@ -1102,3 +1102,22 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
     }
   }
 }
+
+
+//// React Tags Input ////
+.react-tagsinput {
+  &.react-tagsinput--focused {
+    border-color: $input-focus-border-color;
+  }
+
+  .react-tagsinput-tag, .react-tagsinput-input {
+    margin: 2px !important;
+  }
+
+  .react-tagsinput-tag {
+    border-radius: $border-radius;
+    background-color: $purple;
+    color: white;
+    border-color: darken($purple, 10%);
+  }
+}

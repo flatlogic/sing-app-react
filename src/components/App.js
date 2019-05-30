@@ -26,6 +26,8 @@ const PrivateRoute = ({dispatch, component, ...rest }) => {
     }
 };
 
+const CloseButton = ({closeToast}) => <i onClick={closeToast} className="la la-close notifications-close"/>
+
 class App extends React.PureComponent {
   render() {
     return (
@@ -33,7 +35,7 @@ class App extends React.PureComponent {
             <ToastContainer
                 autoClose={5000}
                 hideProgressBar
-                closeButton={<i className="la la-close notifications-close"/>}
+                closeButton={<CloseButton/>}
             />
             <HashRouter>
                 <Switch>
