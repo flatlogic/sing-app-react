@@ -73,9 +73,17 @@ class Management extends React.Component {
     apiFormatter(cell, row) {
         return (
             <ButtonToolbar>
-                <Button color="info" size="xs" onClick={()=> this.props.history.push('/app/ecommerce/management/' + row.id)}>Edit</Button>
+                <Button color="info" size="xs" onClick={()=> this.props.history.push('/app/ecommerce/management/' + row.id)}>
+                    <span className="d-none d-md-inline-block">Edit</span>
+                    <span className="d-md-none"><i className='la la-edit'/></span>
+                </Button>
                 <Button color="danger" size="xs" onClick={()=>{this.deleteProduct(row.id)}}>
-                    {this.props.isDeleting && this.props.idToDelete === row.id ? <Loader size={14}/> : 'Delete'}
+                    {this.props.isDeleting && this.props.idToDelete === row.id ? <Loader size={14}/> :
+                        <span>
+                            <span className="d-none d-md-inline-block">Delete</span>
+                            <span className="d-md-none"><i className='la la-remove'/></span>
+                        </span>
+                    }
                 </Button>
             </ButtonToolbar>
         )
