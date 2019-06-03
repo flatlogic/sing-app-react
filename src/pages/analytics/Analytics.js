@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import cx from 'classnames';
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Progress } from 'reactstrap';
 
 import Widget from '../../components/Widget';
 import RevenueChart from './components/Charts/RevenueChart';
@@ -12,10 +14,35 @@ import TableContainer from './components/TableContainer/TableContainer';
 import Calendar from '../dashboard/components/calendar/Calendar';
 
 import mock from './mock';
-import s from './Analitycs.module.scss'; // eslint-disable-line
+import s from './Analitycs.module.scss';
+import { receiveDataRequest } from '../../actions/analytics';
 
 class Analytics extends Component {
+    static propTypes = {
+        visits: PropTypes.any,
+        performance: PropTypes.any,
+        server: PropTypes.any,
+        revenue: PropTypes.any,
+        mainChart: PropTypes.any,
+        isReceiving: PropTypes.bool,
+        dispatch: PropTypes.func.isRequired,
+    };
+
+    static defaultProps = {
+        visits: {},
+        performance: {},
+        server: {},
+        revenue: [],
+        mainChart: [],
+        isReceiving: false
+    };
+
+    componentDidMount() {
+        this.props.dispatch(receiveDataRequest());
+    }
+
   render() {
+        const { visits, isReceiving, performance, server, revenue, mainChart } = this.props;
     return (
       <div>
         <h1 className="page-title mb-xlg mt-lg">Analytics <small>Company performance</small></h1>
@@ -28,26 +55,33 @@ class Analytics extends Component {
                     className="mb-0 h-100"
                     close
                     bodyClass="mt-lg"
+                    fetchingData={isReceiving}
                     title={<h5 style={{ color: "#757575" }}>Visits Today</h5>}
                   >
-                    <div className="d-flex justify-content-between align-items-center mb">
-                      <h2 style={{ fontSize: '2.1rem' }}>4,332</h2>
-                      <i className="la la-arrow-right text-success rotate-315" />
-                    </div>
-                    <div className="d-flex flex-wrap justify-content-between">
-                      <div className={cx('mt', s.visitElement)}>
-                        <h6>+830</h6>
-                        <p className="text-muted mb-0 mr"><small>Logins</small></p>
+                      <div className="d-flex justify-content-between align-items-center mb">
+                          <h2 style={{fontSize: '2.1rem'}}>{visits.count}</h2>
+                          <i className="la la-arrow-right text-success rotate-315"/>
                       </div>
-                      <div className={cx('mt', s.visitElement)}>
-                        <h6>0.5%</h6>
-                        <p className="text-muted mb-0"><small>Sign Out</small></p>
+                      <div className="d-flex flex-wrap justify-content-between">
+                          <div className={cx('mt', s.visitElement)}>
+                              <h6>+{visits.logins}</h6>
+                              <p className="text-muted mb-0 mr">
+                                  <small>Logins</small>
+                              </p>
+                          </div>
+                          <div className={cx('mt', s.visitElement)}>
+                              <h6>{visits.sign_out_pct}%</h6>
+                              <p className="text-muted mb-0">
+                                  <small>Sign Out</small>
+                              </p>
+                          </div>
+                          <div className={cx('mt', s.visitElement)}>
+                              <h6>{visits.rate_pct}%</h6>
+                              <p className="text-muted mb-0 mr">
+                                  <small>Rate</small>
+                              </p>
+                          </div>
                       </div>
-                      <div className={cx('mt', s.visitElement)}>
-                        <h6>4.5%</h6>
-                        <p className="text-muted mb-0 mr"><small>Rate</small></p>
-                      </div>
-                    </div>
                   </Widget>
                 </div>
               </Col>
@@ -57,9 +91,10 @@ class Analytics extends Component {
                     bodyClass="mt"
                     close
                     className="mb-0 h-100"
+                    fetchingData={isReceiving}
                     title={<h5 style={{ color: "#757575" }}>Revenue Breakdown</h5>}
                   >
-                    <RevenueChart />
+                    <RevenueChart data={revenue} />
                   </Widget>
                 </div>
               </Col>
@@ -69,7 +104,8 @@ class Analytics extends Component {
                     bodyClass="mt"
                     close
                     className="mb-0 h-100"
-                    title={<h5 style={{ color: "#757575" }}>App Perfomance</h5>}
+                    fetchingData={isReceiving}
+                    title={<h5 style={{ color: "#757575" }}>App Performance</h5>}
                   >
                     <p className="text-muted d-flex flex-wrap">
                       <small className="mr-lg d-flex align-items-center">
@@ -82,19 +118,15 @@ class Analytics extends Component {
                       </small>
                     </p>
                     <h6 className="fs-sm text-muted">SDK</h6>
-                    <div className="progress" style={{ height: '3px', marginBottom: '5px' }} >
-                      <div className="progress-bar bg-success" role="progressbar" style={{ width: '60%' }} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" />
-                    </div>
-                    <div className="progress" style={{ height: '3px' }} >
-                      <div className="progress-bar bg-warning" role="progressbar" style={{ width: '30%' }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" />
-                    </div>
+                      <Progress color="success" className="progress-xs" style={{height: '3px', marginBottom: '5px'}}
+                                value={performance.sdk?.this_period_pct}/>
+                      <Progress color="warning" className="progress-xs" style={{height: '3px'}}
+                                value={performance.sdk?.last_period_pct}/>
                     <h6 className="mt fs-sm text-muted">Integration</h6>
-                    <div className="progress" style={{ height: '3px', marginBottom: '5px' }} >
-                      <div className="progress-bar bg-success" role="progressbar" style={{ width: '40%' }} aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" />
-                    </div>
-                    <div className="progress" style={{ height: '3px' }} >
-                      <div className="progress-bar bg-warning" role="progressbar" style={{ width: '55%' }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" />
-                    </div>
+                      <Progress color="success" className="progress-xs" style={{height: '3px', marginBottom: '5px'}}
+                                value={performance.integration?.this_period_pct}/>
+                      <Progress color="warning" className="progress-xs" style={{height: '3px'}}
+                                value={performance.integration?.last_period_pct}/>
                   </Widget>
                 </div>
               </Col>
@@ -104,31 +136,26 @@ class Analytics extends Component {
                     bodyClass="mt-lg"
                     close
                     className="mb-0 h-100"
+                    fetchingData={isReceiving}
                     title={<h5 style={{ color: "#757575" }}>Server Overview</h5>}
                   >
                     <div className="d-flex justify-content-between flex-wrap mb-sm">
-                      <p className="width-150"><small>60% <span style={{ color: '#a3aeb7' }}>/</span> 37°С <span style={{ color: '#a3aeb7' }}>/</span> 3.3 Ghz</small></p>
+                      <p className="width-150"><small>{server[1]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.frequency} Ghz</small></p>
                       <div className={s.sparklineWrapper}>
                         <LineChart color="#ffc247" />
                       </div>
                     </div>
                     <div className="d-flex justify-content-between flex-wrap mb-sm">
-                      <p className="width-150"><small>54% <span style={{ color: '#a3aeb7' }}>/</span> 31°С <span style={{ color: '#a3aeb7' }}>/</span> 3.3 Ghz</small></p>
+                      <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div className={s.sparklineWrapper}>
                         <LineChart color="#9964e3" />
-                      </div>
-                    </div>
-                    <div className="d-none justify-content-between flex-wrap">
-                      <p className="width-150"><small>57% <span className="text-muted">/</span> 21°С <span className="text-muted">/</span> 3.3 Ghz</small></p>
-                      <div className={s.sparklineWrapper}>
-                        <LineChart color="#3abf94" />
                       </div>
                     </div>
                   </Widget>
                 </div>
               </Col>
               <Col xs={12}>
-                <MainChart />
+                  <MainChart data={mainChart} isReceiving={isReceiving} />
               </Col>
               <Col xs={12} lg={6} xl={4}>
                 <BigStat {...mock.bigStat[0]} />
@@ -188,4 +215,15 @@ class Analytics extends Component {
   }
 }
 
-export default Analytics;
+function mapStateToProps(state) {
+    return {
+        visits: state.analytics.visits,
+        isReceiving: state.analytics.isReceiving,
+        performance: state.analytics.performance,
+        revenue: state.analytics.revenue,
+        server: state.analytics.server,
+        mainChart: state.analytics.mainChart,
+    }
+}
+
+export default connect(mapStateToProps)(Analytics);

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import jQuery from 'jquery';
 import { UncontrolledTooltip } from 'reactstrap';
 import 'imports-loader?window.jQuery=jquery,this=>window!widgster'; // eslint-disable-line
-import s from './Widget.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import s from './Widget.module.scss';
+import Loader from '../Loader'; // eslint-disable-line css-modules/no-unused-class
 
 class Widget extends React.Component {
   static propTypes = {
@@ -23,7 +24,8 @@ class Widget extends React.Component {
     showTooltip: PropTypes.bool,
     bodyClass: PropTypes.string,
     customControls: PropTypes.node,
-    options: PropTypes.object, //eslint-disable-line
+    options: PropTypes.object, //eslint-disable-line,
+    fetchingData: PropTypes.bool
   };
 
   static defaultProps = {
@@ -41,6 +43,7 @@ class Widget extends React.Component {
     bodyClass: '',
     customControls: null,
     options: {},
+    fetchingData: false
   };
 
   constructor(prop) {
@@ -71,6 +74,7 @@ class Widget extends React.Component {
       showTooltip,
       bodyClass,
       customControls,
+      fetchingData,
       options, //eslint-disable-line
       ...attributes
     } = this.props;
@@ -184,7 +188,7 @@ class Widget extends React.Component {
           )
         }
         <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
-          {children}
+          {fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : children}
         </div>
       </section>
     );

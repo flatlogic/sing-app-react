@@ -5,6 +5,7 @@ import alerts from './alerts';
 import layout from './layout';
 import products from './products';
 import register from './register';
+import analytics from './analytics';
 
 export default combineReducers({
   alerts,
@@ -13,4 +14,5 @@ export default combineReducers({
   layout,
   products,
   register,
+  analytics,
 });

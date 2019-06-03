@@ -114,42 +114,41 @@ class Management extends React.Component {
         return (
             <div>
                 <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
-                <Widget title="List of Products" collapse close>
+                <Widget title="List of Products" collapse close
+                        fetchingData={this.props.isReceiving}
+                >
                     <Button color="success" onClick={() => this.createNewProduct()}>Create Product</Button>
-                    {this.props.isReceiving ?
-                        <Loader className="my-5" size={40}/> :
-                        <BootstrapTable data={this.props.products} version="4" pagination options={options} search
-                                        tableContainerClass={`table-striped ${s.bootstrapTable}`}>
-                            <TableHeaderColumn dataField="id" isKey={true} className="width-50"
-                                               columnClassName="width-50">
-                                <span className="fs-sm">ID</span>
+                    <BootstrapTable data={this.props.products} version="4" pagination options={options} search
+                                    tableContainerClass={`table-striped ${s.bootstrapTable}`}>
+                        <TableHeaderColumn dataField="id" isKey={true} className="width-50"
+                                           columnClassName="width-50">
+                            <span className="fs-sm">ID</span>
+                        </TableHeaderColumn>
+                        <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
+                            <span className="fs-sm">Image</span>
+                        </TableHeaderColumn>
+                        <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
+                            <span className="fs-sm">Title</span>
+                        </TableHeaderColumn>
+                        {window.innerWidth >= 768 && (
+                            <TableHeaderColumn dataField="subtitle">
+                                <span className="fs-sm">Subtitle</span>
                             </TableHeaderColumn>
-                            <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
-                                <span className="fs-sm">Image</span>
+                        )}
+                        {window.innerWidth >= 768 && (
+                            <TableHeaderColumn dataField="price">
+                                <span className="fs-sm">Price($)</span>
                             </TableHeaderColumn>
-                            <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
-                                <span className="fs-sm">Title</span>
+                        )}
+                        {window.innerWidth >= 768 && (
+                            <TableHeaderColumn dataField="rating" dataFormat={this.ratingFormatter}>
+                                <span className="fs-sm">Rating</span>
                             </TableHeaderColumn>
-                            {window.innerWidth >= 768 && (
-                                <TableHeaderColumn dataField="subtitle">
-                                    <span className="fs-sm">Subtitle</span>
-                                </TableHeaderColumn>
-                            )}
-                            {window.innerWidth >= 768 && (
-                                <TableHeaderColumn dataField="price">
-                                    <span className="fs-sm">Price($)</span>
-                                </TableHeaderColumn>
-                            )}
-                            {window.innerWidth >= 768 && (
-                                <TableHeaderColumn dataField="rating" dataFormat={this.ratingFormatter}>
-                                    <span className="fs-sm">Rating</span>
-                                </TableHeaderColumn>
-                            )}
-                            <TableHeaderColumn dataFormat={this.apiFormatter}>
-                                <span className="fs-sm">Api</span>
-                            </TableHeaderColumn>
-                        </BootstrapTable>
-                    }
+                        )}
+                        <TableHeaderColumn dataFormat={this.apiFormatter}>
+                            <span className="fs-sm">Api</span>
+                        </TableHeaderColumn>
+                    </BootstrapTable>
                 </Widget>
             </div>
 

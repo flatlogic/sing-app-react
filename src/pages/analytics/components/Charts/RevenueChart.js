@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { Row, Col } from 'reactstrap';
 
@@ -8,9 +9,16 @@ import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.pie';
 /* eslint-enable */
 
 export default class RevenueChart extends PureComponent {
-  componentDidMount() {
-    this.initChart(this.getData());
+    static propTypes = {
+        data: PropTypes.any,
+    };
 
+    static defaultProps = {
+        data: [],
+    };
+
+  componentDidMount() {
+    this.initChart();
     window.addEventListener('resize', this.initChart.bind(this));
   }
 
@@ -18,23 +26,8 @@ export default class RevenueChart extends PureComponent {
     window.removeEventListener('resize', this.initChart.bind(this));
   }
 
-  getData() { // eslint-disable-line
-    const data = [];
-    const seriesCount = 3;
-    const accessories = ['SMX', 'Direct', 'Networks'];
-
-    for (let i = 0; i < seriesCount; i += 1) {
-      data.push({
-        label: accessories[i],
-        data: Math.floor(Math.random() * 100) + 1,
-      });
-    }
-
-    return data;
-  }
-
   initChart() {
-    $.plot(this.$chartContainer, this.getData(), {
+    $.plot(this.$chartContainer, this.props.data, {
       series: {
         pie: {
           innerRadius: 0.8,
