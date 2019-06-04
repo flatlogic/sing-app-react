@@ -7,6 +7,10 @@
   @include clearfix();
 }
 
+:global .widget.collapsed {
+  min-height: unset;
+}
+
 .widget {
   display: block;
   position: relative;

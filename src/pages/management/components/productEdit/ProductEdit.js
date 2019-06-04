@@ -14,7 +14,10 @@ import {
     Dropdown,
     DropdownItem,
     DropdownMenu,
-    DropdownToggle
+    DropdownToggle,
+    Popover,
+    PopoverHeader,
+    PopoverBody
 } from "reactstrap";
 
 import { loadProductRequest, receiveProduct, updateProduct, updateProductRequest, createProductRequest, deleteProductRequest } from '../../../../actions/products';
@@ -46,7 +49,8 @@ class ProductEdit extends React.Component {
         this.toggleDropdown = this.toggleDropdown.bind(this);
 
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
+            popover: false
         };
 
         this.description_1 = React.createRef();
@@ -93,6 +97,7 @@ class ProductEdit extends React.Component {
     }
 
     deleteProductRequest() {
+        debugger;
         this.props.dispatch(deleteProductRequest({
             id: this.getId(),
             history: this.props.history
@@ -120,14 +125,16 @@ class ProductEdit extends React.Component {
         })
     }
 
-    render() {
-        const isNew = this.getId() === -1;
+    togglePopover() {
+        this.setState({
+            popover: !this.state.popover
+        });
+    }
+
+    componentDidUpdate() {
         let product = this.findProduct(this.getId()) || {
             technology: []
         };
-
-        let image = this.getImage();
-
         if (this.description_1.current) {
             this.description_1.current.value = product.description_1 || "";
         }
@@ -135,6 +142,14 @@ class ProductEdit extends React.Component {
         if (this.description_2.current) {
             this.description_2.current.value = product.description_2 || "";
         }
+    }
+
+    render() {
+        const isNew = this.getId() === -1;
+        let image = this.getImage();
+        let product = this.findProduct(this.getId()) || {
+            technology: []
+        };
 
         return (
             <div>
@@ -246,9 +261,34 @@ class ProductEdit extends React.Component {
                                 <Button color="default" onClick={() => {
                                     this.goBack()
                                 }}>Back</Button>
-                                {!isNew && (<Button color="danger" onClick={this.deleteProductRequest}>
-                                    {this.props.isDeleting ? <Loader/> : 'Delete'}
-                                </Button>)}
+                                {!isNew && (
+                                    <span>
+                                        <Button id="deleteProductPopover" color="danger">
+                                            {this.props.isDeleting ? <Loader/> : 'Delete'}
+                                        </Button>
+                                        <Popover className="popover-danger" target="deleteProductPopover"
+                                                 placement="top"
+                                                 isOpen={this.state.popover}
+                                                 toggle={() => {
+                                                     this.togglePopover()
+                                                 }}
+                                        >
+                                            <PopoverHeader className="px-5">Are you sure?</PopoverHeader>
+                                            <PopoverBody className="px-5 d-flex justify-content-center">
+                                                <ButtonToolbar>
+                                                    <Button color="success" size="xs" onClick={this.deleteProductRequest}>
+                                                        Yes
+                                                    </Button>
+                                                    <Button color="danger" size="xs" onClick={() => {
+                                                        this.togglePopover()
+                                                    }}>
+                                                        No
+                                                    </Button>
+                                                </ButtonToolbar>
+                                            </PopoverBody>
+                                        </Popover>
+                                    </span>
+                                )}
                             </ButtonToolbar>
                         </Form>
                     }

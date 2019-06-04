@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap-table';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Popover, PopoverBody, PopoverHeader } from 'reactstrap';
 
 import {
     Button,
@@ -32,6 +33,10 @@ class Management extends React.Component {
 
     static defaultProps = {
         products: []
+    };
+
+    state = {
+        popovers: {}
     };
 
     constructor() {
@@ -70,6 +75,16 @@ class Management extends React.Component {
         }))
     }
 
+    togglePopover(id) {
+        let newState = {...this.state};
+        if (!this.state.popovers[id]) {
+            newState.popovers[id] = true;
+        } else {
+            newState.popovers[id] = !newState.popovers[id];
+        }
+        this.setState(newState);
+    }
+
     apiFormatter(cell, row) {
         return (
             <ButtonToolbar>
@@ -77,7 +92,7 @@ class Management extends React.Component {
                     <span className="d-none d-md-inline-block">Edit</span>
                     <span className="d-md-none"><i className='la la-edit'/></span>
                 </Button>
-                <Button color="danger" size="xs" onClick={()=>{this.deleteProduct(row.id)}}>
+                <Button id={'popoverDelete_' + row.id} color="danger" size="xs">
                     {this.props.isDeleting && this.props.idToDelete === row.id ? <Loader size={14}/> :
                         <span>
                             <span className="d-none d-md-inline-block">Delete</span>
@@ -85,6 +100,21 @@ class Management extends React.Component {
                         </span>
                     }
                 </Button>
+                <Popover className="popover-danger" target={'popoverDelete_' + row.id} placement="top" isOpen={this.state.popovers[row.id]}
+                         toggle={()=>{this.togglePopover(row.id)}}
+                >
+                    <PopoverHeader className="px-5">Are you sure?</PopoverHeader>
+                    <PopoverBody className="px-5 d-flex justify-content-center">
+                        <ButtonToolbar>
+                            <Button color="success" size="xs" onClick={() => {this.deleteProduct(row.id)}}>
+                                Yes
+                            </Button>
+                            <Button color="danger" size="xs" onClick={() => {this.togglePopover(row.id)}}>
+                                No
+                            </Button>
+                        </ButtonToolbar>
+                    </PopoverBody>
+                </Popover>
             </ButtonToolbar>
         )
     }

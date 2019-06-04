@@ -556,6 +556,10 @@ h6,
   border: none;
 
   @include box-shadow(none);
+
+  .popover-header {
+    border-bottom: none;
+  }
 }
 
 .popover-content {

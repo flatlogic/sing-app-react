@@ -13,7 +13,7 @@ import {
   Collapse,
   DropdownItem,
   DropdownToggle,
-  UncontrolledNavDropdown,
+  UncontrolledDropdown
 } from 'reactstrap';
 import classnames from 'classnames';
 
@@ -146,7 +146,7 @@ class TabsAccordion extends React.Component {
                     <span>Assumtion</span>
                   </NavLink>
                 </NavItem>
-                <UncontrolledNavDropdown>
+                <UncontrolledDropdown nav>
                   <DropdownToggle nav caret
                                   className={classnames({
                                     active: this.state.activeFirstTab === 'tab13' ||
@@ -164,7 +164,7 @@ class TabsAccordion extends React.Component {
                     }}>@mdo
                     </DropdownItem>
                   </DropdownMenu>
-                </UncontrolledNavDropdown>
+                </UncontrolledDropdown>
               </Nav>
             </div>
             {/* tab content */}
