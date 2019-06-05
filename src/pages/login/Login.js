@@ -91,6 +91,13 @@ class Login extends React.Component {
                         <p className="widget-auth-info">
                             Use your email to sign in.
                         </p>
+                        <Alert className="alert-sm text-center mt-2" color="secondary">
+                            This is a real app with Node.js backend - use
+                            <br/>
+                            <span className="font-weight-bold">"admin@flatlogic.com / password"</span>
+                            <br/>
+                            to login!
+                        </Alert>
                         <form className="mt" onSubmit={this.doLogin}>
                             {
                                 this.props.errorMessage && (
@@ -100,10 +107,10 @@ class Login extends React.Component {
                                 )
                             }
                             <div className="form-group">
-                                <input className="form-control no-border" value={this.state.email} onChange={this.changeEmail} type="email" required name="email" placeholder="Email (admin@flatlogic.com)" />
+                                <input className="form-control no-border" value={this.state.email} onChange={this.changeEmail} type="email" required name="email" placeholder="Email" />
                             </div>
                             <div className="form-group">
-                                <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password (password)" />
+                                <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
                             </div>
                             <Button type="submit" color="inverse" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
                             <p className="widget-auth-info">or sign in with</p>

@@ -68,7 +68,7 @@ class Email extends Component {
           <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
           <BreadcrumbItem active>Email</BreadcrumbItem>
         </Breadcrumb>
-        <div className={s.pageTopLine}>
+        <div className="page-top-line">
           <h1 className="page-title">Email - <span className="fw-semi-bold">Inbox</span></h1>
           <Alert
             isOpen={isNotificationOpen}

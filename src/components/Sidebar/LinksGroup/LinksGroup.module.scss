@@ -70,6 +70,25 @@
       margin-top: 16px;
     }
   }
+
+  a.headerLinkActive {
+    color: $sidebar-item-active-color;
+    font-weight: $font-weight-normal;
+
+    &:hover {
+      color: $sidebar-item-active-color;
+    }
+
+    .icon {
+      border-radius: 50%;
+      background-color: $sidebar-item-active-color;
+      opacity: 1;
+
+      i {
+        color: var(--sidebar-bg-color);
+      }
+    }
+  }
 }
 
 .headerLabel {
@@ -87,25 +106,6 @@
   margin-right: 15px;
 
   @include transition(transform 0.3s ease-in-out);
-}
-
-a.headerLinkActive {
-  color: $sidebar-item-active-color;
-  font-weight: $font-weight-normal;
-
-  &:hover {
-    color: $sidebar-item-active-color;
-  }
-
-  .icon {
-    border-radius: 50%;
-    background-color: $sidebar-item-active-color;
-    opacity: 1;
-
-    i {
-      color: var(--sidebar-bg-color);
-    }
-  }
 }
 
 .panel {

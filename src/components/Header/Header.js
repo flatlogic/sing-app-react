@@ -181,7 +181,7 @@ class Header extends React.Component {
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret>
               <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
-                  {user.avatar ? (
+                  {user.avatar || user.email === "admin@flatlogic.com" ? (
                       <img src={user.avatar || a5} alt="..."/>
                   ) : (
                       <span>{firstUserLetter}</span>

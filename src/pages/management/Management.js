@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap-table';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Popover, PopoverBody, PopoverHeader } from 'reactstrap';
+import { Popover, PopoverBody, PopoverHeader, Breadcrumb, BreadcrumbItem, Alert } from 'reactstrap';
 
 import {
     Button,
@@ -24,6 +24,7 @@ import s from './Management.module.scss';
 
 import { getProductsRequest, deleteProductRequest } from '../../actions/products'
 import Loader from '../../components/Loader';
+import cx from 'classnames';
 
 class Management extends React.Component {
     static propTypes = {
@@ -36,7 +37,8 @@ class Management extends React.Component {
     };
 
     state = {
-        popovers: {}
+        popovers: {},
+        promoAlert: false,
     };
 
     constructor() {
@@ -46,6 +48,13 @@ class Management extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(getProductsRequest());
+        setTimeout(() => {
+            this.showPromoAlert();
+        }, 100);
+    }
+
+    showPromoAlert() {
+        this.setState({promoAlert: true});
     }
 
     imageFormatter(cell) {
@@ -151,7 +160,21 @@ class Management extends React.Component {
 
         return (
             <div>
-                <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
+                <Breadcrumb>
+                    <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
+                    <BreadcrumbItem active>E-commerce</BreadcrumbItem>
+                </Breadcrumb>
+                <div className="page-top-line">
+                    <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
+                    <Alert
+                        color="success"
+                        className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
+                    >
+                        {/* eslint-disable */}
+                        This page is only available in <a className="text-white font-weight-bold" href="#">Sing App React with Node.js</a> integration!
+                        {/* eslint-enable */}
+                    </Alert>
+                </div>
                 <Widget title="List of Products" collapse close
                         fetchingData={this.props.isReceiving}
                 >

@@ -24,3 +24,13 @@
 .image {
   width: 100px;
 }
+
+.promoAlert {
+  transition: 0.6s;
+  transition-timing-function: ease;
+  transform: translateX(-130vw);
+}
+
+.showAlert {
+  transform: translateX(0);
+}

@@ -7,6 +7,7 @@ import Widget from "../../../../components/Widget";
 /* eslint-disable */
 import 'imports-loader?jQuery=jquery,this=>window!flot';
 import 'imports-loader?jQuery=jquery,this=>window!flot.dashes/jquery.flot.dashes';
+import 'imports-loader?jQuery=jquery,this=>window!jquery.flot.animator/jquery.flot.animator';
 /* eslint-enable */
 
 export default class RevenueChart extends PureComponent {
@@ -72,10 +73,10 @@ export default class RevenueChart extends PureComponent {
     // check the screen size and either show tick for every 4th tick on large screens, or
     // every 8th tick on mobiles
     const tickInterval = window.screen.width < 500 ? 10 : 6;
-    let counter = 0;
 
     if (this.$chartContainer.length > 0) {
-      return $.plot(this.$chartContainer, [{
+      return $.plotAnimator(this.$chartContainer, [{
+          animator: {steps: 200, duration: 3000, start: 0},
         label: 'Light Blue',
         data: data[0],
         lines: {
@@ -85,12 +86,6 @@ export default class RevenueChart extends PureComponent {
         },
         points: {
           fillColor: '#A7BEFF',
-          symbol: (ctx, x, y) => {
-                  // count for every 8nd point to show on line
-            if (counter % 8 === 0) { ctx.arc(x, y, 2, 0, Math.PI * 2, false); }
-
-            counter += 1;
-          },
         },
         shadowSize: 0,
       }, {
@@ -139,14 +134,8 @@ export default class RevenueChart extends PureComponent {
         points: {
           show: true,
           fill: true,
-          lineWidth: 1,
-          radius: 1,
-          symbol: (ctx, x, y) => {
-                  // show every 5th point on line
-            if (counter % 5 === 0) { ctx.arc(x, y, 2, 0, Math.PI * 2, false); }
-
-            counter += 1;
-          },
+          lineWidth: 5,
+          radius: 0,
         },
         grid: {
           backgroundColor: { colors: ['#ffffff', '#ffffff'] },
