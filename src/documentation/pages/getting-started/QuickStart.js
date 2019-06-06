@@ -19,6 +19,7 @@ const QuickStart = () => (
         <ol>
           <li>1. Mac OS X, Windows, or Linux</li>
           <li>2. Yarn package + Node.js v6.5 or newer</li>
+          <li>3. Running our <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a></li>
         </ol>
         <h5>Quick Start:</h5>
         <ol>
@@ -27,8 +28,8 @@ const QuickStart = () => (
         </ol>
         <h5>There are also other npm tasks:</h5>
         <ul>
-          <li><code>yarn run build</code>: if you need just to build the app (without running a dev server)</li>
-          <li><code>yarn run lint</code>: to check the source code for syntax errors and potential issues</li>
+          <li><code>yarn build</code>: if you need just to build the app (without running a dev server)</li>
+          <li><code>yarn lint</code>: to check the source code for syntax errors and potential issues</li>
         </ul>
       </Widget>
       <p>For more instruction please refer to Sing App React readme.md.</p>

@@ -24,26 +24,20 @@ export default class Pages extends Component {
           <Widget id="Auth">
             <h3>Auth</h3>
             <p>Auth is a built-in module for an admin template dashboard. It contains all actions and handlers for any token authorization for your application.</p>
-            <p>All logic is in <code>src/actions/user.js</code> and <code>src/reducers/user.js</code>. You need to change <code>loginUser</code> function to get this work with your backend. <code>Creds</code> variable contains user login and password entered in the login form. You should do request to your server to get token and save it in <code>localStorage</code>.</p>
+            <p>All logic is in <code>src/actions/user.js</code> and <code>src/reducers/user.js</code>. We have already preconfigured <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a> under the hood. <code>Creds</code> variable contains user email and password entered in the login form. It does request to our backend server and gets token and saves it in <code>localStorage</code>.</p>
             <p><b>Important note.</b> Credentials validation must be on the server side.</p>
             <p>Another important part of authentication is <code>PrivateRoute</code> component. That’s how it looks like.</p>
-            <SyntaxHighlighter language='javascript' style={tomorrow}>{'const PrivateRoute = ({ component, ...rest }) => {\n' +
-            '  return (\n' +
-            '    <Route {...rest} render={props => (\n' +
-            '      localStorage.getItem(\'id_token\') ? (\n' +
-            '        React.createElement(component, props)\n' +
-            '      ) : (\n' +
-            '        <Redirect\n' +
-            '          to={{\n' +
-            '            pathname: \'/login\',\n' +
-            '            state: { from: props.location }, \n' +
-            '          }}\n' +
-            '        />\n' +
-            '      )\n' +
-            '    )}\n' +
-            '  />\n' +
-            ')};'}</SyntaxHighlighter>
-            <p>We are getting id_token from local storage, that must be saved in local storage after successful loginUser function completion. Depends on the result of this action, we <code>PrivateRoute</code> returns page (react component) or redirect to the login page. If you don’t need login functionality in your app, you can use Route instead of <code>PrivateRoute</code>.</p>
+            <SyntaxHighlighter language='javascript' style={tomorrow}>{'const PrivateRoute = ({ dispatch, component, ...rest }) => {\n' +
+            '    if (!Login.isAuthenticated(localStorage.getItem(\'token\'))) {\n' +
+            '        dispatch(logoutUser());\n' +
+            '        return (<Redirect to=\'/login\'/>)\n' +
+            '    } else {\n' +
+            '        return (\n' +
+            '            <Route {...rest} render={props => (React.createElement(component, props))}/>\n' +
+            '        );\n' +
+            '    }\n' +
+            '};'}</SyntaxHighlighter>
+            <p>We are getting <code>token</code> from local storage, that must be saved in local storage after successful loginUser function completion. Depends on the result of this action, <code>PrivateRoute</code> returns page (react component) or redirect to the login page. If you don’t need login functionality in your app, you can use <code>Route</code> instead of <code>PrivateRoute</code>.</p>
           </Widget>
           <Widget id="Inbox">
             <h3>Inbox</h3>
@@ -65,26 +59,31 @@ export default class Pages extends Component {
             <p>Visits dashboard page can be used for real-time displaying users & traffic data. It is a big vector map made with mapael in the center of this dashboard, that can display any region of the world with any data you want on hover action.</p>
             <p>All of this component can be used on any page of the application.</p>
             <p>
-              <Link className="btn btn-primary mr-sm" to="/app/inbox">Analytics</Link>
-              <Link className="btn btn-primary" to="/app/inbox">Visits</Link>
+              <Link className="btn btn-primary mr-sm" to="/app/main/analytics">Analytics</Link>
+              <Link className="btn btn-primary" to="/app/main/visits">Visits</Link>
             </p>
           </Widget>
           <Widget id="E-Commerce">
             <h3>E-commerce</h3>
-            <p>E-commerce is a group of two pages: product list and product details. Must have a page if you are doing something similar to marketplace or shop.</p>
-            <p>Analytics one. There you can find a lot of chart and statistics, calendar, todo manager, table with any data you need, notifications block.</p>
-            <p>Products page is a list of ProductCard component. <code>ProductCard</code>  component used to display product image, price, label, the small description in a proper way.</p>
-            <p>Product details is a detailed product card with a lot informative description.</p>
-            <p>Examples of <code>ProductCard</code> component</p>
+            <p className="text-secondary font-weight-bold"><span className="text-warning">Important note.</span> This section is fully supported by <a
+              href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js
+              backend</a> data.
+            </p>
+            <p>E-commerce is a group of three pages: product management, product list and product details. Must have a page if you are doing something similar to marketplace or shop.</p>
+            <p>&bull; Product management is a page, where you can manipulate with products data. You can CREATE, READ, UPDATE and DELETE products.</p>
+            <p>&bull; Products page is a list of ProductCard component. <code>ProductCard</code>  component used to display product image, price, label, the small description in a proper way.</p>
+            <p>&bull; Product details is a detailed product card with a lot informative description.</p>
+            <p>Examples of <code>ProductCard</code> component:</p>
             <Row>
               <Col md={6}>
-                <ProductCard {...products[1]} />
+                <ProductCard {...products[0]} />
               </Col>
               <Col md={6}>
-                <ProductCard {...products[3]} />
+                <ProductCard {...products[2]} />
               </Col>
             </Row>
             <p>
+              <Link className="btn btn-primary mr-sm" to="/app/ecommerce/management">Management</Link>
               <Link className="btn btn-primary mr-sm" to="/app/ecommerce/products">List</Link>
               <Link className="btn btn-primary" to="/app/ecommerce/product">Details</Link>
             </p>
