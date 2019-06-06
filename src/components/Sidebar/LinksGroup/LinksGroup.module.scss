@@ -118,6 +118,10 @@
   a.headerLinkActive {
     font-weight: $font-weight-semi-bold;
     color: var(--sidebar-color);
+
+    &:hover {
+      color: var(--sidebar-color);
+    }
   }
 
   ul {

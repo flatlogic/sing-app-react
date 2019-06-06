@@ -100,6 +100,7 @@ class Sidebar extends React.Component {
                 index="ecommerce"
                 label="NodeJS"
                 labelColor="danger"
+                exact={false}
                 childrenLinks={[
                     {
                         header: 'Product Management', link: '/app/ecommerce/management',

@@ -100,7 +100,7 @@ export default class RevenueChart extends PureComponent {
         },
         shadowSize: 0,
       }, {
-          animator: {steps: 200, duration: 1000, start: 0},
+          animator: {steps: 100, duration: 30 * 14, start: 0},
         label: 'Sing App',
         data: data[2],
         lines: {

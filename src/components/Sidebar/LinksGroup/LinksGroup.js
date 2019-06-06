@@ -22,7 +22,8 @@ class LinksGroup extends Component {
     index: PropTypes.string,
     deep: PropTypes.number,
     onActiveSidebarItemChange: PropTypes.func,
-    labelColor: PropTypes.string
+    labelColor: PropTypes.string,
+    exact: PropTypes.bool
   };
   /* eslint-enable */
 
@@ -34,6 +35,7 @@ class LinksGroup extends Component {
     deep: 0,
     activeItem: '',
     label: '',
+    exact: true
   };
 
   constructor(props) {
@@ -58,6 +60,8 @@ class LinksGroup extends Component {
       this.props.activeItem.includes(this.props.index) &&
       this.state.headerLinkWasClicked;
 
+    const {exact} = this.props.exact;
+
     if (!this.props.childrenLinks) {
       if (this.props.isHeader) {
         return (
@@ -65,7 +69,7 @@ class LinksGroup extends Component {
             <NavLink
               to={this.props.link}
               activeClassName={s.headerLinkActive}
-              exact
+              exact={exact}
               target={this.props.target}
             >
               <span className={classnames('icon', s.icon)}>
@@ -89,7 +93,7 @@ class LinksGroup extends Component {
                 e.preventDefault();
               }
             }}
-            exact
+            exact={exact}
           >
             {this.props.header} {this.props.label && <sup className={`${s.headerLabel} text-${this.props.labelColor || 'warning'}`}>{this.props.label}</sup>}
           </NavLink>
