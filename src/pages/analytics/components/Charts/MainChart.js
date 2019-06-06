@@ -76,7 +76,6 @@ export default class RevenueChart extends PureComponent {
 
     if (this.$chartContainer.length > 0) {
       return $.plotAnimator(this.$chartContainer, [{
-          animator: {steps: 200, duration: 3000, start: 0},
         label: 'Light Blue',
         data: data[0],
         lines: {
@@ -101,6 +100,7 @@ export default class RevenueChart extends PureComponent {
         },
         shadowSize: 0,
       }, {
+          animator: {steps: 200, duration: 1000, start: 0},
         label: 'Sing App',
         data: data[2],
         lines: {
