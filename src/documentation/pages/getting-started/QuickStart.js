@@ -19,7 +19,8 @@ const QuickStart = () => (
         <ol>
           <li>1. Mac OS X, Windows, or Linux</li>
           <li>2. Yarn package + Node.js v6.5 or newer</li>
-          <li>3. Running our <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a></li>
+          <li>3. Running our <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a>
+              <span className="small text-muted"> (Required only in full stack version)</span></li>
         </ol>
         <h5>Quick Start:</h5>
         <ol>

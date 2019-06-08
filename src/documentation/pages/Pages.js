@@ -24,7 +24,8 @@ export default class Pages extends Component {
           <Widget id="Auth">
             <h3>Auth</h3>
             <p>Auth is a built-in module for an admin template dashboard. It contains all actions and handlers for any token authorization for your application.</p>
-            <p>All logic is in <code>src/actions/user.js</code> and <code>src/reducers/user.js</code>. We have already preconfigured <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a> under the hood. <code>Creds</code> variable contains user email and password entered in the login form. It does request to our backend server and gets token and saves it in <code>localStorage</code>.</p>
+            <p>All logic is in <code>src/actions/user.js</code> and <code>src/reducers/user.js</code>. We have already preconfigured <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend</a>
+                <span className="small text-muted"> (Only in full stack version)</span> under the hood. <code>Creds</code> variable contains user email and password entered in the login form. It does request to our backend server and gets token and saves it in <code>localStorage</code>.</p>
             <p><b>Important note.</b> Credentials validation must be on the server side.</p>
             <p>Another important part of authentication is <code>PrivateRoute</code> component. That’s how it looks like.</p>
             <SyntaxHighlighter language='javascript' style={tomorrow}>{'const PrivateRoute = ({ dispatch, component, ...rest }) => {\n' +
@@ -65,12 +66,12 @@ export default class Pages extends Component {
           </Widget>
           <Widget id="E-Commerce">
             <h3>E-commerce</h3>
-            <p className="text-secondary font-weight-bold"><span className="text-warning">Important note.</span> This section is fully supported by <a
+            <p className="alert alert-secondary font-weight-bold"><span className="text-warning">Important note.</span> This section is fully supported by <a
               href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js
               backend</a> data.
             </p>
             <p>E-commerce is a group of three pages: product management, product list and product details. Must have a page if you are doing something similar to marketplace or shop.</p>
-            <p>&bull; Product management is a page, where you can manipulate with products data. You can CREATE, READ, UPDATE and DELETE products.</p>
+            <p>&bull; Product management is a page, where you can manipulate with products data. You can CREATE, READ, UPDATE and DELETE products. <span className="small text-muted">(This page is available only in full stack version)</span></p>
             <p>&bull; Products page is a list of ProductCard component. <code>ProductCard</code>  component used to display product image, price, label, the small description in a proper way.</p>
             <p>&bull; Product details is a detailed product card with a lot informative description.</p>
             <p>Examples of <code>ProductCard</code> component:</p>

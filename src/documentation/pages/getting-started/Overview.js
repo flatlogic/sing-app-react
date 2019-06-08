@@ -38,7 +38,9 @@ const Overview = () => (
           <li className="lead"><i className="la la-check" /> 2 Dashboards</li>
           <li className="lead"><i className="la la-check" /> Theme Support</li>
           <li className="lead"><i className="la la-check" /> E-Commerce Section</li>
-          <li className="lead"><i className="la la-check" /> <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend support</a></li>
+            <li className="lead"><i className="la la-check" />
+                <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js backend support</a> <span className="small text-muted">(Only in full stack version)</span>
+            </li>
           <li className="lead"><i className="la la-check" /> Static & Hover Sidebar</li>
           <li className="lead"><i className="la la-check" /> Fully Documented Codebase</li>
           <li className="lead"><i className="la la-check" /> And even more coming soon!</li>

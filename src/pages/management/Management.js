@@ -170,9 +170,7 @@ class Management extends React.Component {
                         color="success"
                         className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
                     >
-                        {/* eslint-disable */}
-                        This page is only available in <a className="text-white font-weight-bold" href="#">Sing App React with Node.js</a> integration!
-                        {/* eslint-enable */}
+                        This page is only available in <a className="text-white font-weight-bold" rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-nodejs" target="_blank">Sing App React with Node.js</a> integration!
                     </Alert>
                 </div>
                 <Widget title="List of Products" collapse close
