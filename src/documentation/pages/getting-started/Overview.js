@@ -25,6 +25,11 @@ const Overview = () => (
           will even further speed up your development. You can use Sing App React to build any type of web applications
           like SAAS, CMS, financial dashboards, project management tools, etc.
         </p>
+        <p className="lead">
+            Moreover, there is a version of <a rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-nodejs" target="_blank">Sing App React with Node.js</a>, enhanced with working node.js
+            backend with authentication, login strategies and basic CRUD functions. Please refer to <a
+            href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">backend documentation</a> for details
+        </p>
         <img className="img-responsive w-100 border" src={dashboard} alt="screenshot" />
         <Link to="/app">Live demo</Link>
       </Widget>
