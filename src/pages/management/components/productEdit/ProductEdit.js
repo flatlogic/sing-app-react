@@ -20,25 +20,30 @@ import {
     PopoverBody
 } from "reactstrap";
 
-import { loadProductRequest, receiveProduct, updateProduct, updateProductRequest, createProductRequest, deleteProductRequest } from '../../../../actions/products';
+import {
+  loadProductRequest,
+  receiveProduct,
+  updateProduct,
+  updateProductRequest,
+  createProductRequest,
+  deleteProductRequest,
+  getProductsImagesRequest
+} from '../../../../actions/products';
 import Widget from '../../../../components/Widget';
 import Loader from '../../../../components/Loader';
 import s from './ProductEdit.module.scss';
 import img1 from "../../../../images/products/img1.jpg";
-import img2 from "../../../../images/products/img2.jpg";
-import img3 from "../../../../images/products/img3.jpg";
-import img4 from "../../../../images/products/img4.jpg";
-import img5 from "../../../../images/products/img5.jpeg";
-import img6 from "../../../../images/products/img6.jpg";
 
 class ProductEdit extends React.Component {
     static propTypes = {
         products: PropTypes.array,
+        images: PropTypes.array,
         dispatch: PropTypes.func.isRequired,
     };
 
     static defaultProps = {
-        products: []
+        products: [],
+        images: []
     };
 
     constructor(props) {
@@ -131,6 +136,10 @@ class ProductEdit extends React.Component {
         });
     }
 
+    componentDidMount() {
+      this.props.dispatch(getProductsImagesRequest());
+    }
+
     componentDidUpdate() {
         let product = this.findProduct(this.getId()) || {
             technology: []
@@ -166,7 +175,7 @@ class ProductEdit extends React.Component {
                                             <img className={s.productImage} alt="img" src={image}/>
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                            {[img1, img2, img3, img4, img5, img6].map(img => (
+                                            {this.props.images.map(img => (
                                                 <DropdownItem key={img} onClick={() => this.updateProduct(img, 'img')}>
                                                     <img className={s.productImage} alt={img} src={img}/>
                                                 </DropdownItem>
@@ -302,6 +311,7 @@ class ProductEdit extends React.Component {
 function mapStateToProps(state) {
     return {
         products: state.products.data,
+        images: state.products.images,
         isReceiving: state.products.isReceiving,
         isUpdating: state.products.isUpdating,
         isDeleting: state.products.isDeleting,

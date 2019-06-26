@@ -1,16 +1,18 @@
 import {
-    RECEIVED_PRODUCTS,
-    RECEIVED_PRODUCT,
-    UPDATED_PRODUCT,
-    DELETED_PRODUCT,
-    RECEIVING_PRODUCTS,
-    RECEIVING_PRODUCT,
-    UPDATING_PRODUCT,
-    DELETING_PRODUCT
+  RECEIVED_PRODUCTS,
+  RECEIVED_PRODUCT,
+  UPDATED_PRODUCT,
+  DELETED_PRODUCT,
+  RECEIVING_PRODUCTS,
+  RECEIVING_PRODUCT,
+  UPDATING_PRODUCT,
+  DELETING_PRODUCT,
+  RECEIVED_IMAGES
 } from '../actions/products';
 
 const defaultState = {
     data: [],
+    images: [],
     isReceiving: false,
     isUpdating: false,
     isDeleting: false,
@@ -62,6 +64,10 @@ export default function productsReducer(state = defaultState, action) {
             return Object.assign({}, state, {
                 isDeleting: true,
                 idToDelete: action.payload.id
+            });
+        case RECEIVED_IMAGES:
+            return Object.assign({}, state, {
+                images: action.payload,
             });
         default:
             return state;

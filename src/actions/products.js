@@ -9,6 +9,7 @@ export const UPDATED_PRODUCT = 'UPDATED_PRODUCT';
 export const UPDATING_PRODUCT = 'UPDATING_PRODUCT';
 export const DELETED_PRODUCT = 'DELETED_PRODUCT';
 export const DELETING_PRODUCT = 'DELETING_PRODUCT';
+export const RECEIVED_IMAGES = 'RECEIVED_IMAGES';
 
 export function getProductsRequest() {
     return (dispatch) => {
@@ -61,6 +62,22 @@ export function deleteProductRequest(payload) {
         })
     };
 }
+
+export function getProductsImagesRequest() {
+  return (dispatch) => {
+    axios.get('/products/images-list').then(res => {
+      dispatch(receiveProductImages(res.data));
+    })
+  };
+}
+
+export function receiveProductImages(payload) {
+  return {
+    type: RECEIVED_IMAGES,
+    payload
+  }
+}
+
 
 export function receiveProducts(payload) {
     return {
