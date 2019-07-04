@@ -36,7 +36,7 @@ export default function productsReducer(state = defaultState, action) {
             return Object.assign({}, state, {
                 data: state.data.map((p, i) => {
                     if (i === index) {
-                        return action.payload;
+                        return Object.assign({}, p, action.payload);
                     }
                     return p;
                 }),

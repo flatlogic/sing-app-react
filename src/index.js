@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import ReduxThunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
-import logger from 'redux-logger'
 
 import App from './components/App';
 import config from './config';
@@ -24,7 +23,7 @@ if (token) {
 
 const store = createStore(
   reducers,
-  applyMiddleware(ReduxThunk, logger)
+  applyMiddleware(ReduxThunk)
 );
 
 ReactDOM.render(

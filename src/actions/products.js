@@ -63,10 +63,13 @@ export function deleteProductRequest(payload) {
     };
 }
 
-export function getProductsImagesRequest() {
+export function getProductsImagesRequest(payload) {
   return (dispatch) => {
     axios.get('/products/images-list').then(res => {
       dispatch(receiveProductImages(res.data));
+      if (!payload.img && res.data.length) {
+        dispatch(updateProduct({id: payload.id, img: res.data[0]}));
+      }
     })
   };
 }

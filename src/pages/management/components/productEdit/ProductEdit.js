@@ -32,7 +32,6 @@ import {
 import Widget from '../../../../components/Widget';
 import Loader from '../../../../components/Loader';
 import s from './ProductEdit.module.scss';
-import img1 from "../../../../images/products/img1.jpg";
 
 class ProductEdit extends React.Component {
     static propTypes = {
@@ -61,6 +60,12 @@ class ProductEdit extends React.Component {
         this.description_1 = React.createRef();
         this.description_2 = React.createRef();
 
+        let newProduct = {
+          id: -1,
+          price: 0.01,
+          rating: 5,
+          technology: []
+        };
         let product = this.findProduct(this.getId());
         if (this.getId() > -1) {
             if (!product) {
@@ -68,16 +73,12 @@ class ProductEdit extends React.Component {
             }
         } else {
             if (!product) {
-                this.props.dispatch(receiveProduct({
-                    id: -1,
-                    img: img1,
-                    price: 0.01,
-                    rating: 5,
-                    technology: []
-                }));
+                this.props.dispatch(receiveProduct(newProduct));
             }
 
         }
+
+        this.props.dispatch(getProductsImagesRequest(newProduct));
     }
 
     findProduct(id) {
@@ -136,10 +137,6 @@ class ProductEdit extends React.Component {
         });
     }
 
-    componentDidMount() {
-      this.props.dispatch(getProductsImagesRequest());
-    }
-
     componentDidUpdate() {
         let product = this.findProduct(this.getId()) || {
             technology: []
@@ -172,7 +169,7 @@ class ProductEdit extends React.Component {
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}
                                               id="productImage">
                                         <DropdownToggle caret color="info">
-                                            <img className={s.productImage} alt="img" src={image}/>
+                                          {image && <img className={s.productImage} alt="img" src={image}/>}
                                         </DropdownToggle>
                                         <DropdownMenu>
                                             {this.props.images.map(img => (
