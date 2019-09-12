@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import config from '../config';
 
 export const REGISTER_REQUEST = 'REGISTER_REQUEST';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
@@ -26,20 +27,27 @@ export function registerError(payload) {
 
 export function registerUser(payload) {
     return (dispatch) => {
-        dispatch(requestRegister());
-        debugger;
-        const creds = payload.creds;
-        if (creds.email.length > 0 && creds.password.length > 0) {
-            axios.post("/user/signup", creds).then(res => {
+        // We check if app runs with backend mode
+        if (!config.isBackend) {
+            toast.success("You've been registered successfully");
+            payload.history.push('/login');
+        }
+
+        else {
+            dispatch(requestRegister());
+            const creds = payload.creds;
+            if (creds.email.length > 0 && creds.password.length > 0) {
+              axios.post("/user/signup", creds).then(res => {
                 dispatch(receiveRegister());
                 toast.success("You've been registered successfully");
                 payload.history.push('/login');
-            }).catch(err => {
+              }).catch(err => {
                 dispatch(registerError(err.response.data));
-            })
+              })
 
-        } else {
-            dispatch(registerError('Something was wrong. Try again'));
+            } else {
+              dispatch(registerError('Something was wrong. Try again'));
+            }
         }
     };
 }

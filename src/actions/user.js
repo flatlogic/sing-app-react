@@ -54,7 +54,18 @@ export function logoutUser() {
 
 export function receiveToken(token) {
     return (dispatch) => {
-        let user = jwt.decode(token).user;
+        let user;
+
+        // We check if app runs with backend mode
+        if (config.isBackend) {
+          user = jwt.decode(token).user;
+          delete user.id;
+        } else {
+          user = {
+            email: config.auth.email
+          }
+        }
+
         delete user.id;
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(user));
@@ -65,20 +76,26 @@ export function receiveToken(token) {
 
 export function loginUser(creds) {
     return (dispatch) => {
-        dispatch(requestLogin());
-        if (creds.social) {
-            window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-react" : "");
+        // We check if app runs with backend mode
+        if (!config.isBackend) {
+          dispatch(receiveToken('token'));
         }
-        else if (creds.email.length > 0 && creds.password.length > 0) {
+
+        else {
+          dispatch(requestLogin());
+          if (creds.social) {
+            window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-react" : "");
+          } else if (creds.email.length > 0 && creds.password.length > 0) {
             axios.post("/user/signin/local", creds).then(res => {
-                const token = res.data.token;
-                dispatch(receiveToken(token));
+              const token = res.data.token;
+              dispatch(receiveToken(token));
             }).catch(err => {
-                dispatch(loginError(err.response.data));
+              dispatch(loginError(err.response.data));
             })
 
-        } else {
+          } else {
             dispatch(loginError('Something was wrong. Try again'));
+          }
         }
     };
 }

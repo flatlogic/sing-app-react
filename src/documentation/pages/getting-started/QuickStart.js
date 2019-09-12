@@ -26,6 +26,9 @@ const QuickStart = () => (
         <ol>
           <li>1. Run <code>yarn install</code></li>
           <li>2. Run <code>yarn start</code></li>
+          <li>2.1 For running the app with backend support please run <code>yarn start:backend</code>
+            <span className="small text-muted"> (Required only in full stack version)</span>
+          </li>
         </ol>
         <h5>There are also other npm tasks:</h5>
         <ul>
