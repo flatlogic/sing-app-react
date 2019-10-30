@@ -1,6 +1,0 @@
-{
-  "name": "Morris",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./Morris.js"
-}

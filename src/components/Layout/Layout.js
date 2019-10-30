@@ -45,11 +45,9 @@ import UINavbar from '../../pages/ui-elements/navbar';
 import UINav from '../../pages/ui-elements/nav';
 import UIPopovers from '../../pages/ui-elements/popovers';
 import Charts from '../../pages/charts';
-import ChartsEasyPie from '../../pages/charts/easy-pie';
-import ChartsMorris from '../../pages/charts/morris';
-import ChartsFlot from '../../pages/charts/flot';
-import ChartsSparkline from '../../pages/charts/sparkline';
-import ChartsRickshaw from '../../pages/charts/rickshaw';
+import ApexCharts from '../../pages/charts/apex';
+import Echarts from '../../pages/charts/echarts';
+import HighCharts from '../../pages/charts/highcharts';
 import DashboardAnalytics from '../../pages/analytics';
 import Dashboard from '../../pages/dashboard';
 
@@ -205,11 +203,9 @@ class Layout extends React.Component {
                     <Route path="/app/forms/wizard" exact component={FormsWizard} />
                     <Route path="/app/charts/" exact render={() => <Redirect to="/app/charts/overview" />} />
                     <Route path="/app/charts/overview" exact component={Charts} />
-                    <Route path="/app/charts/easy-pie" exact component={ChartsEasyPie} />
-                    <Route path="/app/charts/morris" exact component={ChartsMorris} />
-                    <Route path="/app/charts/flot" exact component={ChartsFlot} />
-                    <Route path="/app/charts/sparkline" exact component={ChartsSparkline} />
-                    <Route path="/app/charts/rickshaw" exact component={ChartsRickshaw} />
+                    <Route path="/app/charts/apex" exact component={ApexCharts} />
+                    <Route path="/app/charts/echarts" exact component={Echarts} />
+                    <Route path="/app/charts/highcharts" exact component={HighCharts} />
                     <Route path="/app/tables" exact render={() => <Redirect to="/app/tables/static" />} />
                     <Route path="/app/tables/static" exact component={TablesStatic} />
                     <Route path="/app/tables/dynamic" exact component={TablesDynamic} />

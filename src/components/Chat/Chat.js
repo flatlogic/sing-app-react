@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { ListGroup, ListGroupItem, InputGroup, InputGroupAddon, Input, InputGroupText } from 'reactstrap';
-import $ from 'jquery';
 
 import * as a1 from '../../images/people/a1.jpg';
 import * as a2 from '../../images/people/a2.jpg';
@@ -105,7 +104,10 @@ class Chat extends React.Component {
       conversation,
       chatMessageOpened: false,
     });
-    $(e.currentTarget).removeClass('active').find('.badge').remove();
+    if(e.currentTarget.classList.contains('active')) {
+      e.currentTarget.querySelector('.badge').remove();
+      e.currentTarget.classList.remove('active');      
+    }
   }
 
   addMessage(e) {

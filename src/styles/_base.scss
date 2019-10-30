@@ -187,6 +187,19 @@ table > thead > tr > th {
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
 }
 
+.sortable-chosen { 
+  opacity: 1!important
+}
+
+.widget-placeholder-react {
+  background: rgba($white, 0.4)!important;
+  border: 1px dashed $gray-600!important;
+  margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px!important;
+  > * {
+    opacity: 0;
+  }
+}
+
 /*         Post Links           */
 
 .post-links {

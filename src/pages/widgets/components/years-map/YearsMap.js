@@ -1,126 +1,98 @@
 import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-/* eslint-disable */
-import $ from 'jquery';
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/maps/world_countries';
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/jquery.mapael';
-/* eslint-enable */
-import './YearsMap.scss';
+
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
+
 import fakeWorldData from './MapData';
 
+import s from './YearsMap.module.scss';
+
+am4core.useTheme(am4themes_animated);
+
 class YearsMap extends React.Component {
-  constructor(prop) {
-    super(prop);
-    this.state = {
-      activeYear: 2019,
-    };
-    this.triggerYear = this.triggerYear.bind(this);
-  }
+
+  state = {
+    activeYear: 2012,
+  };
 
   componentDidMount() {
-    this.init();
-  }
+    let map = am4core.create("map-widget", am4maps.MapChart);
 
-  init() {
-    const $map = $('#mapael');
-    const data = {
-      map: {
-        name: 'world_countries',
-        defaultArea: {
-          attrs: {
-            fill: '#eee', // gray-lighter
-            stroke: '#666', // 'gray'
-            'stroke-width': 0.1,
-          },
-          attrsHover: {
-            fill: '#999', // gray-light,
-            animDuration: 100,
-          },
-        },
-        defaultPlot: {
-          size: 17,
-          attrs: {
-            fill: '#f0b518', // brand-warning,
-            stroke: '#fff',
-            'stroke-width': 0,
-            'stroke-linejoin': 'round',
-          },
-          attrsHover: {
-            'stroke-width': 1,
-            animDuration: 100,
-          },
-        },
-        zoom: {
-          enabled: true,
-          step: 1,
-          maxLevel: 10,
-          mousewheel: false,
-        },
-      },
-      legend: {
-        area: {
-          display: false,
-          slices: [
-            {
-              max: 5000000,
-              attrs: {
-                fill: 'rgb(245, 249, 251)', // lightenColor('#ebeff1', .04)
-              },
-              label: 'Less than 5M',
-            },
-            {
-              min: 5000000,
-              max: 10000000,
-              attrs: {
-                fill: '#ebeff1',
-              },
-              label: 'Between 5M and 10M',
-            },
-            {
-              min: 10000000,
-              max: 50000000,
-              attrs: {
-                fill: '#eee', // gray-lighter
-              },
-              label: 'Between 10M and 50M',
-            },
-            {
-              min: 50000000,
-              attrs: {
-                fill: 'rgb(209, 213, 215)', // darkenColor('#ebeff1', .1)
-              },
-              label: 'More than 50M',
-            },
-          ],
-        },
-      },
-      areas: fakeWorldData[this.state.activeYear].areas,
+    map.geodata = am4geodata_worldLow;
+    map.projection = new am4maps.projections.Miller();
+    map.contentHeight = 100;
+    map.homeZoomLevel = 6;
+    map.homeGeoPoint = {
+      longitude: 8.863224,
+      latitude: 39.599254
     };
-    const height = 394;
-    $map.css('height', height);
-    if ($map.parents('.widget')[0]) {
-      $map.find('.map').css('height', parseInt($map.parents('.widget').css('height'), 10) - 35);
-    }
-    $map.mapael(data);
-    $map.trigger('zoom', { level: 6, latitude: 59.599254, longitude: 8.863224 });
+
+    this.polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
+    this.polygonSeries.useGeodata = true;
+    this.polygonSeries.exclude = ["AQ"];
+
+    this.polygonSeries.data = fakeWorldData[this.state.activeYear].areas;
+
+this.polygonSeries.tooltip.background.fill = am4core.color("#fff");
+    this.polygonSeries.tooltip.getFillFromObject = false;
+    this.polygonSeries.tooltip.label.fill = am4core.color("#495057");
+    this.polygonSeries.tooltip.autoTextColor = false;
+    map.zoomControl = new am4maps.ZoomControl();
+    map.zoomControl.align = 'left';
+    map.zoomControl.valign = 'bottom';
+    map.zoomControl.dx = 10;
+    map.zoomControl.dy = -30;
+    map.zoomControl.layout = 'horizontal';
+    map.zoomControl.minusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.plusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.minusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.background.cornerRadius(16,16,16,16);
+    map.zoomControl.minusButton.background.cornerRadius(16,16,16,16);
+    map.zoomControl.plusButton.dx = 5;
+    let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
+    plusButtonHoverState.properties.fill = am4core.color("#ccc");
+    let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
+    minusButtonHoverState.properties.fill = am4core.color("#ccc");
+    let polygonTemplate = this.polygonSeries.mapPolygons.template;
+    polygonTemplate.tooltipHTML = "{tooltip}";
+    polygonTemplate.fill = am4core.color("#eee");
+    polygonTemplate.stroke = am4core.color("#666");
+    polygonTemplate.strokeWidth = 0.1;
+    let hs = polygonTemplate.states.create("hover");
+    hs.properties.fill = am4core.color("#999");
+    
+    this.polygonSeries.heatRules.push({
+      "property": "fill",
+      "target": polygonTemplate,
+      "min": am4core.color("#eee"),
+      "max": am4core.color("#aaa")
+    });
   }
 
-  triggerYear(year) {
+  componentWillUnmount() {
+    if (this.map) {
+      this.map.dispose();
+    }
+  }
+
+  triggerYear = (year) => {
     this.setState({
       activeYear: year,
     });
-    const $map = $('#mapael');
-    $map.trigger('update', [{
-      mapOptions: fakeWorldData[year],
-      animDuration: 300,
-    }]);
+    this.polygonSeries.data = fakeWorldData[this.state.activeYear].areas;
   }
 
   render() {
-    return (<div>
-      <div className="mapael" id="mapael">
-        <div className="stats">
-          <h6 className="text-gray-dark">YEARLY <span className="fw-semi-bold">DISTRIBUTIONS</span></h6>
+    return (
+    <div>
+      <div className={s.mapChart}>
+        <div className={s.stats}>
+          <h6>YEARLY <span className="fw-semi-bold">DISTRIBUTIONS</span></h6>
           <span className="pull-left mr-xs">
             <small><span className="circle bg-warning text-gray-dark">
               <i className="fa fa-plus" /></span></small>
@@ -129,34 +101,32 @@ class YearsMap extends React.Component {
             <strong>17% last year</strong>
           </p>
         </div>
-        <div className="map">
+        <div className={s.map} id="map-widget">
           <span>Alternative content for the map</span>
-        </div>
-        <div className="areaLegend">
-          <span>Alternative content for the legend</span>
         </div>
       </div>
       <Nav className="map-controls" pills fill>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2014} onClick={() => this.triggerYear(2014)}>2014</NavLink>
+            <NavLink active={this.state.activeYear === 2012} onClick={() => this.triggerYear(2012)}>2012</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2015} onClick={() => this.triggerYear(2015)}>2015</NavLink>
+            <NavLink active={this.state.activeYear === 2013} onClick={() => this.triggerYear(2013)}>2013</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2016} onClick={() => this.triggerYear(2016)}>2016</NavLink>
+            <NavLink active={this.state.activeYear === 2014} onClick={() => this.triggerYear(2014)}>2014</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2017} onClick={() => this.triggerYear(2017)}>2017</NavLink>
+            <NavLink active={this.state.activeYear === 2015} onClick={() => this.triggerYear(2015)}>2015</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2018} onClick={() => this.triggerYear(2018)}>2018</NavLink>
+            <NavLink active={this.state.activeYear === 2016} onClick={() => this.triggerYear(2016)}>2016</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={this.state.activeYear === 2019} onClick={() => this.triggerYear(2019)}>2019</NavLink>
+            <NavLink active={this.state.activeYear === 2017} onClick={() => this.triggerYear(2017)}>2017</NavLink>
         </NavItem>
       </Nav>
-    </div>);
+    </div>
+    );
   }
 }
 

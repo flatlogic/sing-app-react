@@ -4,202 +4,183 @@ import {
   Col,
   ButtonGroup,
   Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Input,
 } from 'reactstrap';
 
-import 'fullcalendar/dist/fullcalendar';
-import 'jquery-ui/ui/widgets/draggable';
 import moment from 'moment/moment';
-import $ from 'jquery';
 
 import s from './Calendar.module.scss';
 import Widget from '../../../components/Widget';
 
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin, {Draggable} from "@fullcalendar/interaction";
+
+import "@fullcalendar/core/main.css";
+import "@fullcalendar/daygrid/main.css";
+import "@fullcalendar/timegrid/main.css";
+
+
+
 class Calendar extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      calendarView: 'month',
-      currentMonth: moment().format('MMM YYYY'),
-      currentDay: moment().format('dddd'),
-    };
-
-    const date = new Date();
-    const d = date.getDate();
-    const m = date.getMonth();
-    const y = date.getFullYear();
-
-    this.calendarOptions = {
-      header: {
-        left: '',
-        center: '',
-        right: '',
-      },
-      events: [
-        {
-          title: 'All Day Event',
-          start: new Date(y, m, 1),
-          backgroundColor: '#79A5F0',
-          textColor: '#fff',
-          description: 'Will be busy throughout the whole day',
+    constructor(props) {
+      super(props)
+      const date = new Date();
+      const d = date.getDate();
+      const m = date.getMonth();
+      const y = date.getFullYear();
+      this.state = {
+        event: {},
+        modal: false,
+        modalEvent: false,
+        calendarView: 'dayGridMonth',
+        currentMonth: moment().format('MMM YYYY'),
+        currentDay: moment().format('dddd'),
+        calendarOptions: {
+          header: {
+            left: '',
+            center: '',
+            right: '',
+          },
+          events: [
+            {
+              title: 'All Day Event',
+              start: new Date(y, m, 1),
+              backgroundColor: '#79A5F0',
+              textColor: '#fff',
+              description: 'Will be busy throughout the whole day',
+            },
+            {
+              title: 'Long Event',
+              start: new Date(y, m, d + 5),
+              end: new Date(y, m, d + 7),
+              textColor: '#333',
+              description: 'This conference should be worse visiting',
+            },
+            {
+              id: 999,
+              title: 'Blah Blah Car',
+              start: new Date(y, m, d - 3, 16, 0),
+              allDay: false,
+              textColor: '#333',
+              description: 'Agree with this guy on arrival time',
+            },
+            {
+              id: 1000,
+              title: 'Buy this template',
+              start: new Date(y, m, d + 3, 12, 0),
+              allDay: false,
+              backgroundColor: '#555',
+              textColor: '#fff',
+              description: 'Make sure everything is consistent first',
+            },
+            {
+              title: 'Got to school',
+              start: new Date(y, m, d + 16, 12, 0),
+              end: new Date(y, m, d + 16, 13, 0),
+              backgroundColor: '#64bd63',
+              textColor: '#fff',
+              description: 'Time to go back',
+            },
+            {
+              title: 'Study some Node',
+              start: new Date(y, m, d + 18, 12, 0),
+              end: new Date(y, m, d + 18, 13, 0),
+              backgroundColor: '#79A5F0',
+              textColor: '#fff',
+              description: 'Node.js is a platform built '
+              + 'on Chrome\'s JavaScript runtime for easily'
+              + ' building fast, scalable network applications.'
+              + ' Node.js uses an event-driven, non-blocking'
+              + ' I/O model that makes it lightweight and'
+              + ' efficient, perfect for data-intensive real-time'
+              + ' applications that run across distributed devices.',
+            },
+            {
+              title: 'Click for Flatlogic',
+              start: new Date(y, m, 28),
+              end: new Date(y, m, 29),
+              url: 'http://flatlogic.com/',
+              backgroundColor: '#e5603b',
+              textColor: '#fff',
+              description: 'Creative solutions',
+            },
+          ],
+          selectable: true,
+          selectHelper: true,
+          editable: true,
+          droppable: true,
         },
-        {
-          title: 'Long Event',
-          start: new Date(y, m, d + 5),
-          end: new Date(y, m, d + 7),
-          description: 'This conference should be worse visiting',
-        },
-        {
-          id: 999,
-          title: 'Blah Blah Car',
-          start: new Date(y, m, d - 3, 16, 0),
-          allDay: false,
-          description: 'Agree with this guy on arrival time',
-        },
-        {
-          id: 1000,
-          title: 'Buy this template',
-          start: new Date(y, m, d + 3, 12, 0),
-          allDay: false,
-          backgroundColor: '#555',
-          textColor: '#fff',
-          description: 'Make sure everything is consistent first',
-        },
-        {
-          title: 'Got to school',
-          start: new Date(y, m, d + 16, 12, 0),
-          end: new Date(y, m, d + 16, 13, 0),
-          backgroundColor: '#64bd63',
-          textColor: '#fff',
-          description: 'Time to go back',
-        },
-        {
-          title: 'Study some Node',
-          start: new Date(y, m, d + 18, 12, 0),
-          end: new Date(y, m, d + 18, 13, 0),
-          backgroundColor: '#79A5F0',
-          textColor: '#fff',
-          description: 'Node.js is a platform built ' +
-          'on Chrome\'s JavaScript runtime for easily' +
-          ' building fast, scalable network applications.' +
-          ' Node.js uses an event-driven, non-blocking' +
-          ' I/O model that makes it lightweight and' +
-          ' efficient, perfect for data-intensive real-time' +
-          ' applications that run across distributed devices.',
-        },
-        {
-          title: 'Click for Flatlogic',
-          start: new Date(y, m, 28),
-          end: new Date(y, m, 29),
-          url: 'http://flatlogic.com/',
-          backgroundColor: '#e5603b',
-          textColor: '#fff',
-          description: 'Creative solutions',
-        },
-      ],
-      selectable: true,
-      selectHelper: true,
-      select: (start, end, allDay) => {
-        this.createEvent = () => {
-          const title = this.event.title;
-          if (title) {
-            this.$calendar.fullCalendar('renderEvent',
-              {
-                title,
-                start,
-                end,
-                allDay,
-                backgroundColor: '#64bd63',
-                textColor: '#fff',
-              },
-              true, // make the event "stick"
-            );
-          }
-          this.$calendar.fullCalendar('unselect');
-          $('#create-event-modal').modal('hide');
-        };
+        calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+        dragOptions: { zIndex: 999, revert: true, revertDuration: 0 },
+      }
+    }
 
-        $('#create-event-modal').modal('show');
-      },
-      eventClick: (event) => {
-        this.event = event;
-        $('#show-event-modal').modal('show');
-      },
-      editable: true,
-      droppable: true,
-
-      drop: (dateItem, event) => { // this function is called when something is dropped
-        // retrieve the dropped element's stored Event Object
-        const originalEventObject = {
-          // use the element's text as the event title
-          title: $.trim($(event.target).text()),
-        };
-
-        // we need to copy it, so that multiple events don't have a reference to the same object
-        const copiedEventObject = $.extend({}, originalEventObject);
-
-        // assign it the date that was reported
-        copiedEventObject.start = dateItem;
-        copiedEventObject.allDay = !dateItem.hasTime();
-
-        const $categoryClass = $(event.target).data('event-class');
-        if ($categoryClass) {
-          copiedEventObject.className = [$categoryClass];
-        }
-
-        // render the event on the calendar
-        // the last `true` argument determines if
-        // the event 'sticks'
-        // http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-        this.$calendar.fullCalendar('renderEvent', copiedEventObject, true);
-
-        $(event.target).remove();
-      },
-    };
-
-    this.dragOptions = { zIndex: 999, revert: true, revertDuration: 0 };
-
-    this.prev = this.prev.bind(this);
-    this.next = this.next.bind(this);
-    this.today = this.today.bind(this);
-    this.changeView = this.changeView.bind(this);
-    this.getCurrentMonth = this.getCurrentMonth.bind(this);
-    this.getCurrentDay = this.getCurrentDay.bind(this);
-  }
 
   componentDidMount() {
-    this.$calendar = $('#calendar');
-    this.$calendar.fullCalendar(this.calendarOptions);
-    $('.draggable').draggable(this.dragOptions);
+    new Draggable(this.externalEvents, {
+      itemSelector: '.external-event'
+    });
   }
 
-  getCurrentMonth() {
-    return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
+  drop = (info) => {
+    info.draggedEl.parentNode.removeChild(info.draggedEl);
   }
 
-  getCurrentDay() {
-    return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
+  handleChange = (e) => {
+    this.setState({ event: { ...this.state.event, title: e.target.value } })
   }
-
-  prev() {
-    this.$calendar.fullCalendar('prev');
+  createEvent = () => {
+    this.fullCalendar.getApi().addEvent(this.state.event);
+    this.fullCalendar.getApi().unselect();
+    this.toggleModal();
   }
-
-  next() {
-    this.$calendar.fullCalendar('next');
+  select = ({start, end, allDay}) => {
+    this.setState({
+      event: {
+        start,
+        end,
+        allDay,
+        backgroundColor: '#64bd63',
+        textColor: '#fff',
+        editable: true
+      }
+    })
+    this.toggleModal();
   }
-
-  today() {
-    this.$calendar.fullCalendar('today');
+  eventClick = (e) => {
+    this.setState({ event: e.event })
+    this.toggleModalEvent();
   }
-
-  changeView(view) {
-    this.$calendar.fullCalendar('changeView', view);
-    this.setState({ calendarView: view });
+  prev = () => {
+    this.fullCalendar.getApi().prev();
+  }
+  next = () => {
+    this.fullCalendar.getApi().next();
+  }
+  today = () => {
+    this.fullCalendar.getApi().today();
+  }
+  changeView = (view) => {
+    this.fullCalendar.getApi().changeView(view);
+  }
+  getFormattedDate = (date) =>  {
+    return moment(date).format('YYYY-MM-DD');
+  }
+  toggleModal = () => {
+    this.setState({ modal: !this.state.modal })
+  }
+  toggleModalEvent = () => {
+    this.setState({ modalEvent: !this.state.modalEvent })
   }
 
   render() {
+    const { event, currentMonth, currentDay, calendarOptions, modal, modalEvent } = this.state
     return (
       <div className={s.root}>
         <Row>
@@ -209,28 +190,38 @@ class Calendar extends React.Component {
               <li className="breadcrumb-item active">Calendar</li>
             </ol>
             <h1 className="page-title">
-              {this.state.currentMonth} - <span className="fw-semi-bold">{this.state.currentDay}</span>
+              {currentMonth} - <span className="fw-semi-bold">{currentDay}</span>
             </h1>
             <h3>Draggable <span className="fw-semi-bold">Events</span></h3>
             <p>Just drap and drop events from there directly into the calendar.</p>
-            <div className="calendar-external-events mb-lg">
-              <div className="external-event draggable" data-event-class="bg-success text-white">
+            <div ref={(node) => {this.externalEvents = node}} className="calendar-external-events mb-lg">
+              <div 
+                data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }' className="external-event draggable"
+              >
                 <i className="fa fa-circle fa-fw text-success ml-xs mr-xs" />
                 Make a tea
               </div>
-              <div className="external-event draggable" data-event-class="bg-warning text-white">
+              <div 
+                data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }' className="external-event draggable"
+              >
                 <i className="fa fa-circle fa-fw text-warning ml-xs mr-xs" />
                 Open windows
               </div>
-              <div className="external-event draggable" data-event-class="bg-gray text-white">
+              <div 
+                data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }' className="external-event draggable"
+              >
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Some stuff
               </div>
-              <div className="external-event draggable" data-event-class="bg-danger text-white">
+              <div
+                data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }' className="external-event draggable"
+              >
                 <i className="fa fa-square fa-fw text-danger ml-xs mr-xs" />
                 Study UX engineering
               </div>
-              <div className="external-event draggable" data-event-class="bg-gray text-white">
+              <div 
+                data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }' className="external-event draggable"
+              >
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Another stuff
               </div>
@@ -248,28 +239,68 @@ class Calendar extends React.Component {
                       <i className="fa fa-angle-right" />
                     </Button>
                   </ButtonGroup>
+                  <Button color="default" onClick={this.today}>
+                    Today
+                  </Button>
                 </Col>
                 <Col md={9} className="calendar-controls text-right">
                   <ButtonGroup>
                     <Button
-                      color="default" onClick={() => this.changeView('month')}
-                      active={this.state.calendarView === 'month'}
+                      color="default" onClick={() => this.changeView('dayGridMonth')}
+                      active={this.state.calendarView === 'dayGridMonth'}
                     >Month</Button>
                     <Button
-                      color="default" onClick={() => this.changeView('agendaWeek')}
-                      active={this.state.calendarView === 'agendaWeek'}
+                      color="default" onClick={() => this.changeView('timeGridWeek')}
+                      active={this.state.calendarView === 'timeGridWeek'}
                     >Week</Button>
                     <Button
-                      color="default" onClick={() => this.changeView('agendaDay')}
-                      active={this.state.calendarView === 'agendaDay'}
+                      color="default" onClick={() => this.changeView('timeGridDay')}
+                      active={this.state.calendarView === 'timeGridDay'}
                     >Day</Button>
                   </ButtonGroup>
                 </Col>
               </Row>
-              <div id="calendar" className="calendar" />
+
+
+            <FullCalendar
+              ref={(node) => {this.fullCalendar = node}}
+              defaultView="dayGridMonth"
+              plugins={this.state.calendarPlugins}
+              select={this.select}
+              eventClick={this.eventClick}
+              drop={this.drop}
+              {...calendarOptions}
+            />
             </Widget>
           </Col>
         </Row>
+
+      <Modal isOpen={modal} toggle={this.toggleModal} id="news-close-modal">
+        <ModalHeader toggle={this.toggleModal} id="news-close-modal-label">Create New Event</ModalHeader>
+        <ModalBody className="bg-white">
+        Just enter event name to create a new one
+
+        <Input onChange={this.handleChange} className={s.calendarModalInput} value={event.title} type="text" name="title" placeholder="Title" />
+        </ModalBody>
+        <ModalFooter>
+          <Button color="default" onClick={this.toggleModal} data-dismiss="modal">Close</Button>{' '}
+          <Button color="success" onClick={this.createEvent} id="news-widget-remove">Create</Button>
+        </ModalFooter>
+      </Modal> 
+
+      <Modal isOpen={modalEvent} toggle={this.toggleModalEvent} id="news-close-modal">
+        <ModalHeader toggle={this.toggleModalEvent} id="news-close-modal-label">{event.title}</ModalHeader>
+        <ModalBody className="bg-white">
+        <p class="text-muted">
+            <i class="la la-calendar"></i>
+            {this.getFormattedDate(event.start)}
+          </p>
+          <p>{event.extendedProps && event.extendedProps.description}</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="default" onClick={this.toggleModalEvent} data-dismiss="modal">OK</Button>
+        </ModalFooter>
+      </Modal> 
       </div>
     );
   }

@@ -1,33 +1,52 @@
 import React from 'react';
-
-import $ from 'jquery';
 import Sparklines from '../../../../components/Sparklines';
 
 class NasdaqSparkline extends React.Component {
 
+  state = {
+    data: [{
+      data: [4, 6, 5, 7, 5],
+    }],
+    width: '100%',
+    height: 70,
+    options: {
+      stroke: {
+        width: 1
+      },
+      markers: {
+        size: 4,
+        colors: '#666',
+        shape: "circle",
+        strokeWidth: 0,
+        hover: {
+          size: 5,
+          colors: '#fff',
+        }
+      },
+      colors: [
+        '#666'
+      ],
+      grid: {
+        padding: {
+          left: 10,
+          right: 10,
+          top: 10,
+          bottom: 10
+        }
+      }
+    }
+  };
+
   render() {
-    const data = [[4, 6, 5, 7, 5]];
-    const options = {
-      type: 'line',
-      width: '99%',
-      height: '60',
-      lineColor: '#666',
-      fillColor: 'transparent',
-      spotRadius: 5,
-      spotColor: '#666',
-      valueSpots: { '0:': '#666' },
-      highlightSpotColor: '#fff',
-      highlightLineColor: '#666',
-      minSpotColor: '#666',
-      maxSpotColor: '#dd5826',
-      tooltipFormat: new $
-        .SPFormatClass('<span style="color: white">&#9679;</span> {{prefix}}{{y}}{{suffix}}'),
-      chartRangeMin: Math.min.apply(null, data) - 1,
-    };
-
-
+    const { data, height, width, options } = this.state;
     return (
-      <Sparklines data={data} options={options} />
+      <Sparklines 
+        data={data} 
+        height={height}
+        width={width}
+        type={"line"}
+        options={options} 
+      />
     );
   }
 }

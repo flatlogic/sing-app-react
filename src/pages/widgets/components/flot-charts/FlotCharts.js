@@ -5,13 +5,14 @@ import {
   Button,
   Badge,
 } from 'reactstrap';
-import ReactFlot from 'react-flot';
+import HighchartsReact from 'highcharts-react-official'
 
 import Widget from '../../../../components/Widget';
-import s from './FlotCharts.module.scss';
+import s from './FlotCharts.module.scss';  
 
 class FlotCharts extends React.Component {
-  static generateRandomData(labels) {
+
+  generateRandomData = (labels) => {
     function random() {
       return (Math.floor(Math.random() * 30)) + 10;
     }
@@ -27,47 +28,57 @@ class FlotCharts extends React.Component {
       maxValueIndex -= 1;
       data.push({
         data: randomSeries,
-        showLabels: true,
-        label: labels[i].label,
-        labelPlacement: 'below',
-        canvasRender: true,
-        cColor: 'red',
         color: labels[i].color,
+        name: labels[i].name
       });
     }
     return data;
   }
 
   render() {
-    const flotOptions = {
-      series: {
-        lines: {
-          show: true,
+    const options = {
+      credits: {
+        enabled: false
+      },
+      title: false,
+      chart: {
+        height: 200,
+        margin: 0,
+        backgroundColor: 'rgba(0,0,0,0)'
+      },
+      exporting: {
+        enabled: false
+      },
+      plotOptions: {
+        area: {
+          fillOpacity: 0.5
+        },
+        series: {
+          fillOpacity: 0.1,
           lineWidth: 1,
-          fill: false,
-          fillColor: { colors: [{ opacity: 0.001 }, { opacity: 0.5 }] },
+          marker: {
+            enabled: false,
+            symbol: 'circle'
+          },
+          states: {
+            hover: {
+              lineWidth: 1
+            }
+          }
         },
-        points: {
-          show: false,
-          fill: true,
-        },
-        shadowSize: 0,
       },
       legend: false,
-      grid: {
-        show: false,
-        margin: 0,
-        labelMargin: 0,
-        axisMargin: 0,
-        hoverable: true,
-        clickable: true,
-        tickColor: 'rgba(255,255,255,1)',
-        borderWidth: 0,
+      xAxis: {
+        visible: false,
+        minPadding: 0,
+        maxPadding: 0
       },
-    };
-
-    const generateData = this.constructor.generateRandomData;
-
+      yAxis: {
+        visible: false,
+        minPadding: 0,
+        maxPadding: 0
+      }
+    };  
     return (<Row>
       <Col lg={6} xs={12}>
         <Widget
@@ -82,7 +93,7 @@ class FlotCharts extends React.Component {
             </Col>
             <Col xs={4}>
               <h5>
-                <small>Best</small>
+                <small className="text-white">Best</small>
               </h5>
               <p className="value6 fs-sm">
                 March, 2018 + 1
@@ -92,9 +103,9 @@ class FlotCharts extends React.Component {
           settings close
         >
           <div className="chart-stats">
-            <p className="text-muted fs-mini mt-xs">
-              <i className="fi flaticon-placeholder fa-5x pull-left mr-3" />
-              <span className="fw-semi-bold text-gray-dark">Jess:</span> Seems like statically it&apos;s getting impossible
+            <p className="text-light fs-mini mt-xs">
+              <i className="fa fa-map-marker fa-5x pull-left" />
+              <span className="fw-semi-bold">Jess:</span> Seems like statically it&apos;s getting impossible
                 to achieve any sort of
                 results in nearest future. The only thing we can hope for is pressing one of these two buttons:
               </p>
@@ -103,18 +114,12 @@ class FlotCharts extends React.Component {
               <Button color="default" size="xs">Reject</Button>
             </div>
           </div>
-          <div className={`${s.chart} bg-body-light`}>
-            <ReactFlot
-              id="product-chart-1"
-              data={
-                generateData([{
-                  label: 'Visitors', color: '#777',
-                }, {
-                  label: 'Charts', color: '#dd5826',
-                }])}
-              options={flotOptions}
-              height={'100%'}
-            />
+          <div className={`${s.chart}`}>
+            <HighchartsReact options={{...options, series: this.generateRandomData([{
+                name: 'Visitors', color: '#777',
+              }, {
+                name: 'Charts', color: '#dd5826',
+              }])}} />
           </div>
         </Widget>
       </Col>
@@ -123,9 +128,9 @@ class FlotCharts extends React.Component {
           className=" widget-chart-stats-simple" title={<Row>
             <Col xs={12}>
               <h6 className="mb-0">
-                <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2019</Badge>
+                <span className="fw-semi-bold">Budget</span>&nbsp;<Badge pill color="danger">2017</Badge>
               </h6>
-              <span className="text-muted fs-mini">monthly report will be available in <button className="btn-link">6 hours</button></span>
+              <span className="text-light fs-mini">monthly report will be available in <button className="btn-link">6 hours</button></span>
             </Col>
           </Row>}
           settings close
@@ -134,7 +139,7 @@ class FlotCharts extends React.Component {
             <div className="row">
               <div className="col-md-5">
                 <div className="clearfix m-t-1">
-                  <h6 className="pull-left text-muted mb-xs">
+                  <h6 className="pull-left text-light mb-xs">
                       Income
                     </h6>
                   <p className="pull-right h6 mb-xs">
@@ -142,7 +147,7 @@ class FlotCharts extends React.Component {
                   </p>
                 </div>
                 <div className="clearfix">
-                  <h6 className="pull-left no-margin text-muted">
+                  <h6 className="pull-left no-margin text-light">
                       Recent
                     </h6>
                   <p className="pull-right">
@@ -151,27 +156,24 @@ class FlotCharts extends React.Component {
                 </div>
               </div>
               <div className="col-md-3 text-right m-t-1">
-                <h6 className="text-muted mb-xs">Inqueries</h6>
+                <h6 className="text-light mb-xs">Inqueries</h6>
                 <p className="fw-semi-bold">73 at 14am</p>
               </div>
               <div className="col-md-4 text-right m-t-1">
-                <h6 className="text-muted mb-xs">Last Updated</h6>
+                <h6 className="text-light mb-xs">Last Updated</h6>
                 <p className="fw-semi-bold">23.06.2013</p>
               </div>
             </div>
           </div>
-          <div className={`${s.chart} bg-body-light`}>
-            <ReactFlot
-              id="product-chart-2"
-              data={
-                generateData([{
-                  label: 'Controllers', color: '#777',
-                }, {
-                  label: 'Scopes', color: '#f0b518',
-                }])}
-              options={flotOptions}
-              height={'100%'}
-            />
+          <div className={`${s.chart}`}>
+            <HighchartsReact options={{
+              ...options,
+              series: this.generateRandomData([{
+                name: 'Controllers', color: '#777',
+              }, {
+                name: 'Scopes', color: '#f0b518',
+              }])
+            }} />
           </div>
         </Widget>
       </Col>

@@ -39,7 +39,7 @@ class BigStat extends Component {
       <div className="pb-xlg h-100">
         <Widget
           className="mb-0 h-100"
-          bodyClass="p-0 mt"
+          bodyClass={`mt ${s.resetPadding}`}
           title={
             <div className="d-flex justify-content-between flex-wrap">
               <h4 className={cx('d-flex align-items-center pb-1', s.bigStatTitle)}>
