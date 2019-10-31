@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
-import ReactBootstrapSlider from 'react-bootstrap-slider';
 import {Sparklines, SparklinesBars} from "react-sparklines";
 import ColorPiker from 'rc-color-picker';
 import TextareaAutosize from 'react-autosize-textarea';
 import DateTime from 'react-datetime';
 import { Editor } from 'react-draft-wysiwyg';
 import MaskedInput from 'react-maskedinput'
-import Select2 from 'react-select2-wrapper';
 import Scrollspy from './ScrollSpyComponent';
 import { Link } from 'react-router-dom';
 
@@ -54,13 +52,13 @@ export default class Libs extends Component {
             <h3>Bootstrap-slide & React-bootstrap-slider</h3>
             <p>A complete rewrite of the original bootstrap-slider by Stefan Petre.</p>
             <h4>Example</h4>
-            <ReactBootstrapSlider
+            {/* <ReactBootstrapSlider
               value={4}
               step={2}
               max={10}
               min={0}
               orientation="horizontal"
-            />
+            /> */}
             <SyntaxHighlighter language='javascript' style={tomorrow}>{'<ReactBootstrapSlider\n' +
             '  value={4}\n' +
             '  step={2}\n' +
@@ -304,7 +302,7 @@ export default class Libs extends Component {
           <Widget id="React-Select2-Wrapper">
             <h3>React-select2-wrapper</h3>
             <p>React wrapper for Select2</p>
-            <Select2
+            {/* <Select2
               style={{ width: '150px' }}
               multiple
               data={['bug', 'feature', 'documents', 'discussion']}
@@ -313,7 +311,7 @@ export default class Libs extends Component {
                   placeholder: 'search by tags',
                 }
               }
-            />
+            /> */}
             <p>For more examples and documentation please refer to <a href="https://github.com/rkit/react-select2-wrapper" target="_blank" rel="noopener noreferrer">Select2</a></p>
           </Widget>
           <Widget id="React-Shuffle">
