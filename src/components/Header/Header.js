@@ -19,7 +19,7 @@ import {
   Form,
   FormGroup,
 } from 'reactstrap';
-import $ from 'jquery';
+import cx from 'classnames';
 
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
@@ -54,31 +54,30 @@ class Header extends React.Component {
       menuOpen: false,
       notificationsOpen: false,
       notificationsTabSelected: 1,
+      focus: false,
+      showNewMessage: false,
+      hideMessage: true,
+      openedChat: false
     };
   }
   componentDidMount() {
     if (window.innerWidth > 576) {
       setTimeout(() => {
-        const $chatNotification = $('#chat-notification');
-        $chatNotification.removeClass('hide').addClass('animated fadeIn')
-          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-            $chatNotification.removeClass('animated fadeIn');
-            setTimeout(() => {
-              $chatNotification.addClass('animated fadeOut')
-                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
-                  ' oanimationend animationend', () => {
-                    $chatNotification.addClass('hide');
-                  });
-            }, 6000);
-          });
-        $chatNotification.siblings('#toggle-chat')
-          .append('<i class="chat-notification-sing animated bounceIn"></i>');
-      }, 4000);
-    }
+        this.setState({ showNewMessage: true, hideMessage: false })
+      }, 2000)
 
-    $('#search-input').on('blur focus', (e) => {
-      $('#search-input').parents('.input-group')[e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
-    });
+      setTimeout(() => {
+        this.setState({ showNewMessage: false })
+      }, 6000);
+
+      setTimeout(() => { 
+        this.setState({ hideMessage: true }) 
+      }, 6200)
+    }
+  }
+
+  toggleFocus = () => {
+    this.setState({ focus: !this.state.focus })
   }
 
   toggleNotifications() {
@@ -89,6 +88,11 @@ class Header extends React.Component {
 
   doLogout() {
     this.props.dispatch(logoutUser());
+  }
+
+  toggleChat = () => {
+    this.setState({ openedChat: true })
+    this.props.chatToggle()
   }
 
   // collapse/uncolappse
@@ -124,6 +128,8 @@ class Header extends React.Component {
     });
   }
   render() {
+    const { focus, showNewMessage, hideMessage } = this.state;
+
     const user = JSON.parse(localStorage.getItem('user') || {});
 
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
@@ -158,11 +164,13 @@ class Header extends React.Component {
 
         <Form className="d-sm-down-none ml-5" inline>
           <FormGroup>
-            <InputGroup className="input-group-no-border">
+            <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
+              cx('input-group-no-border', {'focus' : !!focus})
+            }>
               <InputGroupAddon addonType="prepend">
                 <i className="la la-search" />
               </InputGroupAddon>
-              <Input id="search-input" placeholder="Search Dashboard" />
+              <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
             </InputGroup>
           </FormGroup>
         </Form>
@@ -208,10 +216,12 @@ class Header extends React.Component {
             </DropdownMenu>
           </Dropdown>
           <NavItem>
-            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
               <i className="la la-globe" />
+              <i className={`chat-notification-sing ${this.state.openedChat ? 'hide' : ''}`}></i>
             </NavLink>
-            <div id="chat-notification" className={`${s.chatNotification} hide `}>
+            <div id="chat-notification" className={`${showNewMessage ? 'animated fadeIn' : 'animated fadeOut'} ${hideMessage ? 'hide' : ''} ${s.chatNotification}`}>
+            
               <div className={s.chatNotificationInner}>
                 <h6 className={`${s.title} d-flex`}>
                   <span className="thumb-xs">

@@ -70,7 +70,6 @@
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "classnames": "^2.2.6",
     "draft-js": "^0.10.5",
-    "easy-pie-chart": "^2.1.7",
     "echarts": "^4.4.0",
     "echarts-for-react": "^2.0.15-beta.1",
     "flot": "^0.8.0-alpha",

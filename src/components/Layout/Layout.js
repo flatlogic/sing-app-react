@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter, Redirect } from 'react-router';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import $ from 'jquery';
 import Hammer from 'rc-hammerjs';
 
 import Profile from '../../pages/profile';
@@ -111,17 +110,6 @@ class Layout extends React.Component {
 
   chatToggle() {
     this.setState({ chatOpen: !this.state.chatOpen });
-    $('.chat-notification-sing').remove();
-
-    setTimeout(() => {
-      // demo: add class & badge to indicate incoming messages from contact
-      // .js-notification-added ensures notification added only once
-      $('#chat-sidebar-user-group').find('.list-group-item:first-child:not(.js-notification-added)')
-        .addClass('active js-notification-added')
-        .find('.fa-circle')
-        .after('<span class="badge badge-danger badge-pill ' +
-        'float-right animated bounceInDown">3</span>');
-    }, 1000);
   }
 
   handleSwipe(e) {
