@@ -10,7 +10,9 @@ import HighchartsReact from 'highcharts-react-official'
 import Widget from '../../../../components/Widget';
 import s from './FlotCharts.module.scss';  
 
-class FlotCharts extends React.Component {
+class FlotCharts extends React.PureComponent {
+
+
 
   generateRandomData = (labels) => {
     function random() {
