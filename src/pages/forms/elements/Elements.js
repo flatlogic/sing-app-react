@@ -1118,7 +1118,7 @@ class Elements extends React.Component {
               <Row>
                 <Col lg="4">
                   <h4>Color Options</h4>
-                  <p>Sing extends Bootstrap Slider and provides different color options:</p>
+                  <p>Sing extends <strong>rc-slider</strong> and provides different color options:</p>
                   <Form>
                     <Row>
                       <Col lg={10} md={8}>
@@ -1165,9 +1165,8 @@ class Elements extends React.Component {
                 <Col lg={4}>
                   <h4>Slider Orientation</h4>
                   <p>
-                    Vertical orientation is also possible. Simply changing <strong>
-                    data-slider-orientation </strong>
-                    attribute does the thing.
+                    Vertical orientation is also possible. Simply by adding <strong>
+                    verical prop</strong>.
                   </p>
                   <Row>
                     <Col lg={10}>
@@ -1221,9 +1220,7 @@ class Elements extends React.Component {
 
                 <Col lg="4">
                   <h4>Range Selector</h4>
-                  <p>Range selector, options specified via <strong>data-slider-value</strong>
-                    attribute as
-                    an array. Price range selector:</p>
+                  <p>Range selector can be displayed via <strong>{"<RangeTooltip />"} </strong>tag. Price range selector:</p>
                   <Row>
                     <Col md={10}>
                       <span className="slider-warning">

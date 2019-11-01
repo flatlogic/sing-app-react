@@ -154,14 +154,11 @@ class Grid extends React.Component {
                     <Input id="pswd" type="text" placeholder="Min 8 characters" />
                   </FormGroup>
                   <p>
-                    To make a widget automatically load it&apos;s content you just need to set
-                    <strong>data-widgster-autoload</strong> attribute and provide an url.
+                    To make a widget automatically load it's content you just need to set <strong>autoload</strong> attribute and provide an api to update the widget content.
                   </p>
-                  <pre><code>data-widgster-load=&quot;server/ajax_widget.html&quot;
-                    data-widgster-autoload=&quot;true&quot;</code></pre>
+                  <pre><code>&lt;Widget updateWidgetData={"{this.updateWidgetData}"} /&gt;</code></pre>
                   <p>
-                    <strong>data-widgster-autoload</strong> may be set to an integer value. If set, for example, to
-                    2000 will refresh widget every 2 seconds.
+                    <strong>autoload</strong> may be set to an integer value. If set, for example, to 2000 will refresh widget every 2 seconds.
                   </p>
                   <div className="clearfix">
                     <div className="btn-toolbar float-right">
