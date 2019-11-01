@@ -6,6 +6,8 @@ import {Sparklines, SparklinesBars} from "react-sparklines";
 import ColorPiker from 'rc-color-picker';
 import TextareaAutosize from 'react-autosize-textarea';
 import DateTime from 'react-datetime';
+import Slider, { createSliderWithTooltip } from 'rc-slider';
+import Select from 'react-select';
 import { Editor } from 'react-draft-wysiwyg';
 import MaskedInput from 'react-maskedinput'
 import Scrollspy from './ScrollSpyComponent';
@@ -14,6 +16,8 @@ import { Link } from 'react-router-dom';
 import Widget from '../../components/Widget/Widget';
 import s from '../../pages/forms/elements/Elements.module.scss';
 import Skycon from "../../components/Skycon/Skycon";
+
+const SliderWithTooltip = createSliderWithTooltip(Slider);
 
 export default class Libs extends Component {
   state = {
@@ -25,6 +29,10 @@ export default class Libs extends Component {
       mde: value,
     })
   };
+
+  valueFormatter = (v) => {
+    return `${v}`;
+  }
 
   render() {
     return (
@@ -49,39 +57,22 @@ export default class Libs extends Component {
                                                     target="_blank" rel="noopener noreferrer">Animate.css</a></p>
           </Widget>
           <Widget id="Bootstrap-slide">
-            <h3>Bootstrap-slide & React-bootstrap-slider</h3>
-            <p>A complete rewrite of the original bootstrap-slider by Stefan Petre.</p>
+            <h3>RC-Slider Slider UI component for React</h3>
+            <p>Supports IE9, IE9+, Chrome, Firefox & Safari</p>
             <h4>Example</h4>
-            {/* <ReactBootstrapSlider
-              value={4}
-              step={2}
-              max={10}
-              min={0}
-              orientation="horizontal"
-            /> */}
-            <SyntaxHighlighter language='javascript' style={tomorrow}>{'<ReactBootstrapSlider\n' +
-            '  value={4}\n' +
-            '  step={2}\n' +
-            '  max={10}\n' +
-            '  min={0}\n' +
-            '  orientation="horizontal"\n' +
+            <SliderWithTooltip 
+              style={{width: '210px'}}
+              tipFormatter={this.valueFormatter}
+              className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderBlue}`}
+              defaultValue={20}
+            />
+            <SyntaxHighlighter language='javascript' style={tomorrow}>{'<SliderWithTooltip\n' +
+            '  tipFormatter={this.valueFormatter}\n' +
+            '  className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderBlue}`}\n' +
+            '  defaultValue={20}\n' +
             '/>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
-              href="https://github.com/brownieboy/react-bootstrap-slider" target="_blank" rel="noopener noreferrer">React Bootstrap Slider</a></p>
-          </Widget>
-          <Widget id="Easy-pie-chart">
-            <h3>Easy-pie-chart</h3>
-            <p>Lightweight plugin to render simple, animated and retina optimized pie charts.</p>
-            <p className="lead">Want to see examples? <Link to="/app/charts/easy-pie">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/rendro/easy-pie-chart"
-                                                                      target="_blank" rel="noopener noreferrer">Easy Pie Charts</a></p>
-          </Widget>
-          <Widget id="Flot">
-            <h3>Flot & React-flot</h3>
-            <p>Flot is a Javascript plotting library for jQuery.</p>
-            <p className="lead">Want to see examples? <Link to="/app/charts/flot">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/flot/flot"
-                                                                      target="_blank" rel="noopener noreferrer">Flor</a></p>
+              href="https://github.com/react-component/slider" target="_blank" rel="noopener noreferrer">rc-slider</a></p>
           </Widget>
           <Widget id="Font-Awesome">
             <h3>Font-awesome</h3>
@@ -114,7 +105,7 @@ export default class Libs extends Component {
             <p>A JavaScript event calendar. Customizable and open source.</p>
             <p className="lead">Want to see examples? <Link to="/app/extra/calendar">Click</Link></p>
             <p>For more examples and documentation please refer to <a
-              href="https://github.com/fullcalendar/fullcalendar" target="_blank" rel="noopener noreferrer">Fullcalendar</a></p>
+              href="https://fullcalendar.io/docs/react" target="_blank" rel="noopener noreferrer">Fullcalendar</a></p>
           </Widget>
           <Widget id="Glyphicons-Halflings">
             <h3>Glyphicons-halflings</h3>
