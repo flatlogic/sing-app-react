@@ -5,9 +5,8 @@ import Week from './Week'
 import moment from 'moment/moment'
 import s from './Calendar.module.scss'
 
-
 class Calendar extends Component {
-
+  
     state = {
       selectedMonth: moment(),
       selectedDay: moment().startOf("day"),
@@ -16,26 +15,26 @@ class Calendar extends Component {
           title: "The flower bed",
           info: "Contents here",
           itemStyle: "#5d8fc2",
-          date: moment("20191002", "YYYYMMDD"),
+          date: moment(`${moment().year()}${moment().month()+1}02`, "YYYYMMDD"),
         },
         {
           title: "Stop world water pollution",
           info: "Have a kick off meeting with .inc company",
           itemStyle: "#f0b518",
-          date: moment("20191005", "YYYYMMDD"),
+          date: moment(`${moment().year()}${moment().month()+1}05`, "YYYYMMDD"),
         },
         {
           title: "Light Blue 2.2 release",
           info: "Some contents here",
           itemStyle: "#64bd63",
-          date: moment("20191018", "YYYYMMDD"),
+          date: moment(`${moment().year()}${moment().month()+1}18`, "YYYYMMDD"),
         },
         {
           title: "A link",
           info: "",
           itemStyle: "#dd5826",
           link: "http://www.flatlogic.com",
-          date: moment("20191029", "YYYYMMDD"),
+          date: moment(`${moment().year()}${moment().month()+1}29`, "YYYYMMDD"),
         },
       ],
       showEvents: false
