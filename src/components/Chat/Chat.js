@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { ListGroup, ListGroupItem, InputGroup, InputGroupAddon, Input, InputGroupText, Badge } from 'reactstrap';
 
@@ -199,7 +200,7 @@ class Chat extends React.Component {
   }
 
   render() {
-    const { chatOpen } = this.props;
+    const { chatOpen, chatSidebar } = this.props;
     return (
       <aside className={[s.root, chatOpen ? s.chatOpen : ''].join(' ')}>
         <header className={s.chatHeader}>
@@ -222,12 +223,12 @@ class Chat extends React.Component {
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
-                  className={item.active ? item.active : ''}
+                  className={(item.active && chatSidebar) ? 'active' : ''}
                   key={item.name}
                   onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
-                  {item.badge ? <Badge color="danger" pill className={`float-right animated bounceInDown`}>3</Badge> : ''}
+                  {item.badge ? <Badge color="danger" pill className={(item.active && chatSidebar) ? 'float-right bounceInDown animated' : 'hide'}>3</Badge> : ''}
                   <span className="thumb-sm float-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>
@@ -294,4 +295,10 @@ class Chat extends React.Component {
   }
 }
 
-export default withRouter(Chat);
+function mapStateToProps(store) {
+  return {
+    chatSidebar: store.navigation.chatToggleItem,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(Chat));

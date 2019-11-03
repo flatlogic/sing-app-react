@@ -1,8 +1,9 @@
-import { TOGGLE_SIDEBAR, OPEN_SIDEBAR, CLOSE_SIDEBAR, CHANGE_ACTIVE_SIDEBAR_ITEM } from '../actions/navigation';
+import { TOGGLE_SIDEBAR, OPEN_SIDEBAR, CLOSE_SIDEBAR, CHANGE_ACTIVE_SIDEBAR_ITEM, CHAT_TOGGLE_ITEM } from '../actions/navigation';
 
 const initialState = {
   sidebarOpened: false,
   sidebarStatic: false,
+  chatToggleItem: false,
   activeItem: JSON.parse(localStorage.getItem('staticSidebar')) ? window.location.pathname : null,
 };
 
@@ -26,6 +27,11 @@ export default function runtime(state = initialState, action) {
         ...state,
         activeItem: action.activeItem,
       };
+    case CHAT_TOGGLE_ITEM:
+    return {
+      ...state,
+      chatToggleItem: true,
+    }
     default:
       return state;
   }

@@ -23,7 +23,7 @@ import cx from 'classnames';
 
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
-import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
+import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem, chatToggleItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
 import a6 from '../../images/people/a6.jpg';
@@ -57,22 +57,17 @@ class Header extends React.Component {
       focus: false,
       showNewMessage: false,
       hideMessage: true,
-      openedChat: false
     };
   }
   componentDidMount() {
     if (window.innerWidth > 576) {
       setTimeout(() => {
-        this.setState({ showNewMessage: true, hideMessage: false })
+        this.setState({ showNewMessage: true })
       }, 2000)
 
       setTimeout(() => {
-        this.setState({ showNewMessage: false })
+        this.setState({ showNewMessage: false, hideMessage: false })
       }, 6000);
-
-      setTimeout(() => { 
-        this.setState({ hideMessage: true }) 
-      }, 6200)
     }
   }
 
@@ -91,8 +86,8 @@ class Header extends React.Component {
   }
 
   toggleChat = () => {
-    this.setState({ openedChat: true })
-    this.props.chatToggle()
+    this.props.chatToggle();
+    setTimeout(() => this.props.dispatch(chatToggleItem()),1000);
   }
 
   // collapse/uncolappse
@@ -218,9 +213,12 @@ class Header extends React.Component {
           <NavItem>
             <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
               <i className="la la-globe" />
-              <i className={`chat-notification-sing ${this.state.openedChat ? 'hide' : ''}`}></i>
+              <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
             </NavLink>
-            <div id="chat-notification" className={`${showNewMessage ? 'animated fadeIn' : 'animated fadeOut'} ${hideMessage ? 'hide' : ''} ${s.chatNotification}`}>
+            <div id="chat-notification" className={`
+            ${s.chatNotification} 
+            ${showNewMessage ? 'animated fadeIn '+s.chatNotificationInit : ''} 
+            ${hideMessage ? '' : 'animated fadeOut'}`}>
             
               <div className={s.chatNotificationInner}>
                 <h6 className={`${s.title} d-flex`}>
@@ -248,6 +246,7 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
+    chatSidebar: store.navigation.chatToggleItem,
   };
 }
 
