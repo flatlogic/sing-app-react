@@ -56,7 +56,7 @@ export default class Libs extends Component {
             <p>For more examples please refer to <a href="https://github.com/daneden/animate.css/"
                                                     target="_blank" rel="noopener noreferrer">Animate.css</a></p>
           </Widget>
-          <Widget id="Bootstrap-slide">
+          <Widget id="RC-Slider">
             <h3>RC-Slider Slider UI component for React</h3>
             <p>Supports IE9, IE9+, Chrome, Firefox & Safari</p>
             <h4>Example</h4>
@@ -68,7 +68,7 @@ export default class Libs extends Component {
             />
             <SyntaxHighlighter language='javascript' style={tomorrow}>{'<SliderWithTooltip\n' +
             '  tipFormatter={this.valueFormatter}\n' +
-            '  className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderBlue}`}\n' +
+            '  className="sliderCustomization horizontalSlider sliderBlue"\n' +
             '  defaultValue={20}\n' +
             '/>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
@@ -126,6 +126,21 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://getbootstrap.com/docs/3.3/components/" target="_blank" rel="noopener noreferrer">Glyphicons</a></p>
           </Widget>
+          <Widget id="Line-Awesome">
+            <h3>Line-awesome</h3>
+            <p>A single file that replaces Font Awesome with modern line icons.</p>
+            <h4>Examples</h4>
+            <i className="la la-arrow-left la-2x mr"/>
+            <i className="la la-github la-2x mr"/>
+            <i className="la la-facebook la-2x mr"/>
+            <SyntaxHighlighter language='javascript'
+                               style={tomorrow}>{'<i className="la la-arrow-left la-2x mr" />\n' +
+            '<i className="la la-github la-2x mr" />\n' +
+            '<i className="la la-facebook la-2x mr" />'}</SyntaxHighlighter>
+            <p className="lead">Want to see examples? <Link to="/app/ui/icons">Click</Link></p>
+            <p>For more examples and documentation please refer to <a href="https://github.com/FortAwesome/Font-Awesome"
+                                                                      target="_blank" rel="noopener noreferrer">Font Awesome</a></p>
+          </Widget>
           <Widget id="React-Sparkline">
             <h3>React-sparkline</h3>
             <p>This React.js plugin makes it easy to generate a number of different types of sparklines directly in the
@@ -146,22 +161,7 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/borisyankov/react-sparklines" target="_blank" rel="noopener noreferrer">React Sparklines</a></p>
           </Widget>
-          <Widget id="Line-Awesome">
-            <h3>Line-awesome</h3>
-            <p>A single file that replaces Font Awesome with modern line icons.</p>
-            <h4>Examples</h4>
-            <i className="la la-arrow-left la-2x mr"/>
-            <i className="la la-github la-2x mr"/>
-            <i className="la la-facebook la-2x mr"/>
-            <SyntaxHighlighter language='javascript'
-                               style={tomorrow}>{'<i className="la la-arrow-left la-2x mr" />\n' +
-            '<i className="la la-github la-2x mr" />\n' +
-            '<i className="la la-facebook la-2x mr" />'}</SyntaxHighlighter>
-            <p className="lead">Want to see examples? <Link to="/app/ui/icons">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/FortAwesome/Font-Awesome"
-                                                                      target="_blank" rel="noopener noreferrer">Font Awesome</a></p>
-          </Widget>
-          <Widget id="Messenger">
+          <Widget id="React-Toastify">
             <h3>React Toastify</h3>
             <p>Growl-style alerts and messages</p>
             <p className="lead">Want to see examples? <Link to="/app/ui/notifications">Click</Link></p>
@@ -202,7 +202,14 @@ export default class Libs extends Component {
             <SyntaxHighlighter language='javascript'
                                style={tomorrow}>{'<DateTime />'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
-              href="https://github.com/YouCanBookMe/react-datetime" target="_blank" rel="noopener noreferrer">DetaTime</a></p>
+              href="https://github.com/YouCanBookMe/react-datetime" target="_blank" rel="noopener noreferrer">DateTime</a></p>
+          </Widget>
+          <Widget id="React-dropzone">
+            <h3>React-dropzone</h3>
+            <p>Simple HTML5-compliant drag'n'drop zone for files built with React.js.</p>
+            <p className="lead">Want to see examples? <Link to="/app/forms/elements">Click</Link></p>
+            <p>For more examples and documentation please refer to <a
+              href="https://github.com/react-dropzone/react-dropzone" target="_blank" rel="noopener noreferrer">React Dropzone</a></p>
           </Widget>
           <Widget id="React-Draft-Wysiwyg">
             <h3>React-draft-wysiwyg</h3>
@@ -210,13 +217,6 @@ export default class Libs extends Component {
             <Editor/>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/jpuri/react-draft-wysiwyg" target="_blank" rel="noopener noreferrer">React Wysiwyg</a></p>
-          </Widget>
-          <Widget id="React-Dropzone">
-            <h3>React-dropzone</h3>
-            <p>Simple HTML5-compliant drag'n'drop zone for files built with React.js.</p>
-            <p className="lead">Want to see examples? <Link to="/app/forms/elements">Click</Link></p>
-            <p>For more examples and documentation please refer to <a
-              href="https://github.com/react-dropzone/react-dropzone" target="_blank" rel="noopener noreferrer">React Dropzone</a></p>
           </Widget>
           <Widget id="React-Google-Maps">
             <h3>React-google-maps</h3>
@@ -306,12 +306,8 @@ export default class Libs extends Component {
                 JavaScript Charts & Maps Programming library for all your data visualization needs.
               </li>
               <li className="lead">
-                <a className="fw-semi-bold" href="https://fullcalendar.io/docs/react" rel="noopener noreferrer" target="_blank"> @fullcalendar/react</a>.
-                The most popular full-sized JavaScript Calendar.
-              </li>
-              <li className="lead">
                 <a className="fw-semi-bold" href="https://github.com/ameyms/react-animated-number" rel="noopener noreferrer" target="_blank"> react-animated-number</a>.
-                A simple vue animated number for React.
+                A simple animated number for React.
               </li>
               <li className="lead">
                 <a className="fw-semi-bold" href="https://react-bootstrap.github.io/" rel="noopener noreferrer" target="_blank"> React Bootstrap</a>.
@@ -325,10 +321,6 @@ export default class Libs extends Component {
               <li className="lead">
                 <a className="fw-semi-bold" href="https://github.com/apexcharts/react-apexcharts" rel="noopener noreferrer" target="_blank"> react-apexcharts</a>.
                 Modern & Interactive Open-source Charts.
-              </li>
-              <li className="lead">
-                <a className="fw-semi-bold" href="https://reactstrap.github.io/" rel="noopener noreferrer" target="_blank"> reactstrap</a>.
-                Easy to use React Bootstrap 4 components
               </li>
               <li className="lead">
                 <a className="fw-semi-bold" href="https://github.com/frontend-collective/react-sortable-tree" rel="noopener noreferrer" target="_blank"> react-sortable-tree</a>.
@@ -348,22 +340,6 @@ export default class Libs extends Component {
                 either from the client or from the server.
               </li>
               <li className="lead">
-                <a className="fw-semi-bold" href="https://github.com/fkhadra/react-toastify" rel="noopener noreferrer" target="_blank"> react-toastify</a>.
-                React-Toastify allow you to add notification to your app with ease. No more nonsense!
-              </li>
-              <li className="lead">
-                <a className="fw-semi-bold" href="https://github.com/react-dropzone/react-dropzone" rel="noopener noreferrer" target="_blank"> react-dropzone</a>.
-                A React component for file uploads, powered by Dropzone.js.
-              </li>
-              <li className="lead">
-                <a className="fw-semi-bold" href="https://github.com/tomchentw/react-google-maps" rel="noopener noreferrer" target="_blank"> react-google-maps</a>.
-                This is the React.js port of google maps.
-              </li>
-              <li className="lead">
-                <a className="fw-semi-bold" href="https://github.com/SortableJS/react-sortablejs" rel="noopener noreferrer" target="_blank"> react-sortable.js</a>.
-                React drag-and-drop component based on Sortable.js.
-              </li>
-              <li className="lead">
                 <a className="fw-semi-bold" href="https://github.com/unsplash/react-trend" rel="noopener noreferrer" target="_blank"> react-trend</a>.
                 Simple, elegant spark lines for React.js.
               </li>
@@ -381,10 +357,11 @@ export default class Libs extends Component {
             'Formsy-React',
             'Fullcalendar',
             'Glyphicons-Halflings',
-            'React-Sparkline',
             'Line-Awesome',
+            'React-Sparkline',
+            'React-Toastify',
             'Rc-color-picker',
-            'Rc-hammerjs',
+            'Rc-Hammerjs',
             'React-Autosize-Textarea',
             'React-Datetime',
             'React-dropzone',
