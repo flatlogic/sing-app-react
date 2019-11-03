@@ -27,7 +27,6 @@ class Header extends React.Component {
   static propTypes = {
     sidebarOpened: PropTypes.bool.isRequired,
     sidebarStatic: PropTypes.bool.isRequired,
-    chatToggle: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
     location: PropTypes.shape({
       pathname: PropTypes.string,
@@ -116,11 +115,11 @@ class Header extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem className="d-flex align-items-center">
-                <NavItem className="d-md-down-none">
+                <div className="d-md-down-none">
                   <Link to="/" className="btn btn-default">
                     Live Preview
                   </Link>
-                </NavItem>
+                </div>
                 <NavLink href="https://flatlogic.com/admin-dashboards/sing-app-react" target="_blank" className="mr-1">
                   <button className="btn btn-warning text-gray fw-semi-bold">
                     Buy Now

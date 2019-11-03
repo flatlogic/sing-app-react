@@ -126,24 +126,10 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://getbootstrap.com/docs/3.3/components/" target="_blank" rel="noopener noreferrer">Glyphicons</a></p>
           </Widget>
-          <Widget id="Govpredict-Morris">
-            <h3>Govpredict-morris</h3>
-            <p>Pretty time-series line graphs</p>
-            <p className="lead">Want to see examples? <Link to="/app/charts/morris">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/morrisjs/morris.js"
-                                                                      target="_blank" rel="noopener noreferrer">Morris</a></p>
-          </Widget>
-          <Widget id="Jquery-Mapael">
-            <h3>Jquery-mapael</h3>
-            <p>Ease the build of pretty data visualizations on dynamic vector maps</p>
-            <p className="lead">Want to see examples? <Link to="/app/main/dashboard">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/neveldo/jQuery-Mapael"
-                                                                      target="_blank" rel="noopener noreferrer">Mapael</a></p>
-          </Widget>
           <Widget id="React-Sparkline">
-            <h3>Jquery-sparkline & React-sparkline</h3>
-            <p>This jQuery plugin makes it easy to generate a number of different types of sparklines directly in the
-              browser, using online a line of two of HTML and Javascript.</p>
+            <h3>React-sparkline</h3>
+            <p>This React.js plugin makes it easy to generate a number of different types of sparklines directly in the
+              browser, using few lines of JSX.</p>
             <Sparklines data={[13, 14, 16, 15, 4, 14, 20]} style={{width: '70px', height: '30px', marginRight: '10px'}}>
               <SparklinesBars style={{stroke: 'white', fill: '#618fb0'}}/>
             </Sparklines>
@@ -159,31 +145,6 @@ export default class Libs extends Component {
             '</Sparklines>'}</SyntaxHighlighter>
             <p>For more examples and documentation please refer to <a
               href="https://github.com/borisyankov/react-sparklines" target="_blank" rel="noopener noreferrer">React Sparklines</a></p>
-          </Widget>
-          <Widget id="Jquery-UI">
-            <h3>Jquery-ui</h3>
-            <p>The official jQuery user interface library.</p>
-            <p className="lead">Want to see examples? <Link to="/app/grid">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/jquery/jquery-ui"
-                                                                      target="_blank" rel="noopener noreferrer">Jquery UI</a></p>
-          </Widget>
-          <Widget id="Jquery-Animate-Number">
-            <h3>Jquery.animate-number</h3>
-            <p>jQuery numbers animation plugin, adds 'number' property and step function to jQuery's animate function
-              properties.</p>
-            <p className="lead">Want to see examples? <Link to="/app/main/dashboard">Click</Link></p>
-            <p>For more examples and documentation please refer to <a
-              href="https://github.com/aishek/jquery-animateNumber" target="_blank" rel="noopener noreferrer">Animate Number</a></p>
-          </Widget>
-          <Widget id="Jvectormap">
-            <h3>Jvectormap</h3>
-            <p>jVectorMap is a vector-based, cross-browser and cross-platform component for interactive
-              geography-related data visualization on the web. It
-              provides numerious features like smooth zooming and panning, fully-customizable styling, markers, labels
-              and tooltips.</p>
-            <p className="lead">Want to see examples? <Link to="/app/maps/vector">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/bjornd/jvectormap"
-                                                                      target="_blank" rel="noopener noreferrer">Vector Map</a></p>
           </Widget>
           <Widget id="Line-Awesome">
             <h3>Line-awesome</h3>
@@ -201,18 +162,11 @@ export default class Libs extends Component {
                                                                       target="_blank" rel="noopener noreferrer">Font Awesome</a></p>
           </Widget>
           <Widget id="Messenger">
-            <h3>Messenger</h3>
+            <h3>React Toastify</h3>
             <p>Growl-style alerts and messages</p>
             <p className="lead">Want to see examples? <Link to="/app/ui/notifications">Click</Link></p>
-            <p>For more examples and documentation please refer to <a href="https://github.com/HubSpot/messenger"
-                                                                      target="_blank" rel="noopener noreferrer">Messenger</a></p>
-          </Widget>
-          <Widget id="Metrojs">
-            <h3>Metrojs</h3>
-            <p>Metro JS is a JavaScript plugin for jQuery developed to easily enable Metro interfaces on the web.</p>
-            <p className="lead">Want to see examples? <Link to="/app/main/widgets">Click</Link></p>
-            <p>For more examples and documentation please refer to <a
-              href="http://www.drewgreenwell.com/projects/metrojs" target="_blank" rel="noopener noreferrer">metrojs</a></p>
+            <p>For more examples and documentation please refer to <a href="https://github.com/fkhadra/react-toastify"
+                                                                      target="_blank" rel="noopener noreferrer">react-toastify</a></p>
           </Widget>
           <Widget id="Rc-color-picker">
             <h3>Rc-color-picker</h3>
@@ -290,20 +244,15 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a href="https://github.com/andrerpena/react-mde"
                                                                       target="_blank" rel="noopener noreferrer">ReactMDE</a></p>
           </Widget>
-          <Widget id="React-Select2-Wrapper">
-            <h3>React-select2-wrapper</h3>
-            <p>React wrapper for Select2</p>
-            {/* <Select2
-              style={{ width: '150px' }}
-              multiple
-              data={['bug', 'feature', 'documents', 'discussion']}
-              options={
-                {
-                  placeholder: 'search by tags',
-                }
-              }
-            /> */}
-            <p>For more examples and documentation please refer to <a href="https://github.com/rkit/react-select2-wrapper" target="_blank" rel="noopener noreferrer">Select2</a></p>
+          <Widget id="React-Select">
+            <h3>React-select</h3>
+            <p>A flexible and beautiful Select Input</p>
+            <Select options={
+              [{ value: 'chocolate', label: 'Chocolate' },
+               { value: 'strawberry', label: 'Strawberry' },
+               { value: 'vanilla', label: 'Vanilla' }]}            
+            />
+            <p>For more examples and documentation please refer to <a href="https://react-select.com/home" target="_blank" rel="noopener noreferrer">React Select</a></p>
           </Widget>
           <Widget id="React-Shuffle">
             <h3>React-shuffle</h3>
@@ -349,6 +298,77 @@ export default class Libs extends Component {
             <p>For more examples and documentation please refer to <a
               href="https://github.com/darkskyapp/skycons" target="_blank" rel="noopener noreferrer">Skycons</a></p>
           </Widget>
+          <Widget id="Other">
+            <h3 className="">Other Libs</h3>
+            <ul className="check-list">
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/" rel="noopener noreferrer" target="_blank"> @amcharts</a>.
+                JavaScript Charts & Maps Programming library for all your data visualization needs.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://fullcalendar.io/docs/react" rel="noopener noreferrer" target="_blank"> @fullcalendar/react</a>.
+                The most popular full-sized JavaScript Calendar.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/ameyms/react-animated-number" rel="noopener noreferrer" target="_blank"> react-animated-number</a>.
+                A simple vue animated number for React.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://react-bootstrap.github.io/" rel="noopener noreferrer" target="_blank"> React Bootstrap</a>.
+                With React Bootstrap you can build responsive, mobile-first projects on the web using React.js and the world's
+                most popular front-end CSS library — Bootstrap v4.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/highcharts/highcharts-react" rel="noopener noreferrer" target="_blank"> highcharts-react</a>.
+                Make your data come alive. Highcharts makes it easy for developers to set up interactive charts in their web pages.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/apexcharts/react-apexcharts" rel="noopener noreferrer" target="_blank"> react-apexcharts</a>.
+                Modern & Interactive Open-source Charts.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://reactstrap.github.io/" rel="noopener noreferrer" target="_blank"> reactstrap</a>.
+                Easy to use React Bootstrap 4 components
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/frontend-collective/react-sortable-tree" rel="noopener noreferrer" target="_blank"> react-sortable-tree</a>.
+                This is a draggable tree component.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/hustcc/echarts-for-react" rel="noopener noreferrer" target="_blank"> echarts-for-react</a>.
+                A Declarative Framework for Rapid Construction of Web-based Visualization
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/olahol/react-tagsinput" rel="noopener noreferrer" target="_blank"> react-tagsinput</a>.
+                Highly customizable React component for inputing tags.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/tannerlinsley/react-table" rel="noopener noreferrer" target="_blank"> react-table</a>.
+                This React package offers an easy and intuitive way of displaying Bootstrap-styled grids with data coming
+                either from the client or from the server.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/fkhadra/react-toastify" rel="noopener noreferrer" target="_blank"> react-toastify</a>.
+                React-Toastify allow you to add notification to your app with ease. No more nonsense!
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/react-dropzone/react-dropzone" rel="noopener noreferrer" target="_blank"> react-dropzone</a>.
+                A React component for file uploads, powered by Dropzone.js.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/tomchentw/react-google-maps" rel="noopener noreferrer" target="_blank"> react-google-maps</a>.
+                This is the React.js port of google maps.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/SortableJS/react-sortablejs" rel="noopener noreferrer" target="_blank"> react-sortable.js</a>.
+                React drag-and-drop component based on Sortable.js.
+              </li>
+              <li className="lead">
+                <a className="fw-semi-bold" href="https://github.com/unsplash/react-trend" rel="noopener noreferrer" target="_blank"> react-trend</a>.
+                Simple, elegant spark lines for React.js.
+              </li>
+            </ul>
+          </Widget>
         </Col>
         <Col lg={3}>
           <Scrollspy
@@ -356,38 +376,29 @@ export default class Libs extends Component {
             prefix="libs"
             ids={[
             'Animate.css',
-            'Bootstrap-slide',
-            'Easy-pie-chart',
-            'Flot',
+            'RC-Slider',
             'Font-Awesome',
             'Formsy-React',
             'Fullcalendar',
             'Glyphicons-Halflings',
-            'Govpredict-Morris',
-            'Jquery-Mapael',
             'React-Sparkline',
-            'Jquery-UI',
-            'Jquery-Animate-Number',
-            'Jvectormap',
             'Line-Awesome',
-            'Messenger',
-            'Metrojs',
             'Rc-color-picker',
             'Rc-hammerjs',
             'React-Autosize-Textarea',
             'React-Datetime',
-            'React-Draft-Wysiwyg',
             'React-dropzone',
             'React-Google-Maps',
             'React-Maskedinput',
             'React-MDE',
-            'React-Select2-Wrapper',
+            'React-Select',
             'React-Shuffle',
             'React-Slick',
             'React-Sortable',
             'Reactstrap',
             'Rickshaw',
             'Skycons',
+            'Other'
           ]} />
         </Col>
       </Row>
