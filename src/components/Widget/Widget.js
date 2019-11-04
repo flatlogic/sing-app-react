@@ -1,10 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
 import { UncontrolledTooltip } from 'reactstrap';
-import 'imports-loader?window.jQuery=jquery,this=>window!widgster'; // eslint-disable-line
 import s from './Widget.module.scss';
+import classNames from 'classnames';
 import Loader from '../Loader'; // eslint-disable-line css-modules/no-unused-class
+import AnimateHeight from 'react-animate-height';
+import uuidv4 from 'uuid/v4'
+import {
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from 'reactstrap';
 
 class Widget extends React.Component {
   static propTypes = {
@@ -23,9 +35,9 @@ class Widget extends React.Component {
     tooltipPlacement: PropTypes.string,
     showTooltip: PropTypes.bool,
     bodyClass: PropTypes.string,
-    customControls: PropTypes.node,
+    customControls: PropTypes.bool,
     options: PropTypes.object, //eslint-disable-line,
-    fetchingData: PropTypes.bool
+    fetchingData: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -41,25 +53,95 @@ class Widget extends React.Component {
     tooltipPlacement: 'bottom',
     showTooltip: false,
     bodyClass: '',
-    customControls: null,
+    customControls: false,
+    customClose: null,
+    customExpand: null,
+    customCollapse: null,
+    customFullscreen: null,
+    customReload: null,
+    customDropDown: null,
+    prompt: false,
+    collapsed: false,
     options: {},
-    fetchingData: false
+    fetchingData: false,
+    widgetType: "",
   };
 
-  constructor(prop) {
-    super(prop);
+  constructor(props) {
+    super(props);
+
     this.state = {
-      randomId: Math.floor(Math.random() * 100),
-    };
+      randomId: uuidv4(),
+      hideWidget: false,
+      collapseWidget: !!props.collapsed,
+      height:  props.collapsed ? 0 : 'auto',
+      fullscreened: false,
+      reloading: false,
+      modal: false,
+      apiData: ''
+    }
+
   }
 
-  componentDidMount() {
-    const options = this.props.options;
-    options.bodySelector = '.widget-body';
-    jQuery(this.el).widgster(options);
+
+
+  toggleModal = () => {
+    this.setState({ modal: !this.state.modal });
   }
 
+  handleClose = () => {
+    this.setState({ hideWidget: !this.state.hideWidget})
+  }
+
+  handleCollapse = () => {
+    let heightValue = this.state.collapseWidget ? 'auto' : 0
+    this.setState({
+      height: heightValue,
+      collapseWidget: !this.state.collapseWidget,
+      reloading: false
+    });
+
+  };
+
+  closeWithModal = () => {
+    this.toggleModal();
+    this.handleClose();
+  }
+
+  handleExpand = () => {
+    
+    this.setState({
+      height: 'auto',
+      collapseWidget: false
+    });
+
+  };
+
+  handleReload = () => {
+    const { widgetType, updateWidgetData } = this.props;
+    const type = widgetType;
+    if(type) {
+      updateWidgetData(type)
+    }
+    this.setState({ reloading: true });
+    let endpoint = false;
+    if(!endpoint) {
+      setTimeout(() => this.setState({ reloading: false }),2000);
+    } else {
+      this.setState({ reloading: true });
+      fetch('https://yourapi.com')
+        .then(response => response.json())
+        .then(json => this.setState({ apiData: json.title}))
+        .then(setTimeout(() => this.setState({ reloading: false }), 1000))
+    }
+  }
+
+  handleFullscreen = () => {
+    this.setState({ fullscreened: !this.state.fullscreened });
+  }
+  
   render() {
+  
     const {
       title,
       className,
@@ -74,17 +156,43 @@ class Widget extends React.Component {
       showTooltip,
       bodyClass,
       customControls,
+      customClose,
+      customExpand,
+      customCollapse,
+      customFullscreen,
+      customReload,
       fetchingData,
+      customDropDown,
+      customBody,
+      prompt,
+      collapsed,
+      widgetType,
+      updateWidgetData,
       options, //eslint-disable-line
       ...attributes
     } = this.props;
-    const randomId = this.state.randomId;
     const mainControls = !!(close || fullscreen || collapse || refresh || settings || settingsInverse);
+
+    const {
+      reloading,
+      fullscreened,
+      randomId,
+      height,
+      hideWidget,
+      collapseWidget,
+      modal,
+    } = this.state;
+
+    
+    
     return (
+    <React.Fragment>
       <section
-        className={['widget', s.widget, className].join(' ')}
-        ref={(widget) => { this.el = widget; }} {...attributes}
-      >
+        style={{display: hideWidget ? 'none' : ''}}  
+        className={
+          classNames('widget', {'fullscreened' : !!fullscreened, 'collapsed' : !!collapseWidget}, s.widget, className, reloading ? s.reloading : '')
+        } {...attributes}
+        >
         {
           title && (
             typeof title === 'string'
@@ -92,6 +200,7 @@ class Widget extends React.Component {
               : <header className={s.title}>{title}</header>
           )
         }
+        
         {
           !customControls && mainControls && (
             <div className={`${s.widgetControls} widget-controls`}>
@@ -104,7 +213,7 @@ class Widget extends React.Component {
                 /></button>
               )}
               {refresh && (
-                <button data-widgster="load" id={`reloadId-${randomId}`}>
+                <button onClick={this.handleReload} id={`reloadId-${randomId}`}>
                   {typeof refresh === 'string' ?
                     <strong className="text-gray-light">{refresh}</strong> :
                     <i className="la la-refresh" />}
@@ -117,8 +226,8 @@ class Widget extends React.Component {
                 </button>
               )}
               {fullscreen && (
-                <button data-widgster="fullscreen" id={`fullscreenId-${randomId}`}>
-                  <i className="glyphicon glyphicon-resize-full" />
+                <button onClick={this.handleFullscreen} id={`fullscreenId-${randomId}`}>
+                  <i className={`glyphicon glyphicon-resize-${fullscreened ? 'small' : 'full'}`} />
                   {showTooltip && (
                     <UncontrolledTooltip
                       placement={tooltipPlacement}
@@ -127,46 +236,24 @@ class Widget extends React.Component {
                   )}
                 </button>
               )}
-              {fullscreen && (
-                <button data-widgster="restore" id={`restoreId-${randomId}`}>
-                  <i className="glyphicon glyphicon-resize-small" />
-                  {showTooltip && (
-                    <UncontrolledTooltip
-                      placement={tooltipPlacement}
-                      target={`restoreId-${randomId}`}
-                    >Restore</UncontrolledTooltip>
-                  )}
-                </button>
-              )}
-              {collapse && (
-                <span>
-                  <button data-widgster="collapse" id={`collapseId-${randomId}`}>
-                    <i className="la la-angle-down" />
-                    {showTooltip && (
-                      <UncontrolledTooltip
-                        placement={tooltipPlacement}
-                        target={`collapseId-${randomId}`}
-                      >Collapse</UncontrolledTooltip>
-                    )}
-                  </button>
-                </span>
-              )}
-              {collapse && (
-                <span>
-                  <button data-widgster="expand" id={`expandId-${randomId}`}>
-                    <i className="la la-angle-up" />
-                    {showTooltip && (
-                      <UncontrolledTooltip
-                        placement={tooltipPlacement}
-                        target={`expandId-${randomId}`}
-                      >Expand</UncontrolledTooltip>
-                    )}
-                  </button>
-                </span>
-              )}
-
-              {close && (
-                <button data-widgster="close" id={`closeId-${randomId}`}>
+              {!fullscreened && 
+                collapse && (
+                  <span>
+                    <button onClick={this.handleCollapse} id={`collapseId-${randomId}`}>
+                    <i className={`la la-angle-${!collapseWidget ? 'down' : 'up'}`} />
+                      {showTooltip && (
+                        <UncontrolledTooltip
+                          placement={tooltipPlacement}
+                          target={`collapseId-${randomId}`}
+                        >Collapse</UncontrolledTooltip>
+                      )}
+                    </button>
+                  </span>
+                )
+              }
+              {!fullscreened && (
+                (close && !prompt) ? (
+                <button onClick={this.handleClose} id={`closeId-${randomId}`}>
                   {typeof close === 'string' ?
                     <strong className="text-gray-light">{close}</strong> :
                     <i className="la la-remove" />}
@@ -177,20 +264,115 @@ class Widget extends React.Component {
                     >Close</UncontrolledTooltip>
                   )}
                 </button>
-              )}
+              ) : (
+                <button onClick={this.toggleModal} id={`closeId-${randomId}`}>
+                {typeof close === 'string' ?
+                  <strong className="text-gray-light">{close}</strong> :
+                  <i className="la la-remove" />}
+                {showTooltip && (
+                  <UncontrolledTooltip
+                    placement={tooltipPlacement}
+                    target={`closeId-${randomId}`}
+                  >Modal</UncontrolledTooltip>
+                )}
+              </button>
+              ))}
+            </div>
+          )}
+          {customDropDown && (
+            <div className={`${s.widgetControls} widget-controls`}>
+            <UncontrolledDropdown>
+              <DropdownToggle
+                tag="span"
+                data-toggle="dropdown"
+
+              >
+                <i className="glyphicon glyphicon-cog" />
+              </DropdownToggle>
+              <DropdownMenu className="bg-widget-transparent" right>
+                <DropdownItem onClick={this.handleReload} title="Reload">
+                  Reload &nbsp;&nbsp;
+                  <span className="badge badge-pill badge-success animated bounceIn">
+                    <strong>9</strong>
+                  </span>
+                </DropdownItem>
+                
+                <DropdownItem onClick={this.handleFullscreen} title={!fullscreened ? "Full Screen" : "Restore"}>{!fullscreened ? "Fullscreen" : "Restore"} </DropdownItem>
+                <DropdownItem divider />
+                {!fullscreened && (!prompt ? <DropdownItem onClick={this.handleClose} title="Close">Close</DropdownItem>
+                : <DropdownItem onClick={this.toggleModal} title="Close">Close</DropdownItem>)}
+              </DropdownMenu>
+            </UncontrolledDropdown>
             </div>
           )}
         {
           customControls && (
             <div className={`${s.widgetControls} widget-controls`}>
-              {customControls}
+              {!fullscreened && ((customClose && !prompt) ? (
+                <button onClick={this.handleClose} id={`closeId-${randomId}`} className={s.customControlItem}><i title="Close" className="glyphicon glyphicon-remove"/></button>
+              ) : (
+                  <button onClick={this.toggleModal} id={`closeId-${randomId}`} className={s.customControlItem}><i title="Close" className="glyphicon glyphicon-remove"/></button>
+              ))}
+              {!fullscreened && (customCollapse && (
+                  <button onClick={this.handleCollapse} id={`closeId-${randomId}`} className={s.customControlItem}><i title="Collapse" className={`glyphicon glyphicon-chevron-${!collapseWidget ? 'down' : 'up'}`}/></button>
+              ))}
+              {customFullscreen && (
+                  <button onClick={this.handleFullscreen} id={`closeId-${randomId}`} className={s.customControlItem}><i title="Fullscreen" className={`glyphicon glyphicon-resize-${fullscreened ? 'small' : 'full'}`} /></button>
+              )}
+              {customReload && (
+                  <button onClick={this.handleReload} id={`closeId-${randomId}`} className={s.customControlItem}><i title="I am spinning!" className="fa fa-refresh" /></button>
+              )}
             </div>
           )
         }
-        <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
-          {fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : children}
-        </div>
+        <AnimateHeight
+          duration={ 500 }
+          height={ height } // see props documentation bellow
+        >
+
+
+          <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
+            {reloading || fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : customBody ? (
+                <div className="jumbotron handle bg-gray text-white mb-0">
+                <div className="container">
+                  <h1>Draggable story!</h1>
+                  <p className="lead">
+                    <em>Build</em> your own
+                    interfaces! Sit back and relax.
+                  </p>
+                  <p className="text-center">
+                    <button onClick={this.handleFullscreen} className="btn btn-danger btn-lg">
+                      {!fullscreened ? 
+                        <React.Fragment>Fullscreen me! &nbsp;
+                          <i className="fa fa-check" />
+                        </React.Fragment>
+                        : 'Go Back'
+                      }
+                    </button>
+                  </p>
+                </div>
+              </div>
+            ) : children}
+          </div>
+    
+       </AnimateHeight>
+       
       </section>
+      {prompt && (
+        <Modal isOpen={modal} toggle={this.toggleModal} id="news-close-modal">
+        <ModalHeader toggle={this.toggleModal} id="news-close-modal-label">Sure?</ModalHeader>
+        <ModalBody className="bg-white">
+          Do you really want to unrevertably remove this super news widget?
+        </ModalBody>
+        <ModalFooter>
+          <Button color="default" onClick={this.toggleModal} data-dismiss="modal">No</Button>{' '}
+          <Button color="danger" onClick={this.closeWithModal} id="news-widget-remove">Yes,
+            remove widget</Button>
+        </ModalFooter>
+      </Modal> 
+      )}
+      <div style={{display: fullscreened ? 'block'  : 'none'}} className={s.widgetBackground}></div>
+      </React.Fragment>
     );
   }
 }

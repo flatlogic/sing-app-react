@@ -1,0 +1,59 @@
+@import '../../../../styles/app';
+
+.mapChart {
+  margin: -15px -20px 0;
+  .map {
+    position: relative;
+    height: 400px;
+  }
+
+  .stats {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 5% 10%;
+  }
+}
+
+:global {
+  .map-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #bbb;
+    background-color: $addition-bg;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+      > .nav-item > .nav-link {
+        border-radius: 0;
+        padding: 0.7143rem 0;
+        color: $text-color;
+
+        &:hover {
+          background-color: $gray-200;
+          color: $text-color;
+        }
+      }
+
+      > .nav-item > .nav-link.active {
+        &,
+        &:hover {
+          background-color: $white;
+          color: $text-color;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      > .nav-item:first-child > a {
+        border-bottom-left-radius: $border-radius;
+      }
+
+      > .nav-item:last-child > a {
+        border-bottom-right-radius: $border-radius;
+      }      
+    }
+}
+
+

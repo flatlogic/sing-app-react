@@ -1,5 +1,3 @@
-import 'expose-loader?jQuery!jquery' // eslint-disable-line
-import 'expose-loader?$!jquery' // eslint-disable-line
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -11,8 +9,6 @@ import axios from 'axios';
 import App from './components/App';
 import config from './config';
 import reducers from './reducers';
-import * as $ from 'jquery'
-window.jQuery = window.$ = $;
 
 axios.defaults.baseURL = config.baseURLApi;
 axios.defaults.headers.common['Content-Type'] = "application/json";

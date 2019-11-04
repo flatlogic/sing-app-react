@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { ListGroup, ListGroupItem, InputGroup, InputGroupAddon, Input, InputGroupText } from 'reactstrap';
-import $ from 'jquery';
+import { ListGroup, ListGroupItem, InputGroup, InputGroupAddon, Input, InputGroupText, Badge } from 'reactstrap';
 
 import * as a1 from '../../images/people/a1.jpg';
 import * as a2 from '../../images/people/a2.jpg';
@@ -36,8 +36,12 @@ class Chat extends React.Component {
       todayConversations: [{
         name: 'Chris Gray',
         status: 'success',
+        active: 'active',
+        badge: true,
         lastMessage: 'Hey! What\'s up? So many times since we',
         image: a2,
+        index: 0,
+        today: true,
         messages: [{
           id: 0,
           text: 'Hey! What\'s up?',
@@ -54,45 +58,77 @@ class Chat extends React.Component {
         }],
       }, {
         name: 'Jamey Brownlow',
+        active: '',
+        badge: '',
         status: 'gray-light',
         lastMessage: 'Good news coming tonight. Seems they agreed to proceed',
         image: avatar,
+        index: 1,
+        today: true,
       }, {
         name: 'Livia Walsh',
+        active: '',
+        badge: '',
         status: 'danger',
         lastMessage: 'Check out my latest email plz!',
         image: a1,
+        index: 2,
+        today: true,
       }, {
         name: 'Jaron Fitzroy',
+        active: '',
+        badge: '',
         status: 'gray-light',
         lastMessage: 'What about summer break?',
         image: avatar,
+        index: 3,
+        today: true,
       }, {
         name: 'Mike Lewis',
+        active: '',
+        badge: '',
         status: 'success',
         lastMessage: 'Just ain\'t sure about the weekend now. 90% I\'ll make it.',
         image: a4,
+        index: 4,
+        today: true,
       }],
       lastWeekConversations: [{
         name: 'Freda Edison',
+        active: '',
+        badge: '',
         status: 'gray-light',
         lastMessage: 'Hey what\'s up? Me and Monica going for a lunch somewhere. Wanna join?',
         image: a6,
+        index: 0,
+        today: false,
       }, {
         name: 'Livia Walsh',
+        active: '',
+        badge: '',
         status: 'success',
         lastMessage: 'Check out my latest email plz!',
         image: a5,
+        index: 1,
+        today: false,
       }, {
         name: 'Jaron Fitzroy',
+        active: '',
+        badge: '',
         status: 'warning',
         lastMessage: 'What about summer break?',
         image: a3,
+        index: 2,
+        today: false,
       }, {
         name: 'Mike Lewis',
+        badge: false,
+        active: '',
         status: 'gray-light',
         lastMessage: 'Just ain\'t sure about the weekend now. 90% I\'ll make it.',
         image: avatar,
+        index: 3,
+        today: false,
       }],
       chatMessageOpened: true,
       conversation: Object,
@@ -101,11 +137,30 @@ class Chat extends React.Component {
   }
 
   openMessages(conversation, e) {
-    this.setState({
-      conversation,
-      chatMessageOpened: false,
-    });
-    $(e.currentTarget).removeClass('active').find('.badge').remove();
+    if(conversation.today) {
+      let todayConversations = [...this.state.todayConversations];
+      let choseConversations = {...todayConversations[conversation.index]}
+      choseConversations.active = '';
+      choseConversations.badge = '';
+      todayConversations[conversation.index] = choseConversations;
+      this.setState({
+        conversation,
+        chatMessageOpened: false,
+        todayConversations
+      });      
+    } else {
+      let lastWeekConversations = [...this.state.lastWeekConversations];
+      let choseConversations = {...lastWeekConversations[conversation.index]}
+      choseConversations.active = '';
+      choseConversations.badge = '';
+      lastWeekConversations[conversation.index] = choseConversations;
+      this.setState({
+        conversation,
+        chatMessageOpened: false,
+        lastWeekConversations
+      });      
+    }
+
   }
 
   addMessage(e) {
@@ -145,8 +200,9 @@ class Chat extends React.Component {
   }
 
   render() {
+    const { chatOpen, chatSidebar } = this.props;
     return (
-      <aside className={[s.root, this.props.chatOpen ? s.chatOpen : ''].join(' ')}>
+      <aside className={[s.root, chatOpen ? s.chatOpen : ''].join(' ')}>
         <header className={s.chatHeader}>
           <h4 className={s.chatTitle}>Contacts</h4>
           <div className="input-group input-group-transparent">
@@ -167,10 +223,12 @@ class Chat extends React.Component {
               .filter(this.filterConversations)
               .map(item =>
                 <ListGroupItem
+                  className={(item.active && chatSidebar) ? 'active' : ''}
                   key={item.name}
                   onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
+                  {item.badge ? <Badge color="danger" pill className={(item.active && chatSidebar) ? 'float-right bounceInDown animated' : 'hide'}>3</Badge> : ''}
                   <span className="thumb-sm float-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>
@@ -192,6 +250,7 @@ class Chat extends React.Component {
                   onClick={e => this.openMessages(item, e)}
                 >
                   <i className={['fa fa-circle float-right', `text-${item.status}`].join(' ')} />
+                  {item.badge ? <Badge color="danger" pill className={`float-right animated bounceInDown`}>3</Badge> : ''}
                   <span className="thumb-sm pull-left mr">
                     <img className="rounded-circle" src={item.image} alt="..." />
                   </span>
@@ -236,4 +295,10 @@ class Chat extends React.Component {
   }
 }
 
-export default withRouter(Chat);
+function mapStateToProps(store) {
+  return {
+    chatSidebar: store.navigation.chatToggleItem,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(Chat));

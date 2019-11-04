@@ -57,7 +57,7 @@ class Sidebar extends React.Component {
         <nav
           className={[s.root, sd.sidebar, this.props.width > 768 && s.staticSidebar].join(' ')}
         >
-          <ul className={classnames(s.nav, sd.nav)}>
+          <ul>
             <LinksGroup
               onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
               activeItem={this.props.activeItem}

@@ -5,13 +5,13 @@ import cx from 'classnames';
 import { Col, Row, Progress } from 'reactstrap';
 
 import Widget from '../../components/Widget';
-import RevenueChart from './components/Charts/RevenueChart';
-import LineChart from './components/Charts/LineChart';
+import Trend from 'react-trend';
 import MainChart from './components/Charts/MainChart';
 import TaskContainer from './components/TaskContainer/TaskContainer';
 import BigStat from './components/BigStat/BigStat';
 import TableContainer from './components/TableContainer/TableContainer';
 import Calendar from '../dashboard/components/calendar/Calendar';
+import HighchartsReact from 'highcharts-react-official'
 
 import mock from './mock';
 import s from './Analitycs.module.scss';
@@ -37,15 +37,85 @@ class Analytics extends Component {
         isReceiving: false
     };
 
+    getRandomData = () => {
+      const arr = [];
+      for (let i = 0; i < 25; i += 1) {
+        arr.push(Math.random().toFixed(1) * 10);
+      }
+      return arr;
+    }
+
+    donut = () => {
+      let series = [
+        {
+          name: 'Revenue',
+          data: this.props.revenue.map(s => {
+            return {
+              name: s.label,
+              y: s.data
+            }
+          })
+        }
+      ];
+      return {
+        chart: {
+          type: 'pie',
+          height: 120,
+          backgroundColor: 'rgba(0,0,0,0)',
+        },
+        credits: {
+          enabled: false
+        },
+        title: false,
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true,
+            innerSize: 80,
+            size: 100,
+            states: {
+              hover: {
+                halo: {
+                  size: 1
+                }
+              }
+            }
+          }
+        },
+        colors: ['#ffc247', '#f55d5d', '#9964e3'],
+        legend: {
+          align: 'right',
+          verticalAlign: 'middle',
+          layout: 'vertical',
+          itemStyle: {
+            color: '#798892',
+            fontWeight: 400,
+          },
+          itemHoverStyle: {
+            color: "#cccccc"
+          },
+          itemMarginBottom: 5,
+          symbolRadius: 0
+        },
+        exporting: {
+          enabled: false
+        },
+        series
+      };
+    }
+
+
     componentDidMount() {
         this.props.dispatch(receiveDataRequest());
     }
 
   render() {
-        const { visits, isReceiving, performance, server, revenue, mainChart } = this.props;
+    const { visits, isReceiving, performance, server, mainChart } = this.props;
     return (
       <div>
-        <h1 className="page-title mb-xlg mt-lg">Analytics <small>Company performance</small></h1>
+        <h1 className="page-title">Analytics</h1>
         <div className={s.sidesWrapper}>
           <div className={s.analyticsSide}>
             <Row>
@@ -56,26 +126,26 @@ class Analytics extends Component {
                     close
                     bodyClass="mt-lg"
                     fetchingData={isReceiving}
-                    title={<h5 style={{ color: "#757575" }}>Visits Today</h5>}
+                    title={<h5>Visits Today</h5>}
                   >
                       <div className="d-flex justify-content-between align-items-center mb">
                           <h2 style={{fontSize: '2.1rem'}}>{visits.count}</h2>
                           <i className="la la-arrow-right text-success rotate-315"/>
                       </div>
                       <div className="d-flex flex-wrap justify-content-between">
-                          <div className={cx('mt', s.visitElement)}>
+                          <div className={cx('mt')}>
                               <h6>+{visits.logins}</h6>
                               <p className="text-muted mb-0 mr">
                                   <small>Logins</small>
                               </p>
                           </div>
-                          <div className={cx('mt', s.visitElement)}>
+                          <div className={cx('mt')}>
                               <h6>{visits.sign_out_pct}%</h6>
                               <p className="text-muted mb-0">
                                   <small>Sign Out</small>
                               </p>
                           </div>
-                          <div className={cx('mt', s.visitElement)}>
+                          <div className={cx('mt')}>
                               <h6>{visits.rate_pct}%</h6>
                               <p className="text-muted mb-0 mr">
                                   <small>Rate</small>
@@ -92,9 +162,9 @@ class Analytics extends Component {
                     close
                     className="mb-0 h-100"
                     fetchingData={isReceiving}
-                    title={<h5 style={{ color: "#757575" }}>Revenue Breakdown</h5>}
+                    title={<h5>Revenue Breakdown</h5>}
                   >
-                    <RevenueChart data={revenue} />
+                    <HighchartsReact options={this.donut()} />
                   </Widget>
                 </div>
               </Col>
@@ -105,7 +175,7 @@ class Analytics extends Component {
                     close
                     className="mb-0 h-100"
                     fetchingData={isReceiving}
-                    title={<h5 style={{ color: "#757575" }}>App Performance</h5>}
+                    title={<h5>App Perfomance</h5>}
                   >
                     <p className="text-muted d-flex flex-wrap">
                       <small className="mr-lg d-flex align-items-center">
@@ -118,14 +188,14 @@ class Analytics extends Component {
                       </small>
                     </p>
                     <h6 className="fs-sm text-muted">SDK</h6>
-                      <Progress color="success" className="progress-xs" style={{height: '3px', marginBottom: '5px'}}
+                      <Progress color="success" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
                                 value={performance.sdk?.this_period_pct}/>
-                      <Progress color="warning" className="progress-xs" style={{height: '3px'}}
+                      <Progress color="info" className="progress-sm" style={{height: '3px'}}
                                 value={performance.sdk?.last_period_pct}/>
                     <h6 className="mt fs-sm text-muted">Integration</h6>
-                      <Progress color="success" className="progress-xs" style={{height: '3px', marginBottom: '5px'}}
+                      <Progress color="success" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
                                 value={performance.integration?.this_period_pct}/>
-                      <Progress color="warning" className="progress-xs" style={{height: '3px'}}
+                      <Progress color="info" className="progress-sm" style={{height: '3px'}}
                                 value={performance.integration?.last_period_pct}/>
                   </Widget>
                 </div>
@@ -137,24 +207,45 @@ class Analytics extends Component {
                     close
                     className="mb-0 h-100"
                     fetchingData={isReceiving}
-                    title={<h5 style={{ color: "#757575" }}>Server Overview</h5>}
+                    title={<h5>Server Overview</h5>}
                   >
-                    <div className="d-flex justify-content-between flex-wrap mb-sm">
+                    <div className="d-flex justify-content-between mb-sm">
                       <p className="width-150"><small>{server[1]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.frequency} Ghz</small></p>
-                      <div className={s.sparklineWrapper}>
-                        <LineChart color="#ffc247" />
+                      <div style={{width: "calc(100% - 150px)"}}>
+                        <Trend 
+                          gradient={['#ffc247']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
+                        />
                       </div>
                     </div>
-                    <div className="d-flex justify-content-between flex-wrap mb-sm">
+                    <div className="d-flex justify-content-between mb-sm">
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
-                      <div className={s.sparklineWrapper}>
-                        <LineChart color="#9964e3" />
+                      <div style={{width: "calc(100% - 150px)"}}>
+                        <Trend 
+                          gradient={['#F55D5D']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
+                        />
+                      </div>
+                    </div>
+                    <div className="d-flex justify-content-between mb-sm">
+                      <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
+                      <div style={{width: "calc(100% - 150px)"}}>
+                        <Trend 
+                          gradient={['#3abf94']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
+                        />
                       </div>
                     </div>
                   </Widget>
                 </div>
               </Col>
-              <Col xs={12}>
+              <Col lg={12} xs={12}>
                   <MainChart data={mainChart} isReceiving={isReceiving} />
               </Col>
               <Col xs={12} lg={6} xl={4}>
@@ -169,7 +260,7 @@ class Analytics extends Component {
               <Col xs={12} className="mb-lg">
                 <Widget
                   className="pb-0"
-                  bodyClass="p-0 mt"
+                  bodyClass={`mt ${s.resetPadding}`}
                   title={<h4> Support <strong>Requests</strong></h4>}
                   close settings
                 >
@@ -181,8 +272,8 @@ class Analytics extends Component {
           <div className={s.analyticsSide}>
             <Row>
               <Col xs={12} md={6} xl={12} className={s.lastSideElement}>
-                <Widget className="mb-xlg" bodyClass="pb-0 mt-0">
-                  <Calendar white />
+                <Widget className="mb-xlg pt-0" bodyClass="mt-0">
+                  <Calendar />
                 </Widget>
               </Col>
               <Col xs={12} md={6} xl={12} className={s.lastSideElement}>

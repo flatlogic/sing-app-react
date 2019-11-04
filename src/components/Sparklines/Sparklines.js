@@ -1,69 +1,79 @@
-import React from 'react';
-
-import $ from 'jquery';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Chart from 'react-apexcharts';
+import './Sparklines.scss';
 
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!jquery-sparkline';
-/* eslint-enable */
+class Sparklines extends Component {
 
-class Sparklines extends React.Component {
   static propTypes = {
-    data: PropTypes.arrayOf(
-      PropTypes.arrayOf(PropTypes.number),
-    ),
-    options: PropTypes.oneOfType([
-      PropTypes.arrayOf(
-        PropTypes.shape({
-          type: PropTypes.string.isRequired,
-        }),
-      ),
-      PropTypes.shape({
-        type: PropTypes.string.isRequired,
-      }),
-    ]),
+    type: PropTypes.string,
+    data: PropTypes.array,
+    height: PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
+    width: PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
+    options: PropTypes.object
   };
 
   static defaultProps = {
-    data: [],
-    options: {},
+    type: "bar",
+    height: 20,
+    width: 50
   };
 
-  componentDidMount() {
-    this.initSparkline();
-  }
-
-  initSparkline() {
-    const $el = $(this.sparklineRef);
-
-    const model = $.type(this.data) === 'string' ?
-      this.props.data.replace(/(^,)|(,$)/g, '')
-      : this.props.data;
-    const options = this.props.options;
-
-    if ($.type(model) === 'array' && $.type(options) === 'array') {
-      options.forEach((singleOptions, i) => {
-        if (i === 0) {
-          $el.sparkline(model[i], singleOptions);
-        } else { // set composite for next calls
-          $el.sparkline(model[i], $.extend({ composite: true }, singleOptions));
+  state = {
+    sparkOptions: {
+      chart: {
+        height: this.props.height,
+        width: this.props.width,
+        sparkline: {
+          enabled: true
         }
-      });
-    } else {
-      const data = $.type(model) === 'array' ? model : model.split(',');
-      $el.sparkline(data, options);
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '20%'
+        }
+      },
+      xaxis: {
+        crosshairs: {
+          width: 1
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function () {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }, ...this.props.options
     }
   }
 
   render() {
+    const { type, height, width, data } = this.props;
     return (
-      <div
-        className="sparkline" ref={(r) => {
-          this.sparklineRef = r;
-        }}
+      <Chart 
+        className="sparkline-chart" 
+        style={{display: "inline-block"}} 
+        type={type}
+        height={height}
+        width={width}
+        options={this.state.sparkOptions} 
+        series={data}
       />
-    );
+    )
   }
+
 }
 
 export default Sparklines;

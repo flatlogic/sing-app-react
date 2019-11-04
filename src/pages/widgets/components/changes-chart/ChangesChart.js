@@ -1,8 +1,5 @@
 import React from 'react';
 import Rickshaw from 'rickshaw';
-
-import $ from 'jquery';
-
 import {
   Row, Col,
 } from 'reactstrap';
@@ -12,17 +9,19 @@ import s from './ChangesChart.module.scss';
 
 class ChangesChart extends React.Component {
 
-  constructor(prop) {
-    super(prop);
-    this.state = {
+    state = {
       rickshawGraph: null,
-      sparklineData: [],
-      sparklineOptions: {},
+      sparklineData: [{data: [3, 6, 2, 4, 5, 8, 6, 8]}],
+      sparklineOptions: {
+        colors: ["#64bd63"],
+        plotOptions: {
+          bar: {
+            columnWidth: '50%'
+          }
+        }
+      },
     };
-    this.onResizeRickshaw = this.onResizeRickshaw.bind(this);
-    this.initRickshaw = this.initRickshaw.bind(this);
-    this.initSparkline();
-  }
+  
 
   componentDidMount() {
     this.initRickshaw();
@@ -33,12 +32,12 @@ class ChangesChart extends React.Component {
     window.removeEventListener('resize', this.onResizeRickshaw);
   }
 
-  onResizeRickshaw() {
+  onResizeRickshaw = () => {
     this.state.graph.configure({ height: 100 });
     this.state.graph.render();
   }
 
-  initRickshaw() {
+  initRickshaw = () => {
     const seriesData = [[], []];
     const random = new Rickshaw.Fixtures.RandomData(32);
     for (let i = 0; i < 32; i += 1) {
@@ -79,33 +78,6 @@ class ChangesChart extends React.Component {
     this.state.graph.render();
   }
 
-  initSparkline() {
-    const data = [3, 6, 2, 4, 5, 8, 6, 8];
-    const dataMax = Math.max.apply(null, data);
-    const backgroundData = data.map(() => dataMax);
-
-    // eslint-disable-next-line
-    this.state.sparklineData = [backgroundData, data];
-    // eslint-disable-next-line
-    this.state.sparklineOptions = [
-      {
-        type: 'bar',
-        height: 26,
-        barColor: '#eee',
-        barWidth: 7,
-        barSpacing: 5,
-        chartRangeMin: Math.min.apply(null, data),
-        tooltipFormat: new $.SPFormatClass(''),
-      },
-      {
-        composite: true,
-        type: 'bar',
-        barColor: '#64bd63',
-        barWidth: 7,
-        barSpacing: 5,
-      },
-    ];
-  }
 
   render() {
     return (
@@ -114,7 +86,6 @@ class ChangesChart extends React.Component {
           <p className={s.chartValue}><i className="fa fa-caret-up" /> 352.79</p>
           <p className={s.chartValueChange}>+2.04 (1.69%)</p>
           <div
-            style={{ overflow: 'hidden' }}
             ref={(r) => {
               this.rickshawChart = r;
             }}
@@ -148,7 +119,12 @@ class ChangesChart extends React.Component {
                   this.sparklineRef = r;
                 }}
               />
-              <Sparklines data={this.state.sparklineData} options={this.state.sparklineOptions} />
+              <Sparklines 
+                data={this.state.sparklineData} 
+                options={this.state.sparklineOptions} 
+                width={"80"}
+                height={"25"}
+              />
               <p className="deemphasize">GOOG</p>
             </Col>
           </Row>

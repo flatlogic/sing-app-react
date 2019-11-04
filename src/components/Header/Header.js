@@ -19,11 +19,11 @@ import {
   Form,
   FormGroup,
 } from 'reactstrap';
-import $ from 'jquery';
+import cx from 'classnames';
 
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
-import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
+import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem, chatToggleItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
 import a6 from '../../images/people/a6.jpg';
@@ -54,31 +54,25 @@ class Header extends React.Component {
       menuOpen: false,
       notificationsOpen: false,
       notificationsTabSelected: 1,
+      focus: false,
+      showNewMessage: false,
+      hideMessage: true,
     };
   }
   componentDidMount() {
     if (window.innerWidth > 576) {
       setTimeout(() => {
-        const $chatNotification = $('#chat-notification');
-        $chatNotification.removeClass('hide').addClass('animated fadeIn')
-          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-            $chatNotification.removeClass('animated fadeIn');
-            setTimeout(() => {
-              $chatNotification.addClass('animated fadeOut')
-                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd' +
-                  ' oanimationend animationend', () => {
-                    $chatNotification.addClass('hide');
-                  });
-            }, 6000);
-          });
-        $chatNotification.siblings('#toggle-chat')
-          .append('<i class="chat-notification-sing animated bounceIn"></i>');
-      }, 4000);
-    }
+        this.setState({ showNewMessage: true })
+      }, 2000)
 
-    $('#search-input').on('blur focus', (e) => {
-      $('#search-input').parents('.input-group')[e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
-    });
+      setTimeout(() => {
+        this.setState({ showNewMessage: false, hideMessage: false })
+      }, 6000);
+    }
+  }
+
+  toggleFocus = () => {
+    this.setState({ focus: !this.state.focus })
   }
 
   toggleNotifications() {
@@ -89,6 +83,11 @@ class Header extends React.Component {
 
   doLogout() {
     this.props.dispatch(logoutUser());
+  }
+
+  toggleChat = () => {
+    this.props.chatToggle();
+    setTimeout(() => this.props.dispatch(chatToggleItem()),1000);
   }
 
   // collapse/uncolappse
@@ -124,6 +123,8 @@ class Header extends React.Component {
     });
   }
   render() {
+    const { focus, showNewMessage, hideMessage } = this.state;
+
     const user = JSON.parse(localStorage.getItem('user') || {});
 
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
@@ -158,11 +159,13 @@ class Header extends React.Component {
 
         <Form className="d-sm-down-none ml-5" inline>
           <FormGroup>
-            <InputGroup className="input-group-no-border">
+            <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
+              cx('input-group-no-border', {'focus' : !!focus})
+            }>
               <InputGroupAddon addonType="prepend">
                 <i className="la la-search" />
               </InputGroupAddon>
-              <Input id="search-input" placeholder="Search Dashboard" />
+              <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
             </InputGroup>
           </FormGroup>
         </Form>
@@ -208,10 +211,15 @@ class Header extends React.Component {
             </DropdownMenu>
           </Dropdown>
           <NavItem>
-            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.props.chatToggle}>
+            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
               <i className="la la-globe" />
+              <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
             </NavLink>
-            <div id="chat-notification" className={`${s.chatNotification} hide `}>
+            <div id="chat-notification" className={`
+            ${s.chatNotification} 
+            ${showNewMessage ? 'animated fadeIn '+s.chatNotificationInit : ''} 
+            ${hideMessage ? '' : 'animated fadeOut'}`}>
+            
               <div className={s.chatNotificationInner}>
                 <h6 className={`${s.title} d-flex`}>
                   <span className="thumb-xs">
@@ -238,6 +246,7 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
+    chatSidebar: store.navigation.chatToggleItem,
   };
 }
 

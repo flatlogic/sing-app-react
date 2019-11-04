@@ -11,7 +11,7 @@ import {
   Progress,
 } from 'reactstrap';
 import Formsy from 'formsy-react';
-import Select2 from 'react-select2-wrapper';
+import Select from 'react-select';
 import MaskedInput from 'react-maskedinput';
 import Datetime from 'react-datetime';
 import { select2CountriesData, select2ShipmentData, cardTypesData } from './data';
@@ -69,20 +69,18 @@ const StepsComponents = {
       <fieldset>
         <FormGroup>
           <Label for="country-select">Destination Country</Label>
-          <Select2
-            style={{ width: '100%' }}
-            id="country-selec"
-            data={select2CountriesData}
-          />
+            <Select
+              className="selectCustomization"
+              options={select2CountriesData}
+            />
           <p className="help-block">Please choose your country destination</p>
         </FormGroup>
         <FormGroup>
           <Label for="courier">Choose shipping option</Label>
-          <Select2
-            style={{ width: '100%' }}
-            id="courier"
-            data={select2ShipmentData}
-          />
+            <Select
+              className="selectCustomization"
+              options={select2ShipmentData}
+            />
           <p className="help-block">Please choose your shipping option</p>
         </FormGroup>
         <FormGroup>
@@ -110,11 +108,10 @@ const StepsComponents = {
         </FormGroup>
         <FormGroup>
           <Label for="credit-card-type">Choose shipping option</Label>
-          <Select2
-            style={{ width: '100%' }}
-            id="credit-card-type"
-            data={cardTypesData}
-          />
+            <Select 
+              className="selectCustomization"
+              options={cardTypesData}
+            />
         </FormGroup>
         <FormGroup>
           <Label for="credit">Credit Card Number</Label>

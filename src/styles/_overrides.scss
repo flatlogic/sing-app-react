@@ -1125,3 +1125,8 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
     border-color: darken($purple, 10%);
   }
 }
+
+//// Highcharts Width fix ////
+.highcharts-container, .highcharts-root {
+  width:100% !important;
+}

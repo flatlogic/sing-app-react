@@ -10,11 +10,9 @@ import {
 
 import Widget from '../../components/Widget';
 
-/* eslint-disable */
 import Calendar from './components/calendar/Calendar';
-import Map from './components/mapael-map/MapaelMap';
+import Map from './components/am4chartMap/am4chartMap';
 import Rickshaw from './components/rickshaw/Rickshaw';
-/* eslint-enable */
 
 import AnimateNumber from 'react-animated-number';
 
@@ -368,7 +366,7 @@ class Dashboard extends React.Component {
           </Col>
 
           <Col lg={4} xs={12}>
-            <Widget title={<h6>Calendar</h6>} settings close bodyClass="p-0">
+            <Widget title={<h6>Calendar</h6>} settings close bodyClass={s.resetPadding}>
               <Calendar />
               <div className="list-group fs-mini">
                 <button className="list-group-item text-ellipsis">

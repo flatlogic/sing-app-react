@@ -6,95 +6,33 @@ import {
   Input,
   Form,
   FormGroup,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
 } from 'reactstrap';
-import $ from 'jquery';
-import 'imports-loader?window.jQuery=jquery,this=>window!jquery-ui/ui/widgets/sortable'; //eslint-disable-line
+import Sortable from 'react-sortablejs'
 
 import Widget from '../../components/Widget';
 import './Grid.scss';
 
-
-import peopleA1 from '../../images/people/a1.jpg';
-import peopleA2 from '../../images/people/a2.jpg';
-import peopleA3 from '../../images/people/a3.jpg';
-import peopleA4 from '../../images/people/a4.jpg';
-
-const sortOptions = {
-  connectWith: '.widget-container',
-  handle: 'header, .handle',
-  cursor: 'move',
-  iframeFix: false,
-  items: '.widget:not(.locked)',
-  opacity: 0.8,
-  helper: 'original',
-  revert: true,
-  forceHelperSize: true,
-  placeholder: 'widget widget-placeholder',
-  forcePlaceholderSize: true,
-  tolerance: 'pointer',
-};
+import mock from './mock';
 
 const tooltipPlacement = 'bottom';
 
 class Grid extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      modal: false,
-    };
-    this.toggleModal = this.toggleModal.bind(this);
-    this.closePrompt = this.closePrompt.bind(this);
+  state = {
+    gridData: mock.mainData,
+    updatedData: mock.updatedData,
   }
 
-  componentDidMount() {
-    $('.widget-container').sortable(sortOptions);
-    this.initSharesWidget();
-    this.initNewsWidget();
-  }
-
-  initSharesWidget() {
-    $(this.sharesWidget).widgster({
-      loaderTemplate: `<div class="loader animated fadeIn">
-         <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>
-      </div>`,
-    });
-  }
-
-  initNewsWidget() {
-    /**
-     * Make refresh button spin when loading
-     */
-    $('#news-widget').bind('load.widgster', () => {
-      $(this).find('[data-widgster="load"] > i').addClass('fa-spin');
-    }).bind('loaded.widgster', () => {
-      $(this).find('[data-widgster="load"] > i').removeClass('fa-spin');
-    });
-  }
-
-  closePrompt(callback) {
-    this.setState({ modal: true });
-    $('#news-widget-remove').bind('click', () => {
-      this.setState({ modal: false });
-      callback();
-    });
-  }
-
-  toggleModal() {
-    this.setState({ modal: !this.state.modal });
+  updateWidgetData = (widget) => {
+    this.setState({
+      gridData: Object.assign({}, this.state.gridData, {
+        [widget]: this.state.updatedData[widget]
+      })
+    })
   }
 
   render() {
+
     return (
       <div>
        <ol className="breadcrumb">
@@ -102,8 +40,9 @@ class Grid extends React.Component {
           <li className="breadcrumb-item active">Grid</li>
         </ol>
         <h1 className="page-title">Grid - <span className="fw-semi-bold">Options</span></h1>
+    
+        <Row> 
 
-        <Row>
           <Col xl={7}>
             <Widget
               title={<h5>Draggable Grid &nbsp;<span className="badge badge-danger fw-normal">since 2.1</span></h5>}
@@ -136,108 +75,65 @@ class Grid extends React.Component {
             </Widget>
           </Col>
         </Row>
-
+        
         <Row className="grid-demo">
           <Col className="widget-container" xl={6} xs={12}>
+            <Sortable 
+            options={{
+              group: "shared",
+              animation: 350,
+              ghostClass: 'widget-placeholder-react'
+            }}>
             <Widget
+              updateWidgetData={this.updateWidgetData}
+              widgetType="default"
               title={<h6>Default <span className="fw-semi-bold">Widget</span></h6>}
               refresh collapse fullscreen close
               showTooltip tooltipPlacement={tooltipPlacement}
-              data-widgster-load="/demo/grid/default.php"
             >
               <div>
-                <p>A timestamp this widget was created: Apr 24, 19:07:07</p>
-                <p>A timestamp this widget was updated: Apr 24, 19:07:07</p>
+              {this.state.gridData.default.map(item => (
+                  
+                    <p key={item.value}>{item.value}</p>
+                  
+                ))} 
               </div>
             </Widget>
 
             <Widget
+              updateWidgetData={this.updateWidgetData}
+              widgetType="shares"
+              prompt={true}
               className="shares-widget"
-              ref={(r) => {
-                this.sharesWidget = r;
-              }}
-              data-widgster-load="/demo/grid/shares.php"
-              data-post-processing
+              bodyClass={"reset-padding"}
               showTooltip tooltipPlacement={tooltipPlacement}
               title={<h6>
                 <span className="badge badge-primary"><i className="fa fa-facebook" /></span> &nbsp;
                 Latest <span className="fw-semi-bold">Shares</span>
               </h6>}
               close="Close" refresh="Reload"
-              bodyClass={'p-0'}
             >
               <div className="list-group list-group-lg">
-                <button className="list-group-item text-left">
+              {this.state.gridData.shares.map(item => (
+                <button key={item.name} className={`list-group-item text-left ${item.extraClass}`}>
                   <span className="thumb-sm mr">
-                    <img className="rounded-circle" src={peopleA1} alt="..." />
+                    <img className="rounded-circle" src={item.img} alt="..." />
                   </span>
                   <div>
-                    <h6 className="m-0">Maikel Basso</h6>
-                    <small className="text-muted">about 2 mins ago</small>
+                    <h6 className="m-0">{item.name}</h6>
+                    <small className="text-muted">{item.comment}</small>
                   </div>
-                  <i className="fa fa-circle ml-auto text-danger" />
-                </button>
-                <button className="list-group-item text-left">
-                  <span className="thumb-sm mr">
-                    <img className="rounded-circle" src={peopleA2} alt="..." />
-                  </span>
-                  <div>
-                    <h6 className="m-0">Ianus Arendse</h6>
-                    <small className="text-muted">about 42 mins ago</small>
-                  </div>
-                  <i className="fa fa-circle ml-auto text-info" />
-                </button>
-                <button className="list-group-item text-left">
-                  <span className="thumb-sm mr">
-                    <img className="rounded-circle" src={peopleA3} alt="..." />
-                  </span>
-                  <div>
-                    <h6 className="m-0">Valdemar Landau</h6>
-                    <small className="text-muted">one hour ago</small>
-                  </div>
-                  <i className="fa fa-circle ml-auto text-success" />
-                </button>
-                <button className="list-group-item text-left mb-n-md">
-                  <span className="thumb-sm mr">
-                    <img className="rounded-circle" src={peopleA4} alt="..." />
-                  </span>
-                  <div>
-                    <h6 className="m-0">Rick Teagan</h6>
-                    <small className="text-muted">3 hours ago</small>
-                  </div>
-                  <i className="fa fa-circle ml-auto text-warning" />
-                </button>
+                  <i className={`fa fa-circle ml-auto text-${item.type}`} />
+                </button>                
+              ))}
+
               </div>
            </Widget>
             <Widget
+              prompt={true}
               id="autoload-widget"
-              data-widgster-load="/demo/grid/autoload.php"
-              data-post-processing="true"
-              data-widgster-autoload="true"
-              data-widgster-show-loader="false"
               title={<h6>Autoload <span className="fw-semi-bold">Widget</span></h6>}
-              customControls={
-                <UncontrolledDropdown>
-                  <DropdownToggle
-                    tag="span"
-                    data-toggle="dropdown"
-                  >
-                    <i className="glyphicon glyphicon-cog" />
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem data-widgster="load" title="Reload">
-                      Reload &nbsp;&nbsp;
-                      <span className="badge badge-pill badge-success animated bounceIn">
-                        <strong>9</strong>
-                      </span>
-                    </DropdownItem>
-                    <DropdownItem data-widgster="fullscreen" title="Full Screen">Fullscreen</DropdownItem>
-                    <DropdownItem data-widgster="restore" title="Restore">Restore</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem data-widgster="close" title="Close">Close</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              }
+              customDropDown={true}
             >
               <div>
                 <h3 className="text-center m-0">Sign up, it&apos;s <strong>free</strong></h3>
@@ -258,14 +154,11 @@ class Grid extends React.Component {
                     <Input id="pswd" type="text" placeholder="Min 8 characters" />
                   </FormGroup>
                   <p>
-                    To make a widget automatically load it&apos;s content you just need to set
-                    <strong>data-widgster-autoload</strong> attribute and provide an url.
+                    To make a widget automatically load it's content you just need to set <strong>autoload</strong> attribute and provide an api to update the widget content.
                   </p>
-                  <pre><code>data-widgster-load=&quot;server/ajax_widget.html&quot;
-                    data-widgster-autoload=&quot;true&quot;</code></pre>
+                  <pre><code>&lt;Widget updateWidgetData={"{this.updateWidgetData}"} /&gt;</code></pre>
                   <p>
-                    <strong>data-widgster-autoload</strong> may be set to an integer value. If set, for example, to
-                    2000 will refresh widget every 2 seconds.
+                    <strong>autoload</strong> may be set to an integer value. If set, for example, to 2000 will refresh widget every 2 seconds.
                   </p>
                   <div className="clearfix">
                     <div className="btn-toolbar float-right">
@@ -289,93 +182,56 @@ class Grid extends React.Component {
                 </div>
               </div>
             </Widget>
+            </Sortable>
           </Col>
 
 
           <Col xl={6} className="widget-container">
+          <Sortable options={{
+              group: "shared",
+              ghostClass: 'widget-placeholder-react',
+              animation: 350,
+              filter: ".locked"
+            }}>
             <Widget
+              updateWidgetData={this.updateWidgetData}
+              widgetType="news"
               id="news-widget"
-              data-widgster-load="/demo/grid/news.php"
-              data-post-processing="true"
               title={<div><h6> News <span className="badge badge-pill badge-success">17</span></h6>
                 <span className="text-muted">spinning refresh button & close prompt</span>
               </div>}
-              customControls={
-                <div>
-                  <button data-widgster="expand" title="Expand"><i className="glyphicon glyphicon-chevron-up" /></button>
-                  <button data-widgster="collapse" title="Collapse"><i
-                    className="glyphicon glyphicon-chevron-down"
-                  /></button>
-                  <button data-widgster="load" title="I am spinning!"><i className="fa fa-refresh" /></button>
-                  <button data-widgster="close" title="Close"><i className="glyphicon glyphicon-remove" /></button>
-                </div>
-              }
-              bodyClass={'p-0'}
-              options={{
-                showLoader: false,
-                closePrompt: this.closePrompt,
-              }}
+              customControls={true}
+              prompt={true}
+              customClose={true}
+              customCollapse={true}
+              customFullscreen={true}
+              customReload={true}
             >
               <ul className={'news-list stretchable'}>
-                <li>
-                  <span className="icon bg-danger text-white">
-                    <i className="fa fa-star" />
-                  </span>
-                  <div className="news-item-info">
-                    <h5 className="name m-0 mb-xs"><button className="btn-link">First Human Colony on Mars</button></h5>
-                    <p className="fs-mini">
-                      First 700 people will take part in building first human settlement outside of Earth.
-                      That&apos;s awesome, right?
-                    </p>
-                    <time className="help-block">Mar 20, 18:46</time>
-                  </div>
-                </li>
-                <li>
-                  <span className="icon bg-info text-white">
-                    <i className="fa fa-microphone" />
-                  </span>
-                  <div className="news-item-info">
-                    <h5 className="name m-0 mb-xs"><button className="btn-link">Light Blue reached $300</button></h5>
-                    <p className="fs-mini">
-                      Light Blue Inc. shares just hit $300 price. &quot;This was inevitable. It should
-                      have happen sooner or later&quot; - says NYSE expert.
-                    </p>
-                    <time className="help-block">Sep 25, 11:59</time>
-                  </div>
-                </li>
-                <li>
-                  <span className="icon bg-success text-white">
-                    <i className="fa fa-eye" />
-                  </span>
-                  <div className="news-item-info">
-                    <h5 className="name m-0 mb-xs"><button className="btn-link">No more spying</button></h5>
-                    <p className="fs-mini">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <time className="help-block">Mar 20, 18:46</time>
-                  </div>
-                </li>
+                {this.state.gridData.news.map(item => (
+                  <li className={item.extraClass} key={item.title}>
+                    <span className={`icon text-white bg-${item.background}`}>
+                      <i className={`fa fa-${item.icon}`}></i>
+                    </span>
+                    <div className="news-item-info">
+                      <h5 className="name m-0 mb-xs"><a href="#/app/grid">{item.title}</a></h5>
+                      <p className="fs-mini">
+                        {item.description}
+                      </p>
+                      <time className="help-block">{item.date}</time>
+                    </div>
+                  </li>
+                ))}
               </ul>
 
-              <Modal isOpen={this.state.modal} toggle={this.toggleModal} id="news-close-modal">
-                <ModalHeader toggle={this.toggleModal} id="news-close-modal-label">Sure?</ModalHeader>
-                <ModalBody className="bg-white">
-                  Do you really want to unrevertably remove this super news widget?
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="default" onClick={this.toggleModal} data-dismiss="modal">No</Button>{' '}
-                  <Button color="danger" data-widgster="close" id="news-widget-remove">Yes,
-                    remove widget</Button>
-                </ModalFooter>
-              </Modal>
+
 
             </Widget>
 
             <Widget
-              className="locked" data-widgster-collapsed="true"
+              className="locked"
               title={<h6>Collapsed by default & locked</h6>}
-              collapse close
+              collapse close collapsed 
             >
               <div className="widget-body">
                 <blockquote>
@@ -393,29 +249,11 @@ class Grid extends React.Component {
             </Widget>
 
             <Widget
-              className="bg-gray"
-              bodyClass={'p-0'}
+              className="custom-gray-bg"
+              customBody={true}
             >
-              <div className="jumbotron handle bg-gray text-white mb-0">
-                <div className="container">
-                  <h1>Draggable story!</h1>
-                  <p className="lead">
-                    <em>Build</em> your own
-                    interfaces! Sit back and relax.
-                  </p>
-                  <p className="text-center">
-                    <button className="btn btn-danger btn-lg" data-widgster="fullscreen">
-                      Fullscreen me! &nbsp;
-                      <i className="fa fa-check" />
-                    </button>
-                  </p>
-                  <button className="btn btn-danger btn-lg" data-widgster="restore">
-                    Want to go back?
-                  </button>
-                </div>
-              </div>
-
             </Widget>
+            </Sortable>
           </Col>  
         </Row>
 
@@ -425,3 +263,4 @@ class Grid extends React.Component {
 }
 
 export default Grid;
+

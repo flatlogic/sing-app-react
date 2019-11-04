@@ -18,11 +18,11 @@ import {
 } from 'reactstrap';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
-import Select2 from 'react-select2-wrapper';
+import Select from 'react-select';
 import Datetime from 'react-datetime';
 import ColorPicker from 'rc-color-picker';
 import MaskedInput from 'react-maskedinput';
-import ReactBootstrapSlider from 'react-bootstrap-slider';
+import Slider, { Range, createSliderWithTooltip } from 'rc-slider';
 import Dropzone from 'react-dropzone';
 import TextareaAutosize from 'react-autosize-textarea';
 import ReactMde, { ReactMdeCommands } from 'react-mde';
@@ -32,24 +32,15 @@ import Widget from '../../../components/Widget';
 
 import s from './Elements.module.scss';
 
+import 'rc-slider/assets/index.css';
+
+const SliderWithTooltip = createSliderWithTooltip(Slider);
+const RangeTooltip = createSliderWithTooltip(Range);
+
 class Elements extends React.Component {
 
   constructor(props) {
     super(props);
-    this.changeValueDropdown = this.changeValueDropdown.bind(this);
-    this.onEditorStateChange = this.onEditorStateChange.bind(this);
-    this.defaultSelectChange = this.defaultSelectChange.bind(this);
-    this.changeSelectDropdownSimple = this.changeSelectDropdownSimple.bind(this);
-    this.changeSelectDropdownGreen = this.changeSelectDropdownGreen.bind(this);
-    this.changeSelectDropdownOrange = this.changeSelectDropdownOrange.bind(this);
-    this.changeSelectDropdownRed = this.changeSelectDropdownRed.bind(this);
-    this.changeSelectDropdownBig = this.changeSelectDropdownBig.bind(this);
-    this.changeColorValue = this.changeColorValue.bind(this);
-    this.changeColorInput = this.changeColorInput.bind(this);
-    this.onChangeInputFiles = this.onChangeInputFiles.bind(this);
-    this.removeInputFiles = this.removeInputFiles.bind(this);
-    this.onChangeInputImage = this.onChangeInputImage.bind(this);
-    this.onDrop = this.onDrop.bind(this);
 
     this.state = {
       dropDownValue: 'Another type',
@@ -59,51 +50,40 @@ class Elements extends React.Component {
       redSelectDropdownValue: 'Ichi',
       bigSelectDropdownValue: 'Fourth Item',
       editorState: EditorState.createEmpty(),
-      selectGroupData: [{
-        id: '1',
-        text: 'NFC EAST',
-        children: [{
-          id: '11', text: 'Dallas Cowboys',
-        }, {
-          id: '12', text: 'New York Giants',
-        }, {
-          id: '13', text: 'Philadelphia Eagles',
-        }, {
-          id: '14', text: 'Washington Redskins',
-        }],
-      }, {
-        id: '2',
-        text: 'NFC NORTH',
-        children: [{
-          id: '21', text: 'Chicago Bears',
-        }, {
-          id: '22', text: 'Detroit Lions',
-        }, {
-          id: '23', text: 'Green Bay Packers',
-        }, {
-          id: '24', text: 'Minnesota Vikings',
-        }],
-      }, {
-        id: '3',
-        text: 'NFC SOUTH',
-        children: [{
-          id: '31', text: 'Atlanta Falcons',
-        }, {
-          id: '32', text: 'Carolina Panthers',
-        }, {
-          id: '33', text: 'New Orleans Saints',
-        }, {
-          id: '34', text: 'Tampa Bay Buccaneers',
-        }],
-      }],
-      selectDefaultData: [{
-        id: 'Magellanic', text: 'Large Magellanic Cloud',
-      }, {
-        id: 'Andromeda', text: 'Andromeda Galaxy',
-      }, {
-        id: 'Sextans', text: 'Sextans A',
-      }],
-      defaultSelectVal: 'Andromeda',
+      selectGroupData: [
+        {
+          label: 'NFC EAST',
+          options: [
+            { value: 'Dallas-Cowboys', label: 'Dallas Cowboys', rating: 'safe' },
+            { value: 'New-York-Giants', label: 'New York Giants', rating: 'good' },
+            { value: 'Philadelphia-Eagles', label: 'Philadelphia Eagles', rating: 'wild' },
+            { value: 'Washington-Redskins', label: 'Washington Redskins', rating: 'crazy' },
+          ],
+        },
+        {
+          label: 'NFC NORTH',
+          options: [
+            { value: 'Chicago-Bears', label: 'Chicago Bears', rating: 'safe' },
+            { value: 'Detroit-Lions', label: 'Detroit Lions', rating: 'good' },
+            { value: 'Green-Bay-Packers', label: 'Green Bay Packers', rating: 'wild' },
+            { value: 'Minnesota-Vikings', label: 'Minnesota Vikings', rating: 'crazy' },
+          ],
+        },
+        {
+          label: 'NFC SOUTH',
+          options: [
+            { value: 'Atlanta-Falcons', label: 'Atlanta Falcons', rating: 'safe' },
+            { value: 'Carolina-Panthers', label: 'Carolina Panthers', rating: 'good' },
+            { value: 'New-Orleans-Saints', label: 'New Orleans Saints', rating: 'wild' },
+            { value: 'Tampa-Bay-Buccaneers', label: 'Tampa Bay Buccaneers', rating: 'crazy' },
+          ],
+        },
+      ],      
+      selectDefaultData: [
+        { value: 'Magellanic', label: 'Large Magellanic Cloud', rating: 'safe' },
+        { value: 'Andromeda', label: 'Andromeda Galaxy', rating: 'good' },
+        { value: 'Sextans', label: 'Sextans A', rating: 'wild' },
+      ],
       groupSelectVal: '',
       colorpickerValue: '#ff0000',
       colorpickerInputValue: '#ff0000',
@@ -159,44 +139,38 @@ class Elements extends React.Component {
     this.setState({ reactMdeValue: value });
   }
 
-  changeValueDropdown(e) {
+  changeValueDropdown = (e) => {
     this.setState({ dropDownValue: e.currentTarget.textContent });
   }
 
-  changeSelectDropdownGreen(e) {
+  changeSelectDropdownGreen = (e) => {
     this.setState({ greenSelectDropdownValue: e.currentTarget.textContent });
   }
 
-  changeSelectDropdownOrange(e) {
+  changeSelectDropdownOrange = (e) => {
     this.setState({ orangeSelectDropdownValue: e.currentTarget.textContent });
   }
 
-  changeSelectDropdownRed(e) {
+  changeSelectDropdownRed = (e) => {
     this.setState({ redSelectDropdownValue: e.currentTarget.textContent });
   }
 
-  changeSelectDropdownBig(e) {
+  changeSelectDropdownBig = (e) => {
     this.setState({ bigSelectDropdownValue: e.currentTarget.textContent });
   }
 
-  changeSelectDropdownSimple(e) {
+  changeSelectDropdownSimple = (e) => {
     this.setState({ simpleSelectDropdownValue: e.currentTarget.textContent });
   }
 
-  defaultSelectChange(e) {
-    this.setState({
-      defaultSelectVal: e,
-    });
-  }
-
-  changeColorValue(colors) {
+  changeColorValue = (colors) => {
     this.setState({
       colorpickerValue: colors.color,
       colorpickerInputValue: colors.color,
     });
   }
 
-  changeColorInput(e) {
+  changeColorInput = (e) => {
     if (e.target.value.length > 3 && e.target.value.length < 8) {
       this.setState({
         colorpickerInputValue: e.target.value,
@@ -210,10 +184,14 @@ class Elements extends React.Component {
     }
   }
 
-  removeInputFiles() {
+  removeInputFiles = () => {
     this.setState({
       inputFiles: [],
     });
+  }
+
+  valueFormatter = (v) => {
+    return `${v}`;
   }
 
   render() {
@@ -650,17 +628,19 @@ class Elements extends React.Component {
                 <FormGroup row>
                   <Label md="4" for="default-select">Default select</Label>
                   <Col md="6" className={s.select2}>
-                    <Select2
-                      value={this.state.defaultSelectVal}
-                      data={this.state.selectDefaultData}
+                    <Select 
+                      className="selectCustomization"
+                      options={this.state.selectDefaultData}
+                      defaultValue={this.state.selectDefaultData[1]}
                     />
                   </Col>
                 </FormGroup>
                 <FormGroup row>
                   <Label md="4" for="grouped-select">Select with search & groups</Label>
                   <Col md="6" className={s.select2}>
-                    <Select2
-                      data={this.state.selectGroupData}
+                    <Select 
+                      className="selectCustomization"
+                      options={this.state.selectGroupData}
                     />
                   </Col>
                 </FormGroup>
@@ -1138,107 +1118,100 @@ class Elements extends React.Component {
               <Row>
                 <Col lg="4">
                   <h4>Color Options</h4>
-                  <p>Sing extends Bootstrap Slider and provides different color options:</p>
+                  <p>Sing extends <strong>rc-slider</strong> and provides different color options:</p>
                   <Form>
-                    <div className="mb-sm">
-                      <ReactBootstrapSlider
-                        value={14}
-                        step={1}
-                        min={0}
-                        max={20}
-                      />
-                    </div>
-                    <div className="slider-danger mb-sm">
-                      <ReactBootstrapSlider
-                        value={18}
-                        step={1}
-                        min={0}
-                        max={20}
-                      />
-                    </div>
-                    <div className="slider-warning mb-sm">
-                      <ReactBootstrapSlider
-                        value={7}
-                        step={1}
-                        min={0}
-                        max={20}
-                      />
-                    </div>
-                    <div className="slider-success mb-sm">
-                      <ReactBootstrapSlider
-                        value={11}
-                        step={1}
-                        min={0}
-                        max={20}
-                      />
-                    </div>
-                    <div className="slider-inverse mb-sm">
-                      <ReactBootstrapSlider
-                        value={4}
-                        step={1}
-                        min={0}
-                        max={20}
-                      />
-                    </div>
+                    <Row>
+                      <Col lg={10} md={8}>
+                        <div className="mb-sm">
+                          <SliderWithTooltip  
+                            tipFormatter={this.valueFormatter}
+                            className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderBlue}`}
+                            defaultValue={20}
+                          />
+                        </div>
+                        <div className="slider-danger mb-sm">
+                          <SliderWithTooltip  
+                            tipFormatter={this.valueFormatter}
+                            className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderRed}`}
+                            defaultValue={60}
+                          />
+                        </div>
+                        <div className="slider-warning mb-sm">
+                          <SliderWithTooltip  
+                            tipFormatter={this.valueFormatter}
+                            className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderYellow}`}
+                            defaultValue={80}
+                          />
+                        </div>
+                        <div className="slider-success mb-sm">
+                          <SliderWithTooltip  
+                            tipFormatter={this.valueFormatter}
+                            className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderGreen}`}
+                            defaultValue={20}
+                          />
+                        </div>
+                        <div className="slider-inverse mb-sm">
+                          <SliderWithTooltip  
+                            tipFormatter={this.valueFormatter}
+                            className={`${s.sliderCustomization} ${s.horizontalSlider} ${s.sliderGrey}`} 
+                            defaultValue={40}
+                          />
+                        </div>
+                      </Col>
+                    </Row>
                   </Form>
                 </Col>
 
-                <Col lg="4">
+                <Col lg={4}>
                   <h4>Slider Orientation</h4>
                   <p>
-                    Vertical orientation is also possible. Simply changing <strong>
-                    data-slider-orientation </strong>
-                    attribute does the thing.
+                    Vertical orientation is also possible. Simply by adding <strong>
+                    verical prop</strong>.
                   </p>
                   <Row>
-                    <Col md="8">
-                      <span className="">
-                        <ReactBootstrapSlider
-                          value={14}
-                          step={1}
-                          min={0}
-                          max={20}
-                          orientation="vertical"
+                    <Col lg={10}>
+                      <span>
+                        <SliderWithTooltip  
+                          tipFormatter={this.valueFormatter} 
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderBlue}`}
+                          vertical
+                          defaultValue={50}
                         />
                       </span>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="slider-inverse">
-                        <ReactBootstrapSlider
-                          value={18}
-                          step={1}
-                          min={0}
-                          max={20}
-                          orientation="vertical"
+                      <span>
+                        <SliderWithTooltip  
+                          tipFormatter={this.valueFormatter} 
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderGrey}`}
+                          vertical
+                          defaultValue={70}
                         />
                       </span>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="">
-                        <ReactBootstrapSlider
-                          value={7}
-                          step={1}
-                          min={0}
-                          max={20}
-                          orientation="vertical"
+                      <span>
+                        <SliderWithTooltip  
+                          tipFormatter={this.valueFormatter} 
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderBlue}`}
+                          vertical
+                          defaultValue={20}
                         />
                       </span>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="slider-inverse">
-                        <ReactBootstrapSlider
-                          value={11}
-                          step={1}
-                          min={0}
-                          max={20}
-                          orientation="vertical"
+                      <span>
+                        <SliderWithTooltip  
+                          tipFormatter={this.valueFormatter} 
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderGrey}`}
+                          vertical
+                          defaultValue={30}
                         />
                       </span>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className="">
-                        <ReactBootstrapSlider
-                          value={4}
-                          step={1}
-                          min={0}
-                          max={20}
-                          orientation="vertical"
+                      <span>
+                        <SliderWithTooltip  
+                          tipFormatter={this.valueFormatter} 
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderBlue}`}
+                          vertical
+                          defaultValue={40}
                         />
                       </span>
                     </Col>
@@ -1247,18 +1220,19 @@ class Elements extends React.Component {
 
                 <Col lg="4">
                   <h4>Range Selector</h4>
-                  <p>Range selector, options specified via <strong>data-slider-value</strong>
-                    attribute as
-                    an array. Price range selector:</p>
-                  <span className="slider-warning">
-                    <ReactBootstrapSlider
-                      step={1}
-                      min={0}
-                      max={2000}
-                      value={[200, 1547]} range
-                    />
-                    &nbsp;
-                  </span>
+                  <p>Range selector can be displayed via <strong>{"<RangeTooltip />"} </strong>tag. Price range selector:</p>
+                  <Row>
+                    <Col md={10}>
+                      <span className="slider-warning">
+                        <RangeTooltip 
+                          allowCross={false}
+                          className={`${s.sliderCustomization} ${s.rangeSlider} ${s.sliderYellow}`}
+                          defaultValue={[20, 70]} 
+                        />
+                        &nbsp;
+                      </span>                    
+                    </Col>
+                  </Row>
                 </Col>
 
               </Row>
