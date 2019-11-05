@@ -99,7 +99,7 @@ class Calendar extends Component {
 
       return (
         <div className={`${s.calendarRectangle}`}>
-        <div className={`${s.calendarContent}`}>
+        <div>
         <section className={`${s.mainCalendar}`}>
           <header className={`${s.calendarHeader}`}>
             <div className={`${s.calendarRow} ${s.titleHeader}`}>

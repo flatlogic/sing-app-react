@@ -327,10 +327,8 @@ class Widget extends React.Component {
         }
         <AnimateHeight
           duration={ 500 }
-          height={ height } // see props documentation bellow
+          height={ height }
         >
-
-
           <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
             {reloading || fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : customBody ? (
                 <div className="jumbotron handle bg-gray text-white mb-0">

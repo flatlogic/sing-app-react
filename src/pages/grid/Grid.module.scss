@@ -20,7 +20,7 @@
       }
 
       &:last-child {
-        margin-bottom: -10px;
+        margin-bottom: 0px;
       }
     }
 
@@ -76,9 +76,9 @@
 }
 
 .customGrayBg {
-  background-color: #495057;
+  background-color: $gray-700;
 }
 
 .resetPadding {
-  padding: 15px 0 0;
+  padding: $widget-padding-vertical 0 0;
 }
