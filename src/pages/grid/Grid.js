@@ -242,8 +242,7 @@ class Grid extends React.Component {
                     Bruce Lee
                   </footer>
                 </blockquote>
-                <p>To make a widget initially collapsed just add
-                  <code>data-widgster-collapsed=&quot;true&quot;</code> attribute
+                <p>To make a widget initially collapsed just add <code>collapsed</code> property
                   to <code>.widget</code>.</p>
                 <p>To make it locked (prevent dragging) add <code>.locked</code> class.</p>
               </div>
