@@ -25,7 +25,7 @@ class Icons extends React.Component {
 
   render() {
     return (
-      <section className={s.root}>
+      <section className={`${s.root} mb-4`}>
         <ol className="breadcrumb">
           <li className="breadcrumb-item">YOU ARE HERE</li>
           <li className="breadcrumb-item active">UI Icons</li>

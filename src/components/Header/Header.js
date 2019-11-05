@@ -157,7 +157,7 @@ class Header extends React.Component {
 
         </Nav>
 
-        <Form className="d-sm-down-none ml-5" inline>
+        <Form className={`d-sm-down-none ml-5 ${s.headerSearchInput}`} inline>
           <FormGroup>
             <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
               cx('input-group-no-border', {'focus' : !!focus})
@@ -190,7 +190,7 @@ class Header extends React.Component {
                       <span>{firstUserLetter}</span>
                   )}
               </span>
-              <span className="small">{user.name || user.email || "Philip smith"}</span>
+              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user.name || user.email || "Philip smith"}</span>
               <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
@@ -202,10 +202,10 @@ class Header extends React.Component {
               <i className="la la-cog" />
             </DropdownToggle>
             <DropdownMenu right className="super-colors">
-              <DropdownItem><i className="la la-user" /> My Account</DropdownItem>
+              <DropdownItem href="/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="/calendar">Calendar</DropdownItem>
-              <DropdownItem href="/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
+              <DropdownItem href="/#/app/extra/calendar">Calendar</DropdownItem>
+              <DropdownItem href="/#/app/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
               <DropdownItem divider />
               <DropdownItem onClick={this.doLogout}><i className="la la-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
@@ -232,7 +232,8 @@ class Header extends React.Component {
             </div>
           </NavItem>
           <NavItem className="fs-lg d-md-none">
-            <NavLink href="#" onClick={this.props.chatToggle}>
+            <NavLink href="#" onClick={this.toggleChat}>
+              <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
               <span className="rounded rounded-lg bg-gray text-white"><i className="la la-globe" /></span>
             </NavLink>
           </NavItem>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Rickshaw from 'rickshaw';
+import { connect } from 'react-redux';
 import {
   Row, Col,
 } from 'reactstrap';
@@ -26,6 +27,12 @@ class ChangesChart extends React.Component {
   componentDidMount() {
     this.initRickshaw();
     window.addEventListener('resize', this.onResizeRickshaw);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.sidebarStatic !== prevProps.sidebarStatic) {
+      this.onResizeRickshaw()
+    }
   }
 
   componentWillUnmount() {
@@ -78,8 +85,8 @@ class ChangesChart extends React.Component {
     this.state.graph.render();
   }
 
-
   render() {
+
     return (
       <div className={s.changesChart}>
         <div className={`${s.chart} bg-success btlr btrr`}>
@@ -134,4 +141,10 @@ class ChangesChart extends React.Component {
   }
 }
 
-export default ChangesChart;
+function mapStateToProps(store) {
+  return {
+    sidebarStatic: store.navigation.sidebarStatic,
+  };
+}
+
+export default connect(mapStateToProps)(ChangesChart);

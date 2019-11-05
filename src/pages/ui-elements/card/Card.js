@@ -103,7 +103,7 @@ const Cards = () => (
         </Card>
       </Col>
       <Col xs={12} sm={6} md={4}>
-        <Card className="border-0">
+        <Card className="border-0 mb-4">
           <CardImg top width="100%" src={reactnativeImg} alt="Card image cap" />
           <CardBody>
             <small>Technology</small><br />

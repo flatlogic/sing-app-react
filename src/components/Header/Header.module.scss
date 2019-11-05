@@ -156,3 +156,17 @@
   opacity: 1;
   pointer-events: initial;
 }
+@media(max-width: 1020px) {
+  .headerSearchInput {
+    margin-left: 0!important;
+  }  
+}
+
+@media(max-width: 950px) {
+  .adminEmail {
+    display: none;
+  }
+  .headerSearchInput {
+    width: 180px;
+  }
+}

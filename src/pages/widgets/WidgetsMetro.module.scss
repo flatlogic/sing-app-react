@@ -65,7 +65,9 @@
 
 .positionDescriptionText {
   position: absolute;
-  bottom: 10%;
+  bottom: 9%;
+  font-size: 11px;
+  line-height: 11px;
 }
 
 .postitionGroupElements {
@@ -94,7 +96,7 @@
 
 
 .itemMinWidth {
-  min-width: 175px;
+  min-width: 190px;
 }
 
 @media(max-width: 1450px) {
