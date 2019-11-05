@@ -105,7 +105,7 @@ class Grid extends React.Component {
               widgetType="shares"
               prompt={true}
               className="shares-widget"
-              bodyClass={s.resetPadding}
+              bodyClass={"pt-3 px-0 py-0"}
               showTooltip tooltipPlacement={tooltipPlacement}
               title={<h6>
                 <span className="badge badge-primary"><i className="fa fa-facebook" /></span> &nbsp;
@@ -206,7 +206,7 @@ class Grid extends React.Component {
               customCollapse={true}
               customFullscreen={true}
               customReload={true}
-              bodyClass={s.resetPadding}
+              bodyClass={"pt-3 px-0 py-0"}
             >
               <ul className={'news-list stretchable'}>
                 {this.state.gridData.news.map(item => (

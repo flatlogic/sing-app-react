@@ -6,6 +6,7 @@ import {
   BreadcrumbItem, 
 } from 'reactstrap';
 import ApexChart from 'react-apexcharts';
+import './ApexChart.module.scss';
 import Widget from '../../../components/Widget';
 import chartsData from './mock';
 
