@@ -654,7 +654,7 @@ class Widgets extends React.Component {
                       &nbsp;Thanks for the awesome support. That&apos;s awesome!&nbsp;
                       <i className="fa fa-quote-right opacity-50" />
                     </p>
-                    <div className={s.positionElementBottom}>
+                    <div className={`${s.positionElementBottom} ${s.mobileAdjustment}`}>
                       <span className="thumb pull-left mr">
                         <img className="rounded-circle" src={peopleA4} alt="..." />
                       </span>

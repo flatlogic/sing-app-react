@@ -190,7 +190,7 @@ class Widget extends React.Component {
       <section
         style={{display: hideWidget ? 'none' : ''}}  
         className={
-          classNames('widget', {'fullscreened' : !!fullscreened, 'collapsed' : !!collapseWidget}, s.widget, className, reloading ? s.reloading : '')
+          classNames('widget', {'fullscreened' : !!fullscreened, 'collapsed' : !!collapseWidget}, s.widget, className, (reloading || fetchingData) ? s.reloading : '')
         } {...attributes}
         >
         {

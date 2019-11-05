@@ -97,6 +97,14 @@
   min-width: 175px;
 }
 
+@media(max-width: 1450px) {
+  .mobileAdjustment {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
 @media(max-width: 1235px) {
   .slideWrap {
     p.smallSite {

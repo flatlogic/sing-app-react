@@ -10,7 +10,7 @@ import {
 import Sortable from 'react-sortablejs'
 
 import Widget from '../../components/Widget';
-import './Grid.scss';
+import s from './Grid.module.scss';
 
 import mock from './mock';
 
@@ -105,7 +105,7 @@ class Grid extends React.Component {
               widgetType="shares"
               prompt={true}
               className="shares-widget"
-              bodyClass={"reset-padding"}
+              bodyClass={s.resetPadding}
               showTooltip tooltipPlacement={tooltipPlacement}
               title={<h6>
                 <span className="badge badge-primary"><i className="fa fa-facebook" /></span> &nbsp;
@@ -206,6 +206,7 @@ class Grid extends React.Component {
               customCollapse={true}
               customFullscreen={true}
               customReload={true}
+              bodyClass={s.resetPadding}
             >
               <ul className={'news-list stretchable'}>
                 {this.state.gridData.news.map(item => (
@@ -249,7 +250,7 @@ class Grid extends React.Component {
             </Widget>
 
             <Widget
-              className="custom-gray-bg"
+              className={s.customGrayBg}
               customBody={true}
             >
             </Widget>
