@@ -43,7 +43,7 @@ class NavbarExamples extends Component {
               close collapse
             >
               <p>Here’s what you need to know before getting started with the navbar:</p>
-              <ui>
+              <ul>
                 <li>Navbars require a wrapping <code>&lt;Navbar&gt;</code> with <code>expand=&quot;*&quot;</code> for
                     responsive collapsing and color scheme classes.</li>
                 <li>Navbars and their contents are fluid by default. Use optional containers
@@ -53,7 +53,7 @@ class NavbarExamples extends Component {
                   behavior depends on our Collapse JavaScript plugin.</li>
                 <li>Navbars are hidden by default when printing. Force them to be printed by adding <code>.d-print</code>
                 to the <code>.navbar</code>. See the display utility class.</li>
-              </ui>
+              </ul>
               <Navbar className="px-2 mt-lg" color="light" light expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
                 <NavbarToggler className="ml-auto" onClick={() => this.toggle(0)} />

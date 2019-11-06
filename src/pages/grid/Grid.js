@@ -10,7 +10,7 @@ import {
 import Sortable from 'react-sortablejs'
 
 import Widget from '../../components/Widget';
-import './Grid.scss';
+import s from './Grid.module.scss';
 
 import mock from './mock';
 
@@ -105,7 +105,7 @@ class Grid extends React.Component {
               widgetType="shares"
               prompt={true}
               className="shares-widget"
-              bodyClass={"reset-padding"}
+              bodyClass={"pt-3 px-0 py-0"}
               showTooltip tooltipPlacement={tooltipPlacement}
               title={<h6>
                 <span className="badge badge-primary"><i className="fa fa-facebook" /></span> &nbsp;
@@ -206,6 +206,7 @@ class Grid extends React.Component {
               customCollapse={true}
               customFullscreen={true}
               customReload={true}
+              bodyClass={"pt-3 px-0 py-0"}
             >
               <ul className={'news-list stretchable'}>
                 {this.state.gridData.news.map(item => (
@@ -241,15 +242,14 @@ class Grid extends React.Component {
                     Bruce Lee
                   </footer>
                 </blockquote>
-                <p>To make a widget initially collapsed just add
-                  <code>data-widgster-collapsed=&quot;true&quot;</code> attribute
+                <p>To make a widget initially collapsed just add <code>collapsed</code> property
                   to <code>.widget</code>.</p>
                 <p>To make it locked (prevent dragging) add <code>.locked</code> class.</p>
               </div>
             </Widget>
 
             <Widget
-              className="custom-gray-bg"
+              className={s.customGrayBg}
               customBody={true}
             >
             </Widget>

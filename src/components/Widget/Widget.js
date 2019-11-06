@@ -190,7 +190,7 @@ class Widget extends React.Component {
       <section
         style={{display: hideWidget ? 'none' : ''}}  
         className={
-          classNames('widget', {'fullscreened' : !!fullscreened, 'collapsed' : !!collapseWidget}, s.widget, className, reloading ? s.reloading : '')
+          classNames('widget', {'fullscreened' : !!fullscreened, 'collapsed' : !!collapseWidget}, s.widget, className, (reloading || fetchingData) ? s.reloading : '')
         } {...attributes}
         >
         {
@@ -327,10 +327,8 @@ class Widget extends React.Component {
         }
         <AnimateHeight
           duration={ 500 }
-          height={ height } // see props documentation bellow
+          height={ height }
         >
-
-
           <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
             {reloading || fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : customBody ? (
                 <div className="jumbotron handle bg-gray text-white mb-0">

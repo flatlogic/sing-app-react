@@ -240,7 +240,7 @@ class Dashboard extends React.Component {
               title={<h6><span className="badge badge-danger">New</span> Messages</h6>}
               refresh close
             >
-              <div className="widget-body p-0">
+              <div className="widget-body undo_padding">
                 <div className="list-group list-group-lg">
                   <button className="list-group-item text-left">
                     <span className="thumb-sm float-left mr">
@@ -366,7 +366,7 @@ class Dashboard extends React.Component {
           </Col>
 
           <Col lg={4} xs={12}>
-            <Widget title={<h6>Calendar</h6>} settings close bodyClass={s.resetPadding}>
+            <Widget title={<h6>Calendar</h6>} settings close bodyClass={"pt-2 px-0 py-0"}>
               <Calendar />
               <div className="list-group fs-mini">
                 <button className="list-group-item text-ellipsis">

@@ -260,7 +260,7 @@ class Analytics extends Component {
               <Col xs={12} className="mb-lg">
                 <Widget
                   className="pb-0"
-                  bodyClass={`mt ${s.resetPadding}`}
+                  bodyClass={`mt p-0`}
                   title={<h4> Support <strong>Requests</strong></h4>}
                   close settings
                 >

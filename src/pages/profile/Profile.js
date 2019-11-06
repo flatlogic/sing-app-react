@@ -167,7 +167,7 @@ const Profile = () => (
               </ul>
             </footer>
           </section>
-          <Form className="mt" action="#">
+          <Form className="mt mb-4" action="#">
             <FormGroup className="mb-2">
               <Label className="sr-only" for="new-event">New event</Label>
               <Input type="textarea" id="new-event" placeholder="Post something..." rows="3" />

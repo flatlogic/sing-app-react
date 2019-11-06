@@ -24,7 +24,7 @@ class Stats extends React.Component {
         <Col lg={11}>
           <Row className={s.root}>
             <Col xs={12}>
-              <Widget bodyClass={s.resetPadding}>
+              <Widget bodyClass={"p-0"}>
                 <div className="widget">
                   <header>
                     <Row>

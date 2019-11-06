@@ -63,7 +63,7 @@ const MessageTableHeader = (props) => {
           </DropdownMenu>
         </UncontrolledButtonDropdown>
       </div>
-      <Input placeholder="Search Messages" size="sm" onChange={e => search(e.target.value)} />
+      <Input placeholder="Search Messages" bsSize="sm" onChange={e => search(e.target.value)} />
     </div>
   );
 };
