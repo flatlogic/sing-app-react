@@ -102,7 +102,7 @@ class Timeline extends React.Component {
                       <img className="rounded-circle" src={avatar} alt="..." />
                     </span>
                     <div className={s.commentBody}>
-                      <Input size="sm" placeholder="Write your comment..." />
+                      <Input bsSize="sm" placeholder="Write your comment..." />
                     </div>
                   </li>
                 </ul>
@@ -198,7 +198,7 @@ class Timeline extends React.Component {
                       <img className="rounded-circle" src={avatar} alt="..." />
                     </span>
                     <div className={s.commentBody}>
-                      <Input size="sm" placeholder="Write your comment..." />
+                      <Input bsSize="sm" placeholder="Write your comment..." />
                     </div>
                   </li>
                 </ul>
