@@ -10,8 +10,27 @@
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
   overflow-y: auto;
-
+  position: absolute;
   @include scroll-bar($sidebar-scrollbar-bg);
+}
+
+.sidebarWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: $sidebar-width-open;
+  transition: width $sidebar-transition-time ease-in-out;
+}
+
+.sidebarCloseMain.sidebarWrapper {
+  width: $sidebar-width-closed;
+  transition: none;
+  @include media-breakpoint-down(sm) {
+    width: 0;
+  }
 }
 
 .logo {

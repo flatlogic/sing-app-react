@@ -62,6 +62,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
+      <div className={`${s.sidebarWrapper} ${this.props.navbarTypeFloat ? s.sidebarCloseMain : ''}`}>
       <nav
         onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
         className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
@@ -443,6 +444,7 @@ class Sidebar extends React.Component {
           )}
         </div>
       </nav >
+      </div>
     );
   }
 }
@@ -453,6 +455,7 @@ function mapStateToProps(store) {
     sidebarStatic: store.navigation.sidebarStatic,
     alertsList: store.alerts.alertsList,
     activeItem: store.navigation.activeItem,
+    navbarTypeFloat: store.navigation.navbarTypeFloat,
   };
 }
 

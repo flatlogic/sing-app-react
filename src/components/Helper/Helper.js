@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { DashboardThemes } from '../../reducers/layout';
 import { changeTheme } from '../../actions/layout';
+import { navbarTypeToggle } from '../../actions/navigation';
+import CustomColorPicker from '../ColorPicker';
+import config from '../../config';
 
 import Widget from '../Widget';
 
@@ -34,38 +37,86 @@ class Helper extends Component {
     this.props.dispatch(changeTheme(state));
   };
 
+  navbarFloat = () => {
+    this.props.dispatch(navbarTypeToggle(true))
+  }
+
+  navbarStatic = () => {
+    this.props.dispatch(navbarTypeToggle(false))
+  }
+
   render() {
     const { isOpened } = this.state;
+    const { dashboardTheme } = this.props;
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
+          <div className={`${s.themeHelperBtn} bg-warning`} onClick={this.toggle}>
+            <div className={cx(s.themeHelperSpinner, 'text-white')}>
+              <i className="la la-cog" />
+              <i className="la la-cog" />
+            </div>
+          </div>
         <Widget
           className={s.themeHelperContent}
-          bodyClass="mt-3"
-          title={
-            <header className={cx(s.themeHelperHeader, 'd-flex p-0')}>
-              <Button color="warning" className={s.themeHelperBtn} onClick={this.toggle}>
-                <div className={cx(s.themeHelperSpinner, 'text-white')}>
-                  <i className="la la-cog" />
-                  <i className="la la-cog" />
-                </div>
-              </Button>
-              <h6>Theme</h6>
-            </header>
-          }
         >
-          <div className={s.themeSwitcher}>
+          <h5 className="mt-2">Theme</h5>
+
+          
+          <div className={`${s.themeSwitcher} mb-2`}>
             <div className={cx(s.theme, "mb-3")}>
-              <input checked={this.props.dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
+              <input checked={dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
               <label htmlFor="css-light">
                 <img className={s.themeImage} src={themeLight} alt="light theme"/>
               </label>
             </div>
             <div className={s.theme}>
-              <input checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
+              <input checked={dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
               <label htmlFor="css-dark">
                 <img className={s.themeImage} src={themeDark} alt="dark theme"/>
               </label>
             </div>
+          </div>
+          <div className="theme-settings">
+            <h5>Navbar Type</h5>
+            <div className="form-group row">
+              <div className="abc-radio">
+                <input onChange={this.navbarStatic} type="radio" name="navbar-type" id="navbar_static" />
+                <label htmlFor="navbar_static">Static</label>
+              </div>
+     
+              <div className="abc-radio">
+                <input onChange={this.navbarFloat} type="radio" name="navbar-type" id="navbar_floating" />
+                <label htmlFor="navbar_floating">Floating</label>
+              </div>
+            </div>
+
+            <h5>Navbar Color</h5>
+            <CustomColorPicker 
+              colors={Object.values(config.app.colors)}
+              activeColor={"#ffc247"}
+              onChange={() => console.log("change")}
+            />
+
+            <h5>Sidebar Type</h5>
+            <div className="form-group row">
+              <div className="abc-radio">
+                <input type="radio" name="sidebar-type" id="sidebar_transparent" />
+                <label htmlFor="sidebar_transparent">Transparent</label>
+              </div>
+    
+              <div className="abc-radio">
+                <input type="radio" name="sidebar-type" id="sidebar_solid" />
+                <label htmlFor="sidebar_solid">Solid</label>
+              </div>
+            </div>
+
+            <h5>Sidebar Color</h5>
+            <CustomColorPicker 
+              colors={Object.values(config.app.colors)}
+              activeColor={"#ffc247"}
+              onChange={() => console.log("change")}
+            />
+
           </div>
           <div className="mt-4">
             <Button

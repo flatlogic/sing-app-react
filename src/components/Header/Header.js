@@ -124,13 +124,14 @@ class Header extends React.Component {
   }
   render() {
     const { focus, showNewMessage, hideMessage } = this.state;
-
+    const { navbarTypeFloat } = this.props;
+    console.log(this.props)
     const user = JSON.parse(localStorage.getItem('user') || {});
 
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
 
     return (
-      <Navbar className={`${s.root} d-print-none`}>
+      <Navbar className={`${s.root} d-print-none ${navbarTypeFloat ? s.navbarFloatingType : ''}`}>
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
@@ -248,6 +249,7 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     chatSidebar: store.navigation.chatToggleItem,
+    navbarTypeFloat: store.navigation.navbarTypeFloat
   };
 }
 
