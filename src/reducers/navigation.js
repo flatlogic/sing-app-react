@@ -12,7 +12,7 @@ const initialState = {
   sidebarStatic: false,
   chatToggleItem: false,
   activeItem: JSON.parse(localStorage.getItem('staticSidebar')) ? window.location.pathname : null,
-  navbarTypeFloat: false
+  navbarType: "static"
 };
 
 export default function runtime(state = initialState, action) {
@@ -43,7 +43,7 @@ export default function runtime(state = initialState, action) {
     case NAVBAR_TYPE_TOGGLE: 
     return {
       ...state,
-      navbarTypeFloat: action.payload,
+      navbarType: action.payload,
     }
     default:
       return state;

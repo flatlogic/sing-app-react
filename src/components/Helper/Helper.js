@@ -38,11 +38,11 @@ class Helper extends Component {
   };
 
   navbarFloat = () => {
-    this.props.dispatch(navbarTypeToggle(true))
+    this.props.dispatch(navbarTypeToggle("float"))
   }
 
   navbarStatic = () => {
-    this.props.dispatch(navbarTypeToggle(false))
+    this.props.dispatch(navbarTypeToggle("static"))
   }
 
   render() {
