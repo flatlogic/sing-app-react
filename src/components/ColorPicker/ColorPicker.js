@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ColorPicker from 'rc-color-picker';
 import s from './ColorPicker.module.scss';
 
 class CustomColorPicker extends Component {
@@ -8,7 +9,7 @@ class CustomColorPicker extends Component {
   };
 
   render() {
-    const { colors, activeColor, updateColor } = this.props;
+    const { colors, activeColor, updateColor, customizationItem } = this.props;
     return (
       <div>
         <ul className={s.colorsList}>
@@ -18,11 +19,12 @@ class CustomColorPicker extends Component {
                   key={color}
                   className={`${s.colorBox} ${(activeColor === color) ? s.active : ""}`}
                   style={{ background: color }}
-                  onClick={() => updateColor(color)}
+                  onClick={() => updateColor(color, customizationItem)}
                 ></li>
              )
             }
           )}
+          <ColorPicker className={s.colorBox} defaultColor="#333333" onChange={(e) => updateColor(e.color, customizationItem)}/>
         </ul>
       </div>
     )

@@ -20,9 +20,10 @@ import {
   FormGroup,
 } from 'reactstrap';
 import cx from 'classnames';
-
+import { NavbarTypes } from '../../reducers/layout';
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
+import chroma from 'chroma-js'
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem, chatToggleItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
@@ -124,35 +125,46 @@ class Header extends React.Component {
   }
   render() {
     const { focus, showNewMessage, hideMessage } = this.state;
-    const { navbarType } = this.props;
+    const { navbarType, navbarColor } = this.props;
 
     const user = JSON.parse(localStorage.getItem('user') || {});
 
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
 
     return (
-      <Navbar className={`${s.root} d-print-none ${navbarType === "float" ? s.navbarFloatingType : ''}`}>
+      <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''} ${navbarColor !== "#ffffff" ? s.customizedNavbar : ""}`} style={{backgroundColor: navbarColor}}>
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className="la la-bars" />
+              <i className="la la-bars" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
             <NavLink className="fs-lg d-lg-none" onClick={this.switchSidebar}>
-              <span className="rounded rounded-lg bg-gray text-white d-md-none"><i className="la la-bars" /></span>
-              <i className="la la-bars ml-3 d-sm-down-none" />
+            <span 
+              style={{backgroundColor: navbarColor !== "#ffffff" 
+              ? chroma(navbarColor).darken(1) 
+              : "#495057"}} 
+              className="rounded rounded-lg">
+                <i 
+                  className="la la-bars" 
+                  style={{color: navbarColor === "#ffffff" 
+                  ? "#ffffff"
+                  : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} 
+                />
+              </span>
+              <i className="la la-bars ml-3 d-sm-down-none" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <i className="la la-refresh" />
+              <i className="la la-refresh" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <i className="la la-times" />
+              <i className="la la-times" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
             </NavLink>
           </NavItem>
 
@@ -171,7 +183,7 @@ class Header extends React.Component {
           </FormGroup>
         </Form>
 
-        <NavLink className={`${s.navbarBrand} d-md-none`}>
+        <NavLink className={`${s.navbarBrand} d-md-none`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
@@ -183,7 +195,7 @@ class Header extends React.Component {
 
         <Nav className="ml-auto">
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
-            <DropdownToggle nav caret>
+            <DropdownToggle nav caret style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>
               <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
                   {user.avatar || user.email === "admin@flatlogic.com" ? (
                       <img src={user.avatar || a5} alt="..."/>
@@ -191,7 +203,7 @@ class Header extends React.Component {
                       <span>{firstUserLetter}</span>
                   )}
               </span>
-              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user.name || user.email || "Philip smith"}</span>
+              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''}`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>{user.name || user.email || "Philip smith"}</span>
               <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
@@ -200,7 +212,7 @@ class Header extends React.Component {
           </Dropdown>
           <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
             <DropdownToggle nav>
-              <i className="la la-cog" />
+              <i className={`la la-cog`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} />
             </DropdownToggle>
             <DropdownMenu right className="super-colors">
               <DropdownItem href="/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
@@ -213,7 +225,7 @@ class Header extends React.Component {
           </Dropdown>
           <NavItem>
             <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
-              <i className="la la-globe" />
+              <i className={`la la-globe`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} />
               <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
             </NavLink>
             <div id="chat-notification" className={`
@@ -235,7 +247,18 @@ class Header extends React.Component {
           <NavItem className="fs-lg d-md-none">
             <NavLink href="#" onClick={this.toggleChat}>
               <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
-              <span className="rounded rounded-lg bg-gray text-white"><i className="la la-globe" /></span>
+              <span 
+                style={{backgroundColor: navbarColor !== "#ffffff" 
+                ? chroma(navbarColor).darken(1) 
+                : "#495057"}} 
+                className="rounded rounded-lg">
+                  <i 
+                  className="la la-globe" 
+                  style={{color: navbarColor === "#ffffff" 
+                  ? "#ffffff"
+                  : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}
+                />
+              </span>
             </NavLink>
           </NavItem>
         </Nav>
@@ -249,7 +272,8 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     chatSidebar: store.navigation.chatToggleItem,
-    navbarType: store.navigation.navbarType
+    navbarType: store.layout.navbarType,
+    navbarColor: store.layout.navbarColor
   };
 }
 

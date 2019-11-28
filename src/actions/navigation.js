@@ -5,7 +5,6 @@ export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
 export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
 export const CHANGE_ACTIVE_SIDEBAR_ITEM = 'CHANGE_ACTIVE_SIDEBAR_ITEM';
 export const CHAT_TOGGLE_ITEM = 'CHAT_TOGGLE_ITEM';
-export const NAVBAR_TYPE_TOGGLE = 'NAVBAR_TYPE_TOGGLE';
 
 export function toggleSidebar() {
   return {
@@ -35,12 +34,5 @@ export function changeActiveSidebarItem(activeItem) {
 export function chatToggleItem() {
   return {
     type: CHAT_TOGGLE_ITEM
-  }
-}
-
-export function navbarTypeToggle(value) {
-  return {
-    type: NAVBAR_TYPE_TOGGLE,
-    payload: value
   }
 }

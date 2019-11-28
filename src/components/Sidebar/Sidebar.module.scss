@@ -22,7 +22,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: $sidebar-width-open;
-  transition: width $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
+  transition: width $sidebar-transition-time ease-in-out;
 }
 
 .sidebarClose.sidebarWrapper {

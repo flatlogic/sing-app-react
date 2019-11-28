@@ -3,9 +3,8 @@ import cx from 'classnames';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { DashboardThemes } from '../../reducers/layout';
-import { changeTheme, changeSidebarColor, changeNavbarColor } from '../../actions/layout';
-import { navbarTypeToggle } from '../../actions/navigation';
+import { DashboardThemes, SidebarTypes, NavbarTypes, LayoutComponents } from '../../reducers/layout';
+import { changeTheme, changeSidebarColor, changeNavbarColor, navbarTypeToggle, sidebarTypeToggle } from '../../actions/layout';
 import CustomColorPicker from '../ColorPicker';
 import config from '../../config';
 
@@ -37,21 +36,24 @@ class Helper extends Component {
     this.props.dispatch(changeTheme(state));
   };
 
-  navbarFloat = () => {
-    this.props.dispatch(navbarTypeToggle("float"))
+  navbarStateToggle = (state) => {
+    this.props.dispatch(navbarTypeToggle(state))
   }
 
-  navbarStatic = () => {
-    this.props.dispatch(navbarTypeToggle("static"))
+  sidebarStateToggle = (state) => {
+    this.props.dispatch(sidebarTypeToggle(state))
   }
 
-  updateColor = (value) => {
-    this.props.dispatch(changeNavbarColor(value))
+  updateColor = (value, customizationItem) => {
+    customizationItem === LayoutComponents.NAVBAR 
+    ? this.props.dispatch(changeNavbarColor(value))
+    : this.props.dispatch(changeSidebarColor(value))
   }
 
   render() {
     const { isOpened } = this.state;
-    const { dashboardTheme, navbarColor, sidebarColor } = this.props;
+    const { dashboardTheme, navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
+    
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
           <div className={`${s.themeHelperBtn} bg-warning`} onClick={this.toggle}>
@@ -84,12 +86,12 @@ class Helper extends Component {
             <h5>Navbar Type</h5>
             <div className="form-group row">
               <div className="abc-radio">
-                <input onChange={this.navbarStatic} type="radio" name="navbar-type" id="navbar_static" />
+                <input onChange={() => this.navbarStateToggle(NavbarTypes.STATIC)} type="radio" checked={navbarType === NavbarTypes.STATIC ? true : ''} name="navbar-type" id="navbar_static" />
                 <label htmlFor="navbar_static">Static</label>
               </div>
      
               <div className="abc-radio">
-                <input onChange={this.navbarFloat} type="radio" name="navbar-type" id="navbar_floating" />
+                <input onChange={() => this.navbarStateToggle(NavbarTypes.FLOATING)} type="radio" checked={navbarType === NavbarTypes.FLOATING ? true : ''} name="navbar-type" id="navbar_floating" />
                 <label htmlFor="navbar_floating">Floating</label>
               </div>
             </div>
@@ -99,17 +101,18 @@ class Helper extends Component {
               colors={Object.values(config.app.colors)}
               activeColor={navbarColor}
               updateColor={this.updateColor}
+              customizationItem={"navbar"}
             />
 
             <h5>Sidebar Type</h5>
             <div className="form-group row">
               <div className="abc-radio">
-                <input type="radio" name="sidebar-type" id="sidebar_transparent" />
+                <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.TRANSPARENT)} checked={sidebarType === SidebarTypes.TRANSPARENT ? true : ''} name="sidebar-type" id="sidebar_transparent" />
                 <label htmlFor="sidebar_transparent">Transparent</label>
               </div>
     
               <div className="abc-radio">
-                <input type="radio" name="sidebar-type" id="sidebar_solid" />
+                <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.SOLID)} checked={sidebarType === SidebarTypes.SOLID ? true : ''} name="sidebar-type" id="sidebar_solid" />
                 <label htmlFor="sidebar_solid">Solid</label>
               </div>
             </div>
@@ -119,6 +122,7 @@ class Helper extends Component {
               colors={Object.values(config.app.colors)}
               activeColor={sidebarColor}
               updateColor={this.updateColor}
+              customizationItem={"sidebar"}
             />
 
           </div>
@@ -188,7 +192,9 @@ function mapStateToProps(store) {
   return {
     dashboardTheme: store.layout.dashboardTheme,
     sidebarColor: store.layout.sidebarColor,
-    navbarColor: store.layout.navbarColor
+    navbarColor: store.layout.navbarColor,
+    navbarType: store.layout.navbarType,
+    sidebarType: store.layout.sidebarType
   };
 }
 

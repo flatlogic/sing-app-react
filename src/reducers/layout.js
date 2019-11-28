@@ -1,20 +1,44 @@
 import { 
   CHANGE_THEME,
   CHANGE_SIDEBAR_COLOR,
-  CHANGE_NAVBAR_COLOR
+  CHANGE_NAVBAR_COLOR,
+  NAVBAR_TYPE_TOGGLE,
+  SIDEBAR_TYPE_TOGGLE
 } from '../actions/layout';
+
+import config from '../config'
 
 export const DashboardThemes = {
   LIGHT: "light",
   DARK: "dark"
 };
 
+export const SidebarTypes = {
+  SOLID: "solid",
+  TRANSPARENT: "transparent",
+}
+
+export const NavbarTypes = {
+  STATIC: "static",
+  FLOATING: "floating",
+}
+
+export const LayoutComponents = {
+  NAVBAR: "navbar",
+  SIDEBAR: "sidebar"
+}
+
 Object.freeze(DashboardThemes);
+Object.freeze(SidebarTypes);
+Object.freeze(NavbarTypes);
+Object.freeze(LayoutComponents);
 
 const defaultState = {
   dashboardTheme: DashboardThemes.DARK,
-  sidebarColor: "#313947",
-  navbarColor:  "#ffffff"
+  sidebarColor: config.app.colors.sidebar,
+  navbarColor:  config.app.colors.navbar,
+  navbarType: NavbarTypes.STATIC,
+  sidebarType: SidebarTypes.SOLID
 };
 
 export default function layoutReducer(state = defaultState, action) {
@@ -34,6 +58,16 @@ export default function layoutReducer(state = defaultState, action) {
         ...state,
         navbarColor: action.payload
       };
+    case NAVBAR_TYPE_TOGGLE: 
+      return {
+        ...state,
+        navbarType: action.payload,
+      }
+    case SIDEBAR_TYPE_TOGGLE:
+      return {
+        ...state,
+        sidebarType: action.payload
+      }
     default:
       return state;
   }

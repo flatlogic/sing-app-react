@@ -3,8 +3,7 @@ import {
   OPEN_SIDEBAR, 
   CLOSE_SIDEBAR, 
   CHANGE_ACTIVE_SIDEBAR_ITEM, 
-  CHAT_TOGGLE_ITEM, 
-  NAVBAR_TYPE_TOGGLE 
+  CHAT_TOGGLE_ITEM,  
 } from '../actions/navigation';
 
 const initialState = {
@@ -12,7 +11,6 @@ const initialState = {
   sidebarStatic: false,
   chatToggleItem: false,
   activeItem: JSON.parse(localStorage.getItem('staticSidebar')) ? window.location.pathname : null,
-  navbarType: "static"
 };
 
 export default function runtime(state = initialState, action) {
@@ -36,15 +34,10 @@ export default function runtime(state = initialState, action) {
         activeItem: action.activeItem,
       };
     case CHAT_TOGGLE_ITEM:
-    return {
-      ...state,
-      chatToggleItem: true,
-    }
-    case NAVBAR_TYPE_TOGGLE: 
-    return {
-      ...state,
-      navbarType: action.payload,
-    }
+      return {
+        ...state,
+        chatToggleItem: true,
+      }
     default:
       return state;
   }
