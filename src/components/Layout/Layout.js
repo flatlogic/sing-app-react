@@ -133,7 +133,7 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
-          this.props.sidebarStatic ? s.sidebarStatic : '',
+          this.props.sidebarStatic ? `${s.sidebarStatic}` : '',
           this.state.chatOpen ? s.chatOpen : '',
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',

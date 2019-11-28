@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { DashboardThemes } from '../../reducers/layout';
-import { changeTheme } from '../../actions/layout';
+import { changeTheme, changeSidebarColor, changeNavbarColor } from '../../actions/layout';
 import { navbarTypeToggle } from '../../actions/navigation';
 import CustomColorPicker from '../ColorPicker';
 import config from '../../config';
@@ -45,9 +45,13 @@ class Helper extends Component {
     this.props.dispatch(navbarTypeToggle("static"))
   }
 
+  updateColor = (value) => {
+    this.props.dispatch(changeNavbarColor(value))
+  }
+
   render() {
     const { isOpened } = this.state;
-    const { dashboardTheme } = this.props;
+    const { dashboardTheme, navbarColor, sidebarColor } = this.props;
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
           <div className={`${s.themeHelperBtn} bg-warning`} onClick={this.toggle}>
@@ -93,8 +97,8 @@ class Helper extends Component {
             <h5>Navbar Color</h5>
             <CustomColorPicker 
               colors={Object.values(config.app.colors)}
-              activeColor={"#ffc247"}
-              onChange={() => console.log("change")}
+              activeColor={navbarColor}
+              updateColor={this.updateColor}
             />
 
             <h5>Sidebar Type</h5>
@@ -113,8 +117,8 @@ class Helper extends Component {
             <h5>Sidebar Color</h5>
             <CustomColorPicker 
               colors={Object.values(config.app.colors)}
-              activeColor={"#ffc247"}
-              onChange={() => console.log("change")}
+              activeColor={sidebarColor}
+              updateColor={this.updateColor}
             />
 
           </div>
@@ -183,6 +187,8 @@ class Helper extends Component {
 function mapStateToProps(store) {
   return {
     dashboardTheme: store.layout.dashboardTheme,
+    sidebarColor: store.layout.sidebarColor,
+    navbarColor: store.layout.navbarColor
   };
 }
 

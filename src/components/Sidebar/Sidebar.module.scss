@@ -22,16 +22,16 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: $sidebar-width-open;
-  transition: width $sidebar-transition-time ease-in-out;
+  transition: width $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 }
 
 .sidebarClose.sidebarWrapper {
-  width: $sidebar-width-closed;
-  transition: none;
+  width: $sidebar-width-closed; 
   @include media-breakpoint-down(sm) {
     width: 0;
   }
 }
+
 
 .logo {
   margin: 15px 0;
@@ -55,7 +55,6 @@
 
 .staticSidebar .logo {
   width: 100%;
-  transition: none;
 }
 
 .nav {

@@ -62,10 +62,10 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''}   ${s.sidebarWrapper}`}>
+      <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''} ${this.props.sidebarStatic ? s.staticSidebar : ""} ${s.sidebarWrapper}`}>
       <nav
         onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-        className={[s.root, this.props.sidebarStatic ? s.staticSidebar : '', !this.props.sidebarOpened ? s.sidebarClose : ''].join(' ')}
+        className={s.root}
       >
         <header className={s.logo}>
           <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</a>
@@ -455,6 +455,7 @@ function mapStateToProps(store) {
     sidebarStatic: store.navigation.sidebarStatic,
     alertsList: store.alerts.alertsList,
     activeItem: store.navigation.activeItem,
+    navbarType: store.navigation.navbarType,
   };
 }
 

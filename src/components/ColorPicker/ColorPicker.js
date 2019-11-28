@@ -8,7 +8,7 @@ class CustomColorPicker extends Component {
   };
 
   render() {
-    const { colors, activeColor } = this.props;
+    const { colors, activeColor, updateColor } = this.props;
     return (
       <div>
         <ul className={s.colorsList}>
@@ -18,6 +18,7 @@ class CustomColorPicker extends Component {
                   key={color}
                   className={`${s.colorBox} ${(activeColor === color) ? s.active : ""}`}
                   style={{ background: color }}
+                  onClick={() => updateColor(color)}
                 ></li>
              )
             }
