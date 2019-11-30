@@ -17,14 +17,6 @@
     }
   }
 
-  &.customizedNavbar {
-
-  }
-
-  .customizedText {
-    color: $light
-  }
-
   @include media-breakpoint-down(sm) {
     padding: 7px 0;
   }

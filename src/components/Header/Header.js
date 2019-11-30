@@ -132,7 +132,7 @@ class Header extends React.Component {
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
 
     return (
-      <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''} ${navbarColor !== "#ffffff" ? s.customizedNavbar : ""}`} style={{backgroundColor: navbarColor}}>
+      <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''}`} style={{backgroundColor: navbarColor}}>
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
