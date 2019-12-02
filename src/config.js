@@ -14,13 +14,13 @@ export default {
   },
   app: {
     colors: {
-      sidebar: "#313947",
-      navbar: "#ffffff",
-      primary: "#547fff",
-      secondary: "#798892",
-      success: "#3abf94",
-      info: "#9964e3",
-      warning: "#ffc247",
+      dark: "#313947",
+      light: "#ffffff",
+      blue: "#547fff",
+      gray: "#798892",
+      green: "#3abf94",
+      violet: "#9964e3",
+      yellow: "#ffc247",
       danger: "#f55d5d",
     },
   }

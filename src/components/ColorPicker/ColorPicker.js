@@ -10,24 +10,45 @@ class CustomColorPicker extends Component {
 
   render() {
     const { colors, activeColor, updateColor, customizationItem } = this.props;
-    return (
-      <div>
-        <ul className={s.colorsList}>
-          {colors.map(color => {
-            return (
-                <li
-                  key={color}
-                  className={`${s.colorBox} ${(activeColor === color) ? s.active : ""}`}
-                  style={{ background: color }}
-                  onClick={() => updateColor(color, customizationItem)}
-                ></li>
-             )
-            }
-          )}
-          <ColorPicker className={s.colorBox} defaultColor="#333333" onChange={(e) => updateColor(e.color, customizationItem)}/>
-        </ul>
-      </div>
-    )
+    if(customizationItem === 'navbar') {
+      return (
+        <div>
+          <ul className={s.colorsList}>
+            {Object.entries(colors).map(color => {
+              return (
+                  <li
+                    key={color[1]}
+                    className={`${s.colorBox} ${(activeColor === color[1]) ? s.active : ""}`}
+                    style={{ background: color[1] }}
+                    onClick={() => updateColor(color[1])}
+                  ></li>
+              )
+              }
+            )}
+            <ColorPicker className={s.colorBox} defaultColor="#333333" onChange={(e) => updateColor(e.color, customizationItem)}/>
+          </ul>
+        </div>
+      )      
+    } else {
+      return (
+        <div>
+          <ul className={s.colorsList}>
+            {Object.entries(colors).map(color => {
+              return (
+                  <li
+                    key={color[1]}
+                    className={`${s.colorBox} ${(activeColor === color[0]) ? s.active : ""}`}
+                    style={{ background: color[1] }}
+                    onClick={() => updateColor(color[0])}
+                  ></li>
+              )
+              }
+            )}
+          </ul>
+        </div>
+      ) 
+    }
+
   }
 }
 

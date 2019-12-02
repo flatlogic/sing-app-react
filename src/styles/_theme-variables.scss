@@ -1,13 +1,17 @@
 #root {
+  --sidebar-item-active: #ffc247;
+  --important-notification-color: #f55d5d;
+  --badge-item: #ffffff;
   .sing-dashboard,
   .dashboard-light {
+    
     --logo-color: #3c484f;
 
-    --sidebar-bg-color: #fff;
+    --sidebar-bg-color: $white;
     --sidebar-color: #6c757d;
     --sidebar-action-bg: #f9fafe;
 
-    --sidebar-panel-bg-color: white;
+    --sidebar-panel-bg-color: $white;
     --sidebar-nav-title-color: #0e1113;
 
     --widget-shadow-color: 153, 187, 221;
@@ -17,7 +21,7 @@
   }
 
   .dashboard-dark {
-    --logo-color: white;
+    --logo-color: $white;
 
     --sidebar-bg-color: #313947;
     --sidebar-color: #a6b2c1;
@@ -28,12 +32,12 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: #fff;
+    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-blue {
-    --logo-color: white;
+    --logo-color: $white;
 
     --sidebar-bg-color: #547FFF;
     --sidebar-color: #f4f4f4;
@@ -44,12 +48,96 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: #fff;
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-gray {
+    --logo-color: $white;
+
+    --sidebar-bg-color: #3abf94;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #96A5AF;
+
+    --sidebar-panel-bg-color: #96A5AF;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-green {
+    --logo-color: $white;
+
+    --sidebar-bg-color: #3abf94;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #12BF88;
+
+    --sidebar-panel-bg-color: #12BF88;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-violet {
+    --logo-color: $white;
+
+    --sidebar-bg-color: #9964e3;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #8A4BE3;
+
+    --sidebar-panel-bg-color: #8A4BE3;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-yellow {
+    --logo-color: $white;
+    --sidebar-item-active: #f4f4f5;
+    --badge-item: #FFC758;
+    --sidebar-bg-color: #ffc247;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #FFC758;
+
+    --sidebar-panel-bg-color: #FFC758;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-danger {
+    --logo-color: $white;
+    --important-notification-color: #ffc247;
+    --sidebar-bg-color: #f55d5d;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #F54C4C;
+
+    --sidebar-panel-bg-color: #F54C4C;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   // dependable variables
   .sing-dashboard {
+    --badge-item-color: var(--badge-item);
+    --important-notification: var(--important-notification-color);
+    --sidebar-item-active-color: var(--sidebar-item-active);
     --chat-sidebar-bg-color: var(--sidebar-bg-color);
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);

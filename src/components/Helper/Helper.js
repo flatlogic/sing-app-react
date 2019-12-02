@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { DashboardThemes, SidebarTypes, NavbarTypes, LayoutComponents } from '../../reducers/layout';
+import { DashboardThemes, SidebarTypes, NavbarTypes } from '../../reducers/layout';
 import { changeTheme, changeSidebarColor, changeNavbarColor, navbarTypeToggle, sidebarTypeToggle } from '../../actions/layout';
 import CustomColorPicker from '../ColorPicker';
 import config from '../../config';
@@ -11,8 +11,6 @@ import config from '../../config';
 import Widget from '../Widget';
 
 import s from './Helper.module.scss'; // eslint-disable-line
-import themeDark from '../../images/theme-dark.png';
-import themeLight from '../../images/theme-light.png';
 
 class Helper extends Component {
   static propTypes = {
@@ -33,7 +31,7 @@ class Helper extends Component {
   };
 
   changeTheme = (state) => {
-    this.props.dispatch(changeTheme('blue'));
+    this.props.dispatch(changeTheme(state));
     this.props.dispatch(changeSidebarColor(state))
   };
 
@@ -45,15 +43,13 @@ class Helper extends Component {
     this.props.dispatch(sidebarTypeToggle(state))
   }
 
-  updateColor = (value, customizationItem) => {
-    customizationItem === LayoutComponents.NAVBAR 
-    ? this.props.dispatch(changeNavbarColor(value))
-    : this.props.dispatch(changeSidebarColor(value))
+  updateColor = (value) => {
+    this.props.dispatch(changeNavbarColor(value))
   }
 
   render() {
     const { isOpened } = this.state;
-    const { dashboardTheme, navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
+    const { navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
     
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
@@ -66,23 +62,8 @@ class Helper extends Component {
         <Widget
           className={s.themeHelperContent}
         >
-          <h5 className="mt-2">Theme</h5>
+          <h5 className="mt-2 mb-5">Theme</h5>
 
-          
-          <div className={`${s.themeSwitcher} mb-2`}>
-            <div className={cx(s.theme, "mb-3")}>
-              <input checked={dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
-              <label htmlFor="css-light">
-                <img className={s.themeImage} src={themeLight} alt="light theme"/>
-              </label>
-            </div>
-            <div className={s.theme}>
-              <input checked={dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
-              <label htmlFor="css-dark">
-                <img className={s.themeImage} src={themeDark} alt="dark theme"/>
-              </label>
-            </div>
-          </div>
           <div className="theme-settings">
             <h5>Navbar Type</h5>
             <div className="form-group row">
@@ -99,7 +80,7 @@ class Helper extends Component {
 
             <h5>Navbar Color</h5>
             <CustomColorPicker 
-              colors={Object.values(config.app.colors)}
+              colors={config.app.colors}
               activeColor={navbarColor}
               updateColor={this.updateColor}
               customizationItem={"navbar"}
@@ -120,7 +101,7 @@ class Helper extends Component {
 
             <h5>Sidebar Color</h5>
             <CustomColorPicker 
-              colors={Object.values(config.app.colors)}
+              colors={config.app.colors}
               activeColor={sidebarColor}
               updateColor={this.changeTheme}
               customizationItem={"sidebar"}

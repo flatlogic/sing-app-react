@@ -9,8 +9,8 @@ import {
 import config from '../config'
 
 export const DashboardThemes = {
-  LIGHT: "#ffffff",
-  DARK: "#313947"
+  LIGHT: "light",
+  DARK: "dark"
 };
 
 export const SidebarTypes = {
@@ -35,8 +35,8 @@ Object.freeze(LayoutComponents);
 
 const defaultState = {
   dashboardTheme: DashboardThemes.DARK,
-  sidebarColor: config.app.colors.sidebar,
-  navbarColor:  config.app.colors.navbar,
+  sidebarColor: DashboardThemes.DARK,
+  navbarColor:  config.app.colors.light,
   navbarType: NavbarTypes.STATIC,
   sidebarType: SidebarTypes.SOLID
 };

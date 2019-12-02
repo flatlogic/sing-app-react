@@ -10,7 +10,6 @@ import { SidebarTypes } from '../../reducers/layout';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
 import { logoutUser } from '../../actions/user';
-import chroma from 'chroma-js'
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -71,7 +70,7 @@ class Sidebar extends React.Component {
         style={{backgroundColor: sidebarType === SidebarTypes.TRANSPARENT ? "transparent" : ""}}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</a>
+          <a href="https://demo.flatlogic.com/sing-app/"><span className={s.logoStyle}>Sing</span> App</a>
         </header>
         <ul className={s.nav}>
           <LinksGroup
@@ -103,7 +102,6 @@ class Sidebar extends React.Component {
                 link="/app/ecommerce"
                 index="ecommerce"
                 label="NodeJS"
-                labelColor="danger"
                 exact={false}
                 childrenLinks={[
                     {
