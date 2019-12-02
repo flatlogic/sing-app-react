@@ -62,17 +62,16 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { sidebarColor, sidebarType } = this.props;
-    const colorValue = sidebarColor ? chroma(sidebarColor).luminance() < 0.24 ? "#a6b2c1" : "#020202" : "";
+    const { sidebarType } = this.props;
     return (
       <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''} ${s.sidebarWrapper}`}>
       <nav
         onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
         className={s.root}
-        style={{backgroundColor: sidebarType === SidebarTypes.TRANSPARENT ? "transparent" : sidebarColor}}
+        style={{backgroundColor: sidebarType === SidebarTypes.TRANSPARENT ? "transparent" : ""}}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app/" style={{color: colorValue}}><span className="text-warning">Sing</span> App</a>
+          <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</a>
         </header>
         <ul className={s.nav}>
           <LinksGroup

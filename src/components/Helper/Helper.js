@@ -33,7 +33,8 @@ class Helper extends Component {
   };
 
   changeTheme = (state) => {
-    this.props.dispatch(changeTheme(state));
+    this.props.dispatch(changeTheme('blue'));
+    this.props.dispatch(changeSidebarColor(state))
   };
 
   navbarStateToggle = (state) => {
@@ -121,7 +122,7 @@ class Helper extends Component {
             <CustomColorPicker 
               colors={Object.values(config.app.colors)}
               activeColor={sidebarColor}
-              updateColor={this.updateColor}
+              updateColor={this.changeTheme}
               customizationItem={"sidebar"}
             />
 

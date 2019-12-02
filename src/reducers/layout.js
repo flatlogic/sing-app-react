@@ -9,8 +9,8 @@ import {
 import config from '../config'
 
 export const DashboardThemes = {
-  LIGHT: "light",
-  DARK: "dark"
+  LIGHT: "#ffffff",
+  DARK: "#313947"
 };
 
 export const SidebarTypes = {
