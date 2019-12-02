@@ -4,6 +4,8 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { Collapse, Badge } from 'reactstrap';
 import { Route } from 'react-router';
 import classnames from 'classnames';
+import { connect } from 'react-redux'
+import chroma from 'chroma-js';
 
 import s from './LinksGroup.module.scss';
 
@@ -59,14 +61,15 @@ class LinksGroup extends Component {
     const isOpen = this.props.activeItem &&
       this.props.activeItem.includes(this.props.index) &&
       this.state.headerLinkWasClicked;
-
+    const { sidebarColor } = this.props;
     const {exact} = this.props.exact;
-
+    const colorValue = sidebarColor ? chroma(sidebarColor).luminance() < 0.24 ? "#a6b2c1" : "#020202" : "";
     if (!this.props.childrenLinks) {
       if (this.props.isHeader) {
         return (
-          <li className={classnames('link-wrapper', s.headerLink, this.props.className)}>
+          <li className={classnames('link-wrapper', s.headerLink, this.props.className)} style={{background: sidebarColor, color: colorValue}}>
             <NavLink
+              style={{background: sidebarColor, color: colorValue}}
               to={this.props.link}
               activeClassName={s.headerLinkActive}
               exact={exact}
@@ -86,7 +89,7 @@ class LinksGroup extends Component {
           <NavLink
             to={this.props.link}
             activeClassName={s.headerLinkActive}
-            style={{ paddingLeft: `${26 + (10 * (this.props.deep - 1))}px` }}
+            style={{ paddingLeft: `${26 + (10 * (this.props.deep - 1))}px`, background: sidebarColor, color: colorValue }}
             onClick={(e) => {
               // able to go to link is not available(for Demo)
               if (this.props.link.includes('menu')) {
@@ -107,9 +110,9 @@ class LinksGroup extends Component {
         children={(params) => {
           const { match } = params;
           return (
-            <li className={classnames('link-wrapper', { [s.headerLink]: this.props.isHeader }, this.props.className)}>
+            <li style={{background: sidebarColor, color: colorValue }} className={classnames('link-wrapper', { [s.headerLink]: this.props.isHeader }, this.props.className)}>
               <a className={classnames({ [s.headerLinkActive]: match }, { [s.collapsed]: isOpen }, "d-flex")}
-                style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 26 + 10 * (this.props.deep - 1)}px` }}
+                style={{ paddingLeft: `${this.props.deep == 0 ? 50 : 26 + 10 * (this.props.deep - 1)}px`, background: sidebarColor, color: colorValue }}
                 onClick={() => this.togglePanelCollapse(this.props.link)}
               >
                 {this.props.isHeader ?
@@ -122,7 +125,7 @@ class LinksGroup extends Component {
               </a>
               {/* eslint-enable */}
               <Collapse className={s.panel} isOpen={isOpen}>
-                <ul>
+                <ul style={{background: sidebarColor, color: colorValue}}>
                   {this.props.childrenLinks &&
                     this.props.childrenLinks.map((child, ind) =>
                       <LinksGroup
@@ -146,4 +149,10 @@ class LinksGroup extends Component {
   }
 }
 
-export default withRouter(LinksGroup);
+function mapStateToProps(store) {
+  return {
+    sidebarColor: store.layout.sidebarColor,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(LinksGroup));

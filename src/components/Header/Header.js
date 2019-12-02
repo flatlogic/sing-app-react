@@ -136,7 +136,7 @@ class Header extends React.Component {
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
-              <i className="la la-bars" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
+              <i className={`la la-bars ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}/>
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
@@ -146,7 +146,7 @@ class Header extends React.Component {
               style={{backgroundColor: navbarColor !== "#ffffff" 
               ? chroma(navbarColor).darken(1) 
               : "#495057"}} 
-              className="rounded rounded-lg">
+              className={`rounded rounded-lg`}>
                 <i 
                   className="la la-bars" 
                   style={{color: navbarColor === "#ffffff" 
@@ -154,17 +154,17 @@ class Header extends React.Component {
                   : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} 
                 />
               </span>
-              <i className="la la-bars ml-3 d-sm-down-none" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
+              <i className={`la la-bars ml-3 d-sm-down-none ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}/>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <i className="la la-refresh" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
+              <i className={`la la-refresh ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}/>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <i className="la la-times" style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}/>
+              <i className={`la la-times ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </NavLink>
           </NavItem>
 
@@ -183,7 +183,7 @@ class Header extends React.Component {
           </FormGroup>
         </Form>
 
-        <NavLink className={`${s.navbarBrand} d-md-none`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>
+        <NavLink className={`${s.navbarBrand} d-md-none ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
           <i className="fa fa-circle text-gray mr-n-sm" />
           <i className="fa fa-circle text-warning" />
           &nbsp;
@@ -195,7 +195,7 @@ class Header extends React.Component {
 
         <Nav className="ml-auto">
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
-            <DropdownToggle nav caret style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>
+            <DropdownToggle nav caret className={`${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
               <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
                   {user.avatar || user.email === "admin@flatlogic.com" ? (
                       <img src={user.avatar || a5} alt="..."/>
@@ -203,7 +203,7 @@ class Header extends React.Component {
                       <span>{firstUserLetter}</span>
                   )}
               </span>
-              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''}`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}>{user.name || user.email || "Philip smith"}</span>
+              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user.name || user.email || "Philip smith"}</span>
               <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
@@ -212,7 +212,7 @@ class Header extends React.Component {
           </Dropdown>
           <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
             <DropdownToggle nav>
-              <i className={`la la-cog`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} />
+              <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>
             <DropdownMenu right className="super-colors">
               <DropdownItem href="/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
@@ -225,7 +225,7 @@ class Header extends React.Component {
           </Dropdown>
           <NavItem>
             <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
-              <i className={`la la-globe`} style={{color: chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} />
+              <i className={`la la-globe ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
               <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
             </NavLink>
             <div id="chat-notification" className={`

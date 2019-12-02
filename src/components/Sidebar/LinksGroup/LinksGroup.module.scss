@@ -13,10 +13,10 @@
     text-decoration: none;
     cursor: pointer;
 
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-    }
+    // &:hover {
+    //   text-decoration: none;
+    //   color: inherit;
+    // }
   }
 
   &:last-child > a {
@@ -30,9 +30,9 @@
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
 
-    &:hover {
-      background-color: var(--sidebar-item-hover-bg-color);
-    }
+    // &:hover {
+    //   background-color: var(--sidebar-item-hover-bg-color);
+    // }
 
     > i {
       margin-right: 7px;
@@ -75,9 +75,9 @@
     color: $sidebar-item-active-color;
     font-weight: $font-weight-normal;
 
-    &:hover {
-      color: $sidebar-item-active-color;
-    }
+    // &:hover {
+    //   color: $sidebar-item-active-color;
+    // }
 
     .icon {
       border-radius: 50%;
@@ -119,9 +119,9 @@
     font-weight: $font-weight-semi-bold;
     color: var(--sidebar-color);
 
-    &:hover {
-      color: var(--sidebar-color);
-    }
+    // &:hover {
+    //   color: var(--sidebar-color);
+    // }
   }
 
   ul {
@@ -137,7 +137,7 @@
       font-size: $font-size-mini;
 
       &:hover {
-        background-color: var(--sidebar-item-hover-bg-color);
+        background-color: rgba(var(--sidebar-action-bg),.6);
       }
     }
   }

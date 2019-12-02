@@ -10,6 +10,7 @@ import { SidebarTypes } from '../../reducers/layout';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
 import { logoutUser } from '../../actions/user';
+import chroma from 'chroma-js'
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -62,7 +63,7 @@ class Sidebar extends React.Component {
 
   render() {
     const { sidebarColor, sidebarType } = this.props;
-
+    const colorValue = sidebarColor ? chroma(sidebarColor).luminance() < 0.24 ? "#a6b2c1" : "#020202" : "";
     return (
       <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''} ${s.sidebarWrapper}`}>
       <nav
@@ -71,7 +72,7 @@ class Sidebar extends React.Component {
         style={{backgroundColor: sidebarType === SidebarTypes.TRANSPARENT ? "transparent" : sidebarColor}}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app/"><span className="text-warning">Sing</span> App</a>
+          <a href="https://demo.flatlogic.com/sing-app/" style={{color: colorValue}}><span className="text-warning">Sing</span> App</a>
         </header>
         <ul className={s.nav}>
           <LinksGroup

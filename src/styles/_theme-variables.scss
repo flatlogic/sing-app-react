@@ -32,6 +32,22 @@
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
+  .dashboard-blue {
+    --logo-color: white;
+
+    --sidebar-bg-color: #547FFF;
+    --sidebar-color: #f4f4f4;
+    --sidebar-action-bg: #247FFF;
+
+    --sidebar-panel-bg-color: #247FFF;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: #fff;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
   // dependable variables
   .sing-dashboard {
     --chat-sidebar-bg-color: var(--sidebar-bg-color);
