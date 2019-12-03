@@ -1,17 +1,30 @@
 @import '../../styles/app';
 
 .themeHelper {
-  width: $sidebar-width-open;
+  width: $helper-width;
   position: fixed;
-  right: -$sidebar-width-open;
-  top: $navbar-height * 1.5;
-  z-index: 100;
+  right: -$helper-width;
+  top: 20px;
+  bottom: 20px;
+  z-index: 101;
 
   @include transition(right $sidebar-transition-time ease-in-out);
 
   & :global {
     .abc-radio-secondary input[type="radio"]:not(:checked)+label::before {
       background-color: #798892;
+    }
+
+    .abc-radio {
+      & > label {
+        padding-left: 25px;
+  
+        &:before, &:after {
+          outline: none !important;
+          transition: $transition-base;
+          margin-left: 4px;
+        }
+      }
     }
 
     .abc-radio-warning input[type="radio"]:not(:checked)+label::before {
@@ -73,11 +86,14 @@
 
   .themeHelperBtn {
     position: absolute;
+    top: 15%;
+    right: unset;
+    margin-left: 20px;
     width: $sidebar-width-open / 4;
     transform: translateX(-76px);
     margin-top: -($widget-padding-vertical);
     cursor: pointer;
-    z-index: 200;
+    z-index: 0;
     border-radius: 50% 0 0 50%;
     padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
     &,
@@ -118,7 +134,24 @@
 
   .themeHelperContent {
     box-shadow: $widget-shadow-designated;
-    border-radius: 0;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow-y: scroll;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      outline: 1px solid #000;
+    }
+
   }
 
   .themeHelperSharing {

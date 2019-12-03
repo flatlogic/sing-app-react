@@ -68,6 +68,7 @@
     "bootstrap": "4.0.0",
     "bootstrap-slider": "^10.2.1",
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
+    "chroma-js": "^2.1.0",
     "classnames": "^2.2.6",
     "draft-js": "^0.10.5",
     "echarts": "^4.4.0",

@@ -1,4 +1,10 @@
-import { TOGGLE_SIDEBAR, OPEN_SIDEBAR, CLOSE_SIDEBAR, CHANGE_ACTIVE_SIDEBAR_ITEM, CHAT_TOGGLE_ITEM } from '../actions/navigation';
+import { 
+  TOGGLE_SIDEBAR, 
+  OPEN_SIDEBAR, 
+  CLOSE_SIDEBAR, 
+  CHANGE_ACTIVE_SIDEBAR_ITEM, 
+  CHAT_TOGGLE_ITEM,  
+} from '../actions/navigation';
 
 const initialState = {
   sidebarOpened: false,
@@ -28,10 +34,10 @@ export default function runtime(state = initialState, action) {
         activeItem: action.activeItem,
       };
     case CHAT_TOGGLE_ITEM:
-    return {
-      ...state,
-      chatToggleItem: true,
-    }
+      return {
+        ...state,
+        chatToggleItem: true,
+      }
     default:
       return state;
   }

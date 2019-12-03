@@ -3,14 +3,14 @@ import cx from 'classnames';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { DashboardThemes } from '../../reducers/layout';
-import { changeTheme } from '../../actions/layout';
+import { DashboardThemes, SidebarTypes, NavbarTypes } from '../../reducers/layout';
+import { changeTheme, changeSidebarColor, changeNavbarColor, navbarTypeToggle, sidebarTypeToggle } from '../../actions/layout';
+import CustomColorPicker from '../ColorPicker';
+import config from '../../config';
 
 import Widget from '../Widget';
 
 import s from './Helper.module.scss'; // eslint-disable-line
-import themeDark from '../../images/theme-dark.png';
-import themeLight from '../../images/theme-light.png';
 
 class Helper extends Component {
   static propTypes = {
@@ -32,40 +32,81 @@ class Helper extends Component {
 
   changeTheme = (state) => {
     this.props.dispatch(changeTheme(state));
+    this.props.dispatch(changeSidebarColor(state))
   };
+
+  navbarStateToggle = (state) => {
+    this.props.dispatch(navbarTypeToggle(state))
+  }
+
+  sidebarStateToggle = (state) => {
+    this.props.dispatch(sidebarTypeToggle(state))
+  }
+
+  updateColor = (value) => {
+    this.props.dispatch(changeNavbarColor(value))
+  }
 
   render() {
     const { isOpened } = this.state;
+    const { navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
+    
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
+          <div className={`${s.themeHelperBtn} bg-warning`} onClick={this.toggle}>
+            <div className={cx(s.themeHelperSpinner, 'text-white')}>
+              <i className="la la-cog" />
+              <i className="la la-cog" />
+            </div>
+          </div>
         <Widget
           className={s.themeHelperContent}
-          bodyClass="mt-3"
-          title={
-            <header className={cx(s.themeHelperHeader, 'd-flex p-0')}>
-              <Button color="warning" className={s.themeHelperBtn} onClick={this.toggle}>
-                <div className={cx(s.themeHelperSpinner, 'text-white')}>
-                  <i className="la la-cog" />
-                  <i className="la la-cog" />
-                </div>
-              </Button>
-              <h6>Theme</h6>
-            </header>
-          }
         >
-          <div className={s.themeSwitcher}>
-            <div className={cx(s.theme, "mb-3")}>
-              <input checked={this.props.dashboardTheme === DashboardThemes.LIGHT} onClick={() => this.changeTheme(DashboardThemes.LIGHT)} type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
-              <label htmlFor="css-light">
-                <img className={s.themeImage} src={themeLight} alt="light theme"/>
-              </label>
+          <h5 className="mt-2 mb-5">Theme</h5>
+
+          <div className="theme-settings">
+            <h5>Navbar Type</h5>
+            <div className="form-group row">
+              <div className="abc-radio">
+                <input onChange={() => this.navbarStateToggle(NavbarTypes.STATIC)} type="radio" checked={navbarType === NavbarTypes.STATIC ? true : ''} name="navbar-type" id="navbar_static" />
+                <label htmlFor="navbar_static">Static</label>
+              </div>
+     
+              <div className="abc-radio">
+                <input onChange={() => this.navbarStateToggle(NavbarTypes.FLOATING)} type="radio" checked={navbarType === NavbarTypes.FLOATING ? true : ''} name="navbar-type" id="navbar_floating" />
+                <label htmlFor="navbar_floating">Floating</label>
+              </div>
             </div>
-            <div className={s.theme}>
-              <input checked={this.props.dashboardTheme === DashboardThemes.DARK} onClick={() => this.changeTheme(DashboardThemes.DARK)} type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
-              <label htmlFor="css-dark">
-                <img className={s.themeImage} src={themeDark} alt="dark theme"/>
-              </label>
+
+            <h5>Navbar Color</h5>
+            <CustomColorPicker 
+              colors={config.app.colors}
+              activeColor={navbarColor}
+              updateColor={this.updateColor}
+              customizationItem={"navbar"}
+            />
+
+            <h5>Sidebar Type</h5>
+            <div className="form-group row">
+              <div className="abc-radio">
+                <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.TRANSPARENT)} checked={sidebarType === SidebarTypes.TRANSPARENT ? true : ''} name="sidebar-type" id="sidebar_transparent" />
+                <label htmlFor="sidebar_transparent">Transparent</label>
+              </div>
+    
+              <div className="abc-radio">
+                <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.SOLID)} checked={sidebarType === SidebarTypes.SOLID ? true : ''} name="sidebar-type" id="sidebar_solid" />
+                <label htmlFor="sidebar_solid">Solid</label>
+              </div>
             </div>
+
+            <h5>Sidebar Color</h5>
+            <CustomColorPicker 
+              colors={config.app.colors}
+              activeColor={sidebarColor}
+              updateColor={this.changeTheme}
+              customizationItem={"sidebar"}
+            />
+
           </div>
           <div className="mt-4">
             <Button
@@ -132,6 +173,10 @@ class Helper extends Component {
 function mapStateToProps(store) {
   return {
     dashboardTheme: store.layout.dashboardTheme,
+    sidebarColor: store.layout.sidebarColor,
+    navbarColor: store.layout.navbarColor,
+    navbarType: store.layout.navbarType,
+    sidebarType: store.layout.sidebarType
   };
 }
 

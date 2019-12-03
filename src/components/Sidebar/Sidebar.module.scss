@@ -10,9 +10,32 @@
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
   overflow-y: auto;
-
+  position: absolute;
   @include scroll-bar($sidebar-scrollbar-bg);
 }
+
+.logoStyle {
+  color: var(--sidebar-item-active-color);
+}
+
+.sidebarWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: $sidebar-width-open;
+  transition: width $sidebar-transition-time ease-in-out;
+}
+
+.sidebarClose.sidebarWrapper {
+  width: $sidebar-width-closed; 
+  @include media-breakpoint-down(sm) {
+    width: 0;
+  }
+}
+
 
 .logo {
   margin: 15px 0;
@@ -36,7 +59,6 @@
 
 .staticSidebar .logo {
   width: 100%;
-  transition: none;
 }
 
 .nav {
