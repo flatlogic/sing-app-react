@@ -146,7 +146,7 @@ class Header extends React.Component {
               style={{backgroundColor: navbarColor !== "#ffffff" 
               ? chroma(navbarColor).darken(1) 
               : "#495057"}} 
-              className={`rounded rounded-lg`}>
+              className={`rounded rounded-lg d-md-none d-sm-down-block`}>
                 <i 
                   className="la la-bars" 
                   style={{color: navbarColor === "#ffffff" 
