@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import ColorPicker from 'rc-color-picker';
+import PropTypes from 'prop-types';
 import s from './ColorPicker.module.scss';
 
 class CustomColorPicker extends Component {
-
-  static defaultProps = {
-    activeColor: "#000000",
-  };
 
   render() {
     const { colors, activeColor, updateColor, customizationItem } = this.props;
@@ -51,5 +48,12 @@ class CustomColorPicker extends Component {
 
   }
 }
+
+CustomColorPicker.propTypes = {
+  colors: PropTypes.object,
+  activeColor: PropTypes.string,
+  updateColor: PropTypes.func,
+  customizationItem: PropTypes.string,
+};
 
 export default CustomColorPicker

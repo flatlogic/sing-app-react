@@ -78,7 +78,7 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h5>Navbar Color</h5>
+            <h5 className="mt-4">Navbar Color</h5>
             <CustomColorPicker 
               colors={config.app.colors}
               activeColor={navbarColor}
@@ -86,7 +86,7 @@ class Helper extends Component {
               customizationItem={"navbar"}
             />
 
-            <h5>Sidebar Type</h5>
+            <h5 className="mt-4">Sidebar Type</h5>
             <div className="form-group row">
               <div className="abc-radio">
                 <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.TRANSPARENT)} checked={sidebarType === SidebarTypes.TRANSPARENT ? true : ''} name="sidebar-type" id="sidebar_transparent" />
@@ -99,7 +99,7 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h5>Sidebar Color</h5>
+            <h5 className="mt-4">Sidebar Color</h5>
             <CustomColorPicker 
               colors={config.app.colors}
               activeColor={sidebarColor}
@@ -108,7 +108,7 @@ class Helper extends Component {
             />
 
           </div>
-          <div className="mt-4">
+          <div className="mt-5">
             <Button
               href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"

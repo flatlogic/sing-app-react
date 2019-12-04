@@ -53,11 +53,11 @@
   .dashboard-gray {
     --logo-color: $white;
 
-    --sidebar-bg-color: #798892;
+    --sidebar-bg-color: #3D5C70;
     --sidebar-color: #f4f4f4;
-    --sidebar-action-bg: #96A5AF;
+    --sidebar-action-bg: #486D85;
 
-    --sidebar-panel-bg-color: #96A5AF;
+    --sidebar-panel-bg-color: #355062;
     --sidebar-nav-title-color: #dedede;
 
     --widget-shadow-color: 115, 162, 208;
@@ -85,11 +85,11 @@
   .dashboard-violet {
     --logo-color: $white;
 
-    --sidebar-bg-color: #9964e3;
+    --sidebar-bg-color: #B077FF;
     --sidebar-color: #f4f4f4;
-    --sidebar-action-bg: #8A4BE3;
+    --sidebar-action-bg: #A565FF;
 
-    --sidebar-panel-bg-color: #8A4BE3;
+    --sidebar-panel-bg-color: #A565FF;
     --sidebar-nav-title-color: #dedede;
 
     --widget-shadow-color: 115, 162, 208;
@@ -117,6 +117,7 @@
 
   .dashboard-danger {
     --logo-color: $white;
+    --sidebar-item-active: #f4f4f5;
     --important-notification-color: #ffc247;
     --sidebar-bg-color: #f55d5d;
     --sidebar-color: #f4f4f4;
