@@ -53,7 +53,7 @@ class Helper extends Component {
     
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
-          <div className={`${s.themeHelperBtn} bg-warning`} onClick={this.toggle}>
+          <div className={`${s.themeHelperBtn} bg-warning helper-button`} onClick={this.toggle}>
             <div className={cx(s.themeHelperSpinner, 'text-white')}>
               <i className="la la-cog" />
               <i className="la la-cog" />
@@ -112,7 +112,7 @@ class Helper extends Component {
             <Button
               href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"
-              className="btn-rounded-f btn-block fs-mini"
+              className="btn-rounded-f btn-block fs-mini purchase-button"
               color="warning"
             >
               <span className="text-white">Purchase</span>
