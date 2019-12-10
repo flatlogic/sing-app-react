@@ -8,6 +8,13 @@
   bottom: 20px;
   z-index: 101;
 
+  .helperHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 30px 0;
+  }
+
   @include transition(right $sidebar-transition-time ease-in-out);
 
   & :global {

@@ -210,7 +210,7 @@ class Header extends React.Component {
               <Notifications />
             </DropdownMenu>
           </Dropdown>
-          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
+          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none tutorial-dropdown">
             <DropdownToggle nav>
               <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>

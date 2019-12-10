@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Joyride, { CallBackProps, STATUS, Step, StoreHelpers } from 'react-joyride';
+import Joyride, { STATUS } from 'react-joyride';
 
 /* eslint-disable */
 import ErrorPage from '../pages/error';
@@ -32,6 +32,7 @@ const CloseButton = ({closeToast}) => <i onClick={closeToast} className="la la-c
 class App extends React.PureComponent {
 
   state = {
+    run: true,
     steps: [
       {
         content: 'Tabs or spaces? 🤔',
@@ -47,23 +48,18 @@ class App extends React.PureComponent {
       {
         content: "Sometimes I wonder what's inside my mind",
         placement: 'bottom',
-        target: '.la.la-globe',
+        target: '#toggle-chat',
       },
       {
         content: 'Modal, Portal, Quintal!',
         placement: 'bottom',
-        target: '.la.la-cog',
+        target: '.tutorial-dropdown',
       },
       {
         content: 'Modal, Portal, Quintal!',
-        placement: 'bottom',
+        placement: 'left',
         target: '.helper-button'
       },
-      {
-        content: 'Modal, Portal, Quintal!',
-        placement: 'bottom',
-        target: '.purchase-button'
-      }
     ],
   }
 
@@ -74,17 +70,12 @@ class App extends React.PureComponent {
   }
 
   handleJoyrideCallback = (CallBackProps) => {
-    const { status, type } = CallBackProps;
+    const { status } = CallBackProps;
 
     if (([STATUS.FINISHED, STATUS.SKIPPED]).includes(status)) {
       this.setState({ run: false });
     }
 
-    // tslint:disable:no-console
-    console.groupCollapsed(type);
-    console.log(CallBackProps);
-    console.groupEnd();
-    // tslint:enable:no-console
   };
 
   start = () => {
@@ -101,20 +92,11 @@ class App extends React.PureComponent {
                 hideProgressBar
                 closeButton={<CloseButton/>}
             />
-          <Joyride
+        <Joyride
           callback={this.handleJoyrideCallback}
           continuous={true}
-          run={true}
-          floaterProps={{
-            wrapperOptions: {
-              offset: 0,
-              placement: 'top',
-              position: true,
-            },
-            title: <h1>hhh</h1>
-          }}
+          run={this.state.run}
           showSkipButton={true}
-          spotlightClicks={true}
           steps={this.state.steps}
           spotlightPadding={-10}
           disableOverlay={true}
@@ -125,7 +107,8 @@ class App extends React.PureComponent {
               overlayColor: 'rgba(79, 26, 0, 0.4)',
               primaryColor: '#000',
               textColor: '#495057',
-              spotlightPadding: 0
+              spotlightPadding: 0,
+              zIndex: 1000
             },
           }}
         />

@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Joyride, { STATUS } from 'react-joyride';
 import { DashboardThemes, SidebarTypes, NavbarTypes } from '../../reducers/layout';
 import { changeTheme, changeSidebarColor, changeNavbarColor, navbarTypeToggle, sidebarTypeToggle } from '../../actions/layout';
 import CustomColorPicker from '../ColorPicker';
@@ -22,12 +23,65 @@ class Helper extends Component {
     dashboardTheme: DashboardThemes.DARK
   };
 
-  state = { isOpened: false };
+  state = {
+    isOpened: false,
+    run: false,
+    steps: [
+      {
+        content: 'Tabs or spaces? 🤔',
+        placement: 'left',
+        target: '.navbar-type-switcher',
+        textAlign: 'center',
+        disableBeacon: true,
+      },
+      {
+        content: "A button! That's rare on the web",
+        placement: 'left',
+        target: '.navbar-color-picker',
+      },
+      {
+        content: "Sometimes I wonder what's inside my mind",
+        placement: 'left',
+        target: '.sidebar-type-switcher',
+      },
+      {
+        content: 'Modal, Portal, Quintal!',
+        placement: 'left',
+        target: '.sidebar-color-picker',
+      },
+      {
+        content: 'Modal, Portal, Quintal!',
+        placement: 'left',
+        target: '.purchase-button'
+      },
+    ],
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.modalIsOpen && this.state.modalIsOpen) {
+      this.start();
+    }
+  }
+
+  handleJoyrideCallback = (CallBackProps) => {
+    const { status } = CallBackProps;
+
+    if (([STATUS.FINISHED, STATUS.SKIPPED]).includes(status)) {
+      this.setState({ run: false });
+    }
+
+  };
+
+  start = () => {
+    this.setState({
+      run: true,
+    });
+  };
 
   toggle = () => {
-    this.setState(prevState => ({
-      isOpened: !prevState.isOpened,
-    }));
+    this.setState({
+      isOpened: !this.state.isOpened,
+    });
   };
 
   changeTheme = (state) => {
@@ -53,6 +107,28 @@ class Helper extends Component {
     
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
+
+        <Joyride
+          callback={this.handleJoyrideCallback}
+          continuous={true}
+          run={this.state.run}
+          showSkipButton={true}
+          steps={this.state.steps}
+          spotlightPadding={-10}
+          disableOverlay={true}
+          styles={{
+            options: {
+              arrowColor: '#ffffff',
+              backgroundColor: '#ffffff',
+              overlayColor: 'rgba(79, 26, 0, 0.4)',
+              primaryColor: '#000',
+              textColor: '#495057',
+              spotlightPadding: 0,
+              zIndex: 10000
+            },
+          }}
+        />
+
           <div className={`${s.themeHelperBtn} bg-warning helper-button`} onClick={this.toggle}>
             <div className={cx(s.themeHelperSpinner, 'text-white')}>
               <i className="la la-cog" />
@@ -62,11 +138,14 @@ class Helper extends Component {
         <Widget
           className={s.themeHelperContent}
         >
-          <h5 className="mt-2 mb-5">Theme</h5>
+          <div className={s.helperHeader}>
+            <h5>Theme</h5>
+            <Button onClick={this.start} outline color="info">Check out tour!</Button>  
+          </div>    
 
           <div className="theme-settings">
             <h5>Navbar Type</h5>
-            <div className="form-group row">
+            <div className="form-group row navbar-type-switcher">
               <div className="abc-radio">
                 <input onChange={() => this.navbarStateToggle(NavbarTypes.STATIC)} type="radio" checked={navbarType === NavbarTypes.STATIC ? true : ''} name="navbar-type" id="navbar_static" />
                 <label htmlFor="navbar_static">Static</label>
@@ -78,7 +157,7 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h5 className="mt-4">Navbar Color</h5>
+            <h5 className="mt-4 navbar-color-picker">Navbar Color</h5>
             <CustomColorPicker 
               colors={config.app.colors}
               activeColor={navbarColor}
@@ -87,7 +166,7 @@ class Helper extends Component {
             />
 
             <h5 className="mt-4">Sidebar Type</h5>
-            <div className="form-group row">
+            <div className="form-group row sidebar-type-switcher">
               <div className="abc-radio">
                 <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.TRANSPARENT)} checked={sidebarType === SidebarTypes.TRANSPARENT ? true : ''} name="sidebar-type" id="sidebar_transparent" />
                 <label htmlFor="sidebar_transparent">Transparent</label>
@@ -99,7 +178,7 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h5 className="mt-4">Sidebar Color</h5>
+            <h5 className="mt-4 sidebar-color-picker">Sidebar Color</h5>
             <CustomColorPicker 
               colors={config.app.colors}
               activeColor={sidebarColor}
