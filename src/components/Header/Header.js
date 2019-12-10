@@ -24,6 +24,7 @@ import { NavbarTypes } from '../../reducers/layout';
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
 import chroma from 'chroma-js'
+import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem, chatToggleItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
@@ -58,8 +59,53 @@ class Header extends React.Component {
       focus: false,
       showNewMessage: false,
       hideMessage: true,
+      run: true,
+      steps: [
+        {
+          content: 'You can adjust sidebar, or leave it closed 🤩',
+          placement: 'bottom',
+          target: '#toggleSidebar',
+          textAlign: 'center',
+        },
+        {
+          content: "Admin can check out his messages and tasks easily 🤔",
+          placement: 'bottom',
+          target: '.dropdown-toggle',
+        },
+        {
+          content: "Clickable cog can provide you with link to important pages 🤠",
+          placement: 'bottom',
+          target: '.tutorial-dropdown',
+        },
+        {
+          content: 'Check out chat, do not miss new ideas 🧐',
+          placement: 'bottom',
+          target: '#toggle-chat',
+        },
+        {
+          content: 'Open theme cusomizer sidebar, play with it or watch tour! ❤️',
+          placement: 'left',
+          target: '.helper-button'
+        },
+      ],
     };
   }
+
+  handleJoyrideCallback = (CallBackProps) => {
+    const { status } = CallBackProps;
+
+    if (([STATUS.FINISHED, STATUS.SKIPPED]).includes(status)) {
+      this.setState({ run: false });
+    }
+
+  };
+
+  start = () => {
+    this.setState({
+      run: true,
+    });
+  };
+
   componentDidMount() {
     if (window.innerWidth > 576) {
       setTimeout(() => {
@@ -133,6 +179,60 @@ class Header extends React.Component {
 
     return (
       <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''}`} style={{backgroundColor: navbarColor}}>
+        <Joyride
+          callback={this.handleJoyrideCallback}
+          continuous={true}
+          run={this.state.run}
+          showSkipButton={true}
+          steps={this.state.steps}
+          spotlightPadding={-10}
+          disableOverlay={true}
+          styles={{
+            options: {
+              arrowColor: '#ffffff',
+              backgroundColor: '#ffffff',
+              overlayColor: 'rgba(79, 26, 0, 0.4)',
+              primaryColor: '#000',
+              textColor: '#495057',
+              spotlightPadding: 0,
+              zIndex: 1000,
+              padding: 5,
+              width: 240,
+            },
+            tooltip: {
+              fontSize: 15,
+              padding: 5,
+            },
+            tooltipContent: {
+              padding: '20px 5px 0',
+            },
+            floater: {
+              arrow: {
+                padding: 10
+              },
+            },
+            buttonClose: {
+              display: 'none'
+            },
+            buttonNext: {
+              backgroundColor: "#FFC247",
+              fontSize: 13,
+              borderRadius: 4,
+              color: "#ffffff",
+              fontWeight: "bold"
+            },
+            buttonBack: {
+              color: "#798892",
+              marginLeft: 'auto',
+              fontSize: 13,
+              marginRight: 5,
+            },
+            buttonSkip: {
+              color: "#798892",
+              fontSize: 13,
+            },
+          }}
+        />
         <Nav>
           <NavItem>
             <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
@@ -210,7 +310,7 @@ class Header extends React.Component {
               <Notifications />
             </DropdownMenu>
           </Dropdown>
-          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none">
+          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none tutorial-dropdown">
             <DropdownToggle nav>
               <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>
