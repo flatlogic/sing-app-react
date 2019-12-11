@@ -66,6 +66,7 @@ class Header extends React.Component {
           placement: 'bottom',
           target: '#toggleSidebar',
           textAlign: 'center',
+          disableBeacon: true
         },
         {
           content: "Admin can check out his messages and tasks easily 🤔",
