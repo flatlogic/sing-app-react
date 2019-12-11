@@ -188,6 +188,7 @@ class Header extends React.Component {
           steps={this.state.steps}
           spotlightPadding={-10}
           disableOverlay={true}
+          disableScrolling
           styles={{
             options: {
               arrowColor: '#ffffff',

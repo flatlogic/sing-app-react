@@ -115,6 +115,7 @@ class Helper extends Component {
           showSkipButton={true}
           steps={this.state.steps}
           disableOverlay={true}
+          disableScrolling
           styles={{
             options: {
               arrowColor: '#ffffff',
