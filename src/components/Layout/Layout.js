@@ -44,6 +44,7 @@ import UINavbar from '../../pages/ui-elements/navbar';
 import UINav from '../../pages/ui-elements/nav';
 import UIPopovers from '../../pages/ui-elements/popovers';
 import Charts from '../../pages/charts';
+import ChatPage from '../../pages/chat';
 import ApexCharts from '../../pages/charts/apex';
 import Echarts from '../../pages/charts/echarts';
 import HighCharts from '../../pages/charts/highcharts';
@@ -184,6 +185,7 @@ class Layout extends React.Component {
                     <Route path="/app/ui/navbar" exact component={UINavbar} />
                     <Route path="/app/ui/nav" exact component={UINav} />
                     <Route path="/app/grid" exact component={Grid} />
+                    <Route path="/app/chat" exact component={ChatPage} />
                     <Route path="/app/package" exact component={Package} />
                     <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                     <Route path="/app/forms/elements" exact component={FormsElements} />

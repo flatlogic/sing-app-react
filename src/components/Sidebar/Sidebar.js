@@ -284,6 +284,13 @@ class Sidebar extends React.Component {
             iconName="flaticon-menu-4"
           />
           <LinksGroup
+            header="Chat"
+            link="/app/chat"
+            isHeader
+            iconName="flaticon-file"
+            label="new"
+          />
+          <LinksGroup
             onActiveSidebarItemChange={t => this.props.dispatch(changeActiveSidebarItem(t))}
             activeItem={this.props.activeItem}
             header="Tables"
