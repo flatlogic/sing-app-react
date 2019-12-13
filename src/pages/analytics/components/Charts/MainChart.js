@@ -27,7 +27,7 @@ export default class RevenueChart extends PureComponent {
         {
           name: 'Light Blue',
           data: data[0],
-          color: '#1A86D0',
+          color: 'rgba(26,134,208,.2)',
           type: 'areaspline',
           fillOpacity: 0.2,
           lineWidth: 0

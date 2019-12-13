@@ -46,16 +46,6 @@
     .calendar-external-events {
       margin-top: 20px;
 
-      .external-event {
-        margin: 10px 0;
-        padding: 6px;
-        font-size: $font-size-mini;
-        cursor: pointer;
-        border-radius: $border-radius;
-        background-color: $white;
-        border: 1px solid #ccc;
-        box-shadow: var(--widget-shadow);
-      }
     }
 
     .widget-calendar {
@@ -66,3 +56,13 @@
   }
 }
 
+.customExternalEvent {
+  margin: 10px 0;
+  padding: 6px;
+  font-size: $font-size-mini;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: $white;
+  border: 1px solid #ccc;
+  box-shadow: var(--widget-shadow);
+}

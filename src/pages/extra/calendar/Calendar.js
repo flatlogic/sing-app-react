@@ -198,32 +198,42 @@ class Calendar extends React.Component {
               <div 
                 data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle fa-fw text-success ml-xs mr-xs" />
                 Make a tea
+              </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle fa-fw text-warning ml-xs mr-xs" />
                 Open windows
+              </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Some stuff
+              </div>
               </div>
               <div
                 data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-square fa-fw text-danger ml-xs mr-xs" />
                 Study UX engineering
+                </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Another stuff
+                </div>
               </div>
             </div>
           </Col>
