@@ -72,6 +72,7 @@ class Analytics extends Component {
             dataLabels: {
               enabled: false
             },
+            borderWidth: 0,
             showInLegend: true,
             innerSize: 80,
             size: 100,
@@ -84,13 +85,13 @@ class Analytics extends Component {
             }
           }
         },
-        colors: ['#ffc247', '#f55d5d', '#9964e3'],
+        colors: ['#FD5F00', '#005792', '#1A86D0'],
         legend: {
           align: 'right',
           verticalAlign: 'middle',
           layout: 'vertical',
           itemStyle: {
-            color: '#798892',
+            color: '#788898',
             fontWeight: 400,
           },
           itemHoverStyle: {
@@ -128,7 +129,7 @@ class Analytics extends Component {
                     fetchingData={isReceiving}
                     title={<h5>Visits Today</h5>}
                   >
-                      <div className="d-flex justify-content-between align-items-center mb">
+                      <div className="d-flex justify-content-between align-items-center mb h3">
                           <h2 style={{fontSize: '2.1rem'}}>{visits.count}</h2>
                           <i className="la la-arrow-right text-success rotate-315"/>
                       </div>
@@ -179,23 +180,23 @@ class Analytics extends Component {
                   >
                     <p className="text-muted d-flex flex-wrap">
                       <small className="mr-lg d-flex align-items-center">
-                        <span className="circle bg-success text-success mr-xs" style={{ fontSize: '4px' }}>.</span>
+                        <span className="circle bg-danger text-success mr-xs" style={{ fontSize: '4px' }}>.</span>
                         This Period
                       </small>
                       <small className="mr-lg d-flex align-items-center">
-                        <span className="circle bg-warning text-warning mr-xs" style={{ fontSize: '4px' }}>.</span>
+                        <span className="circle bg-primary text-warning mr-xs" style={{ fontSize: '4px' }}>.</span>
                         Last Period
                       </small>
                     </p>
                     <h6 className="fs-sm text-muted">SDK</h6>
-                      <Progress color="success" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
+                      <Progress color="primary" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
                                 value={performance.sdk?.this_period_pct}/>
-                      <Progress color="info" className="progress-sm" style={{height: '3px'}}
+                      <Progress color="danger" className="progress-sm" style={{height: '3px'}}
                                 value={performance.sdk?.last_period_pct}/>
                     <h6 className="mt fs-sm text-muted">Integration</h6>
-                      <Progress color="success" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
+                      <Progress color="primary" className="progress-sm" style={{height: '3px', marginBottom: '5px'}}
                                 value={performance.integration?.this_period_pct}/>
-                      <Progress color="info" className="progress-sm" style={{height: '3px'}}
+                      <Progress color="danger" className="progress-sm" style={{height: '3px'}}
                                 value={performance.integration?.last_period_pct}/>
                   </Widget>
                 </div>
@@ -213,7 +214,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[1]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#ffc247']}
+                          gradient={['#FD5F00']}
                           height={30}
                           smooth
                           data={this.getRandomData()}
@@ -224,7 +225,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#F55D5D']}
+                          gradient={['#005792']}
                           height={30}
                           smooth
                           data={this.getRandomData()}
@@ -235,7 +236,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#3abf94']}
+                          gradient={['#1A86D0']}
                           height={30}
                           smooth
                           data={this.getRandomData()}
@@ -284,7 +285,7 @@ class Analytics extends Component {
                   className="widget"
                   bodyClass={cx(s.notifications, 'w-100 mt-lg')}
                   title={
-                    <h4>Notifications <span className="badge badge-pill badge-success fw-normal pull-right mt-xs">{mock.notifications.length}</span></h4>
+                    <h4>Notifications <span className="badge badge-pill badge-primary fw-normal pull-right mt-xs">{mock.notifications.length}</span></h4>
                   }
                 >
                   {mock.notifications.map(({ id, icon, color, content }) => (

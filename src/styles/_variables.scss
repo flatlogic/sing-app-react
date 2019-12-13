@@ -40,16 +40,18 @@ $gray-900: #29323a !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:    #547fff !default;
+$blue:    #005792 !default;
 $indigo:  #7f3ddb !default;
-$purple:  #9964e3 !default;
+$purple:  #1A86D0 !default;
 $pink:    #e54e9a !default;
-$red:     #f55d5d !default;
+$red:     #FD5F00 !default;
 $orange:  #ff7d47 !default;
-$yellow:  #ffc247 !default;
+$yellow:  #FDA700 !default;
 $green:   #68ca66 !default;
-$teal:    #3abf94 !default;
+$teal:    #21AE8C !default;
 $cyan:    #17a2b8 !default;
+$dark-gray:#D7DFE6 !default;
+$gray-inverse: #002B49 !default;
 
 $theme-colors: (
   primary: $blue,
@@ -59,9 +61,9 @@ $theme-colors: (
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
-  inverse: $gray-700,
+  inverse: $gray-inverse,
   gray: $gray-300,
-  light: $gray-100,
+  light: $dark-gray,
   default: #e9ecef,
   primary-light: #dee4ee,
   success-light: #ecfaec,
@@ -82,7 +84,7 @@ $font-weight-base: $font-weight-thin !default;
 
 $addition-bg: $gray-100 !default;
 
-$body-bg: #f9fbfd !default;
+$body-bg: #F6F6F6 !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components

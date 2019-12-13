@@ -217,7 +217,7 @@ class Header extends React.Component {
               display: 'none'
             },
             buttonNext: {
-              backgroundColor: "#FFC247",
+              backgroundColor: "#FD5F00",
               fontSize: 13,
               borderRadius: 4,
               color: "#ffffff",

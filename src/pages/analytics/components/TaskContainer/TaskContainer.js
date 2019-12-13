@@ -44,7 +44,7 @@ export default class TasksContainer extends Component {
         bodyClass="task-container mt"
         title={
           <div>
-            <h4>Today&apos;s Tasks <span className="badge badge-pill badge-success fw-normal pull-right mt-xs">{tasks.length}</span></h4>
+            <h4>Today&apos;s Tasks <span className="badge badge-pill badge-primary fw-normal pull-right mt-xs">{tasks.length}</span></h4>
             <p className="text-muted mb-0"><small>{totalCompleted} of {tasks.length} completed</small></p>
           </div>
         }

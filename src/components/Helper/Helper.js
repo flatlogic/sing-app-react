@@ -144,7 +144,7 @@ class Helper extends Component {
               display: 'none'
             },
             buttonNext: {
-              backgroundColor: "#FFC247",
+              backgroundColor: "#FD5F00",
               fontSize: 13,
               borderRadius: 4,
               color: "#ffffff",
@@ -163,7 +163,7 @@ class Helper extends Component {
           }}
         />
 
-          <div className={`${s.themeHelperBtn} bg-warning helper-button`} onClick={this.toggle}>
+          <div className={`${s.themeHelperBtn} bg-danger helper-button`} onClick={this.toggle}>
             <div className={cx(s.themeHelperSpinner, 'text-white')}>
               <i className="la la-cog" />
               <i className="la la-cog" />
