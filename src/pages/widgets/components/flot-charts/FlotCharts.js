@@ -118,7 +118,7 @@ class FlotCharts extends React.PureComponent {
           </div>
           <div className={`${s.chart}`}>
             <HighchartsReact options={{...options, series: this.generateRandomData([{
-                name: 'Visitors', color: '#777',
+                name: 'Visitors', color: '#005792',
               }, {
                 name: 'Charts', color: '#dd5826',
               }])}} />
@@ -171,9 +171,9 @@ class FlotCharts extends React.PureComponent {
             <HighchartsReact options={{
               ...options,
               series: this.generateRandomData([{
-                name: 'Controllers', color: '#777',
+                name: 'Controllers', color: '#005792',
               }, {
-                name: 'Scopes', color: '#f0b518',
+                name: 'Scopes', color: '#1A86D0',
               }])
             }} />
           </div>

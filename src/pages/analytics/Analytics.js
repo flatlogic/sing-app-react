@@ -13,8 +13,6 @@ import TableContainer from './components/TableContainer/TableContainer';
 import Calendar from '../dashboard/components/calendar/Calendar';
 import HighchartsReact from 'highcharts-react-official'
 
-import ServerOverview from './components/Charts/ServerOverview';
-
 import mock from './mock';
 import s from './Analitycs.module.scss';
 import { receiveDataRequest } from '../../actions/analytics';
@@ -215,39 +213,33 @@ class Analytics extends Component {
                     <div className="d-flex justify-content-between mb-sm">
                       <p className="width-150"><small>{server[1]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
-                        <ServerOverview 
-                           type="natural"
-                           dataKey="value"
-                           stroke={"#FD5F00"}
-                           fill={"#FD5F00"}
-                           strokeWidth={2}
-                           fillOpacity="0.25"
+                        <Trend 
+                          gradient={['#FD5F00']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
                         />
                       </div>
                     </div>
                     <div className="d-flex justify-content-between mb-sm">
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
-                        <ServerOverview 
-                          type="natural"
-                          dataKey="value"
-                          stroke={"#005792"}
-                          fill={"#005792"}
-                          strokeWidth={2}
-                          fillOpacity="0.25"
+                        <Trend 
+                          gradient={['#005792']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
                         />
                       </div>
                     </div>
                     <div className="d-flex justify-content-between mb-sm">
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
-                        <ServerOverview 
-                          type="natural"
-                          dataKey="value"
-                          stroke={"#1A86D0"}
-                          fill={"#1A86D0"}
-                          strokeWidth={2}
-                          fillOpacity="0.25"
+                        <Trend 
+                          gradient={['#1A86D0']}
+                          height={30}
+                          smooth
+                          data={this.getRandomData()}
                         />
                       </div>
                     </div>

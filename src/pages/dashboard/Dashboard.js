@@ -86,7 +86,7 @@ class Dashboard extends React.Component {
             >
               <p>Status: <strong>Live</strong></p>
               <p>
-                <span className="circle bg-warning text-white"><i className="fa fa-map-marker" /></span> &nbsp;
+                <span className="circle bg-primary text-white"><i className="fa fa-map-marker" /></span> &nbsp;
                 146 Countries, 2759 Cities
               </p>
               <div className="row progress-stats">
@@ -128,7 +128,7 @@ class Dashboard extends React.Component {
               <h6 className="fw-semi-bold mt">Map Distributions</h6>
               <p>Tracking: <strong>Active</strong></p>
               <p>
-                <span className="circle bg-warning text-white"><i className="fa fa-cog" /></span>
+                <span className="circle bg-primary text-white"><i className="fa fa-cog" /></span>
                 &nbsp; 391 elements installed, 84 sets
               </p>
               <div className="input-group mt">
@@ -168,7 +168,7 @@ class Dashboard extends React.Component {
               <Progress color="success" value="60" className="bg-gray-lighter progress-xs" />
               <p>
                 <small>
-                  <span className="circle bg-warning text-white">
+                  <span className="circle bg-primary text-white">
                     <i className="fa fa-chevron-up" />
                   </span>
                 </small>
@@ -198,7 +198,7 @@ class Dashboard extends React.Component {
               </div>
               <Progress color="danger" value="60" className="bg-gray-lighter progress-xs" />
               <p>
-                <small><span className="circle bg-warning text-white"><i className="fa fa-chevron-down" /></span></small>
+                <small><span className="circle bg-primary text-white"><i className="fa fa-chevron-down" /></span></small>
                 <span className="fw-semi-bold">&nbsp;8% lower</span>
                 &nbsp;than last month
               </p>
@@ -225,7 +225,7 @@ class Dashboard extends React.Component {
               </div>
               <Progress color="bg-primary" value="60" className="bg-gray-lighter progress-xs" />
               <p>
-                <small><span className="circle bg-warning text-white"><i className="fa fa-plus" /></span></small>
+                <small><span className="circle bg-primary text-white"><i className="fa fa-plus" /></span></small>
                 <span className="fw-semi-bold">&nbsp;8 734 higher</span>
                 &nbsp;than last month
               </p>
@@ -370,7 +370,7 @@ class Dashboard extends React.Component {
               <Calendar />
               <div className="list-group fs-mini">
                 <button className="list-group-item text-ellipsis">
-                  <span className="badge badge-pill badge-warning float-right">6:45</span>
+                  <span className="badge badge-pill badge-info float-right">6:45</span>
                   Weed out the flower bed
                 </button>
                 <button className="list-group-item text-ellipsis">
