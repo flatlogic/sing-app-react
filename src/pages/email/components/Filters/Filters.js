@@ -34,7 +34,7 @@ class Filters extends Component {
     return (
       <div className={s.filters}>
         <button
-          className="btn btn-danger btn-block"
+          className="btn btn-primary btn-block"
           onClick={() => compose(true)}
         >
           Compose

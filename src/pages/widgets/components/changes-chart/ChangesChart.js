@@ -31,7 +31,7 @@ class ChangesChart extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.sidebarStatic !== prevProps.sidebarStatic) {
-      this.onResizeRickshaw()
+      setTimeout(() => this.onResizeRickshaw(), 500)
     }
   }
 

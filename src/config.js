@@ -14,7 +14,7 @@ export default {
   },
   app: {
     colors: {
-      dark: "#313947",
+      dark: "#002B49",
       light: "#ffffff",
       blue: "#547fff",
       gray: "#3D5C70",

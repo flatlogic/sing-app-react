@@ -49,7 +49,7 @@ const Profile = () => (
                 </span>
                 <h5 className="fw-normal">Adam <span className="fw-semi-bold">Johns</span></h5>
                 <p>UI/UX designer</p>
-                <button className="btn btn-danger btn-sm mb-3">
+                <button className="btn btn-success btn-sm mb-3">
                   &nbsp;Send
                   <i className="fa fa-envelope ml-2" />&nbsp;
                 </button>
@@ -78,8 +78,8 @@ const Profile = () => (
                 </div>
               </div>
               <p>
-                <span className="badge badge-warning rounded-0"> UI/UX </span>
-                <span className="badge badge-danger rounded-0 ml-2"> Web Design </span>
+                <span className="badge badge-info rounded-0"> UI/UX </span>
+                <span className="badge badge-primary rounded-0 ml-2"> Web Design </span>
                 <span className="badge badge-default rounded-0 ml-2"> Mobile Apps </span>
               </p>
               <p className="lead mt-xlg">

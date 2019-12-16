@@ -76,6 +76,10 @@
     color: var(--important-notification)
   }
 
+  .headerUpdate {
+    color: var(--update-notification)
+  }
+
   a.headerLinkActive {
     color: var(--sidebar-item-active-color);
     font-weight: $font-weight-normal;
