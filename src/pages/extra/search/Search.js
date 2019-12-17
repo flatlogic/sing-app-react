@@ -48,7 +48,7 @@ class Search extends React.Component {
                 <DropdownItem>Latest</DropdownItem>
               </DropdownMenu>
             </UncontrolledButtonDropdown>
-            <UncontrolledButtonDropdown>
+            <UncontrolledButtonDropdown className="ml-2">
               <DropdownToggle color="default" caret>
                 All Time
               </DropdownToggle>
@@ -73,13 +73,13 @@ class Search extends React.Component {
               <NavItem>
                 <NavLink href="#">
                   Hot Ideas
-                  <Badge color="default" pill className="float-right">34</Badge>
+                  <Badge color="danger" pill className="float-right">34</Badge>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#">
                   Latest Pictures
-                  <Badge color="default" pill className="float-right">9</Badge>
+                  <Badge color="success" pill className="float-right">9</Badge>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -91,7 +91,7 @@ class Search extends React.Component {
               <NavItem>
                 <NavLink href="#">
                   Globals
-                  <Badge color="default" pill className="float-right">18</Badge>
+                  <Badge color="info" pill className="float-right">18</Badge>
                 </NavLink>
               </NavItem>
             </Nav>

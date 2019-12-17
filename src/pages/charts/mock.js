@@ -31,6 +31,12 @@ export const chartData = {
               colors: columnColors,
               fontSize: '14px'
             }
+          },
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
           }
         }
       }
@@ -44,6 +50,10 @@ export const chartData = {
             enabled: true,
             color: '#005792',
           }
+        },
+        stroke: {
+          show: false,
+          width: 0
         },
         legend: false,
         responsive: [{
@@ -122,7 +132,15 @@ export const chartData = {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          axisLabel: {
+            color: '#8EA1AB'
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#8EA1AB'
+            }
+          },
         }
       ],
       series: [
@@ -198,15 +216,20 @@ export const chartData = {
       },
 
       legend: {
-        data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD']
+        data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD'],
+        textStyle: {
+          color: '#005792'
+        }
       },
       color: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#002B49'],
       singleAxis: {
         top: 50,
         bottom: 50,
         axisTick: {},
-        axisLabel: {},
         type: 'time',
+        axisLabel: {
+          color: '#005792'
+        },
         axisPointer: {
           animation: true,
           label: {
@@ -219,6 +242,11 @@ export const chartData = {
             type: 'dashed',
             opacity: 0.2
           }
+        }
+      },
+      axisLine: {
+        lineStyle: {
+          color:  '#005792'
         }
       },
 

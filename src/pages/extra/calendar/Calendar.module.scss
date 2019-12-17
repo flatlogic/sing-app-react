@@ -10,6 +10,10 @@
       text-transform: uppercase;
     }
 
+    .fc-unthemed td.fc-today {
+      background-color: rgba($purple, .2);
+    }
+
     .fc-day-grid-event {
       margin: 0;
       padding: 0;
@@ -20,10 +24,6 @@
       font-weight: $font-weight-normal;
       background-color: $gray-200;
       color: $text-color;
-    }
-
-    .fc-today {
-      background-color: #fff1b8;
     }
 
     a.fc-event {

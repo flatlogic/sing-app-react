@@ -409,7 +409,7 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-warning mr-2" />
+              <i className="fa fa-circle text-danger mr-2" />
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
@@ -421,7 +421,7 @@ class Sidebar extends React.Component {
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2" />
+              <i className="fa fa-circle text-primary mr-2" />
               <span className={s.labelName}>Background</span>
             </a>
           </li>

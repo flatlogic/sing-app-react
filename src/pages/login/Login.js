@@ -86,9 +86,9 @@ class Login extends React.Component {
             <div className="auth-page">
                 <Container>
                     <h5 className="auth-logo">
-                        <i className="fa fa-circle text-gray" />
+                        <i className="fa fa-circle text-primary" />
                         Sing App
-                        <i className="fa fa-circle text-warning" />
+                        <i className="fa fa-circle text-danger" />
                     </h5>
                     <Widget className="widget-auth mx-auto" title={<h3 className="mt-0">Login to your Web App</h3>}>
                         <p className="widget-auth-info">
@@ -115,7 +115,7 @@ class Login extends React.Component {
                             <div className="form-group">
                                 <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
                             </div>
-                            <Button type="submit" color="inverse" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
+                            <Button type="submit" color="info" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
                             <p className="widget-auth-info">or sign in with</p>
                             <div className="social-buttons">
                                 <Button onClick={this.googleLogin} color="primary" className="social-button mb-2">

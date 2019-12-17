@@ -375,17 +375,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: '#ffc247'
+            color: '#005792'
           },
           labels: {
             style: {
-              color: '#ffc247',
+              color: '#005792',
             },
           },
           title: {
             text: "Revenue (thousand crores)",
             style: {
-              color: '#ffc247',
+              color: '#005792',
             }
           }
         },
@@ -419,6 +419,10 @@ export default {
           }
         }
       }],
+      stroke: {
+        show: false,
+        width: 0
+      },
       colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
     }
   },
@@ -436,6 +440,10 @@ export default {
           }
         }
       }],
+      stroke: {
+        show: false,
+        width: 0
+      },
       colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
     }
   },

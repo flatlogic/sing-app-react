@@ -162,7 +162,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#f55d5d'],
+    colors: ['#005792'],
     chart: {
       type: 'column',
       options3d: {
