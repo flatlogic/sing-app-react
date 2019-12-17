@@ -60,7 +60,7 @@ export default {
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
-      colors: ['#547fff']
+      colors: ['#005792']
     }
   },
   area: {
@@ -90,7 +90,7 @@ export default {
       chart: {
         stacked: true,
       },
-      colors: ['#547fff', '#3abf94', '#c1ccd3'],
+      colors: ['#1A86D0', '#21AE8C', '#c1ccd3'],
       dataLabels: {
         enabled: false
       },
@@ -119,7 +119,7 @@ export default {
       data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
     }],
     options: {
-      colors: ['#547fff'],
+      colors: ['#1A86D0'],
       chart: {
         offsetY: 40,
         height: 350,
@@ -231,7 +231,7 @@ export default {
       chart: {
         stacked: true
       },
-      colors: ['#547fff', '#e54e9a'],
+      colors: ['#005792', '#FD5F00'],
       plotOptions: {
         bar: {
           horizontal: true,
@@ -309,7 +309,7 @@ export default {
       dataLabels: {
         enabled: false
       },
-      colors: ['#547fff', '#3abf94', '#ffc247'],
+      colors: ['#005792', '#1A86D0', '#21AE8C'],
       stroke: {
         width: [1, 1, 4]
       },
@@ -419,7 +419,7 @@ export default {
           }
         }
       }],
-      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
+      colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
     }
   },
   donut: {
@@ -436,7 +436,7 @@ export default {
           }
         }
       }],
-      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
+      colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
     }
   },
   radial: {
@@ -446,7 +446,7 @@ export default {
       title: {
         text: 'Basic Radial Chart'
       },
-      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d'],
+      colors: ['#005792', '#21AE8C', '#FDA700', '#FD5F00'],
     }
   },
   heatmap: {
@@ -524,25 +524,25 @@ export default {
               from: -30,
               to: 5,
               name: 'low',
-              color: '#3abf94'
+              color: '#547fff'
             },
               {
                 from: 6,
                 to: 20,
                 name: 'medium',
-                color: '#547fff'
+                color: '#1A86D0'
               },
               {
                 from: 21,
                 to: 45,
                 name: 'high',
-                color: '#ffc247'
+                color: '#FDA700'
               },
               {
                 from: 46,
                 to: 55,
                 name: 'extreme',
-                color: '#f55d5d'
+                color: '#FD5F00'
               }
             ]
           }

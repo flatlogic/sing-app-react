@@ -217,6 +217,7 @@ class Analytics extends Component {
                           gradient={['#FD5F00']}
                           height={30}
                           smooth
+                          strokeWidth="4"
                           data={this.getRandomData()}
                         />
                       </div>
@@ -228,6 +229,7 @@ class Analytics extends Component {
                           gradient={['#005792']}
                           height={30}
                           smooth
+                          strokeWidth="4"
                           data={this.getRandomData()}
                         />
                       </div>
@@ -239,6 +241,7 @@ class Analytics extends Component {
                           gradient={['#1A86D0']}
                           height={30}
                           smooth
+                          strokeWidth="4"
                           data={this.getRandomData()}
                         />
                       </div>

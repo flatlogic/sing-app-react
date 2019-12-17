@@ -3,6 +3,10 @@
 .bootstrapTable {
   border: none;
 
+  .columnHead {
+
+  }
+
   :global .table {
     thead,
     tbody {
@@ -17,4 +21,10 @@
       background: transparent;
     }
   }
+}
+
+.react-bs-table .react-bs-container-footer > table > thead > tr > th, .react-bs-table .react-bs-container-header > table > thead > tr > th {
+  border: none;
+  background: $blue;
+  color: $gray-100;
 }

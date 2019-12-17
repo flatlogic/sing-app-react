@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 
-let columnColors = ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8', '#e54e9a'];
-let lineColors = ['#547fff', '#3abf94', '#ffc247'];
+let columnColors = ['#002B49', '#005792', '#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#EC2A00', '#FF8C22'];
+let lineColors = ['#1A86D0', '#68ca66', '#ffc247'];
 
 export const chartData = {
   apex: {
@@ -42,7 +42,7 @@ export const chartData = {
         theme: {
           monochrome: {
             enabled: true,
-            color: '#547fff',
+            color: '#005792',
           }
         },
         legend: false,
@@ -96,7 +96,7 @@ export const chartData = {
               }
             }
           },
-          data: ["2016-1", "2016-2", "2016-3", "2016-4", "2016-5", "2016-6", "2016-7", "2016-8", "2016-9", "2016-10", "2016-11", "2016-12"]
+          data: ["2020-1", "2020-2", "2020-3", "2020-4", "2020-5", "2020-6", "2020-7", "2020-8", "2020-9", "2020-10", "2020-11", "2020-12"]
         },
         {
           type: 'category',
@@ -117,7 +117,7 @@ export const chartData = {
               }
             }
           },
-          data: ["2015-1", "2015-2", "2015-3", "2015-4", "2015-5", "2015-6", "2015-7", "2015-8", "2015-9", "2015-10", "2015-11", "2015-12"]
+          data: ["2020-1", "2020-2", "2020-3", "2020-4", "2020-5", "2020-6", "2020-7", "2020-8", "2020-9", "2020-10", "2020-11", "2020-12"]
         }
       ],
       yAxis: [
@@ -127,14 +127,14 @@ export const chartData = {
       ],
       series: [
         {
-          name: '2015 Precipitation',
+          name: '2019 Precipitation',
           type: 'line',
           xAxisIndex: 1,
           smooth: true,
           data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
         },
         {
-          name: '2016 Precipitation',
+          name: '2020 Precipitation',
           type: 'line',
           smooth: true,
           data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
@@ -149,7 +149,7 @@ export const chartData = {
       legend: {
         show: false
       },
-      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
+      color: ['#FD5F00', '#FDA700', '#21AE8C', '#1A86D0', '#005792'],
       series: [
         {
           name: 'Access source',
@@ -200,7 +200,7 @@ export const chartData = {
       legend: {
         data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD']
       },
-      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f'],
+      color: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#002B49'],
       singleAxis: {
         top: 50,
         bottom: 50,
@@ -317,7 +317,7 @@ export const chartData = {
           }
         }
       },
-      colors: ['#ffc247', '#ffebb2', '#ffc0d9'],
+      colors: ['#21AE8C', '#1A86D0', '#005792'],
 
       series: [{
         name: "Winter 2014-2015",
@@ -446,7 +446,7 @@ export let liveChartInterval = null;
 
 export const liveChart = {
   liveChartInterval: null,
-  colors: ['#547fff'],
+  colors: ['#005792'],
   chart: {
     height: 170,
     type: 'spline',

@@ -1182,7 +1182,7 @@ class Elements extends React.Component {
                       <span>
                         <SliderWithTooltip  
                           tipFormatter={this.valueFormatter} 
-                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderGrey}`}
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderBlue}`}
                           vertical
                           defaultValue={70}
                         />
@@ -1200,7 +1200,7 @@ class Elements extends React.Component {
                       <span>
                         <SliderWithTooltip  
                           tipFormatter={this.valueFormatter} 
-                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderGrey}`}
+                          className={`${s.sliderCustomization} ${s.verticalSlider} ${s.sliderBlue}`}
                           vertical
                           defaultValue={30}
                         />
@@ -1226,7 +1226,7 @@ class Elements extends React.Component {
                       <span className="slider-warning">
                         <RangeTooltip 
                           allowCross={false}
-                          className={`${s.sliderCustomization} ${s.rangeSlider} ${s.sliderYellow}`}
+                          className={`${s.sliderCustomization} ${s.rangeSlider} ${s.sliderRed}`}
                           defaultValue={[20, 70]} 
                         />
                         &nbsp;
