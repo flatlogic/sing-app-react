@@ -40,18 +40,19 @@ $gray-900: #29323a !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:    #005792 !default;
-$indigo:  #7f3ddb !default;
-$purple:  #1A86D0 !default;
-$pink:    #e54e9a !default;
-$red:     #FD5F00 !default;
-$orange:  #ff7d47 !default;
-$yellow:  #FDA700 !default;
-$green:   #68ca66 !default;
-$teal:    #21AE8C !default;
-$cyan:    #17a2b8 !default;
-$dark-gray:#D7DFE6 !default;
+$blue:         #005792 !default;
+$indigo:       #7f3ddb !default;
+$purple:       #1A86D0 !default;
+$pink:         #e54e9a !default;
+$red:          #FD5F00 !default;
+$orange:       #ff7d47 !default;
+$yellow:       #FDA700 !default;
+$green:        #68ca66 !default;
+$teal:         #21AE8C !default;
+$cyan:         #17a2b8 !default;
+$dark-gray:    #D7DFE6 !default;
 $gray-inverse: #002B49 !default;
+$subtle-white: #EAF0F6 !default;
 
 $theme-colors: (
   primary: $blue,
@@ -114,7 +115,7 @@ $sidebar-border: 1px solid darken($body-bg, 2%);
 
 $sidebar-item-border-color: transparent !default;
 $sidebar-item-active-color: $yellow !default;
-$sidebar-scrollbar-bg: $gray-200;
+$sidebar-scrollbar-bg: var(--sidebar-item-active-color);
 
 $breadcrumb-divider: '>';
 $breadcrumb-padding-y: 0;

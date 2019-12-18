@@ -1,7 +1,13 @@
 import Highcharts from 'highcharts';
+import config from './config';
 
-let columnColors = ['#002B49', '#005792', '#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#EC2A00', '#FF8C22'];
-let lineColors = ['#1A86D0', '#68ca66', '#ffc247'];
+const colors = config.app.colors;
+const {inverse, info, primary, danger, warning, success, textColor} = colors;
+const chartColors = config.app.chartColors;
+const {axisColor} = chartColors;
+
+let columnColors = [inverse, primary, info, success, warning, danger, '#EC2A00', '#FF8C22'];
+let lineColors = [primary, success, warning];
 
 export const chartData = {
   apex: {
@@ -38,7 +44,14 @@ export const chartData = {
           axisTicks: {
             show: false
           }
-        }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              color: axisColor,
+            }
+          }
+        },
       }
     },
     pie: {
@@ -48,7 +61,7 @@ export const chartData = {
         theme: {
           monochrome: {
             enabled: true,
-            color: '#005792',
+            color: primary,
           }
         },
         stroke: {
@@ -80,7 +93,10 @@ export const chartData = {
         }
       },
       legend: {
-        data: ['2015 Precipitation', '2016 Precipitation']
+        data: ['2015 Precipitation', '2016 Precipitation'],
+        textStyle: {
+          color: axisColor
+        }
       },
       grid: {
         top: 70,
@@ -106,7 +122,7 @@ export const chartData = {
               }
             }
           },
-          data: ["2020-1", "2020-2", "2020-3", "2020-4", "2020-5", "2020-6", "2020-7", "2020-8", "2020-9", "2020-10", "2020-11", "2020-12"]
+          data: ["2016-1", "2016-2", "2016-3", "2016-4", "2016-5", "2016-6", "2016-7", "2016-8", "2016-9", "2016-10", "2016-11", "2016-12"]
         },
         {
           type: 'category',
@@ -127,32 +143,32 @@ export const chartData = {
               }
             }
           },
-          data: ["2020-1", "2020-2", "2020-3", "2020-4", "2020-5", "2020-6", "2020-7", "2020-8", "2020-9", "2020-10", "2020-11", "2020-12"]
+          data: ["2015-1", "2015-2", "2015-3", "2015-4", "2015-5", "2015-6", "2015-7", "2015-8", "2015-9", "2015-10", "2015-11", "2015-12"]
         }
       ],
       yAxis: [
         {
           type: 'value',
           axisLabel: {
-            color: '#8EA1AB'
+            color: axisColor
           },
           axisLine: {
             lineStyle: {
-              color: '#8EA1AB'
+              color: axisColor
             }
           },
         }
       ],
       series: [
         {
-          name: '2019 Precipitation',
+          name: '2015 Precipitation',
           type: 'line',
           xAxisIndex: 1,
           smooth: true,
           data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
         },
         {
-          name: '2020 Precipitation',
+          name: '2016 Precipitation',
           type: 'line',
           smooth: true,
           data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7]
@@ -167,7 +183,7 @@ export const chartData = {
       legend: {
         show: false
       },
-      color: ['#FD5F00', '#FDA700', '#21AE8C', '#1A86D0', '#005792'],
+      color: [primary, success, danger, warning, info],
       series: [
         {
           name: 'Access source',
@@ -218,18 +234,18 @@ export const chartData = {
       legend: {
         data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD'],
         textStyle: {
-          color: '#005792'
+          color: axisColor
         }
       },
-      color: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#002B49'],
+      color: [primary, success, warning, danger, info, inverse],
       singleAxis: {
         top: 50,
         bottom: 50,
         axisTick: {},
-        type: 'time',
         axisLabel: {
-          color: '#005792'
+          color: axisColor
         },
+        type: 'time',
         axisPointer: {
           animation: true,
           label: {
@@ -245,11 +261,10 @@ export const chartData = {
         },
         axisLine: {
           lineStyle: {
-            color:  '#005792'
+            color: axisColor
           }
         },
       },
-
 
       series: [
         {
@@ -312,8 +327,14 @@ export const chartData = {
         type: 'spline',
         height: 350
       },
+      exporting: {
+        enabled: false
+      },
       title: {
-        text: 'Snow depth at Vikjafjellet, Norway'
+        text: 'Snow depth at Vikjafjellet, Norway',
+        style: {
+          color: textColor
+        }
       },
       credits: {
         enabled: false
@@ -323,13 +344,23 @@ export const chartData = {
         dateTimeLabelFormats: { // don't display the dummy year
           month: '%e. %b',
           year: '%b'
+        },
+        labels: {
+          style: {
+            color: axisColor
+          }
         }
       },
       yAxis: {
         min: 0,
         title: {
           enabled: false
-        }
+        },
+        labels: {
+          style: {
+            color: axisColor
+          }
+        },
       },
       tooltip: {
         headerFormat: '<b>{series.name}</b><br>',
@@ -346,7 +377,7 @@ export const chartData = {
           }
         }
       },
-      colors: ['#21AE8C', '#1A86D0', '#005792'],
+      colors: [success, primary, info],
 
       series: [{
         name: "Winter 2014-2015",
@@ -475,7 +506,7 @@ export let liveChartInterval = null;
 
 export const liveChart = {
   liveChartInterval: null,
-  colors: ['#005792'],
+  colors: [primary],
   chart: {
     height: 170,
     type: 'spline',
@@ -504,7 +535,14 @@ export const liveChart = {
   title: false,
   xAxis: {
     type: 'datetime',
-    tickPixelInterval: 150
+    tickPixelInterval: 150,
+    labels: {
+      style: {
+        color: axisColor
+      }
+    },
+    lineWidth: 0,
+    tickWidth: 0
   },
   yAxis: {
     title: {
@@ -513,8 +551,13 @@ export const liveChart = {
     plotLines: [{
       value: 0,
       width: 1,
-      color: '#808080'
-    }]
+      color: axisColor
+    }],
+    labels: {
+      style: {
+        color: axisColor
+      }
+    }
   },
   tooltip: {
     headerFormat: '<b>{series.name}</b><br/>',
