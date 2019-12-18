@@ -126,7 +126,7 @@ class NavExamples extends Component {
                 JavaScript plugin.
               </p>
               <div className="bg-light p-3">
-                <Nav tabs  className={`bg-primary ${s.coloredNav}`}>
+                <Nav tabs  className={`${s.coloredNav}`}>
                   <NavItem>
                     <NavLink href="#" active>Link</NavLink>
                   </NavItem>

@@ -1,7 +1,9 @@
 @import '../../../styles/app';
 
 .coloredNav {
-  :global {
-    .nav-item .nav-link { color: var(--sidebar-color); &:hover { color: var(--sidebar-color) } }
-  }
+  background-color: #EAF0F6;
+  color: $gray-200;
+  // :global {
+  //   .nav-item .nav-link { color: $gray-200; &:hover { color: $gray-200 } }
+  // }
 }

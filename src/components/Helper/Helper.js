@@ -145,7 +145,7 @@ class Helper extends Component {
               display: 'none'
             },
             buttonNext: {
-              backgroundColor: "#FD5F00",
+              backgroundColor: "#21AE8C",
               fontSize: 13,
               borderRadius: 4,
               color: "#ffffff",
@@ -227,7 +227,7 @@ class Helper extends Component {
               href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini purchase-button"
-              color="warning"
+              color="info"
             >
               <span className="text-white">Purchase</span>
             </Button>
@@ -235,6 +235,7 @@ class Helper extends Component {
               href="http://demo.flatlogic.com/sing-app/documentation/"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini text-white"
+              color="primary"
             >
               Documentation
             </Button>

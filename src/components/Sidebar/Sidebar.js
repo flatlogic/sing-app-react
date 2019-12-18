@@ -415,7 +415,7 @@ class Sidebar extends React.Component {
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-gray mr-2" />
+              <i className="fa fa-circle text-info mr-2" />
               <span className={s.labelName}>Starred</span>
             </a>
           </li>

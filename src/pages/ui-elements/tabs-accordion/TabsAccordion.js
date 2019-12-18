@@ -131,7 +131,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <div className="clearfix">
 
-              <Nav tabs className={`float-left bg-primary ${s.coloredNav}`}>
+              <Nav tabs className={`float-left ${s.coloredNav}`}>
                 <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeFirstTab === 'tab11' })}
@@ -231,7 +231,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <Row>
               <Col xs="12" className="mb-5">
-                <Nav tabs  className={`bg-primary ${s.coloredNav}`}>
+                <Nav tabs  className={`${s.coloredNav}`}>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeSecondTab === 'tab21' })}
@@ -303,7 +303,7 @@ class TabsAccordion extends React.Component {
 
             <Row>
               <Col xs="12">
-                <Nav  className={`bg-primary ${s.coloredNav}`} tabs>
+                <Nav  className={`${s.coloredNav}`} tabs>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeThirdTab === 'tab31' })}

@@ -98,11 +98,8 @@ export default {
         curve: 'smooth'
       },
       fill: {
-        type: 'gradient',
-        gradient: {
-          opacityFrom: 0.6,
-          opacityTo: 0.8,
-        }
+        type: 'solid',
+        opacity: 1,
       },
       legend: {
         position: 'top',
@@ -204,12 +201,6 @@ export default {
       },
       title: {
         text: 'Monthly Inflation in Argentina, 2002',
-        floating: true,
-        offsetY: 320,
-        align: 'center',
-        style: {
-          color: '#444'
-        }
       }
     },
   },

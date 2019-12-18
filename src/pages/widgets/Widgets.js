@@ -645,7 +645,7 @@ class Widgets extends React.Component {
           </Col>
 
           <Col xl={3} lg={4} xs={12}>
-            <Widget className="widget-padding-md bg-primary text-white">
+            <Widget className="widget-padding-md bg-info text-white">
               <div className="clearfix">
               <Slider {...settings} className={s.hideOverflow}>
                   <div className={s.slideWrap}>
@@ -690,11 +690,11 @@ class Widgets extends React.Component {
                   <div className={s.flipCardFront}>
                     <Widget
                       fullscreen={false}
-                      className={`widget-padding-md bg-gray-dark text-white ${s.slideWrap}`}
+                      className={`widget-padding-md bg-inverse text-white ${s.slideWrap}`}
                       bodyClass="widget-body-container"
                     >
                       <div className="text-center">
-                        <i className="fa fa-child text-warning fa-5x" />
+                        <i className="fa fa-child text-white fa-5x" />
                       </div>
                       <h3 className="fw-normal">Light Blue Web App</h3>
                       <div className={s.postitionGroupElements}>

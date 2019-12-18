@@ -242,13 +242,14 @@ export const chartData = {
             type: 'dashed',
             opacity: 0.2
           }
-        }
+        },
+        axisLine: {
+          lineStyle: {
+            color:  '#005792'
+          }
+        },
       },
-      axisLine: {
-        lineStyle: {
-          color:  '#005792'
-        }
-      },
+
 
       series: [
         {
