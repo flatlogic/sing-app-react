@@ -141,10 +141,6 @@ class Static extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Tables Basic</li>
-        </ol>
         <h2 className="page-title">Tables - <span className="fw-semi-bold">Static</span></h2>
         <Row>
           <Col>

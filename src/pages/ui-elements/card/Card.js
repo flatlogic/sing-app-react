@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Badge,
   Card,
@@ -21,10 +19,6 @@ import reactnativeImg from '../../../images/cards/rns.png';
 
 const Cards = () => (
   <div>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>UI Card</BreadcrumbItem>
-    </Breadcrumb>
     <h1 className="page-title">Cards - <span className="fw-semi-bold">Examples</span></h1>
     <p>
       A card is a flexible and extensible content container. It includes options for headers and footers,

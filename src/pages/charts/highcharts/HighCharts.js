@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
 } from 'reactstrap';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official'
@@ -39,11 +37,6 @@ class HighCharts extends PureComponent {
 
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem>Charts</BreadcrumbItem>
-          <BreadcrumbItem active>Highcharts</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Visual - <span className="fw-semi-bold">Highcharts</span></h1>
         <p>For more information please read full <a href="https://github.com/highcharts/highcharts-vue">documentation</a></p>
         <Row>

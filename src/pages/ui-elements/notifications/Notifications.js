@@ -71,10 +71,6 @@ class Notifications extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">UI Notifications</li>
-        </ol>
         <h1 className="page-title">Messages - <span className="fw-semi-bold">Notifications</span>
         </h1>
 

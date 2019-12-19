@@ -185,10 +185,6 @@ class Wizard extends React.Component {
     const currentStep = this.state.currentStep;
     return (
       <div className={s.root}>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Form Wizard</li>
-        </ol>
         <h1 className="page-title">Form - <span className="fw-semi-bold">Wizard</span>
         </h1>
         <Row>

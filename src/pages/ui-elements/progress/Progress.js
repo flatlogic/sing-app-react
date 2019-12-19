@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Progress,
 } from 'reactstrap';
 
@@ -11,10 +9,6 @@ import Widget from '../../../components/Widget';
 
 const ProgressExamples = () => (
   <div>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>UI Progress</BreadcrumbItem>
-    </Breadcrumb>
     <h1 className="page-title">Progress</h1>
     <Row>
       <Col xs={12} md={6}>

@@ -197,10 +197,6 @@ class Elements extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="active breadcrumb-item">Form Elements</li>
-        </ol>
         <h1 className="page-title">Form - <span className="fw-semi-bold">Inputs & Controls</span>
         </h1>
 

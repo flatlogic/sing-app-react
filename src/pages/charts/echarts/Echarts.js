@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
 } from 'reactstrap';
 
 import Widget from '../../../components/Widget';
@@ -38,11 +36,6 @@ class Echarts extends PureComponent {
 
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem>Charts</BreadcrumbItem>
-          <BreadcrumbItem active>Echarts Pie</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Visual - <span className="fw-semi-bold">Echarts</span></h1>
         <p>For more information please read full <a href="https://ecomfe.github.io/vue-echarts/">documentation</a></p>
         <Row>

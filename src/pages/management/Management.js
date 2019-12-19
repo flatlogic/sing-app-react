@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap-table';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Popover, PopoverBody, PopoverHeader, Breadcrumb, BreadcrumbItem, Alert } from 'reactstrap';
+import { Popover, PopoverBody, PopoverHeader, Alert } from 'reactstrap';
 
 import {
     Button,
@@ -160,10 +160,6 @@ class Management extends React.Component {
 
         return (
             <div>
-                <Breadcrumb>
-                    <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-                    <BreadcrumbItem active>E-commerce</BreadcrumbItem>
-                </Breadcrumb>
                 <div className="page-top-line">
                     <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
                     <Alert

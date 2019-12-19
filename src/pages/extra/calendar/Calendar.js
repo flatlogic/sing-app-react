@@ -187,10 +187,6 @@ class Calendar extends React.Component {
       <div className={s.root}>
         <Row>
           <Col lg={4} xs={12} md={6}>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">YOU ARE HERE</li>
-              <li className="breadcrumb-item active">Calendar</li>
-            </ol>
             <h1 className="page-title">
               {currentMonth} - <span className="fw-semi-bold">{currentDay}</span>
             </h1>

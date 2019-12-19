@@ -58,6 +58,7 @@ import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } fro
 import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
 import ProductEdit from '../../pages/management/components/productEdit';
+import BreadcrumbHistory from '../BreadcrumbHistory';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -129,7 +130,6 @@ class Layout extends React.Component {
   }
 
   render() {
-    console.log(this.props.sidebarType)
     return (
       <div
         className={[
@@ -146,9 +146,10 @@ class Layout extends React.Component {
           <Header chatToggle={this.chatToggle} />
           <Chat chatOpen={this.state.chatOpen} />
           <Helper />
-
+          
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
+            <BreadcrumbHistory url={this.props.location.pathname} />
               <TransitionGroup>
                 <CSSTransition
                   key={this.props.location.key}

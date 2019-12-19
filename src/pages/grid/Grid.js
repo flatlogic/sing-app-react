@@ -35,10 +35,6 @@ class Grid extends React.Component {
 
     return (
       <div>
-       <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Grid</li>
-        </ol>
         <h1 className="page-title">Grid - <span className="fw-semi-bold">Options</span></h1>
     
         <Row> 

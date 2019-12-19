@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-} from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import FilterElement from './components/FilterElement/FilterElement';
@@ -82,10 +78,6 @@ class ProductList extends Component {
       <div>
         {!isModalActive &&
           <div>
-            <Breadcrumb>
-              <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-              <BreadcrumbItem active>E-commerce</BreadcrumbItem>
-            </Breadcrumb>
             {/* eslint-disable */}
             <h1 className="page-title">E-commerce - <span className="fw-semi-bold">Product Grid</span></h1>
             {/* eslint-enable */}

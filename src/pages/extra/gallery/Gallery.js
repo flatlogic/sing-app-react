@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Button,
   ButtonGroup,
-  Breadcrumb,
-  BreadcrumbItem,
 } from 'reactstrap';
 
 import Lightbox from 'react-images';
@@ -231,10 +229,6 @@ class Gallery extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>Gallery</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Media - <span className="fw-semi-bold">Images</span>
         </h1>
 

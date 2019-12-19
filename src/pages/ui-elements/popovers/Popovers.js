@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Popover,
   PopoverHeader,
@@ -36,10 +34,6 @@ class PopoverExamples extends Component {
   render() {
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>UI Badge</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Badge</h1>
         <Row>
           <Col xs={12} md={6}>

@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Modal,
   ModalHeader,
@@ -33,10 +31,6 @@ class ModalExample extends React.Component {
     const { demo, scrollingLong, large, small, launch } = this.state;
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>UI Modal</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Modal - <span className="fw-semi-bold">Examples</span></h1>
         <Row>
           <Col xs={12} md={6}>

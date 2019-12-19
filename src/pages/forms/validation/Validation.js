@@ -17,10 +17,6 @@ class Validation extends React.Component {
   render() {
     return (
       <div>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Form Validation</li>
-        </ol>
         <h1 className="page-title">Form - <span className="fw-semi-bold">Validation</span>
         </h1>
 

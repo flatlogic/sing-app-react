@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Row,
   Col,
   Table,
@@ -45,10 +43,6 @@ const tableData = [
 
 const Colors = () => (
   <div>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>Colors</BreadcrumbItem>
-    </Breadcrumb>
     <h1 className="page-title">Colors</h1>
     <Row>
       <Col>

@@ -30,10 +30,6 @@ class Search extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Search Results</li>
-        </ol>
         <h1 className="page-title">Matching - <span className="fw-semi-bold">Results</span></h1>
         <div className="btn-toolbar justify-content-between">
           <div className="d-inline-flex">

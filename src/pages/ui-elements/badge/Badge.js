@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Badge,
 } from 'reactstrap';
@@ -12,10 +10,6 @@ import Widget from '../../../components/Widget';
 
 const Badges = () => (
   <div>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>UI Badge</BreadcrumbItem>
-    </Breadcrumb>
     <h1 className="page-title">Badge</h1>
     <Row>
       <Col xs={12} md={8}>

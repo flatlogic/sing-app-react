@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Nav,
   NavItem,
   NavLink,
@@ -31,10 +29,6 @@ class NavExamples extends Component {
   render() {
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>UI Nav</BreadcrumbItem>
-        </Breadcrumb>
         <Row>
           <Col xs={12} md={6}>
             <Widget

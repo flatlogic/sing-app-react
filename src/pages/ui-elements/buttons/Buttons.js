@@ -94,10 +94,6 @@ class Buttons extends React.Component {
   render() {
     return (
       <div>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="active breadcrumb-item">UI Buttons</li>
-        </ol>
 
         <h1 className="page-title">Buttons - <span className="fw-semi-bold">Styles </span></h1>
 

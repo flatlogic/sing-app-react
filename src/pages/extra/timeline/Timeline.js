@@ -35,10 +35,6 @@ class Timeline extends React.Component {
   render() {
     return (
       <div>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">Time Line</li>
-        </ol>
         <h1 className="page-title">Events - <span className="fw-semi-bold">Feed</span></h1>
 
         <ul className={s.timeline}>

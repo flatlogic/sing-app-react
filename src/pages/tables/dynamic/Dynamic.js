@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Progress,
   Dropdown,
   DropdownMenu,
@@ -100,10 +98,6 @@ class Dynamic extends React.Component {
 
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>Tables Dynamic</BreadcrumbItem>
-        </Breadcrumb>
         <h2 className="page-title">Tables - <span className="fw-semi-bold">Dynamic</span></h2>
         <Widget title={<h4>The <span className="fw-semi-bold">React</span> Way</h4>} collapse close>
           <p>

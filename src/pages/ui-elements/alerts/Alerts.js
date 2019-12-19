@@ -3,8 +3,6 @@ import cx from 'classnames';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Alert,
 } from 'reactstrap';
 
@@ -47,10 +45,6 @@ class Alerts extends Component {
 
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem active>UI Alerts</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Alerts</h1>
         <Row>
           <Col xs={12} md={8}>

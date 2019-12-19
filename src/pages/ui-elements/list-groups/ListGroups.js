@@ -96,10 +96,6 @@ class ListGroups extends React.Component {
   render() {
     return (
       <div>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">UI List Groups</li>
-        </ol>
         <h1 className="page-title">Lists - <span className="fw-semi-bold">Sortable Groups</span>
         </h1>
         <Widget

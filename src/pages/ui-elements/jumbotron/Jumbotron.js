@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Row,
   Col,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   Jumbotron,
   Container,
@@ -11,10 +9,6 @@ import {
 
 const Jumb = () => (
   <div>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>UI Jumbotron</BreadcrumbItem>
-    </Breadcrumb>
     <Jumbotron fluid>
       <Container fluid>
         <h1 className="display-3">Fluid jumbotron</h1>

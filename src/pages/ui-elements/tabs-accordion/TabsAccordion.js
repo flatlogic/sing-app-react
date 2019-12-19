@@ -118,10 +118,6 @@ class TabsAccordion extends React.Component {
   render() {
     return (
       <div>
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">YOU ARE HERE</li>
-          <li className="breadcrumb-item active">UI Tabs & Accordion</li>
-        </ol>
         <h1 className="page-title">Tabs & Accordion - <span
           className="fw-semi-bold"
         >Components</span></h1>

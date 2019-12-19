@@ -1,9 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-} from 'reactstrap';
 
 import Section from './components/Section/Section';
 import Banner from './components/Banner/Banner';
@@ -65,10 +61,6 @@ class Product extends React.Component {
 
         return (
             <div className="product-details">
-                <Breadcrumb>
-                    <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-                    <BreadcrumbItem active>E-commerce</BreadcrumbItem>
-                </Breadcrumb>
                 <h1 className="page-title">E-commerce - <span className="fw-semi-bold">Product Detail</span></h1>
                 {
                     product && (

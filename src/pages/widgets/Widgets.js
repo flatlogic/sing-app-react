@@ -45,6 +45,7 @@ class Widgets extends React.Component {
 
     return (
       <div className="root">
+        <h1 className="page-title">Widgets - <span className="fw-semi-bold">Company Performance</span></h1>
         <Row>
           <Col xl={3} lg={4} md={6} xs={12}>
             <Widget>

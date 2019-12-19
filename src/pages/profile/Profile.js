@@ -1,8 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
   Row,
   Col,
   Input,
@@ -22,10 +20,6 @@ import s from './Profile.module.scss';
 
 const Profile = () => (
   <div className={s.root}>
-    <Breadcrumb>
-      <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-      <BreadcrumbItem active>Profile</BreadcrumbItem>
-    </Breadcrumb>
     <h1 className="page-title">User - <span className="fw-semi-bold">Profile</span>
     </h1>
 

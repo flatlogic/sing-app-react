@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { 
   Col, 
   Row, 
-  Breadcrumb,
-  BreadcrumbItem, 
 } from 'reactstrap';
 import ApexChart from 'react-apexcharts';
 import './ApexChart.module.scss';
@@ -22,11 +20,6 @@ class ApexCharts extends Component {
 
     return (
       <div>
-        <Breadcrumb>
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          <BreadcrumbItem>Charts</BreadcrumbItem>
-          <BreadcrumbItem active>Apex chart</BreadcrumbItem>
-        </Breadcrumb>
         <h1 className="page-title">Visual - <span className="fw-semi-bold">Apex Charts</span></h1>
         <p>For more information please read full <a href="https://apexcharts.com/docs/vue-charts/">documentation</a></p>
         <Row>
