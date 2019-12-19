@@ -49,7 +49,7 @@ import Echarts from '../../pages/charts/echarts';
 import HighCharts from '../../pages/charts/highcharts';
 import DashboardAnalytics from '../../pages/analytics';
 import Dashboard from '../../pages/dashboard';
-
+import { SidebarTypes } from '../../reducers/layout';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import Chat from '../Chat';
@@ -129,6 +129,7 @@ class Layout extends React.Component {
   }
 
   render() {
+    console.log(this.props.sidebarType)
     return (
       <div
         className={[
@@ -137,7 +138,7 @@ class Layout extends React.Component {
           this.state.chatOpen ? s.chatOpen : '',
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',
-          'dashboard-' + this.props.dashboardTheme,
+          `dashboard-${(this.props.sidebarType === SidebarTypes.TRANSPARENT) ? "light" : this.props.dashboardTheme}`,
         ].join(' ')}
       >
         <Sidebar />
@@ -229,6 +230,7 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     dashboardTheme: store.layout.dashboardTheme,
+    sidebarType: store.layout.sidebarType
   };
 }
 

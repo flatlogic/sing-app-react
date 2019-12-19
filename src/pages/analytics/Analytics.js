@@ -37,14 +37,6 @@ class Analytics extends Component {
         isReceiving: false
     };
 
-    getRandomData = () => {
-      const arr = [];
-      for (let i = 0; i < 25; i += 1) {
-        arr.push(Math.random().toFixed(1) * 10);
-      }
-      return arr;
-    }
-
     donut = () => {
       let series = [
         {
@@ -218,7 +210,7 @@ class Analytics extends Component {
                           height={30}
                           smooth
                           strokeWidth="4"
-                          data={this.getRandomData()}
+                          data={mock.randomData.first}
                         />
                       </div>
                     </div>
@@ -230,7 +222,7 @@ class Analytics extends Component {
                           height={30}
                           smooth
                           strokeWidth="4"
-                          data={this.getRandomData()}
+                          data={mock.randomData.second}
                         />
                       </div>
                     </div>
@@ -242,7 +234,7 @@ class Analytics extends Component {
                           height={30}
                           smooth
                           strokeWidth="4"
-                          data={this.getRandomData()}
+                          data={mock.randomData.third}
                         />
                       </div>
                     </div>

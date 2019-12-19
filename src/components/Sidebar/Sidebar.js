@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.module.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
-import { SidebarTypes } from '../../reducers/layout';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
 import { logoutUser } from '../../actions/user';
@@ -61,13 +60,11 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { sidebarType } = this.props;
     return (
       <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''} ${s.sidebarWrapper}`}>
       <nav
         onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
         className={s.root}
-        style={{backgroundColor: sidebarType === SidebarTypes.TRANSPARENT ? "transparent" : ""}}
       >
         <header className={s.logo}>
           <a href="https://demo.flatlogic.com/sing-app/"><span className={s.logoStyle}>Sing</span> App</a>
@@ -458,7 +455,6 @@ function mapStateToProps(store) {
     activeItem: store.navigation.activeItem,
     navbarType: store.navigation.navbarType,
     sidebarColor: store.layout.sidebarColor,
-    sidebarType: store.layout.sidebarType
   };
 }
 
