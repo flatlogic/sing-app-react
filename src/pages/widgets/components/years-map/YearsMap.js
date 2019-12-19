@@ -60,17 +60,17 @@ this.polygonSeries.tooltip.background.fill = am4core.color("#fff");
     minusButtonHoverState.properties.fill = am4core.color("#ccc");
     let polygonTemplate = this.polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipHTML = "{tooltip}";
-    polygonTemplate.fill = am4core.color("#eee");
-    polygonTemplate.stroke = am4core.color("#666");
+    polygonTemplate.fill = am4core.color("#ACE4F4");
+    polygonTemplate.stroke = am4core.color("#f4f4f4");
     polygonTemplate.strokeWidth = 0.1;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#999");
+    hs.properties.fill = am4core.color("#CCE4F4");
     
     this.polygonSeries.heatRules.push({
       "property": "fill",
       "target": polygonTemplate,
-      "min": am4core.color("#eee"),
-      "max": am4core.color("#aaa")
+      "min": am4core.color("#ACE4F4"),
+      "max": am4core.color("#005792")
     });
   }
 
@@ -94,7 +94,7 @@ this.polygonSeries.tooltip.background.fill = am4core.color("#fff");
         <div className={s.stats}>
           <h6>YEARLY <span className="fw-semi-bold">DISTRIBUTIONS</span></h6>
           <span className="pull-left mr-xs">
-            <small><span className="circle bg-warning text-gray-dark">
+            <small><span className="circle bg-primary text-white">
               <i className="fa fa-plus" /></span></small>
           </span>
           <p className="h4 m-0">

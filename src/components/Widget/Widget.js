@@ -331,7 +331,7 @@ class Widget extends React.Component {
         >
           <div className={`${s.widgetBody} widget-body ${bodyClass}`}>
             {reloading || fetchingData ?  <Loader className={s.widgetLoader} size={40}/> : customBody ? (
-                <div className="jumbotron handle bg-gray text-white mb-0">
+                <div className="jumbotron handle bg-inverse text-white mb-0">
                 <div className="container">
                   <h1>Draggable story!</h1>
                   <p className="lead">

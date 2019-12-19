@@ -14,7 +14,7 @@ class ChangesChart extends React.Component {
       rickshawGraph: null,
       sparklineData: [{data: [3, 6, 2, 4, 5, 8, 6, 8]}],
       sparklineOptions: {
-        colors: ["#64bd63"],
+        colors: ["#1A86D0"],
         plotOptions: {
           bar: {
             columnWidth: '50%'
@@ -31,7 +31,7 @@ class ChangesChart extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.sidebarStatic !== prevProps.sidebarStatic) {
-      this.onResizeRickshaw()
+      setTimeout(() => this.onResizeRickshaw(), 500)
     }
   }
 
@@ -59,7 +59,7 @@ class ChangesChart extends React.Component {
       series: [{
         name: 'pop',
         data: seriesData.shift().map(d => ({ x: d.x, y: d.y })),
-        color: '#7bd47a', // (#64bd63, 0.9)
+        color: '#1A86D0', // (#64bd63, 0.9)
         renderer: 'bar',
         gapSize: 2,
         min: 'auto',
@@ -89,7 +89,7 @@ class ChangesChart extends React.Component {
 
     return (
       <div className={s.changesChart}>
-        <div className={`${s.chart} bg-success btlr btrr`}>
+        <div className={`${s.chart} bg-primary btlr btrr`}>
           <p className={s.chartValue}><i className="fa fa-caret-up" /> 352.79</p>
           <p className={s.chartValueChange}>+2.04 (1.69%)</p>
           <div

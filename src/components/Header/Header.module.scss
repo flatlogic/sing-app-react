@@ -16,7 +16,9 @@
       margin-right: $content-padding-sm;
     }
   }
-
+  a {
+    color: #495057
+  }
   @include media-breakpoint-down(sm) {
     padding: 7px 0;
   }

@@ -247,7 +247,7 @@ class MessageTable extends Component {
                       <td
                         className={s.messageStar}
                         onClick={() => this.starItem(message.id)}>{message.starred
-                          ? <span className={s.messageStarred}><i className="fa fa-star" /></span>
+                          ? <span className={s.messageStarred}><i className="fa fa-star text-primary" /></span>
                           : <span><i className="fa fa-star-o" /></span>}
                       </td>
                       <td

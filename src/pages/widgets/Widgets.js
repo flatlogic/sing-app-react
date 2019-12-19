@@ -79,7 +79,7 @@ class Widgets extends React.Component {
                 <Row className="flex-nowrap">
                   <Col xs="3">
                     <span className="widget-icon">
-                      <i className="fi flaticon-magic-wand text-info" />
+                      <i className="fi flaticon-magic-wand text-danger" />
                     </span>
                   </Col>
                   <Col xs="9">   
@@ -130,7 +130,7 @@ class Widgets extends React.Component {
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
-                          <i className="fi flaticon-notebook-4" />
+                          <i className="fi flaticon-notebook-4 text-info" />
                         </span>
                       </Col>
                       <Col xs="9">
@@ -153,7 +153,7 @@ class Widgets extends React.Component {
                     <Row className="flex-nowrap">
                       <Col xs={3}>
                         <span className="widget-icon">
-                          <i className="fi flaticon-shuffle" />
+                          <i className="fi flaticon-shuffle text-info" />
                         </span>
                       </Col>
                       <Col xs={9}>
@@ -208,7 +208,7 @@ class Widgets extends React.Component {
         <Row>
           <Col lg={4} xs={12}>
             <Widget refresh close bodyClass="mt-0" >
-              <div className="widget-top-overflow widget-padding-md clearfix bg-warning text-white">
+              <div className="widget-top-overflow widget-padding-md clearfix bg-info text-white">
                 <h3 className="mt-lg mb-lg">Light Blue - <span className="fw-semi-bold">Next Generation</span> Admin
                   Dashboard
                   Template</h3>
@@ -429,7 +429,7 @@ class Widgets extends React.Component {
                       <p className="text-white fw-normal d-inline-block mb">SUNDAY</p>
                     </div>
                     <div className="col-5">
-                      <Skycon className="mt-3" icon="PARTLY_CLOUDY_DAY" color="#64bd63" width="60" height="60" />
+                      <Skycon className="mt-3" icon="PARTLY_CLOUDY_DAY" color="#21AE8C" width="60" height="60" />
                       <p className="fw-normal fs-sm text-muted">WINDY</p>
                     </div>
                   </div>
@@ -593,7 +593,7 @@ class Widgets extends React.Component {
             </Widget>
           </Col>
           <Col lg={4} xs={12}>
-            <Widget className="bg-gray-dark text-white">
+            <Widget>
               <RealtimeTraffic />
             </Widget>
           </Col>
@@ -645,7 +645,7 @@ class Widgets extends React.Component {
           </Col>
 
           <Col xl={3} lg={4} xs={12}>
-            <Widget className="widget-padding-md bg-primary text-white">
+            <Widget className="widget-padding-md bg-info text-white">
               <div className="clearfix">
               <Slider {...settings} className={s.hideOverflow}>
                   <div className={s.slideWrap}>
@@ -690,11 +690,11 @@ class Widgets extends React.Component {
                   <div className={s.flipCardFront}>
                     <Widget
                       fullscreen={false}
-                      className={`widget-padding-md bg-gray-dark text-white ${s.slideWrap}`}
+                      className={`widget-padding-md bg-inverse text-white ${s.slideWrap}`}
                       bodyClass="widget-body-container"
                     >
                       <div className="text-center">
-                        <i className="fa fa-child text-warning fa-5x" />
+                        <i className="fa fa-child text-white fa-5x" />
                       </div>
                       <h3 className="fw-normal">Light Blue Web App</h3>
                       <div className={s.postitionGroupElements}>

@@ -85,7 +85,7 @@ class NavbarExamples extends Component {
                 theming classes and background-color utilities. Choose from <code>color=&quot;light&quot;</code>
                 for use with light background colors, or <code>color=&quot;dark&quot;</code> for dark background
                 colors. Then, customize with <code>.bg-*</code> utilities.</p>
-              <Navbar className="px-2 mt-lg" color="dark" dark expand="md">
+              <Navbar className="px-2 mt-lg" color="inverse" dark expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
                 <NavbarToggler className="ml-auto" onClick={() => this.toggle(1)} />
                 <Collapse isOpen={this.state.navs[1]} navbar>

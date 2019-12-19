@@ -51,7 +51,7 @@ class Calendar extends React.Component {
             {
               title: 'All Day Event',
               start: new Date(y, m, 1),
-              backgroundColor: '#79A5F0',
+              backgroundColor: '#005792',
               textColor: '#fff',
               description: 'Will be busy throughout the whole day',
             },
@@ -59,7 +59,8 @@ class Calendar extends React.Component {
               title: 'Long Event',
               start: new Date(y, m, d + 5),
               end: new Date(y, m, d + 7),
-              textColor: '#333',
+              backgroundColor: '#1A86D0',
+              textColor: '#fff',
               description: 'This conference should be worse visiting',
             },
             {
@@ -67,7 +68,8 @@ class Calendar extends React.Component {
               title: 'Blah Blah Car',
               start: new Date(y, m, d - 3, 16, 0),
               allDay: false,
-              textColor: '#333',
+              textColor: '#fff',
+              backgroundColor: '#FD5F00',
               description: 'Agree with this guy on arrival time',
             },
             {
@@ -75,7 +77,7 @@ class Calendar extends React.Component {
               title: 'Buy this template',
               start: new Date(y, m, d + 3, 12, 0),
               allDay: false,
-              backgroundColor: '#555',
+              backgroundColor: '#21AE8C',
               textColor: '#fff',
               description: 'Make sure everything is consistent first',
             },
@@ -83,7 +85,7 @@ class Calendar extends React.Component {
               title: 'Got to school',
               start: new Date(y, m, d + 16, 12, 0),
               end: new Date(y, m, d + 16, 13, 0),
-              backgroundColor: '#64bd63',
+              backgroundColor: '#ff7d47',
               textColor: '#fff',
               description: 'Time to go back',
             },
@@ -91,7 +93,7 @@ class Calendar extends React.Component {
               title: 'Study some Node',
               start: new Date(y, m, d + 18, 12, 0),
               end: new Date(y, m, d + 18, 13, 0),
-              backgroundColor: '#79A5F0',
+              backgroundColor: '#002B49',
               textColor: '#fff',
               description: 'Node.js is a platform built '
               + 'on Chrome\'s JavaScript runtime for easily'
@@ -106,7 +108,7 @@ class Calendar extends React.Component {
               start: new Date(y, m, 28),
               end: new Date(y, m, 29),
               url: 'http://flatlogic.com/',
-              backgroundColor: '#e5603b',
+              backgroundColor: '#21AE8C',
               textColor: '#fff',
               description: 'Creative solutions',
             },
@@ -198,32 +200,42 @@ class Calendar extends React.Component {
               <div 
                 data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle fa-fw text-success ml-xs mr-xs" />
                 Make a tea
+              </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle fa-fw text-warning ml-xs mr-xs" />
                 Open windows
+              </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Some stuff
+              </div>
               </div>
               <div
                 data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-square fa-fw text-danger ml-xs mr-xs" />
                 Study UX engineering
+                </div>
               </div>
               <div 
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }' className="external-event draggable"
               >
+                <div className={s.customExternalEvent}>
                 <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
                 Another stuff
+                </div>
               </div>
             </div>
           </Col>

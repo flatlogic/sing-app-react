@@ -20,7 +20,7 @@ class Bag extends Component {
     const { favourite } = this.state;
     return (
       <div className={s.bag} >
-        <button className={cx('btn', s.add)}>
+        <button className={cx('btn bg-success', s.add)}>
           add to bag
       <img src={bag} alt="bag" />
         </button>

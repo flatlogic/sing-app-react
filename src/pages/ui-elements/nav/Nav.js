@@ -15,6 +15,8 @@ import {
 
 import Widget from '../../../components/Widget';
 
+import s from './Nav.module.scss'
+
 class NavExamples extends Component {
   state = {
     isDropdownOpened: false,
@@ -124,7 +126,7 @@ class NavExamples extends Component {
                 JavaScript plugin.
               </p>
               <div className="bg-light p-3">
-                <Nav tabs>
+                <Nav tabs  className={`${s.coloredNav}`}>
                   <NavItem>
                     <NavLink href="#" active>Link</NavLink>
                   </NavItem>

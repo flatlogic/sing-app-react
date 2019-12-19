@@ -110,22 +110,22 @@ class Dynamic extends React.Component {
             Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
           </p>
           <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}>
-            <TableHeaderColumn className="width-50" columnClassName="width-50" dataField="id" isKey>
+            <TableHeaderColumn className={`width-50 ${s.columnHead}`} columnClassName="width-50" dataField="id" isKey>
               <span className="fs-sm">ID</span>
             </TableHeaderColumn>
-            <TableHeaderColumn dataField="name" dataSort>
+            <TableHeaderColumn className={`${s.columnHead}`} dataField="name" dataSort>
               <span className="fs-sm">Name</span>
             </TableHeaderColumn>
-            <TableHeaderColumn className="d-md-table-cell" columnClassName="d-md-table-cell" dataField="info" dataFormat={infoFormatter}>
+            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="info" dataFormat={infoFormatter}>
               <span className="fs-sm">Info</span>
             </TableHeaderColumn>
-            <TableHeaderColumn className="d-md-table-cell" columnClassName="d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>
+            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>
               <span className="fs-sm">Description</span>
             </TableHeaderColumn>
-            <TableHeaderColumn className="d-md-table-cell" columnClassName="d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>
+            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>
               <span className="fs-sm">Date</span>
             </TableHeaderColumn>
-            <TableHeaderColumn className="width-150" columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>
+            <TableHeaderColumn className={`width-150 ${s.columnHead}`} columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>
               <span className="fs-sm">Status</span>
             </TableHeaderColumn>
           </BootstrapTable>

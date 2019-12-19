@@ -1,5 +1,10 @@
 @import '../../../styles/app';
 
 .root {
-  // some styles
+
+}  
+.table-bordered th {
+  background: $blue;
+  color: $gray-light;
+  border: none;
 }

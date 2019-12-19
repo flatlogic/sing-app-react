@@ -28,8 +28,8 @@ class ErrorPage extends React.Component {
                 <Input className="input-no-border" type="text" placeholder="Search Pages" />
               </FormGroup>
               <Link to="app/extra/search">
-                <Button className={s.errorBtn} type="submit" color="inverse">
-                  Search <i className="fa fa-search text-warning ml-xs" />
+                <Button className={s.errorBtn} type="submit" color="success">
+                  Search <i className="fa fa-search text-white ml-xs" />
                 </Button>
               </Link>
             </Form>

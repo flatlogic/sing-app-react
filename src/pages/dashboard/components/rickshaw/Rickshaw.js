@@ -29,7 +29,7 @@ class RickshawGraph extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.sidebarStatic !== prevProps.sidebarStatic) {
-      this.onResizeRickshaw()
+      setTimeout(() => this.onResizeRickshaw(), 1000)
     }
   }
 
@@ -55,11 +55,11 @@ class RickshawGraph extends React.Component {
       height: this.props.height,
       series: [
         {
-          color: '#ffdddd',
+          color: '#1A86D0',
           data: seriesData[0],
           name: 'Uploads',
         }, {
-          color: '#f55d5d',
+          color: '#005792',
           data: seriesData[1],
           name: 'Downloads',
         },

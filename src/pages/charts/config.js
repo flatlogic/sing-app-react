@@ -1,16 +1,20 @@
-const chartColors = {
-  blue: '#2e74e3',
-  green: '#25b932',
-  orange: '#f0af03',
-  red: '#db4a00',
-  purple: '#a700ae',
-  dark: '#3c484f',
-  teal: '#14d3d3',
-  pink: '#e671b8',
-  gray: '#d6dee5',
-  textColor: '#fff'
-};
-
 export default {
-  chartColors
-}
+  app: {
+    colors: {
+      sidebar: "#002B49",
+      navbar: "#ffffff",
+      primary: "#005792",
+      secondary: "#798892",
+      success: "#21AE8C",
+      info: "#1A86D0",
+      warning: "#FDA700",
+      danger: "#FD5F00",
+      inverse: "#002B49",
+      textColor: "#495057",
+      gray: "#D7DFE6"
+    },
+    chartColors: {
+      axisColor: '#8EA1AB'
+    }
+  }
+};

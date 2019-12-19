@@ -28,29 +28,29 @@ class Helper extends Component {
     run: false,
     steps: [
       {
-        content: 'Easily adjust navbar 🤔',
+        content: 'Easily adjust navbar 😃',
         placement: 'left',
         target: '.navbar-type-switcher',
         textAlign: 'center',
         disableBeacon: true,
       },
       {
-        content: "Choose a color for navbar, create unique layout ✌️",
+        content: "Choose a color for navbar, create unique layout 😄",
         placement: 'left',
         target: '.navbar-color-picker',
       },
       {
-        content: "Also customize sidebar type, it's cool 👌",
+        content: "Also customize sidebar type, it's cool 🙂",
         placement: 'left',
         target: '.sidebar-type-switcher',
       },
       {
-        content: 'We also have different colors for sidebar, pick one from palette 😇',
+        content: 'We also have different colors for sidebar, pick one from palette 😃',
         placement: 'left',
         target: '.sidebar-color-picker',
       },
       {
-        content: 'Purchase out template if you like it, we appreciate it 🤗!',
+        content: 'Purchase out template if you like it, we appreciate it 😄!',
         placement: 'left',
         target: '.purchase-button'
       },
@@ -116,6 +116,7 @@ class Helper extends Component {
           steps={this.state.steps}
           disableOverlay={true}
           disableScrolling
+          outline="none"
           styles={{
             options: {
               arrowColor: '#ffffff',
@@ -144,7 +145,7 @@ class Helper extends Component {
               display: 'none'
             },
             buttonNext: {
-              backgroundColor: "#FFC247",
+              backgroundColor: "#21AE8C",
               fontSize: 13,
               borderRadius: 4,
               color: "#ffffff",
@@ -163,7 +164,7 @@ class Helper extends Component {
           }}
         />
 
-          <div className={`${s.themeHelperBtn} bg-warning helper-button`} onClick={this.toggle}>
+          <div className={`${s.themeHelperBtn} bg-primary helper-button`} onClick={this.toggle}>
             <div className={cx(s.themeHelperSpinner, 'text-white')}>
               <i className="la la-cog" />
               <i className="la la-cog" />
@@ -226,7 +227,7 @@ class Helper extends Component {
               href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini purchase-button"
-              color="warning"
+              color="info"
             >
               <span className="text-white">Purchase</span>
             </Button>
@@ -234,6 +235,7 @@ class Helper extends Component {
               href="http://demo.flatlogic.com/sing-app/documentation/"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini text-white"
+              color="primary"
             >
               Documentation
             </Button>

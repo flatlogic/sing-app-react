@@ -14,14 +14,15 @@ export default {
   },
   app: {
     colors: {
-      dark: "#313947",
-      light: "#ffffff",
-      blue: "#547fff",
-      gray: "#3D5C70",
-      green: "#3abf94",
-      violet: "#B077FF",
-      yellow: "#ffc247",
-      danger: "#f55d5d",
+      dark: "#002B49",
+      light: "#FFFFFF",
+      sea: "#004472",
+      sky: "#E9EBEF",
+      wave: "#D1E7F6",
+      rain: "#CCDDE9",
+      middle: "#D7DFE6",
+      black: "#13191D",
+      salat: "#21AE8C",
     },
   }
 };

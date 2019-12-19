@@ -167,11 +167,11 @@ class Stats extends React.Component {
                         &nbsp;&nbsp;
                         Print
                       </Button>
-                      <Button color="danger">
+                      <Button color="success">
                         Proceed with Payment
                         &nbsp;
                         <span className="circle bg-white">
-                          <i className="fa fa-arrow-right text-danger" />
+                          <i className="fa fa-arrow-right text-success" />
                         </span>
                       </Button>
                     </ButtonToolbar>

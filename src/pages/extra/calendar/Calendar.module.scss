@@ -10,6 +10,10 @@
       text-transform: uppercase;
     }
 
+    .fc .fc-today {
+      background-color: rgba($purple, .2);
+    }
+
     .fc-day-grid-event {
       margin: 0;
       padding: 0;
@@ -20,10 +24,6 @@
       font-weight: $font-weight-normal;
       background-color: $gray-200;
       color: $text-color;
-    }
-
-    .fc-today {
-      background-color: #fff1b8;
     }
 
     a.fc-event {
@@ -46,16 +46,6 @@
     .calendar-external-events {
       margin-top: 20px;
 
-      .external-event {
-        margin: 10px 0;
-        padding: 6px;
-        font-size: $font-size-mini;
-        cursor: pointer;
-        border-radius: $border-radius;
-        background-color: $white;
-        border: 1px solid #ccc;
-        box-shadow: var(--widget-shadow);
-      }
     }
 
     .widget-calendar {
@@ -66,3 +56,13 @@
   }
 }
 
+.customExternalEvent {
+  margin: 10px 0;
+  padding: 6px;
+  font-size: $font-size-mini;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: $white;
+  border: 1px solid #ccc;
+  box-shadow: var(--widget-shadow);
+}

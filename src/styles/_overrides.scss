@@ -17,15 +17,12 @@
     .nav-link {
       display: flex;
       align-items: center;
-      color: $navbar-link-color;
       height: 100%;
       position: relative;
       padding: 0.5rem;
 
-      @include hover {
-        color: $navbar-link-hover-color;
-        background: $navbar-link-hover-bg;
-      }
+
+      
 
       .la {
         font-size: 20px;
@@ -417,6 +414,21 @@ small {
   .btn:not(.btn-default) {
     background: rgba($white, 0.8);
     color: theme-color('danger');
+  }
+}
+
+.alert-primary {
+  background: theme-color('primary');
+  color: $white;
+
+  &.alert-transparent {
+    color: theme-color('primary');
+    background: rgba(theme-color('primary'), $alert-transparent);
+  }
+
+  .btn:not(.btn-default) {
+    background: rgba($white, 0.8);
+    color: theme-color('primary');
   }
 }
 
@@ -1129,4 +1141,17 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 //// Highcharts Width fix ////
 .highcharts-container, .highcharts-root {
   width:100% !important;
+}
+
+//// React Joyride Shadow fix ////
+.__floater {
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px)!important
+}
+
+.table-striped {
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: #f8f9fa
+    }
+  }
 }

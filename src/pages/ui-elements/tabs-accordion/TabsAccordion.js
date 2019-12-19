@@ -17,6 +17,8 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
+import s from './TabsAccordion.module.scss'
+
 class TabsAccordion extends React.Component {
 
   constructor(props) {
@@ -129,7 +131,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <div className="clearfix">
 
-              <Nav tabs className="float-left bg-light">
+              <Nav tabs className={`float-left ${s.coloredNav}`}>
                 <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeFirstTab === 'tab11' })}
@@ -200,7 +202,7 @@ class TabsAccordion extends React.Component {
                 <div className="clearfix">
                   <div className="btn-toolbar">
                     <a className="btn btn-default">&nbsp;&nbsp;Check&nbsp;&nbsp;</a>
-                    <a className="btn btn-primary">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</a>
+                    <a className="btn btn-primary text-white">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</a>
                   </div>
                 </div>
               </TabPane>
@@ -229,7 +231,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <Row>
               <Col xs="12" className="mb-5">
-                <Nav className="bg-light" tabs>
+                <Nav tabs  className={`${s.coloredNav}`}>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeSecondTab === 'tab21' })}
@@ -301,7 +303,7 @@ class TabsAccordion extends React.Component {
 
             <Row>
               <Col xs="12">
-                <Nav className="bg-light" tabs>
+                <Nav  className={`${s.coloredNav}`} tabs>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeThirdTab === 'tab31' })}

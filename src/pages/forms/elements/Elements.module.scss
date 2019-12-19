@@ -53,7 +53,9 @@
     /*
      * Switchery.
      */
-
+    .form-action {
+      background: $gray-light
+    }
     .abc-checkbox,
     .abc-radio {
       .form-check-input {
@@ -332,21 +334,21 @@
 .sliderBlue {
   :global {
     .rc-slider-track {
-      background-color: #196EFF;
+      background-color: #005792;
     }
   }
 }
 .sliderRed {
   :global {
     .rc-slider-track {
-      background-color: #FF0115;
+      background-color: #FD5F00;
     }
   }
 }
 .sliderYellow {
   :global {
     .rc-slider-track {
-      background-color: #FFC107;
+      background-color: #FDA700;
     }
   }
 }

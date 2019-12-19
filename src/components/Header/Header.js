@@ -62,24 +62,24 @@ class Header extends React.Component {
       run: true,
       steps: [
         {
-          content: 'You can adjust sidebar, or leave it closed 🤩',
+          content: 'You can adjust sidebar, or leave it closed 😃',
           placement: 'bottom',
           target: '#toggleSidebar',
           textAlign: 'center',
           disableBeacon: true
         },
         {
-          content: "Admin can check out his messages and tasks easily 🤔",
+          content: "Admin can check out his messages and tasks easily 😃",
           placement: 'bottom',
           target: '.dropdown-toggle',
         },
         {
-          content: "Clickable cog can provide you with link to important pages 🤠",
+          content: "Clickable cog can provide you with link to important pages 😄",
           placement: 'bottom',
           target: '.tutorial-dropdown',
         },
         {
-          content: 'Check out chat, do not miss new ideas 🧐',
+          content: 'Check out chat, do not miss new ideas 🙂',
           placement: 'bottom',
           target: '#toggle-chat',
         },
@@ -217,11 +217,12 @@ class Header extends React.Component {
               display: 'none'
             },
             buttonNext: {
-              backgroundColor: "#FFC247",
+              backgroundColor: "#21AE8C",
               fontSize: 13,
               borderRadius: 4,
               color: "#ffffff",
-              fontWeight: "bold"
+              fontWeight: "bold",
+              outline: "none"
             },
             buttonBack: {
               color: "#798892",
@@ -306,7 +307,7 @@ class Header extends React.Component {
                   )}
               </span>
               <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user.name || user.email || "Philip smith"}</span>
-              <span className="ml-1 circle bg-warning text-white fw-bold">13</span>
+              <span className="ml-1 circle bg-primary text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
               <Notifications />
