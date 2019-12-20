@@ -24,6 +24,7 @@ import ExtraSearch from '../../pages/extra/search';
 import ExtraTimeline from '../../pages/extra/timeline';
 import ExtraGallery from '../../pages/extra/gallery';
 import Grid from '../../pages/grid';
+import ChatPage from '../../pages/chat';
 import Widgets from '../../pages/widgets';
 import Products from '../../pages/products';
 import Management from '../../pages/management';
@@ -186,6 +187,7 @@ class Layout extends React.Component {
                     <Route path="/app/ui/navbar" exact component={UINavbar} />
                     <Route path="/app/ui/nav" exact component={UINav} />
                     <Route path="/app/grid" exact component={Grid} />
+                    <Route path="/app/chat" exact component={ChatPage} />
                     <Route path="/app/package" exact component={Package} />
                     <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                     <Route path="/app/forms/elements" exact component={FormsElements} />

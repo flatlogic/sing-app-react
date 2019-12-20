@@ -1,0 +1,28 @@
+@import '../../../../styles/app';
+
+.searchBox {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: $chat-item-shadow;
+
+  .chatInput {
+    background-color: #F7F7F8;
+    &:focus {
+      background-color: #F7F7F8
+    }
+  }
+
+  :global {
+    .input-group-prepend {
+      background-color: #F7F7F8;
+      transition: background-color ease-in-out 0.15s;
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+    }
+  }
+}
