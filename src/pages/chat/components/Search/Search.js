@@ -9,7 +9,7 @@ import s from './Search.module.scss'
 
 const Search = (props) => {
   return (
-    <div className={s.searchBox}>
+    <div className={`${s.searchBox} chat-block-style bg-white`}>
       <InputGroup className={'input-group-no-border'}>
       <Input className={s.chatInput} placeholder="Search" />
       <InputGroupAddon addonType="prepend">

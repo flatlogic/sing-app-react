@@ -1,0 +1,6 @@
+{
+  "name": "InfoCard",
+  "version": "0.0.0",
+  "main": "./InfoCard.js",
+  "private": true
+}

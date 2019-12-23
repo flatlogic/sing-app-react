@@ -1,8 +1,100 @@
 @import '../../../../styles/app';
 
-.groupChats {
+.chatStyle {
   background: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: $chat-item-shadow;
+  padding: 42px;
+}
+
+.chatInput {
+  background-color: #F7F7F8;
+  border: 1px solid #E6E5EA;
+  &:focus {
+    background-color: #F7F7F8;
+    border: 1px solid #E6E5EA;
+  }
+}
+
+.justifySelfEnd {
+  justify-self: flex-end;
+}
+
+.dialogWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog {
+  flex-grow: 1;
+}
+
+.plusIcon {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #313947;
+}
+
+.sendButton {
+  font-size: 20px;
+}
+
+.dialogHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.incomingMessage {
+  .messageDate {
+    margin-left: 50px;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+  }
+  .incomingMessageWrapper {
+    span {
+      position: absolute;
+      left: 20px;
+    }
+    p {
+      padding: 5px;
+      margin-left: 50px;
+      border-radius: 5px;
+      margin-bottom: 0;
+      width: calc(100% - 50px);
+      display: inline-block;
+      color: $gray-800;
+      background: $gray-400;
+    }
+  }
+}
+
+.outcomingMessage {
+  .messageDate {
+    margin-right: 50px;
+    text-align: right;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    
+  }
+  .outcomingMessageWrapper {
+    span {
+      position: absolute;
+      right: 0px;
+    }
+    p {
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 0;
+      width: calc(100% - 50px);
+      display: inline-block;
+      color: #ffffff;
+      background: $chat-blue-color;
+    }
+  }  
 }

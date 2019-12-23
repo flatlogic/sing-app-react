@@ -1,8 +1,9 @@
 import React from 'react';
+import s from '../Chats.module.scss';
 
 const ChatItem = (props) => {
   return (
-    <div>Chat One</div>
+    <div className={`chat-block-style bg-white`}>Chat One</div>
   )
 }
 

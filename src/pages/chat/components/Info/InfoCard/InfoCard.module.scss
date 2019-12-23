@@ -1,0 +1,29 @@
+@import '../../../../../styles/app';
+
+.cardWrapper {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  h3 {
+    font-weight: bold;
+  }
+  h4 {
+    margin-top: 20px;
+  }
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  margin-top: 20px;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-left: 6px;
+    }
+  }
+}
