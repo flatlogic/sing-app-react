@@ -1,68 +1,81 @@
 import React, { Component } from 'react';
-import {
-  Collapse,
-} from 'reactstrap';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import doc from '../../../../../images/icons/doc.svg';
+import info from '../../../../../images/icons/info.svg';
+import link from '../../../../../images/icons/link.svg';
+import picture from '../../../../../images/icons/picture.svg';
+import notification from '../../../../../images/icons/notification.svg';
+import download from '../../../../../images/icons/download.svg';
+import s from './InfoBlock.module.scss';
+
 
 class InfoBlock extends Component {
+
   state = {
-    accordionFirst: [false, false, false, false],
-    accordionFirstContent: [{
-      title: '<i class="fa fa-file-text-o"></i> Collapsible Group Item', body: ` Get base styles and flexible support for collapsible components like accordions and navigation.
-        Using the collapse plugin, we built a simple accordion by extending the panel component.`,
-    }, {
-      title: 'Random from the Web', body: `
-      <p><span class="fw-semi-bold">Light Blue</span> - is a next generation admin template based
-      on the latest Metro design. There are few reasons we want to tell you, why we have created it:
-      We didn't like the darkness of most of admin templates, so we created this light one.
-      We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
-      We searched for a solution of how to make widgets look like real widgets, so we decided that
-      deep background - is what makes widgets look real.
-      </p>
-      <p class="no-margin text-muted"><em>- Some One</em></p>
-`,
-    }, {
-      title: 'Check It',
-      body: ' Why don\'t use Lore Ipsum? I think if some one says don\'t use lore ipsum it\'s very controversial point. I think the opposite actually.',
-    }, {
-      title: 'Check It',
-      body: ' Why don\'t use Lore Ipsum? I think if some one says don\'t use lore ipsum it\'s very controversial point. I think the opposite actually.',
-    }],
+    accordion: [
+      false,false,false,false
+    ],
   }
 
-  toggleAccordionFirst = (id) => {
-    const arr = [];
-    arr.length = this.state.accordionFirst.length;
-    arr.fill(false);
-    arr[id] = !this.state.accordionFirst[id];
+  updateKye = (e) => {
+    let updatedArray = [false,false,false,false];
+    updatedArray[e] = !this.state.accordion[e];
     this.setState({
-      accordionFirst: arr,
-    });
+      accordion: updatedArray
+    }, () => console.log(this.state));
   }
-
 
   render() {
     return (
-      <div className={`chat-block-style bg-white`}>
-      {this.state.accordionFirstContent.map((element, index) => (
-        <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
-          { /* eslint-disable */ }
-          <div
-            className="card-header panel-header bg-light" role="button"
-            onClick={() => { this.toggleAccordionFirst(index); }}
-          >
-            { /* eslint-enable */ }
-            <div className="mb-0">
-              {/* eslint-disable-next-line */}
-              <a className="accordion-toggle" role="button">
-                {element.title}
-                <i className={`fa fa-angle-down ${this.state.accordionFirst[index] ? 'expanded' : ''}`} />
-              </a>
-            </div>
+      <div className={`chat-block-style bg-white ${s.dynamicCard}`}>
+        <div className={s.notificationToggle}>
+           
+
+          <div className="toggle">
+            <input type="checkbox" id="temp" />
+            <label htmlFor="temp"><img src={notification} alt="" /> Notifications</label>
           </div>
-          <Collapse className="panel-body" isOpen={this.state.accordionFirst[index]}>
-            <div className="card-body" dangerouslySetInnerHTML={{ __html: element.body }} />
-          </Collapse>
-      </div>))}
+        </div>
+        <Accordion onSelect={this.updateKye}>
+          <Card>
+            <Accordion.Toggle eventKey="0" className={this.state.accordion[0] ? "active" : ""}>
+              <img src={info} alt="" /> Information
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+              +375 29 123 45 67
+              Mobile
+              @jarow
+              Username
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <Card>
+            <Accordion.Toggle eventKey="1" className={this.state.accordion[1] ? "active" : ""}>
+            <img src={picture} alt="" /> Images (154)
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>Hello! I'm another body</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <Card>
+            <Accordion.Toggle eventKey="2" className={this.state.accordion[2] ? "active" : ""}>
+            <img src={link} alt="" /> Links (28)
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="2">
+              <Card.Body>Hello! I'm another body</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <Card>
+            <Accordion.Toggle eventKey="3" className={this.state.accordion[3] ? "active" : ""}>
+            <img src={doc} alt="" /> Filex (3)
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="3">
+              <Card.Body>Hello! I'm another body</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       </div>
     )
   }  

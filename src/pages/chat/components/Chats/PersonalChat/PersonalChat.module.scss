@@ -1,1 +1,54 @@
 @import '../../../../../styles/app';
+
+.personalChats {
+  max-height: 370px;
+  overflow: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: .2em;
+  }
+  &::-webkit-scrollbar-track {
+    background: $body-bg;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($text-color, .3);
+  }
+}
+
+.chatItem {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 12px 0px;
+  margin: 0 -20px 0 0;
+  cursor: pointer;
+
+  &.active {
+    background: $info;
+    margin: 0 -20px;
+    padding-left: 20px;
+    color: #ffff;
+  }
+  .imgWrap {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .textContent {
+    margin-left: 9px;
+    h4 {
+      margin-bottom: 0;
+      font-size: 17px;
+    }
+    span {
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+  }
+}
+

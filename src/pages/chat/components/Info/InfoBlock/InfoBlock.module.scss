@@ -1,5 +1,94 @@
 @import '../../../../../styles/app';
 
-.chatStyle {
-
+.dynamicCard {
+  position: absolute;
+  width: calc(100% - 40px);
+  :global {
+    .accordion {
+      .card {
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        &:last-child {
+          border-bottom: none;
+        }
+        button {
+          text-align: left;
+          border: none;
+          font-size: 19px;
+          padding: 13px 0;
+          background: #fff;
+          &:focus {
+            outline: none;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            top: 23px;
+            right: 10px;
+            border: solid rgba(0, 0, 0, 0.125);
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(45deg);
+            transition: transform .25s ease;
+          }
+          &.active {
+            &::before {
+              transform: rotate(135deg);
+            }
+          }
+          img {
+            margin-right: 10px;
+            width: 20px;
+          }
+        }
+      }
+    }
+    .toggle{
+      input[type="checkbox"]{
+        display: none;
+      }
+      label{
+        color: #000000;
+        font-size: 19px;
+        width: 100%;
+        padding: 13px 0;
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      }
+      
+      input[type="checkbox"] + label::before{
+        content: ' ';
+        display: block;
+        height: 12px;
+        width: 35px;
+        border-radius: 9px;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background: $teal;
+      }
+      
+      input[type="checkbox"] + label::after{
+        content: ' ';
+        display: block;
+        height: 20px;
+        width: 20px; 
+        border-radius: 50%;
+        position: absolute;
+        top: 16px;
+        border: 1px solid #E6E5EA;
+        right: 20px;
+        background: #fff;
+        transition: all 0.3s ease-in;
+      }
+      
+      input[type="checkbox"]:checked + label::after{
+        right: -5px; 
+        transition: all 0.3s ease-in;
+      }
+    }  
+  }
 }

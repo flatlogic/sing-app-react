@@ -28,6 +28,17 @@
 
 .dialog {
   flex-grow: 1;
+  max-height: 60vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: .2em;
+  }
+  &::-webkit-scrollbar-track {
+    background: $body-bg;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($text-color, .3);
+  }
 }
 
 .plusIcon {
@@ -46,6 +57,18 @@
 .dialogHeading {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
+
+  h4 {
+    margin-bottom: 0;
+  }
+  span {
+    font-size: 13px;
+  }
+
+  i {
+    font-size: 18px;
+  }
 }
 
 .incomingMessage {
@@ -56,19 +79,20 @@
     margin-top: 5px;
   }
   .incomingMessageWrapper {
+    position: relative;
     span {
       position: absolute;
-      left: 20px;
+      left: 5px;
     }
     p {
-      padding: 5px;
+      padding: 12px;
       margin-left: 50px;
       border-radius: 5px;
-      margin-bottom: 0;
-      width: calc(100% - 50px);
+      margin-bottom: 10px;
+      max-width: 70%;
       display: inline-block;
       color: $gray-800;
-      background: $gray-400;
+      background: #ebebeb;
     }
   }
 }
@@ -79,22 +103,35 @@
     text-align: right;
     font-size: 12px;
     display: block;
-    margin-top: 5px;
+    margin-top: -3px;
     
   }
   .outcomingMessageWrapper {
+    position: relative;
+    text-align: right;
     span {
       position: absolute;
-      right: 0px;
+      right: 5px;
     }
     p {
-      padding: 5px;
+      padding: 12px;
       border-radius: 5px;
-      margin-bottom: 0;
-      width: calc(100% - 50px);
+      margin-bottom: 10px;
+      max-width: 70%;
       display: inline-block;
+      text-align: left;
       color: #ffffff;
+      margin-right: 50px;
       background: $chat-blue-color;
     }
   }  
+}
+
+.incomingMessage, .outcomingMessage {
+  margin: 0 8px 35px 2px;
+}
+
+.timePoint {
+  text-align: center;
+  margin-bottom: 35px;
 }

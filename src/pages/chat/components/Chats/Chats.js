@@ -4,6 +4,7 @@ import {
   Input,
 } from 'reactstrap';
 import img1 from '../../../../images/people/a1.jpg';
+import img2 from '../../../../images/people/a2.jpg';
 
 import s from './Chats.module.scss';
 
@@ -26,15 +27,45 @@ class Chats extends Component {
               </span>
               <p className={s.messageText}> 45 BC, making it over 2000 years old.</p>
             </div>
+            <div className={s.incomingMessageWrapper}>
+              <p className={s.messageTextOnly}>What are you doing tonight ? Want to go take a drink ?</p>
+            </div>
+            <span className={s.messageDate}>6:28 PM</span>
+          </div>
+          <div className={s.timePoint}>Yesterday</div>
+          <div className={s.outcomingMessage}>
+            <div className={s.outcomingMessageWrapper}>
+              <p className={s.messageText}>Contrary atin literature from 45 BC, making it over 2000 years old.</p>
+              <span className="thumb-sm ml">
+                <img className="rounded-circle" src={img2} alt="..." />
+              </span>
+            </div>
+            <div className={s.outcomingMessageWrapper}>
+              <p className={s.messageTextOnly}>What are you doing tonight ? Want to go take a drink ?</p>
+            </div>
+            <span className={s.messageDate}>6:28 PM</span>
+          </div>
+          <div className={s.incomingMessage}>
+            <div className={s.incomingMessageWrapper}>
+              <span className="thumb-sm mr">
+                <img className="rounded-circle" src={img1} alt="..." />
+              </span>
+              <p className={s.messageText}> 45 BC, making it over 2000 years old.</p>
+            </div>
+            <div className={s.incomingMessageWrapper}>
+              <p className={s.messageTextOnly}>What are you doing tonight ? Want to go take a drink ?</p>
+            </div>
             <span className={s.messageDate}>6:28 PM</span>
           </div>
           <div className={s.outcomingMessage}>
             <div className={s.outcomingMessageWrapper}>
               <p className={s.messageText}>Contrary atin literature from 45 BC, making it over 2000 years old.</p>
-              <p className={s.messageText}>Contrary to popular belief</p>
               <span className="thumb-sm ml">
-                <img className="rounded-circle" src={img1} alt="..." />
+                <img className="rounded-circle" src={img2} alt="..." />
               </span>
+            </div>
+            <div className={s.outcomingMessageWrapper}>
+              <p className={s.messageTextOnly}>What are you doing tonight ? Want to go take a drink ?</p>
             </div>
             <span className={s.messageDate}>6:28 PM</span>
           </div>
