@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import img1 from '../../../../../images/people/a1.jpg';
-import img2 from '../../../../../images/people/a2.jpg';
 import s from './PersonalChat.module.scss';
 
 class ChatItem extends Component {
@@ -25,7 +24,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -35,7 +34,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -45,7 +44,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -55,7 +54,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -65,7 +64,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -75,7 +74,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -85,7 +84,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
         <div className={s.chatItem}>
           <div className={s.imgWrap}>
@@ -95,7 +94,7 @@ class ChatItem extends Component {
             <h4>Rody Sam Fisher</h4>
             <span>If it takes ling you can mail m...</span>          
           </div>
-          <div className={s.date}>9 Dec</div>
+          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
         </div>
       </div>
     )    

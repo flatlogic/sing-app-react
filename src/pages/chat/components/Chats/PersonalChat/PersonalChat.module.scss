@@ -1,17 +1,30 @@
 @import '../../../../../styles/app';
 
 .personalChats {
-  max-height: 370px;
+  max-height: 300px;
   overflow: hidden;
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: .2em;
+    width: .4em;  /* Total width including `border-width` of scrollbar thumb */
+    height: 0;
   }
-  &::-webkit-scrollbar-track {
-    background: $body-bg;
-  }
+  
   &::-webkit-scrollbar-thumb {
-    background-color: rgba($text-color, .3);
+    height: 1em;
+    border: .1em solid rgba(0, 0, 0, 0);  /* Transparent border together with `background-clip: padding-box` does the trick */
+    background-clip: padding-box;
+    -webkit-border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+  }
+  
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  &::-webkit-scrollbar-corner {
+      background-color: transparent;
   }
 }
 
@@ -31,15 +44,19 @@
   .imgWrap {
     overflow: hidden;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     img {
       width: 100%;
     }
   }
-
+  .date {
+    margin-right: 12px;
+    font-size: 12px;
+  }
   .textContent {
     margin-left: 9px;
+    flex-grow: 1;
     h4 {
       margin-bottom: 0;
       font-size: 17px;

@@ -6,9 +6,13 @@
   :global {
     .accordion {
       .card {
+        .card-body {
+          padding-top: .35em;
+        }
         border-left: none;
         border-top: none;
         border-right: none;
+        box-shadow: none;
         &:last-child {
           border-bottom: none;
         }
@@ -90,5 +94,40 @@
         transition: all 0.3s ease-in;
       }
     }  
+  }
+  .linksBody {
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .personalInformation {
+    padding: 0;
+    margin: 0;
+    li:nth-child(odd) {
+      color: #313947;
+      font-size: 17px;
+    }
+    li:nth-child(even) {
+      color: rgba(#313947,.5);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    li:nth-child(3n+2) {
+      margin-bottom: 20px;
+    }
+  }
+  .listWithImages {
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      .imgText {
+        margin-left: 15px;
+      }
+    }
   }
 }

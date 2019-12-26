@@ -1,1 +1,105 @@
 @import '../../../../../styles/app';
+
+.groupChats {
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  
+  &::-webkit-scrollbar {
+    width: .4em;  /* Total width including `border-width` of scrollbar thumb */
+    height: 0;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    height: 1em;
+    border: .1em solid rgba(0, 0, 0, 0);  /* Transparent border together with `background-clip: padding-box` does the trick */
+    background-clip: padding-box;
+    -webkit-border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+  }
+  
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  &::-webkit-scrollbar-corner {
+      background-color: transparent;
+  }
+}
+
+.chatItem {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 20px 0px;
+  margin: 0 -20px 0 0;
+  cursor: pointer;
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.active {
+    background: $info;
+    margin: 0 -20px;
+    padding-left: 20px;
+    color: #ffff;
+  }
+  .imgWrap {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    img {
+      width: 100%;
+    }
+  }   
+  .sharedDialog {
+    position: relative;
+    top: -15px;
+    .imgWrap {
+      border: 3px solid #fff;
+      &:nth-child(1) {
+        position: absolute;
+        top: 19px;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        top: 38px;
+      }
+    }
+  }
+
+
+  .date {
+    margin-right: 12px;
+    font-size: 12px;
+  }
+
+  .textContent {
+    margin-left: 9px;
+    flex-grow: 1;
+    h4 {
+      margin-bottom: 0;
+      font-size: 17px;
+      i:first-child {
+        font-size: 13px;
+        color: #838891;
+        position: relative;
+        top: -1px;
+        margin-right: 3px;
+      }
+      i:last-child {
+        font-size: 12px;
+        color: #CDCFD3;
+        margin-left: 5px;
+      }
+    }
+    span {
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+  }
+}
+
