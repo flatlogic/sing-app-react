@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setActiveUser } from '../../../../../actions/chat';
 import img1 from '../../../../../images/people/a1.jpg';
 import s from './PersonalChat.module.scss';
 
@@ -9,6 +11,7 @@ class ChatItem extends Component {
   }
 
   changeState = () => {
+    this.props.dispatch(setActiveUser())
     this.setState({ active: true })
   }
 
@@ -102,4 +105,4 @@ class ChatItem extends Component {
 
 }
 
-export default ChatItem;
+export default connect()(ChatItem);

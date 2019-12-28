@@ -6,6 +6,7 @@ import layout from './layout';
 import products from './products';
 import register from './register';
 import analytics from './analytics';
+import chat from './chat';
 
 export default combineReducers({
   alerts,
@@ -15,4 +16,5 @@ export default combineReducers({
   products,
   register,
   analytics,
+  chat
 });
