@@ -32,8 +32,8 @@
 .chatItem {
   display: flex;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 20px 0px;
-  margin: 0 -20px 0 0;
+  padding: 20px 0px 20px 20px;
+  margin: 0 0px 0 0;
   cursor: pointer;
   &:last-child {
     border-bottom: none;
@@ -41,7 +41,7 @@
 
   &.active {
     background: $info;
-    margin: 0 -20px;
+    margin: 0 0px;
     padding-left: 20px;
     color: #ffff;
   }

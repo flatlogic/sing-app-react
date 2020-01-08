@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
-import Search from './components/Search';
-import Chats from './components/Chats';
-import InfoCard from './components/Info/InfoCard';
-import InfoBlock from './components/Info/InfoBlock';
-import GroupChat from './components/Chats/GroupChat';
-import PersonalChat from './components/Chats/PersonalChat';
-import { Row, Col } from 'reactstrap';
+import ChatDialog from './components/Chats';
+import Info from './components/Info/';
+import ChatList from './components/Chats/ChatColumn';
+import { connect } from 'react-redux';
 import s from './Chat.module.scss';
 
 class Chat extends Component {
   render() {
+    const { user, users, groups } = this.props
     return (
-      <div className={s.root}>
-        <Row className="h-100">
-          <Col lg={3}>
-            <Search />
-            <GroupChat />
-            <PersonalChat />
-          </Col>
-          <Col lg={6}>
-            <Chats />
-          </Col>
-          <Col lg={3}>
-            <InfoCard />
-            <InfoBlock />
-          </Col>
-        </Row>
+      <div className={s.chatPage}>
+        <ChatList user={user} users={users} groups={groups} />
+        <ChatDialog />
+        <Info />
       </div>
     )
   }
 }
 
-export default Chat;
+function mapStateToProps(state) {
+  return {
+    users: state.chat.users,
+    user: state.chat.user,
+    groups: state.chat.groups,
+  }
+}
+
+export default connect(mapStateToProps)(Chat);

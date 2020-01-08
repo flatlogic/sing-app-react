@@ -1,14 +1,14 @@
 import moment from 'moment';
 
-import p1 from '../../images/chat/1.png';
-import p2 from '../../images/chat/2.png';
-import p3 from '../../images/chat/3.png';
-import p4 from '../../images/chat/4.png';
-import p5 from '../../images/chat/5.png';
-import p6 from '../../images/chat/6.png';
-import p7 from '../../images/chat/7.png';
-import p8 from '../../images/chat/8.png';
-import p9 from '../../images/chat/9.png';
+import p1 from '../../images/chat/chat1.png';
+import p2 from '../../images/chat/chat2.png';
+import p3 from '../../images/chat/chat3.png';
+import p4 from '../../images/chat/chat4.png';
+import p5 from '../../images/chat/chat5.png';
+import p6 from '../../images/chat/chat6.png';
+import p7 from '../../images/chat/chat7.png';
+import p8 from '../../images/chat/chat8.png';
+import p9 from '../../images/chat/chat9.png';
 
 const positions = ['Operations manager', 'Accountant', 'Office manager', 'Marketing manager',
   'CEO & Founder', 'Web Developer'];
@@ -137,6 +137,19 @@ export const user = {
     {
       id: 4,
       withId: 5,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 5,
+      withId: 6,
       ...dialogCommonData,
       messages: [
         {

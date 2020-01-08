@@ -1,8 +1,6 @@
 @import '../../../../../styles/app';
 
 .dynamicCard {
-  position: absolute;
-  width: calc(100% - 40px);
   :global {
     .accordion {
       .card {
@@ -20,7 +18,7 @@
           text-align: left;
           border: none;
           font-size: 19px;
-          padding: 13px 0;
+          padding: 13px 1.25rem;
           background: #fff;
           &:focus {
             outline: none;
@@ -57,7 +55,7 @@
         color: #000000;
         font-size: 19px;
         width: 100%;
-        padding: 13px 0;
+        padding: 13px 1.25rem;
         margin: 0;
         position: relative;
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -71,7 +69,7 @@
         border-radius: 9px;
         position: absolute;
         top: 20px;
-        right: 0;
+        right: 10px;
         background: $teal;
       }
       
@@ -84,13 +82,13 @@
         position: absolute;
         top: 16px;
         border: 1px solid #E6E5EA;
-        right: 20px;
+        right: 25px;
         background: #fff;
         transition: all 0.3s ease-in;
       }
       
       input[type="checkbox"]:checked + label::after{
-        right: -5px; 
+        right: 5px; 
         transition: all 0.3s ease-in;
       }
     }  

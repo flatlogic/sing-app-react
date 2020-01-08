@@ -23,12 +23,16 @@ class BreadcrumbHistory extends Component {
   
   render() {
     return (
-      <div>
-        <Breadcrumb tag="nav" listTag="div">
-          <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
-          {this.renderBreadCrumbs()}
-        </Breadcrumb>
-      </div>
+      <>
+        { this.props.url !== '/app/chat' ?
+          <div>
+            <Breadcrumb tag="nav" listTag="div">
+              <BreadcrumbItem>YOU ARE HERE</BreadcrumbItem>
+              {this.renderBreadCrumbs()}
+            </Breadcrumb>
+          </div>
+        :null}
+      </>
     )
   };
 };

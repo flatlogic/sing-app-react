@@ -1,7 +1,11 @@
 @import '../../../../styles/app';
 
 .searchBox {
-
+  box-shadow: var(--widget-shadow);
+  border-radius: 0.3rem;
+  background: #fff;
+  padding: 21px;
+  margin-bottom: 1rem;
   .chatInput {
     background-color: #F7F7F8;
     &:focus {

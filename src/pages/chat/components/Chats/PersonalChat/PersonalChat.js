@@ -1,108 +1,45 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setActiveUser } from '../../../../../actions/chat';
+import ChatListItem from './ChatListItem';
 import img1 from '../../../../../images/people/a1.jpg';
 import s from './PersonalChat.module.scss';
 
 class ChatItem extends Component {
 
   state = {
-    active: false
+    usersArray: []
   }
 
-  changeState = () => {
-    this.props.dispatch(setActiveUser())
-    this.setState({ active: true })
+  personalChats = () => {
+    let usersArray = [];
+    return [...this.props.users].map(chat => {
+      chat.dialog = this.props.user.dialogs.find(d => d.withId === chat.id);
+      chat.title = chat.name + " " + chat.surname;
+      usersArray.push(chat)
+      this.setState({ usersArray })
+    });
+  }
+
+  componentDidMount() {
+    this.personalChats();
   }
 
   render() {
     return (
-      <div className={`chat-block-style bg-white ${s.personalChats}`} >
-        <h3>Chat Personal</h3>
-        <div className={`${s.chatItem} ${this.state.active ? s.active : ''}`} onClick={this.changeState}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-        <div className={s.chatItem}>
-          <div className={s.imgWrap}>
-            <img src={img1} alt="alt"/>
-          </div>
-          <div className={s.textContent}>
-            <h4>Rody Sam Fisher</h4>
-            <span>If it takes ling you can mail m...</span>          
-          </div>
-          <div className={`${s.date} d-flex align-items-center flex-column`}>9 Dec</div>
-        </div>
-      </div>
+      <div>
+      <section className={`chat-section ${s.personalChats}`}>
+        <h5>Personal Chats</h5>
+        <ul className={`${s.chatList}`}>
+          {this.state.usersArray.map((chatUser, i) => (
+            <ChatListItem
+              key={chatUser.id}
+              user={chatUser} />
+          ))}
+        </ul>
+      </section>
+    </div>
     )    
   }
 
 }
 
-export default connect()(ChatItem);
+export default ChatItem;

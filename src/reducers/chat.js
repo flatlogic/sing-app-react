@@ -16,14 +16,22 @@ const defaultState = {
 export default function chatReducer(state = defaultState, action) {
   switch (action.type) {
     case SET_ACTIVE_USER:
-      console.log('set active user')
-      return state
+      return {
+        ...state, 
+        activeChatUser: users.find(u => u.id === action.payload)
+      }
     case NEW_MESSAGE_SUCCESS:
-      console.log('new message success')
-      return state
+      let dialog = user.dialogs.find(d => d.id === action.payload.dialogId);
+      dialog.messages.push(action.payload.message);
+      return {
+        ...state,
+        sendingMessage: false
+      }
     case NEW_MESSAGE_REQUEST:
-      console.log('message request')
-      return state
+      return {
+        ...state,
+        sendingMessage: true
+      }
     default:
       return state;
   }

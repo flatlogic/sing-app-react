@@ -30,7 +30,7 @@ class InfoBlock extends Component {
 
   render() {
     return (
-      <div className={`chat-block-style bg-white ${s.dynamicCard}`}>
+      <div className={`chat-section bg-white ${s.dynamicCard}`}>
         <div className={s.notificationToggle}>
            
 

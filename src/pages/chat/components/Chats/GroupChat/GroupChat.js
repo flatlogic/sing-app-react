@@ -14,8 +14,8 @@ class ChatItem extends Component {
 
   render() {
     return (
-      <div className={`chat-block-style bg-white ${s.groupChats}`} >
-        <h3>Chat Group</h3>
+      <div className={`chat-block-style bg-white mb-4 ${s.groupChats}`} >
+        <h5>Personal Chats</h5>
         <div className={`${s.chatItem} ${this.state.active ? s.active : ''}`} onClick={this.changeState}>
           <div className={s.sharedDialog}>
           <div className={s.imgWrap}>

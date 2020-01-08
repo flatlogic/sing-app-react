@@ -1,36 +1,47 @@
 import React from 'react';
-import img1 from '../../../../../images/people/a1.jpg';
-import fb from '../../../../../images/icons/fb.svg';
-import linkedin from '../../../../../images/icons/linkedin.svg';
-import twitter from '../../../../../images/icons/twitter.svg';
+import Avatar from '../../Avatar';
+import { connect } from 'react-redux';
 
 import s from './InfoCard.module.scss';
 
-const InfoCard = () => {
+const InfoCard = (props) => {
+  const { activeChatUser } = props;
   return (
-    <div className={`chat-block-style bg-info`}>
-      <div className={s.cardWrapper}>
-        <div className={s.cardInfo}>
-          <h3>Jane Rowlis</h3>
-          <h4>HighPark Inc</h4>
-          <h5>CEO & Founder</h5>
+    <div>
+      <section className={`${s.chatInfoHeader} chat-section bg-info`}>
+        <div className="d-flex mb-3 justify-content-between">
+          <header>
+            <h3 className="mb-3 fw-semi-bold">{activeChatUser.name} {activeChatUser.surname}</h3>
+            <h5>{activeChatUser.company}</h5>
+            <h6>{activeChatUser.position}</h6>
+          </header>
+          <Avatar className="ml-auto mr-3" user={activeChatUser} size="70" showStatus={false}/>
         </div>
-        <div className={`${s.cardImage}`}>
-          <span className="thumb-lg mr">
-            <img className="rounded-circle" src={img1} alt="..." />
-          </span>
-        </div>
-      </div>
-      <div className={`${s.cardFooter}`}>
-        <span className={s.email}>J_Rowlis@gmail.com</span>
-        <ul>
-          <li><img src={fb} alt="fb"/></li>
-          <li><img src={linkedin} alt="linkedin"/></li>
-          <li><img src={twitter} alt="twitter"/></li>
-        </ul>
-      </div>
-    </div>
+      <footer className="d-flex align-items-center justify-content-between">
+        <a href={'mailto:' + activeChatUser.email} className="text-white mt-2">{activeChatUser.email}</a>
+        {activeChatUser.social ? (
+          <ul className={`${s.socialLinks} mt-2`}>
+            <li className={`${s.socialLink}`}>
+              <a href={activeChatUser.social.facebook}><i className="fa fa-facebook"></i></a>
+            </li>
+            <li className={`${s.socialLink}`}>
+              <a href={activeChatUser.social.twitter}><i className="fa fa-twitter"></i></a>
+            </li>
+            <li className={`${s.socialLink}`}>
+              <a href={activeChatUser.social.linkedin}><i className="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        ):null}
+      </footer>
+    </section>
+  </div>
   )
 }
 
-export default InfoCard;
+function mapStateToProps(state) {
+  return {
+    activeChatUser: state.chat.activeChatUser,
+  }
+}
+
+export default connect(mapStateToProps)(InfoCard);

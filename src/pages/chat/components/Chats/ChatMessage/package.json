@@ -1,0 +1,6 @@
+{
+  "name": "ChatMessage",
+  "version": "0.0.0",
+  "main": "./ChatMessage.js",
+  "private": true
+}
