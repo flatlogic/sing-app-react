@@ -72,9 +72,9 @@
 
 /* Chat Scrollbar */
 
-@mixin chat-scrollbar($color) {
+@mixin chat-scrollbar($color, $width) {
   &::-webkit-scrollbar {
-    width: 3px;
+    width: $width;
     background: transparent;
   }
 

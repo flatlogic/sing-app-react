@@ -21,11 +21,11 @@ class ChatListItem extends Component {
   }
 
   render() {
-    const { chat, activeChatGroup } = this.props;
+    const { chat, activeChatId } = this.props;q
     return (
       <li 
         onClick={this.changeChat}
-        className={`${s.chatListItem} ${activeChatGroup.id === chat.id ? s.active : ''}`}>
+        className={`${s.chatListItem} ${activeChatId.id === chat.id ? s.active : ''}`}>
         <div className={`${s.chatListItemWrapper}`}>
         <Avatar user={chat} group size="45" showStatus={true}></Avatar>
         <section className={`${s.chatItemMain} ml-3`}>
@@ -54,7 +54,7 @@ class ChatListItem extends Component {
 
 function mapStateToProps (state) {
   return {
-    activeChatGroup: state.chat.activeChatGroup
+    activeChatId: state.chat.activeChatId
   }
 }
 

@@ -22,19 +22,23 @@ class Chats extends PureComponent {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  dialog = () => {
-    return this.props.user.dialogs.find(d => d.withId === this.props.activeChatUser.id);
+  chat = () => {
+    return this.props.chats.find(chat => chat.id === this.props.activeChatId);
+  }
+
+  title = () => {
+    return this.chat().isGroup ? this.chat().name : `${this.interlocutor().name} ${this.interlocutor().surname}`
   }
 
   dialogParts = () => {
-    let firstMessage = this.dialog().messages[0];
+    let firstMessage = this.chat().messages[0];
     let dialogParts = [[this.shortCalendarDate(firstMessage.timestamp)],[firstMessage]];
-    let messagesLength = this.dialog().messages.length;
+    let messagesLength = this.chat().messages.length;
 
     for (let i = 1; i < messagesLength; i++) {
       let lastDialogPart = dialogParts[dialogParts.length - 1];
       let prevMessage = lastDialogPart[lastDialogPart.length - 1];
-      let message = this.dialog().messages[i];
+      let message = this.chat().messages[i];
       let messageDate = moment(message.timestamp).format('YYYY MM dd');
       let prevMessageDate = moment(prevMessage.timestamp).format('YYYY MM dd');
       if (messageDate === prevMessageDate) {
@@ -48,11 +52,28 @@ class Chats extends PureComponent {
   }
 
   wasOnline = () => {
-    let calendarDate = moment(this.props.activeChatUser.prevOnline).calendar();
+    let calendarDate = moment(this.interlocutor().prevOnline).calendar();
     let firstLetter = calendarDate[0].toLowerCase();
     let substring = calendarDate.substr(1);
 
     return firstLetter + substring;
+  }
+
+  interlocutor = () => {
+    if(this.chat().isGroup) {
+      return
+    }
+
+    return this.findInterlocutor(this.chat());
+  }
+
+  findInterlocutor = (chat) => {
+    let id = chat.users.find(uid => uid !== this.props.user.id);
+    return this.findUser(id);
+  }
+
+  findUser = (id) => {
+    return this.props.users.find(u => u.id === id);
   }
 
   shortCalendarDate = (date) => {
@@ -71,24 +92,26 @@ class Chats extends PureComponent {
   }
 
   showAvatar = (dialogPart, message, index) => {
-    return index === 0 || dialogPart[index - 1].owner !== message.owner;
+    return index === 0 || dialogPart[index - 1].userId !== message.userId;
   }
 
   newMessage = () => {
     this.setState({ newMessage: '' })
-    this.props.dispatch(newMessageRequest({dialogId: this.dialog().id, message: this.state.newMessage}))
+    this.props.dispatch(newMessageRequest({dialogId: this.chat().id, message: this.state.newMessage}))
   }
   
   render() {
 
-    const { activeChatUser, sendingMessage, user } = this.props;
+    const { sendingMessage, user } = this.props;
     
     return (
     <div className={`d-flex flex-column ${s.chatDialogSection}`}>
       <header className={s.chatDialogHeader}>
         <div>
-          <h5 className="fw-normal mb-0">{activeChatUser.name} {activeChatUser.surname}</h5>
-          <small className="text-muted ">{activeChatUser.isOnline ? 'Online' : 'Was online ' + this.wasOnline()}</small>
+          <h5 className="fw-normal mb-0">{this.title()}</h5>
+          {this.chat().isGroup ?
+            <small className="text-muted ">{this.interlocutor().isOnline ? 'Online' : 'Was online ' + this.wasOnline()}</small>
+          :null}
         </div>
         <i className={`${s.infoIcon} la la-ellipsis-v`}></i>
       </header>
@@ -103,7 +126,7 @@ class Chats extends PureComponent {
               <div key={uuid()} className={s.dialogMessage}>
                 {part.map((message, j) => 
                   <ChatMessage 
-                    user={message.owner ? user : activeChatUser}
+                    user={message.userId === user.id ? user : this.findUser(message.userId)}
                     size={40}
                     showStatus={false}
                     key={message.id}
@@ -131,10 +154,11 @@ class Chats extends PureComponent {
 
 function mapStateToProps(state) {
   return {
-    activeChatUser: state.chat.activeChatUser,
+    chats: state.chat.chats,
     user: state.chat.user,
+    users: state.chat.users,
     sendingMessage: state.chat.sendingMessage,
-    activeChatGroup: state.chat.activeChatGroup,
+    activeChatId: state.chat.activeChatId,
   }
 }
 

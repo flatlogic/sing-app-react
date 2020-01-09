@@ -21,7 +21,7 @@ export function newMessageRequest(payload) {
         id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
         text: payload.message,
         timestamp: moment(),
-        owner: true
+        userId: 1
       };
       dispatch(newMessageSuccess({dialogId: payload.dialogId, message}))
     }, 1000)

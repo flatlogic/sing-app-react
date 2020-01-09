@@ -20,7 +20,7 @@
 .chatDialogBody {
   flex: 1;
   overflow: auto;
-  @include chat-scrollbar(rgba($text-muted, 0.3));
+  @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
 
   .dialogDivider {
     text-align: center;

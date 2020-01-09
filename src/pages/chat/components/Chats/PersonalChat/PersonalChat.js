@@ -25,7 +25,7 @@ class ChatItem extends Component {
   render() {
     return (
       <>
-      <section className={`chat-section ${s.personalChats}`}>
+      <section className={`chat-section ${s.chatsSectionWrap}`}>
         <h5>Personal Chats</h5>
         <ul className={`${s.chatList}`}>
           {this.state.usersArray.map((chatUser, i) => (

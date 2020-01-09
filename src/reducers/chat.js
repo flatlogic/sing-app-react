@@ -4,27 +4,26 @@ import {
   NEW_MESSAGE_REQUEST,
   SET_ACTIVE_CHAT
 } from '../actions/chat';
-import {user, groups, users, chats} from '../pages/chat/mock';
+import {user, users, chats} from '../pages/chat/mock';
 
 const defaultState = {
   user,
-  groups,
   users,
-  activeChatUser: users[0],
-  activeChatGroup: groups[0],
+  chats,
+  activeChatId: chats[3].id,
   sendingMessage: false,
 };
 
 export default function chatReducer(state = defaultState, action) {
   switch (action.type) {
-    case SET_ACTIVE_USER:
+    case SET_ACTIVE_CHAT:
       return {
         ...state, 
-        activeChatUser: users.find(u => u.id === action.payload)
+        activeChatId : chats.find(chat => chat.id === action.payload).id
       }
     case NEW_MESSAGE_SUCCESS:
-      let dialog = user.dialogs.find(d => d.id === action.payload.dialogId);
-      dialog.messages.push(action.payload.message);
+      let chat = chats.find(chat => chat.id === state.activeChatId);
+      chat.messages.push(action.payload.message);
       return {
         ...state,
         sendingMessage: false
@@ -33,11 +32,6 @@ export default function chatReducer(state = defaultState, action) {
       return {
         ...state,
         sendingMessage: true
-      }
-    case SET_ACTIVE_CHAT:
-      return {
-        ...state, 
-        activeChatGroup: groups.find(g => g.id === action.payload)
       }
     default:
       return state;
