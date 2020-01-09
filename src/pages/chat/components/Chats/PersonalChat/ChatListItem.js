@@ -8,12 +8,12 @@ import s from './PersonalChat.module.scss';
 class ChatListItem extends Component {
 
   lastMessage = () => {
-    let messagesLength = this.props.user.dialog?.messages?.length;
-    return this.props.user.dialog?.messages?.[messagesLength - 1] || {};
+    let messagesLength = this.props.user.dialog.messages.length;
+    return this.props.user.dialog.messages[messagesLength - 1] || {};
   }
 
   time = () => {
-    return moment(this.lastMessage?.timestamp).format('d MMM') || "";
+    return moment(this.lastMessage.timestamp).format('d MMM') || "";
   }
 
   changeChat = () => {

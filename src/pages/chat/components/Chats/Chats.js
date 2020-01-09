@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Button,
   Input,
@@ -9,12 +9,10 @@ import moment from 'moment';
 import Loader from '../../../../components/Loader';
 import ChatMessage from './ChatMessage'
 import { newMessageRequest } from '../../../../actions/chat';
-import img1 from '../../../../images/people/a1.jpg';
-import img2 from '../../../../images/people/a2.jpg';
 
 import s from './Chats.module.scss';
 
-class Chats extends Component {
+class Chats extends PureComponent {
 
   state = {
     newMessage: ''
@@ -75,12 +73,16 @@ class Chats extends Component {
   showAvatar = (dialogPart, message, index) => {
     return index === 0 || dialogPart[index - 1].owner !== message.owner;
   }
+
+  newMessage = () => {
+    this.setState({ newMessage: '' })
+    this.props.dispatch(newMessageRequest({dialogId: this.dialog().id, message: this.state.newMessage}))
+  }
   
   render() {
 
     const { activeChatUser, sendingMessage, user } = this.props;
-    const { newMessage } = this.state;
-
+    
     return (
     <div className={`d-flex flex-column ${s.chatDialogSection}`}>
       <header className={s.chatDialogHeader}>
@@ -102,6 +104,8 @@ class Chats extends Component {
                 {part.map((message, j) => 
                   <ChatMessage 
                     user={message.owner ? user : activeChatUser}
+                    size={40}
+                    showStatus={false}
                     key={message.id}
                     message={message}
                     showAvatar={this.showAvatar(part,message,j)}
@@ -112,13 +116,13 @@ class Chats extends Component {
           }
         })}
       </div>
-      <form className={`chat-section ${s.newMessage} mb-0`}>
+      <div className={`chat-section ${s.newMessage} mb-0`}>
         <Button className={s.attachment} outline><i className="la la-plus"></i></Button>
-        <Input onChange={this.handleChange} name="newMessage" placeholder="Type Your Message"></Input>
-        <Button color="danger" className={`px-4 ${s.newMessageBtn}`} type="submit">
+        <Input onChange={this.handleChange} value={this.state.newMessage} name="newMessage" placeholder="Type Your Message"></Input>
+        <Button color="danger" className={`px-4 ${s.newMessageBtn}`} onClick={this.newMessage}>
           {sendingMessage ? <Loader /> : <span>Send</span>}
         </Button>
-      </form>
+      </div>
     </div>    
 
     )
@@ -130,6 +134,7 @@ function mapStateToProps(state) {
     activeChatUser: state.chat.activeChatUser,
     user: state.chat.user,
     sendingMessage: state.chat.sendingMessage,
+    activeChatGroup: state.chat.activeChatGroup,
   }
 }
 

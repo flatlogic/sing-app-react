@@ -37,3 +37,28 @@
     border: 1px solid $white;
   }
 }
+
+.imgWrap {
+  overflow: hidden;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  img {
+    width: 100%;
+  }
+}   
+.sharedDialog {
+  position: relative;
+  top: -18px;
+  .imgWrap {
+    border: 3px solid #fff;
+    &:nth-child(1) {
+      position: absolute;
+      top: 19px;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      top: 38px;
+    }
+  }
+}

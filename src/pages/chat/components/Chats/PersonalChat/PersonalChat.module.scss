@@ -21,9 +21,9 @@
 }
 
 .personalChats {
-  height: 300px;
+  flex: 1;
   overflow: auto;
-
+  margin-bottom: 0!important;
   @include chat-scrollbar(rgba($text-muted, 0.15));
 }
 

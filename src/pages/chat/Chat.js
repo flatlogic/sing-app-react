@@ -7,10 +7,10 @@ import s from './Chat.module.scss';
 
 class Chat extends Component {
   render() {
-    const { user, users, groups } = this.props
+    const { user, users, groups, chats } = this.props
     return (
       <div className={s.chatPage}>
-        <ChatList user={user} users={users} groups={groups} />
+        <ChatList user={user} users={users} groups={groups} chats={chats} />
         <ChatDialog />
         <Info />
       </div>
@@ -23,6 +23,7 @@ function mapStateToProps(state) {
     users: state.chat.users,
     user: state.chat.user,
     groups: state.chat.groups,
+    chats: state.chat.chats
   }
 }
 

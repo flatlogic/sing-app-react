@@ -10,11 +10,11 @@ class ChatMessage extends Component {
   }
 
   render() {
-    const { user, size, showStatus, message, messageDate, showAvatar } = this.props;
+    const { user, size, showStatus, message, showAvatar } = this.props;
     return (
       <div className={`${s.chatMessage} ${message.owner ? s.owner : ''}`}>
         {showAvatar 
-          ? <div className={`${s.avatar} ${s.messageAvatar}`}><Avatar user={user} size="40" showStatus={false}/></div>
+          ? <div className={`${s.avatar} ${s.messageAvatar}`}><Avatar user={user} size={size} showStatus={showStatus}/></div>
           :null}
       
       <p className={s.messageBody}>

@@ -48,3 +48,15 @@
     }
   }
 }
+
+@media(max-width: 1500px) {
+  .chatDialogSection {
+    min-width: 45%;
+  }
+}
+
+@media(max-width: 1300px) {
+  .chatDialogSection {
+    min-width: 50%;
+  }
+}

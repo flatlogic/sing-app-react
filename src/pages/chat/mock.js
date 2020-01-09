@@ -62,6 +62,164 @@ const userCommonData = (username) => {
   }
 };
 
+export const chats = [
+  {
+    id: 1,
+    withId: 2,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: true,
+        text: 'How can we help? We’re here for you!',
+        timestamp: moment().subtract(1, 'd').subtract(5, 'm')
+      },
+      {
+        id: 2,
+        owner: false,
+        text: 'Hey John, I am looking for the best admin template.\n' +
+          'Could you help me to find it out?',
+        timestamp: moment().subtract(1, 'd').subtract(3, 'm')
+      },
+      {
+        id: 3,
+        owner: false,
+        text: 'It should be Bootstrap 4 compatible',
+        timestamp: moment().subtract(1, 'd').subtract(2, 'm')
+      },
+      {
+        id: 4,
+        owner: true,
+        text: 'Absolutely!',
+        timestamp: moment().subtract(2, 'm')
+      },
+      {
+        id: 5,
+        owner: true,
+        text: 'Modern admin is the responsive bootstrap 4 admin template!',
+        timestamp: moment().subtract(1, 'm')
+      }
+    ]
+  },
+  {
+    id: 2,
+    withId: 3,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 3,
+    withId: 4,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 4,
+    withId: 5,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 5,
+    withId: 6,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 6,
+    withId: 12,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 7,
+    withId: 13,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'Kane Rowlis',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 8,
+    withId: 14,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 9,
+    withId: 15,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+  {
+    id: 10,
+    withId: 16,
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        owner: false,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDayFromPrevMonth()
+      }
+    ]
+  },
+]
+
 export const user = {
   id: 1,
   name: 'Alex',
@@ -160,6 +318,71 @@ export const user = {
         }
       ]
     },
+    {
+      id: 6,
+      withId: 12,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 7,
+      withId: 13,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'Kane Rowlis',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 8,
+      withId: 14,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 9,
+      withId: 15,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 10,
+      withId: 16,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
   ]
 };
 
@@ -214,4 +437,58 @@ users = users.map((u) => {
   };
 });
 
-export const groups = [];
+export let groups = [
+  {
+    id: 12,
+    title: 'Light Blue Group',
+    usersCount: '128',
+    avatar: [p8, p3, p4],
+    isOnline: true,
+    updates: 11,
+    updateImportance: 'danger'
+  },
+  {
+    id: 13,
+    title: 'Sing App React',
+    usersCount: '21',
+    avatar: [p1, p3, p4],
+    isOnline: false,
+    updates: 8,
+    updateImportance: 'success'
+  },
+  {
+    id: 14,
+    title: 'React Native Starter',
+    usersCount: '12',
+    avatar: [p4, p5, p6],
+    isOnline: false,
+    updates: 18,
+    updateImportance: 'info'
+  },
+  {
+    id: 15,
+    title: 'Flatlogic Marketplace',
+    usersCount: '8',
+    avatar: [p3, p8, p1],
+    isOnline: true,
+    updates: 3,
+    updateImportance: 'warning'
+  },
+  {
+    id: 16,
+    title: 'New Awesome Project',
+    usersCount: '11',
+    avatar: [p2, p8, p3],
+    isOnline: true,
+    updates: 9,
+    updateImportance: 'success'
+  },
+];
+
+groups = groups.map((u) => {
+  return {
+    ...u,
+    ...userCommonData(u.username),
+    position: oneOfPosition()
+  };
+});

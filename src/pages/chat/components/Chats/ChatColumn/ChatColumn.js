@@ -4,12 +4,12 @@ import GroupChat from '../GroupChat'
 import Search from '../../Search'
 import s from './ChatColumn.module.scss';
 
-const ChatColumn = ({ user, users, groups }) => {
+const ChatColumn = ({ user, users, groups, chats }) => {
   return (
     <div className={s.chatTextSection}>
       <Search />
-      <GroupChat />
-      <PersonalChat user={user} users={users} groups={groups} />
+      <GroupChat user={user} users={users} groups={groups} chats={chats} />
+      <PersonalChat user={user} users={users} groups={groups} chats={chats} />
     </div>
   )
 }

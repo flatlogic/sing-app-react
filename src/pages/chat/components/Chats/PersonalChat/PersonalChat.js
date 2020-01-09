@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ChatListItem from './ChatListItem';
-import img1 from '../../../../../images/people/a1.jpg';
 import s from './PersonalChat.module.scss';
 
 class ChatItem extends Component {
@@ -25,7 +24,7 @@ class ChatItem extends Component {
 
   render() {
     return (
-      <div>
+      <>
       <section className={`chat-section ${s.personalChats}`}>
         <h5>Personal Chats</h5>
         <ul className={`${s.chatList}`}>
@@ -36,7 +35,7 @@ class ChatItem extends Component {
           ))}
         </ul>
       </section>
-    </div>
+    </>
     )    
   }
 
