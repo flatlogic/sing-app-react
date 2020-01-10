@@ -6,6 +6,11 @@ import s from './ChatColumn.module.scss';
 
 class ChatColumn extends Component {
 
+  state = {
+    group: [],
+    personal: []
+  }  
+
   findUser = (id) => {
     return this.props.users.find(u => u.id === id);
   }
@@ -34,16 +39,26 @@ class ChatColumn extends Component {
       });
   }
 
+  componentDidMount() {
+    let group = this.getChats(true);
+    let personal = this.getChats(false);
+
+    this.setState({ group, personal})
+  }
+
   render() {
+  const { activeChatId } = this.props;
+  const { group, personal } = this.state;
   return (
     <div className={s.chatTextSection}>
       <Search />
       <section className={`chat-section ${s.chatsSectionWrap}`}>
         <h5>Group Chats</h5>
         <ul className={`${s.chatList}`}>
-          {this.getChats(true).map((chat, i) => (
+          {group.map((chat, i) => (
             <ChatListItem
               key={chat.id}
+              isActive={chat.id === activeChatId ? true : false}
               chat={chat} />
           ))}
         </ul>
@@ -51,9 +66,10 @@ class ChatColumn extends Component {
       <section className={`chat-section ${s.chatsSectionWrap}`}>
         <h5>Personal Chats</h5>
         <ul className={`${s.chatList}`}>
-          {this.getChats(false).map((chat, i) => (
+          {personal.map((chat, i) => (
             <ChatListItem
               key={chat.id}
+              isActive={chat.id === activeChatId ? true : false}
               chat={chat} />
           ))}
         </ul>

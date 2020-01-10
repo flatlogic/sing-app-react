@@ -15,7 +15,8 @@ import s from './Chats.module.scss';
 class Chats extends PureComponent {
 
   state = {
-    newMessage: ''
+    newMessage: '', 
+    dialogParts: []
   }
 
   handleChange = (e) => {
@@ -61,7 +62,7 @@ class Chats extends PureComponent {
 
   interlocutor = () => {
     if(this.chat().isGroup) {
-      return
+      return  true;
     }
 
     return this.findInterlocutor(this.chat());
@@ -99,24 +100,37 @@ class Chats extends PureComponent {
     this.setState({ newMessage: '' })
     this.props.dispatch(newMessageRequest({dialogId: this.chat().id, message: this.state.newMessage}))
   }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(prevProps !== this.props) {
+      let dialogParts = this.dialogParts();
+      this.setState({ dialogParts })      
+    }
+  }
+
+  componentDidMount() {
+    let dialogParts = this.dialogParts();
+    this.setState({ dialogParts })   
+  }
   
   render() {
-
+    console.log(this.props)
     const { sendingMessage, user } = this.props;
+    const { dialogParts } = this.state;
     
     return (
     <div className={`d-flex flex-column ${s.chatDialogSection}`}>
       <header className={s.chatDialogHeader}>
         <div>
           <h5 className="fw-normal mb-0">{this.title()}</h5>
-          {this.chat().isGroup ?
+          {!this.chat().isGroup ?
             <small className="text-muted ">{this.interlocutor().isOnline ? 'Online' : 'Was online ' + this.wasOnline()}</small>
           :null}
         </div>
         <i className={`${s.infoIcon} la la-ellipsis-v`}></i>
       </header>
       <div className={s.chatDialogBody}>
-        {this.dialogParts().map((part,i) => {
+        {dialogParts.map((part,i) => {
           if(this.isTimeDivider(part)) {
             return (
               <div key={uuid()} className={s.dialogDivider}>{part[0]}</div>
@@ -127,6 +141,7 @@ class Chats extends PureComponent {
                 {part.map((message, j) => 
                   <ChatMessage 
                     user={message.userId === user.id ? user : this.findUser(message.userId)}
+                    owner={message.userId === user.id}
                     size={40}
                     showStatus={false}
                     key={message.id}

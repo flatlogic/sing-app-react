@@ -4,12 +4,12 @@ import s from './Avatar.module.scss';
 
 class Avatar extends PureComponent {
 
-  initials = (user) => {
-    return user.name.charAt(0).toUpperCase() + user.surname.charAt(0).toUpperCase();
-  }
+  // initials = (user) => {
+  //   return user.name.charAt(0).toUpperCase() + user.surname.charAt(0).toUpperCase();
+  // }
 
   render() {
-    const { user, size, showStatus, group } = this.props;
+    const { user, size, showStatus, group, stroke } = this.props;
     return (
       !group ? 
         <div className={s.avatar} style={{
@@ -18,12 +18,12 @@ class Avatar extends PureComponent {
           minWidth: size + 'px',
           }}
         >
-          <div className={`${s.imageWrapper}`} style={{
+          <div className={`${s.imageWrapper} ${stroke ? s.stroke : ''}`} style={{
             fontSize: size / 3 + 'px'
           }}>
             {user.avatar ? 
               <img src={user.avatar} alt="user avatar"/>
-            : <span>{this.initials(user)}</span>}
+            : <span>1</span>}
             
           </div>
           {(user.isOnline && showStatus) ? 
