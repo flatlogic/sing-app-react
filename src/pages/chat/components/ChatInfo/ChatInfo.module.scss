@@ -1,4 +1,50 @@
-@import '../../../../../styles/app';
+@import '../../../../styles/app';
+
+.chatInfoHeader {
+  color: $white;
+  .avatarsRow {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    margin-bottom: 0;
+
+    li {
+      width: 15px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .socialLinks {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    .socialLink {
+      a {
+        background: $white;
+        border-radius: 50%;
+        color: $purple;
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        .fa-facebook {
+          margin-top: 7px;
+          margin-left: 3px;
+          font-size: 22px;
+        }
+      }
+    }
+
+    .socialLink + .socialLink {
+      margin-left: $spacer / 1.2;
+    }
+  }
+}
 
 .dynamicCard {
   :global {

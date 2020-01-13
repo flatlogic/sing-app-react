@@ -1,0 +1,6 @@
+{
+  "name": "ChatDialog",
+  "version": "0.0.0",
+  "main": "./ChatDialog.js",
+  "private": true
+}

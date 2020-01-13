@@ -4,9 +4,9 @@ import s from './Avatar.module.scss';
 
 class Avatar extends PureComponent {
 
-  // initials = (user) => {
-  //   return user.name.charAt(0).toUpperCase() + user.surname.charAt(0).toUpperCase();
-  // }
+  initials = (user) => {
+    return `${user?.name?.charAt(0).toUpperCase()}${user?.surname?.charAt(0).toUpperCase()}`;
+  }
 
   render() {
     const { user, size, showStatus, group, stroke } = this.props;
@@ -23,7 +23,7 @@ class Avatar extends PureComponent {
           }}>
             {user.avatar ? 
               <img src={user.avatar} alt="user avatar"/>
-            : <span>1</span>}
+            : <span>{this.initials(user)}</span>}
             
           </div>
           {(user.isOnline && showStatus) ? 

@@ -8,11 +8,11 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import Loader from '../../../../components/Loader';
 import ChatMessage from './ChatMessage'
-import { newMessageRequest } from '../../../../actions/chat';
+import { newMessageRequest, changeMobileState } from '../../../../actions/chat';
+import { MobileChatStates } from '../../../../reducers/chat';
+import s from './ChatDialog.module.scss';
 
-import s from './Chats.module.scss';
-
-class Chats extends PureComponent {
+class ChatDialog extends PureComponent {
 
   state = {
     newMessage: '', 
@@ -24,7 +24,7 @@ class Chats extends PureComponent {
   }
 
   chat = () => {
-    return this.props.chats.find(chat => chat.id === this.props.activeChatId);
+    return this.props.chats.find(chat => chat.id === this.props.activeChatId) || {};
   }
 
   title = () => {
@@ -32,6 +32,9 @@ class Chats extends PureComponent {
   }
 
   dialogParts = () => {
+    if (!this.chat().id) {
+      return [];
+    }
     let firstMessage = this.chat().messages[0];
     let dialogParts = [[this.shortCalendarDate(firstMessage.timestamp)],[firstMessage]];
     let messagesLength = this.chat().messages.length;
@@ -62,13 +65,16 @@ class Chats extends PureComponent {
 
   interlocutor = () => {
     if(this.chat().isGroup) {
-      return  true;
+      return
     }
 
-    return this.findInterlocutor(this.chat());
+    return this.findInterlocutor(this.chat()) || {};
   }
 
   findInterlocutor = (chat) => {
+    if (!chat || !chat.id) {
+      return null;
+    }
     let id = chat.users.find(uid => uid !== this.props.user.id);
     return this.findUser(id);
   }
@@ -96,7 +102,8 @@ class Chats extends PureComponent {
     return index === 0 || dialogPart[index - 1].userId !== message.userId;
   }
 
-  newMessage = () => {
+  newMessage = (e) => {
+    e.preventDefault();
     this.setState({ newMessage: '' })
     this.props.dispatch(newMessageRequest({dialogId: this.chat().id, message: this.state.newMessage}))
   }
@@ -105,21 +112,27 @@ class Chats extends PureComponent {
     if(prevProps !== this.props) {
       let dialogParts = this.dialogParts();
       this.setState({ dialogParts })      
+      setTimeout(() => this.chatDialogBodyRef.scrollTop = this.chatDialogBodyRef.scrollHeight,10)
     }
   }
 
   componentDidMount() {
     let dialogParts = this.dialogParts();
-    this.setState({ dialogParts })   
+    this.setState({ dialogParts });
+    setTimeout(() => this.chatDialogBodyRef.scrollTop = this.chatDialogBodyRef.scrollHeight,10)
   }
   
   render() {
-    console.log(this.props)
+
     const { sendingMessage, user } = this.props;
     const { dialogParts } = this.state;
-    
+
     return (
-    <div className={`d-flex flex-column ${s.chatDialogSection}`}>
+    <div className={`d-flex flex-column chat-dialog-section`}>
+    <div className="d-md-none chat-mobile-navigation px-0" onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.LIST))}>
+      <i className="la la-angle-left la-lg"></i>
+      Chats
+    </div>
       <header className={s.chatDialogHeader}>
         <div>
           <h5 className="fw-normal mb-0">{this.title()}</h5>
@@ -127,9 +140,14 @@ class Chats extends PureComponent {
             <small className="text-muted ">{this.interlocutor().isOnline ? 'Online' : 'Was online ' + this.wasOnline()}</small>
           :null}
         </div>
-        <i className={`${s.infoIcon} la la-ellipsis-v`}></i>
+        <i className={`${s.infoIcon} la la-ellipsis-v d-none d-md-inline-block`}></i>
+        <i className={`${s.infoIcon} la la-ellipsis-v d-md-none`} onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.INFO))}></i>
       </header>
-      <div className={s.chatDialogBody}>
+      <div className={s.chatDialogBody} 
+        ref={chatDialogBody => {
+          this.chatDialogBodyRef = chatDialogBody;
+        }}
+      >
         {dialogParts.map((part,i) => {
           if(this.isTimeDivider(part)) {
             return (
@@ -154,13 +172,13 @@ class Chats extends PureComponent {
           }
         })}
       </div>
-      <div className={`chat-section ${s.newMessage} mb-0`}>
+      <form className={`chat-section ${s.newMessage} mb-0`} onSubmit={this.newMessage}>
         <Button className={s.attachment} outline><i className="la la-plus"></i></Button>
         <Input onChange={this.handleChange} value={this.state.newMessage} name="newMessage" placeholder="Type Your Message"></Input>
-        <Button color="danger" className={`px-4 ${s.newMessageBtn}`} onClick={this.newMessage}>
+        <Button color="danger" className={`px-4 ${s.newMessageBtn}`} type="submit">
           {sendingMessage ? <Loader /> : <span>Send</span>}
         </Button>
-      </div>
+      </form>
     </div>    
 
     )
@@ -177,4 +195,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Chats)
+export default connect(mapStateToProps)(ChatDialog)

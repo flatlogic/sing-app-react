@@ -1,6 +1,0 @@
-{
-  "name": "PersonalChat",
-  "version": "0.0.0",
-  "main": "./PersonalChat.js",
-  "private": true
-}

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Avatar from '../../Avatar/Avatar';
+import Avatar from '../Avatar/Avatar';
 import uuid from 'uuid/v4';
 import moment from 'moment';
 import s from './ChatMessage.module.scss';

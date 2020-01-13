@@ -1,4 +1,4 @@
-@import "../../../../../styles/app";
+@import "../../../../styles/app";
 
 .chatMessage {
   position: relative;
@@ -19,6 +19,7 @@
     &.messageAttachment {
       padding: 0;
       max-width: 70%;
+      overflow: hidden;
     }
 
     img {

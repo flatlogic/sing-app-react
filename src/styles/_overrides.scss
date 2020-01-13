@@ -1155,3 +1155,11 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
     }
   }
 }
+
+.btn-white {
+  @include button-variant($white, $white);
+
+  @include hover-focus() {
+    background-color: rgba($white, 0.9);
+  }
+}
