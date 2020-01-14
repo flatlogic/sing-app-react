@@ -24,6 +24,7 @@ import ExtraSearch from '../../pages/extra/search';
 import ExtraTimeline from '../../pages/extra/timeline';
 import ExtraGallery from '../../pages/extra/gallery';
 import Grid from '../../pages/grid';
+import ChatPage from '../../pages/chat';
 import Widgets from '../../pages/widgets';
 import Products from '../../pages/products';
 import Management from '../../pages/management';
@@ -52,7 +53,6 @@ import Dashboard from '../../pages/dashboard';
 import { SidebarTypes } from '../../reducers/layout';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Chat from '../Chat';
 import Helper from '../Helper';
 import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
@@ -76,12 +76,7 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
 
-    this.chatToggle = this.chatToggle.bind(this);
     this.handleSwipe = this.handleSwipe.bind(this);
-
-    this.state = {
-      chatOpen: false,
-    };
   }
 
   componentDidMount() {
@@ -109,13 +104,9 @@ class Layout extends React.Component {
     }
   }
 
-  chatToggle() {
-    this.setState({ chatOpen: !this.state.chatOpen });
-  }
-
   handleSwipe(e) {
     if ('ontouchstart' in window) {
-      if (e.direction === 4 && !this.state.chatOpen) {
+      if (e.direction === 4) {
         this.props.dispatch(openSidebar());
         return;
       }
@@ -124,8 +115,6 @@ class Layout extends React.Component {
         this.props.dispatch(closeSidebar());
         return;
       }
-
-      this.setState({ chatOpen: e.direction === 2 });
     }
   }
 
@@ -135,7 +124,6 @@ class Layout extends React.Component {
         className={[
           s.root,
           this.props.sidebarStatic ? `${s.sidebarStatic}` : '',
-          this.state.chatOpen ? s.chatOpen : '',
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',
           `dashboard-${(this.props.sidebarType === SidebarTypes.TRANSPARENT) ? "light" : this.props.dashboardTheme}`,
@@ -143,8 +131,7 @@ class Layout extends React.Component {
       >
         <Sidebar />
         <div className={s.wrap}>
-          <Header chatToggle={this.chatToggle} />
-          <Chat chatOpen={this.state.chatOpen} />
+          <Header />
           <Helper />
           
           <Hammer onSwipe={this.handleSwipe}>
@@ -186,6 +173,7 @@ class Layout extends React.Component {
                     <Route path="/app/ui/navbar" exact component={UINavbar} />
                     <Route path="/app/ui/nav" exact component={UINav} />
                     <Route path="/app/grid" exact component={Grid} />
+                    <Route path="/app/chat" exact component={ChatPage} />
                     <Route path="/app/package" exact component={Package} />
                     <Route path="/app/forms" exact render={() => <Redirect to="/app/forms/elements" />} />
                     <Route path="/app/forms/elements" exact component={FormsElements} />

@@ -90,11 +90,20 @@ class Sidebar extends React.Component {
               },
             ]}
           />
+          <LinksGroup
+            header="Chat"
+            link="/app/chat"
+            isHeader
+            label="Awesome"
+            iconName="flaticon-users"
+            labelColor="info"
+          />
             <LinksGroup
                 onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
                 activeItem={this.props.activeItem}
                 header="E-commerce"
                 isHeader
+                labelColor="danger"
                 iconName="flaticon-diamond"
                 link="/app/ecommerce"
                 index="ecommerce"
@@ -149,6 +158,7 @@ class Sidebar extends React.Component {
             iconName="flaticon-file"
             index="documentation"
             label="new"
+            labelColor="success"
             target="_blank"
           />
           <h5 className={[s.navTitle, s.groupTitle].join(' ')}>TEMPLATE</h5>
@@ -284,8 +294,8 @@ class Sidebar extends React.Component {
             onActiveSidebarItemChange={t => this.props.dispatch(changeActiveSidebarItem(t))}
             activeItem={this.props.activeItem}
             header="Tables"
-            isHeader
-            iconName="flaticon-map-location"
+            isHeader 
+            iconName="flaticon-equal-1"
             link="/app/tables"
             index="tables"
             childrenLinks={[
@@ -302,7 +312,7 @@ class Sidebar extends React.Component {
             activeItem={this.props.activeItem}
             header="Maps"
             isHeader
-            iconName="flaticon-equal-1"
+            iconName="flaticon-map-location"
             link="/app/maps"
             index="maps"
             childrenLinks={[

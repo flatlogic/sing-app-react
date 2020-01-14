@@ -105,6 +105,8 @@ $border-radius-sm:       0.25rem !default;
 //== Sidebar
 //
 
+$sidebar-transition-time: 0.3s !default;
+
 $sidebar-width-open: 230px;
 $sidebar-width-closed: 50px;
 $sidebar-transition-time: 0.3s !default;
@@ -228,3 +230,11 @@ $padding-small-horizontal:  0.75rem !default;
 // -------------------------
 
 $screen-lg-height: 670px !default;
+
+
+//== Chat Sidebar
+//
+$chat-sidebar-width-open: 250px;
+
+$chat-component-padding: 21px;
+$chat-section-width: 330px;

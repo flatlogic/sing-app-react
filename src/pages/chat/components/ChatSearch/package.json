@@ -1,0 +1,7 @@
+{
+    "name": "ChatSearch",
+    "version": "0.0.0",
+    "main": "./ChatSearch.js",
+    "private": true
+  }
+  

@@ -69,3 +69,27 @@
     @content;
   }
 }
+
+/* Chat Scrollbar */
+
+@mixin chat-scrollbar($color, $width) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    border-radius: $border-radius;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: $color;
+  }
+}

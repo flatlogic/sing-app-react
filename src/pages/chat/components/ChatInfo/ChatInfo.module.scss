@@ -1,0 +1,274 @@
+@import '../../../../styles/app';
+
+.chatInfoHeader {
+  color: $white;
+  position: relative;
+  .avatarsRow {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    margin-bottom: 0;
+
+    li {
+      width: 15px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .socialLinks {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    .socialLink {
+      a {
+        background: $white;
+        border-radius: 50%;
+        color: $purple;
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        .fa-facebook {
+          margin-top: 7px;
+          margin-left: 3px;
+          font-size: 22px;
+        }
+      }
+    }
+
+    .socialLink + .socialLink {
+      margin-left: $spacer / 1.2;
+    }
+  }
+}
+
+.dynamicCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+  .toggleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  :global {
+    .accordion {
+      .card {
+        position: static;
+        .card-body {
+          padding: .35em .35em .35em 3em;
+        }
+        .card-body.files-tab {
+          padding: .35em 1.3em;
+        }
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        box-shadow: none;
+        &:last-child {
+          border-bottom: none;
+        }
+        button {
+          text-align: left;
+          border: none;
+          font-size: 19px;
+          padding: 13px 1.25rem;
+          background: #fff;
+          &:focus {
+            outline: none;
+          }
+          .la.la-angle-up {
+            transition: transform .25s ease;
+          }
+          &.active {
+            .la.la-angle-up {
+              transform: rotate(180deg);
+            }
+          }
+          img {
+            margin-right: 10px;
+            width: 20px;
+          }
+        }
+      }
+    }
+    .toggle{
+      input[type="checkbox"]{
+        display: none;
+      }
+      label{
+        color: #000000;
+        font-size: 19px;
+        width: 100%;
+        padding: 13px 1.25rem;
+        margin: 0;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      }
+      
+      input[type="checkbox"] + label::before{
+        content: ' ';
+        display: block;
+        height: 12px;
+        width: 35px;
+        border-radius: 9px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        background: $teal;
+      }
+      
+      input[type="checkbox"] + label::after{
+        content: ' ';
+        display: block;
+        height: 20px;
+        width: 20px; 
+        border-radius: 50%;
+        position: absolute;
+        top: 16px;
+        border: 1px solid #E6E5EA;
+        right: 25px;
+        background: #fff;
+        transition: all 0.3s ease-in;
+      }
+      
+      input[type="checkbox"]:checked + label::after{
+        right: 5px; 
+        transition: all 0.3s ease-in;
+      }
+    }  
+  }
+  .linksBody {
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .personalInformation {
+    padding: 0;
+    margin: 0;
+    li:nth-child(odd) {
+      color: #313947;
+      font-size: 17px;
+    }
+    li:nth-child(even) {
+      color: rgba(#313947,.5);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    li:nth-child(3n+2) {
+      margin-bottom: 20px;
+    }
+  }
+  .listWithImages {
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      .imgText {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+.cursorStyle {
+  cursor: pointer;
+}
+.groupListModalWrapper {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  z-index: 1000;
+
+  .groupListModal {
+    overflow-y: auto;
+    max-height: 450px;
+
+    @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+
+    width: 300px;
+    color: $text-color;
+
+    .groupListHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacer;
+      span {
+        cursor: pointer;
+      }
+      .laLg {
+        vertical-align: middle;
+      }
+    }
+
+    .groupList {
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        padding: $spacer / 2;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.01);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    left: 0;
+
+    .groupListModal {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+    z-index: -1;
+  }
+}
+
+.switch {
+  i {
+    height: 12px;
+    padding-right: 15px;
+  }
+
+  i::before {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -2px;
+    box-shadow: none;
+    border: 1px solid $border-color;
+  }
+
+  :checked + i {
+    padding-right: 0;
+    padding-left: 15px;
+    background: darken($success, 15%);
+  }
+}

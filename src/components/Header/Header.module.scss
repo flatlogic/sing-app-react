@@ -5,7 +5,7 @@
   background: var(--navbar-bg);
   box-shadow: var(--navbar-shadow);
   height: $navbar-height;
-  transition: $transition-base;
+  transition: background-color .2s ease, margin .2s ease, ;
 
   &.navbarFloatingType {
     margin: $spacer $content-padding 0;

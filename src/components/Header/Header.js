@@ -25,10 +25,9 @@ import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/user';
 import chroma from 'chroma-js'
 import Joyride, { STATUS } from 'react-joyride';
-import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem, chatToggleItem } from '../../actions/navigation';
+import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
 import a5 from '../../images/people/a5.jpg';
-import a6 from '../../images/people/a6.jpg';
 
 import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
 
@@ -36,7 +35,6 @@ class Header extends React.Component {
   static propTypes = {
     sidebarOpened: PropTypes.bool.isRequired,
     sidebarStatic: PropTypes.bool.isRequired,
-    chatToggle: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
     location: PropTypes.shape({
       pathname: PropTypes.string,
@@ -79,11 +77,6 @@ class Header extends React.Component {
           target: '.tutorial-dropdown',
         },
         {
-          content: 'Check out chat, do not miss new ideas 🙂',
-          placement: 'bottom',
-          target: '#toggle-chat',
-        },
-        {
           content: 'Open theme cusomizer sidebar, play with it or watch tour! ❤️',
           placement: 'left',
           target: '.helper-button'
@@ -107,18 +100,6 @@ class Header extends React.Component {
     });
   };
 
-  componentDidMount() {
-    if (window.innerWidth > 576) {
-      setTimeout(() => {
-        this.setState({ showNewMessage: true })
-      }, 2000)
-
-      setTimeout(() => {
-        this.setState({ showNewMessage: false, hideMessage: false })
-      }, 6000);
-    }
-  }
-
   toggleFocus = () => {
     this.setState({ focus: !this.state.focus })
   }
@@ -131,11 +112,6 @@ class Header extends React.Component {
 
   doLogout() {
     this.props.dispatch(logoutUser());
-  }
-
-  toggleChat = () => {
-    this.props.chatToggle();
-    setTimeout(() => this.props.dispatch(chatToggleItem()),1000);
   }
 
   // collapse/uncolappse
@@ -171,15 +147,15 @@ class Header extends React.Component {
     });
   }
   render() {
-    const { focus, showNewMessage, hideMessage } = this.state;
-    const { navbarType, navbarColor } = this.props;
+    const { focus } = this.state;
+    const { navbarType, navbarColor, openUsersList } = this.props;
 
     const user = JSON.parse(localStorage.getItem('user') || {});
 
     const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
 
     return (
-      <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''}`} style={{backgroundColor: navbarColor}}>
+      <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''}`} style={{backgroundColor: navbarColor, zIndex: !openUsersList ? 100 : 0}}>
         <Joyride
           callback={this.handleJoyrideCallback}
           continuous={true}
@@ -203,7 +179,7 @@ class Header extends React.Component {
             },
             tooltip: {
               fontSize: 15,
-              padding: 5,
+              padding: 15,
             },
             tooltipContent: {
               padding: '20px 5px 0',
@@ -287,13 +263,13 @@ class Header extends React.Component {
         </Form>
 
         <NavLink className={`${s.navbarBrand} d-md-none ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
-          <i className="fa fa-circle text-gray mr-n-sm" />
-          <i className="fa fa-circle text-warning" />
+          <i className="fa fa-circle text-primary mr-n-sm" />
+          <i className="fa fa-circle text-danger" />
           &nbsp;
           sing
           &nbsp;
-          <i className="fa fa-circle text-warning mr-n-sm" />
-          <i className="fa fa-circle text-gray" />
+          <i className="fa fa-circle text-danger mr-n-sm" />
+          <i className="fa fa-circle text-primary" />
         </NavLink>
 
         <Nav className="ml-auto">
@@ -313,11 +289,11 @@ class Header extends React.Component {
               <Notifications />
             </DropdownMenu>
           </Dropdown>
-          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none tutorial-dropdown">
+          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none tutorial-dropdown pr-4">
             <DropdownToggle nav>
               <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>
-            <DropdownMenu right className="super-colors">
+            <DropdownMenu right className={`super-colors`}>
               <DropdownItem href="/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
               <DropdownItem divider />
               <DropdownItem href="/#/app/extra/calendar">Calendar</DropdownItem>
@@ -326,44 +302,6 @@ class Header extends React.Component {
               <DropdownItem onClick={this.doLogout}><i className="la la-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-          <NavItem>
-            <NavLink className="d-sm-down-none mr-5" id="toggle-chat" onClick={this.toggleChat}>
-              <i className={`la la-globe ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
-              <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
-            </NavLink>
-            <div id="chat-notification" className={`
-            ${s.chatNotification} 
-            ${showNewMessage ? 'animated fadeIn '+s.chatNotificationInit : ''} 
-            ${hideMessage ? '' : 'animated fadeOut'}`}>
-            
-              <div className={s.chatNotificationInner}>
-                <h6 className={`${s.title} d-flex`}>
-                  <span className="thumb-xs">
-                    <img src={a6} alt="" className="rounded-circle mr-xs float-left" />
-                  </span>
-                  Jess Smith
-                </h6>
-                <p className={s.text}>Hi there! <br /> This is a completely new version of Sing App <br /> built with <strong className="text-primary">React JS</strong> </p>
-              </div>
-            </div>
-          </NavItem>
-          <NavItem className="fs-lg d-md-none">
-            <NavLink href="#" onClick={this.toggleChat}>
-              <i className={`chat-notification-sing ${this.props.chatSidebar ? 'hide' : ''}`}></i>
-              <span 
-                style={{backgroundColor: navbarColor !== "#ffffff" 
-                ? chroma(navbarColor).darken(1) 
-                : "#495057"}} 
-                className="rounded rounded-lg">
-                  <i 
-                  className="la la-globe" 
-                  style={{color: navbarColor === "#ffffff" 
-                  ? "#ffffff"
-                  : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}}
-                />
-              </span>
-            </NavLink>
-          </NavItem>
         </Nav>
       </Navbar>
     );
@@ -374,9 +312,9 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
-    chatSidebar: store.navigation.chatToggleItem,
     navbarType: store.layout.navbarType,
-    navbarColor: store.layout.navbarColor
+    navbarColor: store.layout.navbarColor,
+    openUsersList: store.chat.openUsersList
   };
 }
 
