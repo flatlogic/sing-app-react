@@ -3,7 +3,7 @@ import moment from 'moment';
 import p1 from '../../images/chat/chat1.png';
 import p2 from '../../images/chat/chat2.png';
 //import p3 from '../../images/chat/chat3.png';
-import p4 from '../../images/chat/chat4.png';
+//import p4 from '../../images/chat/chat4.png';
 import p5 from '../../images/chat/chat5.png';
 //import p6 from '../../images/chat/chat6.png';
 import p7 from '../../images/chat/chat7.png';

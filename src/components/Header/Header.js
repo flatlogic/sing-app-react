@@ -263,13 +263,13 @@ class Header extends React.Component {
         </Form>
 
         <NavLink className={`${s.navbarBrand} d-md-none ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
-          <i className="fa fa-circle text-gray mr-n-sm" />
-          <i className="fa fa-circle text-warning" />
+          <i className="fa fa-circle text-primary mr-n-sm" />
+          <i className="fa fa-circle text-danger" />
           &nbsp;
           sing
           &nbsp;
-          <i className="fa fa-circle text-warning mr-n-sm" />
-          <i className="fa fa-circle text-gray" />
+          <i className="fa fa-circle text-danger mr-n-sm" />
+          <i className="fa fa-circle text-primary" />
         </NavLink>
 
         <Nav className="ml-auto">
