@@ -222,13 +222,10 @@ class Header extends React.Component {
             </UncontrolledTooltip>
             <NavLink className="fs-lg d-lg-none" onClick={this.switchSidebar}>
             <span 
-              style={{backgroundColor: navbarColor !== "#ffffff" 
-              ? chroma(navbarColor).darken(1) 
-              : "#495057"}} 
               className={`rounded rounded-lg d-md-none d-sm-down-block`}>
                 <i 
                   className="la la-bars" 
-                  style={{color: navbarColor === "#ffffff" 
+                  style={{fontSize: 30, color: navbarColor === "#ffffff" 
                   ? "#ffffff"
                   : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} 
                 />
