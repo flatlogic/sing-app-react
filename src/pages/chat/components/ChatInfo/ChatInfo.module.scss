@@ -48,11 +48,25 @@
 }
 
 .dynamicCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+  .toggleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   :global {
     .accordion {
       .card {
+        position: static;
         .card-body {
-          padding-top: .35em;
+          padding: .35em .35em .35em 3em;
+        }
+        .card-body.files-tab {
+          padding: .35em 1.3em;
         }
         border-left: none;
         border-top: none;
@@ -70,21 +84,12 @@
           &:focus {
             outline: none;
           }
-          &::before {
-            content: '';
-            position: absolute;
-            top: 23px;
-            right: 10px;
-            border: solid rgba(0, 0, 0, 0.125);
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 4px;
-            transform: rotate(45deg);
+          .la.la-angle-up {
             transition: transform .25s ease;
           }
           &.active {
-            &::before {
-              transform: rotate(135deg);
+            .la.la-angle-up {
+              transform: rotate(180deg);
             }
           }
           img {
@@ -199,7 +204,9 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: $spacer;
-
+      span {
+        cursor: pointer;
+      }
       .laLg {
         vertical-align: middle;
       }
@@ -241,5 +248,27 @@
     right: 0;
     background: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
     z-index: -1;
+  }
+}
+
+.switch {
+  i {
+    height: 12px;
+    padding-right: 15px;
+  }
+
+  i::before {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -2px;
+    box-shadow: none;
+    border: 1px solid $border-color;
+  }
+
+  :checked + i {
+    padding-right: 0;
+    padding-left: 15px;
+    background: darken($success, 15%);
   }
 }

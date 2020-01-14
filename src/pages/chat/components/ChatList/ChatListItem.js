@@ -51,7 +51,7 @@ class ChatListItem extends Component {
             <h6 className={`${s.chatTitle}`}>
             {chat.isGroup ? <img alt="group" className={`${s.groupChatIcon} mr-1`} src={people} /> : null}
             {chat.title} 
-            {chat.isGroup ? <span>({chat.interlocutors.length + 1})</span> : ''}
+            {chat.isGroup ? <span>({chat.interlocutors.length})</span> : ''}
             </h6>
             
             <span className={`ml-auto ${s.timestamp}`}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Avatar from '../Avatar';
+import { openUsersList } from '../../../../actions/chat';
 import ChatSearch from '../ChatSearch';
 import OnlineStatus from '../OnlineStatus';
 import s from './ChatInfo.module.scss';
@@ -15,8 +16,14 @@ class GroupList extends Component {
     return this.props.uids.map(uid => this.findUser(uid)) || [];
   }
 
-  render() {
+  closeModal = () => {
+    this.props.close()
+    this.props.dispatch(openUsersList())
+  }
 
+  render() {
+    const owner = this.props.user;
+    owner.isOnline = true;
     return (
       <div className={`${s.groupListModal} animated fadeIn`}>
         <div className={s.groupListModalWrapper}>
@@ -24,7 +31,7 @@ class GroupList extends Component {
           <section className={`${s.groupListModal} chat-section`}>
             <header className={s.groupListHeader}>
               <h5>{this.props.users.length} members</h5>
-              <span className="text-muted" onClick={this.props.close}>
+              <span className="text-muted" onClick={this.closeModal}>
                 <i className={`la la-times ${s.laLg}`}></i>
               </span>
             </header>
@@ -32,7 +39,6 @@ class GroupList extends Component {
             <ul className={s.groupList}>
               {this.groupUsers().map(user => {
                 if(user) {
-                  // fix default user
                   return (
                     <li key={user.id}>
                       <Avatar
@@ -49,6 +55,8 @@ class GroupList extends Component {
                       </div>
                     </li>
                   )
+                } else {
+                  return null;
                 }}
               )}
             </ul>
@@ -61,7 +69,8 @@ class GroupList extends Component {
 
 function mapStateToProps(state) {
   return {
-    users: state.chat.users
+    users: state.chat.users,
+    user: state.chat.user,
   }
 }
 

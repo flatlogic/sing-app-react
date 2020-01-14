@@ -8,7 +8,7 @@ import Avatar from '../Avatar';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { MobileChatStates } from '../../../../reducers/chat';
-import { changeMobileState } from '../../../../actions/chat';
+import { changeMobileState, openUsersList } from '../../../../actions/chat';
 import GroupList from './GroupList';
 import doc from '../../../../images/icons/doc.svg';
 import info from '../../../../images/icons/info.svg';
@@ -24,7 +24,7 @@ class ChatInfo extends Component {
 
   state = {
     accordion: [
-      false,false,false,false
+      true,false,false,false
     ],
     openedGroupList: false
   }
@@ -65,17 +65,22 @@ class ChatInfo extends Component {
     }
   }
 
-  chatUsers() {
+  chatUsers = () => {
     return this.info().users.map(uid => this.findUser(uid));
   }
 
-  createdBy() {
+  createdBy = () => {
     let user = this.findUser(this.info().createdBy);
     return `${user.name} ${user.surname}`;
   }
 
-  createdAt() {
+  createdAt = () => {
     return moment(this.info().createdAt).format('MMMM DD, YYYY');
+  }
+
+  openModal = () => {
+    this.props.dispatch(openUsersList())
+    this.setState({ openedGroupList: true })
   }
 
   render() {
@@ -123,7 +128,7 @@ class ChatInfo extends Component {
           </ul>
         </div>
         <footer className="d-flex align-items-center justify-content-between">
-          <h5 className={`${s.cursorStyle} text-white mb-0`} onClick={() => this.setState({ openedGroupList: true })}>{this.info().users.length} members</h5>
+          <h5 className={`${s.cursorStyle} text-white mb-0`} onClick={this.openModal}>{this.info().users.length-1} members</h5>
           <Button color="white" className={`text-info fw-semi-bold`}>
             Add people
           </Button>
@@ -138,123 +143,100 @@ class ChatInfo extends Component {
         }
 
 
-      <div className={`chat-section bg-white ${s.dynamicCard} pl-0`}>
-        <div className={s.notificationToggle}>
-           
+      <div className={`chat-section bg-white ${s.dynamicCard} pl-0 mb-0`}>
 
-          <div className="toggle">
-            <input type="checkbox" id="temp" />
-            <label htmlFor="temp"><img src={notification} alt="" /> Notifications</label>
-          </div>
-        </div>
-        <Accordion onSelect={this.updateKye}>
+        <Accordion defaultActiveKey="0" onSelect={this.updateKye}>
           <Card>
             <Accordion.Toggle eventKey="0" className={this.state.accordion[0] ? "active" : ""}>
-              <img src={info} alt="" /> Information
+              <div className={s.toggleHeader}><img src={info} alt="" /> Information<i className="la la-angle-up ml-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <ul className={s.personalInformation}>
-                  <li>+375 29 123 45 67</li>
-                  <li>Mobile</li>
-                  <li>@jarow</li>
-                  <li>Username</li>
-                </ul>
+                {!this.info().isGroup ? 
+                  <ul className={s.personalInformation}>
+                    <li>{this.info()?.tel}</li>
+                    <li>Mobile</li>
+                    <li>@{this.info()?.username}</li>
+                    <li>Username</li>
+                  </ul>
+                :
+                  <ul className={s.personalInformation}>
+                    <li>{this.info()?.name}</li>
+                    <li>Name</li>
+                    <li>by {this.createdBy()} on {this.createdAt()}</li>
+                    <li>Created</li>
+                  </ul>
+                }
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+          <div className={`card`}>
+           <button>
+          <label htmlFor="checkbox-ios1" className={`${s.switch} ${s.toggleHeader} switch ml-auto mb-0`}>
+            <span><img src={notification} alt="" /> Notifications</span>
+              <div><input type="checkbox" id="checkbox-ios1" className="ios form-check-input"/>
+              <i></i></div>
+            </label>
+            </button>
+        </div>
           <Card>
             <Accordion.Toggle eventKey="1" className={this.state.accordion[1] ? "active" : ""}>
-            <img src={picture} alt="" /> Images (4)
+            <div className={s.toggleHeader}><img src={picture} alt="" /> Images (4)<i className="la la-angle-up ml-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
+                {!this.info().images?.length ? 
+                <p className="text-muted"><i>No images</i></p>
+                :
                 <ul className={s.listWithImages}>
                   <li>
-                    <span className="thumb-sm ml">
-                      <img className="rounded-circle" src={img1} alt="..."/>
-                    </span>
-                    <span className={s.imgText}>New image update</span>
-                  </li>
-                  <li>
-                    <span className="thumb-sm ml">
-                      <img className="rounded-circle" src={img1} alt="..."/>
-                    </span>
-                    <span className={s.imgText}>New image update</span>
-                  </li>
-                  <li>
-                    <span className="thumb-sm ml">
-                      <img className="rounded-circle" src={img1} alt="..."/>
-                    </span>
-                    <span className={s.imgText}>New image update</span>
-                  </li>
-                  <li>
-                    <span className="thumb-sm ml">
+                    <span className="thumb-sm">
                       <img className="rounded-circle" src={img1} alt="..."/>
                     </span>
                     <span className={s.imgText}>New image update</span>
                   </li>
                 </ul>
+                }
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Accordion.Toggle eventKey="2" className={this.state.accordion[2] ? "active" : ""}>
-            <img src={link} alt="" /> Links (6)
+            <div className={s.toggleHeader}><img src={link} alt="" /> Links (6)<i className="la la-angle-up ml-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
               <Card.Body>
+
+              {!this.info().links?.length ? 
+                <p className="text-muted"><i>No images</i></p>
+                :
                 <ul className={s.linksBody}>
-                  <li>
-                    <Link to="/analytics">Analytics</Link>
-                  </li>
-                  <li>
-                    <Link to="/email">Email</Link>
-                  </li>
-                  <li>
-                    <Link to="/charts">Charts</Link>
-                  </li>
-                  <li>
-                    <Link to="/grid">Grid</Link>
-                  </li>
-                  <li>
-                    <Link to="/map">Maps</Link>
-                  </li>
                   <li>
                     <Link to="/profile">Profile</Link>
                   </li>
                 </ul>
+                }
               </Card.Body>
             </Accordion.Collapse>
           </Card>
           <Card>
             <Accordion.Toggle eventKey="3" className={this.state.accordion[3] ? "active" : ""}>
-            <img src={doc} alt="" /> Files (5)
+            <div className={s.toggleHeader}><img src={doc} alt="" /> Files (5)<i className="la la-angle-up ml-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
-              <Card.Body>
-              <ul className={s.listWithImages}>
-                  <li>
-                    <img src={download} alt="..."/>
-                    <span className={s.imgText}>Diagram_0126.jpg</span>
-                  </li>
-                  <li>
-                    <img src={download} alt="..."/>
-                    <span className={s.imgText}>Diagram_0127.jpg</span>
-                  </li>
-                  <li>
-                    <img src={download} alt="..."/>
-                    <span className={s.imgText}>Diagram_0128.jpg</span>
-                  </li>
-                  <li>
-                    <img src={download} alt="..."/>
-                    <span className={s.imgText}>Dynamic_tables_result.pdf</span>
-                  </li>
-                  <li>
-                    <img src={download} alt="..."/>
-                    <span className={s.imgText}>Diagram_product_managment.pdf</span>
-                  </li>
+              <Card.Body className="files-tab">
+              {!this.info().files?.length ? 
+                <p className="text-muted"><i>No files</i></p>
+                :
+                <ul className={s.listWithImages}>
+                  {this.info().files.map(file => (
+                    <li key={file.id}>
+                      <img src={download} alt="..."/>
+                      <a href={file.url} className={s.imgText}>{file.name}</a>
+                    </li>
+                  ))}
                 </ul>
+                }
               </Card.Body>
             </Accordion.Collapse>
           </Card>

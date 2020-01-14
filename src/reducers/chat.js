@@ -2,6 +2,7 @@ import {
   NEW_MESSAGE_SUCCESS,
   NEW_MESSAGE_REQUEST,
   SET_ACTIVE_CHAT,
+  OPEN_USERS_LIST,
   CHANGE_MOBILE_STATE
 } from '../actions/chat';
 import {user, users, chats} from '../pages/chat/mock';
@@ -20,11 +21,17 @@ const defaultState = {
   chats,
   activeChatId: chats[3].id,
   sendingMessage: false,
-  mobileState: MobileChatStates.CHAT
+  mobileState: MobileChatStates.CHAT,
+  openUsersList: false
 };
 
 export default function chatReducer(state = defaultState, action) {
   switch (action.type) {
+    case OPEN_USERS_LIST:
+      return {
+        ...state,
+        openUsersList: !state.openUsersList
+      }
     case SET_ACTIVE_CHAT:
       return {
         ...state, 

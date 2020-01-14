@@ -142,7 +142,7 @@ export const chats = [
   {
     id: 1,
     name: 'Light Blue Group',
-    users: [2,3,4,5,1,6],
+    users: [7,2,3,4,5,1,6],
     ...dialogCommonData,
     createdAt: moment().subtract(1, 'd').subtract(5, 'm'),
     createdBy: 3,

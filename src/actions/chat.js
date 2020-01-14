@@ -5,11 +5,18 @@ export const CHANGE_MOBILE_STATE = 'CHANGE_MOBILE_STATE';
 export const NEW_MESSAGE_SUCCESS = 'NEW_MESSAGE_SUCCESS';
 export const NEW_MESSAGE_REQUEST = 'NEW_MESSAGE_REQUEST';
 export const SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT';
+export const OPEN_USERS_LIST = 'OPEN_USERS_LIST';
 
 export function changeMobileState(payload) {
   return {
     type: CHANGE_MOBILE_STATE,
     payload
+  }
+}
+
+export function openUsersList() {
+  return {
+    type: OPEN_USERS_LIST
   }
 }
 
