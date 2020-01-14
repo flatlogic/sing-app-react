@@ -7,7 +7,8 @@ import uuid from 'uuid/v4';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import Loader from '../../../../components/Loader';
-import ChatMessage from './ChatMessage'
+import ChatMessage from './ChatMessage';
+import OnlineStatus from '../OnlineStatus';
 import { newMessageRequest, changeMobileState } from '../../../../actions/chat';
 import { MobileChatStates } from '../../../../reducers/chat';
 import s from './ChatDialog.module.scss';
@@ -53,14 +54,6 @@ class ChatDialog extends PureComponent {
     }
 
     return dialogParts;
-  }
-
-  wasOnline = () => {
-    let calendarDate = moment(this.interlocutor().prevOnline).calendar();
-    let firstLetter = calendarDate[0].toLowerCase();
-    let substring = calendarDate.substr(1);
-
-    return firstLetter + substring;
   }
 
   interlocutor = () => {
@@ -129,7 +122,7 @@ class ChatDialog extends PureComponent {
 
     return (
     <div className={`d-flex flex-column chat-dialog-section`}>
-    <div className="d-md-none chat-mobile-navigation px-0" onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.LIST))}>
+    <div className="d-lg-none chat-mobile-navigation px-0" onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.LIST))}>
       <i className="la la-angle-left la-lg"></i>
       Chats
     </div>
@@ -137,11 +130,11 @@ class ChatDialog extends PureComponent {
         <div>
           <h5 className="fw-normal mb-0">{this.title()}</h5>
           {!this.chat().isGroup ?
-            <small className="text-muted ">{this.interlocutor().isOnline ? 'Online' : 'Was online ' + this.wasOnline()}</small>
+            <OnlineStatus user={this.interlocutor()} />
           :null}
         </div>
-        <i className={`${s.infoIcon} la la-ellipsis-v d-none d-md-inline-block`}></i>
-        <i className={`${s.infoIcon} la la-ellipsis-v d-md-none`} onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.INFO))}></i>
+        <i className={`${s.infoIcon} la la-ellipsis-v d-none d-xl-inline-block`}></i>
+        <i className={`${s.infoIcon} la la-ellipsis-v d-xl-none`} onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.INFO))}></i>
       </header>
       <div className={s.chatDialogBody} 
         ref={chatDialogBody => {

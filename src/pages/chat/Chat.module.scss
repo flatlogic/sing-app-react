@@ -20,10 +20,10 @@
 
 :global {
   .chat-section {
-      box-shadow: var(--widget-shadow);
-      border-radius: $border-radius;
-      background: $white;
-      padding: $chat-component-padding;
+    box-shadow: var(--widget-shadow);
+    border-radius: $border-radius;
+    background: $white;
+    padding: $chat-component-padding;
       margin-bottom: $spacer;
   }
   .chat-dialog-section {
@@ -33,84 +33,128 @@
   }
   .chat-info-section,
   .chat-list-section {
-    width: 330px;
-    min-width: 330px;
+    width: $chat-section-width;
+    min-width: $chat-section-width;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-  @media (max-width: breakpoint-max(sm)) {
-    .chat-page-wrapper {
-      .chat-info-section,
-      .chat-list-section,
-      .chat-dialog-section {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        min-width: 100vw;
-        margin: 0 (-$content-padding-sm);
-        opacity: 1;
-        //background: var(--body-bg);
-    
-        transition: left $sidebar-transition-time ease-in-out, opacity 0.2s ease-in-out;
-      }
+  .chat-page-wrapper {
+  @include  media-breakpoint-only(lg) {
+    .chat-info-section,
+    .chat-list-section,
+    .chat-dialog-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 1;
 
-      .chat-list-section {
-        width: 100%;
-        min-width: calc(100vw - 20px);
+      transition: left $sidebar-transition-time ease-in-out,
+      opacity 0.2s ease-in-out,
+      padding-right 0.2s ease-in-out,
+      padding-left 0.2s ease-in-out,
+      width 0.2s ease-in-out;
+    }
+    .chat-info-section {
+      opacity: 0;
+      left: 100vw;
+    }
+
+    .chat-dialog-section {
+      left: $chat-section-width;
+      padding-right: 0;
+      width: calc(100% - #{$chat-section-width});
+    }
+
+    .chat-list-section {
+      left: 0;
+    }
+
+    &.info-state {
+      .chat-info-section {
+        opacity: 1;
+        left: calc(100% - #{$chat-section-width});
       }
-    
-      .chat-info-section,
       .chat-dialog-section {
+        left: 0;
+        padding-right: $chat-component-padding;
+        padding-left: 0;
+      }
+      .chat-list-section {
+        left: -$chat-section-width;
         opacity: 0;
-        left: 100vw;
-      }
-    
-      .chat-section {
-        margin-right: $content-padding-sm;
-        margin-left: $content-padding-sm;
-      }
-    
-      &.chat-state {
-        .chat-dialog-section {
-          opacity: 1;
-          left: 0;
-        }
-    
-        .chat-list-section,
-        .chat-info-section {
-          opacity: 0;
-        }
-      }
-    
-      &.info-state {
-        .chat-info-section {
-          opacity: 1;
-        }
-    
-        .chat-dialog-section,
-        .chat-info-section {
-          left: 0;
-        }
-    
-        .chat-list-section,
-        .chat-dialog-section {
-          opacity: 0;
-        }
-      }
-    
-      .chat-mobile-navigation {
-        margin-bottom: $spacer;
-        padding: 0 $content-padding-sm;
-        display: flex;
-        align-items: center;
-        color: $text-muted;
-    
-        .la {
-          margin-right: $spacer / 2;
-        }
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    .chat-info-section,
+    .chat-list-section,
+    .chat-dialog-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      min-width: 100%;
+      opacity: 1;
+
+      transition: left $sidebar-transition-time ease-in-out, opacity 0.2s ease-in-out;
+    }
+
+    .chat-info-section,
+    .chat-dialog-section {
+      opacity: 0;
+      left: 100vw;
+    }
+
+    .chat-dialog-section {
+      padding: 0;
+    }
+
+    .chat-section {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    &.chat-state {
+      .chat-dialog-section {
+        opacity: 1;
+        left: 0;
+      }
+
+      .chat-list-section,
+      .chat-info-section {
+        opacity: 0;
+      }
+    }
+
+    &.info-state {
+      .chat-info-section {
+        opacity: 1;
+      }
+
+      .chat-dialog-section,
+      .chat-info-section {
+        left: 0;
+      }
+
+      .chat-list-section,
+      .chat-dialog-section {
+        opacity: 0;
+      }
+    }
+
+    .chat-mobile-navigation {
+      margin-bottom: $spacer;
+      display: flex;
+      align-items: center;
+      color: $text-muted;
+
+      .la {
+        margin-right: $spacer / 2;
+      }
+    }
+  }
+}
+
 }

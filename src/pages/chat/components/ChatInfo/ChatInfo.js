@@ -9,6 +9,7 @@ import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { MobileChatStates } from '../../../../reducers/chat';
 import { changeMobileState } from '../../../../actions/chat';
+import GroupList from './GroupList';
 import doc from '../../../../images/icons/doc.svg';
 import info from '../../../../images/icons/info.svg';
 import link from '../../../../images/icons/link.svg';
@@ -25,6 +26,7 @@ class ChatInfo extends Component {
     accordion: [
       false,false,false,false
     ],
+    openedGroupList: false
   }
 
   updateKye = (e) => {
@@ -79,7 +81,7 @@ class ChatInfo extends Component {
   render() {
     return (
       <div className="chat-info-section">
-      <div className="d-md-none chat-mobile-navigation" onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.CHAT))}>
+      <div className="d-lg-none chat-mobile-navigation" onClick={() => this.props.dispatch(changeMobileState(MobileChatStates.CHAT))}>
         <i className="la la-angle-left la-lg"></i>
         Dialog
       </div>
@@ -121,11 +123,17 @@ class ChatInfo extends Component {
           </ul>
         </div>
         <footer className="d-flex align-items-center justify-content-between">
-          <h5 className="text-white mb-0">{this.info().users.length} members</h5>
+          <h5 className={`${s.cursorStyle} text-white mb-0`} onClick={() => this.setState({ openedGroupList: true })}>{this.info().users.length} members</h5>
           <Button color="white" className={`text-info fw-semi-bold`}>
             Add people
           </Button>
         </footer>
+        {this.state.openedGroupList ?
+        <GroupList 
+          uids={this.info().users}
+          close={() => this.setState({ openedGroupList: false })}
+        />
+        :null}
       </section>
         }
 

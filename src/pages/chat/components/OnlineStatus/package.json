@@ -1,0 +1,7 @@
+{
+    "name": "OnlineStatus",
+    "version": "0.0.0",
+    "main": "./OnlineStatus.js",
+    "private": true
+  }
+  

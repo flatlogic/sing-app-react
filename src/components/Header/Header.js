@@ -203,7 +203,7 @@ class Header extends React.Component {
             },
             tooltip: {
               fontSize: 15,
-              padding: 5,
+              padding: 15,
             },
             tooltipContent: {
               padding: '20px 5px 0',

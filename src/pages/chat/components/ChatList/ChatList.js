@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChatListItem from './ChatListItem';
-import {
-  InputGroupAddon,
-  InputGroup,
-  Input,
-} from 'reactstrap';
+import ChatSearch from '../ChatSearch';
 import s from './ChatList.module.scss';
 
 class ChatList extends Component {
@@ -43,16 +39,9 @@ class ChatList extends Component {
   return (
     <div className={`chat-list-section`}>
       
-      <div className={`${s.searchBox} chat-section bg-white`}>
-        <InputGroup className={'input-group-no-border'}>
-        <Input className={s.chatInput} placeholder="Search" />
-        <InputGroupAddon addonType="prepend">
-          <i className="la la-search" />
-        </InputGroupAddon>
-        </InputGroup>
-      </div>
+      <ChatSearch />
 
-      <section className={`chat-section ${s.chatsSectionWrap} ${s.groupChats} d-none d-md-block`}>
+      <section className={`chat-section ${s.chatsSectionWrap} ${s.groupChats} d-none d-lg-block`}>
         <h5>Group Chats</h5>
         <ul className={`${s.chatList}`}>
           {this.getChats(true).map((chat, i) => (
@@ -63,7 +52,7 @@ class ChatList extends Component {
           ))}
         </ul>
       </section>
-      <section className={`chat-section ${s.chatsSectionWrap} ${s.personalChats} d-none d-md-block mb-0`}>
+      <section className={`chat-section ${s.chatsSectionWrap} ${s.personalChats} d-none d-lg-block mb-0`}>
         <h5>Personal Chats</h5>
         <ul className={`${s.chatList}`}>
           {this.getChats(false).map((chat, i) => (
@@ -74,7 +63,7 @@ class ChatList extends Component {
           ))}
         </ul>
       </section>
-      <section className={`chat-section mb-0 d-md-none ${s.allChats}`}>
+      <section className={`chat-section mb-0 d-lg-none ${s.allChats}`}>
         <h5>Group chats</h5>
         <ul className={`${s.chatList} mb-3`}>
           {this.getChats(true).map((chat, i) => (

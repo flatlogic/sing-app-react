@@ -46,9 +46,10 @@ export default function chatReducer(state = defaultState, action) {
       }
     case CHANGE_MOBILE_STATE:
       let defaultId = state.activeChatId;
+      let currentMobileState = state.mobileState;
       return {
         ...state,
-        mobileState: action.payload,
+        mobileState: (currentMobileState === action.payload && currentMobileState === MobileChatStates.INFO) ? MobileChatStates.CHAT : action.payload,
         activeChatId: action.payload === MobileChatStates.LIST ? null : defaultId
       }
     default:

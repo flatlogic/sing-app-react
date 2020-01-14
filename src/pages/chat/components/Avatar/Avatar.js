@@ -9,10 +9,10 @@ class Avatar extends PureComponent {
   }
 
   render() {
-    const { user, size, showStatus, group, stroke } = this.props;
+    const { user, size, showStatus, group, stroke, classProp } = this.props;
     return (
       !group ? 
-        <div className={s.avatar} style={{
+        <div className={`${s.avatar} ${classProp ? classProp : ""}`} style={{
           height: size + 'px',
           width: size + 'px',
           minWidth: size + 'px',

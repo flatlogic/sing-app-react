@@ -2,6 +2,7 @@
 
 .chatInfoHeader {
   color: $white;
+  position: relative;
   .avatarsRow {
     display: flex;
     align-items: center;
@@ -173,5 +174,72 @@
         margin-left: 15px;
       }
     }
+  }
+}
+.cursorStyle {
+  cursor: pointer;
+}
+.groupListModalWrapper {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  z-index: 1000;
+
+  .groupListModal {
+    overflow-y: auto;
+    max-height: 450px;
+
+    @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+
+    width: 300px;
+    color: $text-color;
+
+    .groupListHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacer;
+
+      .laLg {
+        vertical-align: middle;
+      }
+    }
+
+    .groupList {
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        padding: $spacer / 2;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.01);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    left: 0;
+
+    .groupListModal {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+    z-index: -1;
   }
 }
