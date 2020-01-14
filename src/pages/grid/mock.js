@@ -14,25 +14,25 @@ export default {
       ],
     shares: [
       {
-        img: '/images/people/a1.jpg',
+        img: './static/media/a1.jpg',
         name: 'Maikel Basso',
         comment: 'about 2 mins ago',
         type: 'danger'
       },
       {
-        img: '/images/people/a2.jpg',
+        img: './static/media/a2.jpg',
         name: 'Ianus Arendse',
         comment: 'about 42 mins ago',
         type: 'info'
       },
       {
-        img: '/images/people/a3.jpg',
+        img: './static/media/a3.jpg',
         name: 'Valdemar Landau',
         comment: 'one hour ago',
         type: 'success'
       },
       {
-        img: '/images/people/a4.jpg',
+        img: './static/media/a4.jpg',
         name: 'Rick Teagan',
         comment: '3 hours ago',
         type: 'warning'
@@ -80,32 +80,32 @@ export default {
     ],
     shares: [
       {
-        img: '/images/people/a6.jpg',
+        img: './static/media/a6.jpg',
         name: 'Jenny Wilington',
         comment: 'just now',
         type: 'success',
         extraClass: 'animated fadeInDown'
       },
       {
-        img: '/images/people/a1.jpg',
+        img: './static/media/a1.jpg',
         name: 'Maikel Basso',
         comment: 'about 2 mins ago',
         type: 'danger'
       },
       {
-        img: '/images/people/a2.jpg',
+        img: './static/media/a2.jpg',
         name: 'Ianus Arendse',
         comment: 'about 42 mins ago',
         type: 'info'
       },
       {
-        img: '/images/people/a3.jpg',
+        img: './static/media/a3.jpg',
         name: 'Valdemar Landau',
         comment: 'one hour ago',
         type: 'success'
       },
       {
-        img: '/images/people/a4.jpg',
+        img: './static/media/a4.jpg',
         name: 'Rick Teagan',
         comment: '3 hours ago',
         type: 'warning'

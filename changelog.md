@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### v7.3.0
+- Brand new chat component
+
 ### v7.2.0
 - New exquisite design
 
