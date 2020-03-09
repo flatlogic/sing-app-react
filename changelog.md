@@ -1,20 +1,41 @@
-# Change Log
-All notable changes to this project will be documented in this file.
+# Changelog
 
-### v7.3.0
+## [7.3.0]
+
+### New Features
+
 - Brand new chat component
 
-### v7.2.0
+## [7.2.0]
+
+### New Features
+
 - New exquisite design
 
-### v7.1.1
+## [7.1.1]
+
+### New Features
+
 - Virtual Tour
 
-### v7.1.0
+## [7.1.0]
+
+### New Features
+
 - Theme customizer
 
-### v7.0.1
+## [7.0.1]
+
+### Fixed
+
 - Fix bugs and css improvements
 
-### v7.0.0
-- Removed Jquery from core layout, new charts
+## [7.0.0]
+
+### Updated
+
+- Removed Jquery from core layout
+
+### New Features
+
+- New charts
