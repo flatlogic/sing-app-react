@@ -59,6 +59,7 @@ import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
 import ProductEdit from '../../pages/management/components/productEdit';
 import BreadcrumbHistory from '../BreadcrumbHistory';
+import AnotherPage from '../../pages/another-page'
 
 class Layout extends React.Component {
   static propTypes = {
@@ -132,8 +133,7 @@ class Layout extends React.Component {
         <Sidebar />
         <div className={s.wrap}>
           <Header />
-          <Helper />
-          
+
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
             <BreadcrumbHistory url={this.props.location.pathname} />
@@ -146,6 +146,7 @@ class Layout extends React.Component {
                   <Switch>
                     <Route path="/app/main" exact render={() => <Redirect to="/app/main/analytics" />} />
                     <Route path="/app/main/dashboard" exact component={Dashboard} />
+                    <Route path={"/app/another-page"} component={AnotherPage}/>
                     <Route path="/app/main/widgets" exact component={Widgets} />
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
                     <Route path="/app/ecommerce/management" exact component={Management} />

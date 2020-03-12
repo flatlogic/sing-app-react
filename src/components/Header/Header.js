@@ -58,30 +58,30 @@ class Header extends React.Component {
       showNewMessage: false,
       hideMessage: true,
       run: true,
-      steps: [
-        {
-          content: 'You can adjust sidebar, or leave it closed 😃',
-          placement: 'bottom',
-          target: '#toggleSidebar',
-          textAlign: 'center',
-          disableBeacon: true
-        },
-        {
-          content: "Admin can check out his messages and tasks easily 😃",
-          placement: 'bottom',
-          target: '.dropdown-toggle',
-        },
-        {
-          content: "Clickable cog can provide you with link to important pages 😄",
-          placement: 'bottom',
-          target: '.tutorial-dropdown',
-        },
-        {
-          content: 'Open theme cusomizer sidebar, play with it or watch tour! ❤️',
-          placement: 'left',
-          target: '.helper-button'
-        },
-      ],
+      // steps: [
+      //   {
+      //     content: 'You can adjust sidebar, or leave it closed 😃',
+      //     placement: 'bottom',
+      //     target: '#toggleSidebar',
+      //     textAlign: 'center',
+      //     disableBeacon: true
+      //   },
+      //   {
+      //     content: "Admin can check out his messages and tasks easily 😃",
+      //     placement: 'bottom',
+      //     target: '.dropdown-toggle',
+      //   },
+      //   {
+      //     content: "Clickable cog can provide you with link to important pages 😄",
+      //     placement: 'bottom',
+      //     target: '.tutorial-dropdown',
+      //   },
+      //   {
+      //     content: 'Open theme cusomizer sidebar, play with it or watch tour! ❤️',
+      //     placement: 'left',
+      //     target: '.helper-button'
+      //   },
+      // ],
     };
   }
 
