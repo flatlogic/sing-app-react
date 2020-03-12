@@ -1,8 +1,6 @@
 import React from 'react';
 import s from "../dashboard/Dashboard.module.scss";
 import {Col, Row} from "reactstrap";
-import Widget from "../../components/Widget";
-import reactLogo from "../../images/react-logo.svg";
 
 const AnotherPage = () => {
     return (

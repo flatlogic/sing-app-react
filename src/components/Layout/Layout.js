@@ -53,7 +53,6 @@ import Dashboard from '../../pages/dashboard';
 import { SidebarTypes } from '../../reducers/layout';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
-import Helper from '../Helper';
 import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
