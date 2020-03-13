@@ -3,7 +3,8 @@ import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import ProductCard from '../../pages/products/components/ProductCard/ProductCard';
-import products from '../../pages/products/mock'
+import products from '../../pages/products/mock';
+import chatImg from '../../images/chat/chat_preview.png';
 import { Link } from 'react-router-dom';
 
 import Widget from '../../components/Widget/Widget';
@@ -21,6 +22,17 @@ export default class Pages extends Component {
           </Breadcrumb>
         </Col>
         <Col lg={9}>
+        <Widget id="Chat-Application">
+            <h3>Chat Application</h3>
+            <img
+              src={chatImg}
+              className="img-fluid mt-3 mb-3"
+              alt="Chat Application"
+            />
+            <p>
+              <Link className="btn btn-primary mr-sm" to="/app/chat">Chat Application</Link>
+            </p>
+          </Widget>
           <Widget id="Auth">
             <h3>Auth</h3>
             <p>Auth is a built-in module for an admin template dashboard. It contains all actions and handlers for any token authorization for your application.</p>
@@ -95,6 +107,7 @@ export default class Pages extends Component {
             title="PAGES"
             prefix="pages"
             ids={[
+            'Chat-Application',
             'Auth',
             'Inbox',
             'Dashboards',
