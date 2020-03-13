@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.3.1]
+
+### Update
+
+- Updated documentation
+
 ## [7.3.0]
 
 ### New Features
