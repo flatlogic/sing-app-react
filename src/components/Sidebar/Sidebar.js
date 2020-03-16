@@ -86,7 +86,6 @@ class Sidebar extends React.Component {
             link="/app/another-page"
             isHeader
             iconName="flaticon-file"
-            index="documentation"
             badge="6"
           />
         </ul>

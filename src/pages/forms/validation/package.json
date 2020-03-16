@@ -1,6 +1,0 @@
-{
-  "name": "FormValidation",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./Validation.js"
-}

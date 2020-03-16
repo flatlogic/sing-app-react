@@ -1,6 +1,0 @@
-{
-  "name": "chat",
-  "version": "0.0.0",
-  "main": "./Chat.js",
-  "private": true
-}

@@ -1,9 +1,0 @@
-.messageTableHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & :global .form-control {
-    width: auto;
-  }
-}
