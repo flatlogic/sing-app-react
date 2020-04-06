@@ -7,7 +7,7 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  color: #ffffff;
+  color: $white;
   font-size: .9rem;
   overflow: visible;
 
@@ -29,7 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    color: #798892;
+    color: $gray-600;
 
     .titleHeader {
       width: 100%;
@@ -56,7 +56,7 @@
         }
         .monthLabel {
           flex: 3;
-          color: #798892;
+          color: $gray-600;
           font-size: 0.9rem;
         }
       }
@@ -68,7 +68,7 @@
       background-color: transparent;
 
       .dayName {
-        color: #798892;
+        color: $gray-600;
       }
     }
 
@@ -111,7 +111,7 @@
 .calendarItem-container.arrow {
   cursor: pointer;
   font-size: 0.9rem;
-  color: #d6dee5;
+  color: $gray-300;
 }
 
 .day {
@@ -128,7 +128,7 @@
     cursor: pointer;
     display: flex;
     margin: 3px 0;
-    color: #495057;
+    color: $gray-700;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
@@ -139,10 +139,15 @@
   &.hasEvents {
     .dayNumber {
       position: relative;
-      color: #495057;
+      color: $gray-700;
       background-color: transparent;
       border-radius: 50%;
       font-weight: bold;
+      transition: background-color .25s ease;
+      &:hover {
+        background-color: rgba($gray-900, .25);
+        border-radius: 10em;
+      }
     }
   }
 
