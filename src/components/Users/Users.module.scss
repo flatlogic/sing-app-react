@@ -1,0 +1,13 @@
+@import '../../styles/app';
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 60px;
+  width: 60px;
+  background: $warning;
+  font-weight: 600;
+  font-size: 18px;
+}

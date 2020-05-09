@@ -91,6 +91,29 @@ class Sidebar extends React.Component {
             ]}
           />
           <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Users"
+              isHeader
+              labelColor="danger"
+              iconName="flaticon-diamond"
+              link="/app/admin"
+              index="admin"
+              label="NodeJS"
+              exact={false}
+              childrenLinks={[
+                  {
+                    header: 'Users List', link: '/app/admin/users',
+                  },
+                  {
+                      header: 'My Profile', link: '/app/edit_profile',
+                  },
+                  {
+                      header: 'Change Password', link: '/app/password',
+                  },
+              ]}
+          />
+          <LinksGroup
             header="Chat"
             link="/app/chat"
             isHeader

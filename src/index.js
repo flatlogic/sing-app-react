@@ -11,6 +11,7 @@ import App from './components/App';
 import config from './config';
 import createRootReducer from './reducers';
 
+import { doInit } from './actions/auth';
 import { createHashHistory } from 'history';
 
 const history = createHashHistory();
@@ -35,6 +36,8 @@ export const store = createStore(
     ),
   )
 );
+
+store.dispatch(doInit());
 
 ReactDOM.render(
     <Provider store={store} context={ReactReduxContext}>

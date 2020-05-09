@@ -22,7 +22,7 @@ import {
 import cx from 'classnames';
 import { NavbarTypes } from '../../reducers/layout';
 import Notifications from '../Notifications';
-import { logoutUser } from '../../actions/user';
+import { logoutUser } from '../../actions/auth';
 import chroma from 'chroma-js'
 import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';

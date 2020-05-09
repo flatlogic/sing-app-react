@@ -4,7 +4,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../../components/Widget';
-import { loginUser, receiveToken, doInit } from 'actions/auth';
+import { loginUser, receiveToken, doInit } from '../../../actions/auth';
 import jwt from "jsonwebtoken";
 import microsoft from '../../../images/microsoft.png';
 import { push } from 'connected-react-router';

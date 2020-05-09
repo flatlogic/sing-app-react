@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormErrors from 'components/FormItems/formErrors';
+import FormErrors from '../formErrors';
 import { FastField } from 'formik';
 
 export class InputFormItemNotFast extends Component {
@@ -18,7 +18,7 @@ export class InputFormItemNotFast extends Component {
       errorMessage,
       required,
     } = this.props;
-
+    console.log(this.props);
     const { label } = this.props.schema[name];
 
     const sizeLabelClassName =

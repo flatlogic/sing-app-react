@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { push } from 'connected-react-router';
-import { store } from 'index';
+import { store } from '../../../index';
 
 const DEFAULT_ERROR_MESSAGE = 'Error';
 
