@@ -39,7 +39,7 @@ class App extends React.PureComponent {
             <ConnectedRouter history={getHistory()}>
               <HashRouter>
                   <Switch>
-                      <Route path="/" exact render={() => <Redirect to="/app"/>}/>
+                      <Route path="/" exact render={() => <Redirect to="/app/main"/>}/>
                       <Route path="/app" exact render={() => <Redirect to="/app/main"/>}/>
                       <UserRoute path="/app" dispatch={this.props.dispatch} component={LayoutComponent}/>
                       <AdminRoute path="/admin" currentUser={this.props.currentUser} dispatch={this.props.dispatch}
