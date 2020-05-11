@@ -152,12 +152,13 @@ class Layout extends React.Component {
                     <Route path="/app/main/dashboard" exact component={Dashboard} />
                     <Route path="/app/main/widgets" exact component={Widgets} />
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
-                    <Route path={"/app/edit_profile"} exact component={UserFormPage} />
-                    <Route path={"/app/password"} exact component={ChangePasswordFormPage} />
-                    <Route path={"/app/admin/users"} exact component={UserListPage} />
-                    <Route path={"/admin/users/new"} exact component={UserFormPage} />
-                    <Route path={"/admin/users/:id/edit"} exact component={UserFormPage} />
-                    <Route path={"/admin/users/:id"} exact component={UserViewPage} />
+                    <Route path="/app/edit_profile" exact component={UserFormPage} />
+                    <Route path="/app/password" exact component={ChangePasswordFormPage} />
+                    <Route path="/admin" exact render={() => <Redirect to="/admin/users" />} />
+                    <Route path="/admin/users" exact component={UserListPage} />
+                    <Route path="/admin/users/new" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id/edit" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id" exact component={UserViewPage} />
                     <Route path="/app/ecommerce/management" exact component={Management} />
                     <Route path="/app/ecommerce/management/:id" exact component={ProductEdit} />
                     <Route path="/app/ecommerce/management/create" exact component={ProductEdit} />

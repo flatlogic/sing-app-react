@@ -17,7 +17,7 @@ class UsersForm extends Component {
   passwordSchema = {
     currentPassword: { type: 'string', label: 'Current Password' },
     newPassword: { type: 'string', label: 'New Password' },
-    confirmNewPassword: { type: 'string', label: 'Current Password' },
+    confirmNewPassword: { type: 'string', label: 'Confirm new Password' },
   };
 
   renderForm() {
@@ -28,7 +28,6 @@ class UsersForm extends Component {
         <Formik
           onSubmit={this.handleSubmit}
           render={(form) => {
-            console.log(form, '<<<<<<<<<')
             return (
               <form onSubmit={form.handleSubmit}>
 

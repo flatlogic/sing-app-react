@@ -27,7 +27,7 @@ import chroma from 'chroma-js'
 import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
-import a5 from '../../images/people/a5.jpg';
+import avatar1 from '../../images/people/a5.jpg';
 
 import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
 
@@ -150,9 +150,9 @@ class Header extends React.Component {
     const { focus } = this.state;
     const { navbarType, navbarColor, openUsersList } = this.props;
 
-    const user = JSON.parse(localStorage.getItem('user') || {});
-
-    const firstUserLetter = (user.name|| user.email || "P")[0].toUpperCase();
+    const user = this.props.currentUser;
+    const avatar = user && user.avatar && user.avatar.length && user.avatar[0].publicUrl;
+    const firstUserLetter = user && (user.firstName|| user.email)[0].toUpperCase();
 
     return (
       <Navbar className={`${s.root} d-print-none ${navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ''}`} style={{backgroundColor: navbarColor, zIndex: !openUsersList ? 100 : 0}}>
@@ -272,14 +272,14 @@ class Header extends React.Component {
         <Nav className="ml-auto">
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
             <DropdownToggle nav caret className={`${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
-              <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
-                  {user.avatar || user.email === "admin@flatlogic.com" ? (
-                      <img src={user.avatar || a5} alt="..."/>
-                  ) : (
-                      <span>{firstUserLetter}</span>
-                  )}
-              </span>
-              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user.name || user.email || "Philip smith"}</span>
+            <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
+              {avatar ? (
+                <img src={avatar} onError={e => e.target.src = avatar1} alt="..." title={user && (user.firstName || user.email)} />
+              ) : (
+                <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
+              )}
+            </span>
+              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
               <span className="ml-1 circle bg-primary text-white fw-bold">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
@@ -311,7 +311,8 @@ function mapStateToProps(store) {
     sidebarStatic: store.navigation.sidebarStatic,
     navbarType: store.layout.navbarType,
     navbarColor: store.layout.navbarColor,
-    openUsersList: store.chat.openUsersList
+    openUsersList: store.chat.openUsersList,
+    currentUser: store.auth.currentUser,
   };
 }
 

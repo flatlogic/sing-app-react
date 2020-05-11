@@ -8,7 +8,7 @@ import s from './Sidebar.module.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
-import { logoutUser } from '../../actions/user';
+import { logoutUser } from '../../actions/auth';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -97,13 +97,13 @@ class Sidebar extends React.Component {
               isHeader
               labelColor="danger"
               iconName="flaticon-diamond"
-              link="/app/admin"
+              link="/admin"
               index="admin"
               label="NodeJS"
               exact={false}
               childrenLinks={[
                   {
-                    header: 'Users List', link: '/app/admin/users',
+                    header: 'Users List', link: '/admin/users',
                   },
                   {
                       header: 'My Profile', link: '/app/edit_profile',

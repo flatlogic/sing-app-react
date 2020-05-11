@@ -20,8 +20,6 @@ import Register from '../pages/auth/register';
 import Reset from '../pages/auth/reset';
 import Forgot from '../pages/auth/forgot';
 
-// import { logoutUser } from '../actions/user';
-
 const CloseButton = ({closeToast}) => <i onClick={closeToast} className="la la-close notifications-close"/>
 
 class App extends React.PureComponent {

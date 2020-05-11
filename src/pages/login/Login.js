@@ -4,7 +4,7 @@ import { withRouter, Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../components/Widget';
-import { loginUser, receiveToken } from '../../actions/user';
+import { loginUser, receiveToken } from '../../actions/auth';
 import jwt from "jsonwebtoken";
 import microsoft from '../../images/microsoft.png';
 import config from "../../config";

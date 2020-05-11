@@ -18,7 +18,6 @@ export class InputFormItemNotFast extends Component {
       errorMessage,
       required,
     } = this.props;
-    console.log(this.props);
     const { label } = this.props.schema[name];
 
     const sizeLabelClassName =

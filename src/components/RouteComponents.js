@@ -4,7 +4,6 @@ import { Redirect, Route } from 'react-router';
 import React from 'react';
 
 export const AdminRoute = ({currentUser, dispatch, component, ...rest}) => {
-  console.log(currentUser);
   if (!currentUser || currentUser.role !== 'admin' || !Login.isAuthenticated(localStorage.getItem('token'))) {
     return (<Redirect to="/app/main"/>)
   } else if (currentUser && currentUser.role === 'admin') {

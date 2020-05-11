@@ -5,7 +5,7 @@
   "scripts": {
     "build": "REACT_APP_BACKEND=true PUBLIC_URL='/sing-app-react' node scripts/build.js",
     "start": "node scripts/start.js",
-    "start:backend": "REACT_APP_BACKEND=true node scripts/start.js",
+    "start:backend": "cross-env REACT_APP_BACKEND=true node scripts/start.js",
     "test": "node scripts/test.js"
   },
   "browserslist": [
@@ -71,6 +71,7 @@
     "chroma-js": "^2.1.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.8.0",
+    "cross-env": "^7.0.2",
     "draft-js": "^0.10.5",
     "echarts": "^4.4.0",
     "echarts-for-react": "^2.0.15-beta.1",
@@ -79,7 +80,7 @@
     "flot": "^0.8.0-alpha",
     "flot.dashes": "https://github.com/cquartier/flot.dashes.git",
     "font-awesome": "4.7.0",
-    "formik": "^2.1.4",
+    "formik": "1.5.1",
     "formsy-react": "0.19.5",
     "glyphicons-halflings": "^1.9.1",
     "highcharts": "^7.2.0",
@@ -116,7 +117,7 @@
     "react-maskedinput": "^4.0.1",
     "react-mde": "2.3.4",
     "react-redux": "^7.2.0",
-    "react-router": "^4.3.1",
+    "react-router": "5.1.2",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.1",
     "react-scrollspy": "^3.3.5",
