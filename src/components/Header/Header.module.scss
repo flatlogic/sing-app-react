@@ -49,6 +49,12 @@
   font-size: 16px;
 }
 
+.mobileCog {
+  @include media-breakpoint-down(sm) {
+    padding: 0.5rem 0!important;
+  }
+}
+
 .navbarForm {
   padding: 6px 0 6px 1rem;
   margin-left: 10px;
@@ -147,6 +153,9 @@
     left: auto !important;
     right: 0 !important;
     top: $navbar-height !important;
+    @include media-breakpoint-down(sm) {
+      right: -40px!important;
+    }
   }
 }
 

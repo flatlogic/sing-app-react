@@ -73,7 +73,7 @@ class Reset extends React.Component {
           <Container>
             <h5 className="auth-logo">
               <i className="la la-circle text-gray"/>
-              React UM
+              Sing App React
               <i className="la la-circle text-warning"/>
             </h5>
             <Widget className="widget-auth mx-auto" title={<h3 className="mt-0">Reset password</h3>}>

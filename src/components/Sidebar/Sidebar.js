@@ -96,17 +96,20 @@ class Sidebar extends React.Component {
               header="Users"
               isHeader
               labelColor="danger"
-              iconName="flaticon-diamond"
+              iconName="flaticon-user"
               link="/admin"
               index="admin"
-              label="NodeJS"
+              label="Real App"
               exact={false}
               childrenLinks={[
                   {
-                    header: 'Users List', link: '/admin/users',
+                    header: 'User Management', link: '/admin/users',
                   },
                   {
-                      header: 'My Profile', link: '/app/edit_profile',
+                    header: 'My Profile', link: '/app/profile',
+                  },
+                  {
+                      header: 'Edit Profile', link: '/app/edit_profile',
                   },
                   {
                       header: 'Change Password', link: '/app/password',
@@ -152,15 +155,6 @@ class Sidebar extends React.Component {
             isHeader
             iconName="flaticon-database-1"
             index="packages"
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Profile"
-            link="/app/profile"
-            isHeader
-            iconName="flaticon-user"
-            index="profile"
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

@@ -27,7 +27,7 @@ import chroma from 'chroma-js'
 import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
-import avatar1 from '../../images/people/a5.jpg';
+import adminDefault from '../../images/chat/chat2.png';
 
 import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
 
@@ -57,7 +57,7 @@ class Header extends React.Component {
       focus: false,
       showNewMessage: false,
       hideMessage: true,
-      run: true,
+      run: false,
       steps: [
         {
           content: 'You can adjust sidebar, or leave it closed 😃',
@@ -83,6 +83,12 @@ class Header extends React.Component {
         },
       ],
     };
+  }
+
+  componentDidMount() {
+    if (window.location.href.includes('main')) {
+      this.setState({ run: true })
+    }
   }
 
   handleJoyrideCallback = (CallBackProps) => {
@@ -152,6 +158,7 @@ class Header extends React.Component {
 
     const user = this.props.currentUser;
     const avatar = user && user.avatar && user.avatar.length && user.avatar[0].publicUrl;
+
     const firstUserLetter = user && (user.firstName|| user.email)[0].toUpperCase();
 
     return (
@@ -270,24 +277,24 @@ class Header extends React.Component {
         </NavLink>
 
         <Nav className="ml-auto">
-          <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu} d-sm-down-none`}>
+          <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
             <DropdownToggle nav caret className={`${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
             <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
-              {avatar ? (
-                <img src={avatar} onError={e => e.target.src = avatar1} alt="..." title={user && (user.firstName || user.email)} />
+              {avatar || user && user.role === 'admin' ? (
+                <img src={avatar || adminDefault} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
               ) : (
                 <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
               )}
             </span>
-              <span className={`small ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
-              <span className="ml-1 circle bg-primary text-white fw-bold">13</span>
+              <span className={`small d-sm-down-none ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
+              <span className="ml-1 circle bg-primary text-white fw-bold d-sm-down-none">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
               <Notifications />
             </DropdownMenu>
           </Dropdown>
-          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="d-sm-down-none tutorial-dropdown pr-4">
-            <DropdownToggle nav>
+          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="tutorial-dropdown pr-4">
+            <DropdownToggle nav className={`${s.mobileCog}`}>
               <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>
             <DropdownMenu right className={`super-colors`}>

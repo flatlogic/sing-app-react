@@ -79,7 +79,7 @@ class Login extends React.Component {
                 <Container>
                     <h5 className="auth-logo">
                         <i className="la la-circle text-primary" />
-                        React UM
+                        Sing App React
                         <i className="la la-circle text-danger" />
                     </h5>
                     <Widget className="widget-auth mx-auto" title={<h3 className="mt-0">Login to your Web App</h3>}>

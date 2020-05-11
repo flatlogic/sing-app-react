@@ -4,13 +4,13 @@ import { truncate } from 'lodash';
 
 import s from '../Users.module.scss';
 import avatar1 from '../../../images/chat/chat1.png';
-import avatar2 from '../../../images/chat/chat2.png';
+import defaultAminAvatar from '../../../images/chat/chat2.png';
 import avatar3 from '../../../images/chat/chat3.png';
 import avatar4 from '../../../images/chat/chat4.png';
 import avatar5 from '../../../images/chat/chat5.png';
 import avatar6 from '../../../images/chat/chat6.png';
 
-const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6];
+const avatars = [avatar1, avatar3, avatar4, avatar5, avatar6];
 
 function imageFormatter(cell, rows,_ , index) {
   const imageUrl =
@@ -18,7 +18,7 @@ function imageFormatter(cell, rows,_ , index) {
       ? cell[0].publicUrl
       : undefined;
   return (
-      <span>{imageUrl ? <img width="60" height="60" className="rounded-circle" src={imageUrl} onError={(e) => e.target.src = avatars[index+1]} alt="avatar" /> : <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>{rows.email.charAt(0).toUpperCase()}</span>}</span>
+      <span>{imageUrl || rows.role === 'admin' ? <img width="60" height="60" className="rounded-circle" src={imageUrl || defaultAminAvatar} onError={(e) => e.target.src = avatars[index+1]} alt="avatar" /> : <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>{rows.email.charAt(0).toUpperCase()}</span>}</span>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { Provider, ReactReduxContext  } from 'react-redux'
+import { Provider } from 'react-redux'
 import ReduxThunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
@@ -40,7 +40,7 @@ export const store = createStore(
 store.dispatch(doInit());
 
 ReactDOM.render(
-    <Provider store={store} context={ReactReduxContext}>
+    <Provider store={store}>
         <App />
     </Provider>,
     document.getElementById('root')
