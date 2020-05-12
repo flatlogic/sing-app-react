@@ -23,6 +23,8 @@ import {
 
 import Widget from 'components/Widget';
 
+import s from '../Users.module.scss';
+
 class UsersListTable extends Component {
   state = {
     modalOpen: false,
@@ -45,31 +47,32 @@ class UsersListTable extends Component {
 
   actionFormatter(cell) {
     return (
-        <div>
+      <div className={`d-flex justify-content-between`}>
         <Button
-          color="default"
+          className={s.controBtn}
+          color="info"
           size="xs"
           onClick={() => this.props.dispatch(push(`/admin/users/${cell}`))}
         >
-      View
-      </Button>
-      &nbsp;&nbsp;
+          View
+        </Button>
         <Button
-          color="default"
+          className={s.controBtn}
+          color="success"
           size="xs"
           onClick={() => this.props.dispatch(push(`/admin/users/${cell}/edit`))}
         >
-        Edit
-      </Button>
-      <br/>
+          Edit
+        </Button>
         <Button
-          color="default"
+          className={s.controBtn}
+          color="danger"
           size="xs"
           onClick={() => this.openModal(cell)}
         >
-        Delete
+          Delete
         </Button>
-        </div>
+      </div>
      )
   }
 
@@ -109,7 +112,7 @@ class UsersListTable extends Component {
 
     return (
         <div>
-          <Widget collapse close>
+          <Widget title="Users" collapse close>
 
             <BootstrapTable bordered={false} data={rows} version="4" pagination options={options} search tableContainerClass={`table-responsive table-striped table-hover`}>
               <TableHeaderColumn dataField="avatars" dataSort dataFormat={dataFormat.imageFormatter}>
