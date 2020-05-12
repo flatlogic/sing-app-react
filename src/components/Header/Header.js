@@ -280,11 +280,12 @@ class Header extends React.Component {
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
             <DropdownToggle nav caret className={`${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>
             <span className={`${s.avatar} rounded-circle thumb-sm float-left mr-2`}>
-              {avatar || user && user.role === 'admin' ? (
-                <img src={avatar || adminDefault} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
-              ) : (
-                <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
-              )}
+              {avatar ? (
+                <img src={avatar} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
+              ) : user && user.role === 'admin' ? (
+                <img src={adminDefault} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
+              ) : <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
+              }
             </span>
               <span className={`small d-sm-down-none ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
               <span className="ml-1 circle bg-primary text-white fw-bold d-sm-down-none">13</span>
