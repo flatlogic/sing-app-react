@@ -1,5 +1,7 @@
 import Errors from 'components/FormItems/error/errors';
 import axios from 'axios';
+import config from '../config';
+import { mockUser } from '../actions/mock';
 
 async function list() {
   const response = await axios.get(`/users`);
@@ -8,61 +10,74 @@ async function list() {
 
 const actions = {
 
-  doFetch: (filter, keepPagination = false) => async (
-    dispatch,
-    getState,
-  ) => {
-    try {
-      dispatch({
-        type: 'USERS_LIST_FETCH_STARTED',
-        payload: { filter, keepPagination },
-      });
-
-      const response = await list();
-
+  doFetch: (filter, keepPagination = false) => async (dispatch) => {
+    if (!config.isBackend) {
       dispatch({
         type: 'USERS_LIST_FETCH_SUCCESS',
         payload: {
-          rows: response.rows,
-          count: response.count,
+          rows: [mockUser],
+          count: 1,
         },
       });
-    } catch (error) {
-      Errors.handle(error);
+    } else {
+      try {
+        dispatch({
+          type: 'USERS_LIST_FETCH_STARTED',
+          payload: { filter, keepPagination },
+        });
 
-      dispatch({
-        type: 'USERS_LIST_FETCH_ERROR',
-      });
+        const response = await list();
+
+        dispatch({
+          type: 'USERS_LIST_FETCH_SUCCESS',
+          payload: {
+            rows: response.rows,
+            count: response.count,
+          },
+        });
+      } catch (error) {
+        Errors.handle(error);
+
+        dispatch({
+          type: 'USERS_LIST_FETCH_ERROR',
+        });
+      }
     }
   },
 
   doDelete: (id) => async (dispatch) => {
-    try {
-      dispatch({
-        type: 'USERS_LIST_DELETE_STARTED',
-      });
-
-      await axios.delete(`/users/${id}`)
-
-      dispatch({
-        type: 'USERS_LIST_DELETE_SUCCESS',
-      });
-
-      const response = await list();
-      dispatch({
-        type: 'USERS_LIST_FETCH_SUCCESS',
-        payload: {
-          rows: response.rows,
-          count: response.count,
-        },
-      });
-
-    } catch (error) {
-      Errors.handle(error);
-
+    if (!config.isBackend) {
       dispatch({
         type: 'USERS_LIST_DELETE_ERROR',
       });
+    } else {
+      try {
+        dispatch({
+          type: 'USERS_LIST_DELETE_STARTED',
+        });
+  
+        await axios.delete(`/users/${id}`)
+  
+        dispatch({
+          type: 'USERS_LIST_DELETE_SUCCESS',
+        });
+  
+        const response = await list();
+        dispatch({
+          type: 'USERS_LIST_FETCH_SUCCESS',
+          payload: {
+            rows: response.rows,
+            count: response.count,
+          },
+        });
+  
+      } catch (error) {
+        Errors.handle(error);
+  
+        dispatch({
+          type: 'USERS_LIST_DELETE_ERROR',
+        });
+      }
     }
   },
   doOpenConfirm: (id) => async (dispatch) => {

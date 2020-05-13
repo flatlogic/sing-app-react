@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import config from '../../../config';
 import { connect } from 'react-redux';
 import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../../components/Widget';
@@ -16,6 +17,7 @@ class Login extends React.Component {
 
     static isAuthenticated() {
       const token = localStorage.getItem('token');
+      if (!config.isBackend && token) return true;
       if (!token) return;
       const date = new Date().getTime() / 1000;
       const data = jwt.decode(token);

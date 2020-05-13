@@ -3,6 +3,8 @@ import Errors from 'components/FormItems/error/errors';
 import { push } from 'connected-react-router';
 import { doInit } from 'actions/auth';
 import { toast } from 'react-toastify';
+import config from '../config';
+import { mockUser } from '../actions/mock';
 
 const actions = {
   doNew: () => {
@@ -12,27 +14,34 @@ const actions = {
   },
 
   doFind: (id) => async (dispatch) => {
-    try {
+    if (!config.isBackend) {
       dispatch({
-        type: 'USERS_FORM_FIND_STARTED',
+        type: 'USERS_FORM_FIND_SUCCESS',
+        payload: mockUser,
       });
-
-      axios.get(`/users/${id}`).then(res => {
-        const record = res.data;
-
+    } else {
+      try {
         dispatch({
-          type: 'USERS_FORM_FIND_SUCCESS',
-          payload: record,
+          type: 'USERS_FORM_FIND_STARTED',
         });
-      })
-    } catch (error) {
-      Errors.handle(error);
-
-      dispatch({
-        type: 'USERS_FORM_FIND_ERROR',
-      });
-
-      dispatch(push('/admin/users'));
+  
+        axios.get(`/users/${id}`).then(res => {
+          const record = res.data;
+  
+          dispatch({
+            type: 'USERS_FORM_FIND_SUCCESS',
+            payload: record,
+          });
+        })
+      } catch (error) {
+        Errors.handle(error);
+  
+        dispatch({
+          type: 'USERS_FORM_FIND_ERROR',
+        });
+  
+        dispatch(push('/admin/users'));
+      }
     }
   },
 
@@ -102,7 +111,7 @@ const actions = {
       });
 
       toast.success('Password has been updated');
-      dispatch(push('/app/dashboard'));
+      dispatch(push('/app/main'));
 
     } catch (error) {
       Errors.handle(error);

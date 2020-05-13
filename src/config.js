@@ -8,6 +8,10 @@ export default {
   baseURLApi,
   remote: "https://sing-generator-node.herokuapp.com",
   isBackend: process.env.REACT_APP_BACKEND,
+  auth: {
+    email: 'admin@flatlogic.com',
+    password: 'password'
+  },
   app: {
     colors: {
       dark: "#002B49",
