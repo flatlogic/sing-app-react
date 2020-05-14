@@ -142,7 +142,6 @@ export function loginUser(creds) {
 export function verifyEmail(token) {
   return(dispatch) => {
     if (!config.isBackend) {
-      toast.success("Email verification works with BE");
       dispatch(push('/login'));
     } else {
       axios.put("/auth/verify-email", {token}).then(verified => {
@@ -161,7 +160,6 @@ export function verifyEmail(token) {
 export function resetPassword(token, password) {
   return (dispatch) => {
     if (!config.isBackend) {
-      toast.success("Password update works with BE");
       dispatch(push('/login'));
     } else {
       dispatch({
@@ -183,7 +181,6 @@ export function resetPassword(token, password) {
 export function sendPasswordResetEmail(email) {
   return (dispatch) => {
     if (!config.isBackend) {
-      toast.success("Email with resetting instructions works with BE");
       dispatch(push('/login'));
     } else {
       dispatch({
@@ -205,7 +202,6 @@ export function sendPasswordResetEmail(email) {
 export function registerUser(creds) {
   return (dispatch) => {
     if (!config.isBackend) {
-      toast.success("Registration works with BE, user default credentials");
       dispatch(push('/login'));
     } else {
       dispatch({
