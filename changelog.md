@@ -1,5 +1,18 @@
 # Changelog
 
+## [8.0.0]
+
+### New Features
+
+- Added brand new Backend
+- New tab to mange users
+- Social login
+- Manage users functionality
+- Update password route
+- Reset password route
+- Upload avatar
+- Refactored architecture
+
 ## [7.3.2]
 
 ### Fix
