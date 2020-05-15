@@ -122,7 +122,7 @@ export function loginUser(creds) {
           type: LOGIN_REQUEST,
         });
         if (creds.social) {
-          window.location.href = config.baseURLApi + "/auth/signin/" + creds.social;
+          window.location.href = config.baseURLApi + "/auth/signin/" + creds.social + '?app=' + config.redirectUrl;
         } else if (creds.email.length > 0 && creds.password.length > 0) {
           axios.post("/auth/signin/local", creds).then(res => {
             const token = res.data;
