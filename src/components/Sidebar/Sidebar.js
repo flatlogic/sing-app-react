@@ -8,7 +8,7 @@ import s from './Sidebar.module.scss';
 import LinksGroup from './LinksGroup/LinksGroup';
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 import isScreen from '../../core/screenHelper';
-import { logoutUser } from '../../actions/user';
+import { logoutUser } from '../../actions/auth';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -67,7 +67,7 @@ class Sidebar extends React.Component {
         className={s.root}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app/"><span className={s.logoStyle}>Sing</span> App</a>
+          <a href="https://demo.flatlogic.com/sing-app-react/"><span className={s.logoStyle}>Sing</span> App</a>
         </header>
         <ul className={s.nav}>
           <LinksGroup
@@ -89,6 +89,32 @@ class Sidebar extends React.Component {
                 header: 'Widgets', link: '/app/main/widgets',
               },
             ]}
+          />
+          <LinksGroup
+              onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
+              activeItem={this.props.activeItem}
+              header="Users"
+              isHeader
+              labelColor="danger"
+              iconName="flaticon-user"
+              link="/admin"
+              index="admin"
+              label="Real App"
+              exact={false}
+              childrenLinks={[
+                  {
+                    header: 'User Management', link: '/admin/users',
+                  },
+                  {
+                    header: 'My Profile', link: '/app/profile',
+                  },
+                  {
+                      header: 'Edit Profile', link: '/app/edit_profile',
+                  },
+                  {
+                      header: 'Change Password', link: '/app/password',
+                  },
+              ]}
           />
           <LinksGroup
             header="Chat"
@@ -129,15 +155,6 @@ class Sidebar extends React.Component {
             isHeader
             iconName="flaticon-database-1"
             index="packages"
-          />
-          <LinksGroup
-            onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}
-            activeItem={this.props.activeItem}
-            header="Profile"
-            link="/app/profile"
-            isHeader
-            iconName="flaticon-user"
-            index="profile"
           />
           <LinksGroup
             onActiveSidebarItemChange={activeItem => this.props.dispatch(changeActiveSidebarItem(activeItem))}

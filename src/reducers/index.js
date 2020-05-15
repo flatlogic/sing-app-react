@@ -4,17 +4,20 @@ import navigation from './navigation';
 import alerts from './alerts';
 import layout from './layout';
 import products from './products';
-import register from './register';
 import analytics from './analytics';
 import chat from './chat';
+import users from './usersReducers';
+import { connectRouter } from 'connected-react-router';
 
-export default combineReducers({
-  alerts,
-  auth,
-  navigation,
-  layout,
-  products,
-  register,
-  analytics,
-  chat
+export default (history) =>
+  combineReducers({
+    router: connectRouter(history),
+    alerts,
+    auth,
+    navigation,
+    layout,
+    products,
+    analytics,
+    chat,
+    users,
 });

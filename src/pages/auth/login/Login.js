@@ -1,34 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Redirect, Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import config from '../../../config';
 import { connect } from 'react-redux';
 import { Container, Alert, Button } from 'reactstrap';
-import Widget from '../../components/Widget';
-import { loginUser, receiveToken } from '../../actions/auth';
+import Widget from '../../../components/Widget';
+import { loginUser, receiveToken, doInit } from '../../../actions/auth';
 import jwt from "jsonwebtoken";
-import microsoft from '../../images/microsoft.png';
-import config from "../../config";
+import microsoft from '../../../images/microsoft.png';
+import { push } from 'connected-react-router';
 
 class Login extends React.Component {
     static propTypes = {
         dispatch: PropTypes.func.isRequired,
     };
 
-    static isAuthenticated(token) {
-        // We check if app runs with backend mode
-        if (!config.isBackend && token) return true;
-        if (!token) return;
-        const date = new Date().getTime() / 1000;
-        const data = jwt.decode(token);
-        return date < data.exp;
+    static isAuthenticated() {
+      const token = localStorage.getItem('token');
+      if (!config.isBackend && token) return true;
+      if (!token) return;
+      const date = new Date().getTime() / 1000;
+      const data = jwt.decode(token);
+      if (!data) return;
+      return date < data.exp;
     }
 
     constructor(props) {
         super(props);
 
         this.state = {
-            email: 'admin@flatlogic.com',
-            password: 'password',
+          email: 'admin@flatlogic.com',
+          password: 'password',
         };
 
         this.doLogin = this.doLogin.bind(this);
@@ -65,37 +67,29 @@ class Login extends React.Component {
         const token = params.get('token');
         if (token) {
             this.props.dispatch(receiveToken(token));
+            this.props.dispatch(doInit());
         }
     }
 
     signUp() {
-        this.props.history.push('/register');
+      this.props.dispatch(push('/register'));
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/app' } }; // eslint-disable-line
-
-        // cant access login page while logged in
-        if (Login.isAuthenticated(localStorage.getItem('token'))) {
-            return (
-                <Redirect to={from} />
-            );
-        }
-
         return (
             <div className="auth-page">
                 <Container>
                     <h5 className="auth-logo">
-                        <i className="fa fa-circle text-primary" />
-                        Sing App
-                        <i className="fa fa-circle text-danger" />
+                        <i className="la la-circle text-primary" />
+                        Sing App React
+                        <i className="la la-circle text-danger" />
                     </h5>
                     <Widget className="widget-auth mx-auto" title={<h3 className="mt-0">Login to your Web App</h3>}>
                         <p className="widget-auth-info">
                             Use your email to sign in.
                         </p>
                         <Alert className="alert-sm text-center mt-2" color="secondary">
-                            This is a real app with Node.js backend - use
+                            For user with "admin" role use
                             <br/>
                             <span className="font-weight-bold">"admin@flatlogic.com / password"</span>
                             <br/>
@@ -112,9 +106,10 @@ class Login extends React.Component {
                             <div className="form-group">
                                 <input className="form-control no-border" value={this.state.email} onChange={this.changeEmail} type="email" required name="email" placeholder="Email" />
                             </div>
-                            <div className="form-group">
+                            <div className="form-group mb-0">
                                 <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
                             </div>
+                            <Link className="d-block text-right mb-3 mt-1 fs-sm" to="forgot">Forgot password?</Link>
                             <Button type="submit" color="info" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
                             <p className="widget-auth-info">or sign in with</p>
                             <div className="social-buttons">
@@ -136,7 +131,7 @@ class Login extends React.Component {
                     </Widget>
                 </Container>
                 <footer className="auth-footer">
-                    2019 &copy; Sing App - React Admin Dashboard Template.
+                  {new Date().getFullYear()} &copy; React User Management.
                 </footer>
             </div>
         );

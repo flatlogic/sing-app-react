@@ -50,6 +50,10 @@ import Echarts from '../../pages/charts/echarts';
 import HighCharts from '../../pages/charts/highcharts';
 import DashboardAnalytics from '../../pages/analytics';
 import Dashboard from '../../pages/dashboard';
+import UserFormPage from '../Users/form/UsersFormPage';
+import UserListPage from '../Users/list/UsersListPage';
+import UserViewPage from '../Users/view/UsersViewPage';
+import ChangePasswordFormPage from '../Users/changePassword/ChangePasswordFormPage';
 import { SidebarTypes } from '../../reducers/layout';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
@@ -148,6 +152,14 @@ class Layout extends React.Component {
                     <Route path="/app/main/dashboard" exact component={Dashboard} />
                     <Route path="/app/main/widgets" exact component={Widgets} />
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
+                    <Route path="/app/edit_profile" exact component={UserFormPage} />
+                    <Route path="/app/password" exact component={ChangePasswordFormPage} />
+                    <Route path="/admin" exact render={() => <Redirect to="/admin/users" />} />
+                    <Route path="/admin/users" exact component={UserListPage} />
+                    <Route path="/admin/users/new" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id/edit" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id" exact component={UserViewPage} />
+                    <Route path="/app/ecommerce" exact render={() => <Redirect to="/app/ecommerce/management" />} />
                     <Route path="/app/ecommerce/management" exact component={Management} />
                     <Route path="/app/ecommerce/management/:id" exact component={ProductEdit} />
                     <Route path="/app/ecommerce/management/create" exact component={ProductEdit} />
@@ -219,7 +231,8 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     dashboardTheme: store.layout.dashboardTheme,
-    sidebarType: store.layout.sidebarType
+    sidebarType: store.layout.sidebarType,
+    currentUser: store.auth.currentUser,
   };
 }
 

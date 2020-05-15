@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'connected-react-router';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux'
 import ReduxThunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
@@ -8,7 +9,16 @@ import axios from 'axios';
 
 import App from './components/App';
 import config from './config';
-import reducers from './reducers';
+import createRootReducer from './reducers';
+
+import { doInit } from './actions/auth';
+import { createHashHistory } from 'history';
+
+const history = createHashHistory();
+
+export function getHistory() {
+  return history;
+}
 
 axios.defaults.baseURL = config.baseURLApi;
 axios.defaults.headers.common['Content-Type'] = "application/json";
@@ -17,10 +27,17 @@ if (token) {
     axios.defaults.headers.common['Authorization'] = "Bearer " + token;
 }
 
-const store = createStore(
-  reducers,
-  applyMiddleware(ReduxThunk)
+export const store = createStore(
+  createRootReducer(history),
+  compose(
+    applyMiddleware(
+      routerMiddleware(history),
+      ReduxThunk
+    ),
+  )
 );
+
+store.dispatch(doInit());
 
 ReactDOM.render(
     <Provider store={store}>
