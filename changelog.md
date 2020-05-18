@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.1]
+
+### New Features
+
+- Added sample formik widget
+
 ## [8.0.0]
 
 ### New Features
