@@ -10,6 +10,7 @@ import Formsy from 'formsy-react';
 
 import InputValidation from '../../../components/InputValidation';
 import Widget from '../../../components/Widget';
+import Formik from './Formik';
 
 
 class Validation extends React.Component {
@@ -21,8 +22,7 @@ class Validation extends React.Component {
         </h1>
 
         <Row>
-          <Col xs={0} lg={1} />
-          <Col lg={8} xs={12}>
+          <Col lg={{size: 8, offset: 1}} xs={{size: 12, offset: 0}}>
             <Widget
               title={<h5> Dead simple validation
               <small> No JS needed to tune-up</small>
@@ -173,6 +173,11 @@ class Validation extends React.Component {
                   <Button type="button" color="default" className="btn-rounded">Cancel</Button>
                 </div>
               </Formsy.Form>
+            </Widget>
+          </Col>
+          <Col lg={{size: 8, offset: 1}} xs={{size: 12, offset: 0}}>
+            <Widget title={<h5> Dead simple formik</h5>} close collapse>
+              <Formik />
             </Widget>
           </Col>
         </Row>
