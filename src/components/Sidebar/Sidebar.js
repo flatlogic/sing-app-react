@@ -103,7 +103,7 @@ class Sidebar extends React.Component {
               exact={false}
               childrenLinks={[
                   {
-                    header: 'User Management', link: '/admin/users',
+                    header: 'User Management', link: '/app/admin/users',
                   },
                   {
                     header: 'My Profile', link: '/app/profile',

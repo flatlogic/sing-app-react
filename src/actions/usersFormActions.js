@@ -40,7 +40,7 @@ const actions = {
           type: 'USERS_FORM_FIND_ERROR',
         });
   
-        dispatch(push('/admin/users'));
+        dispatch(push('/app/admin/users'));
       }
     }
   },
@@ -57,7 +57,7 @@ const actions = {
         });
 
         toast.success('User created');
-        dispatch(push('/admin/users'));
+        dispatch(push('/app/admin/users'));
       })
     } catch (error) {
       Errors.handle(error);
@@ -89,7 +89,7 @@ const actions = {
         toast.success('Profile updated');
       } else {
         toast.success('User updated');
-        dispatch(push('/admin/users'));
+        dispatch(push('/app/admin/users'));
       }
     } catch (error) {
       Errors.handle(error);
