@@ -58,7 +58,7 @@ import { SidebarTypes } from '../../reducers/layout';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import Helper from '../Helper';
-import { openSidebar, closeSidebar, changeActiveSidebarItem, toggleSidebar } from '../../actions/navigation';
+import { openSidebar, closeSidebar, toggleSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
 import { DashboardThemes } from '../../reducers/layout';
 import ProductEdit from '../../pages/management/components/productEdit';
@@ -84,16 +84,6 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    const staticSidebar = JSON.parse(localStorage.getItem('staticSidebar'));
-    if (staticSidebar && window.innerWidth > 768) {
-      this.props.dispatch(toggleSidebar());
-    } else if (this.props.sidebarOpened) {
-      setTimeout(() => {
-        this.props.dispatch(closeSidebar());
-        this.props.dispatch(changeActiveSidebarItem(null));
-      }, 2500);
-    }
-
     this.handleResize();
     window.addEventListener('resize', this.handleResize.bind(this));
   }
@@ -154,11 +144,11 @@ class Layout extends React.Component {
                     <Route path="/app/main/analytics" exact component={DashboardAnalytics} />
                     <Route path="/app/edit_profile" exact component={UserFormPage} />
                     <Route path="/app/password" exact component={ChangePasswordFormPage} />
-                    <Route path="/app/admin" exact render={() => <Redirect to="/app/admin/users" />} />
-                    <Route path="/app/admin/users" exact component={UserListPage} />
-                    <Route path="/app/admin/users/new" exact component={UserFormPage} />
-                    <Route path="/app/admin/users/:id/edit" exact component={UserFormPage} />
-                    <Route path="/app/admin/users/:id" exact component={UserViewPage} />
+                    <Route path="/admin" exact render={() => <Redirect to="/admin/users" />} />
+                    <Route path="/admin/users" exact component={UserListPage} />
+                    <Route path="/admin/users/new" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id/edit" exact component={UserFormPage} />
+                    <Route path="/admin/users/:id" exact component={UserViewPage} />
                     <Route path="/app/ecommerce" exact render={() => <Redirect to="/app/ecommerce/management" />} />
                     <Route path="/app/ecommerce/management" exact component={Management} />
                     <Route path="/app/ecommerce/management/:id" exact component={ProductEdit} />

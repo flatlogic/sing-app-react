@@ -81,7 +81,7 @@ class UsersFormPage extends Component {
               isEditing={this.isEditing()}
               isProfile={this.isProfile()}
               onSubmit={this.doSubmit}
-              onCancel={() => this.props.dispatch(push('/app/admin/users'))}
+              onCancel={() => this.props.dispatch(push('/admin/users'))}
             />
           )}
       </React.Fragment>

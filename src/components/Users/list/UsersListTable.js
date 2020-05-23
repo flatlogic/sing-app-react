@@ -52,7 +52,7 @@ class UsersListTable extends Component {
           className={s.controBtn}
           color="info"
           size="xs"
-          onClick={() => this.props.dispatch(push(`/app/admin/users/${cell}`))}
+          onClick={() => this.props.dispatch(push(`/admin/users/${cell}`))}
         >
           View
         </Button>
@@ -60,7 +60,7 @@ class UsersListTable extends Component {
           className={s.controBtn}
           color="success"
           size="xs"
-          onClick={() => this.props.dispatch(push(`/app/admin/users/${cell}/edit`))}
+          onClick={() => this.props.dispatch(push(`/admin/users/${cell}/edit`))}
         >
           Edit
         </Button>
