@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.2]
+
+### Improvement
+
+- Improved css for the avatar
+
 ## [8.0.1]
 
 ### New Features
