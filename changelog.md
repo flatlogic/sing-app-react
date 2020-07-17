@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.1.0]
+
+- Updated react and highcharts packages
+
 ## [8.0.3]
 
 - Updated line-awesome package 
