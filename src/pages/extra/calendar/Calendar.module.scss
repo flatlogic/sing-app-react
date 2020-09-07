@@ -18,11 +18,13 @@
       margin: 0;
       padding: 0;
     }
+    
 
     .fc-event {
       border: none;
       font-weight: $font-weight-normal;
       background-color: $gray-200;
+      margin-left: 0!important;
       color: $text-color;
     }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.1.1]
+
+- Updated fullcalendar package to v5.3.0
+
 ## [8.1.0]
 
 - Updated react and highcharts packages
