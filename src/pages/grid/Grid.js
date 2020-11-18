@@ -40,6 +40,18 @@ class Grid extends React.Component {
         <Row> 
 
           <Col xl={7}>
+
+          </Col>
+        </Row>
+        
+        <Row className="grid-demo">
+          <Col className="widget-container" xl={6} xs={12}>
+            <Sortable 
+            options={{
+              group: "shared",
+              animation: 350,
+              ghostClass: 'widget-placeholder-react'
+            }}>
             <Widget
               title={<h5>Draggable Grid &nbsp;<span className="badge badge-danger fw-normal">since 2.1</span></h5>}
             >
@@ -69,17 +81,6 @@ class Grid extends React.Component {
                 </p>
               </div>
             </Widget>
-          </Col>
-        </Row>
-        
-        <Row className="grid-demo">
-          <Col className="widget-container" xl={6} xs={12}>
-            <Sortable 
-            options={{
-              group: "shared",
-              animation: 350,
-              ghostClass: 'widget-placeholder-react'
-            }}>
             <Widget
               updateWidgetData={this.updateWidgetData}
               widgetType="default"
@@ -165,19 +166,6 @@ class Grid extends React.Component {
                 </Form>
               </div>
             </Widget>
-
-           <Widget>
-              <header>
-                <h6>Custom <span className="fw-semi-bold">Loader</span></h6>
-              </header>
-              <div className="widget-body" style={{ minHeight: '140px' }}>
-                <div className="loader animated fadeIn handle">
-                  <span className="spinner">
-                    <i className="fa fa-spinner fa-spin" />
-                  </span>
-                </div>
-              </div>
-            </Widget>
             </Sortable>
           </Col>
 
@@ -248,6 +236,18 @@ class Grid extends React.Component {
               className={s.customGrayBg}
               customBody={true}
             >
+            </Widget>
+            <Widget>
+              <header>
+                <h6>Custom <span className="fw-semi-bold">Loader</span></h6>
+              </header>
+              <div className="widget-body" style={{ minHeight: '140px' }}>
+                <div className="loader animated fadeIn handle">
+                  <span className="spinner">
+                    <i className="fa fa-spinner fa-spin" />
+                  </span>
+                </div>
+              </div>
             </Widget>
             </Sortable>
           </Col>  

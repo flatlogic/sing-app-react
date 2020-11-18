@@ -357,7 +357,7 @@ class Sidebar extends React.Component {
                 header: 'Invoice', link: '/app/extra/invoice',
               },
               {
-                header: 'Login Page', link: '/login', onClick: this.doLogout,
+                header: 'Login Page', link: '/app/loginpage',
               },
               {
                 header: 'Error Page', link: '/error',

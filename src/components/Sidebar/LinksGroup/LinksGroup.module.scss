@@ -65,7 +65,7 @@
     line-height: 8px;
     margin-top: 9px;
     margin-right: 15px;
-    background: $blue;
+    background: $purple;
     color: var(--badge-item-color);
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 16px;

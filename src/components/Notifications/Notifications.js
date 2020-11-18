@@ -31,6 +31,7 @@ class Notifications extends React.Component {
 
   loadNotifications() {
     this.setState({
+      notificationsTabSelected: 1,
       isLoad: true,
     });
 

@@ -377,7 +377,7 @@ export const chartData = {
           }
         }
       },
-      colors: [success, primary, info],
+      colors: [success, primary, danger],
 
       series: [{
         name: "Winter 2014-2015",

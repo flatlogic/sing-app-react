@@ -18,7 +18,7 @@ class ProgressDemo extends React.Component {
             <strong>Urgent:</strong>
             &nbsp;Rails 4.1.0 upgrade
           </h6>
-          <Progress className={['m-0'].join(' ')} color="primary" value="60" />
+          <Progress className={['progress-xs', 'm-0'].join(' ')} color="primary" value="60" />
           <span className="help-block">3 notes added by James 2h ago...</span>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>
@@ -27,7 +27,7 @@ class ProgressDemo extends React.Component {
             <strong>Primary:</strong>
             &nbsp;Sing Web App
           </h6>
-          <Progress className={['progress-sm', 'm-0'].join(' ')} color="success" value="83" />
+          <Progress className={['progress-xs', 'm-0'].join(' ')} color="success" value="83" />
           <span className="help-block">verifying stable probability status</span>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>
@@ -42,7 +42,7 @@ class ProgressDemo extends React.Component {
             &nbsp;
             Finish The Road to Hell Song
           </h6>
-          <Progress className={['progress-sm', 'm-0'].join(' ')} color="gray-dark" value="44" />
+          <Progress className={['progress-xs', 'm-0'].join(' ')} color="gray-dark" value="44" />
           <span className="help-block">last update: 2h ago</span>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>

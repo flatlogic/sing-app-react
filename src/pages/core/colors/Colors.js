@@ -100,14 +100,14 @@ const Colors = () => (
         >
           <p>Use any of the available button classes to quickly create a styled button.
             Semantically distinguishable beauty.</p>
-          <Button className="width-100 mb-xs mr-xs" color="default">Default</Button>
-          <Button className="width-100 mb-xs mr-xs" color="primary">Primary</Button>
-          <Button className="width-100 mb-xs mr-xs" color="info">Info</Button>
-          <Button className="width-100 mb-xs mr-xs" color="success">Success</Button>
-          <Button className="width-100 mb-xs mr-xs" color="warning">Warning</Button>
-          <Button className="width-100 mb-xs mr-xs" color="danger">Danger</Button>
-          <Button className="width-100 mb-xs mr-xs" color="gray">Gray</Button>
-          <Button className="width-100 mb-xs mr-xs" color="inverse">Inverse</Button>
+          <Button className="width-100 mb-3 mr-3" color="default">Default</Button>
+          <Button className="width-100 mb-3 mr-3" color="primary">Primary</Button>
+          <Button className="width-100 mb-3 mr-3" color="info">Info</Button>
+          <Button className="width-100 mb-3 mr-3" color="success">Success</Button>
+          <Button className="width-100 mb-3 mr-3" color="warning">Warning</Button>
+          <Button className="width-100 mb-3 mr-3" color="danger">Danger</Button>
+          <Button className="width-100 mb-3 mr-3" color="gray">Gray</Button>
+          <Button className="width-100 mb-3 mr-3" color="inverse">Inverse</Button>
         </Widget>
       </Col>
     </Row>

@@ -12,6 +12,10 @@
     font-size: $font-size-sm;
   }
 
+  .headCellPadding {
+    padding-left: 10px;
+  }
+
   tbody tr:nth-child(odd) {
     background-color: $gray-light;
   }

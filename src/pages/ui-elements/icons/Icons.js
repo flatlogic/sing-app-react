@@ -2639,7 +2639,7 @@ class Icons extends React.Component {
           {/* tab #7 */}
           <TabPane tabId="7">
             <div>
-              <h4>File Type <span className="fw-semi-bold">Icons</span></h4>
+              <h4 className="mt-3">File Type <span className="fw-semi-bold">Icons</span></h4>
               <Row className="icon-list">
                 <Col className="icon-list-item" lg={3} md={4} xs={12}><a href="../icon/file"><i
                   className="fa fa-file"
@@ -2728,7 +2728,7 @@ class Icons extends React.Component {
                 >(alias)</span></a></Col>
               </Row>
 
-              <h4>Form Control <span className="fw-semi-bold">Icons</span></h4>
+              <h4 className="mt-3">Form Control <span className="fw-semi-bold">Icons</span></h4>
               <Row className="icon-list">
                 <Col className="icon-list-item" lg={3} md={4} xs={12}><a
                   href="../icon/check-square"
@@ -2779,7 +2779,7 @@ class Icons extends React.Component {
                 /> square-o</a></Col>
               </Row>
 
-              <h4>Currency <span className="fw-semi-bold">Icons</span></h4>
+              <h4 className="mt-3">Currency <span className="fw-semi-bold">Icons</span></h4>
               <Row className="icon-list">
                 <Col className="icon-list-item" lg={3} md={4} xs={12}><a href="../icon/btc"><i
                   className="fa fa-bitcoin"
@@ -2876,7 +2876,7 @@ class Icons extends React.Component {
                 /> yen <span className="text-muted">(alias)</span></a></Col>
               </Row>
 
-              <h4>Video Player <span className="fw-semi-bold">Icons</span></h4>
+              <h4 className="mt-3">Video Player <span className="fw-semi-bold">Icons</span></h4>
               <Row className="icon-list">
 
                 <Col className="icon-list-item" lg={3} md={4} xs={12}><a
@@ -2950,7 +2950,7 @@ class Icons extends React.Component {
                   youtube-play</a></Col>
               </Row>
 
-              <h4>Medical <span className="fw-semi-bold">Icons</span></h4>
+              <h4 className="mt-3">Medical <span className="fw-semi-bold">Icons</span></h4>
               <Row className="icon-list">
                 <Col className="icon-list-item" lg={3} md={4} xs={12}><a href="../icon/ambulance"><i
                   className="fa fa-ambulance"

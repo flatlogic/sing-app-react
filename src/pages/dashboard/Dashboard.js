@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Foreign Visits</h6>
                   <p className="description deemphasize mb-xs">Some Cool Text</p>
-                  <Progress color="primary" value="60" className="bg-white progress-xs" />
+                  <Progress color="primary" value="60" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -105,7 +105,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Local Visits</h6>
                   <p className="description deemphasize mb-xs">P. to C. Conversion</p>
-                  <Progress color="danger" value="39" className="bg-white progress-xs" />
+                  <Progress color="danger" value="39" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -117,7 +117,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <p className="description deemphasize mb-xs">Average Bitrate</p>
-                  <Progress color="success" value="80" className="bg-white progress-xs" />
+                  <Progress color="success" value="80" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">

@@ -221,7 +221,7 @@ class Header extends React.Component {
         />
         <Nav>
           <NavItem>
-            <NavLink className="d-md-down-none ml-5" id="toggleSidebar" onClick={this.toggleSidebar}>
+            <NavLink className={`d-md-down-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
               <i className={`la la-bars ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`}/>
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">

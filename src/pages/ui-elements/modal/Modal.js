@@ -108,7 +108,7 @@ class ModalExample extends React.Component {
             ...
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={() => this.toggle('demo')}>Close</Button>
+            <Button color="default" onClick={() => this.toggle('demo')}>Close</Button>
             <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
@@ -168,7 +168,7 @@ class ModalExample extends React.Component {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={() => this.toggle('scrollingLong')}>Close</Button>
+            <Button color="default" onClick={() => this.toggle('scrollingLong')}>Close</Button>
             <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
@@ -181,7 +181,7 @@ class ModalExample extends React.Component {
             cupiditate odio vitae? Eligendi nisi consequuntur vero tenetur nemo!
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={() => this.toggle('large')}>Close</Button>
+            <Button color="default" onClick={() => this.toggle('large')}>Close</Button>
             <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
@@ -194,7 +194,7 @@ class ModalExample extends React.Component {
             cupiditate odio vitae? Eligendi nisi consequuntur vero tenetur nemo!
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={() => this.toggle('small')}>Close</Button>
+            <Button color="default" onClick={() => this.toggle('small')}>Close</Button>
             <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
@@ -217,7 +217,7 @@ class ModalExample extends React.Component {
             </Container>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={() => this.toggle('launch')}>Close</Button>
+            <Button color="default" onClick={() => this.toggle('launch')}>Close</Button>
             <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>

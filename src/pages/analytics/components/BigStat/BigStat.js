@@ -74,17 +74,17 @@ class BigStat extends Component {
               <div className="d-flex align-items-start h3">
                 <h6>+{registrations.value}</h6>
                 <i
-                  className={`la la-arrow-right ml-sm text-${registrations.profit ? 'success' : 'danger'}
+                  className={`${s.arrowAlign} la la-arrow-right ml-sm text-${registrations.profit ? 'success' : 'danger'}
                   rotate-${registrations.profit ? '315' : '45'}`}
                 />
               </div>
               <p className="text-muted mb-0 mr"><small>Registrations</small></p>
             </div>
-            <div className="w-50 py-3 pl-2">
+            <div className="w-50 py-3 pl-4">
               <div className="d-flex align-items-start h3">
                 <h6>{bounce.value}%</h6>
                 <i
-                  className={`la la-arrow-right ml-sm text-${bounce.profit ? 'success' : 'danger'}
+                  className={`${s.arrowAlign} la la-arrow-right ml-sm text-${bounce.profit ? 'success' : 'danger'}
                   rotate-${bounce.profit ? '315' : '45'}`}
                 />
               </div>

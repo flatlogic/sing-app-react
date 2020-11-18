@@ -36,7 +36,7 @@ class TableContainer extends PureComponent {
           <tr className="text-muted">
             {keys.map((key, index) => (
               index === 0
-              ? <th key={key} scope="col"><span className="pl-2">{key}</span></th>
+              ? <th key={key} scope="col"><span className={s.headCellPadding}>{key}</span></th>
               : <th key={key} scope="col">{key}</th>
             ))}
           </tr>
@@ -45,7 +45,7 @@ class TableContainer extends PureComponent {
           {
             data.map(({ name, email, product, price, date, city, status }) => (
               <tr key={name}>
-                <td className="pl-3 fw-normal">{name}</td>
+                <td className="pl-4 fw-normal">{name}</td>
                 <td>{email}</td>
                 <td>{product}</td>
                 <td>{price}</td>

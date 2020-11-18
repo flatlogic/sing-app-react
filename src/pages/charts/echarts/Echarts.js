@@ -39,7 +39,7 @@ class Echarts extends PureComponent {
         <h1 className="page-title">Visual - <span className="fw-semi-bold">Echarts</span></h1>
         <p>For more information please read full <a href="https://ecomfe.github.io/vue-echarts/">documentation</a></p>
         <Row>
-          <Col lg={{size: 10, offset: 1}} xs={12}>
+          <Col lg={12}>
             <Widget
               title={<h5>Echarts <span className="fw-semi-bold">Bar Chart</span></h5>}
               close collapse

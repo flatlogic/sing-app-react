@@ -113,6 +113,10 @@ legend {
   }
 }
 
+.alert-dismissible {
+  padding-right: 1.25rem;
+}
+
 .alert-sm {
   padding: 10px 15px;
 
@@ -147,11 +151,10 @@ legend {
 }
 
 .badge {
-  &.badge-pill {
-    padding: 0.4em 0.6em;
-    font-weight: 700;
+  &.badge.badge-pill {
+    padding: 8px;
+    font-weight: 600;
   }
-
   .list-group-item > & {
     margin-top: 2px;
   }
@@ -265,6 +268,15 @@ small {
   &:not(.active) {
     box-shadow: none !important;
   }
+}
+
+.btn-group > .btn:first-child {
+  height: 36px;
+  font-size: 10px;
+}
+
+.dropdown-toggle::after {
+  margin-left: 16px;
 }
 
 .btn-rounded {
@@ -452,6 +464,14 @@ small {
   color: $gray-600;
 }
 
+.breadcrumb-item a {
+  color: inherit;
+}
+
+.breadcrumb .breadcrumb-item:last-child {
+  font-weight: bold;
+  color: $gray-700;
+}
 ///////// Glyphicons //////////
 
 .glyphicon {
@@ -1202,4 +1222,8 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   padding-right: 0;
   padding-left: 20px;
   background: $success;
+}
+
+#notification-buttons button:hover, #notification-buttons button:focus {
+  color: inherit
 }

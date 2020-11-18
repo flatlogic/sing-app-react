@@ -6,6 +6,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Hammer from 'rc-hammerjs';
 
 import Profile from '../../pages/profile';
+import Login from '../../pages/login';
 import UIButtons from '../../pages/ui-elements/buttons';
 import UIIcons from '../../pages/ui-elements/icons';
 import UITabsAccordion from '../../pages/ui-elements/tabs-accordion/';
@@ -157,6 +158,7 @@ class Layout extends React.Component {
                     <Route path="/app/ecommerce/product" exact component={Product} />
                     <Route path="/app/ecommerce/product/:id" exact component={Product} />
                     <Route path="/app/profile" exact component={Profile} />
+                    <Route path="/app/loginpage" exact component={Login} />
                     <Route path="/app/inbox" exact component={Email} />
                     <Route path="/app/ui" exact render={() => <Redirect to="/app/ui/components" />} />
                     <Route path="/app/ui/buttons" exact component={UIButtons} />
