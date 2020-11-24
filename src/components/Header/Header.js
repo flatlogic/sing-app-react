@@ -299,10 +299,10 @@ class Header extends React.Component {
               <i className={`la la-cog ${chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""}`} />
             </DropdownToggle>
             <DropdownMenu right className={`super-colors`}>
-              <DropdownItem href="/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
+              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><i className="la la-user" /> My Account</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="/#/app/extra/calendar">Calendar</DropdownItem>
-              <DropdownItem href="/#/app/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
+              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/extra/calendar">Calendar</DropdownItem>
+              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/inbox">Inbox &nbsp;&nbsp;<Badge color="danger" pill className="animated bounceIn">9</Badge></DropdownItem>
               <DropdownItem divider />
               <DropdownItem onClick={this.doLogout}><i className="la la-sign-out" /> Log Out</DropdownItem>
             </DropdownMenu>
