@@ -84,7 +84,7 @@ class Login extends React.Component {
                     </Widget>
                 </Container>
                 <footer className="auth-footer">
-                    2019 &copy; Sing App - React Admin Dashboard Template.
+                    2020 &copy; Sing App - React Admin Dashboard Template. By <a href="https://flatlogic.com">Flatlogic</a>
                 </footer>
             </div>
         );
