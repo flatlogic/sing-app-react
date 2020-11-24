@@ -137,7 +137,7 @@ class Register extends React.Component {
                     </Widget>
                 </Container>
                 <footer className="auth-footer">
-                    {new Date().getFullYear()} &copy; Sing App - React Admin Dashboard Template. By <a href="https://flatlogic.com">Flatlogic</a>
+                    {new Date().getFullYear()} &copy; Sing App - React Admin Dashboard Template. By <a rel="noopener noreferrer" target="_blank" href="https://flatlogic.com">Flatlogic</a>
                 </footer>
             </div>
         );
