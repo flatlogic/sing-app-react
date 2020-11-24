@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.1.2]
+
+- Added link to flatlogic on login page
+
 ## [8.1.1]
 
 - Updated fullcalendar package to v5.3.0
