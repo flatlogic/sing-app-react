@@ -133,7 +133,7 @@ class Sidebar extends React.Component {
                 iconName="flaticon-diamond"
                 link="/app/ecommerce"
                 index="ecommerce"
-                label="NodeJS"
+                label="NodeJS/.NET"
                 exact={false}
                 childrenLinks={[
                     {
@@ -311,7 +311,7 @@ class Sidebar extends React.Component {
             onActiveSidebarItemChange={t => this.props.dispatch(changeActiveSidebarItem(t))}
             activeItem={this.props.activeItem}
             header="Tables"
-            isHeader 
+            isHeader
             iconName="flaticon-equal-1"
             link="/app/tables"
             index="tables"

@@ -23,7 +23,7 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 async function findMe() {
   if (config.isBackend) {
     const response = await axios.get('/auth/me');
-    return response.data;    
+    return response.data;
   } else {
     return mockUser;
   }
@@ -202,23 +202,23 @@ export function sendPasswordResetEmail(email) {
 export function registerUser(creds) {
   return (dispatch) => {
     if (!config.isBackend) {
-      dispatch(push('/login'));
+      dispatch(push('/user/profile'));
     } else {
       dispatch({
         type: REGISTER_REQUEST,
       });
-  
+
       if (creds.email.length > 0 && creds.password.length > 0) {
         axios.post("/auth/signup", creds).then(res => {
           dispatch({
             type: REGISTER_SUCCESS
           });
           toast.success("You've been registered successfully. Please check your email for verification link");
-          dispatch(push('/login'));
+          dispatch(push('/user/profile'));
         }).catch(err => {
           dispatch(authError(err.response.data));
         })
-  
+
       } else {
         dispatch(authError('Something was wrong. Try again'));
       }
