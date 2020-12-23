@@ -319,7 +319,7 @@ class Elements extends React.Component {
                     </Col>
                   </FormGroup>
 
-                  <FormGroup row className="form-action">
+                  <FormGroup row>
                     <Label md={4} />
                     <Col md={7}>
                       <Button color="primary" type="submit" className="mr-xs">Save Changes</Button>
@@ -464,7 +464,7 @@ class Elements extends React.Component {
                     </Col>
                   </Row>
 
-                  <FormGroup className="form-action">
+                  <FormGroup>
                     <Button color="inverse" type="submit" className="mr-xs">
                       Save Changes
                     </Button>
@@ -481,7 +481,7 @@ class Elements extends React.Component {
           <Col lg={8} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
-              settingsInverse refresh close
+              settings refresh close
             >
               <Form>
                 <legend>Control sizing</legend>
@@ -509,7 +509,7 @@ class Elements extends React.Component {
           <Col lg={4} md={12}>
             <Widget
               title={<h6> Form <span className="fw-semi-bold">Options</span></h6>}
-              settingsInverse refresh close
+              settings refresh close
             >
               <Form>
                 <legend> Input Groups</legend>
@@ -551,7 +551,7 @@ class Elements extends React.Component {
         <Row>
 
           <Col lg="6" md={12}>
-            <Widget title={<h6><i className="fa fa-font" />Textareas</h6>} settings refresh close>
+            <Widget title={<h6>Textareas</h6>} settings refresh close>
               <Form>
                 <legend>Small form</legend>
                 <FormGroup row>
@@ -616,7 +616,7 @@ class Elements extends React.Component {
 
           <Col lg="6" md={12}>
             <Widget
-              title={<h6><i className="fa fa-list-alt" /> Selects </h6>} refresh close
+              title={<h6>Selects</h6>} refresh close
               settings
             >
               <Form className="form-label-left">
@@ -778,7 +778,7 @@ class Elements extends React.Component {
         <Row>
           <Col md="12">
             <Widget
-              title={<h6> Checkbox <strong>Controls</strong></h6>} settingsInverse refresh
+              title={<h6> Checkbox <strong>Controls</strong></h6>} settings refresh
               close
             >
               <Row>
@@ -903,7 +903,7 @@ class Elements extends React.Component {
 
         <Row>
           <Col md="12">
-            <Widget title={<h6> Radio <strong>Controls</strong></h6>} close refresh settingsInverse>
+            <Widget title={<h6> Radio <strong>Controls</strong></h6>} close refresh settings>
               <Form>
                 <Row>
                   <Col lg="4">
@@ -992,7 +992,7 @@ class Elements extends React.Component {
         <Row>
 
           <Col lg="6" md="12">
-            <Widget title={<h6>Pickers</h6>} close refresh settingsInverse>
+            <Widget title={<h6>Pickers</h6>} close refresh settings>
               <Form>
                 <legend>Date & Time</legend>
                 <FormGroup>
@@ -1056,7 +1056,7 @@ class Elements extends React.Component {
 
 
           <Col lg="6" md="12">
-            <Widget title={<h6> Input <strong>Masks</strong></h6>} close settingsInverse refresh>
+            <Widget title={<h6> Input <strong>Masks</strong></h6>} close settings refresh>
               <Form className="form-label-left">
                 <legend>Masked inputs</legend>
                 <FormGroup row>
@@ -1110,7 +1110,7 @@ class Elements extends React.Component {
 
         <Row>
           <Col xs="12">
-            <Widget title={<h6>Sliders</h6>} settingsInverse close refresh>
+            <Widget title={<h6>Sliders</h6>} settings close refresh>
               <Row>
                 <Col lg="4">
                   <h4>Color Options</h4>
@@ -1241,7 +1241,7 @@ class Elements extends React.Component {
 
           <Col lg="6" md={12}>
             <Widget
-              title={<h6>Simple <strong>file uploads</strong></h6>} settingsInverse close
+              title={<h6>Simple <strong>file uploads</strong></h6>} settings close
               refresh
             >
               <Form>
@@ -1325,7 +1325,7 @@ class Elements extends React.Component {
 
 
           <Col lg="6" md={12}>
-            <Widget title={<h6><strong>Drop</strong> Zone</h6>} settingsInverse refresh close>
+            <Widget title={<h6><strong>Drop</strong> Zone</h6>} settings refresh close>
               <div>
                 <Dropzone
                   onDrop={this.onDrop} accept="image/*"

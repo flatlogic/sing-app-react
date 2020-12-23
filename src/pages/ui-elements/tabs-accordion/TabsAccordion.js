@@ -379,7 +379,7 @@ class TabsAccordion extends React.Component {
               <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
                 { /* eslint-disable */ }
                 <div
-                  className="card-header panel-header bg-light" role="button"
+                  className="card-header panel-header bg-white" role="button"
                   onClick={() => { this.toggleAccordionFirst(index); }}
                 >
                   { /* eslint-enable */ }
@@ -401,7 +401,7 @@ class TabsAccordion extends React.Component {
             {this.state.accordionSecondContent.map((element, index) => (<div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
               { /* eslint-disable */ }
               <div
-                className="card-header panel-header bg-light" role="button"
+                className="card-header panel-header bg-white" role="button"
                 onClick={() => { this.toggleAccordionSecond(index); }}
               >
                 { /* eslint-enable */ }

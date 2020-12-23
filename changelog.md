@@ -1,11 +1,5 @@
 # Changelog
 
-## [8.1.2]
-
-- Fix several links
-- Change badge text in the sidebar
-- Change alert text in the usermanager/ecommerce
-
 ## [8.1.1]
 
 - Updated fullcalendar package to v5.3.0

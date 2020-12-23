@@ -102,7 +102,7 @@ class ListGroups extends React.Component {
           title={<h4> Grouped <span className="fw-semi-bold">Lists</span></h4>}
           close refresh settings
         >
-          <h3>Closest <span className="fw-semi-bold">Stars</span></h3>
+          <p>Closest <span className="fw-semi-bold">Stars</span></p>
           <p>
             Try to play around with this list. Are you ready to pass an exam on astronomy?
           </p>

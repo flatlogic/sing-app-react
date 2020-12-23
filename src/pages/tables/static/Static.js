@@ -319,28 +319,28 @@ class Static extends React.Component {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td><a href="#">ottoto@example.com</a></td>
-                      <td><Badge color="gray" className="text-gray" pill>Pending</Badge></td>
+                      <td><Badge color="warning" className="text-white" pill>Pending</Badge></td>
                     </tr>
                     <tr>
                       <td>2</td>
                       <td>Jacob</td>
                       <td>Thornton</td>
                       <td><a href="#">fat.thor@example.com</a></td>
-                      <td><Badge color="gray" className="text-gray-light" pill>Unconfirmed</Badge></td>
+                      <td><Badge color="danger" className="text-white" pill>Unconfirmed</Badge></td>
                     </tr>
                     <tr>
                       <td>3</td>
                       <td>Larry</td>
                       <td>the Bird</td>
                       <td><a href="#">larry@example.com</a></td>
-                      <td><Badge color="gray" className="text-gray" pill>New</Badge></td>
+                      <td><Badge color="info" className="text-white" pill>New</Badge></td>
                     </tr>
                     <tr>
                       <td>4</td>
                       <td>Peter</td>
                       <td>Horadnia</td>
                       <td><a href="#">peter@example.com</a></td>
-                      <td><Badge color="gray" className="text-gray-light" pill>Active</Badge></td>
+                      <td><Badge color="success" className="text-white" pill>Active</Badge></td>
                     </tr>
                   </tbody>
                   {/* eslint-enable */}

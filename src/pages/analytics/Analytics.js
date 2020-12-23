@@ -258,7 +258,7 @@ class Analytics extends Component {
                   className="pb-0"
                   bodyClass={`mt p-0`}
                   title={<h4> Support <strong>Requests</strong></h4>}
-                  close settings
+                  close
                 >
                   <TableContainer data={mock.table} />
                 </Widget>

@@ -10,6 +10,7 @@ import s from './ChatList.module.scss';
 class ChatListItem extends Component {
 
   time = () => {
+    console.log(moment(this.props.chat.lastMessage.timestamp).format('d MMM'))
     return moment(this.props.chat.lastMessage.timestamp).format('d MMM') || "";
   }
 
