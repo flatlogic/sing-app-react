@@ -85,26 +85,33 @@ class Helper extends Component {
   };
 
   changeTheme = (state) => {
+    localStorage.setItem("dashboardTheme", state)
     this.props.dispatch(changeTheme(state));
     this.props.dispatch(changeSidebarColor(state))
   };
 
   navbarStateToggle = (state) => {
+    localStorage.setItem("navbarType", state)
     this.props.dispatch(navbarTypeToggle(state))
   }
 
   sidebarStateToggle = (state) => {
+    localStorage.setItem("sidebarType", state)
     this.props.dispatch(sidebarTypeToggle(state))
   }
 
   updateColor = (value) => {
+    localStorage.setItem("navbarColor", value)
     this.props.dispatch(changeNavbarColor(value))
   }
 
   render() {
     const { isOpened } = this.state;
-    const { navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
-    
+    const navbarColor = localStorage.getItem("navbarColor")
+    const sidebarColor = localStorage.getItem("dashboardTheme")
+    const navbarType = localStorage.getItem("navbarType")
+    const sidebarType = localStorage.getItem("sidebarType")
+
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
 

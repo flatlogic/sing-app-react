@@ -154,7 +154,9 @@ class Header extends React.Component {
   }
   render() {
     const { focus } = this.state;
-    const { navbarType, navbarColor, openUsersList } = this.props;
+    const { openUsersList } = this.props;
+    const navbarColor = localStorage.getItem('navbarColor')
+    const navbarType = localStorage.getItem("navbarType")
 
     const user = this.props.currentUser;
     const avatar = user && user.avatar && user.avatar.length && user.avatar[0].publicUrl;

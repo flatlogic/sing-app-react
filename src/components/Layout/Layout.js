@@ -121,7 +121,7 @@ class Layout extends React.Component {
           this.props.sidebarStatic ? `${s.sidebarStatic}` : '',
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',
-          `dashboard-${(this.props.sidebarType === SidebarTypes.TRANSPARENT) ? "light" : this.props.dashboardTheme}`,
+          `dashboard-${(localStorage.getItem("sidebarType") === SidebarTypes.TRANSPARENT) ? "light" : localStorage.getItem("dashboardTheme")}`,
         ].join(' ')}
       >
         <Sidebar />
