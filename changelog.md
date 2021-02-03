@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.1.4]
+
+- Fixed localStorage bug for customization
+
 ## [8.1.3]
 
 - Fix several links
