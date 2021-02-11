@@ -41,6 +41,9 @@
     .form-control {
       background-color: var(--input-bg);
       color: var(--input-color);
+      &::placeholder {
+        color: var(--input-color);
+      }
       &.focus {
         background-color: var(--input-bg);
       }

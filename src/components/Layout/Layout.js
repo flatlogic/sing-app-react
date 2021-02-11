@@ -122,7 +122,7 @@ class Layout extends React.Component {
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',
           `dashboard-${(localStorage.getItem("sidebarType") === SidebarTypes.TRANSPARENT) ? "light" : localStorage.getItem("dashboardTheme")}`,
-          `header-${localStorage.getItem("navbarColor").replace('#', '')}`
+          `header-${localStorage.getItem("navbarColor") ? localStorage.getItem("navbarColor").replace('#', '') : 'FFFFFF'}`
         ].join(' ')}
       >
         <Sidebar />
