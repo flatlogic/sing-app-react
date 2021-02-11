@@ -5,6 +5,7 @@
   --update-notification-color: #FD5F00;
   .sing-dashboard,
   .dashboard-light {
+    --sidebar-icon-bg: #4A5056;
     --sidebar-item-active: #6C757D;
     --logo-color: #6C757D;
     --sidebar-bg-color: #ffffff;
@@ -15,13 +16,13 @@
 
     --widget-shadow-color: 153, 187, 221;
 
-    --navbar-bg: #f9fbfd; // $body-bg
     --navbar-shadow: none;
   }
 
   .dashboard-dark {
     --logo-color: $white;
 
+    --sidebar-icon-bg: #5CB0FF;
     --sidebar-bg-color: #002B49;
     --sidebar-color: #F6F6E9;
     --sidebar-action-bg: #042338;
@@ -30,11 +31,11 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-sea {
+    --sidebar-icon-bg: #5CB0FF;
     --logo-color: $white;
     --sidebar-item-active: #F6F6E9;
     --sidebar-bg-color: #004472;
@@ -45,12 +46,12 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-sky {
     --logo-color: $white;
+    --sidebar-icon-bg: #0D2B47;
     --sidebar-item-active: #004472;
     --sidebar-bg-color: #E9EBEF;
     --sidebar-color: #004472;
@@ -60,11 +61,11 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-wave {
+    --sidebar-icon-bg: #0D2B47;
     --logo-color: $white;
     --sidebar-item-active: #004472;
     --sidebar-bg-color: #D1E7F5;
@@ -75,7 +76,6 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
@@ -90,7 +90,6 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
@@ -105,11 +104,11 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-black {
+    --sidebar-icon-bg: #5CB0FF;
     --logo-color: $white;
     --sidebar-item-active: #F6F6E9;
     --sidebar-bg-color: #13191D;
@@ -119,11 +118,11 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
   .dashboard-salat {
+    --sidebar-icon-bg: #0D2B47;
     --logo-color: $white;
     --sidebar-item-active: #F6F6E9;
     --important-notification-color: #fd5f00;
@@ -135,8 +134,61 @@
 
     --widget-shadow-color: 115, 162, 208;
 
-    --navbar-bg: $white;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+  .header-FFFFFF {
+    --input-bg: #F9FAFE;
+    --input-color: #4A5056;
+    --navbar-bg: #FFFFFF;
+    --navbar-icon-bg: #4A5056;
+  }
+  .header-002B49 {
+    --input-bg: #14395C;
+    --input-color: #FFFFFF;
+    --navbar-bg: #002B49;
+    --navbar-icon-bg: #5CB0FF;
+  }
+  .header-004472 {
+    --input-bg: #14395C;
+    --input-color: #FFFFFF;
+    --navbar-bg: #004472;
+    --navbar-icon-bg: #5CB0FF;
+  }
+  .header-E9EBEF {
+    --input-bg: #DCDEE3;
+    --input-color: #14191D;
+    --navbar-bg: #E9EBEF;
+    --navbar-icon-bg: #0D2B47;
+  }
+  .header-D1E7F6 {
+    --input-bg: #C4DCF0;
+    --input-color: #14191D;
+    --navbar-bg: #D1E7F6;
+    --navbar-icon-bg: #0D2B47;
+  }
+  .header-CCDDE9 {
+    --input-bg: #BECDDA;
+    --input-color: #14191D;
+    --navbar-bg: #CCDDE9;
+    --navbar-icon-bg: #0D2B47;
+  }
+  .header-D7DFE6 {
+    --input-bg: #C4DCF0;
+    --input-color: #4A5056;
+    --navbar-bg: #D7DFE6;
+    --navbar-icon-bg: #0D2B47;
+  }
+  .header-13191D {
+    --input-bg: #090D0F;
+    --input-color: #FFFFFF;
+    --navbar-bg: #13191D;
+    --navbar-icon-bg: #5CB0FF;
+  }
+  .header-21AE8C {
+    --input-bg: #439277;
+    --input-color: #FFFFFF;
+    --navbar-bg: #21AE8C;
+    --navbar-icon-bg: #0D2B47;
   }
 
   // dependable variables

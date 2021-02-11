@@ -1,5 +1,10 @@
 # Changelog
 
+## [8.2.0]
+
+- Updated Icon Pack
+- Refactored customization
+
 ## [8.1.4]
 
 - Fixed localStorage bug for customization

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ColorPicker from 'rc-color-picker';
 import PropTypes from 'prop-types';
 import s from './ColorPicker.module.scss';
 
@@ -22,7 +21,6 @@ class CustomColorPicker extends Component {
               )
               }
             )}
-            <ColorPicker className={s.colorBox} defaultColor="#333333" onChange={(e) => updateColor(e.color, customizationItem)}/>
           </ul>
         </div>
       )      

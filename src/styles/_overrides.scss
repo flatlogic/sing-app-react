@@ -1227,3 +1227,9 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 #notification-buttons button:hover, #notification-buttons button:focus {
   color: inherit
 }
+
+.dropdown-toggle::after {
+  color: var(--navbar-icon-bg);
+  font-weight: bold;
+  font-size: 16px;
+}

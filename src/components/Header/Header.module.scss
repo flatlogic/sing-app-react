@@ -29,7 +29,7 @@
     }
 
     .input-group-prepend {
-      background-color: #fff;
+      background-color: var(--input-bg);
       transition: background-color ease-in-out 0.15s;
       border-top-left-radius: 0.3rem;
       border-bottom-left-radius: 0.3rem;
@@ -38,9 +38,16 @@
       align-items: center;
       width: 35px;
     }
+    .form-control {
+      background-color: var(--input-bg);
+      color: var(--input-color);
+      &.focus {
+        background-color: var(--input-bg);
+      }
+    }
 
     .focus .input-group-prepend {
-      background: #f8f9fa;
+      background-color: var(--input-bg);
     }
   }
 }
@@ -176,6 +183,30 @@
   img {
     height: 100%
   }
+}
+
+.headerSvgFlipColor {
+  display: flex;
+  color: var(--navbar-icon-bg);
+  :global {
+    .bg-primary {
+      background-color: var(--navbar-icon-bg)!important;
+    }
+  }
+}
+
+.headerDropdownLinks{
+  color: inherit;
+  & > a, & > button {
+    display: flex;
+    padding: 15px 8px;
+  }
+}
+
+.headerDropdownIcon {
+  display: flex;
+  margin-right: 8px;
+  color: var(--sidebar-icon-bg);
 }
 
 .toggleSidebar {

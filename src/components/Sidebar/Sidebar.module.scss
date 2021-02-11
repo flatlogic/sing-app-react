@@ -15,8 +15,11 @@
 }
 
 .logoStyle {
-  color: var(--sidebar-item-active-color);
+  color: var(--sidebar-icon-bg);
+  text-transform: uppercase;
   font-weight: 400;
+  font-size: 16px;
+  text-shadow: 4px 4px 15px rgba(var(--sidebar-icon-bg), .6);
 }
 
 .sidebarWrapper {
@@ -71,13 +74,11 @@
 
 .navTitle {
   margin: 35px 0 5px 11px;
-  font-size: $font-size-larger;
+  font-size: $font-size-mini;
   transition: opacity $sidebar-transition-time ease-in-out;
-  color: var(--sidebar-nav-title-color);
-
-  @media (min-width: breakpoint-min(lg)) {
-    opacity: 1;
-  }
+  color: var(--sidebar-icon-bg);
+  opacity: .6;
+  font-weight: bold;
 }
 
 .sidebarClose .navTitle {
@@ -98,6 +99,7 @@
 
 .labelName {
   opacity: 1;
+  padding-left: 15px;
   transition: opacity $sidebar-transition-time ease-in-out;
 }
 
@@ -119,8 +121,8 @@
   padding: 11px;
   padding-right: 15px;
 
-  > li + li {
-    margin-top: 10px;
+  & > li {
+    margin: 25px 0
   }
 
   li > a {
@@ -170,6 +172,10 @@
   margin-bottom: 0;
   padding: 0.5rem 11px;
   padding-right: 15px;
+  & > button > span {
+    font-size: 32px;
+    color: var(--sidebar-icon-bg);
+  }
 }
 
 .sidebarProgress {

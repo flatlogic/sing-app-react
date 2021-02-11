@@ -122,6 +122,7 @@ class Layout extends React.Component {
           !this.props.sidebarOpened ? s.sidebarClose : '',
           'sing-dashboard',
           `dashboard-${(localStorage.getItem("sidebarType") === SidebarTypes.TRANSPARENT) ? "light" : localStorage.getItem("dashboardTheme")}`,
+          `header-${localStorage.getItem("navbarColor").replace('#', '')}`
         ].join(' ')}
       >
         <Sidebar />
@@ -223,6 +224,7 @@ function mapStateToProps(store) {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
     dashboardTheme: store.layout.dashboardTheme,
+    navbarColor: store.layout.navbarColor,
     sidebarType: store.layout.sidebarType,
     currentUser: store.auth.currentUser,
   };
