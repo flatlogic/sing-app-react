@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.2.1]
+
+- Extended customizer, added more colors
+
 ## [8.2.0]
 
 - Updated Icon Pack

@@ -233,7 +233,7 @@ class Header extends React.Component {
         <Nav>
           <NavItem>
             <NavLink className={`d-md-down-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
-              <span className={`${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : "text-dark"}`}>
+              <span className={s.headerSvgFlipColor}>
                 <MenuIcon  maskId={1001}/>
               </span>
             </NavLink>
@@ -244,27 +244,25 @@ class Header extends React.Component {
             <span 
               className={`rounded rounded-lg d-md-none d-sm-down-block`} style={{marginTop: 7}}>
                 <span 
-                  className={`${s.headerSvgFlipColor}`}
-                  style={{fontSize: 30, color: navbarColor === "#ffffff" 
-                  ? "#ffffff"
-                  : chroma(navbarColor).luminance() < 0.4 ? "#ffffff" : ""}} 
+                  className={s.headerSvgFlipColor}
+                  style={{fontSize: 30}} 
                 ><MenuIcon maskId={1000}/></span>
               </span>
-              <span className={`ml-3 d-sm-down-none ${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : "text-dark"}`}>
+              <span className={`ml-3 d-sm-down-none ${s.headerSvgFlipColor}`}>
                 <MenuIcon maskId={999}/>
               </span>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <span className={`${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : "text-dark"}`}>
+              <span className={s.headerSvgFlipColor}>
                 <FlipIcon />
               </span>
             </NavLink>
           </NavItem>
           <NavItem className="d-sm-down-none">
             <NavLink className="px-2">
-              <span className={`${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : "text-dark"}`}>
+              <span className={s.headerSvgFlipColor}>
                 <CloseIcon />
               </span>
             </NavLink>
@@ -285,7 +283,7 @@ class Header extends React.Component {
           </FormGroup>
         </Form>
 
-        <NavLink className={`${s.navbarBrand} d-md-none ${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : ""}`}>
+        <NavLink className={`${s.navbarBrand} d-md-none ${s.headerSvgFlipColor}`}>
           <i className="fa fa-circle text-primary mr-n-sm" />
           <i className="fa fa-circle text-danger" />
           &nbsp;
@@ -297,7 +295,7 @@ class Header extends React.Component {
 
         <Nav className="ml-auto">
           <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
-            <DropdownToggle nav caret className={`${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : ""}`}>
+            <DropdownToggle nav caret className={s.headerSvgFlipColor}>
             <span className={`${s.avatar} rounded-circle float-left mr-2`}>
               {avatar ? (
                 <img src={avatar} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
@@ -306,7 +304,7 @@ class Header extends React.Component {
               ) : <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
               }
             </span>
-              <span className={`small d-sm-down-none ${this.props.sidebarStatic ? s.adminEmail : ''} ${chroma(navbarColor).luminance() < 0.4 ? `text-white` : ""}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
+              <span className={`small d-sm-down-none ${s.headerTitle} ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
               <span className="ml-1 circle bg-primary text-white fw-bold d-sm-down-none">13</span>
             </DropdownToggle>
             <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
@@ -315,7 +313,7 @@ class Header extends React.Component {
           </Dropdown>
           <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="tutorial-dropdown pr-4">
             <DropdownToggle nav className={`${s.mobileCog}`}>
-              <span className={`${chroma(navbarColor).luminance() < 0.4 ? `${s.headerSvgFlipColor}` : "text-dark"}`}>
+              <span className={`${s.headerSvgFlipColor}`}>
                 <SettingsIcon/>
               </span>
             </DropdownToggle>

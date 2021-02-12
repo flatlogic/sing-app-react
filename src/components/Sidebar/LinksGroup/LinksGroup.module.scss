@@ -72,24 +72,25 @@
     line-height: 8px;
     margin-top: 9px;
     margin-right: 15px;
-    background: $purple;
-    color: var(--badge-item-color);
+    background: var(--sidebar-icon-bg);
+    color: var(--sidebar-badge-color);
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 16px;
     }
   }
 
   .headerNode {
-    color: var(--important-notification)
+    color: var(--sidebar-hightlight-two)
   }
 
   .headerUpdate {
-    color: var(--update-notification)
+    color: var(--sidebar-hightlight)
   }
   
   a.headerLinkActive {
     color: var(--sidebar-item-active-color);
     font-weight: $font-weight-bold;
+    white-space: nowrap;
     
     &:hover {
       color: var(--sidebar-icon-bg);

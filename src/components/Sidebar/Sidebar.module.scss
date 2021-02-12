@@ -18,8 +18,8 @@
   color: var(--sidebar-icon-bg);
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 16px;
-  text-shadow: 4px 4px 15px rgba(var(--sidebar-icon-bg), .6);
+  font-size: 16.5px;
+  text-shadow: 4px 4px 15px var(--sidebar-icon-bg);
 }
 
 .sidebarWrapper {
@@ -76,7 +76,7 @@
   margin: 35px 0 5px 11px;
   font-size: $font-size-mini;
   transition: opacity $sidebar-transition-time ease-in-out;
-  color: var(--sidebar-icon-bg);
+  color: var(--sidebar-section);
   opacity: .6;
   font-weight: bold;
 }
@@ -184,4 +184,30 @@
 
 .groupTitle {
   margin-bottom: 15px;
+}
+
+.labelRecent {
+  color: var(--sidebar-core);
+}
+
+.labelStarred {
+  color: var(--sidebar-ui);
+}
+
+.labelBackground {
+  color: var(--sidebar-form);
+}
+
+:global {
+  .sidebar-bottom-aler-danger {
+    & > .progress-bar {
+      background-color: var(--sidebar-sales);
+    }
+  }
+
+  .sidebar-bottom-aler-primary {
+    & > .progress-bar {
+      background-color: var(--sideba-responsibility);
+    }
+  }
 }

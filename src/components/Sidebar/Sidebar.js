@@ -464,19 +464,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-danger mr-2" />
+              <i className={`fa fa-circle mr-2 ${s.labelRecent}`} />
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-info mr-2" />
+              <i className={`fa fa-circle mr-2 ${s.labelStarred}`} />
               <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className="fa fa-circle text-primary mr-2" />
+              <i className={`fa fa-circle mr-2 ${s.labelBackground}`} />
               <span className={s.labelName}>Background</span>
             </a>
           </li>
@@ -494,7 +494,7 @@ class Sidebar extends React.Component {
               toggle={() => { this.dismissAlert(alert.id); }}
             >
               <span>{alert.title}</span><br />
-              <Progress className={`${s.sidebarProgress} progress-xs mt-1`} color={alert.color} value={alert.value} />
+              <Progress className={`${s.sidebarProgress} sidebar-bottom-aler-${alert.color} progress-xs mt-1`} color={'unset'} value={alert.value} />
               <small>{alert.footer}</small>
             </Alert>,
           )}
