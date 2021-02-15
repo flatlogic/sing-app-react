@@ -1,13 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter, Redirect, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../components/Widget';
-import { loginUser, receiveToken } from '../../actions/auth';
-import jwt from "jsonwebtoken";
 import microsoft from '../../images/microsoft.png';
-import config from "../../config";
 
 class Login extends React.Component {
 
@@ -80,7 +75,7 @@ class Login extends React.Component {
                         <p className="widget-auth-info">
                             Don't have an account? Sign up now!
                         </p>
-                        <Link className="d-block text-center" to="register">Create an Account</Link>
+                        <Link className="d-block text-center" to="/register">Create an Account</Link>
                     </Widget>
                 </Container>
                 <footer className="auth-footer">

@@ -26,7 +26,6 @@ import PersonIcon from '../../images/sidebar/Outline/Person';
 import PieChartIcon from '../../images/sidebar/Outline/PieChart';
 import PinIcon from '../../images/sidebar/Outline/Pin';
 import ShoppingBagIcon from '../../images/sidebar/Outline/ShoppingBag';
-import CloseIcon from '../../images/sidebar/Fill/CloseIcon';
 
 class Sidebar extends React.Component {
   static propTypes = {

@@ -8,7 +8,6 @@ import {
   Dropdown,
   NavItem,
   NavLink,
-  Badge,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -23,7 +22,6 @@ import cx from 'classnames';
 import { NavbarTypes } from '../../reducers/layout';
 import Notifications from '../Notifications';
 import { logoutUser } from '../../actions/auth';
-import chroma from 'chroma-js'
 import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
@@ -164,7 +162,6 @@ class Header extends React.Component {
   render() {
     const { focus } = this.state;
     const { openUsersList } = this.props;
-    const navbarColor = localStorage.getItem('navbarColor') || '#ffffff'
     const navbarType = localStorage.getItem("navbarType") || 'static'
 
     const user = this.props.currentUser;
