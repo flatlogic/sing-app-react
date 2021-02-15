@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.2.2]
+
+- Fix, updated svg attributes
+
 ## [8.2.1]
 
 - Extended customizer, added more colors
