@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.2.3]
+
+- Updated documentation
+
 ## [8.2.2]
 
 - Fix, updated svg attributes

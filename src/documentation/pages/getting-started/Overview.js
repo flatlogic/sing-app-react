@@ -51,6 +51,13 @@ const Overview = () => (
           <li className="lead"><i className="la la-check" /> And even more coming soon!</li>
         </ul>
       </Widget>
+      <Widget id="Support">
+        <h2>Support forum</h2>
+        <p className="lead">For any additional information please go to our support forum and raise your questions or feedback provide there. We highly appreciate your participation!</p>
+        <a href="https://flatlogic.com/forum" target="_blank" rel="noopener noreferrer" className="btn btn-default text-gray fw-semi-bold">
+          Support forum
+        </a>
+      </Widget>
       <Row>
         <Col md={5}>
           <Widget title="Continue with">
@@ -74,7 +81,8 @@ const Overview = () => (
         prefix="getting-started/overview"
         ids={[
           'Overview',
-          'Features'
+          'Features',
+          'Support'
         ]}
       />
     </Col>
