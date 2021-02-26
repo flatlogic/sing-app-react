@@ -69,7 +69,7 @@ class Header extends React.Component {
       <Navbar className={classnames(s.root, sd.header, 'd-print-none')}>
         <div className="container">
           <div className="row w-100 d-flex align-items-center">
-            <Nav>
+            <Nav className={sd.logoNav}>
               <NavItem>
                 <NavLink className="fs-lg d-lg-none d-md-none" onClick={this.switchSidebar}>
                   <span className="rounded rounded-lg text-white d-md-none"><i className="la la-bars" /></span>
@@ -77,23 +77,15 @@ class Header extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className={classnames(s.logo, 'd-sm-down-none px-4')} href={'/documentation'}>
+                <div className={classnames(sd.logo, 'px-4')}>
                   <span className={'fw-semi-bold'}>Sing App React</span> &nbsp;  Documentation
-                </NavLink>
+                </div>
               </NavItem>
             </Nav>
 
-            <NavLink className={`${s.navbarBrand} d-md-none text-muted`}>
-              <i className="fa fa-circle text-gray mr-n-sm" />
-              <i className="fa fa-circle text-warning" />
-              &nbsp;
-              documentation
-              &nbsp;
-              <i className="fa fa-circle text-warning mr-n-sm" />
-              <i className="fa fa-circle text-muted" />
-            </NavLink>
 
-            <Nav className="ml-auto">
+
+            <Nav className={sd.docsNav}>
               <NavItem className="d-flex alight-items-center d-md-down-none">
                 <NavLink href="https://twitter.com/flatlogic" className="mr-1">
                   <img src={twitterLogo} alt="twitter" />

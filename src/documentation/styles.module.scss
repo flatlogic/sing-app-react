@@ -8,6 +8,36 @@
   }
 }
 
+.docsNav {
+  margin-left: auto;
+  @media (max-width: 400px) {
+    margin: 0 auto;
+    margin-top: -30px;
+  }
+}
+
+.logoNav {
+  @media (max-width: 400px) {
+    margin: 0 auto;
+  }
+}
+
+.logo {
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #32373b !important;
+  position: static;
+  @media (max-width: 500px) {
+    font-size: 11px;
+  }
+  @media (max-width: 400px) {
+    height: 20px;
+  }
+}
+
 .content {
   background-color: #FFFBF8 !important;
   padding: $navbar-height*2 0 0 0 !important;
