@@ -105,6 +105,7 @@ Below you will find some information on how to perform common tasks.<br>
   - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
   - [Moment.js locales are missing](#momentjs-locales-are-missing)
 - [Alternatives to Ejecting](#alternatives-to-ejecting)
+- [Docker](#docker)
 - [Something Missing?](#something-missing)
 
 ## Updating to New Releases
@@ -2562,6 +2563,12 @@ If you're seeing this error, you're likely using an old version of `react-script
 ## Alternatives to Ejecting
 
 [Ejecting](#npm-run-eject) lets you customize anything, but from that point on you have to maintain the configuration and scripts yourself. This can be daunting if you have many similar projects. In such cases instead of ejecting we recommend to _fork_ `react-scripts` and any other packages you need. [This article](https://auth0.com/blog/how-to-configure-create-react-app/) dives into how to do it in depth. You can find more discussion in [this issue](https://github.com/facebook/create-react-app/issues/682).
+
+## Docker
+
+  1. build an image `docker build -t singup-image .`
+  2. run a container `docker run -p 3000:3000 -d singup-image`
+  3. now you can open the app in a web-browser `http://localhost:3000`
 
 ## Something Missing?
 
