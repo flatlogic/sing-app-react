@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.2.4]
+
+- Updated inactive icons color
+
 ## [8.2.3]
 
 - Updated documentation
