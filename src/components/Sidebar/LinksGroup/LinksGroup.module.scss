@@ -2,7 +2,7 @@
 
 .headerLink {
   overflow-x: hidden;
-
+  
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
     font-size: 13px;
   }
@@ -50,7 +50,7 @@
     justify-content: center;
     align-items: center;
     transition: all .35s ease;
-    color: var(--sidebar-icon-bg);
+    color: unset;
     background-color: transparent;
     position: absolute;
     top: 3px;
