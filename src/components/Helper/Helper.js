@@ -239,7 +239,7 @@ class Helper extends Component {
               <span className="text-white">Purchase</span>
             </Button>
             <Button
-              href="http://demo.flatlogic.com/sing-app/documentation/"
+              href="https://demo.flatlogic.com/sing-app-react/#/documentation/getting-started/overview"
               target="_blank"
               className="btn-rounded-f btn-block fs-mini text-white"
               color="primary"
