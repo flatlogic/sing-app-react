@@ -55,6 +55,11 @@ class UsersFormPage extends Component {
 
   isProfile = () => {
     const { match } = this.props;
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    const currentUserId = currentUser.user.id;
+    if (match.params.id === currentUserId) {
+      return true
+    }
     return match.url === '/app/edit_profile';
   };
 
