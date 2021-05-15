@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 
-import {
+import {  
   Dropdown,
   DropdownMenu,
   DropdownToggle,
@@ -19,6 +19,7 @@ import {
 import {
   BootstrapTable,
   TableHeaderColumn,
+  SearchField
 } from 'react-bootstrap-table';
 
 import Widget from 'components/Widget';
@@ -99,6 +100,15 @@ class UsersListTable extends Component {
     );
   };
 
+  createCustomSearchField = (props) => {
+    return (
+      <SearchField
+          className="mb-sm-5 mr-sm-0"
+          placeholder='Search'/>
+    );
+  }
+
+
   render() {
     const {
       rows
@@ -107,14 +117,15 @@ class UsersListTable extends Component {
     const options = {
       sizePerPage: 10,
       paginationSize: 5,
+      searchField: this.createCustomSearchField, 
       sizePerPageDropDown: this.renderSizePerPageDropDown,
     };
 
     return (
         <div>
           <Widget title="Users" collapse close>
-            <div className={s.usersTableWrapper}>
-              <BootstrapTable bordered={false} data={rows} version="4" pagination options={options} search tableContainerClass={`table-responsive table-striped table-hover ${s.usersListTableMobile}`}>
+            <div>
+              <BootstrapTable bordered={false} data={rows} version="4" pagination options={options} search className="table-responsive" tableContainerClass={`table-responsive table-striped table-hover ${s.usersListTableMobile}`}>
                 <TableHeaderColumn dataField="avatars" dataSort dataFormat={dataFormat.imageFormatter}>
                   <span className="fs-sm">Avatar</span>
                 </TableHeaderColumn>
