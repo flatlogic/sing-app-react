@@ -14,12 +14,9 @@ import {
 
 import ReactTable from 'react-table';
 
-
 import { reactTableData, reactBootstrapTableData } from './data';
 import Widget from '../../../components/Widget';
 import s from './Dynamic.modules.scss';
-
-
 
 class Dynamic extends React.Component {
 
