@@ -13,26 +13,26 @@ export default {
         },
       ],
     shares: [
-      {
-        img: '/sing-app-react/static/media/a1.jpg',
+      { 
+        img: '/images/people/a1.jpg',
         name: 'Maikel Basso',
         comment: 'about 2 mins ago',
         type: 'danger'
       },
-      {
-        img: '/sing-app-react/static/media/a2.jpg',
+      { 
+        img: '/images/people/a2.jpg',
         name: 'Ianus Arendse',
         comment: 'about 42 mins ago',
         type: 'info'
       },
       {
-        img: '/sing-app-react/static/media/a3.jpg',
+        img: '/images/people/a3.jpg',
         name: 'Valdemar Landau',
         comment: 'one hour ago',
         type: 'success'
       },
       {
-        img: '/sing-app-react/static/media/a4.jpg',
+        img: '/images/people/a4.jpg',
         name: 'Rick Teagan',
         comment: '3 hours ago',
         type: 'warning'

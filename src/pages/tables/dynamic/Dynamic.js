@@ -14,9 +14,12 @@ import {
 
 import ReactTable from 'react-table';
 
+
 import { reactTableData, reactBootstrapTableData } from './data';
 import Widget from '../../../components/Widget';
 import s from './Dynamic.modules.scss';
+
+
 
 class Dynamic extends React.Component {
 
@@ -124,6 +127,8 @@ class Dynamic extends React.Component {
             </TableHeaderColumn>
           </BootstrapTable>
         </Widget>
+
+        
         <Widget title={<h4>React <span className="fw-semi-bold">Table</span></h4>} collapse close>
           <p>
             Simple table extension with sorting, filtering and pagination for React apps. Built with <a href="https://react-table.js.org/" target="_blank" rel="noopener noreferrer">react-table</a>

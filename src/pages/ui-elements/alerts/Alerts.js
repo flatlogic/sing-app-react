@@ -47,7 +47,7 @@ class Alerts extends Component {
       <div>
         <h1 className="page-title">Alerts</h1>
         <Row>
-          <Col lg={6} xs={12} md={8}>
+          <Col xs={12} md={6}>
             <Widget
               title={<h5>Alert <span className="fw-semi-bold">Messages</span></h5>}
               close collapse
@@ -61,7 +61,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col lg={6} xs={12} md={8}>
+          <Col xs={12} md={6}>
             <Widget
               title={<h5>Transparent <span className="fw-semi-bold">Alerts</span></h5>}
               close collapse
@@ -76,7 +76,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={6}>
             <Widget
               title={<h5>Rounded <span className="fw-semi-bold">Alerts</span></h5>}
               close collapse
@@ -91,7 +91,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={6}>
             <Widget
               title={<h5>Additional <span className="fw-semi-bold">Content</span></h5>}
               close collapse

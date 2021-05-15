@@ -21,7 +21,7 @@ class Stats extends React.Component {
   render() {
     return (
       <Row>
-        <Col lg={11}>
+        <Col lg={12}>
           <Row className={s.root}>
             <Col xs={12}>
               <Widget bodyClass={"p-0"}>

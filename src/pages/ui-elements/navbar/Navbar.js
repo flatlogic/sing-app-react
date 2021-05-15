@@ -31,7 +31,7 @@ class NavbarExamples extends Component {
     return (
       <div>
         <Row>
-          <Col xs={12} md={9}>
+          <Col xs={12}>
             <Widget
               title={<h5>Navbar <span className="fw-semi-bold">Example</span></h5>}
               close collapse
@@ -70,7 +70,7 @@ class NavbarExamples extends Component {
               </Navbar>
             </Widget>
           </Col>
-          <Col xs={12} md={9}>
+          <Col xs={12}>
             <Widget
               title={<h5>Navbar <span className="fw-semi-bold">Example</span></h5>}
               close collapse

@@ -149,6 +149,7 @@ class Static extends React.Component {
                 Table <span className="fw-semi-bold">Styles</span>
               </h5>} settings close
             >
+            <div className="table-responsive">
               <Table>
                 <thead>
                   <tr className="fs-sm">
@@ -209,6 +210,7 @@ class Static extends React.Component {
                 }
                 </tbody>
               </Table>
+              </div>
               <div className="clearfix">
                 <div className="float-right">
                   <Button color="default" className="mr-xs" size="sm">Send to...</Button>
@@ -236,6 +238,7 @@ class Static extends React.Component {
               <h3>Stripped <span className="fw-semi-bold">Table</span></h3>
 
               <p>Each row is highlighted. You will never lost there. Just <code>.table-striped</code> it.</p>
+
               <Table className="table-striped">
                 <thead>
                   <tr>

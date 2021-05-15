@@ -188,7 +188,7 @@ class Wizard extends React.Component {
         <h1 className="page-title">Form - <span className="fw-semi-bold">Wizard</span>
         </h1>
         <Row>
-          <Col xl={8} lg={12}>
+          <Col xm={12}>
             <Widget
               close collapse
               className={s.formWizard}

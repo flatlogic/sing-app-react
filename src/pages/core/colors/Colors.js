@@ -45,13 +45,14 @@ const Colors = () => (
   <div>
     <h1 className="page-title">Colors</h1>
     <Row>
-      <Col>
+      <Col xs={12}>
         <Widget
           title={<h5>States <span className="fw-semi-bold">Colors</span></h5>}
           close collapse
         >
           <p>Sing comes with a number of state colors that can be applied to
           the most of elements and components. It reuses Bootstrap&apos;s original 6 states:</p>
+          <div className="table-responsive">
           <Table>
             <thead>
               <tr>
@@ -72,6 +73,7 @@ const Colors = () => (
               )}
             </tbody>
           </Table>
+          </div>
         </Widget>
       </Col>
     </Row>
