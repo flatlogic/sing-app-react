@@ -247,7 +247,7 @@ class Helper extends Component {
               Documentation
             </Button>
           </div>
-          <div className="d-flex justify-content-between mt-lg">
+          <div className="d-flex justify-content-between mt-2">
             <Button
               href="https://flatlogic.com/forum"
               target="_blank"
