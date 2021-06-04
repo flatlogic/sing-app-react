@@ -86,7 +86,7 @@ export default {
         type: 'success',
         extraClass: 'animated fadeInDown'
       },
-      {
+      { 
         img: '/sing-app-react/static/media/a1.jpg',
         name: 'Maikel Basso',
         comment: 'about 2 mins ago',

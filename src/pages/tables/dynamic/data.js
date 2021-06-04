@@ -771,7 +771,7 @@ export function reactBootstrapTableData() {
       description: 'Brasilia',
       date: 'October 1, 2013',
       status: {
-        progress: '9',
+        progress: '99',
         type: 'bar-gray-light',
       },
     },
@@ -785,7 +785,7 @@ export function reactBootstrapTableData() {
       description: 'Helsinki',
       date: 'October 29, 2013',
       status: {
-        progress: '38',
+        progress: '08',
         type: 'warning',
       },
     },
@@ -882,7 +882,7 @@ export function reactBootstrapTableData() {
       description: 'Los Angeles',
       date: 'August 2, 2012',
       status: {
-        progress: '8',
+        progress: '34',
         type: 'success',
       },
     },
@@ -951,7 +951,7 @@ export function reactBootstrapTableData() {
       description: 'Cape Town',
       date: 'December 29, 2012',
       status: {
-        progress: '5',
+        progress: '55',
         type: 'bar-gray-light',
       },
     },

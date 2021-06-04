@@ -1,4 +1,15 @@
 # Changelog
+## [8.2.5]
+
+Updated and add stylization table dynamic, add sorting and pagination table:
+add following packages: 
+"react-bootstrap-table-next": "^4.0.3",
+"react-bootstrap-table2-editor": "^1.4.0",
+"react-bootstrap-table2-filter": "^1.3.3",
+"react-bootstrap-table2-overlay": "^2.0.0",
+"react-bootstrap-table2-paginator": "^2.1.2",
+"react-bootstrap-table2-toolkit": "^2.1.3".
+
 ## [8.2.4]
 
 - Updated folllow Dependencies and DevDependencies: 

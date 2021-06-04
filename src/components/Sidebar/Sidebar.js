@@ -351,7 +351,7 @@ class Sidebar extends React.Component {
               },
               {
                 header: 'Tables Dynamic', link: '/app/tables/dynamic',
-              },
+              }
             ]}
           />
           <LinksGroup

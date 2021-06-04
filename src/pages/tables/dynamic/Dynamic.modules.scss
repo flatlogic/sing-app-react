@@ -33,3 +33,45 @@
   background: $blue;
   color: $gray-100;
 }
+
+.react-bootstrap-table {
+  table thead {
+    th.sortable .order {
+        margin: 10px 0 10px 5px;
+    }
+    .react-bootstrap-table-sort-order {
+      margin: 10px 0 10px 5px;
+    }
+    .react-bootstrap-table-sort-order.dropup {
+      margin: 10px 0 10px 5px;
+    }
+  }
+}
+
+.react-bootstrap-table {
+  table thead {
+    th.sortable .order {
+      .dropup .caret {
+        border-top: 0;
+        border-bottom: 4px dashed;
+      }
+    }
+    .react-bootstrap-table-sort-order.dropup {
+      .caret {
+        border-top: 0;
+        border-bottom: 4px dashed;
+      }
+    }
+  }
+}
+
+.row.react-bootstrap-table-pagination {
+  .react-bs-table-sizePerPage-dropdown.dropdown{
+    .caret{
+      border-top: 0;
+    }
+  }
+}
+
+
+

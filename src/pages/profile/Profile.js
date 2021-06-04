@@ -104,7 +104,7 @@ const Profile = () => (
               Because when there is a maturity, there is ...
             </div>
             <footer className={s.eventFooter}>
-              <ul className="post-links">
+              <ul className="post-links"> 
                 <li><button className="btn-link">1 hour</button></li>
                 <li><button className="btn-link"><span className="text-danger"><i className="fa fa-heart" /> Like</span></button></li>
                 <li><button className="btn-link">Comment</button></li>

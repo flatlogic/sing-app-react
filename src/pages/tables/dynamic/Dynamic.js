@@ -1,16 +1,11 @@
 import React from 'react';
 import {
-  Progress,
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
+  Progress
 } from 'reactstrap';
 
-import {
-  BootstrapTable,
-  TableHeaderColumn,
-} from 'react-bootstrap-table';
+import BootstrapTable from 'react-bootstrap-table-next';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 
 import ReactTable from 'react-table';
 
@@ -19,8 +14,7 @@ import { reactTableData, reactBootstrapTableData } from './data';
 import Widget from '../../../components/Widget';
 import s from './Dynamic.modules.scss';
 
-
-
+const { SearchBar } = Search;
 class Dynamic extends React.Component {
 
   constructor(props) {
@@ -32,29 +26,33 @@ class Dynamic extends React.Component {
     };
   }
 
-  renderSizePerPageDropDown = (props) => {
-    const limits = [];
-    props.sizePerPageList.forEach((limit) => {
-      limits.push(<DropdownItem key={limit} onClick={() => props.changeSizePerPage(limit)}>{ limit }</DropdownItem>);
-    });
-
-    return (
-      <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
-        <DropdownToggle color="default" caret>
-          { props.currSizePerPage }
-        </DropdownToggle>
-        <DropdownMenu>
-          { limits }
-        </DropdownMenu>
-      </Dropdown>
-    );
-  };
-
   render() {
+    const sizePerPageOptionRenderer = ({
+      text,
+      page,
+      onSizePerPageChange
+    }) => (
+    <li
+      key={ text }
+      role="presentation"
+      className="dropdown-item"
+      >
+      <a href="#" tabIndex="-1"
+         role="menuitem"
+         data-page={page}
+         onMouseDown={(e) => {
+           e.preventDefault();
+            onSizePerPageChange(page);
+         }}
+        style={{display:'block',color:'#495057'}}
+        >
+        { text }
+      </a>
+    </li>
+    );
+
     const options = {
-      sizePerPage: 10,
-      paginationSize: 3,
-      sizePerPageDropDown: this.renderSizePerPageDropDown,
+      sizePerPageOptionRenderer
     };
 
     function infoFormatter(cell) {
@@ -79,56 +77,75 @@ class Dynamic extends React.Component {
       );
     }
 
-    function progressFormatter(cell) {
-      return (
-        <Progress style={{ height: '15px' }} color={cell.type} value={cell.progress} />
-      );
+    const columns = [{
+      dataField: 'id',
+      text: 'ID',
+      classes: `width-100 fs-sm`
+    },{
+      dataField: 'name',
+      text: 'Name',
+      classes: `fs-sm`,
+      dataSort: true,
+      sort: true
+    },{
+      dataField: 'info',
+      text: 'Info',
+      formatter: infoFormatter,
+      classes: `d-md-table-cell fs-sm`
+    },{
+      dataField: 'description',
+      text: 'Description',
+      formatter: descriptionFormatter,
+      classes: `d-md-table-cell fs-sm`
+    },{
+      dataField: 'date',
+      text: 'Date',
+      dataSort: true,
+      sort: true,
+      classes: `d-md-table-cell fs-sm`,
+    },{
+      dataField: 'status',
+      text: 'Status',
+      formatter: (cell) => {
+        return <Progress style={{ height: '15px' }} color={cell.type} value={cell.progress} />
+      },
+      sort: true,
+      sortValue: cell => cell.progress,
+      classes: `d-md-table-cell fs-sm`
     }
-
-    function progressSortFunc(a, b, order) {
-      if (order === 'asc') {
-        return a.status.progress - b.status.progress;
-      }
-      return b.status.progress - a.status.progress;
-    }
-
-    function dateSortFunc(a, b, order) {
-      if (order === 'asc') {
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
-      }
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    }
+    ];
 
     return (
       <div>
         <h2 className="page-title">Tables - <span className="fw-semi-bold">Dynamic</span></h2>
         <Widget title={<h4>The <span className="fw-semi-bold">React</span> Way</h4>} collapse close>
           <p>
-            Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
+            Fully customizable Table. Built with <a href="https://react-bootstrap-table.github.io/react-bootstrap-table2/" target="_blank" rel="noopener noreferrer">react-bootstrap-table2</a>
           </p>
-          <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}>
-            <TableHeaderColumn className={`width-50 ${s.columnHead}`} columnClassName="width-50" dataField="id" isKey>
-              <span className="fs-sm">ID</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`${s.columnHead}`} dataField="name" dataSort>
-              <span className="fs-sm">Name</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="info" dataFormat={infoFormatter}>
-              <span className="fs-sm">Info</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>
-              <span className="fs-sm">Description</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>
-              <span className="fs-sm">Date</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`width-150 ${s.columnHead}`} columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>
-              <span className="fs-sm">Status</span>
-            </TableHeaderColumn>
-          </BootstrapTable>
+
+          <ToolkitProvider
+            keyField="id"
+            data={this.state.reactBootstrapTable}
+            columns={ columns }
+            search
+          >
+            {
+              props => (
+                <div>
+                  <div className="mb-sm-5 offset-md-8" style={{float: 'right'}}>
+                    <SearchBar { ...props.searchProps } />
+                  </div>
+
+                  <BootstrapTable bootstrap4 class="table table-responsive table-striped table-hover"  pagination={ paginationFactory(options)} keyField='id' data={this.state.reactBootstrapTable} columns={ columns }
+                    { ...props.baseProps }
+                  />
+                </div>
+              )
+            }
+          </ToolkitProvider>
         </Widget>
 
-        
+
         <Widget title={<h4>React <span className="fw-semi-bold">Table</span></h4>} collapse close>
           <p>
             Simple table extension with sorting, filtering and pagination for React apps. Built with <a href="https://react-table.js.org/" target="_blank" rel="noopener noreferrer">react-table</a>
