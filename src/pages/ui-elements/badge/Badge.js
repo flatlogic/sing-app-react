@@ -21,14 +21,14 @@ const Badges = () => (
             Badges scale to match the size of the immediate parent element by
             using relative font sizing and em units.
           </p>
-          <h1>Example heading <Badge className="mr-md" color="primary">Primary</Badge></h1>
-          <h2>Example heading <Badge className="mr-md" color="info">Info</Badge></h2>
-          <h3>Example heading <Badge className="mr-md" color="warning">Warning</Badge></h3>
-          <h4>Example heading <Badge className="mr-md" color="success">Success</Badge></h4>
-          <h5>Example heading <Badge className="mr-md" color="danger">Danger</Badge></h5>
-          <h6>Example heading <Badge className="mr-md" color="secondary">Secondary</Badge></h6>
+          <h1>Example heading <Badge className="mr-md p-2" color="primary">Primary</Badge></h1>
+          <h2>Example heading <Badge className="mr-md p-2" color="info">Info</Badge></h2>
+          <h3>Example heading <Badge className="mr-md p-2" color="warning">Warning</Badge></h3>
+          <h4>Example heading <Badge className="mr-md p-2" color="success">Success</Badge></h4>
+          <h5>Example heading <Badge className="mr-md p-2" color="danger">Danger</Badge></h5>
+          <h6>Example heading <Badge className="mr-md p-2" color="secondary">Secondary</Badge></h6>
           <p>Badges can be used as part of links or buttons to provide a counter.</p>
-          <Button color="primary">Notifications <Badge color="danger">4</Badge></Button>
+          <Button className="p-2" color="primary">Notifications <Badge color="danger">4</Badge></Button>
         </Widget>
       </Col>
       <Col xs={12} md={6}>
@@ -57,14 +57,14 @@ const Badges = () => (
             Using the contextual <code>href=&quot;&#35;&quot;</code> classes on
             an <code>&lt;Badge&gt;</code> element quickly provide actionable badges with hover and focus states.
           </p>
-          <Badge className="mr-md mt-md" href="#" color="primary">Primary</Badge>
-          <Badge className="mr-md" href="#" color="info">Info</Badge>
-          <Badge className="mr-md" href="#" color="warning">Warning</Badge>
-          <Badge className="mr-md mt-md" href="#" color="success">Success</Badge>
-          <Badge className="mr-md" href="#" color="danger">Danger</Badge>
-          <Badge className="mr-md" href="#" color="secondary">Secondary</Badge>
-          <Badge className="mr-md" href="#" color="light">Light</Badge>
-          <Badge className="mr-md mt-md" href="#" color="dark">Dark</Badge>
+          <Badge className="mr-md mt-md p-2" href="#" color="primary">Primary</Badge>
+          <Badge className="mr-md p-2" href="#" color="info">Info</Badge>
+          <Badge className="mr-md p-2" href="#" color="warning">Warning</Badge>
+          <Badge className="mr-md p-2 mt-md" href="#" color="success">Success</Badge>
+          <Badge className="mr-md p-2" href="#" color="danger">Danger</Badge>
+          <Badge className="mr-md p-2" href="#" color="secondary">Secondary</Badge>
+          <Badge className="mr-md p-2" href="#" color="light">Light</Badge>
+          <Badge className="mr-md p-2 mt-md" href="#" color="dark">Dark</Badge>
         </Widget>
       </Col>
     </Row>

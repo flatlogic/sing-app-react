@@ -115,6 +115,7 @@ class Dynamic extends React.Component {
     }
     ];
 
+
     return (
       <div>
         <h2 className="page-title">Tables - <span className="fw-semi-bold">Dynamic</span></h2>

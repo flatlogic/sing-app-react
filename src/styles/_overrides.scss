@@ -272,7 +272,7 @@ small {
 
 .btn-group > .btn:first-child {
   height: 36px;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .dropdown-toggle::after {
@@ -1166,7 +1166,7 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 
 //// React Joyride Shadow fix ////
 .__floater {
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px)!important
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1))!important
 }
 
 .table-striped {
