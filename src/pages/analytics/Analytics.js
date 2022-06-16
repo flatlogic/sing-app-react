@@ -11,7 +11,8 @@ import TaskContainer from './components/TaskContainer/TaskContainer';
 import BigStat from './components/BigStat/BigStat';
 import TableContainer from './components/TableContainer/TableContainer';
 import Calendar from '../dashboard/components/calendar/Calendar';
-import HighchartsReact from 'highcharts-react-official'
+import HighchartsReact from 'highcharts-react-official';
+import Highcharts from 'highcharts';
 
 import mock from './mock';
 import s from './Analitycs.module.scss';
@@ -157,7 +158,7 @@ class Analytics extends Component {
                     fetchingData={isReceiving}
                     title={<h5>Revenue Breakdown</h5>}
                   >
-                    <HighchartsReact options={this.donut()} />
+                    <HighchartsReact highcharts={Highcharts} options={this.donut()} />
                   </Widget>
                 </div>
               </Col>
@@ -280,7 +281,7 @@ class Analytics extends Component {
                   className="widget"
                   bodyClass={cx(s.notifications, 'w-100 mt-lg')}
                   title={
-                    <h4>Notifications <span className="badge badge-pill badge-primary fw-normal pull-right mt-xs">{mock.notifications.length}</span></h4>
+                    <h4>Notifications <span className="rounded-pill bg-primary text-white pull-right mt-xs px-2 py-1 fs-6 fw-normal">{mock.notifications.length}</span></h4>
                   }
                 >
                   {mock.notifications.map(({ id, icon, color, content }) => (

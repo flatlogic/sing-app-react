@@ -50,9 +50,9 @@ class NavbarExamples extends Component {
               </ul>
               <Navbar className="px-4 mt-lg" color="light" light expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
-                <NavbarToggler className="ml-auto" onClick={() => this.toggle(0)} />
+                <NavbarToggler className="ms-auto" onClick={() => this.toggle(0)} />
                 <Collapse isOpen={this.state.navs[0]} navbar>
-                  <Nav className="ml-auto" navbar>
+                  <Nav className="ms-auto" navbar>
                     <NavItem>
                       <NavLink>Home</NavLink>
                     </NavItem>
@@ -81,9 +81,9 @@ class NavbarExamples extends Component {
                 colors. Then, customize with <code>.bg-*</code> utilities.</p>
               <Navbar className="px-4 mt-lg" color="inverse" dark expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
-                <NavbarToggler className="ml-auto" onClick={() => this.toggle(1)} />
+                <NavbarToggler className="ms-auto" onClick={() => this.toggle(1)} />
                 <Collapse isOpen={this.state.navs[1]} navbar>
-                  <Nav className="ml-auto" navbar>
+                  <Nav className="ms-auto" navbar>
                     <NavItem>
                       <NavLink>Home</NavLink>
                     </NavItem>
@@ -101,9 +101,9 @@ class NavbarExamples extends Component {
               </Navbar>
               <Navbar className="px-4 mt-lg" color="primary" dark expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
-                <NavbarToggler className="ml-auto" onClick={() => this.toggle(2)} />
+                <NavbarToggler className="ms-auto" onClick={() => this.toggle(2)} />
                 <Collapse isOpen={this.state.navs[2]} navbar>
-                  <Nav className="ml-auto" navbar>
+                  <Nav className="ms-auto" navbar>
                     <NavItem>
                       <NavLink>Home</NavLink>
                     </NavItem>
@@ -121,9 +121,9 @@ class NavbarExamples extends Component {
               </Navbar>
               <Navbar className="px-4 mt-lg" color="light" light expand="md">
                 <NavbarBrand href="/">Navbar</NavbarBrand>
-                <NavbarToggler className="ml-auto" onClick={() => this.toggle(3)} />
+                <NavbarToggler className="ms-auto" onClick={() => this.toggle(3)} />
                 <Collapse isOpen={this.state.navs[3]} navbar>
-                  <Nav className="ml-auto" navbar>
+                  <Nav className="ms-auto" navbar>
                     <NavItem>
                       <NavLink>Home</NavLink>
                     </NavItem>

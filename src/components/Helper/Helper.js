@@ -187,13 +187,13 @@ class Helper extends Component {
 
           <div className="theme-settings">
             <h5 className="navbar-type-switcher">Navbar Type</h5>
-            <div className="form-group row">
-              <div className="abc-radio">
+            <div className="row">
+              <div className="abc-radio col-auto">
                 <input onChange={() => this.navbarStateToggle(NavbarTypes.STATIC)} type="radio" checked={navbarType === NavbarTypes.STATIC ? true : ''} name="navbar-type" id="navbar_static" />
                 <label htmlFor="navbar_static">Static</label>
               </div>
      
-              <div className="abc-radio">
+              <div className="abc-radio col-auto">
                 <input onChange={() => this.navbarStateToggle(NavbarTypes.FLOATING)} type="radio" checked={navbarType === NavbarTypes.FLOATING ? true : ''} name="navbar-type" id="navbar_floating" />
                 <label htmlFor="navbar_floating">Floating</label>
               </div>
@@ -208,13 +208,13 @@ class Helper extends Component {
             />
 
             <h5 className="mt-4 sidebar-type-switcher">Sidebar Type</h5>
-            <div className="form-group row">
-              <div className="abc-radio">
+            <div className="row">
+              <div className="abc-radio col-auto">
                 <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.TRANSPARENT)} checked={sidebarType === SidebarTypes.TRANSPARENT ? true : ''} name="sidebar-type" id="sidebar_transparent" />
                 <label htmlFor="sidebar_transparent">Transparent</label>
               </div>
     
-              <div className="abc-radio">
+              <div className="abc-radio col-auto">
                 <input type="radio" onChange={() => this.sidebarStateToggle(SidebarTypes.SOLID)} checked={sidebarType === SidebarTypes.SOLID ? true : ''} name="sidebar-type" id="sidebar_solid" />
                 <label htmlFor="sidebar_solid">Solid</label>
               </div>
@@ -229,11 +229,11 @@ class Helper extends Component {
             />
 
           </div>
-          <div className="mt-5">
+          <div className="mt-5 d-grid ">
             <Button
               href="https://flatlogic.com/admin-dashboards/sing-app-react"
               target="_blank"
-              className="btn-rounded-f btn-block fs-mini purchase-button"
+              className="btn-rounded-f fs-mini purchase-button"
               color="info"
             >
               <span className="text-white">Purchase</span>
@@ -241,7 +241,7 @@ class Helper extends Component {
             <Button
               href="https://demo.flatlogic.com/sing-app-react/#/documentation/getting-started/overview"
               target="_blank"
-              className="btn-rounded-f btn-block fs-mini text-white mt-4"
+              className="btn-rounded-f fs-mini text-white mt-4"
               color="primary"
             >
               Documentation

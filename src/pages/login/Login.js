@@ -40,7 +40,7 @@ class Login extends React.Component {
                         <Alert className="alert-sm text-center mt-2" color="secondary">
                             This is a real app with Node.js backend - use
                             <br/>
-                            <span className="font-weight-bold">"admin@flatlogic.com / password"</span>
+                            <span className="fw-bold">"admin@flatlogic.com / password"</span>
                             <br/>
                             to login!
                         </Alert>

@@ -205,14 +205,14 @@ class ModalExample extends React.Component {
             <Container fluid>
               <Row>
                 <Col md={4}><div className="h-100 w-100 bg-primary p-2">.col-md-4</div></Col>
-                <Col md={4} className="ml-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div></Col>
+                <Col md={4} className="ms-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div></Col>
               </Row>
               <Row className="mt-sm">
-                <Col md={3} className="ml-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-3 .ml-auto</div></Col>
-                <Col md={4} className="ml-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div></Col>
+                <Col md={3} className="ms-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-3 .ml-auto</div></Col>
+                <Col md={4} className="ms-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div></Col>
               </Row>
               <Row className="mt-sm">
-                <Col md={6} className="ml-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-6 .ml-auto</div></Col>
+                <Col md={6} className="ms-auto"><div className="h-100 w-100 bg-primary p-2">.col-md-6 .ml-auto</div></Col>
               </Row>
             </Container>
           </ModalBody>

@@ -28,7 +28,7 @@ class SPackage extends React.Component {
                 <h6>React JS Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={reactLogo} width="80" alt="" />
+              <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={reactLogo} width="80" alt="" />
               <h3>React JS Version</h3>
               <p className="text-muted">We spent another <span className="fw-semi-bold">500</span> man-hours
                 developing and designing
@@ -46,7 +46,9 @@ class SPackage extends React.Component {
                 decide on development approaches that are the best for your project.
                 <a href="https://webpack.js.org/">Webpack</a> Module Bundler and Yarn as a package
                 manager are under the hood.</p>
-              <button className="btn btn-transparent btn-lg btn-block disabled">(You are here)</button>
+              <div class="d-grid">
+                <button className="btn btn-transparent btn-lg" disabled>(You are here)</button>
+              </div>
             </Widget>
           </Col>
           <Col xs={12} md={6} lg={6}>
@@ -55,7 +57,7 @@ class SPackage extends React.Component {
                 <h6>Angular Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularLogo} width="80" alt="" />
+              <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={angularLogo} width="80" alt="" />
               <h3>Angular 2+ Version</h3>
               <p className="text-muted">We spent around <span className="fw-semi-bold">500</span> man-hours
                 developing and designing
@@ -72,12 +74,14 @@ class SPackage extends React.Component {
                 uses <a href="https://webpack.js.org/">Webpack</a> Module Bundler and NPM as a package manager,
                 so everything
                 works out of the box! <br /><br /></p>
-              <a
-                className="btn btn-default btn-lg btn-block"
-                href="https://demo.flatlogic.com/sing-app/angular/"
-              >
-                Go to Demo
-              </a>
+              <div class="d-grid">
+                  <a
+                    className="btn btn-default btn-lg btn-block"
+                    href="https://demo.flatlogic.com/sing-app/angular/"
+                  >
+                    Go to Demo
+                  </a>
+              </div>
             </Widget>
           </Col>
           <Col xs={12} md={6}>
@@ -86,7 +90,7 @@ class SPackage extends React.Component {
                 <h6>AngularJS 1.X Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularJSLogo} width="80" alt="" />
+              <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={angularJSLogo} width="80" alt="" />
               <h3>AngularJS Version</h3>
               <p className="text-muted">We don’t know about you but we’re very excited that it’s finally here!
                 Our brand new Light Blue Angular version.</p>
@@ -101,12 +105,14 @@ class SPackage extends React.Component {
                 among your top considerations when choosing the right framework.</p>
               <p>Angular version makes it possible by letting responsive, fast-loading and
                 seamlessly-navigating application.</p>
-              <a
-                className="btn btn-default btn-lg btn-block"
-                href="https://demo.flatlogic.com/sing-app/angularjs/"
-              >
-                Go to Demo
-              </a>
+              <div class="d-grid">
+                <a
+                  className="btn btn-default btn-lg btn-block"
+                  href="https://demo.flatlogic.com/sing-app/angularjs/"
+                >
+                  Go to Demo
+                </a>
+              </div>
             </Widget>
           </Col>
           <Col xs={12} md={6}>
@@ -115,7 +121,7 @@ class SPackage extends React.Component {
                 <h6>Pure HTML5 Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={jsLogo} width="80" alt="" />
+              <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={jsLogo} width="80" alt="" />
               <h3>HTML5 Version</h3>
               <p className="text-muted">During last 4 years we
                 invested more than <span className="fw-semi-bold">1000</span> man-hours
@@ -133,12 +139,14 @@ class SPackage extends React.Component {
                 value of &nbsp;<code>window.PJAX_ENABLED</code> global variable.</p>
               <p>Moreover, this version comes with three different color
                 schemes which you can easily switch based on your choice.</p>
-              <a
-                className="btn btn-default btn-lg btn-block"
-                href="https://demo.flatlogic.com/sing-app/html-bs4/dashboard/index.html"
-              >
-                Go to Demo
-              </a>
+              <div class="d-grid">
+                <a
+                  className="btn btn-default btn-lg btn-block"
+                  href="https://demo.flatlogic.com/sing-app/html-bs4/dashboard/index.html"
+                >
+                  Go to Demo
+                </a>
+              </div>
             </Widget>
           </Col>
           <Col xs={12} md={6}>
@@ -147,7 +155,7 @@ class SPackage extends React.Component {
                 <h6>Vue JS Version</h6>
               } settings collapse close
             >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={vueLogo} width="80" alt="" />
+              <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={vueLogo} width="80" alt="" />
               <h3>VUE JS Version</h3>
               <p className="text-muted">Coming soon version. Seed
                 project is <span className="fw-semi-bold">50%</span> ready.</p>
@@ -160,12 +168,14 @@ class SPackage extends React.Component {
               <p>Supporting Vue JS version is a main
                 priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
                 so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-                <a
-                  className="btn btn-default btn-lg btn-block"
-                  href="https://demo.flatlogic.com/sing-app-vue/#/app/main/analytics"
-                >
-                Go to Demo
-              </a>
+              <div class="d-grid">
+                  <a
+                    className="btn btn-default btn-lg btn-block"
+                    href="https://demo.flatlogic.com/sing-app-vue/#/app/main/analytics"
+                  >
+                  Go to Demo
+                </a>
+              </div>
             </Widget>
           </Col>
         </Row>

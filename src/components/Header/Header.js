@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledTooltip,
-  InputGroupAddon,
   InputGroup,
   Input,
   Form,
@@ -227,9 +226,10 @@ class Header extends React.Component {
             },
           }}
         />
-        <Nav>
-          <NavItem>
-            <NavLink className={`d-md-down-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
+        <div className="d-flex flex-row justify-content-md-start flex-grow-1 align-content-center ms-md-5">
+          <Nav className="my-auto">
+            <NavItem>
+              <NavLink className={`d-md-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
               <span className={s.headerSvgFlipColor}>
                 <MenuIcon  maskId={1001}/>
               </span>
@@ -237,93 +237,95 @@ class Header extends React.Component {
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
-            <NavLink className="fs-lg d-lg-none" onClick={this.switchSidebar}>
-            <span 
-              className={`rounded rounded-lg d-md-none d-sm-down-block`} style={{marginTop: 7}}>
-                <span 
-                  className={s.headerSvgFlipColor}
-                  style={{fontSize: 30}} 
-                ><MenuIcon maskId={1000}/></span>
+            <NavLink className="fs-lg d-lg-block" onClick={this.switchSidebar}>
+              <span
+                className={`rounded rounded-lg d-sm-none`}>
+                  <span
+                    className={s.headerSvgFlipColor}
+                    style={{fontSize: 30}}
+                  >
+                    <MenuIcon maskId={1000}/>
+                  </span>
               </span>
-              <span className={`ml-3 d-sm-down-none ${s.headerSvgFlipColor}`}>
-                <MenuIcon maskId={999}/>
+              <span className={`ml-3 d-sm-none d-md-block d-lg-block d-xl-block ${s.headerSvgFlipColor}`}>
+                  <MenuIcon maskId={999}/>
               </span>
             </NavLink>
-          </NavItem>
-          <NavItem className="d-sm-down-none">
-            <NavLink className="px-2">
+            </NavItem>
+            <NavItem className="d-none d-md-block">
+              <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
                 <FlipIcon />
               </span>
-            </NavLink>
-          </NavItem>
-          <NavItem className="d-sm-down-none">
-            <NavLink className="px-2">
+              </NavLink>
+            </NavItem>
+            <NavItem className="d-none d-md-block">
+              <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
                 <CloseIcon />
               </span>
-            </NavLink>
-          </NavItem>
+              </NavLink>
+            </NavItem>
+          </Nav>
 
-        </Nav>
+          <Form className={`${s.headerSearchInput} d-none d-md-block`} inline>
+            <FormGroup>
+              <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
+                cx('input-group-no-border', {'focus' : !!focus})
+              }>
+                <div class="m-2"><span className="headerSvgFlipColor"><SearchIcon /></span></div>
+                <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
+              </InputGroup>
+            </FormGroup>
+          </Form>
 
-        <Form className={`d-sm-down-none ml-5 ${s.headerSearchInput}`} inline>
-          <FormGroup>
-            <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
-              cx('input-group-no-border', {'focus' : !!focus})
-            }>
-              <InputGroupAddon addonType="prepend">
-                <span className={`${s.headerSvgFlipColor}`}><SearchIcon /></span>
-              </InputGroupAddon>
-              <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
-            </InputGroup>
-          </FormGroup>
-        </Form>
+          <NavLink className={`${s.navbarBrand} d-md-none ${s.headerSvgFlipColor}`}>
+            <i className="fa fa-circle text-primary mr-n-sm" />
+            <i className="fa fa-circle text-danger" />
+            &nbsp;
+            sing
+            &nbsp;
+            <i className="fa fa-circle text-danger mr-n-sm" />
+            <i className="fa fa-circle text-primary" />
+          </NavLink>
+        </div>
 
-        <NavLink className={`${s.navbarBrand} d-md-none ${s.headerSvgFlipColor}`}>
-          <i className="fa fa-circle text-primary mr-n-sm" />
-          <i className="fa fa-circle text-danger" />
-          &nbsp;
-          sing
-          &nbsp;
-          <i className="fa fa-circle text-danger mr-n-sm" />
-          <i className="fa fa-circle text-primary" />
-        </NavLink>
-
-        <Nav className="ml-auto">
-          <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
-            <DropdownToggle nav caret className={s.headerSvgFlipColor}>
-            <span className={`${s.avatar} rounded-circle float-left mr-2`}>
+        <div>
+          <Nav className="ml-auto float-end">
+            <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
+              <DropdownToggle nav caret className={s.headerSvgFlipColor}>
+            <span className={`${s.avatar} rounded-circle float-start mr-3`}>
               {avatar ? (
-                <img src={avatar} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
+                  <img src={avatar} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
               ) : user && user.role === 'admin' ? (
-                <img src={adminDefault} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
+                  <img src={adminDefault} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
               ) : <span title={user && (user.firstName || user.email)}>{firstUserLetter}</span>
               }
             </span>
-              <span className={`small d-sm-down-none ${s.headerTitle} ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
-              <span className="ml-1 circle bg-primary text-white fw-bold d-sm-down-none">13</span>
-            </DropdownToggle>
-            <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
-              <Notifications />
-            </DropdownMenu>
-          </Dropdown>
-          <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="tutorial-dropdown pr-4">
-            <DropdownToggle nav className={`${s.mobileCog}`}>
+                <span className={`small m-2 d-sm-down-none ${s.headerTitle} ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
+                <span className="badge m-1 circle bg-inverse text-white fw-bold d-sm-down-none">13</span>
+              </DropdownToggle>
+              <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
+                <Notifications />
+              </DropdownMenu>
+            </Dropdown>
+            <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="tutorial-dropdown pr-4">
+              <DropdownToggle nav className={`${s.mobileCog}`}>
               <span className={`${s.headerSvgFlipColor}`}>
                 <SettingsIcon/>
               </span>
-            </DropdownToggle>
-            <DropdownMenu right className={`${s.headerDropdownLinks} super-colors`}>
-              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><span className={s.headerDropdownIcon}><PersonIcon/></span> My Account</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/extra/calendar"><span className={s.headerDropdownIcon}><CalendarIcon/></span>Calendar</DropdownItem>
-              <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/inbox"><span className={s.headerDropdownIcon}><EmailIcon/></span>Inbox &nbsp;&nbsp;</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem onClick={this.doLogout}><span className={s.headerDropdownIcon}><PowerIcon/></span> Log Out</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </Nav>
+              </DropdownToggle>
+              <DropdownMenu right className={`${s.headerDropdownLinks} super-colors`}>
+                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><span className={s.headerDropdownIcon}><PersonIcon/></span> My Account</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/extra/calendar"><span className={s.headerDropdownIcon}><CalendarIcon/></span>Calendar</DropdownItem>
+                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/inbox"><span className={s.headerDropdownIcon}><EmailIcon/></span>Inbox &nbsp;&nbsp;</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={this.doLogout}><span className={s.headerDropdownIcon}><PowerIcon/></span> Log Out</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </Nav>
+        </div>
       </Navbar>
     );
   }

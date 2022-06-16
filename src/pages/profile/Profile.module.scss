@@ -89,3 +89,8 @@
 .eventTimestamp {
   color: $text-muted;
 }
+
+.btn-toolbar {
+  display: flex;
+  justify-content: space-between !important;
+}

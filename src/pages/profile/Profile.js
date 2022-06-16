@@ -44,8 +44,8 @@ const Profile = () => (
                 <h5 className="fw-normal">Adam <span className="fw-semi-bold">Johns</span></h5>
                 <p>UI/UX designer</p>
                 <button className="btn btn-success btn-sm mb-3">
-                  &nbsp;Send
-                  <i className="fa fa-envelope ml-2" />&nbsp;
+                  Send
+                  <i className="fa fa-envelope ms-2" />
                 </button>
                 <div>
                   <ul className={cx(s.profileContacts, 'mt-sm')}>
@@ -72,9 +72,9 @@ const Profile = () => (
                 </div>
               </div>
               <p>
-                <span className="badge badge-info rounded-0"> UI/UX </span>
-                <span className="badge badge-primary rounded-0 ml-2"> Web Design </span>
-                <span className="badge badge-default rounded-0 ml-2"> Mobile Apps </span>
+                <span className="badge bg-info rounded-0"> UI/UX </span>
+                <span className="badge bg-primary rounded-0 ms-2"> Web Design </span>
+                <span className="badge bg-default rounded-0 ms-2"> Mobile Apps </span>
               </p>
               <p className="lead mt-xlg">
                 My name is Adam Johns and here is my new Sing user profile page.

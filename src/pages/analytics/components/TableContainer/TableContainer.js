@@ -45,7 +45,7 @@ class TableContainer extends PureComponent {
           {
             data.map(({ name, email, product, price, date, city, status }) => (
               <tr key={name}>
-                <td className="pl-4 fw-normal">{name}</td>
+                <td className="ps-3 fw-normal">{name}</td>
                 <td>{email}</td>
                 <td>{product}</td>
                 <td>{price}</td>

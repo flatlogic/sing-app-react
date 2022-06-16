@@ -237,50 +237,66 @@ class Dashboard extends React.Component {
         <Row>
           <Col lg={4} xs={12}>
             <Widget
-              title={<h6><span className="badge badge-danger">New</span> Messages</h6>}
+              title={<h6><span className="badge bg-danger text-white fw-semi-bold px-1 py-1">New</span> Messages</h6>}
               refresh close
             >
               <div className="widget-body undo_padding">
                 <div className="list-group list-group-lg">
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img className="rounded-circle" src={peopleA2} alt="..." />
-                      <i className="status status-bottom bg-success" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Chris Gray</h6>
-                      <p className="help-block text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
+                  <button className="list-group-item text-start">
+                      <div class="d-flex flex-row">
+                        <div>
+                          <span className="thumb-sm float-left mr">
+                            <img className="rounded-circle" src={peopleA2} alt="..." />
+                            <i className="status status-bottom bg-success" />
+                          </span>
+                        </div>
+                        <div>
+                          <h6 className="m-0">Chris Gray</h6>
+                          <p className="help-block text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
+                        </div>
+                      </div>
+                  </button>
+                  <button className="list-group-item text-start">
+                    <div class="d-flex flex-row">
+                      <div>
+                        <span className="thumb-sm float-left mr">
+                          <img className="rounded-circle" src={peopleA4} alt="..." />
+                          <i className="status status-bottom bg-success" />
+                        </span>
+                      </div>
+                      <div>
+                        <h6 className="m-0">Jamey Brownlow</h6>
+                        <p className="help-block m-0">Good news coming tonight. Seems they agreed to
+                          proceed</p>
+                      </div>
                     </div>
                   </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img className="rounded-circle" src={peopleA4} alt="..." />
-                      <i className="status status-bottom bg-success" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Jamey Brownlow</h6>
-                      <p className="help-block text-ellipsis m-0">Good news coming tonight. Seems they agreed to
-                        proceed</p>
+                  <button className="list-group-item text-start">
+                    <div class="d-flex flex-row">
+                      <div>
+                        <span className="thumb-sm float-left mr">
+                          <img className="rounded-circle" src={peopleA1} alt="..." />
+                          <i className="status status-bottom bg-warning" />
+                        </span>
+                      </div>
+                      <div>
+                        <h6 className="m-0">Livia Walsh</h6>
+                        <p className="help-block text-ellipsis m-0">Check my latest email plz!</p>
+                      </div>
                     </div>
                   </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img className="rounded-circle" src={peopleA1} alt="..." />
-                      <i className="status status-bottom bg-warning" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Livia Walsh</h6>
-                      <p className="help-block text-ellipsis m-0">Check my latest email plz!</p>
-                    </div>
-                  </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img className="rounded-circle" src={peopleA5} alt="..." />
-                      <i className="status status-bottom bg-danger" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Jaron Fitzroy</h6>
-                      <p className="help-block text-ellipsis m-0">What about summer break?</p>
+                  <button className="list-group-item text-start">
+                    <div class="d-flex flex-row">
+                      <div>
+                        <span className="thumb-sm float-left mr">
+                          <img className="rounded-circle" src={peopleA5} alt="..." />
+                          <i className="status status-bottom bg-danger" />
+                        </span>
+                      </div>
+                      <div>
+                        <h6 className="m-0">Jaron Fitzroy</h6>
+                        <p className="help-block text-ellipsis m-0">What about summer break?</p>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -370,11 +386,11 @@ class Dashboard extends React.Component {
               <Calendar />
               <div className="list-group fs-mini">
                 <button className="list-group-item text-ellipsis">
-                  <span className="badge badge-pill badge-info float-right">6:45</span>
+                  <span className="badge rounded-pill bg-info text-white pull-right px-2 py-1 fw-normal fs-6 float-end">6:45</span>
                   Weed out the flower bed
                 </button>
                 <button className="list-group-item text-ellipsis">
-                  <span className="badge badge-pill badge-success float-right">9:41</span>
+                  <span className="badge rounded-pill bg-success pull-right px-2 py-1 fw-normal fs-6 float-end">9:41</span>
                   Stop world water pollution
                 </button>
               </div>

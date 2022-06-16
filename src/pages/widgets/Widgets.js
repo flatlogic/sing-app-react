@@ -13,7 +13,7 @@ import YearsMap from './components/years-map/YearsMap';
 import FlotCharts from './components/flot-charts/FlotCharts';
 import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
 import Skycon from '../../components/Skycon/Skycon';
-import { Input, InputGroup, InputGroupAddon, Button } from 'reactstrap';
+import { Input, InputGroup, InputGroupText, Button } from 'reactstrap';
 
 import s from './WidgetsMetro.module.scss';
 import './Widgets.scss';
@@ -588,7 +588,7 @@ class Widgets extends React.Component {
               <footer className="bg-widget-transparent bt">
                   <InputGroup size="sm">
                       <Input placeholder="Your message" />
-                      <InputGroupAddon addonType="append"><Button color="default">Send</Button></InputGroupAddon>
+                      <InputGroupText addonType="append"><Button color="default">Send</Button></InputGroupText>
                   </InputGroup>
               </footer>
             </Widget>

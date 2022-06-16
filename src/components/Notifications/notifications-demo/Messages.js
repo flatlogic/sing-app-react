@@ -21,7 +21,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={a2} alt="..." />
             <i className="status status-bottom bg-success" />
           </span>
-          <time className="text-link help float-right">10 sec ago</time>
+          <time className="text-link help float-end">10 sec ago</time>
           <h6 className="m-0 fw-bold mb-1">Chris Gray</h6>
           <p className="deemphasize text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
         </ListGroupItem>
@@ -30,7 +30,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={avatar} alt="..." />
             <i className="status status-bottom bg-success" />
           </span>
-          <time className="text-link help float-right">2 min ago</time>
+          <time className="text-link help float-end">2 min ago</time>
           <h6 className="m-0 mb-1">Jamey Brownlow</h6>
           <p className="deemphasize text-ellipsis m-0">Good news coming tonight. Seems they agreed to proceed</p>
         </ListGroupItem>
@@ -39,7 +39,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={a1} alt="..." />
             <i className="status status-bottom bg-warning" />
           </span>
-          <time className="text-link help float-right">9 min ago</time>
+          <time className="text-link help float-end">9 min ago</time>
           <h6 className="m-0 mb-1">Livia Walsh</h6>
           <p className="deemphasize text-ellipsis m-0">Check out my latest email plz!</p>
         </ListGroupItem>
@@ -48,7 +48,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={avatar} alt="..." />
             <i className="status status-bottom bg-danger" />
           </span>
-          <time className="text-link help float-right">12:56 AM</time>
+          <time className="text-link help float-end">12:56 AM</time>
           <h6 className="m-0 mb-1">Jaron Fitzroy</h6>
           <p className="deemphasize text-ellipsis m-0">What about summer break?</p>
         </ListGroupItem>
@@ -57,7 +57,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={a4} alt="..." />
             <i className="status status-bottom bg-gray-light" />
           </span>
-          <time className="text-link help float-right">Yesterday</time>
+          <time className="text-link help float-end">Yesterday</time>
           <h6 className="m-0 mb-1">Mike Lewis</h6>
           <p className="deemphasize text-ellipsis m-0">Just ain&apos;t sure about the weekend now. 90% I&apos;ll make it.</p>
         </ListGroupItem>
@@ -66,7 +66,7 @@ class MessagesDemo extends React.Component {
             <img className="rounded-circle" src={a6} alt="..." />
             <i className="status status-bottom bg-success" />
           </span>
-          <time className="text-link help float-right">Apr 23</time>
+          <time className="text-link help float-end">Apr 23</time>
           <h6 className="m-0 mb-1">Freda Edison</h6>
           <p className="deemphasize text-ellipsis m-0">Hey what&apos;s up? Me and Monica going for a lunch somewhere. Wanna join?</p>
         </ListGroupItem>

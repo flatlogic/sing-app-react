@@ -31,7 +31,7 @@ class UsersListPage extends Component {
             color="primary"
             className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
           >
-            This page is only available in <a className="text-white font-weight-bold" rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-node-js" target="_blank">Sing App React with Node.js</a> integration!
+            This page is only available in <a className="text-white fw-bold" rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-node-js" target="_blank">Sing App React with Node.js</a> integration!
           </Alert>
         </div>
         <UsersListTable />

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    InputGroupAddon,
     InputGroup,
     Input,
 } from 'reactstrap';
@@ -10,11 +9,9 @@ const ChatSearch = (props) => (
     <div className={`${s.searchBox} chat-section bg-white ${props.classProp ? props.classProp : ""}`}>
     <InputGroup className={'input-group-no-border'}>
     <Input className={s.chatInput} placeholder="Search" />
-    <InputGroupAddon addonType="prepend">
-      <i className="la la-search" />
-    </InputGroupAddon>
+    <div className={s.inputIcon} ><i className="la la-search"/></div>
     </InputGroup>
-  </div>
+    </div>
 )
 
 export default ChatSearch;

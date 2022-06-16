@@ -85,7 +85,7 @@ const Colors = () => (
         >
           <p>Convey meaning through color with a handful of color utility classes.
             Includes support for styling links with hover states, too. Use <code>text-*</code> class to fill text.</p>
-          <div className="widget-padding-md border rounded w-100 h-100 text-left">
+          <div className="widget-padding-md border rounded w-100 h-100 text-start">
             <h1 className="text-danger">h1. Heading</h1>
             <h2 className="text-warning">h2. Heading</h2>
             <h3 className="text-success">h3. Heading</h3>
@@ -102,14 +102,14 @@ const Colors = () => (
         >
           <p>Use any of the available button classes to quickly create a styled button.
             Semantically distinguishable beauty.</p>
-          <Button className="width-100 mb-3 mr-3" color="default">Default</Button>
-          <Button className="width-100 mb-3 mr-3" color="primary">Primary</Button>
-          <Button className="width-100 mb-3 mr-3" color="info">Info</Button>
-          <Button className="width-100 mb-3 mr-3" color="success">Success</Button>
-          <Button className="width-100 mb-3 mr-3" color="warning">Warning</Button>
-          <Button className="width-100 mb-3 mr-3" color="danger">Danger</Button>
-          <Button className="width-100 mb-3 mr-3" color="gray">Gray</Button>
-          <Button className="width-100 mb-3 mr-3" color="inverse">Inverse</Button>
+          <Button className="width-100 mb-3 me-3" color="default">Default</Button>
+          <Button className="width-100 mb-3 me-3" color="primary">Primary</Button>
+          <Button className="width-100 mb-3 me-3" color="info">Info</Button>
+          <Button className="width-100 mb-3 me-3" color="success">Success</Button>
+          <Button className="width-100 mb-3 me-3" color="warning">Warning</Button>
+          <Button className="width-100 mb-3 me-3" color="danger">Danger</Button>
+          <Button className="width-100 mb-3 me-3" color="gray">Gray</Button>
+          <Button className="width-100 mb-3 me-3" color="inverse">Inverse</Button>
         </Widget>
       </Col>
     </Row>

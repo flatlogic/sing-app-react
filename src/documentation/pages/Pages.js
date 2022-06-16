@@ -78,7 +78,7 @@ export default class Pages extends Component {
           </Widget>
           <Widget id="E-Commerce">
             <h3>E-commerce</h3>
-            <p className="alert alert-secondary font-weight-bold"><span className="text-warning">Important note.</span> This section is fully supported by <a
+            <p className="alert alert-secondary fw-bold"><span className="text-warning">Important note.</span> This section is fully supported by <a
               href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">Node.js
               backend</a> data.
             </p>

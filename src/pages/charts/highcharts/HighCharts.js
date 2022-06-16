@@ -45,7 +45,7 @@ class HighCharts extends PureComponent {
               title={<h5>Highcharts <span className="fw-semi-bold">Line Chart</span></h5>}
               close collapse
             >
-              <HighchartsReact options={cd.line} />
+              <HighchartsReact highcharts={Highcharts} options={cd.line} />
             </Widget>
           </Col>
           <Col lg={6} xs={12}>
@@ -53,7 +53,7 @@ class HighCharts extends PureComponent {
               title={<h5>Highcharts <span className="fw-semi-bold">Pie Chart</span></h5>}
               close collapse
             >
-              <HighchartsReact options={cd.pie} />
+              <HighchartsReact highcharts={Highcharts} options={cd.pie} />
             </Widget>
           </Col>
           <Col lg={6} xs={12}>
@@ -61,7 +61,7 @@ class HighCharts extends PureComponent {
               title={<h5>Highcharts <span className="fw-semi-bold">Column 3D Chart</span></h5>}
               close collapse
             >
-              <HighchartsReact options={cd.column3D} />
+              <HighchartsReact highcharts={Highcharts} options={cd.column3D} />
             </Widget>
           </Col>
           <Col lg={5} xs={12}>
@@ -71,7 +71,7 @@ class HighCharts extends PureComponent {
                   title={<h5>Highcharts <span className="fw-semi-bold">Vector Chart</span></h5>}
                   close collapse
                   >
-                    <HighchartsReact options={cd.vector} />
+                    <HighchartsReact highcharts={HighCharts} options={cd.vector} />
                   </Widget>
               </Col>
               <Col lg={12} xs={12}>
@@ -79,7 +79,7 @@ class HighCharts extends PureComponent {
                   title={<h5>Highcharts <span className="fw-semi-bold">Sunburst Chart</span></h5>}
                   close collapse
                   >
-                    <HighchartsReact options={cd.wordCloud} />
+                    <HighchartsReact highcharts={Highcharts} options={cd.wordCloud} />
                 </Widget>
               </Col>
             </Row>
@@ -89,7 +89,7 @@ class HighCharts extends PureComponent {
               title={<h5>Highcharts <span className="fw-semi-bold">Sunburst Chart</span></h5>}
               close collapse
               >
-                <HighchartsReact options={cd.sunburst} />
+                <HighchartsReact highcharts={Highcharts} options={cd.sunburst} />
             </Widget>
           </Col>
         </Row>

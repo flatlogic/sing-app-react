@@ -250,7 +250,7 @@ class Calendar extends React.Component {
                     Today
                   </Button>
                 </Col>
-                <Col md={9} className="calendar-controls text-right">
+                <Col md={9} className="calendar-controls text-end">
                   <ButtonGroup>
                     <Button
                       color="default" onClick={() => this.changeView('dayGridMonth')}

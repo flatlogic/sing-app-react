@@ -69,8 +69,9 @@ class Email extends Component {
             color="success"
             toggle={() => this.closeNotification()}
             className={cx(s.alert, { [s.alertAfter]: alertAfter })}
+            type="success"
           >
-            Hey! This is a <span className="fw-semi-bold">real app</span> with CRUD and Search functions. Have fun!
+            Hey! This is a <span className="fw-semi-bold">real app</span> with CRUD and Search functions.
           </Alert>
         </div>
         <div className={s.view}>

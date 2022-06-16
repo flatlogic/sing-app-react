@@ -10,15 +10,16 @@ import Widget from '../../../components/Widget';
 import './ListGroups.scss';
 
 const SortableItem = SortableElement(({ value }) => <li className="list-group-item">
-  <i className="fa fa-sort" />
-  <button className="close flex-last ml-auto" data-dismiss="alert">&times;</button>
-  &nbsp;&nbsp;&nbsp; {value.id} &nbsp;&nbsp;&nbsp;
-  {value.text}
+
+    <i className="fa fa-sort" />
+    <button className="close ml-auto" data-dismiss="alert">&times;</button>
+    &nbsp;&nbsp;&nbsp; {value.id} &nbsp;&nbsp;&nbsp;
+    {value.text}
 </li>);
 
 
 const SortableList = SortableContainer(({ items }) => (
-  <ul className="list-group list-group-sortable mt-xs">
+  <ul className="list-group list-group-sortable mt-1">
     {items.map((value, index) => (
       <SortableItem key={`item-${index.toString()}`} index={index} value={value} />
       ))}

@@ -6,6 +6,7 @@ import {
   Badge,
 } from 'reactstrap';
 import HighchartsReact from 'highcharts-react-official'
+import Highcharts from 'highcharts'
 
 import Widget from '../../../../components/Widget';
 import s from './FlotCharts.module.scss';  
@@ -117,7 +118,7 @@ class FlotCharts extends React.PureComponent {
             </div>
           </div>
           <div className={`${s.chart}`}>
-            <HighchartsReact options={{...options, series: this.generateRandomData([{
+            <HighchartsReact highcharts={Highcharts} options={{...options, series: this.generateRandomData([{
                 name: 'Visitors', color: '#005792',
               }, {
                 name: 'Charts', color: '#dd5826',
@@ -168,7 +169,7 @@ class FlotCharts extends React.PureComponent {
             </div>
           </div>
           <div className={`${s.chart}`}>
-            <HighchartsReact options={{
+            <HighchartsReact highcharts={Highcharts} options={{
               ...options,
               series: this.generateRandomData([{
                 name: 'Controllers', color: '#005792',

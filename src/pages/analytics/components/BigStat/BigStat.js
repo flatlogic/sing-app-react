@@ -70,7 +70,7 @@ class BigStat extends Component {
         >
           <h4 className="fw-semi-bold mb-lg px-4">{total}</h4>
           <div className="d-flex border-top">
-            <div className="w-50 border-right py-3 pr-2 pl-4">
+            <div className="w-50 border-right py-3 px-4">
               <div className="d-flex align-items-start h3">
                 <h6>+{registrations.value}</h6>
                 <i

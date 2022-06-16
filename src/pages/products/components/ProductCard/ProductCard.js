@@ -27,7 +27,7 @@ class ProductCard extends Component {
     const { img, title, subtitle, price, discount, rating, id, createdAt, updatedAt } = this.props;
     const {favourite} = this.state;
     const newPrice = discount ? price - (price * discount / 100) : price;
-    const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
+    const label = discount ? "Sale" : String(createdAt) === String(updatedAt) ? "New" : null;
     return (
       <div className={[s.productCard, 'product-card'].join(' ')}>
         <div onClick={() => {this.openProduct(id)}} className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
