@@ -1,5 +1,5 @@
 #root {
-  --sidebar-item-active: #F6F6E9;
+  --sidebar-item-active: #C1C3CF;
   --important-notification-color: #f55d5d;
   --badge-item: #ffffff;
   --update-notification-color: #FD5F00;
@@ -225,7 +225,7 @@
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
 
-  .dashboard-salat {
+  .dashboard-salad {
     --sidebar-icon-bg: #0D2B47;
     --logo-color: $white;
     --sidebar-item-active: #F6F6E9;
@@ -253,6 +253,94 @@
 
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
+
+  .dashboard-seaWave {
+    --sidebar-icon-bg: #fff;
+    --logo-color: #0C2236;
+    --sidebar-item-active: #F6F6E9;
+    --important-notification-color: #fd5f00;
+    --sidebar-bg-color: #483CB6;
+    --sidebar-color: #F6F6E9;
+    --sidebar-action-bg: #332A87;
+    --update-notification-color: #6fb0f9;
+    --sidebar-nav-title-color: #dedede;
+
+    --sidebar-section: #C1C3CF;
+    --sidebar-sales: #10CFD0;
+    --sideba-responsibility: #FF5574;
+
+    --sidebar-hightlight: #10CFD0;
+    --sidebar-hightlight-two:  #FF5574;
+
+    --sidebar-ui: #26CD5F;
+    --sidebar-core:  #10CFD0;
+    --sidebar-form: #FF5574;
+
+    --sidebar-badge-color: $white;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-grad {
+    --sidebar-icon-bg: #fff;
+    --logo-color: #0C2236;
+    --sidebar-item-active: #F6F6E9;
+    --important-notification-color: #fd5f00;
+    --sidebar-bg-color: #4B505F;
+    --sidebar-color: #F6F6E9;
+    --sidebar-action-bg: #373C4D;
+    --update-notification-color: #6fb0f9;
+    --sidebar-nav-title-color: #dedede;
+
+    --sidebar-section: #C1C3CF;
+    --sidebar-sales: #10CFD0;
+    --sideba-responsibility: #FF5574;
+
+    --sidebar-hightlight: #10CFD0;
+    --sidebar-hightlight-two:  #FF5574;
+
+    --sidebar-ui: #26CD5F;
+    --sidebar-core:  #10CFD0;
+    --sidebar-form: #FF5574;
+
+    --sidebar-badge-color: $white;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-blueSky {
+    --sidebar-icon-bg: #6FB0F9;
+    --logo-color: #0C2236;
+    --sidebar-item-active: #5A5D76;
+    --important-notification-color: #fd5f00;
+    --sidebar-bg-color: #EFF2F5;
+    --sidebar-color: #5A5D76;
+    --sidebar-action-bg: #E2E7EC;
+    --update-notification-color: #5A5D76;
+    --sidebar-nav-title-color: #dedede;
+
+    --sidebar-section: #5A5D76;
+    --sidebar-sales: #10CFD0;
+    --sideba-responsibility: #FF5574;
+
+    --sidebar-hightlight: #10CFD0;
+    --sidebar-hightlight-two:  #FF5574;
+
+    --sidebar-ui: #26CD5F;
+    --sidebar-core:  #10CFD0;
+    --sidebar-form: #FF5574;
+
+    --sidebar-badge-color: $white;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
   .header-FFFFFF {
     --input-bg: #F9FAFE;
     --input-color: #4A5056;
@@ -306,6 +394,24 @@
     --input-color: #FFFFFF;
     --navbar-bg: #21AE8C;
     --navbar-icon-bg: #0D2B47;
+  }
+  .header-483CB6 {
+    --input-bg: #584DBDFF;
+    --input-color: #FFFFFF;
+    --navbar-bg: #483CB6;
+    --navbar-icon-bg: #fff;
+  }
+  .header-4B505F {
+    --input-bg: #747780;
+    --input-color: #FFFFFF;
+    --navbar-bg: #4B505F;
+    --navbar-icon-bg: #fff;
+  }
+  .header-EFF2F5 {
+    --input-bg: #f7f9ff;
+    --input-color: #5A5D76;
+    --navbar-bg: #EFF2F5;
+    --navbar-icon-bg: #5A5D76;
   }
 
   // dependable variables

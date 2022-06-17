@@ -209,6 +209,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
+@include bg-variant('.bg-light-red', $light-red);
 
 .bg-body,
 .bg-body-light,

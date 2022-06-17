@@ -25,6 +25,11 @@ import Joyride, { STATUS } from 'react-joyride';
 import { toggleSidebar, openSidebar, closeSidebar, changeActiveSidebarItem } from '../../actions/navigation';
 
 import adminDefault from '../../images/chat/chat2.png';
+import Menu from '../../images/sidebar/basil/Menu';
+import Exchange from '../../images/sidebar/basil/Exchange';
+import Cross from '../../images/sidebar/basil/Cross';
+import Settings from '../../images/sidebar/basil/Settings';
+import Search from '../../images/sidebar/basil/Search';
 import MenuIcon from '../../images/sidebar/Fill/MenuIcon';
 import FlipIcon from '../../images/sidebar/Outline/Flip';
 import CloseIcon from '../../images/sidebar/Fill/CloseIconOne';
@@ -231,7 +236,7 @@ class Header extends React.Component {
             <NavItem>
               <NavLink className={`d-md-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
               <span className={s.headerSvgFlipColor}>
-                <MenuIcon  maskId={1001}/>
+                <Menu/>
               </span>
             </NavLink>
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
@@ -244,25 +249,25 @@ class Header extends React.Component {
                     className={s.headerSvgFlipColor}
                     style={{fontSize: 30}}
                   >
-                    <MenuIcon maskId={1000}/>
+                    <Menu/>
                   </span>
               </span>
               <span className={`ml-3 d-sm-none d-md-block d-lg-block d-xl-block ${s.headerSvgFlipColor}`}>
-                  <MenuIcon maskId={999}/>
+                  <Menu/>
               </span>
             </NavLink>
             </NavItem>
             <NavItem className="d-none d-md-block">
               <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
-                <FlipIcon />
+                <Exchange/>
               </span>
               </NavLink>
             </NavItem>
             <NavItem className="d-none d-md-block">
               <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
-                <CloseIcon />
+                <Cross />
               </span>
               </NavLink>
             </NavItem>
@@ -273,8 +278,9 @@ class Header extends React.Component {
               <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
                 cx('input-group-no-border', {'focus' : !!focus})
               }>
-                <div class="m-2"><span className="headerSvgFlipColor"><SearchIcon /></span></div>
-                <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
+
+                  <div className={`${s.headerSvgFlipColor} input-group-prepend-icon`}><Search /></div>
+                  <Input id="search-input" placeholder="Search Dashboard" className={cx({'focus' : !!focus})} />
               </InputGroup>
             </FormGroup>
           </Form>
@@ -303,19 +309,19 @@ class Header extends React.Component {
               }
             </span>
                 <span className={`small m-2 d-sm-down-none ${s.headerTitle} ${this.props.sidebarStatic ? s.adminEmail : ''}`}>{user ? (user.firstName || user.email) : "Philip smith"}</span>
-                <span className="badge m-1 circle bg-inverse text-white fw-bold d-sm-down-none">13</span>
+                <span className="m-1 circle bg-light-red text-white fw-semi-bold d-sm-down-none">13</span>
               </DropdownToggle>
-              <DropdownMenu right className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
+              <DropdownMenu end className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}>
                 <Notifications />
               </DropdownMenu>
             </Dropdown>
             <Dropdown nav isOpen={this.state.menuOpen} toggle={this.toggleMenu} className="tutorial-dropdown pr-4">
               <DropdownToggle nav className={`${s.mobileCog}`}>
               <span className={`${s.headerSvgFlipColor}`}>
-                <SettingsIcon/>
+                <Settings/>
               </span>
               </DropdownToggle>
-              <DropdownMenu right className={`${s.headerDropdownLinks} super-colors`}>
+              <DropdownMenu end className={`${s.headerDropdownLinks} super-colors`}>
                 <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><span className={s.headerDropdownIcon}><PersonIcon/></span> My Account</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/extra/calendar"><span className={s.headerDropdownIcon}><CalendarIcon/></span>Calendar</DropdownItem>

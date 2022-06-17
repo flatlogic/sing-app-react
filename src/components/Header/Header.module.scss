@@ -28,7 +28,7 @@
       overflow: hidden;
     }
 
-    .input-group-prepend {
+    .input-group-prepend-icon {
       background-color: var(--input-bg);
       transition: background-color ease-in-out 0.15s;
       border-top-left-radius: 0.3rem;
@@ -38,6 +38,7 @@
       align-items: center;
       width: 35px;
     }
+
     .form-control {
       background-color: var(--input-bg);
       color: var(--input-color);
@@ -194,9 +195,7 @@
 }
 
 .headerSvgFlipColor {
-  //display: flex;
-  //margin: auto;
-  color: var(--navbar-icon-bg);
+  color: var(--navbar-icon-bg) !important;
   :global {
     .bg-primary {
       background-color: var(--navbar-icon-bg)!important;

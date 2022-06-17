@@ -105,7 +105,7 @@ class NavbarPage extends Component {
                       <DropdownToggle nav caret>
                         Options
                       </DropdownToggle>
-                      <DropdownMenu right>
+                      <DropdownMenu end>
                         <DropdownItem>
                           Option 1
                         </DropdownItem>
@@ -138,7 +138,7 @@ class NavbarPage extends Component {
               '        <DropdownToggle nav caret>\n' +
               '          Options\n' +
               '        </DropdownToggle>\n' +
-              '        <DropdownMenu right>\n' +
+              '        <DropdownMenu end>\n' +
               '          <DropdownItem>\n' +
               '            Option 1\n' +
               '          </DropdownItem>\n' +

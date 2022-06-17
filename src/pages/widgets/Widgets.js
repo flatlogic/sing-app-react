@@ -588,7 +588,7 @@ class Widgets extends React.Component {
               <footer className="bg-widget-transparent bt">
                   <InputGroup size="sm">
                       <Input placeholder="Your message" />
-                      <InputGroupText addonType="append"><Button color="default">Send</Button></InputGroupText>
+                      <InputGroupText><Button color="default">Send</Button></InputGroupText>
                   </InputGroup>
               </footer>
             </Widget>

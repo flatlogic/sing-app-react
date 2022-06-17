@@ -54,7 +54,7 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Lead</h4>
           <p>Make a paragraph stand out by adding <code className="highlighter-rouge">.lead</code>.</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <p className="lead">Sing App is admin dashboard template built with Bootstrap</p>
           </div>
         </Widget>
