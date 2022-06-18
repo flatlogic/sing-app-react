@@ -33,15 +33,7 @@ import Search from '../../images/sidebar/basil/Search';
 import UserDefault from '../../images/sidebar/basil/UserDefault';
 import EnvelopeBlack from '../../images/sidebar/basil/EnvelopeBlack';
 import PowerButton from '../../images/sidebar/basil/PowerButton';
-// import MenuIcon from '../../images/sidebar/Fill/MenuIcon';
-// import FlipIcon from '../../images/sidebar/Outline/Flip';
-// import CloseIcon from '../../images/sidebar/Fill/CloseIconOne';
-// import SearchIcon from '../../images/sidebar/Outline/Search';
-// import SettingsIcon from '../../images/sidebar/Outline/Settings';
 import CalendarIcon from '../../images/sidebar/Outline/Calendar';
-//import PersonIcon from '../../images/sidebar/Outline/Person';
-//import EmailIcon from '../../images/sidebar/Outline/Email';
-import PowerIcon from '../../images/sidebar/Outline/Power';
 
 import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
 

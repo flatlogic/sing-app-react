@@ -207,7 +207,7 @@ class Buttons extends React.Component {
                   to <code>&lt;Button&gt;</code> component.
                   Great for menu & social buttons.
                 </p>
-                <div class="d-grid gap-2">
+                <div className="d-grid gap-2">
                   <Button color="info">Block Button</Button>
                   <Button color="default">Show Menu &nbsp;&nbsp;&nbsp;<i
                     className="fa fa-bars"

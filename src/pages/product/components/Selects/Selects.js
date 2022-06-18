@@ -42,7 +42,7 @@ class Selects extends Component {
         <UncontrolledButtonDropdown>
           <DropdownToggle
             caret color="default"
-            className="dropdown-toggle-split me-2"
+            className="dropdown-toggle-split"
           >
             {currentQuantity}
           </DropdownToggle>

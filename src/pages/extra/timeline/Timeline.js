@@ -18,7 +18,7 @@ import a4 from '../../../images/people/a4.jpg';
 import a5 from '../../../images/people/a5.jpg';
 import a6 from '../../../images/people/a6.jpg';
 import avatar from '../../../images/avatar.png';
-import img8 from '../../../images/search/8.jpg';
+import img8 from '../../../images/search/search8.jpg';
 
 const BasicMap = withScriptjs(withGoogleMap(() =>
   <GoogleMap

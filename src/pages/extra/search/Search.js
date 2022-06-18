@@ -20,10 +20,10 @@ import {
 } from 'reactstrap';
 
 import s from './Search.module.scss';
-import i1 from '../../../images/search/1.jpg';
-import i2 from '../../../images/search/5.jpg';
-import i3 from '../../../images/search/3.jpg';
-import i4 from '../../../images/search/13.jpg';
+import i1 from '../../../images/search/search1.jpg';
+import i2 from '../../../images/search/search5.jpg';
+import i3 from '../../../images/search/search3.jpg';
+import i4 from '../../../images/search/search13.jpg';
 
 class Search extends React.Component {
 
