@@ -43,9 +43,9 @@
     font-family: $font-family-base;
     font-size: 0.875rem;
     background-color: #f8f8f8;
+    color: #343434;
 
     &.active {
-      color: #343434;
       background-color: #dfdfdf;
       background-image: none;
       border-color: #adadad;

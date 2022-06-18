@@ -28,21 +28,21 @@ import Location from '../../images/sidebar/basil/Location';
 import Fire from '../../images/sidebar/basil/Fire';
 import Menu from '../../images/sidebar/basil/Menu';
 //import Home from '../../images/basil-icons/svg/Solid/General/Home.svg';
-import BrowserIcon from '../../images/sidebar/Outline/Browser';
-import EmailIcon from '../../images/sidebar/Outline/Email';
-import CopyIcon from '../../images/sidebar/Outline/Copy';
-import FileTextIcon from '../../images/sidebar/Outline/FileText';
-import FireIcon from '../../images/sidebar/Outline/Fire';
-import GridIcon from '../../images/sidebar/Outline/Grid';
-import KeypadIcon from '../../images/sidebar/Outline/Keypad';
-import LayersIcon from '../../images/sidebar/Outline/Layers';
-import LayoutIcon from '../../images/sidebar/Outline/Layout';
-import ListIcon from '../../images/sidebar/Outline/List';
-import MessageCircleIcon from '../../images/sidebar/Outline/MessageCircle';
-import PersonIcon from '../../images/sidebar/Outline/Person';
-import PieChartIcon from '../../images/sidebar/Outline/PieChart';
-import PinIcon from '../../images/sidebar/Outline/Pin';
-import ShoppingBagIcon from '../../images/sidebar/Outline/ShoppingBag';
+// import BrowserIcon from '../../images/sidebar/Outline/Browser';
+// import EmailIcon from '../../images/sidebar/Outline/Email';
+// import CopyIcon from '../../images/sidebar/Outline/Copy';
+// import FileTextIcon from '../../images/sidebar/Outline/FileText';
+// import FireIcon from '../../images/sidebar/Outline/Fire';
+// import GridIcon from '../../images/sidebar/Outline/Grid';
+// import KeypadIcon from '../../images/sidebar/Outline/Keypad';
+// import LayersIcon from '../../images/sidebar/Outline/Layers';
+// import LayoutIcon from '../../images/sidebar/Outline/Layout';
+// import ListIcon from '../../images/sidebar/Outline/List';
+// import MessageCircleIcon from '../../images/sidebar/Outline/MessageCircle';
+// import PersonIcon from '../../images/sidebar/Outline/Person';
+// import PieChartIcon from '../../images/sidebar/Outline/PieChart';
+// import PinIcon from '../../images/sidebar/Outline/Pin';
+// import ShoppingBagIcon from '../../images/sidebar/Outline/ShoppingBag';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -480,19 +480,19 @@ class Sidebar extends React.Component {
         <ul className={s.sidebarLabels}>
           <li>
             <a href="#">
-              <i className={`fa fa-circle mr-2 ${s.labelRecent}`} />
+              <i className={`fa fa-circle me-2 ${s.labelRecent}`} />
               <span className={s.labelName}>My Recent</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className={`fa fa-circle mr-2 ${s.labelStarred}`} />
+              <i className={`fa fa-circle me-2 ${s.labelStarred}`} />
               <span className={s.labelName}>Starred</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i className={`fa fa-circle mr-2 ${s.labelBackground}`} />
+              <i className={`fa fa-circle me-2 ${s.labelBackground}`} />
               <span className={s.labelName}>Background</span>
             </a>
           </li>

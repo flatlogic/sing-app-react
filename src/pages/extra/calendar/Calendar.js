@@ -196,7 +196,7 @@ class Calendar extends React.Component {
                 data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }' className="external-event draggable"
               >
                 <div className={s.customExternalEvent}>
-                <i className="fa fa-circle fa-fw text-success ml-xs mr-xs" />
+                <i className="fa fa-circle fa-fw text-success ms-2 me-2" />
                 Make a tea
               </div>
               </div>
@@ -204,7 +204,7 @@ class Calendar extends React.Component {
                 data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }' className="external-event draggable"
               >
                 <div className={s.customExternalEvent}>
-                <i className="fa fa-circle fa-fw text-warning ml-xs mr-xs" />
+                <i className="fa fa-circle fa-fw text-warning ms-2 me-2" />
                 Open windows
               </div>
               </div>
@@ -212,7 +212,7 @@ class Calendar extends React.Component {
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }' className="external-event draggable"
               >
                 <div className={s.customExternalEvent}>
-                <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
+                <i className="fa fa-circle-o fa-fw text-gray-light ms-2 me-2" />
                 Some stuff
               </div>
               </div>
@@ -220,7 +220,7 @@ class Calendar extends React.Component {
                 data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }' className="external-event draggable"
               >
                 <div className={s.customExternalEvent}>
-                <i className="fa fa-square fa-fw text-danger ml-xs mr-xs" />
+                <i className="fa fa-square fa-fw text-danger ms-2 me-2" />
                 Study UX engineering
                 </div>
               </div>
@@ -228,7 +228,7 @@ class Calendar extends React.Component {
                 data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }' className="external-event draggable"
               >
                 <div className={s.customExternalEvent}>
-                <i className="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
+                <i className="fa fa-circle-o fa-fw text-gray-light ms-2 me-2" />
                 Another stuff
                 </div>
               </div>
@@ -238,7 +238,7 @@ class Calendar extends React.Component {
             <Widget>
               <Row className="calendar-controls">
                 <Col md={3}>
-                  <ButtonGroup className="mr-sm">
+                  <ButtonGroup className="me-2">
                     <Button color="default" onClick={this.prev}>
                       <i className="fa fa-angle-left" />
                     </Button>

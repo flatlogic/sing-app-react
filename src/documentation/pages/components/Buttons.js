@@ -59,14 +59,14 @@ class Buttons extends Component {
           </Nav>
           <TabContent className="mb-xlg" activeTab={this.state.defaultButtonTabId}>
             <TabPane tabId="1">
-              <Button color="default" className="width-100 mb-xs mr-xs">Default</Button>
-              <Button color="primary" className="width-100 mb-xs mr-xs">Primary</Button>
-              <Button color="info" className="width-100 mb-xs mr-xs">Info</Button>
-              <Button color="success" className="width-100 mb-xs mr-xs">Success</Button>
-              <Button color="warning" className="width-100 mb-xs mr-xs">Warning</Button>
-              <Button color="danger" className="width-100 mb-xs mr-xs">Danger</Button>
-              <Button color="gray" className="width-100 mb-xs mr-xs">Gray</Button>
-              <Button color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
+              <Button color="default" className="width-100 mb-xs me-2">Default</Button>
+              <Button color="primary" className="width-100 mb-xs me-2">Primary</Button>
+              <Button color="info" className="width-100 mb-xs me-2">Info</Button>
+              <Button color="success" className="width-100 mb-xs me-2">Success</Button>
+              <Button color="warning" className="width-100 mb-xs me-2">Warning</Button>
+              <Button color="danger" className="width-100 mb-xs me-2">Danger</Button>
+              <Button color="gray" className="width-100 mb-xs me-2">Gray</Button>
+              <Button color="inverse" className="width-100 mb-xs me-2">Inverse</Button>
             </TabPane>
             <TabPane tabId="2">
               <SyntaxHighlighter language='javascript' style={tomorrow}>{'<Button color="default" className="width-100 mb-xs mr-xs">Default</Button>\n' +

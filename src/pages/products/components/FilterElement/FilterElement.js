@@ -32,7 +32,7 @@ class FilterElement extends Component {
         <UncontrolledButtonDropdown>
           <DropdownToggle
             caret color="default"
-            className="dropdown-toggle-split mr-xs"
+            className="dropdown-toggle-split me-2"
           >
             {currentOption}&nbsp;&nbsp;
           </DropdownToggle>

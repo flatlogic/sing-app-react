@@ -322,7 +322,7 @@ class Elements extends React.Component {
                   <FormGroup row>
                     <Label md={4} />
                     <Col md={7}>
-                      <Button color="primary" type="submit" className="mr-xs">Save Changes</Button>
+                      <Button color="primary" type="submit" className="me-2">Save Changes</Button>
                       <Button color="inverse">Cancel</Button>
                     </Col>
                   </FormGroup>
@@ -457,7 +457,7 @@ class Elements extends React.Component {
                   </Row>
 
                   <FormGroup>
-                    <Button color="inverse" type="submit" className="mr-xs">
+                    <Button color="inverse" type="submit" className="me-2">
                       Save Changes
                     </Button>
                     <Button color="default">Cancel</Button>
@@ -572,7 +572,7 @@ class Elements extends React.Component {
                       toolbarClassName={s.wysiwygToolbar}
                     />
                     <div className="text-md-right mt-xs">
-                      <Button color="danger" className="mr-xs">Save</Button>
+                      <Button color="danger" className="me-2">Save</Button>
                       <Button color="default">Clear</Button>
                     </div>
                   </Col>
@@ -636,7 +636,7 @@ class Elements extends React.Component {
                     <UncontrolledButtonDropdown>
                       <DropdownToggle
                         caret color="default"
-                        className="dropdown-toggle-split mr-xs"
+                        className="dropdown-toggle-split me-2"
                       >
                         {this.state.simpleSelectDropdownValue}
                       </DropdownToggle>
@@ -665,7 +665,7 @@ class Elements extends React.Component {
                     <UncontrolledButtonDropdown>
                       <DropdownToggle
                         caret color="danger"
-                        className="dropdown-toggle-split mr-xs"
+                        className="dropdown-toggle-split me-2"
                       >
                         {this.state.redSelectDropdownValue}
                       </DropdownToggle>
@@ -684,7 +684,7 @@ class Elements extends React.Component {
                     <UncontrolledButtonDropdown>
                       <DropdownToggle
                         caret color="warning"
-                        className="dropdown-toggle-split mr-xs"
+                        className="dropdown-toggle-split me-2"
                       >
                         {this.state.orangeSelectDropdownValue}
                       </DropdownToggle>
@@ -739,7 +739,7 @@ class Elements extends React.Component {
                         caret color="default" size="lg"
                         className="dropdown-toggle-split"
                       >
-                        <span className="mr-5"> {this.state.bigSelectDropdownValue}</span>
+                        <span className="me-5"> {this.state.bigSelectDropdownValue}</span>
                       </DropdownToggle>
                       <DropdownMenu>
                         <DropdownItem onClick={this.changeSelectDropdownBig}>
@@ -963,7 +963,7 @@ class Elements extends React.Component {
                         /><i />
                       </Label>
                     </FormGroup>
-                    <FormGroup className="display-inline-block checkbox-ios ml">
+                    <FormGroup className="display-inline-block checkbox-ios ms-1">
                       <Label for="checkbox-ios2" className="switch">
                         <Input type="checkbox" className="ios" id="checkbox-ios2" /><i />
                       </Label>
@@ -1312,7 +1312,7 @@ class Elements extends React.Component {
                 >
                   {this.state.dropFiles.length > 0 ? <div>
                     {this.state.dropFiles.map((file, idx) => (
-                      <div className="display-inline-block mr-xs mb-xs" key={`drop-id-${idx.toString()}`}>
+                      <div className="display-inline-block me-2 mb-xs" key={`drop-id-${idx.toString()}`}>
                         <img alt="..." src={file.preview} width={100} />
                         <div>{file.name}</div>
                       </div>

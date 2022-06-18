@@ -162,7 +162,7 @@ class Stats extends React.Component {
                       <span className="fw-semi-bold">Bob Smith</span>
                     </p>
                     <ButtonToolbar className="mt-lg justify-content-end d-print-none">
-                      <Button onClick={this.printInvoice} color="inverse" className="mr-2">
+                      <Button onClick={this.printInvoice} color="inverse" className="me-2">
                         <i className="fa fa-print" />
                         &nbsp;&nbsp;
                         Print

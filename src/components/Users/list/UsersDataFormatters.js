@@ -40,7 +40,7 @@ function filesFormatter(cell) {
         { cell && cell.map((value) => {
           return (
             <div key={value.id}>
-              <i className="la la-link text-muted mr-2"></i>
+              <i className="la la-link text-muted me-2"></i>
               <a
                 href={value.publicUrl}
                 target="_blank"

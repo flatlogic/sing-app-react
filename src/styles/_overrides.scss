@@ -219,10 +219,11 @@ small {
 
 .btn-secondary {
   border-color: $gray-400;
-  color: $gray-800;
+  color: $gray-100;
 }
 
 .btn-success,
+.btn-primary,
 .btn-info,
 .btn-warning,
 .btn-danger {
@@ -235,12 +236,16 @@ small {
 
 .btn-gray {
   border-color: $gray-400;
-  color: $gray-700;
+  color: $gray-100;
 }
 
 .btn-default {
   border-color: $gray-400;
-  color: $gray-800;
+  color: $gray-100;
+
+  &:hover {
+    color: $white;
+  }
 }
 
 .btn-xs {
@@ -694,8 +699,8 @@ h6,
 
 code {
   font-size: 85%;
-  background-color: theme-color('danger-light');
-  color: $pink;
+  background-color: theme-color('light');
+  color: $teal;
   padding: 0;
 }
 
@@ -1167,7 +1172,7 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 
 //// React Joyride Shadow fix ////
 .__floater {
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px)!important
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px) !important
 }
 
 .table-striped {
@@ -1230,7 +1235,7 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 }
 
 .dropdown-toggle::after {
-  color: var(--navbar-icon-bg);
+  color: var(--sidebar-color);
   font-weight: bold;
   font-size: 16px;
 }
@@ -1294,3 +1299,4 @@ a {
 .navbar > .container-fluid {
   padding: 0;
 }
+

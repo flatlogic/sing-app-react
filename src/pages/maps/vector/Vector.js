@@ -65,7 +65,7 @@ class VectorMap extends React.Component {
           <h1 className="m-0 mb-sm">Vector <span className="fw-semi-bold">Maps</span></h1>
           <p className="page-title fs-sm m-0">
             <span className="fw-semi-bold">1 656 843</span>
-            <span className="ml-xs circle bg-gray"><i className="text-gray-lighter fa fa-circle"/></span>
+            <span className="ms-2 circle bg-gray"><i className="text-gray-lighter fa fa-circle"/></span>
           </p>
         </header>
       </div>);

@@ -113,7 +113,7 @@ class Grid extends React.Component {
               <div className="list-group list-group-lg">
               {this.state.gridData.shares.map(item => (
                 <button key={item.name} className={`list-group-item text-left ${item.extraClass}`}>
-                  <span className="thumb-sm mr">
+                  <span className="thumb-sm me-1">
                     <img className="rounded-circle" src={item.img} alt="..." />
                   </span>
                   <div className="float-start">

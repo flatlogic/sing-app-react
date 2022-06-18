@@ -251,17 +251,17 @@ class Helper extends Component {
             <Button
               href="https://flatlogic.com/forum"
               target="_blank"
-              className="btn-outline-default btn-rounded-f fs-mini text-muted px-2"
+              className="btn-outline-default btn-rounded-f fs-mini text-white px-2"
             >
-              <i className="glyphicon glyphicon-headphones mr-xs" />
+              <i className="glyphicon glyphicon-headphones me-2" />
               Support
             </Button>
             <Button
               href="https://github.com/flatlogic/sing-app"
               target="_blank"
-              className="btn-outline-default btn-rounded-f fs-mini text-muted px-2"
+              className="btn-outline-default btn-rounded-f fs-mini text-white px-2"
             >
-              <i className="fa fa-github mr-xs" />
+              <i className="fa fa-github me-2" />
               Github
             </Button>
           </div>

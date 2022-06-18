@@ -113,7 +113,7 @@ class FilesUploader extends Component {
             {this.value().map((item) => {
               return (
                 <div key={item.id}>
-                  <i className="la la-link text-muted mr-2"></i>
+                  <i className="la la-link text-muted me-2"></i>
 
                   <a
                     href={item.publicUrl}

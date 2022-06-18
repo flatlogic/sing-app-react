@@ -110,14 +110,14 @@ class Buttons extends React.Component {
                   Semantically distinguishable beauty.
                 </p>
                 <p className="text-start">
-                  <Button color="default" className="width-100 mb-xs mr-xs">Default</Button>
-                  <Button color="primary" className="width-100 mb-xs mr-xs">Primary</Button>
-                  <Button color="info" className="width-100 mb-xs mr-xs">Info</Button>
-                  <Button color="success" className="width-100 mb-xs mr-xs">Success</Button>
-                  <Button color="warning" className="width-100 mb-xs mr-xs">Warning</Button>
-                  <Button color="danger" className="width-100 mb-xs mr-xs">Danger</Button>
-                  <Button color="gray" className="width-100 mb-xs mr-xs">Gray</Button>
-                  <Button color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
+                  <Button color="default" className="width-100 mb-1 me-1">Default</Button>
+                  <Button color="primary" className="width-100 mb-1 me-1">Primary</Button>
+                  <Button color="info" className="width-100 mb-1 me-1">Info</Button>
+                  <Button color="success" className="width-100 mb-1 me-1">Success</Button>
+                  <Button color="warning" className="width-100 mb-1 me-1">Warning</Button>
+                  <Button color="danger" className="width-100 mb-1 me-1">Danger</Button>
+                  <Button color="gray" className="width-100 mb-1 me-1">Gray</Button>
+                  <Button color="inverse" className="width-100 mb-1 me-1">Inverse</Button>
                 </p>
               </div>
             </Widget>
@@ -136,10 +136,10 @@ class Buttons extends React.Component {
                   from tiny 10px button to large one.
                 </p>
                 <p>
-                  <Button color="default" size="lg" className="mb-xs mr-xs">Large button</Button>
-                  <Button color="primary" className="mb-xs mr-xs">Default button</Button>
-                  <Button color="info" size="sm" className="mb-xs mr-xs">Small button</Button>
-                  <Button color="success" size="xs" className="mb-xs mr-xs">Tiny button</Button>
+                  <Button color="default" size="lg" className="mb-1 me-1">Large button</Button>
+                  <Button color="primary" className="mb-1 me-1">Default button</Button>
+                  <Button color="info" size="sm" className="mb-1 me-1">Small button</Button>
+                  <Button color="success" size="xs" className="mb-1 me-1">Tiny button</Button>
                 </p>
               </div>
             </Widget>
@@ -157,14 +157,14 @@ class Buttons extends React.Component {
                   background images and colors on any button.
                 </p>
                 <p>
-                  <Button outline color="default" className="width-100 mb-xs mr-xs">Default</Button>
-                  <Button outline color="primary" className="width-100 mb-xs mr-xs">Primary</Button>
-                  <Button outline color="info" className="width-100 mb-xs mr-xs">Info</Button>
-                  <Button outline color="success" className="width-100 mb-xs mr-xs">Success</Button>
-                  <Button outline color="warning" className="width-100 mb-xs mr-xs">Warning</Button>
-                  <Button outline color="danger" className="width-100 mb-xs mr-xs">Danger</Button>
-                  <Button outline color="gray" className="width-100 mb-xs mr-xs">Gray</Button>
-                  <Button outline color="inverse" className="width-100 mb-xs mr-xs">Inverse</Button>
+                  <Button outline color="default" className="width-100 mb-1 me-1">Default</Button>
+                  <Button outline color="primary" className="width-100 mb-1 me-1">Primary</Button>
+                  <Button outline color="info" className="width-100 mb-1 me-1">Info</Button>
+                  <Button outline color="success" className="width-100 mb-1 me-1">Success</Button>
+                  <Button outline color="warning" className="width-100 mb-1 me-1">Warning</Button>
+                  <Button outline color="danger" className="width-100 mb-1 me-1">Danger</Button>
+                  <Button outline color="gray" className="width-100 mb-1 me-1">Gray</Button>
+                  <Button outline color="inverse" className="width-100 mb-1 me-1">Inverse</Button>
                 </p>
               </div>
             </Widget>
@@ -181,14 +181,14 @@ class Buttons extends React.Component {
                   Semantically distinguishable beauty. Use <code>.btn-rounded</code> or <code>.btn-rounded-f</code>.
                 </p>
                 <p>
-                  <Button color="default" className="btn-rounded-f width-100 mb-xs mr-xs">Default</Button>
-                  <Button color="primary" className="btn-rounded-f width-100 mb-xs mr-xs">Primary</Button>
-                  <Button color="info" className="btn-rounded-f width-100 mb-xs mr-xs">Info</Button>
-                  <Button color="success" className="btn-rounded-f width-100 mb-xs mr-xs">Success</Button>
-                  <Button outline color="warning" className="btn-rounded width-100 mb-xs mr-xs">Warning</Button>
-                  <Button outline color="danger" className="btn-rounded width-100 mb-xs mr-xs">Danger</Button>
-                  <Button outline color="gray" className="btn-rounded width-100 mb-xs mr-xs">Gray</Button>
-                  <Button outline color="inverse" className="btn-rounded width-100 mb-xs mr-xs">Inverse</Button>
+                  <Button color="default" className="btn-rounded-f width-100 mb-1 me-1">Default</Button>
+                  <Button color="primary" className="btn-rounded-f width-100 mb-1 me-1">Primary</Button>
+                  <Button color="info" className="btn-rounded-f width-100 mb-1 me-1">Info</Button>
+                  <Button color="success" className="btn-rounded-f width-100 mb-1 me-1">Success</Button>
+                  <Button outline color="warning" className="btn-rounded width-100 mb-1 me-1">Warning</Button>
+                  <Button outline color="danger" className="btn-rounded width-100 mb-1 me-1">Danger</Button>
+                  <Button outline color="gray" className="btn-rounded width-100 mb-1 me-1">Gray</Button>
+                  <Button outline color="inverse" className="btn-rounded width-100 mb-1 me-1">Inverse</Button>
                 </p>
               </div>
             </Widget>
@@ -207,13 +207,15 @@ class Buttons extends React.Component {
                   to <code>&lt;Button&gt;</code> component.
                   Great for menu & social buttons.
                 </p>
-                <Button color="info" block>Block Button</Button>
-                <Button color="default" block>Show Menu &nbsp;&nbsp;&nbsp;<i
-                  className="fa fa-bars"
-                /></Button>
-                <Button color="primary" block><i className="fa fa-facebook" />&nbsp;&nbsp;Login mit
-                  Facebook</Button>
-                <Button color="warning" block>Are you sure?</Button>
+                <div class="d-grid gap-2">
+                  <Button color="info">Block Button</Button>
+                  <Button color="default">Show Menu &nbsp;&nbsp;&nbsp;<i
+                    className="fa fa-bars"
+                  /></Button>
+                  <Button color="primary"><i className="fa fa-facebook" />&nbsp;&nbsp;Login mit
+                    Facebook</Button>
+                  <Button color="warning">Are you sure?</Button>
+                </div>
               </div>
             </Widget>
           </Col>
@@ -230,12 +232,12 @@ class Buttons extends React.Component {
                   Add the <code>disabled</code> to <code>&lt;Button&gt;</code> component.
                 </p>
                 <p>
-                  <Button color="primary" disabled className="mr-xs">Primary button</Button>
-                  <Button color="default" disabled className="mr-xs">Button</Button>
+                  <Button color="primary" disabled className="me-1">Primary button</Button>
+                  <Button color="default" disabled className="me-1">Button</Button>
                 </p>
                 <p>
-                  <Button color="success" size="sm" disabled className="mr-xs">Primary Link</Button>
-                  <Button color="default" size="sm" disabled className="mr-xs">Link</Button>
+                  <Button color="success" size="sm" disabled className="me-1">Primary Link</Button>
+                  <Button color="default" size="sm" disabled className="me-1">Link</Button>
                 </p>
               </div>
             </Widget>
@@ -254,25 +256,25 @@ class Buttons extends React.Component {
                   Add on optional JavaScript radio and checkbox
                   style behavior with Bootstrap buttons plugin.
                 </p>
-                <ButtonGroup className="mb-xs">
+                <ButtonGroup className="mb-1">
                   <Button color="default">Left</Button>
                   <Button color="default">Middle</Button>
                   <Button color="default">Right</Button>
                 </ButtonGroup>
 
-                <ButtonToolbar className="mb-xs">
-                  <ButtonGroup className="mr-2">
+                <ButtonToolbar className="mb-1">
+                  <ButtonGroup className="me-2">
                     <Button color="default">1</Button>
                     <Button color="default">2</Button>
                     <Button color="default">3</Button>
                     <Button color="default">4</Button>
                   </ButtonGroup>
-                  <ButtonGroup className="mr-2">
+                  <ButtonGroup className="me-2">
                     <Button color="default">5</Button>
                     <Button color="default">6</Button>
                     <Button color="default">7</Button>
                   </ButtonGroup>
-                  <ButtonGroup className="mr-2">
+                  <ButtonGroup className="me-2">
                     <Button color="default">8</Button>
                   </ButtonGroup>
                 </ButtonToolbar>
@@ -296,10 +298,10 @@ class Buttons extends React.Component {
                   Both solid & segmented dropdown options available.
                 </p>
 
-                <div className="mb-xs">
+                <div className="mb-1">
                   <ButtonDropdown
                     isOpen={this.state.dropdownOpenOne} toggle={this.toggleOne}
-                    className="mr-xs"
+                    className="me-1"
                   >
                     <DropdownToggle caret color="danger">
                       &nbsp; One &nbsp;
@@ -326,10 +328,10 @@ class Buttons extends React.Component {
                     </DropdownMenu>
                   </ButtonDropdown>
                 </div>
-                <div className="mb-xs">
+                <div className="mb-1">
                   <ButtonDropdown
                     isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree}
-                    className="mr-xs"
+                    className="me-1"
                   >
                     <Button id="dropdownThree" color="primary">Primary</Button>
                     <DropdownToggle color="primary" caret className="dropdown-toggle-split" />
@@ -376,7 +378,7 @@ class Buttons extends React.Component {
                     of checkboxes for checkbox style toggling on
                     btn-group.
                   </p>
-                  <div className="mb-xs">
+                  <div className="mb-1">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onCheckboxBtnClickOne(1)}
@@ -392,7 +394,7 @@ class Buttons extends React.Component {
                       >Right way</Button>
                     </ButtonGroup>
                   </div>
-                  <div className="mb-xs">
+                  <div className="mb-1">
                     <ButtonGroup>
                       <Button
                         size="sm" color="default" onClick={() => this.onCheckboxBtnClickTwo(1)}
@@ -420,7 +422,7 @@ class Buttons extends React.Component {
                     Use <code>ButtonGroup</code> to a group of radio
                     inputs for radio style toggling on btn-group.
                   </p>
-                  <div className="mb-xs">
+                  <div className="mb-1">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onRadioBtnClickOne(1)}
@@ -436,7 +438,7 @@ class Buttons extends React.Component {
                       >Right way</Button>
                     </ButtonGroup>
                   </div>
-                  <div className="mb-xs">
+                  <div className="mb-1">
                     <ButtonGroup>
                       <Button
                         size="sm" color="default" onClick={() => this.onRadioBtnClickTwo(1)}
@@ -463,30 +465,30 @@ class Buttons extends React.Component {
                     Let your buttons shine!
                   </p>
                   <div className="text-center mb-sm">
-                    <Button color="default" className="width-100 mr-xs">
-                      <i className="glyphicon glyphicon-tree-conifer text-success mr-xs mb-xs" />
+                    <Button color="default" className="width-100 me-1">
+                      <i className="glyphicon glyphicon-tree-conifer text-success me-1 mb-1" />
                       Forest
                     </Button>
-                    <Button color="default" className="width-100 mr-xs">
-                      <i className="fa fa-check text-danger mr-xs mb-xs" />
+                    <Button color="default" className="width-100 me-1">
+                      <i className="fa fa-check text-danger me-1 mb-1" />
                       Submit
                     </Button>
-                    <Button color="default" className="width-100 mr-xs">
-                      <i className="fa fa-facebook text-primary mr-xs mb-xs" />
+                    <Button color="default" className="width-100 me-1">
+                      <i className="fa fa-facebook text-primary me-1 mb-1" />
                       Login
                     </Button>
                   </div>
                   <div className="text-center">
-                    <Button color="inverse" className="width-100 mr-xs">
-                      <i className="fa fa-exclamation text-warning mr-xs mb-xs" />
+                    <Button color="inverse" className="width-100 me-1">
+                      <i className="fa fa-exclamation text-warning me-1 mb-1" />
                       Error
                     </Button>
-                    <Button color="inverse" className="width-100 mr-xs">
-                      <i className="glyphicon glyphicon-globe text-info mr-xs mb-xs" />
+                    <Button color="inverse" className="width-100 me-1">
+                      <i className="glyphicon glyphicon-globe text-info me-1 mb-1" />
                       <span className="text-info">Globe</span>
                     </Button>
-                    <Button color="inverse" className="width-100 mr-xs">
-                      <span className="circle bg-white mr-xs">
+                    <Button color="inverse" className="width-100 me-1">
+                      <span className="circle bg-white me-1">
                         <i className="fa fa-map-marker text-gray" />
                       </span>
                       Map

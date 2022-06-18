@@ -68,7 +68,7 @@ const Colors = () => (
                   <th scope="row" className="fw-thin">{state}</th>
                   <td><span className={`circle bg-${state.toLowerCase()}`}>&nbsp;</span></td>
                   <td><code>*-{state.toLowerCase()}</code></td>
-                  <td>{usage.map(item => <code key={item} className="mr-xs">{item}</code>)}</td>
+                  <td>{usage.map(item => <code key={item} className="me-2">{item}</code>)}</td>
                 </tr>,
               )}
             </tbody>

@@ -79,7 +79,7 @@ class PopoverExamples extends Component {
               title={<h5>Tooltip <span className="fw-semi-bold">Example</span></h5>}
               close collapse
             >
-              <Button id="t-1" className="mr-sm" size="lg" color="success">Tooltip</Button>
+              <Button id="t-1" className="me-2" size="lg" color="success">Tooltip</Button>
               <Button id="t-2" color="success" disabled>Disabled button</Button>
             </Widget>
             <Widget

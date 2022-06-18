@@ -46,7 +46,7 @@ class SPackage extends React.Component {
                 decide on development approaches that are the best for your project.
                 <a href="https://webpack.js.org/">Webpack</a> Module Bundler and Yarn as a package
                 manager are under the hood.</p>
-              <div class="d-grid">
+              <div className="d-grid">
                 <button className="btn btn-transparent btn-lg" disabled>(You are here)</button>
               </div>
             </Widget>
@@ -74,7 +74,7 @@ class SPackage extends React.Component {
                 uses <a href="https://webpack.js.org/">Webpack</a> Module Bundler and NPM as a package manager,
                 so everything
                 works out of the box! <br /><br /></p>
-              <div class="d-grid">
+              <div className="d-grid">
                   <a
                     className="btn btn-default btn-lg btn-block"
                     href="https://demo.flatlogic.com/sing-app/angular/"
@@ -105,7 +105,7 @@ class SPackage extends React.Component {
                 among your top considerations when choosing the right framework.</p>
               <p>Angular version makes it possible by letting responsive, fast-loading and
                 seamlessly-navigating application.</p>
-              <div class="d-grid">
+              <div className="d-grid">
                 <a
                   className="btn btn-default btn-lg btn-block"
                   href="https://demo.flatlogic.com/sing-app/angularjs/"
@@ -139,7 +139,7 @@ class SPackage extends React.Component {
                 value of &nbsp;<code>window.PJAX_ENABLED</code> global variable.</p>
               <p>Moreover, this version comes with three different color
                 schemes which you can easily switch based on your choice.</p>
-              <div class="d-grid">
+              <div className="d-grid">
                 <a
                   className="btn btn-default btn-lg btn-block"
                   href="https://demo.flatlogic.com/sing-app/html-bs4/dashboard/index.html"
@@ -168,7 +168,7 @@ class SPackage extends React.Component {
               <p>Supporting Vue JS version is a main
                 priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
                 so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-              <div class="d-grid">
+              <div className="d-grid">
                   <a
                     className="btn btn-default btn-lg btn-block"
                     href="https://demo.flatlogic.com/sing-app-vue/#/app/main/analytics"

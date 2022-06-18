@@ -44,7 +44,7 @@ class Search extends React.Component {
                 <DropdownItem>Latest</DropdownItem>
               </DropdownMenu>
             </UncontrolledButtonDropdown>
-            <UncontrolledButtonDropdown className="ml-2">
+            <UncontrolledButtonDropdown className="ms-2">
               <DropdownToggle color="default" caret>
                 All Time
               </DropdownToggle>

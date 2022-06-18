@@ -13,20 +13,20 @@
 
   .infoIcon {
     font-size: $spacer * 2;
-    color: $text-muted;
+    color: $text-color;
   }
 }
 
 .chatDialogBody {
   flex: 1;
   overflow: auto;
-  @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+  @include chat-scrollbar(rgba($text-color, 0.3), 3px);
 
   .dialogDivider {
     text-align: center;
     padding: $spacer 0;
     font-size: $font-size-larger;
-    color: $text-muted;
+    color: $text-color;
   }
 }
 
@@ -40,11 +40,11 @@
 
   .attachment {
     font-size: 24px;
-    color: $text-muted;
+    color: $text-color;
     background-color: transparent;
     border: none;
     &:hover {
-      color: darken($text-muted, 10%);
+      color: darken($text-color, 10%);
     }
   }
 }

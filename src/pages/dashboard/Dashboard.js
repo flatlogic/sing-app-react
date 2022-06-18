@@ -243,9 +243,9 @@ class Dashboard extends React.Component {
               <div className="widget-body undo_padding">
                 <div className="list-group list-group-lg">
                   <button className="list-group-item text-start">
-                      <div class="d-flex flex-row">
+                      <div className="d-flex flex-row">
                         <div>
-                          <span className="thumb-sm float-left mr">
+                          <span className="thumb-sm float-left me-2">
                             <img className="rounded-circle" src={peopleA2} alt="..." />
                             <i className="status status-bottom bg-success" />
                           </span>
@@ -257,9 +257,9 @@ class Dashboard extends React.Component {
                       </div>
                   </button>
                   <button className="list-group-item text-start">
-                    <div class="d-flex flex-row">
+                    <div className="d-flex flex-row">
                       <div>
-                        <span className="thumb-sm float-left mr">
+                        <span className="thumb-sm float-left me-2">
                           <img className="rounded-circle" src={peopleA4} alt="..." />
                           <i className="status status-bottom bg-success" />
                         </span>
@@ -272,9 +272,9 @@ class Dashboard extends React.Component {
                     </div>
                   </button>
                   <button className="list-group-item text-start">
-                    <div class="d-flex flex-row">
+                    <div className="d-flex flex-row">
                       <div>
-                        <span className="thumb-sm float-left mr">
+                        <span className="thumb-sm float-left me-2">
                           <img className="rounded-circle" src={peopleA1} alt="..." />
                           <i className="status status-bottom bg-warning" />
                         </span>
@@ -286,9 +286,9 @@ class Dashboard extends React.Component {
                     </div>
                   </button>
                   <button className="list-group-item text-start">
-                    <div class="d-flex flex-row">
+                    <div className="d-flex flex-row">
                       <div>
-                        <span className="thumb-sm float-left mr">
+                        <span className="thumb-sm float-left me-2">
                           <img className="rounded-circle" src={peopleA5} alt="..." />
                           <i className="status status-bottom bg-danger" />
                         </span>

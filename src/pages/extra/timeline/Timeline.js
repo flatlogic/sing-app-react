@@ -47,7 +47,7 @@ class Timeline extends React.Component {
               <i className="glyphicon glyphicon-map-marker" />
             </span>
             <section className={s.event}>
-              <span className={`thumb-sm ${s.avatar} pull-left mr-sm`}>
+              <span className={`thumb-sm ${s.avatar} pull-left me-2`}>
                 <img className="rounded-circle" src={a2} alt="..." />
               </span>
               <h4 className={s.eventHeading}><button className="btn-link">Jessica Nilson</button>
@@ -71,7 +71,7 @@ class Timeline extends React.Component {
                 </ul>
                 <ul className={s.postComments}>
                   <li>
-                    <span className={`thumb-xs ${s.avatar} pull-left mr-sm`}>
+                    <span className={`thumb-xs ${s.avatar} pull-left me-2`}>
                       <img className="rounded-circle" src={a2} alt="..." />
                     </span>
                     <div className={s.commentBody}>
@@ -83,7 +83,7 @@ class Timeline extends React.Component {
                     </div>
                   </li>
                   <li>
-                    <span className={`thumb-xs ${s.avatar} pull-left mr-sm`}>
+                    <span className={`thumb-xs ${s.avatar} pull-left me-2`}>
                       <img className="rounded-circle" src={a4} alt="..." />
                     </span>
                     <div className={s.commentBody}>
@@ -94,7 +94,7 @@ class Timeline extends React.Component {
                     </div>
                   </li>
                   <li>
-                    <span className={`thumb-xs ${s.avatar} pull-left mr-sm`}>
+                    <span className={`thumb-xs ${s.avatar} pull-left me-2`}>
                       <img className="rounded-circle" src={avatar} alt="..." />
                     </span>
                     <div className={s.commentBody}>
@@ -115,7 +115,7 @@ class Timeline extends React.Component {
               <i className="glyphicon glyphicon-comments" />
             </span>
             <section className={s.event}>
-              <span className={`thumb-xs ${s.avatar} pull-left mr-sm`}>
+              <span className={`thumb-xs ${s.avatar} pull-left me-2`}>
                 <img className="rounded-circle" src={a5} alt="..." />
               </span>
               <h5 className={s.eventHeading}><button className="btn-link">Bob Nilson</button>
@@ -179,7 +179,7 @@ class Timeline extends React.Component {
                 </div>
                 <ul className={`${s.postComments} mt-sm`}>
                   <li>
-                    <span className="thumb-xs avatar pull-left mr-sm">
+                    <span className="thumb-xs avatar pull-left me-2">
                       <img className="rounded-circle" src={a1} alt="..." />
                     </span>
                     <div className={s.commentBody}>
@@ -190,7 +190,7 @@ class Timeline extends React.Component {
                     </div>
                   </li>
                   <li>
-                    <span className="thumb-xs avatar pull-left mr-sm">
+                    <span className="thumb-xs avatar pull-left me-2">
                       <img className="rounded-circle" src={avatar} alt="..." />
                     </span>
                     <div className={s.commentBody}>
@@ -210,7 +210,7 @@ class Timeline extends React.Component {
               <img className="rounded-circle" src={avatar} alt="..." />
             </span>
             <section className={s.event}>
-              <span className={`thumb-xs ${s.avatar} pull-left mr-sm`}>
+              <span className={`thumb-xs ${s.avatar} pull-left me-2`}>
                 <img className="rounded-circle" src={a6} alt="..." />
               </span>
               <h5 className={s.eventHeading}><button className="btn-link">Jessica Smith</button>

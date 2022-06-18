@@ -30,14 +30,17 @@ import Exchange from '../../images/sidebar/basil/Exchange';
 import Cross from '../../images/sidebar/basil/Cross';
 import Settings from '../../images/sidebar/basil/Settings';
 import Search from '../../images/sidebar/basil/Search';
-import MenuIcon from '../../images/sidebar/Fill/MenuIcon';
-import FlipIcon from '../../images/sidebar/Outline/Flip';
-import CloseIcon from '../../images/sidebar/Fill/CloseIconOne';
-import SearchIcon from '../../images/sidebar/Outline/Search';
-import SettingsIcon from '../../images/sidebar/Outline/Settings';
+import UserDefault from '../../images/sidebar/basil/UserDefault';
+import EnvelopeBlack from '../../images/sidebar/basil/EnvelopeBlack';
+import PowerButton from '../../images/sidebar/basil/PowerButton';
+// import MenuIcon from '../../images/sidebar/Fill/MenuIcon';
+// import FlipIcon from '../../images/sidebar/Outline/Flip';
+// import CloseIcon from '../../images/sidebar/Fill/CloseIconOne';
+// import SearchIcon from '../../images/sidebar/Outline/Search';
+// import SettingsIcon from '../../images/sidebar/Outline/Settings';
 import CalendarIcon from '../../images/sidebar/Outline/Calendar';
-import PersonIcon from '../../images/sidebar/Outline/Person';
-import EmailIcon from '../../images/sidebar/Outline/Email';
+//import PersonIcon from '../../images/sidebar/Outline/Person';
+//import EmailIcon from '../../images/sidebar/Outline/Email';
 import PowerIcon from '../../images/sidebar/Outline/Power';
 
 import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
@@ -231,10 +234,10 @@ class Header extends React.Component {
             },
           }}
         />
-        <div className="d-flex flex-row justify-content-md-start flex-grow-1 align-content-center ms-md-5">
+        <div className="d-flex flex-row justify-content-md-start flex-grow-1 align-content-center align-self-start">
           <Nav className="my-auto">
             <NavItem>
-              <NavLink className={`d-md-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
+              <NavLink className={`d-lg-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
               <span className={s.headerSvgFlipColor}>
                 <Menu/>
               </span>
@@ -242,7 +245,7 @@ class Header extends React.Component {
             <UncontrolledTooltip placement="bottom" target="toggleSidebar">
               Turn on/off<br />sidebar<br />collapsing
             </UncontrolledTooltip>
-            <NavLink className="fs-lg d-lg-block" onClick={this.switchSidebar}>
+            <NavLink className="fs-lg d-none d-md-block" onClick={this.switchSidebar}>
               <span
                 className={`rounded rounded-lg d-sm-none`}>
                   <span
@@ -252,7 +255,7 @@ class Header extends React.Component {
                     <Menu/>
                   </span>
               </span>
-              <span className={`ml-3 d-sm-none d-md-block d-lg-block d-xl-block ${s.headerSvgFlipColor}`}>
+              <span className={`ms-3 d-md-none d-lg-block ${s.headerSvgFlipColor}`}>
                   <Menu/>
               </span>
             </NavLink>
@@ -286,21 +289,21 @@ class Header extends React.Component {
           </Form>
 
           <NavLink className={`${s.navbarBrand} d-md-none ${s.headerSvgFlipColor}`}>
-            <i className="fa fa-circle text-primary mr-n-sm" />
+            <i className="fa fa-circle text-primary me-n-sm" />
             <i className="fa fa-circle text-danger" />
             &nbsp;
             sing
             &nbsp;
-            <i className="fa fa-circle text-danger mr-n-sm" />
+            <i className="fa fa-circle text-danger me-n-sm" />
             <i className="fa fa-circle text-primary" />
           </NavLink>
         </div>
 
         <div>
-          <Nav className="ml-auto float-end">
+          <Nav className="ms-auto float-end">
             <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
               <DropdownToggle nav caret className={s.headerSvgFlipColor}>
-            <span className={`${s.avatar} rounded-circle float-start mr-3`}>
+            <span className={`${s.avatar} rounded-circle float-start me-3`}>
               {avatar ? (
                   <img src={avatar} onError={e => e.target.src = adminDefault} alt="..." title={user && (user.firstName || user.email)} />
               ) : user && user.role === 'admin' ? (
@@ -322,12 +325,12 @@ class Header extends React.Component {
               </span>
               </DropdownToggle>
               <DropdownMenu end className={`${s.headerDropdownLinks} super-colors`}>
-                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><span className={s.headerDropdownIcon}><PersonIcon/></span> My Account</DropdownItem>
+                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/profile"><span className={s.headerDropdownIcon}><UserDefault/></span> My Account</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/extra/calendar"><span className={s.headerDropdownIcon}><CalendarIcon/></span>Calendar</DropdownItem>
-                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/inbox"><span className={s.headerDropdownIcon}><EmailIcon/></span>Inbox &nbsp;&nbsp;</DropdownItem>
+                <DropdownItem href="http://demo-flatlogic2.herokuapp.com/sing-app-react/#/app/inbox"><span className={s.headerDropdownIcon}><EnvelopeBlack/></span>Inbox &nbsp;&nbsp;</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem onClick={this.doLogout}><span className={s.headerDropdownIcon}><PowerIcon/></span> Log Out</DropdownItem>
+                <DropdownItem onClick={this.doLogout}><span className={s.headerDropdownIcon}><PowerButton/></span> Log Out</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </Nav>

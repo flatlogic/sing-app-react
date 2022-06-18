@@ -30,7 +30,7 @@ export default class Pages extends Component {
               alt="Chat Application"
             />
             <p>
-              <Link className="btn btn-primary mr-sm" to="/app/chat">Chat Application</Link>
+              <Link className="btn btn-primary me-2" to="/app/chat">Chat Application</Link>
             </p>
           </Widget>
           <Widget id="Auth">
@@ -72,7 +72,7 @@ export default class Pages extends Component {
             <p>Visits dashboard page can be used for real-time displaying users & traffic data. It is a big vector map made with mapael in the center of this dashboard, that can display any region of the world with any data you want on hover action.</p>
             <p>All of this component can be used on any page of the application.</p>
             <p>
-              <Link className="btn btn-primary mr-sm" to="/app/main/analytics">Analytics</Link>
+              <Link className="btn btn-primary me-2" to="/app/main/analytics">Analytics</Link>
               <Link className="btn btn-primary" to="/app/main/visits">Visits</Link>
             </p>
           </Widget>
@@ -96,8 +96,8 @@ export default class Pages extends Component {
               </Col>
             </Row>
             <p>
-              <Link className="btn btn-primary mr-sm" to="/app/ecommerce/management">Management</Link>
-              <Link className="btn btn-primary mr-sm" to="/app/ecommerce/products">List</Link>
+              <Link className="btn btn-primary me-2" to="/app/ecommerce/management">Management</Link>
+              <Link className="btn btn-primary me-2" to="/app/ecommerce/products">List</Link>
               <Link className="btn btn-primary" to="/app/ecommerce/product">Details</Link>
             </p>
           </Widget>
