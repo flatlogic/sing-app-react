@@ -229,37 +229,37 @@ class Header extends React.Component {
         <div className="d-flex flex-row justify-content-md-start flex-grow-1 align-content-center align-self-start">
           <Nav className="my-auto">
             <NavItem>
-              <NavLink className={`d-lg-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
+              <NavLink className={`d-md-down-none ${s.toggleSidebar}`} id="toggleSidebar" onClick={this.toggleSidebar}>
               <span className={s.headerSvgFlipColor}>
                 <Menu/>
               </span>
-            </NavLink>
-            <UncontrolledTooltip placement="bottom" target="toggleSidebar">
-              Turn on/off<br />sidebar<br />collapsing
-            </UncontrolledTooltip>
-            <NavLink className="fs-lg d-none d-md-block" onClick={this.switchSidebar}>
-              <span
-                className={`rounded rounded-lg d-sm-none`}>
-                  <span
-                    className={s.headerSvgFlipColor}
-                    style={{fontSize: 30}}
-                  >
+              </NavLink>
+              <UncontrolledTooltip placement="bottom" target="toggleSidebar">
+                Turn on/off<br />sidebar<br />collapsing
+              </UncontrolledTooltip>
+              <NavLink className="fs-lg d-md-none" onClick={this.switchSidebar}>
+                <span
+                  className={`rounded rounded-lg d-md-none d-sm-down-block`}>
+                    <span
+                      className={s.headerSvgFlipColor}
+                      style={{fontSize: 30}}
+                    >
+                      <Menu/>
+                    </span>
+                </span>
+                <span className={`ms-3 d-sm-down-none ${s.headerSvgFlipColor}`}>
                     <Menu/>
-                  </span>
-              </span>
-              <span className={`ms-3 d-md-none d-lg-block ${s.headerSvgFlipColor}`}>
-                  <Menu/>
-              </span>
-            </NavLink>
+                </span>
+              </NavLink>
             </NavItem>
-            <NavItem className="d-none d-md-block">
+            <NavItem className="d-sm-down-none">
               <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
                 <Exchange/>
               </span>
               </NavLink>
             </NavItem>
-            <NavItem className="d-none d-md-block">
+            <NavItem className="d-sm-down-none">
               <NavLink className="px-2">
               <span className={s.headerSvgFlipColor}>
                 <Cross />
@@ -268,7 +268,7 @@ class Header extends React.Component {
             </NavItem>
           </Nav>
 
-          <Form className={`${s.headerSearchInput} d-none d-md-block`} inline>
+          <Form className={`${s.headerSearchInput} d-sm-down-none`} inline>
             <FormGroup>
               <InputGroup onFocus={this.toggleFocus} onBlur={this.toggleFocus} className={
                 cx('input-group-no-border', {'focus' : !!focus})
@@ -292,7 +292,7 @@ class Header extends React.Component {
         </div>
 
         <div>
-          <Nav className="ms-auto float-end">
+          <Nav className="ms-auto">
             <Dropdown nav isOpen={this.state.notificationsOpen} toggle={this.toggleNotifications} id="basic-nav-dropdown" className={`${s.notificationsMenu}`}>
               <DropdownToggle nav caret className={s.headerSvgFlipColor}>
             <span className={`${s.avatar} rounded-circle float-start me-3`}>
