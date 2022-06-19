@@ -1,4 +1,11 @@
 # Changelog
+## [8.3.0]
+
+- Updated Bootstrap/Reactstrap
+- Add theme switcher
+- Updated dependencies
+- Updated theme-colors, fonts, colors
+
 ## [8.2.4]
 
 - Updated folllow Dependencies and DevDependencies: 
