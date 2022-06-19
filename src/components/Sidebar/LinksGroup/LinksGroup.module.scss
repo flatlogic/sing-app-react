@@ -50,7 +50,7 @@
     justify-content: center;
     align-items: center;
     transition: all .35s ease;
-    color: unset;
+    color: var(--sidebar-color);
     background-color: transparent;
     position: absolute;
     top: 3px;
@@ -127,7 +127,7 @@
   margin-left: auto;
   font-size: 19px;
   margin-right: 15px;
-  color: var(--sidebar-icon-bg);;
+  color: var(--sidebar-color);
   @include transition(transform 0.3s ease-in-out);
 }
 

@@ -17,7 +17,7 @@ const Typography = () => (
         >
           <h4>Default headings</h4>
           <p>Basic headings for everyday use</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <Row>
               <Col sm={12} lg={6}>
                 <h1>h1. Heading</h1>
@@ -39,14 +39,14 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Customized headings</h4>
           <p>Enhanced with additional text</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <h3>
               Headings <small>And some clarification text</small>
             </h3>
           </div>
           <h4 className="mt-5">Display</h4>
           <p>Headings to stand out</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded overflow-auto">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded overflow-auto">
             <h1 className="display-1">Display 1</h1>
             <h1 className="display-2">Display 2</h1>
             <h1 className="display-3">Display 3</h1>
@@ -54,7 +54,7 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Lead</h4>
           <p>Make a paragraph stand out by adding <code className="highlighter-rouge">.lead</code>.</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <p className="lead">Sing App is admin dashboard template built with Bootstrap</p>
           </div>
         </Widget>
@@ -66,7 +66,7 @@ const Typography = () => (
         >
           <h4>Basic texts</h4>
           <p>Styling for common texts</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <p>You can use the mark tag to <mark>highlight</mark> text.</p>
             <p><del>This line of text is meant to be treated as deleted text.</del></p>
             <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
@@ -76,7 +76,7 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Font weights</h4>
           <p>Various font weights supported</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <p>Thin (default) font weight</p>
             <p className="fw-normal">Normal font weight</p>
             <p className="fw-semi-bold">Semi bold to empasize important thing</p>
@@ -84,7 +84,7 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Colors</h4>
           <p>Bootstrap state colors can be applied to texts too</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <p className="text-danger">Some danger text</p>
             <p className="text-warning">Some warning text</p>
             <p className="text-success">Some succes text</p>
@@ -93,7 +93,7 @@ const Typography = () => (
           </div>
           <h4 className="mt-5">Blockquotes</h4>
           <p>Citing someone is really easy</p>
-          <div className="widget-padding-md w-100 h-100 text-left border rounded">
+          <div className="widget-padding-md w-100 h-100 text-start border rounded">
             <blockquote className="blockquote">
               <p>Don&apos;t get set into one form, adapt it and build your own, and let
                   it grow, be like water. Empty your mind, be formless, shapeless — like water.

@@ -64,7 +64,7 @@ class Validation extends React.Component {
                 </fieldset>
                 <fieldset>
                   <legend>
-                    <span className="badge badge-warning text-gray-dark mr-xs">
+                    <span className="badge bg-warning text-gray-dark me-2">
                       HTML5 </span> input types supported
                   </legend>
                   <FormGroup row>
@@ -169,7 +169,7 @@ class Validation extends React.Component {
                 </fieldset>
 
                 <div>
-                  <Button type="submit" color="danger" className="btn-rounded float-right">Validate & Submit</Button>
+                  <Button type="submit" color="danger" className="btn-rounded float-end">Validate & Submit</Button>
                   <Button type="button" color="default" className="btn-rounded">Cancel</Button>
                 </div>
               </Formsy.Form>

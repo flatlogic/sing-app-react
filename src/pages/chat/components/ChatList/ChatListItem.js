@@ -39,29 +39,29 @@ class ChatListItem extends Component {
         className={`${s.chatListItem} ${isActive ? s.active : ''}`}>
         <div className={`${s.chatListItemWrapper}`}>
           {!chat.isGroup ? 
-          <Avatar user={chat.interlocutors[0]} size={45} className="mr-3" showStatus={true} />
+          <Avatar user={chat.interlocutors[0]} size={45} className="me-3" showStatus={true} />
           : <ul className={s.avatarsColumn}>
               {this.chatUsers().map(user => (
-                <li key={uuid()}><Avatar user={user} size={35} showStatus={false} className="mr-3" stroke={true} /></li>
+                <li key={uuid()}><Avatar user={user} size={35} showStatus={false} className="me-3" stroke={true} /></li>
               ))}
             </ul>
           }
         
-        <section className={`${s.chatItemMain} ml-3`}>
+        <section className={`${s.chatItemMain} ms-3`}>
           <header className="d-flex align-items-center justify-content-between mb-1">
             <h6 className={`${s.chatTitle}`}>
-            {chat.isGroup ? <img alt="group" className={`${s.groupChatIcon} mr-1`} src={people} /> : null}
+            {chat.isGroup ? <img alt="group" className={`${s.groupChatIcon} me-1`} src={people} /> : null}
             {chat.title} 
             {chat.isGroup ? <span>({chat.interlocutors.length})</span> : ''}
             </h6>
             
-            <span className={`ml-auto ${s.timestamp}`}>
+            <span className={`ms-auto ${s.timestamp}`}>
             {this.time()}
             </span>
           </header>
           <p className={`${s.chatLastMessage}`}>
-            {chat.lastMessage.owner ? <span className={`${s.ownerIndicator} mr-1`}> You:</span> : ''}
-            {chat.lastMessage.owner && chat.isGroup ? <span className={`${s.ownerIndicator} mr-1`}>{this.findUser(chat.lastMessage.userId)}</span> : ''}
+            {chat.lastMessage.owner ? <span className={`${s.ownerIndicator} me-1`}> You:</span> : ''}
+            {chat.lastMessage.owner && chat.isGroup ? <span className={`${s.ownerIndicator} me-1`}>{this.findUser(chat.lastMessage.userId)}</span> : ''}
             {chat.lastMessage.text || 'Write a first message'}
           </p>
         </section>

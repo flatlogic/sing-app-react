@@ -43,15 +43,19 @@
     font-family: $font-family-base;
     font-size: 0.875rem;
     background-color: #f8f8f8;
+    color: #343434;
 
     &.active {
-      color: #343434;
       background-color: #dfdfdf;
       background-image: none;
       border-color: #adadad;
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.12);
     }
   }
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 .btn-toolbar .btn {
@@ -298,4 +302,8 @@ table > thead > tr > th {
 
 .bg-white {
   background-color: #fff;
+}
+
+.fill {
+  fill: var(--sidebar-color);
 }

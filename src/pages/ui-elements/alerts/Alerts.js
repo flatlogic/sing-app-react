@@ -28,7 +28,7 @@ class Alerts extends Component {
     }, {
       id: 'al-4',
       type: 'danger',
-      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-right mr" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-right mr-xs" href="#">Take this action</a>',
+      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-end ms-1 me-4" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-end me-1" href="#">Take this action</a>',
       visible: [true, true, true],
     }],
   }

@@ -11,7 +11,8 @@ import TaskContainer from './components/TaskContainer/TaskContainer';
 import BigStat from './components/BigStat/BigStat';
 import TableContainer from './components/TableContainer/TableContainer';
 import Calendar from '../dashboard/components/calendar/Calendar';
-import HighchartsReact from 'highcharts-react-official'
+import HighchartsReact from 'highcharts-react-official';
+import Highcharts from 'highcharts';
 
 import mock from './mock';
 import s from './Analitycs.module.scss';
@@ -128,7 +129,7 @@ class Analytics extends Component {
                       <div className="d-flex flex-wrap justify-content-between">
                           <div className={cx('mt')}>
                               <h6>+{visits.logins}</h6>
-                              <p className="text-muted mb-0 mr">
+                              <p className="text-muted mb-0 me-1">
                                   <small>Logins</small>
                               </p>
                           </div>
@@ -140,7 +141,7 @@ class Analytics extends Component {
                           </div>
                           <div className={cx('mt')}>
                               <h6>{visits.rate_pct}%</h6>
-                              <p className="text-muted mb-0 mr">
+                              <p className="text-muted mb-0 me-1">
                                   <small>Rate</small>
                               </p>
                           </div>
@@ -157,7 +158,7 @@ class Analytics extends Component {
                     fetchingData={isReceiving}
                     title={<h5>Revenue Breakdown</h5>}
                   >
-                    <HighchartsReact options={this.donut()} />
+                    <HighchartsReact highcharts={Highcharts} options={this.donut()} />
                   </Widget>
                 </div>
               </Col>
@@ -171,12 +172,12 @@ class Analytics extends Component {
                     title={<h5>App Perfomance</h5>}
                   >
                     <p className="text-muted d-flex flex-wrap">
-                      <small className="mr-lg d-flex align-items-center">
-                        <span className="circle bg-danger text-success mr-xs" style={{ fontSize: '4px' }}>.</span>
+                      <small className="me-3 d-flex align-items-center">
+                        <span className="circle bg-danger text-success me-2" style={{ fontSize: '4px' }}>.</span>
                         This Period
                       </small>
-                      <small className="mr-lg d-flex align-items-center">
-                        <span className="circle bg-primary text-warning mr-xs" style={{ fontSize: '4px' }}>.</span>
+                      <small className="me-3 d-flex align-items-center">
+                        <span className="circle bg-primary text-warning me-2" style={{ fontSize: '4px' }}>.</span>
                         Last Period
                       </small>
                     </p>
@@ -280,12 +281,12 @@ class Analytics extends Component {
                   className="widget"
                   bodyClass={cx(s.notifications, 'w-100 mt-lg')}
                   title={
-                    <h4>Notifications <span className="badge badge-pill badge-primary fw-normal pull-right mt-xs">{mock.notifications.length}</span></h4>
+                    <h4>Notifications <span className="rounded-pill bg-primary text-white pull-right mt-xs px-2 py-1 fs-6 fw-normal">{mock.notifications.length}</span></h4>
                   }
                 >
                   {mock.notifications.map(({ id, icon, color, content }) => (
                     <div className="d-flex align-items-start" key={id}>
-                      <i className={`la la-${icon} mr text-${color}`} />
+                      <i className={`la la-${icon} me-1 text-${color}`} />
                       <p
                         className={cx({ 'mb-0': id === mock.notifications.length - 1 })}
                         dangerouslySetInnerHTML={{ __html: content }}

@@ -13,7 +13,7 @@ import YearsMap from './components/years-map/YearsMap';
 import FlotCharts from './components/flot-charts/FlotCharts';
 import NasdaqSparkline from './components/nasdaq-sparkline-widget/nasdaqSparkline';
 import Skycon from '../../components/Skycon/Skycon';
-import { Input, InputGroup, InputGroupAddon, Button } from 'reactstrap';
+import { Input, InputGroup, Button } from 'reactstrap';
 
 import s from './WidgetsMetro.module.scss';
 import './Widgets.scss';
@@ -218,7 +218,7 @@ class Widgets extends React.Component {
                 </ul>
               </div>
               <div className="post-user mt-negative-lg">
-                <span className="thumb-lg pull-left mr mt-n-sm">
+                <span className="thumb-lg pull-left me-2 mt-n-sm">
                   <img className="rounded-circle" src={peopleA4} alt="..." />
                 </span>
                 <h6 className="m-b-1 fw-normal text-white">Jeremy &nbsp;
@@ -242,7 +242,7 @@ class Widgets extends React.Component {
                 </ul>
                 <ul className="post-comments mb-0 mt-2">
                   <li>
-                    <span className="thumb-xs avatar pull-left mr-sm">
+                    <span className="thumb-xs avatar pull-left me-2">
                       <img className="rounded-circle" src={peopleA1} alt="..." />
                     </span>
                     <div className="comment-body">
@@ -253,7 +253,7 @@ class Widgets extends React.Component {
                     </div>
                   </li>
                   <li>
-                    <span className="thumb-xs avatar pull-left mr-sm">
+                    <span className="thumb-xs avatar pull-left me-sm">
                       <img className="rounded-circle" src={avatar} alt="..." />
                     </span>
                     <div className="comment-body">
@@ -278,7 +278,7 @@ class Widgets extends React.Component {
                   </ul>
                 </div>
                 <div className="post-user mt-sm">
-                  <span className="thumb pull-left mr mt-n-sm">
+                  <span className="thumb pull-left me-2 mt-n-sm">
                     <img className="rounded-circle" src={peopleA6} alt="..." />
                   </span>
                   <h6 className="mb-xs mt"><span className="fw-semi-bold">Maryna</span> Nilson</h6>
@@ -304,7 +304,7 @@ class Widgets extends React.Component {
             <Widget refresh close>
               <div>
                 <div className="post-user mt-n-xs">
-                  <span className="thumb pull-left mr mt-n-sm">
+                  <span className="thumb pull-left me-2 mt-n-sm">
                     <img className="rounded-circle" src={peopleA2} alt="..." />
                   </span>
                   <h6 className="mb-xs mt-xs">Jess <span className="fw-semi-bold">@jessica</span></h6>
@@ -345,7 +345,7 @@ class Widgets extends React.Component {
                   <span className="fw-normal">Sunnyvale</span>, CA
                 </h4>
                 <div className="info text-right">
-                  <i className="fa fa-map-marker h1 m-0 mr-xs" />
+                  <i className="fa fa-map-marker h1 m-0 me-xs" />
                   <h6 className="m-0 mt-xs">FLORIDA, USA</h6>
                   <p className="fs-sm">9:41 am</p>
                 </div>
@@ -396,21 +396,21 @@ class Widgets extends React.Component {
                       <h6 className="text-white fw-normal m-t-1">FRIDAY</h6>
                     </div>
                     <div className="col-7">
-                      <p className="value0 text-danger mt-n-xs mr-n-xs">
+                      <p className="value0 text-danger mt-n-xs me-n-xs">
                         33&deg;
                       </p>
                       <p className="mt-n-sm m-b-0 fw-normal fs-sm text-muted">WINDY</p>
                       <div className="row mt-n-xs mb-xs">
                         <div className="col-6 p-0">
                           <Skycon icon="WIND" color="#999" width="20" height="20" />
-                          <div className="d-inline-block ml-1">
+                          <div className="d-inline-block ms-1">
                             <p className="value6">4</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MPS</p>
                           </div>
                         </div>
                         <div className="col-6 p-0">
                           <Skycon icon="RAIN" color="#999" width="20" height="20" />
-                          <div className="d-inline-block ml-1">
+                          <div className="d-inline-block ms-1">
                             <p className="value6">52</p>
                             <p className="fs-sm m-0 mt-n-xs text-muted fw-normal">MM</p>
                           </div>
@@ -424,7 +424,7 @@ class Widgets extends React.Component {
                 <Widget className="p-0 text-center">
                   <div className="row m-0">
                     <div className="col-7 bg-success btlr bblr">
-                      <p className="value0 text-white mt-sm mr-n-xs">
+                      <p className="value0 text-white mt-sm me-n-xs">
                         20&deg;
                       </p>
                       <p className="text-white fw-normal d-inline-block mb">SUNDAY</p>
@@ -588,7 +588,7 @@ class Widgets extends React.Component {
               <footer className="bg-widget-transparent bt">
                   <InputGroup size="sm">
                       <Input placeholder="Your message" />
-                      <InputGroupAddon addonType="append"><Button color="default">Send</Button></InputGroupAddon>
+                      <Button color="default">Send</Button>
                   </InputGroup>
               </footer>
             </Widget>
@@ -656,7 +656,7 @@ class Widgets extends React.Component {
                       <i className="fa fa-quote-right opacity-50" />
                     </p>
                     <div className={`${s.positionElementBottom} ${s.mobileAdjustment}`}>
-                      <span className="thumb pull-left mr">
+                      <span className="thumb pull-left me-2">
                         <img className="rounded-circle" src={peopleA4} alt="..." />
                       </span>
                       <h4 className={`${s.wideName} m-0`}><span className="fw-semi-bold">Miha </span>Koshir</h4>
@@ -665,7 +665,7 @@ class Widgets extends React.Component {
                   </div>
                   <div  className={s.slideWrap}> 
                     <div className="clearfix">
-                      <span className="thumb pull-left mr">
+                      <span className="thumb pull-left me-2">
                         <img className="rounded-circle" src={peopleA3} alt="..." />
                       </span>
                       <h4 className="m-0"><span className="fw-semi-bold">Maryna</span> Ess</h4>

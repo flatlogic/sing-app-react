@@ -43,7 +43,7 @@ class PopoverExamples extends Component {
               close collapse
             >
               <Button
-                id="p-1" className="mr-3" size="lg" color="danger"
+                id="p-1" className="me-3" size="lg" color="danger"
                 onClick={() => this.toggle(0, 'popovers')}
               >Click to toggle popover</Button>
               <Button
@@ -56,19 +56,19 @@ class PopoverExamples extends Component {
               close collapse
             >
               <Button
-                id="p-3" className="mr-3 mb-xs" color="info"
+                id="p-3" className="me-3 mb-xs" color="info"
                 onClick={() => this.toggle(2, 'popovers')}
               >Popover on top</Button>
               <Button
-                id="p-4" className="mr-3 mb-xs" color="warning"
+                id="p-4" className="me-3 mb-xs" color="warning"
                 onClick={() => this.toggle(3, 'popovers')}
               >Popover on right</Button>
               <Button
-                id="p-5" className="mr-3 mb-xs" color="inverse"
+                id="p-5" className="me-3 mb-xs" color="inverse"
                 onClick={() => this.toggle(4, 'popovers')}
               >Popover on bottom</Button>
               <Button
-                id="p-6" className="mr-3 mb-xs" color="default"
+                id="p-6" className="me-3 mb-xs" color="default"
                 onClick={() => this.toggle(5, 'popovers')}
               >Popover on left</Button>
             </Widget>
@@ -79,17 +79,17 @@ class PopoverExamples extends Component {
               title={<h5>Tooltip <span className="fw-semi-bold">Example</span></h5>}
               close collapse
             >
-              <Button id="t-1" className="mr-sm" size="lg" color="success">Tooltip</Button>
+              <Button id="t-1" className="me-2" size="lg" color="success">Tooltip</Button>
               <Button id="t-2" color="success" disabled>Disabled button</Button>
             </Widget>
             <Widget
               title={<h5>Tooltip <span className="fw-semi-bold">Directions</span></h5>}
               close collapse
             >
-              <Button id="t-3" className="mr-3 mb-xs" color="info">Tooltip on top</Button>
-              <Button id="t-4" className="mr-3 mb-xs" color="warning">Tooltip on right</Button>
-              <Button id="t-5" className="mr-3 mb-xs" color="inverse">Tooltip on bottom</Button>
-              <Button id="t-6" className="mr-3 mb-xs" color="default">Tooltip on left</Button>
+              <Button id="t-3" className="me-3 mb-xs" color="info">Tooltip on top</Button>
+              <Button id="t-4" className="me-3 mb-xs" color="warning">Tooltip on right</Button>
+              <Button id="t-5" className="me-3 mb-xs" color="inverse">Tooltip on bottom</Button>
+              <Button id="t-6" className="me-3 mb-xs" color="default">Tooltip on left</Button>
             </Widget>
           </Col>
         </Row>

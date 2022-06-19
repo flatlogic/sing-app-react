@@ -98,7 +98,7 @@ class ChatInfo extends Component {
                   <h5>{this.info().company}</h5>
                   <h6>{this.info().position}</h6>
                 </header>
-                <Avatar className="ml-auto mr-3" user={this.info()} size="70" showStatus={false}/>
+                <Avatar className="ms-auto me-3" user={this.info()} size="70" showStatus={false}/>
               </div>
             <footer className="d-flex align-items-center justify-content-between">
               <a href={'mailto:' + this.info().email} className="text-white mt-2">{this.info().email}</a>
@@ -121,7 +121,7 @@ class ChatInfo extends Component {
         <section className={`${s.chatInfoHeader} chat-section bg-info`}>
         <div className="d-flex align-items-center mb-3">
           <h4 className="mb-0 fw-semi-bold">{this.info().name}</h4>
-          <ul className={`${s.avatarsRow} ml-auto`}>
+          <ul className={`${s.avatarsRow} ms-auto`}>
             {this.shortUsersList().map(user => (
               <li key={uuid()}><Avatar showStatus={false} user={user} size={35} stroke={true}/></li>
             ))}
@@ -148,7 +148,7 @@ class ChatInfo extends Component {
         <Accordion defaultActiveKey="0" onSelect={this.updateKye}>
           <Card>
             <Accordion.Toggle eventKey="0" className={this.state.accordion[0] ? "active" : ""}>
-              <div className={s.toggleHeader}><img src={info} alt="" /> Information<i className="la la-angle-up ml-auto"></i></div>
+              <div className={s.toggleHeader}><img src={info} alt="" /> Information<i className="la la-angle-up ms-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
@@ -172,7 +172,7 @@ class ChatInfo extends Component {
           </Card>
           <div className={`card`}>
            <button>
-          <label htmlFor="checkbox-ios1" className={`${s.switch} ${s.toggleHeader} switch ml-auto mb-0`}>
+          <label htmlFor="checkbox-ios1" className={`${s.switch} ${s.toggleHeader} switch ms-auto mb-0`}>
             <span><img src={notification} alt="" /> Notifications</span>
               <div><input type="checkbox" id="checkbox-ios1" className="ios form-check-input"/>
               <i></i></div>
@@ -181,7 +181,7 @@ class ChatInfo extends Component {
         </div>
           <Card>
             <Accordion.Toggle eventKey="1" className={this.state.accordion[1] ? "active" : ""}>
-            <div className={s.toggleHeader}><img src={picture} alt="" /> Images (4)<i className="la la-angle-up ml-auto"></i></div>
+            <div className={s.toggleHeader}><img src={picture} alt="" /> Images (4)<i className="la la-angle-up ms-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
@@ -202,7 +202,7 @@ class ChatInfo extends Component {
           </Card>
           <Card>
             <Accordion.Toggle eventKey="2" className={this.state.accordion[2] ? "active" : ""}>
-            <div className={s.toggleHeader}><img src={link} alt="" /> Links (6)<i className="la la-angle-up ml-auto"></i></div>
+            <div className={s.toggleHeader}><img src={link} alt="" /> Links (6)<i className="la la-angle-up ms-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
               <Card.Body>
@@ -221,7 +221,7 @@ class ChatInfo extends Component {
           </Card>
           <Card>
             <Accordion.Toggle eventKey="3" className={this.state.accordion[3] ? "active" : ""}>
-            <div className={s.toggleHeader}><img src={doc} alt="" /> Files (5)<i className="la la-angle-up ml-auto"></i></div>
+            <div className={s.toggleHeader}><img src={doc} alt="" /> Files (5)<i className="la la-angle-up ms-auto"></i></div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
               <Card.Body className="files-tab">

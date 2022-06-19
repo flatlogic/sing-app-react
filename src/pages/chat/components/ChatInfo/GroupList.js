@@ -42,7 +42,7 @@ class GroupList extends Component {
                   return (
                     <li key={user.id}>
                       <Avatar
-                        classProp="mr-2"
+                        classProp="me-2"
                         user={user}
                         size={40}
                         showStatus={false}

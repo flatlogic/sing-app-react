@@ -20,7 +20,7 @@ $font-size-larger:        1.1rem;
 $font-size-mini:          0.9rem;
 $font-size-index:         0.7rem;
 
-$font-family-base: 'Montserrat', sans-serif;
+$font-family-base: 'Poppins', sans-serif;
 
 $headings-font-weight: 400;
 
@@ -37,22 +37,24 @@ $gray-600: #798892 !default;
 $gray-700: #495057 !default;
 $gray-800: #3c484f !default;
 $gray-900: #29323a !default;
+$gray-default: #5A5D76 !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:         #005792 !default;
+$blue:         #6FB0F9 !default;
 $indigo:       #7f3ddb !default;
-$purple:       #1A86D0 !default;
+$purple:       #10CFD0 !default;
 $pink:         #e54e9a !default;
-$red:          #FD5F00 !default;
+$red:          #FF5574 !default;
 $orange:       #ff7d47 !default;
-$yellow:       #FDA700 !default;
+$yellow:       #EBB834 !default;
 $green:        #68ca66 !default;
-$teal:         #21AE8C !default;
+$teal:         #26CD5F !default;
 $cyan:         #17a2b8 !default;
 $dark-gray:    #D7DFE6 !default;
-$gray-inverse: #002B49 !default;
+$gray-inverse: #0C2236 !default;
 $subtle-white: #EAF0F6 !default;
+$light-red: #FF5574 !default;
 
 $theme-colors: (
   primary: $blue,
@@ -63,9 +65,9 @@ $theme-colors: (
   danger: $red,
   dark: $gray-800,
   inverse: $gray-inverse,
-  gray: $gray-300,
+  gray: $gray-default,
   light: $gray-100,
-  default: #e9ecef,
+  default: #9083F7,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,
@@ -238,3 +240,9 @@ $chat-sidebar-width-open: 250px;
 
 $chat-component-padding: 21px;
 $chat-section-width: 330px;
+
+$blockquote-small-color:      $gray-600 !default;
+$hr-border-color:             rgba($black, .1) !default;
+$table-cell-padding:          .75rem !default;
+$emphasized-link-hover-darken-percentage: 15% !default;
+$badge-focus-width:          .2rem !default;

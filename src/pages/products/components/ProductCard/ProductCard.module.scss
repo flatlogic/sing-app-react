@@ -19,15 +19,11 @@
   box-shadow: var(--widget-shadow);
 
   @include media-breakpoint-down(sm) {
-    height: 200px;
+    height: 180px;
   }
 
   @include media-breakpoint-down(md) {
     height: 250px;
-  }
-
-  @include media-breakpoint-down(xs) {
-    height: 150px;
   }
 
   cursor: pointer;

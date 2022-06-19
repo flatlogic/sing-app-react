@@ -103,7 +103,7 @@ class UsersListTable extends Component {
   createCustomSearchField = (props) => {
     return (
       <SearchField
-          className="mb-sm-5 mr-sm-0"
+          className="mb-sm-5 me-1"
           placeholder='Search'/>
     );
   }

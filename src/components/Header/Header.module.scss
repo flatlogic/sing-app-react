@@ -5,7 +5,7 @@
   background: var(--navbar-bg);
   box-shadow: var(--navbar-shadow);
   height: $navbar-height;
-  transition: background-color .2s ease, margin .2s ease, ;
+  transition: background-color .2s ease, margin .2s ease;
 
   &.navbarFloatingType {
     margin: $spacer $content-padding 0;
@@ -28,7 +28,7 @@
       overflow: hidden;
     }
 
-    .input-group-prepend {
+    .input-group-prepend-icon {
       background-color: var(--input-bg);
       transition: background-color ease-in-out 0.15s;
       border-top-left-radius: 0.3rem;
@@ -38,6 +38,7 @@
       align-items: center;
       width: 35px;
     }
+
     .form-control {
       background-color: var(--input-bg);
       color: var(--input-color);
@@ -166,7 +167,8 @@
   :global .dropdown-menu {
     left: auto !important;
     right: 0 !important;
-    top: $navbar-height !important;
+    top: $widget-padding-horizontal !important;
+    //top: $navbar-height !important;
     @include media-breakpoint-down(sm) {
       right: -40px!important;
     }
@@ -193,8 +195,7 @@
 }
 
 .headerSvgFlipColor {
-  display: flex;
-  color: var(--navbar-icon-bg);
+  color: var(--navbar-icon-bg) !important;
   :global {
     .bg-primary {
       background-color: var(--navbar-icon-bg)!important;
@@ -203,6 +204,7 @@
 }
 
 .headerDropdownLinks{
+  margin: 15px !important;
   color: inherit;
   & > a, & > button {
     display: flex;
@@ -230,6 +232,11 @@
   }  
 }
 
+.headerSearchInput {
+  margin-left: 100px;
+  padding-top: 10px;
+}
+
 @media(max-width: 950px) {
   .adminEmail {
     display: none;
@@ -237,4 +244,15 @@
   .headerSearchInput {
     width: 180px;
   }
+}
+
+//.navbar .container-fluid {
+//  justify-content: flex-start;
+//}
+//.container-fluid {
+//  padding: 0 !important;
+//}
+
+.navbar >.nav {
+  height: auto;
 }

@@ -20,3 +20,7 @@
     background-color: $gray-light;
   }
 }
+
+table thead {
+  border-style: hidden !important;
+}

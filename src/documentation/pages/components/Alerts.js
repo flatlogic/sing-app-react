@@ -26,7 +26,7 @@ class Overview extends Component {
     }, {
       id: 'al-4',
       type: 'danger',
-      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-right mr" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-right mr-xs" href="#">Take this action</a>',
+      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-end me-2" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-end me-2" href="#">Take this action</a>',
       visible: true,
     }],
     alertsTwo: [{
@@ -47,7 +47,7 @@ class Overview extends Component {
     }, {
       id: 'al-8',
       type: 'danger',
-      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-right mr" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-right mr-xs" href="#">Take this action</a>',
+      msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again. <a class="btn btn-default btn-xs float-end mr" href="#">Ignore</a> <a class="btn btn-danger btn-xs float-end me-2" href="#">Take this action</a>',
       visible: true,
     }]
   };

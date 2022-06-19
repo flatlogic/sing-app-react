@@ -70,7 +70,7 @@ import s from './am4chartMap.module.scss';
         <div className={s.stats}>
           <h6 className="mt-1">GEO-LOCATIONS</h6>
           <p className="h3 m-0">
-            <span className="mr-xs fw-normal">
+            <span className="me-2 fw-normal">
               <AnimateNumber
                 value={1656843}
                 initialValue={0}

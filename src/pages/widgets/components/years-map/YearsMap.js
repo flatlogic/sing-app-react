@@ -93,7 +93,7 @@ this.polygonSeries.tooltip.background.fill = am4core.color("#fff");
       <div className={s.mapChart}>
         <div className={s.stats}>
           <h6>YEARLY <span className="fw-semi-bold">DISTRIBUTIONS</span></h6>
-          <span className="pull-left mr-xs">
+          <span className="pull-left me-1">
             <small><span className="circle bg-primary text-white">
               <i className="fa fa-plus" /></span></small>
           </span>

@@ -85,7 +85,7 @@ class NewNotificationsDemo extends React.Component {
             User <a href="#">Jeff</a> registered
             {/* eslint-enable */}
             &nbsp;&nbsp;
-            <Button size="xs" color="success" className="mr-1">Allow</Button>
+            <Button size="xs" color="success" className="me-1">Allow</Button>
             <Button size="xs" color="danger">Deny</Button>
             <time className="help-block m-0">
               12:18 AM

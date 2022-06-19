@@ -24,7 +24,10 @@ export default {
       rain: "#CCDDE9",
       middle: "#D7DFE6",
       black: "#13191D",
-      salat: "#21AE8C",
+      salad: "#21AE8C",
+      seaWave: "#483CB6",
+      grad: "#4B505F",
+      blueSky: "#EFF2F5"
     },
   }
 };
