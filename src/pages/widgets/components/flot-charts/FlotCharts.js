@@ -9,13 +9,14 @@ import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
 
 import Widget from '../../../../components/Widget';
-import s from './FlotCharts.module.scss';  
+import s from './FlotCharts.module.scss';
+
+import config from '../../../../config'
 
 class FlotCharts extends React.PureComponent {
 
-
-
   generateRandomData = (labels) => {
+
     function random() {
       return (Math.floor(Math.random() * 30)) + 10;
     }
@@ -39,6 +40,15 @@ class FlotCharts extends React.PureComponent {
   }
 
   render() {
+   function getDate() {
+     const month = ["January","February","March","April","May","June","July",
+       "August","September","October","November","December"];
+      const date = new Date();
+      const m = date.getMonth();
+      const y = date.getFullYear();
+      return `${month[m]}, ${y}`
+    }
+
     const options = {
       credits: {
         enabled: false
@@ -91,7 +101,7 @@ class FlotCharts extends React.PureComponent {
                 Total Sales
               </h6>
               <p className="value5">
-                January, 2018
+                { getDate() }
               </p>
             </Col>
             <Col xs={4}>
@@ -99,7 +109,7 @@ class FlotCharts extends React.PureComponent {
                 <small className="text-white">Best</small>
               </h5>
               <p className="value6 fs-sm">
-                March, 2018 + 1
+                March, 2022 + 1
               </p>
             </Col>
           </Row>}
@@ -119,9 +129,9 @@ class FlotCharts extends React.PureComponent {
           </div>
           <div className={`${s.chart}`}>
             <HighchartsReact highcharts={Highcharts} options={{...options, series: this.generateRandomData([{
-                name: 'Visitors', color: '#005792',
+                name: 'Visitors', color: config.app.themeColors.primary,
               }, {
-                name: 'Charts', color: '#dd5826',
+                name: 'Charts', color: config.app.themeColors.danger,
               }])}} />
           </div>
         </Widget>
@@ -172,9 +182,9 @@ class FlotCharts extends React.PureComponent {
             <HighchartsReact highcharts={Highcharts} options={{
               ...options,
               series: this.generateRandomData([{
-                name: 'Controllers', color: '#005792',
+                name: 'Controllers', color: config.app.themeColors.info,
               }, {
-                name: 'Scopes', color: '#1A86D0',
+                name: 'Scopes', color: config.app.themeColors.default,
               }])
             }} />
           </div>

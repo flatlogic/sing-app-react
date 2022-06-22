@@ -55,7 +55,7 @@ export default {
     {
       product: 'RNS',
       total: '1,025',
-      color: 'info',
+      color: 'default',
       registrations: {
         value: 230,
         profit: true,

@@ -10,7 +10,6 @@ import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../../action
 import isScreen from '../../core/screenHelper';
 import { logoutUser } from '../../actions/auth';
 
-//import HomeIcon from '../../images/sidebar/Outline/Home';
 import Home from '../../images/sidebar/basil/Home';
 import User from '../../images/sidebar/basil/User';
 import ShoppingCart from '../../images/sidebar/basil/ShoppingCart';
@@ -27,22 +26,6 @@ import Rows from '../../images/sidebar/basil/Rows';
 import Location from '../../images/sidebar/basil/Location';
 import Fire from '../../images/sidebar/basil/Fire';
 import Menu from '../../images/sidebar/basil/Menu';
-//import Home from '../../images/basil-icons/svg/Solid/General/Home.svg';
-// import BrowserIcon from '../../images/sidebar/Outline/Browser';
-// import EmailIcon from '../../images/sidebar/Outline/Email';
-// import CopyIcon from '../../images/sidebar/Outline/Copy';
-// import FileTextIcon from '../../images/sidebar/Outline/FileText';
-// import FireIcon from '../../images/sidebar/Outline/Fire';
-// import GridIcon from '../../images/sidebar/Outline/Grid';
-// import KeypadIcon from '../../images/sidebar/Outline/Keypad';
-// import LayersIcon from '../../images/sidebar/Outline/Layers';
-// import LayoutIcon from '../../images/sidebar/Outline/Layout';
-// import ListIcon from '../../images/sidebar/Outline/List';
-// import MessageCircleIcon from '../../images/sidebar/Outline/MessageCircle';
-// import PersonIcon from '../../images/sidebar/Outline/Person';
-// import PieChartIcon from '../../images/sidebar/Outline/PieChart';
-// import PinIcon from '../../images/sidebar/Outline/Pin';
-// import ShoppingBagIcon from '../../images/sidebar/Outline/ShoppingBag';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -101,7 +84,7 @@ class Sidebar extends React.Component {
         className={s.root}
       >
         <header className={s.logo}>
-          <a href="https://demo.flatlogic.com/sing-app-react/"><span className={s.logoStyle}>Sing App</span> </a>
+          <a href="https://demo.flatlogic.com/sing-app-react/"><span className={s.logoStyle}>Sing <span className={s.logoPart}>App</span></span> </a>
         </header>
         <ul className={s.nav}>
           <LinksGroup

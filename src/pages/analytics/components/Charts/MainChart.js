@@ -5,6 +5,8 @@ import Widget from "../../../../components/Widget";
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts';
 
+import config from '../../../../config'
+
 export default class RevenueChart extends PureComponent {
   static propTypes = {
     data: PropTypes.any.isRequired,
@@ -28,7 +30,7 @@ export default class RevenueChart extends PureComponent {
         {
           name: 'Light Blue',
           data: data[0],
-          color: 'rgba(26,134,208,.2)',
+          color: config.app.themeColors.primary,
           type: 'areaspline',
           fillOpacity: 0.2,
           lineWidth: 0
@@ -37,13 +39,13 @@ export default class RevenueChart extends PureComponent {
           type: 'spline',
           name: 'RNS App',
           data: data[1],
-          color: '#FD5F00',
+          color: config.app.themeColors.warning,
         },
         {
           type: 'spline',
           name: 'Sing App',
           data: data[2],
-          color: '#005792'
+          color: config.app.themeColors.primary,
         }
       ]
     }

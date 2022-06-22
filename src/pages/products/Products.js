@@ -78,9 +78,7 @@ class ProductList extends Component {
       <div>
         {!isModalActive &&
           <div>
-            {/* eslint-disable */}
             <h1 className="page-title">E-commerce - <span className="fw-semi-bold">Product Grid</span></h1>
-            {/* eslint-enable */}
             <div className={s.productsListFilters}>
               {filtersData.map(item =>
                 (typeof item.data[0] === 'string'

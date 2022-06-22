@@ -1,17 +1,14 @@
 export default {
   app: {
     colors: {
-      sidebar: "#002B49",
-      navbar: "#ffffff",
-      primary: "#005792",
+      primary: "#6FB0F9",
       secondary: "#798892",
-      success: "#21AE8C",
-      info: "#1A86D0",
-      warning: "#FDA700",
-      danger: "#FD5F00",
-      inverse: "#002B49",
-      textColor: "#495057",
-      gray: "#D7DFE6"
+      success: "#26CD5F",
+      info: "#10CFD0",
+      warning: "#EBB834",
+      danger: "#FF5574",
+      inverse: "#30324C",
+      default: "#9083F7"
     },
     chartColors: {
       axisColor: '#8EA1AB'

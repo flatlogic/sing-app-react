@@ -2,10 +2,12 @@ import Highcharts from 'highcharts';
 import usdeur from './usdeur';
 import sunburstData from './sunburstData';
 
+import config from '../config'
+
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';
 let wordCloudLines = wordCloudText.split(/[,. ]+/g),
   wordCloudData = Highcharts.reduce(wordCloudLines, function (arr, word) {
-    var obj = Highcharts.find(arr, function (obj) {
+    let obj = Highcharts.find(arr, function (obj) {
       return obj.name === word;
     });
     if (obj) {
@@ -21,7 +23,7 @@ let wordCloudLines = wordCloudText.split(/[,. ]+/g),
   }, []);
 
 function generateVectorData() {
-  var data = [],
+  let data = [],
     x,
     y,
     length,
@@ -47,7 +49,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#1A86D0'],
+    colors: [config.app.colors.primary],
     chart: {
       zoomType: 'x'
     },
@@ -121,7 +123,16 @@ export default {
         'Area (square km): <b>{point.y}</b><br/>' +
         'Population density (people per square km): <b>{point.z}</b><br/>'
     },
-    colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#002B49', '#43ADF6'],
+    color: [
+      config.app.colors.primary,
+      config.app.colors.info,
+      config.app.colors.warning,
+      config.app.colors.default,
+      config.app.colors.success,
+      config.app.colors.danger,
+      config.app.colors.inverse,
+
+    ],
     series: [{
       minPointSize: 10,
       innerSize: '20%',
@@ -162,7 +173,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#005792'],
+    colors: [config.app.colors.primary],
     chart: {
       type: 'column',
       options3d: {
@@ -216,7 +227,16 @@ export default {
     subtitle: {
       text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>'
     },
-    colors: ['#002B49', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#3c484f', '#17a2b8'],
+    colors: [
+      config.app.colors.primary,
+      config.app.colors.primary,
+      config.app.colors.info,
+      config.app.colors.warning,
+      config.app.colors.default,
+      config.app.colors.success,
+      config.app.colors.danger,
+      config.app.colors.inverse
+      ],
     series: [{
       type: "sunburst",
       data: sunburstData,
@@ -268,7 +288,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#005792'],
+    colors: [config.app.colors.primary],
     title: {
       text: 'Highcharts Vector plot'
     },
@@ -284,7 +304,7 @@ export default {
     series: [{
       type: 'vector',
       name: 'Sample vector field',
-      color: '#005792',
+      color: config.app.colors.primary,
       data: generateVectorData()
     }]
   },
@@ -292,7 +312,15 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792', '#002B49', '#17a2b8'],
+    colors: [
+      config.app.colors.primary,
+      config.app.colors.info,
+      config.app.colors.warning,
+      config.app.colors.default,
+      config.app.colors.success,
+      config.app.colors.danger,
+      config.app.colors.inverse,
+    ],
     series: [{
       type: 'wordcloud',
       data: wordCloudData,

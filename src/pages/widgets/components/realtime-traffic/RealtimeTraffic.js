@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import Rickshaw from 'rickshaw';
 import { connect } from 'react-redux';
-
+import config from '../../../../config'
 
 class RealtimeTraffic extends React.Component {
   state = { graph: null }
@@ -46,11 +46,11 @@ class RealtimeTraffic extends React.Component {
       realtime: true,
       series: [
         {
-          color: '#005792', // 'gray-dark'
+          color: "rgba(111, 176, 249, 0.2)", // gray,
           data: seriesData[0],
           name: 'Uploads',
         }, {
-          color: '#1A86D0', // gray,
+          color: config.app.themeColors.primary, // 'gray-dark'
           data: seriesData[1],
           name: 'Downloads',
         },
@@ -87,10 +87,10 @@ class RealtimeTraffic extends React.Component {
           than last month
         </p>
         <p className="fs-sm mb-0">Remaining hours</p>
-        <button className="btn btn-xs btn-gray pull-right ml-xs">
+        <button className="btn btn-xs btn-gray-default pull-right ml-xs">
           <i className="fa fa-compress" /> track
         </button>
-        <button className="btn btn-xs btn-gray pull-right">
+        <button className="btn btn-xs btn-gray-default pull-right">
           <i className="fa fa-pause" /> pause
         </button>
         <p className="value4">2h 56m</p>

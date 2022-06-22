@@ -108,7 +108,7 @@ class SPackage extends React.Component {
               <div className="d-grid">
                 <a
                   className="btn btn-default btn-lg btn-block"
-                  href="https://demo.flatlogic.com/sing-app/angularjs/"
+                  href="https://angularjs-template.herokuapp.com/angularjs/#/app/dashboard"
                 >
                   Go to Demo
                 </a>
@@ -142,7 +142,7 @@ class SPackage extends React.Component {
               <div className="d-grid">
                 <a
                   className="btn btn-default btn-lg btn-block"
-                  href="https://demo.flatlogic.com/sing-app/html-bs4/dashboard/index.html"
+                  href="https://flatlogic.com/templates/sing-app-html5/demo"
                 >
                   Go to Demo
                 </a>
@@ -157,8 +157,6 @@ class SPackage extends React.Component {
             >
               <img className={['rounded pull-left mb-1 me-3', s.image].join(' ')} src={vueLogo} width="80" alt="" />
               <h3>VUE JS Version</h3>
-              <p className="text-muted">Coming soon version. Seed
-                project is <span className="fw-semi-bold">50%</span> ready.</p>
               <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">Vue</a> is a
                 an open-source progressive
                 JavaScript framework for building user interfaces. Vue is designed to be

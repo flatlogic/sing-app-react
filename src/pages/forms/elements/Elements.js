@@ -992,7 +992,9 @@ class Elements extends React.Component {
                           viewMode="days" timeFormat={false}
                           inputProps={{ ref: (input) => { this.refDatePicker = input; } }}
                         />
-                        <span className="input-group-text" onClick={() => { this.refDatePicker.focus(); }}><i className="glyphicon glyphicon-th" /></span>
+                        <span className="input-group-text" onClick={() => { this.refDatePicker.focus(); }}>
+                          <i className="glyphicon glyphicon-th" />
+                        </span>
                       </div>
                     </Col>
                     <Col xs="6">

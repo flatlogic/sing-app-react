@@ -17,6 +17,7 @@ import Highcharts from 'highcharts';
 import mock from './mock';
 import s from './Analitycs.module.scss';
 import { receiveDataRequest } from '../../actions/analytics';
+import config from '../../config'
 
 class Analytics extends Component {
     static propTypes = {
@@ -78,7 +79,7 @@ class Analytics extends Component {
             }
           }
         },
-        colors: ['#FD5F00', '#005792', '#1A86D0'],
+        colors: [config.app.themeColors.danger, config.app.themeColors.warning, config.app.themeColors.primary],
         legend: {
           align: 'right',
           verticalAlign: 'middle',
@@ -207,7 +208,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[1]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[1]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#FD5F00']}
+                          gradient={[config.app.themeColors.danger]}
                           height={30}
                           smooth
                           strokeWidth="4"
@@ -219,7 +220,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#005792']}
+                          gradient={[config.app.themeColors.primary]}
                           height={30}
                           smooth
                           strokeWidth="4"
@@ -231,7 +232,7 @@ class Analytics extends Component {
                       <p className="width-150"><small>{server[2]?.pct}% <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.temp}°С <span style={{ color: '#a3aeb7' }}>/</span> {server[2]?.frequency} Ghz</small></p>
                       <div style={{width: "calc(100% - 150px)"}}>
                         <Trend 
-                          gradient={['#1A86D0']}
+                          gradient={[config.app.themeColors.warning]}
                           height={30}
                           smooth
                           strokeWidth="4"
@@ -243,7 +244,7 @@ class Analytics extends Component {
                 </div>
               </Col>
               <Col lg={12} xs={12}>
-                  <MainChart data={mainChart} isReceiving={isReceiving} />
+                <MainChart data={mainChart} isReceiving={isReceiving} />
               </Col>
               <Col xs={12} lg={6} xl={4}>
                 <BigStat {...mock.bigStat[0]} />
@@ -281,7 +282,7 @@ class Analytics extends Component {
                   className="widget"
                   bodyClass={cx(s.notifications, 'w-100 mt-lg')}
                   title={
-                    <h4>Notifications <span className="rounded-pill bg-primary text-white pull-right mt-xs px-2 py-1 fs-6 fw-normal">{mock.notifications.length}</span></h4>
+                    <h4>Notifications <span className="rounded-pill bg-primary text-white pull-end mt-xs px-2 py-1 fs-6 fw-normal">{mock.notifications.length}</span></h4>
                   }
                 >
                   {mock.notifications.map(({ id, icon, color, content }) => (

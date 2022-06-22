@@ -52,7 +52,7 @@ $green:        #68ca66 !default;
 $teal:         #26CD5F !default;
 $cyan:         #17a2b8 !default;
 $dark-gray:    #D7DFE6 !default;
-$gray-inverse: #0C2236 !default;
+$gray-inverse: #30324C !default;
 $subtle-white: #EAF0F6 !default;
 $light-red: #FF5574 !default;
 
@@ -68,6 +68,7 @@ $theme-colors: (
   gray: $gray-default,
   light: $gray-100,
   default: #9083F7,
+  gray-default: $gray-default,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,
@@ -75,9 +76,9 @@ $theme-colors: (
   danger-light: #fff2ef,
 );
 
-$link-color: #1A86D0;
+$link-color: $blue;
 
-$text-color: $gray-700 !default;
+$text-color: #0C2236 !default;
 
 $font-weight-bold: 700 !default;
 $font-weight-semi-bold: 600 !default;
@@ -126,7 +127,7 @@ $breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
 $widget-bg: #fff;
-$widget-title-color: #444;
+$widget-title-color: $text-color;
 $widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
 $widget-border-radius: $border-radius-lg;
 

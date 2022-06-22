@@ -128,87 +128,95 @@ class Management extends React.Component {
         )
     }
 
-    renderSizePerPageDropDown = (props) => {
-        const limits = [];
-        props.sizePerPageList.forEach((limit) => {
-            limits.push(<DropdownItem key={limit}
-            onClick={() => props.changeSizePerPage(limit)}>{limit}</DropdownItem>);
-        });
+  renderSizePerPageDropDown = (props) => {
+    const limits = [];
+    props.sizePerPageList.forEach((limit) => {
+      limits.push(<DropdownItem key={limit}
+      onClick={() => props.changeSizePerPage(limit)}>{limit}</DropdownItem>);
+    });
 
-        return (
-            <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
-                <DropdownToggle color="default" caret>
-                    {props.currSizePerPage}
-                </DropdownToggle>
-                <DropdownMenu>
-                    {limits}
-                </DropdownMenu>
-            </Dropdown>
-        );
+  return (
+    <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
+      <DropdownToggle color="default" caret>
+        {props.currSizePerPage}
+      </DropdownToggle>
+      <DropdownMenu>
+        {limits}
+      </DropdownMenu>
+    </Dropdown>
+  );
+};
+
+  createNewProduct() {
+    this.props.history.push('/app/ecommerce/management/create');
+  }
+
+  render() {
+    const options = {
+      sizePerPage: 10,
+      paginationSize: 3,
+      sizePerPageDropDown: this.renderSizePerPageDropDown,
     };
 
-    createNewProduct() {
-        this.props.history.push('/app/ecommerce/management/create');
-    }
-
-    render() {
-        const options = {
-            sizePerPage: 10,
-            paginationSize: 3,
-            sizePerPageDropDown: this.renderSizePerPageDropDown,
-        };
-
-        return (
-            <div>
-                <div className="page-top-line">
-                    <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
-                    <Alert
-                        color="primary"
-                        className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
-                    >
-                        This page is only available in <a className="text-white fw-bold" rel="noreferrer noopener" href="https://flatlogic.com/templates/sing-app-react-node-js" target="_blank">Sing App React with NodeJS/.NET</a> integration!
-                    </Alert>
-                </div>
-                <Widget title="List of Products" collapse close
-                        fetchingData={this.props.isReceiving}
-                >
-                    <Button color="success" onClick={() => this.createNewProduct()}>Create Product</Button>
-                    <BootstrapTable data={this.props.products} version="4" pagination options={options} search
-                                    tableContainerClass={`table-striped ${s.bootstrapTable}`}>
-                        <TableHeaderColumn dataField="id" isKey={true} className="width-50"
-                                           columnClassName="width-50">
-                            <span className="fs-sm">ID</span>
-                        </TableHeaderColumn>
-                        <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
-                            <span className="fs-sm">Image</span>
-                        </TableHeaderColumn>
-                        <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
-                            <span className="fs-sm">Title</span>
-                        </TableHeaderColumn>
-                        {window.innerWidth >= 768 && (
-                            <TableHeaderColumn dataField="subtitle">
-                                <span className="fs-sm">Subtitle</span>
-                            </TableHeaderColumn>
-                        )}
-                        {window.innerWidth >= 768 && (
-                            <TableHeaderColumn dataField="price">
-                                <span className="fs-sm">Price($)</span>
-                            </TableHeaderColumn>
-                        )}
-                        {window.innerWidth >= 768 && (
-                            <TableHeaderColumn dataField="rating" dataFormat={this.ratingFormatter}>
-                                <span className="fs-sm">Rating</span>
-                            </TableHeaderColumn>
-                        )}
-                        <TableHeaderColumn dataFormat={this.apiFormatter}>
-                            <span className="fs-sm">Api</span>
-                        </TableHeaderColumn>
-                    </BootstrapTable>
-                </Widget>
-            </div>
-
-        );
-    }
+    return (
+      <div>
+        <div className="page-top-line">
+          <h2 className="page-title">Product - <span className="fw-semi-bold">Management</span></h2>
+          <Alert
+            color="warning"
+            className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
+          >
+            This page is only available in <a className="text-white fw-bold" rel="noreferrer noopener" href="https://flatlogic.com/templates/sing-app-react-node-js" target="_blank">Sing App React with NodeJS/.NET</a> integration!
+          </Alert>
+        </div>
+        <Widget title="List of Products" collapse close
+          fetchingData={this.props.isReceiving}
+        >
+          <Button color="success" onClick={() => this.createNewProduct()}>Create Product</Button>
+          <BootstrapTable
+            data={this.props.products}
+            version="4"
+            pagination
+            options={options}
+            search
+            bordered={ false }
+            tableContainerClass={`table-striped ${s.bootstrapTable}`}>
+              <TableHeaderColumn
+                dataField="id"
+                isKey={true}
+                className="width-50"
+                columnClassName="width-50">
+                  <span className="fs-sm">ID</span>
+              </TableHeaderColumn>
+              <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
+                <span className="fs-sm">Image</span>
+              </TableHeaderColumn>
+              <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
+                <span className="fs-sm">Title</span>
+              </TableHeaderColumn>
+              {window.innerWidth >= 768 && (
+                <TableHeaderColumn dataField="subtitle">
+                  <span className="fs-sm">Subtitle</span>
+                </TableHeaderColumn>
+              )}
+              {window.innerWidth >= 768 && (
+                <TableHeaderColumn dataField="price">
+                  <span className="fs-sm">Price($)</span>
+                </TableHeaderColumn>
+              )}
+              {window.innerWidth >= 768 && (
+                <TableHeaderColumn dataField="rating" dataFormat={this.ratingFormatter}>
+                  <span className="fs-sm">Rating</span>
+                </TableHeaderColumn>
+              )}
+              <TableHeaderColumn dataFormat={this.apiFormatter}>
+                <span className="fs-sm">Api</span>
+              </TableHeaderColumn>
+          </BootstrapTable>
+        </Widget>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(state) {

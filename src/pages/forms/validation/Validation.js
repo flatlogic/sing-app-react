@@ -170,7 +170,7 @@ class Validation extends React.Component {
 
                 <div>
                   <Button type="submit" color="danger" className="btn-rounded float-end">Validate & Submit</Button>
-                  <Button type="button" color="default" className="btn-rounded">Cancel</Button>
+                  <Button type="button" color="default" className="btn-rounded float-end">Cancel</Button>
                 </div>
               </Formsy.Form>
             </Widget>

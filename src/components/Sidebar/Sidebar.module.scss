@@ -2,7 +2,6 @@
 
 .root {
   width: $sidebar-width-open;
-  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
@@ -20,6 +19,16 @@
   font-weight: 400;
   font-size: 16.5px;
   text-shadow: 4px 4px 15px rgba(92, 176, 255, .3);
+
+}
+
+.sidebarClose .logoPart {
+  opacity: 0;
+}
+
+.logoPart {
+  opacity: 1;
+  transition: opacity $sidebar-transition-time ease-in-out;
 }
 
 .sidebarWrapper {
@@ -156,6 +165,9 @@
   margin-bottom: $spacer * 2;
   transition: opacity $sidebar-transition-time ease-in-out;
   opacity: 1;
+  .btn-close {
+    padding: 0;
+  }
 }
 
 .sidebarClose .sidebarAlerts {

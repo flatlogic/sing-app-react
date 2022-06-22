@@ -7,8 +7,9 @@ import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/usaHigh";
 
 import AnimateNumber from 'react-animated-number';
 import s from './am4chartMap.module.scss';
+import config from '../../../../config'
   
-  class Am4chartMap extends Component {
+class Am4chartMap extends Component {
   
   componentDidMount() {
     let map = am4core.create("map", am4maps.MapChart);
@@ -37,7 +38,7 @@ import s from './am4chartMap.module.scss';
     minusButtonHoverState.properties.fill = am4core.color("#e9ecef");
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#CCE4F4");
+    polygonTemplate.fill = am4core.color("rgba(111, 176, 249, 0.2)");
     let hs = polygonTemplate.states.create("hover");
     hs.properties.fill = am4core.color("#ACE4F4");
     let citySeries = map.series.push(new am4maps.MapImageSeries());
@@ -48,7 +49,7 @@ import s from './am4chartMap.module.scss';
     city.propertyFields.latitude = "latitude";
     city.propertyFields.longitude = "longitude";
     let circle = city.createChild(am4core.Circle);
-    circle.fill = am4core.color("rgba(26,134,208,1)");
+    circle.fill = am4core.color(config.app.themeColors.primary);
     circle.stroke = am4core.color("#ffffff");
     circle.strokeWidth = 0;
     let circleHoverState = circle.states.create("hover");

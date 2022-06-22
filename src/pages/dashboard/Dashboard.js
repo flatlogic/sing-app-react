@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Foreign Visits</h6>
                   <p className="description deemphasize mb-xs">Some Cool Text</p>
-                  <Progress color="primary" value="60" className="bg-white progress-xs mb-4" />
+                  <Progress color="default" value="60" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -105,7 +105,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Local Visits</h6>
                   <p className="description deemphasize mb-xs">P. to C. Conversion</p>
-                  <Progress color="danger" value="39" className="bg-white progress-xs mb-4" />
+                  <Progress color="warning" value="39" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -117,7 +117,7 @@ class Dashboard extends React.Component {
                 <div className="col-md-9 col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <p className="description deemphasize mb-xs">Average Bitrate</p>
-                  <Progress color="success" value="80" className="bg-white progress-xs mb-4" />
+                  <Progress color="danger" value="80" className="bg-white progress-xs mb-4" />
                 </div>
                 <div className="col-md-3 col-12 text-center">
                   <span className="status rounded rounded-lg bg-body-light">
@@ -133,11 +133,9 @@ class Dashboard extends React.Component {
               </p>
               <div className="input-group mt">
                 <input type="text" className="form-control" placeholder="Search Map" />
-                <span className="input-group-btn">
-                  <button type="submit" className="btn btn-default">
-                    <i className="fa fa-search text-gray" />
-                  </button>
-                </span>
+                <button type="submit" className="btn btn-gray-default">
+                  <i className="fa fa-search text-white" />
+                </button>
               </div>
 
             </Widget>
@@ -165,7 +163,7 @@ class Dashboard extends React.Component {
                   <p className="value">3.38%</p>
                 </div>
               </div>
-              <Progress color="success" value="60" className="bg-gray-lighter progress-xs" />
+              <Progress color="warning" value="60" className="bg-gray-lighter progress-xs" />
               <p>
                 <small>
                   <span className="circle bg-primary text-white">
@@ -386,11 +384,11 @@ class Dashboard extends React.Component {
               <Calendar />
               <div className="list-group fs-mini">
                 <button className="list-group-item text-ellipsis">
-                  <span className="badge rounded-pill bg-info text-white pull-right px-2 py-1 fw-normal fs-6 float-end">6:45</span>
+                  <span className="badge rounded-pill bg-danger text-white pull-right px-2 py-1 fw-normal fs-6 float-end">6:45</span>
                   Weed out the flower bed
                 </button>
                 <button className="list-group-item text-ellipsis">
-                  <span className="badge rounded-pill bg-success pull-right px-2 py-1 fw-normal fs-6 float-end">9:41</span>
+                  <span className="badge rounded-pill bg-warning pull-right px-2 py-1 fw-normal fs-6 float-end">9:41</span>
                   Stop world water pollution
                 </button>
               </div>

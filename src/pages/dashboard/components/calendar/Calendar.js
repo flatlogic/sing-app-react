@@ -4,6 +4,7 @@ import uuid from 'uuid/v4'
 import Week from './Week'
 import moment from 'moment/moment'
 import s from './Calendar.module.scss'
+import config from '../../../../config'
 
 class Calendar extends Component {
   
@@ -14,25 +15,25 @@ class Calendar extends Component {
         {
           title: "The flower bed",
           info: "Contents here",
-          itemStyle: "#005690",
+          itemStyle: config.app.themeColors.primary,
           date: moment(`${moment().year()}-${moment().month()+1}-02`, "YYYYMMDD"),
         },
         {
           title: "Stop world water pollution",
           info: "Have a kick off meeting with .inc company",
-          itemStyle: "#1A86D0",
+          itemStyle: config.app.themeColors.info,
           date: moment(`${moment().year()}-${moment().month()+1}-05`, "YYYYMMDD"),
         },
         {
           title: "Light Blue 2.2 release",
           info: "Some contents here",
-          itemStyle: "#FD5F00",
+          itemStyle: config.app.themeColors.warning,
           date: moment(`${moment().year()}-${moment().month()+1}-18`, "YYYYMMDD"),
         },
         {
           title: "A link",
           info: "",
-          itemStyle: "#FD5F00",
+          itemStyle: config.app.themeColors.danger,
           link: "http://www.flatlogic.com",
           date: moment(`${moment().year()}-${moment().month()+1}-29`, "YYYYMMDD"),
         },

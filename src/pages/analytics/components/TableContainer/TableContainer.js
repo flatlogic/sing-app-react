@@ -7,7 +7,7 @@ import s from './TableContainer.module.scss';
 
 const states = {
   sent: 'info',
-  pending: 'success',
+  pending: 'warning',
   declined: 'danger',
 };
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { UncontrolledTooltip } from 'reactstrap';
 import s from './Widget.module.scss';
 import classNames from 'classnames';
-import Loader from '../Loader'; // eslint-disable-line css-modules/no-unused-class
+import Loader from '../Loader';
 import AnimateHeight from 'react-animate-height';
 import uuidv4 from 'uuid/v4'
 import {
@@ -83,8 +83,6 @@ class Widget extends React.Component {
 
   }
 
-
-
   toggleModal = () => {
     this.setState({ modal: !this.state.modal });
   }
@@ -107,15 +105,6 @@ class Widget extends React.Component {
     this.toggleModal();
     this.handleClose();
   }
-
-  handleExpand = () => {
-    
-    this.setState({
-      height: 'auto',
-      collapseWidget: false
-    });
-
-  };
 
   handleReload = () => {
     const { widgetType, updateWidgetData } = this.props;
@@ -168,7 +157,7 @@ class Widget extends React.Component {
       collapsed,
       widgetType,
       updateWidgetData,
-      options, //eslint-disable-line
+      options,
       ...attributes
     } = this.props;
     const mainControls = !!(close || fullscreen || collapse || refresh || settings || settingsInverse);
@@ -183,8 +172,6 @@ class Widget extends React.Component {
       modal,
     } = this.state;
 
-    
-    
     return (
     <React.Fragment>
       <section

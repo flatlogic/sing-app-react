@@ -330,11 +330,11 @@ class Buttons extends React.Component {
                 </div>
                 <div className="mb-1">
                   <ButtonDropdown
-                    isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree}
-                    className="me-1"
+                    isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree} className="me-1"
                   >
-                    <Button id="dropdownThree" color="primary">Primary</Button>
-                    <DropdownToggle color="primary" caret className="dropdown-toggle-split" />
+                    <DropdownToggle color="primary" caret className="dropdown-toggle-split">
+                      Primary
+                    </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
@@ -344,8 +344,7 @@ class Buttons extends React.Component {
                     </DropdownMenu>
                   </ButtonDropdown>
                   <ButtonDropdown isOpen={this.state.dropdownOpenFour} toggle={this.toggleFour}>
-                    <Button size="sm" id="dropdownFour" color="gray">Gray</Button>
-                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split" />
+                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split" >Gray</DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>

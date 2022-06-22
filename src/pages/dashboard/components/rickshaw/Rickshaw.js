@@ -3,6 +3,8 @@ import Rickshaw from 'rickshaw';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import config from '../../../../config'
+
 class RickshawGraph extends React.Component {
 
   static propTypes = {
@@ -55,11 +57,11 @@ class RickshawGraph extends React.Component {
       height: this.props.height,
       series: [
         {
-          color: '#1A86D0',
+          color: "rgba(111, 176, 249, 0.5)",
           data: seriesData[0],
           name: 'Uploads',
         }, {
-          color: '#005792',
+          color: config.app.themeColors.primary,
           data: seriesData[1],
           name: 'Downloads',
         },

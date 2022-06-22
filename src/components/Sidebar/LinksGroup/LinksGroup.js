@@ -77,7 +77,7 @@ class LinksGroup extends Component {
                 {this.props.iconElement ? this.props.iconElement : <i className={`fi ${this.props.iconName}`} />}
               </span>
               {this.props.header} {this.props.label && <sup className={`${s.headerLabel} ${s.headerUpdate}`}>{this.props.label}</sup>}
-              {this.props.badge && <Badge className={s.badge} pill>9</Badge>}
+              {this.props.badge && <Badge className={s.badge} pill color={ "danger" }>9</Badge>}
             </NavLink>
           </li>
         );

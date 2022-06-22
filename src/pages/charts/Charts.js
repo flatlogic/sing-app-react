@@ -26,6 +26,9 @@ import HighchartsReact from 'highcharts-react-official'
 import exporting from 'highcharts/modules/exporting';
 import exportData from 'highcharts/modules/export-data';
 
+import config from '../../config'
+import HighCharts from "highcharts";
+
 exporting(Highcharts);
 exportData(Highcharts);
 
@@ -41,7 +44,7 @@ class Charts extends React.Component {
     sparklineData: {
       series: [{data: [1,7,3,5,7,8]}],
       options1: {
-        colors: ['#005792'],
+        colors: [config.app.themeColors.primary],
         plotOptions: {
           bar: {
             columnWidth: '50%'
@@ -49,7 +52,7 @@ class Charts extends React.Component {
         }
       },
       options2: {
-        colors: ['#1A86D0'],
+        colors: [config.app.themeColors.default],
         plotOptions: {
           bar: {
             columnWidth: '50%'
@@ -102,7 +105,7 @@ class Charts extends React.Component {
                 title={<h5>Highcharts <span className='fw-semi-bold'>Line Chart</span></h5>}
                 close collapse
               >
-                <HighchartsReact options={cd.highcharts.mixed}/>
+                <HighchartsReact highcharts={HighCharts}  options={cd.highcharts.mixed}/>
                 <h5 className="mt">Interactive <span className="fw-semi-bold">Sparklines</span></h5>
                 <Row className="mt">
                   <Col md={6} xs={12}>
@@ -174,7 +177,7 @@ class Charts extends React.Component {
                     title={<h5>Highcharts <span className="fw-semi-bold">Live Chart</span></h5>}
                     close collapse
                   >
-                    <HighchartsReact options={ld} />
+                    <HighchartsReact highcharts={HighCharts} options={ld} />
                   </Widget>
                 </Col>
               </Row>

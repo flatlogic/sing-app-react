@@ -1,9 +1,11 @@
-var generateDayWiseTimeSeries = function (baseval, count, yrange) {
-  var i = 0;
-  var series = [];
+import config from '../config'
+
+let generateDayWiseTimeSeries = function (baseval, count, yrange) {
+  let i = 0;
+  let series = [];
   while (i < count) {
-    var x = baseval;
-    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+    let x = baseval;
+    let y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
 
     series.push([x, y]);
     baseval += 86400000;
@@ -13,11 +15,11 @@ var generateDayWiseTimeSeries = function (baseval, count, yrange) {
 };
 
 function generateHeatMapData(count, yrange) {
-  var i = 0;
-  var series = [];
+  let i = 0;
+  let series = [];
   while (i < count) {
-    var x = (i + 1).toString();
-    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+    let x = (i + 1).toString();
+    let y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
 
     series.push({
       x: x,
@@ -60,7 +62,7 @@ export default {
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
-      colors: ['#005792']
+      colors: [config.app.colors.primary]
     }
   },
   area: {
@@ -90,7 +92,7 @@ export default {
       chart: {
         stacked: true,
       },
-      colors: ['#1A86D0', '#21AE8C', '#c1ccd3'],
+      colors: [config.app.colors.primary, config.app.colors.success, config.app.colors.secondary],
       dataLabels: {
         enabled: false
       },
@@ -116,7 +118,7 @@ export default {
       data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
     }],
     options: {
-      colors: ["#1A86D0"],
+      colors: [config.app.colors.primary],
       chart: {
         height: 350,
         type: 'bar',
@@ -136,7 +138,7 @@ export default {
         offsetY: -20,
         style: {
           fontSize: '12px',
-          colors: ["#304758"]
+          colors: [config.app.colors.secondary]
         }
       },
 
@@ -216,7 +218,7 @@ export default {
       chart: {
         stacked: true
       },
-      colors: ['#005792', '#FD5F00'],
+      colors: [config.app.colors.primary, config.app.colors.danger],
       plotOptions: {
         bar: {
           horizontal: true,
@@ -294,7 +296,7 @@ export default {
       dataLabels: {
         enabled: false
       },
-      colors: ['#005792', '#1A86D0', '#21AE8C'],
+      colors: [config.app.colors.primary, config.app.colors.default, config.app.colors.success],
       stroke: {
         width: [1, 1, 4]
       },
@@ -312,17 +314,17 @@ export default {
         },
         axisBorder: {
           show: true,
-          color: '#547fff'
+          color: config.app.colors.primary
         },
         labels: {
           style: {
-            color: '#547fff',
+            color: config.app.colors.primary,
           }
         },
         title: {
           text: "Income (thousand crores)",
           style: {
-            color: '#547fff',
+            color: config.app.colors.primary,
           }
         },
         tooltip: {
@@ -338,17 +340,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: '#3abf94'
+            color: config.app.colors.success
           },
           labels: {
             style: {
-              color: '#3abf94',
+              color: config.app.colors.success,
             }
           },
           title: {
             text: "Operating Cashflow (thousand crores)",
             style: {
-              color: '#3abf94',
+              color: config.app.colors.success,
             }
           },
         },
@@ -360,17 +362,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: '#005792'
+            color: config.app.colors.primary,
           },
           labels: {
             style: {
-              color: '#005792',
+              color: config.app.colors.primary,
             },
           },
           title: {
             text: "Revenue (thousand crores)",
             style: {
-              color: '#005792',
+              color: config.app.colors.primary,
             }
           }
         },
@@ -408,7 +410,13 @@ export default {
         show: false,
         width: 0
       },
-      colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
+      colors: [
+        config.app.colors.primary,
+        config.app.colors.success,
+        config.app.colors.warning,
+        config.app.colors.danger,
+        config.app.colors.info
+      ],
     }
   },
   donut: {
@@ -429,7 +437,13 @@ export default {
         show: false,
         width: 0
       },
-      colors: ['#1A86D0', '#21AE8C', '#FDA700', '#FD5F00', '#005792'],
+      colors: [
+        config.app.colors.primary,
+        config.app.colors.success,
+        config.app.colors.warning,
+        config.app.colors.danger,
+        config.app.colors.default
+      ],
     }
   },
   radial: {
@@ -439,7 +453,13 @@ export default {
       title: {
         text: 'Basic Radial Chart'
       },
-      colors: ['#005792', '#21AE8C', '#FDA700', '#FD5F00'],
+      colors: [
+        config.app.colors.primary,
+        config.app.colors.success,
+        config.app.colors.warning,
+        config.app.colors.danger,
+        config.app.colors.default
+      ],
     }
   },
   heatmap: {
@@ -517,25 +537,25 @@ export default {
               from: -30,
               to: 5,
               name: 'low',
-              color: '#547fff'
+              color: config.app.colors.primary,
             },
               {
                 from: 6,
                 to: 20,
                 name: 'medium',
-                color: '#1A86D0'
+                color: config.app.colors.info,
               },
               {
                 from: 21,
                 to: 45,
                 name: 'high',
-                color: '#FDA700'
+                color: config.app.colors.warning,
               },
               {
                 from: 46,
                 to: 55,
                 name: 'extreme',
-                color: '#FD5F00'
+                color: config.app.colors.danger,
               }
             ]
           }

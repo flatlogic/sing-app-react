@@ -103,7 +103,15 @@ class Dynamic extends React.Component {
           <p>
             Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
           </p>
-          <BootstrapTable data={this.state.reactBootstrapTable} version="4" pagination options={options} search tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}>
+          <BootstrapTable
+            data={this.state.reactBootstrapTable}
+            version="4"
+            pagination
+            options={options}
+            search
+            bordered={ false }
+            tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}
+          >
             <TableHeaderColumn className={`width-50 ${s.columnHead}`} columnClassName="width-50" dataField="id" isKey>
               <span className="fs-sm">ID</span>
             </TableHeaderColumn>

@@ -7,6 +7,7 @@ import {
 
 import Sparklines from '../../../../components/Sparklines';
 import s from './ChangesChart.module.scss';
+import config from '../../../../config'
 
 class ChangesChart extends React.Component {
 
@@ -14,7 +15,7 @@ class ChangesChart extends React.Component {
       rickshawGraph: null,
       sparklineData: [{data: [3, 6, 2, 4, 5, 8, 6, 8]}],
       sparklineOptions: {
-        colors: ["#1A86D0"],
+        colors: [config.app.themeColors.primary],
         plotOptions: {
           bar: {
             columnWidth: '50%'
@@ -59,7 +60,7 @@ class ChangesChart extends React.Component {
       series: [{
         name: 'pop',
         data: seriesData.shift().map(d => ({ x: d.x, y: d.y })),
-        color: '#1A86D0', // (#64bd63, 0.9)
+        color: config.app.themeColors.default, // (#64bd63, 0.9)
         renderer: 'bar',
         gapSize: 2,
         min: 'auto',
@@ -97,8 +98,6 @@ class ChangesChart extends React.Component {
               this.rickshawChart = r;
             }}
           />
-          {/*    <div rickshaw-chart [series]="series" [height]="100" [renderer]="'multi'"
-          [configureProps]="{gapSize: 0.5, min: 'auto', strokeWidth: 3}"></div> */}
         </div>
         <h4 className={s.chartTitle}><span className="fw-normal">Salt Lake City</span>, Utah</h4>
         <p className="deemphasize">Today 13:34</p>

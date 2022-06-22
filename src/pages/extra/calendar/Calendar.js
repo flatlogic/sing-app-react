@@ -21,6 +21,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin, {Draggable} from "@fullcalendar/interaction";
+import config from '../../../config'
 
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
@@ -49,7 +50,7 @@ class Calendar extends React.Component {
             {
               title: 'All Day Event',
               start: new Date(y, m, 1),
-              backgroundColor: '#005792',
+              backgroundColor: config.app.themeColors.primary,
               textColor: '#fff',
               description: 'Will be busy throughout the whole day',
             },
@@ -57,7 +58,7 @@ class Calendar extends React.Component {
               title: 'Long Event',
               start: new Date(y, m, d + 5),
               end: new Date(y, m, d + 7),
-              backgroundColor: '#1A86D0',
+              backgroundColor: config.app.themeColors.primary,
               textColor: '#fff',
               description: 'This conference should be worse visiting',
             },
@@ -67,7 +68,7 @@ class Calendar extends React.Component {
               start: new Date(y, m, d - 3, 16, 0),
               allDay: false,
               textColor: '#fff',
-              backgroundColor: '#FD5F00',
+              backgroundColor: config.app.themeColors.warning,
               description: 'Agree with this guy on arrival time',
             },
             {
@@ -75,7 +76,7 @@ class Calendar extends React.Component {
               title: 'Buy this template',
               start: new Date(y, m, d + 3, 12, 0),
               allDay: false,
-              backgroundColor: '#21AE8C',
+              backgroundColor: config.app.themeColors.success,
               textColor: '#fff',
               description: 'Make sure everything is consistent first',
             },
@@ -83,7 +84,7 @@ class Calendar extends React.Component {
               title: 'Got to school',
               start: new Date(y, m, d + 16, 12, 0),
               end: new Date(y, m, d + 16, 13, 0),
-              backgroundColor: '#ff7d47',
+              backgroundColor: config.app.themeColors.danger,
               textColor: '#fff',
               description: 'Time to go back',
             },
@@ -91,7 +92,7 @@ class Calendar extends React.Component {
               title: 'Study some Node',
               start: new Date(y, m, d + 18, 12, 0),
               end: new Date(y, m, d + 18, 13, 0),
-              backgroundColor: '#002B49',
+              backgroundColor: config.app.themeColors.inverse,
               textColor: '#fff',
               description: 'Node.js is a platform built '
               + 'on Chrome\'s JavaScript runtime for easily'
@@ -106,7 +107,7 @@ class Calendar extends React.Component {
               start: new Date(y, m, 28),
               end: new Date(y, m, 29),
               url: 'http://flatlogic.com/',
-              backgroundColor: '#21AE8C',
+              backgroundColor: config.app.themeColors.info,
               textColor: '#fff',
               description: 'Creative solutions',
             },
@@ -146,7 +147,7 @@ class Calendar extends React.Component {
         start,
         end,
         allDay,
-        backgroundColor: '#64bd63',
+        backgroundColor: config.app.themeColors.success,
         textColor: '#fff',
         editable: true
       }
@@ -239,33 +240,33 @@ class Calendar extends React.Component {
               <Row className="calendar-controls">
                 <Col md={3}>
                   <ButtonGroup className="me-2">
-                    <Button color="default" onClick={this.prev}>
+                    <Button color="gray-default" onClick={this.prev}>
                       <i className="fa fa-angle-left" />
                     </Button>
-                    <Button color="default" onClick={this.next}>
+                    <Button color="gray-default" onClick={this.next}>
                       <i className="fa fa-angle-right" />
                     </Button>
                   </ButtonGroup>
-                  <Button color="default" onClick={this.today}>
+                  <Button color="gray-default" onClick={this.today}>
                     Today
                   </Button>
                 </Col>
                 <Col md={9} className="calendar-controls text-end">
                   <ButtonGroup>
                     <Button
-                      color="default" onClick={() => this.changeView('dayGridMonth')}
+                      color="gray-default" onClick={() => this.changeView('dayGridMonth')}
                       active={this.state.calendarView === 'dayGridMonth'}
                     >Month</Button>
                     <Button
-                      color="default" onClick={() => this.changeView('timeGridWeek')}
+                      color="gray-default" onClick={() => this.changeView('timeGridWeek')}
                       active={this.state.calendarView === 'timeGridWeek'}
                     >Week</Button>
                     <Button
-                      color="default" onClick={() => this.changeView('timeGridDay')}
+                      color="gray-default" onClick={() => this.changeView('timeGridDay')}
                       active={this.state.calendarView === 'timeGridDay'}
                     >Day</Button>
                     <Button
-                      color="default" onClick={() => this.changeView('list')}
+                      color="gray-default" onClick={() => this.changeView('list')}
                       active={this.state.calendarView === 'list'}
                     >List</Button>
                   </ButtonGroup>
