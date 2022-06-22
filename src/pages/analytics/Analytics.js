@@ -102,9 +102,9 @@ class Analytics extends Component {
     }
 
 
-    componentDidMount() {
-        this.props.dispatch(receiveDataRequest());
-    }
+  componentDidMount() {
+      this.props.dispatch(receiveDataRequest());
+  }
 
   render() {
     const { visits, isReceiving, performance, server, mainChart } = this.props;
@@ -305,14 +305,14 @@ class Analytics extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        visits: state.analytics.visits,
-        isReceiving: state.analytics.isReceiving,
-        performance: state.analytics.performance,
-        revenue: state.analytics.revenue,
-        server: state.analytics.server,
-        mainChart: state.analytics.mainChart,
-    }
+  return {
+    visits: state.analytics.visits,
+    isReceiving: state.analytics.isReceiving,
+    performance: state.analytics.performance,
+    revenue: state.analytics.revenue,
+    server: state.analytics.server,
+    mainChart: state.analytics.mainChart,
+  }
 }
 
 export default connect(mapStateToProps)(Analytics);
