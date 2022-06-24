@@ -201,7 +201,7 @@ class Helper extends Component {
 
             <h5 className="mt-4 navbar-color-picker">Navbar Color</h5>
             <CustomColorPicker 
-              colors={config.app.colors}
+              colors={config.app.navbarColors}
               activeColor={navbarColor}
               updateColor={this.updateColor}
               customizationItem={"navbar"}
@@ -222,7 +222,7 @@ class Helper extends Component {
 
             <h5 className="mt-4 sidebar-color-picker">Sidebar Color</h5>
             <CustomColorPicker 
-              colors={config.app.colors}
+              colors={config.app.sidebarColors}
               activeColor={sidebarColor}
               updateColor={this.changeTheme}
               customizationItem={"sidebar"}

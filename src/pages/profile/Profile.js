@@ -167,15 +167,15 @@ const Profile = () => (
               <Input type="textarea" id="new-event" placeholder="Post something..." rows="3" />
             </FormGroup>
             <div className="btn-toolbar">
-              <div className="btn-group">
-                <button className="btn btn-sm btn-default">
+
+                <button className="btn btn-sm btn-gray-default">
                   <i className="fa fa-camera fa-lg" />
                 </button>
-                <button className="btn btn-sm btn-default">
+                <button className="btn btn-sm btn-gray-default">
                   <i className="fa fa-map-marker fa-lg" />
                 </button>
-              </div>
-              <button type="submit" className="btn btn-danger btn-sm ms-auto">Post</button>
+
+              <button type="submit" className="btn btn-success btn-sm ms-auto">Post</button>
             </div>
           </Form>
         </section>

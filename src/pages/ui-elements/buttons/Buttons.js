@@ -257,14 +257,14 @@ class Buttons extends React.Component {
                   style behavior with Bootstrap buttons plugin.
                 </p>
                 <ButtonGroup className="mb-1">
-                  <Button color="default">Left</Button>
-                  <Button color="default">Middle</Button>
-                  <Button color="default">Right</Button>
+                  <Button color="default">Block left</Button>
+                  <Button color="default">Block Middle</Button>
+                  <Button color="default">Block Right</Button>
                 </ButtonGroup>
 
                 <ButtonToolbar className="mb-1">
                   <ButtonGroup className="me-2">
-                    <Button color="default">1</Button>
+                    <Button color="default" className="ms-0">1</Button>
                     <Button color="default">2</Button>
                     <Button color="default">3</Button>
                     <Button color="default">4</Button>
@@ -315,36 +315,14 @@ class Buttons extends React.Component {
                     </DropdownMenu>
                   </ButtonDropdown>
 
-                  <ButtonDropdown isOpen={this.state.dropdownOpenTwo} toggle={this.toggleTwo}>
-                    <DropdownToggle size="sm" caret color="gray">
-                      &nbsp; One &nbsp;
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>Separated link</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
                 </div>
                 <div className="mb-1">
                   <ButtonDropdown
                     isOpen={this.state.dropdownOpenThree} toggle={this.toggleThree} className="me-1"
                   >
                     <DropdownToggle color="primary" caret className="dropdown-toggle-split">
-                      Primary
+                      Button with dropdown
                     </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>Separated link</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
-                  <ButtonDropdown isOpen={this.state.dropdownOpenFour} toggle={this.toggleFour}>
-                    <DropdownToggle size="sm" caret color="gray" className="dropdown-toggle-split" >Gray</DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Another action</DropdownItem>
@@ -360,14 +338,14 @@ class Buttons extends React.Component {
         </Row>
 
         <Row>
-          <Col md={12} sm={12} xs={12}>
+          <Col xs={12}>
             <Widget
               title={<h6> Button <span className="fw-semi-bold">Options</span>
               </h6>} close collapse
             >
               <Row>
                 {/* Checkboxes */}
-                <Col md={4} sm={6} xs={12}>
+                <Col xs={12}>
                   <h4> Button <span className="fw-semi-bold">Checkboxes</span></h4>
                   <p className="fs-mini text-muted">
                     Do more with buttons. Control button states
@@ -377,7 +355,7 @@ class Buttons extends React.Component {
                     of checkboxes for checkbox style toggling on
                     btn-group.
                   </p>
-                  <div className="mb-1">
+                  <div className="mb-3">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onCheckboxBtnClickOne(1)}
@@ -393,7 +371,7 @@ class Buttons extends React.Component {
                       >Right way</Button>
                     </ButtonGroup>
                   </div>
-                  <div className="mb-1">
+                  <div className="mb-3">
                     <ButtonGroup>
                       <Button
                         size="sm" color="default" onClick={() => this.onCheckboxBtnClickTwo(1)}
@@ -413,7 +391,7 @@ class Buttons extends React.Component {
                 </Col>
 
                 {/* Radios */}
-                <Col md={4} sm={12} xs={12}>
+                <Col xs={12}>
                   <h4> Button <span className="fw-semi-bold">Radios</span></h4>
                   <p className="fs-mini text-muted">
                     Do more with buttons. Control button states
@@ -421,7 +399,7 @@ class Buttons extends React.Component {
                     Use <code>ButtonGroup</code> to a group of radio
                     inputs for radio style toggling on btn-group.
                   </p>
-                  <div className="mb-1">
+                  <div className="mb-3">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onRadioBtnClickOne(1)}
@@ -437,7 +415,7 @@ class Buttons extends React.Component {
                       >Right way</Button>
                     </ButtonGroup>
                   </div>
-                  <div className="mb-1">
+                  <div className="mb-3">
                     <ButtonGroup>
                       <Button
                         size="sm" color="default" onClick={() => this.onRadioBtnClickTwo(1)}
@@ -456,14 +434,14 @@ class Buttons extends React.Component {
                 </Col>
 
                 {/* Buttons with Icons */}
-                <Col md={4} sm={12} xs={12}>
+                <Col xs={12}>
                   <h4> Use with <span className="fw-semi-bold">Icons</span></h4>
                   <p className="fs-mini text-muted">
                     Fontawesome and Glyph- icons may be used in buttons,
                     button groups for a toolbar, navigation, or prepended form inputs.
                     Let your buttons shine!
                   </p>
-                  <div className="text-center mb-sm">
+                  <div className="mb-3">
                     <Button color="default" className="width-100 me-1">
                       <i className="glyphicon glyphicon-tree-conifer text-success me-1 mb-1" />
                       Forest
@@ -477,7 +455,7 @@ class Buttons extends React.Component {
                       Login
                     </Button>
                   </div>
-                  <div className="text-center">
+                  <div className="mb-3">
                     <Button color="inverse" className="width-100 me-1">
                       <i className="fa fa-exclamation text-warning me-1 mb-1" />
                       Error

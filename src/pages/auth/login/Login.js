@@ -88,7 +88,7 @@ class Login extends React.Component {
                         <p className="widget-auth-info">
                             Use your email to sign in.
                         </p>
-                        <Alert className="alert-sm text-center mt-2" color="secondary">
+                        <Alert className="alert-sm text-center mt-2 bg-primary-300" color="secondary">
                             For user with "admin" role use
                             <br/>
                             <span className="fw-bold">"admin@flatlogic.com / password"</span>
@@ -110,14 +110,14 @@ class Login extends React.Component {
                                 <input className="form-control no-border" value={this.state.password} onChange={this.changePassword} type="password" required name="password" placeholder="Password" />
                             </div>
                             <Link className="d-block text-right mb-3 mt-1 fs-sm" to="forgot">Forgot password?</Link>
-                            <Button type="submit" color="info" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
+                            <Button type="submit" color="primary" className="auth-btn mb-3" size="sm">{this.props.isFetching ? 'Loading...' : 'Login'}</Button>
                             <p className="widget-auth-info">or sign in with</p>
                             <div className="social-buttons">
-                                <Button onClick={this.googleLogin} color="primary" className="social-button mb-2">
+                                <Button onClick={this.googleLogin} color="warning" className="social-button mb-2">
                                     <i className="social-icon social-google"/>
                                     <p className="social-text">GOOGLE</p>
                                 </Button>
-                                <Button onClick={this.microsoftLogin} color="success" className="social-button">
+                                <Button onClick={this.microsoftLogin} color="danger" className="social-button">
                                     <i className="social-icon social-microsoft"
                                        style={{backgroundImage: `url(${microsoft})`}}/>
                                     <p className="social-text">MICROSOFT</p>

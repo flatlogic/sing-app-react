@@ -46,7 +46,7 @@ const Badges = () => (
           <Badge className="me-2 mt-md" color="success" pill>Success</Badge>
           <Badge className="me-2" color="danger" pill>Danger</Badge>
           <Badge className="me-2" color="secondary" pill>Secondary</Badge>
-          <Badge className="me-2" color="light" pill>Light</Badge>
+          <Badge className="me-2 text-dark" color="light" pill>Light</Badge>
           <Badge className="me-2 mt-md" color="dark" pill>Dark</Badge>
         </Widget>
         <Widget

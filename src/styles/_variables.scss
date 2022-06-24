@@ -42,6 +42,7 @@ $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
 $blue:         #6FB0F9 !default;
+$blue-300: rgba($blue, 0.3) !default;
 $indigo:       #7f3ddb !default;
 $purple:       #10CFD0 !default;
 $pink:         #e54e9a !default;
@@ -69,6 +70,7 @@ $theme-colors: (
   light: $gray-100,
   default: #9083F7,
   gray-default: $gray-default,
+  primary-300: $blue-300,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,

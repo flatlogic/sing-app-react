@@ -103,7 +103,7 @@ class UsersForm extends Component {
 
               <div className="form-buttons">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-success me-1"
                   disabled={saveLoading}
                   type="button"
                   onClick={form.handleSubmit}
@@ -112,7 +112,7 @@ class UsersForm extends Component {
                 </button>{' '}{' '}
 
                 <button
-                  className="btn btn-light"
+                  className="btn btn-gray-default"
                   type="button"
                   disabled={saveLoading}
                   onClick={form.handleReset}

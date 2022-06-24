@@ -225,11 +225,12 @@ small {
 .btn-success,
 .btn-primary,
 .btn-info,
+.btn-default,
 .btn-warning,
 .btn-danger {
   color: $white;
 
-  &:hover {
+  &:hover, &:disabled, &.active {
     color: $white;
   }
 }
@@ -261,7 +262,6 @@ small {
 
 .btn {
   font-family: $font-family-sans-serif;
-  background-image: linear-gradient(to right, #ffffff26, #fff0);
 
   .glyphicon {
     top: 3px;
@@ -278,7 +278,6 @@ small {
 
 .btn-group > .btn:first-child {
   height: 36px;
-  //font-size: 10px;
 }
 
 .dropdown-toggle::after {
@@ -1118,26 +1117,26 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   }
 }
 
-
 ///// Toastify /////
+
 .Toastify {
   .Toastify__toast {
     font-family: Montserrat, sans-serif;
     border-radius: $border-radius;
     &.Toastify__toast--success {
-      background: $success;
+      background: theme-color('success');
     }
 
     &.Toastify__toast--warn {
-      background: $warning;
+      background: theme-color('warning');
     }
 
     &.Toastify__toast--error {
-      background: $danger;
+      background: theme-color('danger');
     }
 
     &.Toastify__toast--info {
-      background: $info;
+      background: theme-color('info');
     }
 
     &-body {

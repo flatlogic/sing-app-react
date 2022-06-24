@@ -51,7 +51,7 @@ class UsersForm extends Component {
 
                 <div className="form-buttons">
                   <button
-                    className="btn btn-primary me-3"
+                    className="btn btn-success me-3"
                     disabled={saveLoading}
                     type="button"
                     onClick={form.handleSubmit}
@@ -61,7 +61,7 @@ class UsersForm extends Component {
                   </button>{' '}
 
                   <button
-                    className="btn btn-light"
+                    className="btn btn-gray-default"
                     type="button"
                     disabled={saveLoading}
                     onClick={() => this.props.onCancel()}

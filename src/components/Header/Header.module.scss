@@ -29,7 +29,7 @@
     }
 
     .input-group-prepend-icon {
-      background-color: var(--input-bg);
+      background-color: var(--input-bg-color);
       transition: background-color ease-in-out 0.15s;
       border-top-left-radius: 0.3rem;
       border-bottom-left-radius: 0.3rem;
@@ -40,7 +40,7 @@
     }
 
     .form-control {
-      background-color: var(--input-bg);
+      background: var(--input-bg-color);
       color: var(--input-color);
       &::placeholder {
         color: var(--input-color);

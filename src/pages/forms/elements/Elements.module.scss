@@ -327,35 +327,35 @@
 .sliderGrey {
   :global {
     .rc-slider-track {
-      background-color: #636C72;
+      background-color: theme-color('inverse');;
     }
   }
 }
 .sliderBlue {
   :global {
     .rc-slider-track {
-      background-color: #005792;
+      background-color: theme-color('primary');
     }
   }
 }
 .sliderRed {
   :global {
     .rc-slider-track {
-      background-color: #FD5F00;
+      background-color: theme-color('warning');
     }
   }
 }
 .sliderYellow {
   :global {
     .rc-slider-track {
-      background-color: #FDA700;
+      background-color: theme-color('danger');
     }
   }
 }
 .sliderGreen {
   :global {
     .rc-slider-track {
-      background-color: #2ADA7A;
+      background-color: theme-color('success');
     }
   }
 }

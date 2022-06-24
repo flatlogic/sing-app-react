@@ -91,7 +91,7 @@ class ChatInfo extends Component {
         Dialog
       </div>
         {!this.info().isGroup ? 
-            <section className={`${s.chatInfoHeader} chat-section bg-info`}>
+            <section className={`${s.chatInfoHeader} chat-section bg-danger`}>
               <div className="d-flex mb-3 justify-content-between">
                 <header>
                   <h3 className="mb-3 fw-semi-bold">{this.info().name} {this.info().surname}</h3>
@@ -118,7 +118,7 @@ class ChatInfo extends Component {
             </footer>
           </section>        
         :
-        <section className={`${s.chatInfoHeader} chat-section bg-info`}>
+        <section className={`${s.chatInfoHeader} chat-section bg-danger`}>
         <div className="d-flex align-items-center mb-3">
           <h4 className="mb-0 fw-semi-bold">{this.info().name}</h4>
           <ul className={`${s.avatarsRow} ms-auto`}>
@@ -129,7 +129,7 @@ class ChatInfo extends Component {
         </div>
         <footer className="d-flex align-items-center justify-content-between">
           <h5 className={`${s.cursorStyle} text-white mb-0`} onClick={this.openModal}>{this.info().users.length-1} members</h5>
-          <Button color="white" className={`text-info fw-semi-bold`}>
+          <Button color="white" className={`text-danger fw-semi-bold`}>
             Add people
           </Button>
         </footer>

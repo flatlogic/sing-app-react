@@ -322,8 +322,8 @@ class Elements extends React.Component {
                   <FormGroup row>
                     <Label md={4} />
                     <Col md={7}>
-                      <Button color="primary" type="submit" className="me-2">Save Changes</Button>
-                      <Button color="inverse">Cancel</Button>
+                      <Button color="success" type="submit" className="me-2">Save Changes</Button>
+                      <Button color="gray-default">Cancel</Button>
                     </Col>
                   </FormGroup>
                 </Form>
@@ -457,10 +457,10 @@ class Elements extends React.Component {
                   </Row>
 
                   <FormGroup>
-                    <Button color="inverse" type="submit" className="me-2">
+                    <Button color="success" type="submit" className="me-2">
                       Save Changes
                     </Button>
-                    <Button color="default">Cancel</Button>
+                    <Button color="gray-default">Cancel</Button>
                   </FormGroup>
                 </Form>
               </FormGroup>
@@ -572,8 +572,8 @@ class Elements extends React.Component {
                       toolbarClassName={s.wysiwygToolbar}
                     />
                     <div className="text-md-right mt-xs">
-                      <Button color="danger" className="me-2">Save</Button>
-                      <Button color="default">Clear</Button>
+                      <Button color="success" className="me-2">Save</Button>
+                      <Button color="gray-default">Clear</Button>
                     </div>
                   </Col>
                 </FormGroup>
@@ -635,7 +635,7 @@ class Elements extends React.Component {
                   <Col md="8">
                     <UncontrolledButtonDropdown>
                       <DropdownToggle
-                        caret color="default"
+                        caret color="gray-default"
                         className="dropdown-toggle-split me-2"
                       >
                         {this.state.simpleSelectDropdownValue}
@@ -736,7 +736,7 @@ class Elements extends React.Component {
                   <Col md="8">
                     <UncontrolledButtonDropdown id="simple-big-select">
                       <DropdownToggle
-                        caret color="default" size="lg"
+                        caret color="gray-default" size="lg"
                         className="dropdown-toggle-split"
                       >
                         <span className="me-5"> {this.state.bigSelectDropdownValue}</span>
@@ -1251,14 +1251,14 @@ class Elements extends React.Component {
                           ))}
                         </div> : <span />}
                       </Label>
-                      {this.state.inputFiles.length === 0 ? <Button type="button" color="default" className="btn-file">
+                      {this.state.inputFiles.length === 0 ? <Button type="button" color="gray-default" className="btn-file">
                           <Label for="fileupload1">Select file</Label>
                         </Button> : <div>
-                          <Button type="button" color="default">
+                          <Button type="button" color="gray-default">
                             <Label for="fileupload1">Change file</Label>
                           </Button>
                           <Button
-                            type="reset" color="default"
+                            type="reset" color="gray-default"
                             onClick={this.removeInputFiles}
                           >
                             <Label>Remove file</Label>
@@ -1294,7 +1294,7 @@ class Elements extends React.Component {
                       </div>
                     </div>
                     <div>
-                      <Button type="button" color="default"><Label for="fileupload2">Select
+                      <Button type="button" color="gray-default"><Label for="fileupload2">Select
                         image</Label></Button>
                     </div>
                     <span className="help-block">Showing a thumbnail instead of the filename when uploading an image.</span>

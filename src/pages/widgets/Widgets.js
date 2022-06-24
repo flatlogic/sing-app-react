@@ -214,7 +214,7 @@ class Widgets extends React.Component {
                   Dashboard
                   Template</h3>
                 <ul className="tags text-white pull-right">
-                  <li><button className="btn-link">features</button></li>
+                  <li><span className="badge rounded-pill bg-light text-dark px-3 py-1">features</span></li>
                 </ul>
               </div>
               <div className="post-user mt-negative-lg">
@@ -273,8 +273,7 @@ class Widgets extends React.Component {
                 <div className="widget-top-overflow text-white">
                   <img src={img17} alt="..." />
                   <ul className="tags text-white pull-right">
-                    <li><button className="btn-link">design</button></li>
-                    <li><button className="btn-link">white</button></li>
+                    <li><span className="badge rounded-pill bg-light text-dark px-3 py-1">design</span></li>
                   </ul>
                 </div>
                 <div className="post-user mt-sm">
@@ -318,7 +317,7 @@ class Widgets extends React.Component {
                     Dashboard
                     Template</h3>
                   <ul className="tags text-white pull-right">
-                    <li><button className="btn-link">design</button></li>
+                    <li><span className="badge rounded-pill bg-light text-dark px-3 py-1">design</span></li>
                   </ul>
                 </div>
                 <p className="text-light fs-mini mt-sm">Lots of cool stuff is happening around you. Just calm down for

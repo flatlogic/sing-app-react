@@ -69,7 +69,7 @@ class UsersFormPage extends Component {
           <div className="page-top-line">
             <h2 className="page-title">User - <span className="fw-semi-bold">Edit</span></h2>
             <Alert
-              color="primary"
+              color="warning"
               className={cx(s.promoAlert, {[s.showAlert]: this.state.promoAlert})}
             >
               This page is only available in <a className="text-white font-weight-bold" rel="noreferrer noopener" href="https://flatlogic.com/templates/sing-app-react-node-js" target="_blank">Sing App React with NodeJS/.NET</a> integration!

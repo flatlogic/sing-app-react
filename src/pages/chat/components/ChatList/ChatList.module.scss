@@ -151,7 +151,7 @@
   }
 
   &.active {
-    background: lighten($purple, 15%);
+    background: theme-color('default');
   }
 
   &.active {
@@ -176,7 +176,8 @@
   }
 
   &.active .chatListItemWrapper {
-    border-top-color: lighten($info, 15%);
+    border-top-color: theme-color('default');
+    background: theme-color('default');
   }
 }
 
