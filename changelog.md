@@ -1,4 +1,10 @@
 # Changelog
+
+## [8.3.1]
+
+- UI adjust
+- Code clean
+
 ## [8.3.0]
 
 - Updated Bootstrap/Reactstrap
