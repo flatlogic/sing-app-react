@@ -1,5 +1,10 @@
 # Changelog
 
+## [8.3.2]
+
+- Updated React/ReactDOM
+- Updated Dependencies
+
 ## [8.3.1]
 
 - UI adjust
