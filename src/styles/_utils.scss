@@ -430,17 +430,19 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .input-group-no-border {
-  @extend .input-group-transparent;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
 
   .form-control,
   .input-group-addon {
-    @extend .input-no-border;
-  }
+    border: none;
 
-  .form-control:focus,
-  .form-control:focus + .input-group-addon,
-  &.focus .input-group-addon {
-    @extend .input-no-border:focus;
+    @include transition(background-color ease-in-out 0.15s);
+
+    &:focus {
+      background-color: $gray-100;
+    }
   }
 }
 

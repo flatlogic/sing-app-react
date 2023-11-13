@@ -1,6 +1,6 @@
 {
   "name": "sing-app-react",
-  "version": "8.3.2",
+  "version": "8.3.3",
   "private": true,
   "scripts": {
     "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='/sing-app-react' node scripts/build.js",
@@ -192,7 +192,7 @@
     "jest-resolve": "24.9.0",
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "0.12.0",
-    "node-sass": "4.14.1",
+    "sass": "^1.69.5",
     "optimize-css-assets-webpack-plugin": "5.0.8",
     "pnp-webpack-plugin": "1.7.0",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -200,7 +200,7 @@
     "postcss-preset-env": "6.7.1",
     "postcss-safe-parser": "4.0.2",
     "resolve": "1.22.0",
-    "sass-loader": "7.3.1",
+    "sass-loader": "10.0.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.4.5",
     "url-loader": "1.1.2",
@@ -214,6 +214,6 @@
     "react-dom": "^18.0.0"
   },
   "engines": {
-    "node": "14"
+    "node": "^16.10"
   }
 }

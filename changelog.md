@@ -1,5 +1,10 @@
 # Changelog
 
+## [8.3.3]
+
+- Updated node version
+- Updated Dependencies
+
 ## [8.3.2]
 
 - Updated React/ReactDOM
