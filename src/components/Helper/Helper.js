@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Joyride, { STATUS } from 'react-joyride';
+// import Joyride, { STATUS } from 'react-joyride';
 import { DashboardThemes, SidebarTypes, NavbarTypes } from '../../reducers/layout';
 import { changeTheme, changeSidebarColor, changeNavbarColor, navbarTypeToggle, sidebarTypeToggle } from '../../actions/layout';
 import CustomColorPicker from '../ColorPicker';
@@ -63,14 +63,14 @@ class Helper extends Component {
     }
   }
 
-  handleJoyrideCallback = (CallBackProps) => {
-    const { status } = CallBackProps;
-
-    if (([STATUS.FINISHED, STATUS.SKIPPED]).includes(status)) {
-      this.setState({ run: false });
-    }
-
-  };
+  // handleJoyrideCallback = (CallBackProps) => {
+  //   const { status } = CallBackProps;
+  //
+  //   if (([STATUS.FINISHED, STATUS.SKIPPED]).includes(status)) {
+  //     this.setState({ run: false });
+  //   }
+  //
+  // };
 
   start = () => {
     this.setState({
@@ -115,61 +115,61 @@ class Helper extends Component {
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
 
-        <Joyride
-          callback={this.handleJoyrideCallback}
-          continuous={true}
-          run={this.state.run}
-          showSkipButton={true}
-          steps={this.state.steps}
-          disableOverlay={true}
-          disableScrolling
-          outline="none"
-          styles={{
-            options: {
-              arrowColor: '#ffffff',
-              backgroundColor: '#ffffff',
-              overlayColor: 'rgba(79, 26, 0, 0.4)',
-              primaryColor: '#000',
-              textColor: '#495057',
-              spotlightPadding: 0,
-              zIndex: 1000,
-              padding: 5,
-              width: 240,
-            },
-            tooltip: {
-              fontSize: 15,
-              padding: 15,
-            },
-            tooltipContent: {
-              padding: '20px 5px 0',
-            },
-            floater: {
-              arrow: {
-                padding: 10
-              },
-            },
-            buttonClose: {
-              display: 'none'
-            },
-            buttonNext: {
-              backgroundColor: "#21AE8C",
-              fontSize: 13,
-              borderRadius: 4,
-              color: "#ffffff",
-              fontWeight: "bold"
-            },
-            buttonBack: {
-              color: "#798892",
-              marginLeft: 'auto',
-              fontSize: 13,
-              marginRight: 5,
-            },
-            buttonSkip: {
-              color: "#798892",
-              fontSize: 13,
-            },
-          }}
-        />
+        {/*<Joyride*/}
+        {/*  callback={this.handleJoyrideCallback}*/}
+        {/*  continuous={true}*/}
+        {/*  run={this.state.run}*/}
+        {/*  showSkipButton={true}*/}
+        {/*  steps={this.state.steps}*/}
+        {/*  disableOverlay={true}*/}
+        {/*  disableScrolling*/}
+        {/*  outline="none"*/}
+        {/*  styles={{*/}
+        {/*    options: {*/}
+        {/*      arrowColor: '#ffffff',*/}
+        {/*      backgroundColor: '#ffffff',*/}
+        {/*      overlayColor: 'rgba(79, 26, 0, 0.4)',*/}
+        {/*      primaryColor: '#000',*/}
+        {/*      textColor: '#495057',*/}
+        {/*      spotlightPadding: 0,*/}
+        {/*      zIndex: 1000,*/}
+        {/*      padding: 5,*/}
+        {/*      width: 240,*/}
+        {/*    },*/}
+        {/*    tooltip: {*/}
+        {/*      fontSize: 15,*/}
+        {/*      padding: 15,*/}
+        {/*    },*/}
+        {/*    tooltipContent: {*/}
+        {/*      padding: '20px 5px 0',*/}
+        {/*    },*/}
+        {/*    floater: {*/}
+        {/*      arrow: {*/}
+        {/*        padding: 10*/}
+        {/*      },*/}
+        {/*    },*/}
+        {/*    buttonClose: {*/}
+        {/*      display: 'none'*/}
+        {/*    },*/}
+        {/*    buttonNext: {*/}
+        {/*      backgroundColor: "#21AE8C",*/}
+        {/*      fontSize: 13,*/}
+        {/*      borderRadius: 4,*/}
+        {/*      color: "#ffffff",*/}
+        {/*      fontWeight: "bold"*/}
+        {/*    },*/}
+        {/*    buttonBack: {*/}
+        {/*      color: "#798892",*/}
+        {/*      marginLeft: 'auto',*/}
+        {/*      fontSize: 13,*/}
+        {/*      marginRight: 5,*/}
+        {/*    },*/}
+        {/*    buttonSkip: {*/}
+        {/*      color: "#798892",*/}
+        {/*      fontSize: 13,*/}
+        {/*    },*/}
+        {/*  }}*/}
+        {/*/>*/}
 
           <div className={`${s.themeHelperBtn} bg-primary helper-button`} onClick={this.toggle}>
             <div className={cx(s.themeHelperSpinner, 'text-white')}>
