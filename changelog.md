@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.3.3] - 21/12/2023
+
+- Updated Dependencies
+
 ## [8.3.3]
 
 - Updated node version
