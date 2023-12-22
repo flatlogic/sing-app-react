@@ -1,6 +1,6 @@
 # Changelog
 
-## [8.3.3] - 21/12/2023
+## [8.3.4] - 21/12/2023
 
 - Updated Dependencies
 
