@@ -3,10 +3,10 @@
   "version": "8.3.3",
   "private": true,
   "scripts": {
-    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='/sing-app-react' node scripts/build.js",
-    "start": "node scripts/start.js",
-    "start:backend": "cross-env REACT_APP_BACKEND=true node scripts/start.js",
-    "test": "node scripts/test.js"
+    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='/sing-app-react' node --openssl-legacy-provider scripts/build.js",
+    "start": "node --openssl-legacy-provider scripts/start.js",
+    "start:backend": "cross-env REACT_APP_BACKEND=true node --openssl-legacy-provider scripts/start.js",
+    "test": "node --openssl-legacy-provider scripts/test.js"
   },
   "browserslist": [
     ">0.2%",
@@ -191,7 +191,6 @@
     "jest-resolve": "24.9.0",
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "0.12.0",
-    "sass": "^1.69.5",
     "optimize-css-assets-webpack-plugin": "5.0.8",
     "pnp-webpack-plugin": "1.7.0",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -199,6 +198,7 @@
     "postcss-preset-env": "6.7.1",
     "postcss-safe-parser": "4.0.2",
     "resolve": "1.22.8",
+    "sass": "^1.69.5",
     "sass-loader": "10.0.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.4.5",
@@ -213,6 +213,6 @@
     "react-dom": "^18.0.0"
   },
   "engines": {
-    "node": "^16.10"
+    "node": "^20.15"
   }
 }
