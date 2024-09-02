@@ -30,14 +30,14 @@ class Icons extends React.Component {
 
         {/* tabs */}
         <Nav className="bg-light" tabs>
-          <NavItem>
+{/*           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
               <span>Glypicons</span>
             </NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '2' })}
@@ -102,7 +102,7 @@ class Icons extends React.Component {
 
         <TabContent activeTab={this.state.activeTab}>
 
-          <TabPane tabId="1">
+{/*           <TabPane tabId="1">
             <div>
               <h4>Built-in <span className="fw-semi-bold">Glyphicons</span></h4>
               <Row className="icon-list">
@@ -329,7 +329,7 @@ class Icons extends React.Component {
                 <Col md={4} lg={3} xs={12} className="icon-list-item"><span className="glyphicon glyphicon-collapse-top" />collapse-up</Col>
               </Row>
             </div>
-          </TabPane>
+          </TabPane> */}
 
           {/* tab #2 */}
           <TabPane tabId="2">

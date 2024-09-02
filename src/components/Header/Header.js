@@ -35,7 +35,7 @@ import EnvelopeBlack from '../../images/sidebar/basil/EnvelopeBlack';
 import PowerButton from '../../images/sidebar/basil/PowerButton';
 import CalendarIcon from '../../images/sidebar/Outline/Calendar';
 
-import s from './Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import s from './Header.module.scss';
 
 class Header extends React.Component {
   static propTypes = {
