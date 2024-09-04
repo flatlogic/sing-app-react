@@ -3,10 +3,10 @@
   "version": "8.3.3",
   "private": true,
   "scripts": {
-    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='/sing-app-react' react-scripts --openssl-legacy-provider build",
+    "build": "cross-env REACT_APP_BACKEND=true cross-env PUBLIC_URL='/sing-app-react' react-app-rewired --openssl-legacy-provider build",
     "start": "react-app-rewired --openssl-legacy-provider start",
-    "start:backend": "cross-env REACT_APP_BACKEND=true react-scripts --openssl-legacy-provider start",
-    "test": "react-scripts --openssl-legacy-provider test"
+    "start:backend": "cross-env REACT_APP_BACKEND=true react-app-rewired --openssl-legacy-provider start",
+    "test": "react-app-rewired --openssl-legacy-provider test"
   },
   "browserslist": [
     ">0.2%",
