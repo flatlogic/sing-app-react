@@ -13,7 +13,7 @@ import {
 
 import { openSidebar, closeSidebar, changeActiveSidebarItem } from '../actions/navigation';
 
-import s from '../components/Header/Header.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import s from '../components/Header/Header.module.scss';
 import sd from './styles.module.scss';
 
 import twitterLogo from '../images/documentation/twitter-logo.svg';

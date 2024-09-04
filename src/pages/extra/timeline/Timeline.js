@@ -9,7 +9,7 @@ import {
   Marker,
 } from 'react-google-maps';
 
-import s from './Timeline.module.scss'; // eslint-disable-line css-modules/no-unused-class
+import s from './Timeline.module.scss';
 
 import a1 from '../../../images/people/a1.jpg';
 import a2 from '../../../images/people/a2.jpg';

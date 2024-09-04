@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ChangePasswordForm from 'components/Users/changePassword/ChangePasswordForm';
 import { push } from 'connected-react-router';
-import actions from '../../../actions/usersFormActions';
+import actions from 'actions/usersFormActions';
 import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
 import cx from 'classnames';
