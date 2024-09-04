@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.4.0] - 04/09/2024
+
+- Added react-scripts version 5 along with webpack version 5 support.
+- Added support for node.js version > 20
+- Removed old webpack configs.
+- Removed unnecessary dev dependencies.
+- Replaced deprecated glyphicons-halflings icon library with bootstrap-icons
+
 ## [8.3.4] - 21/12/2023
 
 - Updated Dependencies
