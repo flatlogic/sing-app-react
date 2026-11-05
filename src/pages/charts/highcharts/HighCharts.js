@@ -5,25 +5,17 @@ import {
 } from 'reactstrap';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official'
-import variablePie from 'highcharts/modules/variable-pie';
-import exporting from 'highcharts/modules/exporting';
-import exportData from 'highcharts/modules/export-data';
-import accessibility from 'highcharts/modules/accessibility';
-import highcharts3d from 'highcharts/highcharts-3d';
-import sunburst from 'highcharts/modules/sunburst';
-import vector from 'highcharts/modules/vector';
-import wordcloud from 'highcharts/modules/wordcloud';
+import 'highcharts/modules/variable-pie';
+import 'highcharts/modules/exporting';
+import 'highcharts/modules/export-data';
+import 'highcharts/modules/accessibility';
+import 'highcharts/highcharts-3d';
+import 'highcharts/modules/sunburst';
+import 'highcharts/modules/vector';
+import 'highcharts/modules/wordcloud';
 import Widget from '../../../components/Widget';
 import chartsData from './mock';
 
-variablePie(Highcharts);
-exporting(Highcharts);
-exportData(Highcharts);
-accessibility(Highcharts);
-highcharts3d(Highcharts);
-sunburst(Highcharts);
-vector(Highcharts);
-wordcloud(Highcharts);
 
 class HighCharts extends PureComponent {
 

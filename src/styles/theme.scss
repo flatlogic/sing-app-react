@@ -18,12 +18,11 @@
 @import '../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css';
 @import '../../node_modules/animate.css/animate';
 @import '../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox';
-@import '../../node_modules/messenger/build/css/messenger.css';
-@import '../../node_modules/messenger/build/css/messenger-theme-air.css';
 @import '../../node_modules/nvd3/build/nv.d3.css';
 @import '../../node_modules/rickshaw/rickshaw.css';
 @import '../../node_modules/react-table/react-table.css';
-@import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+@import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+@import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 @import '../../node_modules/react-sortable-tree/style.css';
 @import '../../node_modules/react-toastify/dist/ReactToastify.css';
 @import '../../node_modules/react-tagsinput/react-tagsinput.css';

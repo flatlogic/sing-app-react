@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {Sparklines, SparklinesBars} from "react-sparklines";
 import ColorPiker from 'rc-color-picker';
 import TextareaAutosize from 'react-autosize-textarea';
 import DateTime from 'react-datetime';
 import Slider, { createSliderWithTooltip } from 'rc-slider';
 import Select from 'react-select';
-import { Editor } from 'react-draft-wysiwyg';
+import Editor from '../../components/RichTextEditor';
 import MaskedInput from 'react-maskedinput'
 import Scrollspy from './ScrollSpyComponent';
 import { Link } from 'react-router-dom';
@@ -185,7 +185,7 @@ export default class Libs extends Component {
           </Widget>
           <Widget id="React-Autosize-Textarea">
             <h3>react-autosize-textarea</h3>
-            <p>A light replacement for built-in <code>&lt;textarea /></code> component which automatically adjusts its
+            <p>A light replacement for built-in <code>&lt;textarea /&gt;</code> component which automatically adjusts its
               height to match the content.</p>
             <TextareaAutosize placeholder="Try to type"/>
             <SyntaxHighlighter language='javascript'
@@ -212,11 +212,11 @@ export default class Libs extends Component {
               href="https://github.com/react-dropzone/react-dropzone" target="_blank" rel="noopener noreferrer">React Dropzone</a></p>
           </Widget>
           <Widget id="React-Draft-Wysiwyg">
-            <h3>React-draft-wysiwyg</h3>
-            <p>A Wysiwyg editor built using ReactJS and DraftJS libraries</p>
+            <h3>Tiptap Rich Text Editor</h3>
+            <p>A rich text editor built with React and Tiptap, with text formatting, links, images and sandboxed HTTPS embeds.</p>
             <Editor/>
             <p>For more examples and documentation please refer to <a
-              href="https://github.com/jpuri/react-draft-wysiwyg" target="_blank" rel="noopener noreferrer">React Wysiwyg</a></p>
+              href="https://tiptap.dev/docs/editor" target="_blank" rel="noopener noreferrer">Tiptap</a></p>
           </Widget>
           <Widget id="React-Google-Maps">
             <h3>React-google-maps</h3>
@@ -227,7 +227,7 @@ export default class Libs extends Component {
           </Widget>
           <Widget id="React-Maskedinput">
             <h3>React-maskedinput</h3>
-            <p>A React component for <code>&lt;input></code> masking, built on top of inputmask-core.</p>
+            <p>A React component for <code>&lt;input&gt;</code> masking, built on top of inputmask-core.</p>
             <div style={{width: '200px'}}>
               <MaskedInput mask="1111 1111 1111 1111" name="card" size="20" className="form-control"/>
             </div>

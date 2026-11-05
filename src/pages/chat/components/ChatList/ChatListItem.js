@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Avatar from '../Avatar';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import uuid from 'uuid/v4';
+import { v4 as uuid } from 'uuid';
 import people from '../../../../images/chat/people.svg';
 import { setActiveChat } from '../../../../actions/chat';
 import s from './ChatList.module.scss';

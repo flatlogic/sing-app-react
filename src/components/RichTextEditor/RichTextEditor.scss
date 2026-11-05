@@ -1,0 +1,45 @@
+.rich-text-editor {
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  height: auto !important;
+  border: 1px solid #ccc;
+
+  .rich-text-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    border-bottom: 1px solid #ccc;
+
+    button, select { margin: 0; min-height: 30px; }
+    select { width: auto; max-width: 140px; border: 1px solid #ccc; border-radius: 3px; font-size: 13px; }
+    label { display: flex; align-items: center; gap: 3px; margin: 0; }
+    input[type='color'] { width: 24px; height: 28px; padding: 1px; border: 1px solid #ccc; margin: 0; }
+  }
+
+  .rich-text-url-dialog {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 8px;
+    padding: 8px;
+    label { flex: 1; min-width: 160px; margin: 0; }
+    input { margin: 0; }
+    p { width: 100%; }
+  }
+
+  .rich-text-content { flex: 1; min-height: 150px; overflow: auto !important; }
+  .tiptap {
+    min-height: 150px;
+    padding: 10px;
+    line-height: 1.5;
+    outline: none;
+    p { margin-bottom: 0.75em; }
+    img { max-width: 100%; height: auto; }
+    iframe { display: block; max-width: 100%; width: 560px; height: 315px; border: 0; }
+    ul { list-style: disc; padding-left: 1.5em; }
+    ol { list-style: decimal; padding-left: 1.5em; }
+  }
+}

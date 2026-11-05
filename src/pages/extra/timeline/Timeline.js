@@ -2,12 +2,7 @@ import React from 'react';
 import {
   Input,
 } from 'reactstrap';
-import {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-  Marker,
-} from 'react-google-maps';
+import {LoadScript, GoogleMap, Marker} from '@react-google-maps/api';
 
 import s from './Timeline.module.scss';
 
@@ -20,15 +15,7 @@ import a6 from '../../../images/people/a6.jpg';
 import avatar from '../../../images/avatar.png';
 import img8 from '../../../images/search/search8.jpg';
 
-const BasicMap = withScriptjs(withGoogleMap(() =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 51, lng: 7 }}
-    defaultOptions={{ mapTypeControl: false, fullscreenControl: false, gestureHandling: 'greedy' }}
-  >
-    <Marker position={{ lat: 51, lng: 7 }} draggable />
-  </GoogleMap>,
-));
+
 
 class Timeline extends React.Component {
 
@@ -55,12 +42,13 @@ class Timeline extends React.Component {
               </h4>
               <p className="fs-sm text-muted">10:12 am - Publicly near Minsk</p>
               <div className={s.eventMap}>
-                <BasicMap
-                  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg"
-                  loadingElement={<div style={{ height: '200px', width: '100%' }} />}
-                  containerElement={<div style={{ height: '200px' }} />}
-                  mapElement={<div style={{ height: '200px' }} />}
-                />
+                <LoadScript googleMapsApiKey="AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg">
+            <GoogleMap zoom={8} center={{ lat: 51, lng: 7 }}
+              options={{ mapTypeControl: false, fullscreenControl: false, gestureHandling: 'greedy' }}
+              mapContainerStyle={{ height: '200px', width: '100%' }}>
+              <Marker position={{ lat: 51, lng: 7 }} draggable />
+            </GoogleMap>
+          </LoadScript>
               </div>
               <footer>
                 <ul className={s.postLinks}>

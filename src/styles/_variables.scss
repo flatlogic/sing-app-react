@@ -86,6 +86,7 @@ $font-weight-base: $font-weight-thin !default;
 $addition-bg: $gray-100 !default;
 
 $body-bg: #F9FBFD !default;
+$input-bg: $body-bg !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components
