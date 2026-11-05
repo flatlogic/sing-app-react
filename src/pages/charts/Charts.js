@@ -13,24 +13,18 @@ import Sparklines from '../../components/Sparklines/Sparklines';
 
 import ReactEchartsCore from 'echarts-for-react/lib/core';
  
-import echarts from 'echarts/lib/echarts';
+import * as echarts from 'echarts';
+import 'echarts/theme/v5';
 
-import 'echarts/lib/chart/line';
-import 'echarts/lib/chart/pie';
-import 'echarts/lib/chart/themeRiver';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/legend';
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official'
-import exporting from 'highcharts/modules/exporting';
-import exportData from 'highcharts/modules/export-data';
+import 'highcharts/modules/exporting';
+import 'highcharts/modules/export-data';
 
 import config from '../../config'
 import HighCharts from "highcharts";
 
-exporting(Highcharts);
-exportData(Highcharts);
 
 
 class Charts extends React.Component {
@@ -92,7 +86,7 @@ class Charts extends React.Component {
                 title={<h5>Echarts <span className='fw-semi-bold'>Line Chart</span></h5>}
                 close collapse
               >
-                <ReactEchartsCore
+                <ReactEchartsCore theme="v5"
                   echarts={echarts}
                   option={cd.echarts.line}
                   opts={initEchartsOptions}
@@ -164,7 +158,7 @@ class Charts extends React.Component {
                     title={<h5>Chart <span className="fw-semi-bold">Donut Chart</span></h5>}
                     close collapse
                   >
-                    <ReactEchartsCore
+                    <ReactEchartsCore theme="v5"
                       echarts={echarts}
                       option={cd.echarts.donut}
                       opts={initEchartsOptions}
@@ -187,7 +181,7 @@ class Charts extends React.Component {
                 title={<h5>Echarts <span className="fw-semi-bold">River Chart</span></h5>}
                 close collapse
               >
-                <ReactEchartsCore
+                <ReactEchartsCore theme="v5"
                   echarts={echarts}
                   option={cd.echarts.river}
                   opts={initEchartsOptions}

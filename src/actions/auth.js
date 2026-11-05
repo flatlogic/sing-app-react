@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from '../config';
-import jwt from "jsonwebtoken";
+import decodeToken from '../helpers/decodeToken.mjs';
 import { toast } from 'react-toastify';
 import { push } from 'connected-react-router';
 import Errors from '../components/FormItems/error/errors';
@@ -91,7 +91,7 @@ export function receiveToken(token) {
         let user;
 
         if (config.isBackend) {
-          user = jwt.decode(token)
+          user = decodeToken(token)
         } else {
           user = {
             email: config.auth.email,

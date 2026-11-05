@@ -18,9 +18,9 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 import classnames from 'classnames';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 class NavbarPage extends Component {
   state = {

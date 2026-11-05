@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ProductCard from '../../pages/products/components/ProductCard/ProductCard';
 import products from '../../pages/products/mock';
 import chatImg from '../../images/chat/chat_preview.png';

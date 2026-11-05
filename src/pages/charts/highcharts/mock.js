@@ -6,8 +6,8 @@ import config from '../config'
 
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';
 let wordCloudLines = wordCloudText.split(/[,. ]+/g),
-  wordCloudData = Highcharts.reduce(wordCloudLines, function (arr, word) {
-    let obj = Highcharts.find(arr, function (obj) {
+  wordCloudData = wordCloudLines.reduce(function (arr, word) {
+    let obj = arr.find(function (obj) {
       return obj.name === word;
     });
     if (obj) {
@@ -82,7 +82,7 @@ export default {
           },
           stops: [
             [0, Highcharts.getOptions().colors[0]],
-            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+            [1, Highcharts.color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
           ]
         },
         marker: {

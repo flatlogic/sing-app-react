@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Editor } from 'react-draft-wysiwyg';
+import Editor from '../../../../components/RichTextEditor';
 import { Input, Button } from 'reactstrap';
 
 import Widget from '../../../../components/Widget';

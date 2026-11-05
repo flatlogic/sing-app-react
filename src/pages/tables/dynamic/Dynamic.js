@@ -7,16 +7,14 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-import {
-  BootstrapTable,
-  TableHeaderColumn,
-} from 'react-bootstrap-table';
+import BootstrapTable from 'react-bootstrap-table-next';
+import paginationFactory from 'react-bootstrap-table2-paginator';
 
 import ReactTable from 'react-table';
 
 import { reactTableData, reactBootstrapTableData } from './data';
 import Widget from '../../../components/Widget';
-import s from './Dynamic.modules.scss';
+import s from './Dynamic.module.scss';
 
 class Dynamic extends React.Component {
 
@@ -24,35 +22,14 @@ class Dynamic extends React.Component {
     super(props);
 
     this.state = {
+      search: '',
       reactTable: reactTableData(),
       reactBootstrapTable: reactBootstrapTableData(),
     };
   }
 
-  renderSizePerPageDropDown = (props) => {
-    const limits = [];
-    props.sizePerPageList.forEach((limit) => {
-      limits.push(<DropdownItem key={limit} onClick={() => props.changeSizePerPage(limit)}>{ limit }</DropdownItem>);
-    });
-
-    return (
-      <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
-        <DropdownToggle color="default" caret>
-          { props.currSizePerPage }
-        </DropdownToggle>
-        <DropdownMenu>
-          { limits }
-        </DropdownMenu>
-      </Dropdown>
-    );
-  };
 
   render() {
-    const options = {
-      sizePerPage: 10,
-      paginationSize: 3,
-      sizePerPageDropDown: this.renderSizePerPageDropDown,
-    };
 
     function infoFormatter(cell) {
       return (
@@ -103,34 +80,22 @@ class Dynamic extends React.Component {
           <p>
             Fully customizable Table. Built with <a href="https://allenfang.github.io/react-bootstrap-table/" target="_blank" rel="noopener noreferrer">react-bootstrap-table</a>
           </p>
-          <BootstrapTable
-            data={this.state.reactBootstrapTable}
-            version="4"
-            pagination
-            options={options}
-            search
-            bordered={ false }
-            tableContainerClass={`table-striped table-hover ${s.bootstrapTable}`}
-          >
-            <TableHeaderColumn className={`width-50 ${s.columnHead}`} columnClassName="width-50" dataField="id" isKey>
-              <span className="fs-sm">ID</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`${s.columnHead}`} dataField="name" dataSort>
-              <span className="fs-sm">Name</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="info" dataFormat={infoFormatter}>
-              <span className="fs-sm">Info</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="description" dataFormat={descriptionFormatter}>
-              <span className="fs-sm">Description</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`d-md-table-cell ${s.columnHead}`} columnClassName="d-md-table-cell" dataField="date" dataSort sortFunc={dateSortFunc}>
-              <span className="fs-sm">Date</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn className={`width-150 ${s.columnHead}`} columnClassName="width-150" dataField="status" dataSort dataFormat={progressFormatter} sortFunc={progressSortFunc}>
-              <span className="fs-sm">Status</span>
-            </TableHeaderColumn>
-          </BootstrapTable>
+          <input className="form-control mb-3" aria-label="Search sample rows" placeholder="Search"
+            value={this.state.search} onChange={event => this.setState({search:event.target.value})} />
+          <BootstrapTable keyField="id" bootstrap4 bordered={false} striped hover
+            data={this.state.reactBootstrapTable.filter(row => JSON.stringify(row).toLowerCase().includes(this.state.search.toLowerCase()))}
+            wrapperClasses={s.bootstrapTable}
+            pagination={paginationFactory({sizePerPage:10,paginationSize:3})}
+            columns={[
+              {dataField:'id',text:'ID',headerClasses:`width-50 ${s.columnHead}`,classes:'width-50'},
+              {dataField:'name',text:'Name',sort:true,headerClasses:s.columnHead},
+              {dataField:'info',text:'Info',formatter:infoFormatter,headerClasses:s.columnHead},
+              {dataField:'description',text:'Description',formatter:descriptionFormatter,headerClasses:s.columnHead},
+              {dataField:'date',text:'Date',sort:true,headerClasses:s.columnHead,
+                sortFunc:(a,b,order,rowA,rowB)=>dateSortFunc(rowA,rowB,order)},
+              {dataField:'status',text:'Status',sort:true,formatter:progressFormatter,headerClasses:`width-150 ${s.columnHead}`,classes:'width-150',
+                sortFunc:(a,b,order,rowA,rowB)=>progressSortFunc(rowA,rowB,order)}
+            ]} />
         </Widget>
 
         

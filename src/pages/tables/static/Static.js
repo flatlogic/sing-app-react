@@ -16,7 +16,7 @@ import {
 import { Sparklines, SparklinesBars } from 'react-sparklines';
 
 import Widget from '../../../components/Widget';
-import s from './Static.modules.scss';
+import s from './Static.module.scss';
 
 import config from '../../../config'
 
@@ -29,7 +29,7 @@ class Static extends React.Component {
       tableStyles: [
         {
           id: 1,
-          picture: require('../../../images/tables/1.png'), // eslint-disable-line global-require
+          picture: new URL('../../../images/tables/1.png', import.meta.url).href, // eslint-disable-line global-require
           description: 'Palo Alto',
           info: {
             type: 'JPEG',
@@ -44,7 +44,7 @@ class Static extends React.Component {
         },
         {
           id: 2,
-          picture: require('../../../images/tables/2.png'), // eslint-disable-line global-require
+          picture: new URL('../../../images/tables/2.png', import.meta.url).href, // eslint-disable-line global-require
           description: 'The Sky',
           info: {
             type: 'PSD',
@@ -59,7 +59,7 @@ class Static extends React.Component {
         },
         {
           id: 3,
-          picture: require('../../../images/tables/3.png'), // eslint-disable-line global-require
+          picture: new URL('../../../images/tables/3.png', import.meta.url).href, // eslint-disable-line global-require
           description: 'Down the road',
           label: {
             colorClass: 'danger',
@@ -78,7 +78,7 @@ class Static extends React.Component {
         },
         {
           id: 4,
-          picture: require('../../../images/tables/4.png'), // eslint-disable-line global-require
+          picture: new URL('../../../images/tables/4.png', import.meta.url).href, // eslint-disable-line global-require
           description: 'The Edge',
           info: {
             type: 'PNG',
@@ -93,7 +93,7 @@ class Static extends React.Component {
         },
         {
           id: 5,
-          picture: require('../../../images/tables/5.png'), // eslint-disable-line global-require
+          picture: new URL('../../../images/tables/5.png', import.meta.url).href, // eslint-disable-line global-require
           description: 'Fortress',
           info: {
             type: 'JPEG',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Breadcrumb, BreadcrumbItem, UncontrolledCarousel } from 'reactstrap';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/prism';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import firstSlide from '../../../images/slides/slide1.jpg';
 import secondSlide from '../../../images/slides/slide2.jpg';

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Container, Alert, Button } from 'reactstrap';
 import Widget from '../../../components/Widget';
 import { loginUser, receiveToken, doInit } from '../../../actions/auth';
-import jwt from "jsonwebtoken";
+import decodeToken from '../../../helpers/decodeToken.mjs';
 import microsoft from '../../../images/microsoft.png';
 import { push } from 'connected-react-router';
 
@@ -20,7 +20,7 @@ class Login extends React.Component {
       if (!config.isBackend && token) return true;
       if (!token) return;
       const date = new Date().getTime() / 1000;
-      const data = jwt.decode(token);
+      const data = decodeToken(token);
       if (!data) return;
       return date < data.exp;
     }

@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import {
-    BootstrapTable,
-    TableHeaderColumn,
-} from 'react-bootstrap-table';
+import BootstrapTable from 'react-bootstrap-table-next';
+import paginationFactory from 'react-bootstrap-table2-paginator';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Popover, PopoverBody, PopoverHeader, Alert } from 'reactstrap';
@@ -37,6 +35,7 @@ class Management extends React.Component {
     };
 
     state = {
+        search: '',
         popovers: {},
         promoAlert: false,
     };
@@ -85,13 +84,9 @@ class Management extends React.Component {
     }
 
     togglePopover(id) {
-        let newState = {...this.state};
-        if (!this.state.popovers[id]) {
-            newState.popovers[id] = true;
-        } else {
-            newState.popovers[id] = !newState.popovers[id];
-        }
-        this.setState(newState);
+        this.setState(({popovers}) => ({
+            popovers: {...popovers, [id]: !popovers[id]}
+        }));
     }
 
     apiFormatter(cell, row) {
@@ -128,35 +123,12 @@ class Management extends React.Component {
         )
     }
 
-  renderSizePerPageDropDown = (props) => {
-    const limits = [];
-    props.sizePerPageList.forEach((limit) => {
-      limits.push(<DropdownItem key={limit}
-      onClick={() => props.changeSizePerPage(limit)}>{limit}</DropdownItem>);
-    });
-
-  return (
-    <Dropdown isOpen={props.open} toggle={props.toggleDropDown}>
-      <DropdownToggle color="default" caret>
-        {props.currSizePerPage}
-      </DropdownToggle>
-      <DropdownMenu>
-        {limits}
-      </DropdownMenu>
-    </Dropdown>
-  );
-};
 
   createNewProduct() {
     this.props.history.push('/app/ecommerce/management/create');
   }
 
   render() {
-    const options = {
-      sizePerPage: 10,
-      paginationSize: 3,
-      sizePerPageDropDown: this.renderSizePerPageDropDown,
-    };
 
     return (
       <div>
@@ -173,46 +145,23 @@ class Management extends React.Component {
           fetchingData={this.props.isReceiving}
         >
           <Button color="success" onClick={() => this.createNewProduct()}>Create Product</Button>
-          <BootstrapTable
-            data={this.props.products}
-            version="4"
-            pagination
-            options={options}
-            search
-            bordered={ false }
-            tableContainerClass={`table-striped ${s.bootstrapTable}`}>
-              <TableHeaderColumn
-                dataField="id"
-                isKey={true}
-                className="width-50"
-                columnClassName="width-50">
-                  <span className="fs-sm">ID</span>
-              </TableHeaderColumn>
-              <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
-                <span className="fs-sm">Image</span>
-              </TableHeaderColumn>
-              <TableHeaderColumn dataField="title" dataFormat={this.titleFormatter}>
-                <span className="fs-sm">Title</span>
-              </TableHeaderColumn>
-              {window.innerWidth >= 768 && (
-                <TableHeaderColumn dataField="subtitle">
-                  <span className="fs-sm">Subtitle</span>
-                </TableHeaderColumn>
-              )}
-              {window.innerWidth >= 768 && (
-                <TableHeaderColumn dataField="price">
-                  <span className="fs-sm">Price($)</span>
-                </TableHeaderColumn>
-              )}
-              {window.innerWidth >= 768 && (
-                <TableHeaderColumn dataField="rating" dataFormat={this.ratingFormatter}>
-                  <span className="fs-sm">Rating</span>
-                </TableHeaderColumn>
-              )}
-              <TableHeaderColumn dataFormat={this.apiFormatter}>
-                <span className="fs-sm">Api</span>
-              </TableHeaderColumn>
-          </BootstrapTable>
+          <input className="form-control my-3" aria-label="Search products" placeholder="Search"
+            value={this.state.search} onChange={event => this.setState({search:event.target.value})} />
+          <BootstrapTable keyField="id" bootstrap4 bordered={false} striped
+            data={this.props.products.filter(row => JSON.stringify(row).toLowerCase().includes(this.state.search.toLowerCase()))}
+            wrapperClasses={s.bootstrapTable}
+            pagination={paginationFactory({sizePerPage:10,paginationSize:3})}
+            columns={[
+              {dataField:'id',text:'ID',headerClasses:'width-50',classes:'width-50'},
+              {dataField:'img',text:'Image',formatter:this.imageFormatter},
+              {dataField:'title',text:'Title',formatter:this.titleFormatter},
+              {dataField:'subtitle',text:'Subtitle',hidden:window.innerWidth<768},
+              {dataField:'price',text:'Price($)',hidden:window.innerWidth<768},
+              {dataField:'rating',text:'Rating',formatter:this.ratingFormatter,hidden:window.innerWidth<768},
+              // Cells memoize formatter output, including the popover and delete spinner.
+              {dataField:'api',text:'Api',formatter:this.apiFormatter,
+                formatExtraData:{popovers:this.state.popovers,isDeleting:this.props.isDeleting,idToDelete:this.props.idToDelete}}
+            ]} />
         </Widget>
       </div>
     );
